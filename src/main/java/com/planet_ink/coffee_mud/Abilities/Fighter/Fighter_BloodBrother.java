@@ -1,0 +1,129 @@
+/**
+ * Copyright 2017 Syncleus, Inc.
+ * with portions copyright 2004-2017 Bo Zimmerman
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+package com.planet_ink.coffee_mud.Abilities.Fighter;
+
+import com.planet_ink.coffee_mud.Abilities.interfaces.Ability;
+import com.planet_ink.coffee_mud.Common.interfaces.CMMsg;
+import com.planet_ink.coffee_mud.Common.interfaces.Tattoo;
+import com.planet_ink.coffee_mud.Locales.interfaces.Room;
+import com.planet_ink.coffee_mud.MOBS.interfaces.MOB;
+import com.planet_ink.coffee_mud.core.CMClass;
+import com.planet_ink.coffee_mud.core.CMLib;
+import com.planet_ink.coffee_mud.core.interfaces.Physical;
+
+import java.io.IOException;
+import java.util.List;
+
+
+public class Fighter_BloodBrother extends FighterSkill {
+    private final static String localizedName = CMLib.lang().L("Blood Brother");
+    private static final String[] triggerStrings = I(new String[]{"BLOODBROTHER", "BROTHER"});
+
+    @Override
+    public String ID() {
+        return "Fighter_BloodBrother";
+    }
+
+    @Override
+    public String name() {
+        return localizedName;
+    }
+
+    @Override
+    public int abstractQuality() {
+        return Ability.QUALITY_INDIFFERENT;
+    }
+
+    @Override
+    public String[] triggerStrings() {
+        return triggerStrings;
+    }
+
+    @Override
+    protected int canAffectCode() {
+        return 0;
+    }
+
+    @Override
+    protected int canTargetCode() {
+        return Ability.CAN_MOBS;
+    }
+
+    @Override
+    public int classificationCode() {
+        return Ability.ACODE_SKILL | Ability.DOMAIN_INFLUENTIAL;
+    }
+
+    @Override
+    public int usageType() {
+        return USAGE_MOVEMENT;
+    }
+
+    @Override
+    public boolean invoke(MOB mob, List<String> commands, Physical givenTarget, boolean auto, int asLevel) {
+        if (mob.isInCombat() && (!auto)) {
+            mob.tell(L("Not while you're fighting!"));
+            return false;
+        }
+
+        final MOB target = this.getTarget(mob, commands, givenTarget);
+        if (target == null)
+            return false;
+
+        if ((target.isMonster()) || (mob.isMonster())) {
+            mob.tell(L("You can't become blood brother to @x1", target.name()));
+            return false;
+        }
+        Tattoo tattChk = target.findTattoo("BLOODBROTHER:");
+        if (tattChk != null) {
+            String name = tattChk.ID().substring("BLOODBROTHER:".length());
+            if (CMLib.players().playerExists(name)) {
+                mob.tell(L("@x1 already has a blood brother.", target.name()));
+                return false;
+            }
+            target.delTattoo(tattChk);
+        }
+
+        if (!super.invoke(mob, commands, givenTarget, auto, asLevel))
+            return false;
+
+        // now see if it worked
+        boolean success = proficiencyCheck(mob, 0, auto) && (target.session() != null);
+        if (success) {
+            try {
+                if (!target.session().confirm(L("@x1 wants to become your blood brother.  Is this OK (y/N)?", mob.Name()), "N", 5000))
+                    success = false;
+            } catch (IOException e) {
+                success = false;
+            }
+        }
+        if (success) {
+            invoker = mob;
+            final Room R = mob.location();
+            final CMMsg msg = CMClass.getMsg(mob, target, this, CMMsg.MSG_NOISYMOVEMENT, L("<S-NAME> and <T-NAME> become blood brothers!"));
+            if ((R != null) && (R.okMessage(mob, msg))) {
+                R.send(mob, msg);
+                mob.addTattoo("BROTHER:" + target.Name());
+                target.addTattoo("BROTHER:" + mob.Name());
+            }
+        } else
+            return maliciousFizzle(mob, target, L("<S-NAME> fail(s) to become blood brother to <T-NAMESELF>."));
+
+        // return whether it worked
+        return success;
+    }
+}

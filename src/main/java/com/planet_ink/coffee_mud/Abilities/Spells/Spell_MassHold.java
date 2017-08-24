@@ -1,0 +1,116 @@
+/**
+ * Copyright 2017 Syncleus, Inc.
+ * with portions copyright 2004-2017 Bo Zimmerman
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+package com.planet_ink.coffee_mud.Abilities.Spells;
+
+import com.planet_ink.coffee_mud.Abilities.interfaces.Ability;
+import com.planet_ink.coffee_mud.Common.interfaces.CMMsg;
+import com.planet_ink.coffee_mud.MOBS.interfaces.MOB;
+import com.planet_ink.coffee_mud.core.CMClass;
+import com.planet_ink.coffee_mud.core.CMLib;
+import com.planet_ink.coffee_mud.core.interfaces.Physical;
+
+import java.util.List;
+import java.util.Set;
+
+
+public class Spell_MassHold extends Spell {
+
+    private final static String localizedName = CMLib.lang().L("Mass Hold");
+
+    @Override
+    public String ID() {
+        return "Spell_MassHold";
+    }
+
+    @Override
+    public String name() {
+        return localizedName;
+    }
+
+    @Override
+    public String displayText() {
+        return "";
+    }
+
+    @Override
+    public int abstractQuality() {
+        return Ability.QUALITY_MALICIOUS;
+    }
+
+    @Override
+    protected int canAffectCode() {
+        return 0;
+    }
+
+    @Override
+    public int classificationCode() {
+        return Ability.ACODE_SPELL | Ability.DOMAIN_ENCHANTMENT;
+    }
+
+    @Override
+    public boolean invoke(MOB mob, List<String> commands, Physical givenTarget, boolean auto, int asLevel) {
+        final Set<MOB> h = properTargets(mob, givenTarget, auto);
+        if (h == null) {
+            mob.tell(L("There doesn't appear to be anyone here worth putting to sleep."));
+            return false;
+        }
+
+        if (!super.invoke(mob, commands, givenTarget, auto, asLevel))
+            return false;
+
+        boolean success = proficiencyCheck(mob, -20, auto);
+
+        if (success) {
+            if (mob.location().show(mob, null, this, somanticCastCode(mob, null, auto), auto ? "" : L("^S<S-NAME> incant(s) and wave(s) <S-HIS-HER> arms.^?"))) {
+                for (final Object element : h) {
+                    final MOB target = (MOB) element;
+
+                    // if they can't hear the sleep spell, it
+                    // won't happen
+                    if (CMLib.flags().canBeHeardSpeakingBy(mob, target)) {
+                        final MOB oldVictim = mob.getVictim();
+                        final CMMsg msg = CMClass.getMsg(mob, target, this, somanticCastCode(mob, target, auto), null);
+                        if ((mob.location().okMessage(mob, msg)) && (target.fetchEffect(this.ID()) == null)) {
+                            mob.location().send(mob, msg);
+                            if (msg.value() <= 0) {
+                                int levelDiff = target.phyStats().level() - (mob.phyStats().level() + (2 * getXLEVELLevel(mob)));
+                                if (levelDiff < 0)
+                                    levelDiff = 0;
+                                if (levelDiff > 6)
+                                    levelDiff = 6;
+
+                                final Spell_Hold spell = new Spell_Hold();
+                                spell.setProficiency(proficiency());
+                                success = spell.maliciousAffect(mob, target, asLevel, 7 - levelDiff, -1) != null;
+                                if (success)
+                                    if (target.location() == mob.location())
+                                        target.location().show(target, null, CMMsg.MSG_OK_ACTION, L("<S-NAME> become(s) perfectly still!!"));
+                            }
+                        }
+                        if (oldVictim == null)
+                            mob.setVictim(null);
+                    } else
+                        maliciousFizzle(mob, target, L("<T-NAME> seem(s) unaffected by the spell from <S-NAME>."));
+                }
+            }
+        } else
+            return maliciousFizzle(mob, null, L("<S-NAME> incant(s) a spell, but the spell fizzles."));
+
+        // return whether it worked
+        return success;
+    }
+}
