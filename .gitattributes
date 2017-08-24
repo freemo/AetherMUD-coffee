@@ -1,4 +1,6 @@
 * eol=lf
+*.zip binary !eol
+*.wav binary !eol
 *.bat eol=crlf
 *.sh eol=lf
 .git* export-ignore
