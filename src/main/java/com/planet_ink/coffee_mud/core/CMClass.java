@@ -36,12 +36,16 @@ import com.planet_ink.coffee_mud.core.collections.XVector;
 import com.planet_ink.coffee_mud.core.interfaces.CMObject;
 import com.planet_ink.coffee_mud.core.interfaces.Environmental;
 import com.planet_ink.coffee_mud.core.interfaces.MudHost;
+import org.apache.commons.io.IOUtils;
 import org.mozilla.javascript.CompilerEnvirons;
 import org.mozilla.javascript.Context;
 import org.mozilla.javascript.ScriptableObject;
 import org.mozilla.javascript.optimizer.ClassCompiler;
 
 import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.RandomAccessFile;
 import java.lang.reflect.Modifier;
 import java.net.URL;
 import java.util.*;
@@ -1955,8 +1959,9 @@ public class CMClass extends ClassLoader {
             try {
                 ancestorCl = loader.loadClass(ancestor);
             } catch (final ClassNotFoundException e) {
-                if (!quiet)
+                if (!quiet) {
                     Log.sysOut("CMClass", "WARNING: Couldn't load ancestor class: " + ancestor);
+                }
             }
         }
         return loadListToObj(collection, filePath, ancestorCl, quiet);
@@ -2002,7 +2007,7 @@ public class CMClass extends ClassLoader {
                 item = item.substring(1);
             try {
                 Object O = null;
-                String packageName = item.replace('/', '.');
+                String packageName =item.replaceFirst("target/classes/", "").replace('/', '.');
                 if (packageName.toUpperCase().endsWith(".CLASS"))
                     packageName = packageName.substring(0, packageName.length() - 6);
                 final Class<?> C = loader.loadClass(packageName, true);
@@ -2223,7 +2228,7 @@ public class CMClass extends ClassLoader {
             }
         }
         try {
-            final String prefix = "com/planet_ink/coffee_mud/";
+            final String prefix = "target/classes/com/planet_ink/coffee_mud/";
             debugging = CMSecurity.isDebugging(CMSecurity.DbgFlag.CLASSLOADER);
 
             c.libraries = loadVectorListToObj(prefix + "Libraries/", page.getStr("LIBRARY"), CMObjectType.LIBRARY.ancestorName);
@@ -2956,104 +2961,133 @@ public class CMClass extends ClassLoader {
     @Override
     public synchronized final Class<?> loadClass(String className, final boolean resolveIt)
         throws ClassNotFoundException {
-        String pathName = null;
-        if (className.endsWith(".class"))
-            className = className.substring(0, className.length() - 6);
-        if (className.toUpperCase().endsWith(".JS")) {
-            pathName = className.substring(0, className.length() - 3).replace('.', '/') + className.substring(className.length() - 3);
-            className = className.substring(0, className.length() - 3);
-        } else
-            pathName = className.replace('.', '/') + ".class";
-        Class<?> result = classes.get(className);
-        if (result != null) {
-            if (debugging)
-                Log.debugOut("CMClass", "Loaded: " + result.getName());
-            return result;
-        }
-        if ((super.findLoadedClass(className) != null)
-            || (className.indexOf("com.planet_ink.coffee_mud.") < 0)
-            || (className.startsWith("com.planet_ink.coffee_mud.core."))
-            || (className.startsWith("com.planet_ink.coffee_mud.application."))
-            || (className.indexOf(".interfaces.") >= 0)) {
-            try {
-                result = super.findSystemClass(className);
-                if (result != null) {
-                    if (debugging)
-                        Log.debugOut("CMClass", "Loaded: " + result.getName());
-                    return result;
-                }
-            } catch (final Exception t) {
-            }
-        }
-		/* Try to load it from our repository */
-        final CMFile CF = new CMFile(pathName, null);
-        final byte[] classData = CF.raw();
-        if ((classData == null) || (classData.length == 0)) {
-            throw new ClassNotFoundException("File " + pathName + " not readable!");
-        }
-        if (CF.getName().toUpperCase().endsWith(".JS")) {
-            final String name = CF.getName().substring(0, CF.getName().length() - 3);
-            final StringBuffer str = CF.textVersion(classData);
-            if ((str == null) || (str.length() == 0))
-                throw new ClassNotFoundException("JavaScript file " + pathName + " not readable!");
-            final List<String> V = Resources.getFileLineVector(str);
-            Class<?> extendsClass = null;
-            final Vector<Class<?>> implementsClasses = new Vector<Class<?>>();
-            String overPackage = null;
-            for (int v = 0; v < V.size(); v++) {
-                if ((extendsClass == null) && V.get(v).trim().toUpperCase().startsWith("//EXTENDS ")) {
-                    final String extendName = V.get(v).trim().substring(10).trim();
-                    try {
-                        extendsClass = loadClass(extendName);
-                    } catch (final ClassNotFoundException e) {
-                        Log.errOut("CMClass", "Could not load " + CF.getName() + " from " + className + " because " + extendName + " is an invalid extension.");
-                        throw e;
-                    }
-                }
-                if ((overPackage == null) && V.get(v).trim().toUpperCase().startsWith("//PACKAGE "))
-                    overPackage = V.get(v).trim().substring(10).trim();
-                if (V.get(v).toUpperCase().startsWith("//IMPLEMENTS ")) {
-                    final String extendName = V.get(v).substring(13).trim();
-                    Class<?> C = null;
-                    try {
-                        C = loadClass(extendName);
-                    } catch (final ClassNotFoundException e) {
-                        continue;
-                    }
-                    implementsClasses.addElement(C);
-                }
-            }
-            final Context X = Context.enter();
-            final JScriptLib jlib = new JScriptLib();
-            X.initStandardObjects(jlib);
-            jlib.defineFunctionProperties(JScriptLib.functions, JScriptLib.class, ScriptableObject.DONTENUM);
-            final CompilerEnvirons ce = new CompilerEnvirons();
-            ce.initFromContext(X);
-            final ClassCompiler cc = new ClassCompiler(ce);
-            if (extendsClass == null)
-                Log.errOut("CMClass", "Warning: " + CF.getVFSPathAndName() + " does not extend any class!");
-            else
-                cc.setTargetExtends(extendsClass);
-            Class<?> mainClass = null;
-            if (implementsClasses.size() > 0) {
-                final Class[] CS = new Class[implementsClasses.size()];
-                for (int i = 0; i < implementsClasses.size(); i++)
-                    CS[i] = implementsClasses.elementAt(i);
-                cc.setTargetImplements(CS);
-            }
-            final Object[] objs = cc.compileToClassFiles(str.toString(), "script", 1, name);
-            for (int i = 0; i < objs.length; i += 2) {
-                final Class<?> C = finishDefineClass((String) objs[i], (byte[]) objs[i + 1], overPackage, resolveIt);
-                if (mainClass == null)
-                    mainClass = C;
-            }
-            Context.exit();
-            if ((debugging) && (mainClass != null))
-                Log.debugOut("CMClass", "Loaded: " + mainClass.getName());
-            return mainClass;
-        }
-        result = finishDefineClass(className, classData, null, resolveIt);
-        return result;
+        String cleanClassName = className.replace("target.classes.", "");
+        Class clazz = Class.forName(cleanClassName);
+        classes.put(cleanClassName, clazz);
+        return clazz;
+
+        // TODO : just commenting this code out below works, but that means there is a lot of extra code that can also be removed if we are willing to do away with javascript support.
+//        String pathName = null;
+//        if (className.endsWith(".class"))
+//            className = className.substring(0, className.length() - 6);
+//        if (className.toUpperCase().endsWith(".JS")) {
+//            pathName = className.substring(0, className.length() - 3).replace('.', '/') + className.substring(className.length() - 3);
+//            className = className.substring(0, className.length() - 3);
+//        } else {
+//            pathName = className.replace('.', '/') + ".class";
+//            if( pathName.contains("com/planet_ink") && !pathName.startsWith("target") )
+//                pathName = "target/classes/" + pathName;
+//        }
+//        Class<?> result = classes.get(className);
+//        if (result != null) {
+//            if (debugging)
+//                Log.debugOut("CMClass", "Loaded: " + result.getName());
+//            return result;
+//        }
+//        if ((super.findLoadedClass(className) != null)
+//            || (className.indexOf("com.planet_ink.coffee_mud.") < 0)
+//            || (className.startsWith("com.planet_ink.coffee_mud.core."))
+//            || (className.startsWith("com.planet_ink.coffee_mud.application."))
+//            || (className.indexOf(".interfaces.") >= 0)) {
+//            try {
+//                result = super.findSystemClass(className);
+//                if (result != null) {
+//                    if (debugging)
+//                        Log.debugOut("CMClass", "Loaded: " + result.getName());
+//                    return result;
+//                }
+//            } catch (final Exception t) {
+//            }
+//        }
+//		/* Try to load it from our repository */
+//        final byte[] classData;
+//        if( !pathName.contains("com/planet_ink") ) {
+//		    Class clazz = Class.forName(className);
+//            String clazzPathString = "jar:file:" + clazz.getProtectionDomain().getCodeSource().getLocation().getPath() + "!/" + pathName;
+//            try {
+//                URL clazzPathUrl = new URL(clazzPathString);
+//                InputStream is = clazzPathUrl.openStream();
+//                try {
+//                    classData = IOUtils.toByteArray(is);
+//                }
+//                finally {
+//                    is.close();
+//                }
+//            } catch (IOException e) {
+//                throw new IllegalStateException("Couldn't read class file: " + clazzPathString);
+//            }
+//        }
+//        else {
+//            final CMFile CF = new CMFile(pathName, null);
+//            classData = CF.raw();
+//
+//            if ((classData == null) || (classData.length == 0)) {
+//                throw new ClassNotFoundException("File " + pathName + " not readable!");
+//            }
+//            if (CF.getName().toUpperCase().endsWith(".JS")) {
+//                final String name = CF.getName().substring(0, CF.getName().length() - 3);
+//                final StringBuffer str = CF.textVersion(classData);
+//                if ((str == null) || (str.length() == 0))
+//                    throw new ClassNotFoundException("JavaScript file " + pathName + " not readable!");
+//                final List<String> V = Resources.getFileLineVector(str);
+//                Class<?> extendsClass = null;
+//                final Vector<Class<?>> implementsClasses = new Vector<Class<?>>();
+//                String overPackage = null;
+//                for (int v = 0; v < V.size(); v++) {
+//                    if ((extendsClass == null) && V.get(v).trim().toUpperCase().startsWith("//EXTENDS ")) {
+//                        final String extendName = V.get(v).trim().substring(10).trim();
+//                        try {
+//                            extendsClass = loadClass(extendName);
+//                        } catch (final ClassNotFoundException e) {
+//                            Log.errOut("CMClass", "Could not load " + CF.getName() + " from " + className + " because " + extendName + " is an invalid extension.");
+//                            throw e;
+//                        }
+//                    }
+//                    if ((overPackage == null) && V.get(v).trim().toUpperCase().startsWith("//PACKAGE "))
+//                        overPackage = V.get(v).trim().substring(10).trim();
+//                    if (V.get(v).toUpperCase().startsWith("//IMPLEMENTS ")) {
+//                        final String extendName = V.get(v).substring(13).trim();
+//                        Class<?> C = null;
+//                        try {
+//                            C = loadClass(extendName);
+//                        } catch (final ClassNotFoundException e) {
+//                            continue;
+//                        }
+//                        implementsClasses.addElement(C);
+//                    }
+//                }
+//                final Context X = Context.enter();
+//                final JScriptLib jlib = new JScriptLib();
+//                X.initStandardObjects(jlib);
+//                jlib.defineFunctionProperties(JScriptLib.functions, JScriptLib.class, ScriptableObject.DONTENUM);
+//                final CompilerEnvirons ce = new CompilerEnvirons();
+//                ce.initFromContext(X);
+//                final ClassCompiler cc = new ClassCompiler(ce);
+//                if (extendsClass == null)
+//                    Log.errOut("CMClass", "Warning: " + CF.getVFSPathAndName() + " does not extend any class!");
+//                else
+//                    cc.setTargetExtends(extendsClass);
+//                Class<?> mainClass = null;
+//                if (implementsClasses.size() > 0) {
+//                    final Class[] CS = new Class[implementsClasses.size()];
+//                    for (int i = 0; i < implementsClasses.size(); i++)
+//                        CS[i] = implementsClasses.elementAt(i);
+//                    cc.setTargetImplements(CS);
+//                }
+//                final Object[] objs = cc.compileToClassFiles(str.toString(), "script", 1, name);
+//                for (int i = 0; i < objs.length; i += 2) {
+//                    final Class<?> C = finishDefineClass((String) objs[i], (byte[]) objs[i + 1], overPackage, resolveIt);
+//                    if (mainClass == null)
+//                        mainClass = C;
+//                }
+//                Context.exit();
+//                if ((debugging) && (mainClass != null))
+//                    Log.debugOut("CMClass", "Loaded: " + mainClass.getName());
+//                return mainClass;
+//            }
+//        }
+//        result = finishDefineClass(className, classData, null, resolveIt);
+//        return result;
     }
 
     /**

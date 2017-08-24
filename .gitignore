@@ -3,3 +3,5 @@ target/
 .project
 .settings
 site
+resources/fakedb/fakedb.data.CM*
+*.log

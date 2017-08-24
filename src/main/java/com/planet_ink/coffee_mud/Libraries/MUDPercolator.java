@@ -171,7 +171,7 @@ public class MUDPercolator extends StdLibrary implements AreaGenerationLibrary {
     @Override
     @SuppressWarnings("unchecked")
     public boolean activate() {
-        final String filePath = "com/planet_ink/coffee_mud/Libraries/layouts";
+        final String filePath = "src/man/java/com/planet_ink/coffee_mud/Libraries/layouts";
         final CMProps page = CMProps.instance();
         final Vector<Object> layouts = CMClass.loadClassList(filePath, page.getStr("LIBRARY"), "/layouts", LayoutManager.class, true);
         for (int f = 0; f < layouts.size(); f++) {

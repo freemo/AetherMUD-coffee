@@ -321,7 +321,7 @@ public class CMProtocols extends StdLibrary implements ProtocolLibrary {
                 if (mcpPackages == null) {
                     mcpPackages = new Hashtable<String, MCPPackage>();
                     List<MCPPackage> pkgs = new ArrayList<MCPPackage>();
-                    if (CMClass.loadObjectListToObj(pkgs, "com/planet_ink/coffee_mud/Libraries/mcppkgs/", CMProps.instance().getStr("MCPPACKAGES"), "com.planet_ink.coffee_mud.Libraries.interfaces.ProtocolLibrary$MCPPackage")) {
+                    if (CMClass.loadObjectListToObj(pkgs, "src/man/java/com/planet_ink/coffee_mud/Libraries/mcppkgs/", CMProps.instance().getStr("MCPPACKAGES"), "com.planet_ink.coffee_mud.Libraries.interfaces.ProtocolLibrary$MCPPackage")) {
                         for (MCPPackage pkg : pkgs) {
                             mcpPackages.put(pkg.packageName(), pkg);
                         }

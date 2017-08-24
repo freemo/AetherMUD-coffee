@@ -731,7 +731,7 @@ public class MUDGrinder extends StdWebMacro {
                 final String oldRID = R.ID();
                 CMClass.delRace(R);
                 CMLib.database().DBDeleteRace(R.ID());
-                CMClass.loadClass(CMObjectType.RACE, "com/planet_ink/coffee_mud/Races/" + oldRID + ".class", true);
+                CMClass.loadClass(CMObjectType.RACE, "target/classes/com/planet_ink/coffee_mud/Races/" + oldRID + ".class", true);
                 Race oldR = CMClass.getRace(oldRID);
                 if (oldR == null)
                     oldR = CMClass.getRace("StdRace");
@@ -791,7 +791,7 @@ public class MUDGrinder extends StdWebMacro {
                 final String oldCID = C.ID();
                 CMClass.delCharClass(C);
                 CMLib.database().DBDeleteClass(C.ID());
-                CMClass.loadClass(CMObjectType.CHARCLASS, "com/planet_ink/coffee_mud/CharClasses/" + oldCID + ".class", true);
+                CMClass.loadClass(CMObjectType.CHARCLASS, "target/classes/com/planet_ink/coffee_mud/CharClasses/" + oldCID + ".class", true);
                 CharClass oldC = CMClass.getCharClass(oldCID);
                 if (oldC == null)
                     oldC = CMClass.getCharClass("StdCharClass");
