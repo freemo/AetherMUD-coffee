@@ -18,7 +18,7 @@ package com.planet_ink.game.WebMacros.grinder;
 
 import com.planet_ink.game.Areas.interfaces.Area;
 import com.planet_ink.game.core.*;
-import com.planet_ink.coffee_web.interfaces.HTTPRequest;
+import com.planet_ink.web.interfaces.HTTPRequest;
 
 import java.net.URLEncoder;
 import java.util.Enumeration;

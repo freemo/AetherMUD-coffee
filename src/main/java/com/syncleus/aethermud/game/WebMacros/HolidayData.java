@@ -22,8 +22,8 @@ import com.planet_ink.game.Behaviors.interfaces.Behavior;
 import com.planet_ink.game.Libraries.interfaces.QuestManager;
 import com.planet_ink.game.core.*;
 import com.planet_ink.game.core.collections.TriadList;
-import com.planet_ink.coffee_web.interfaces.HTTPRequest;
-import com.planet_ink.coffee_web.interfaces.HTTPResponse;
+import com.planet_ink.web.interfaces.HTTPRequest;
+import com.planet_ink.web.interfaces.HTTPResponse;
 
 import java.util.*;
 

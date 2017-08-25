@@ -23,7 +23,7 @@ import com.planet_ink.game.core.CMath;
 import com.planet_ink.game.core.collections.DVector;
 import com.planet_ink.game.core.collections.Pair;
 import com.planet_ink.game.core.interfaces.Environmental;
-import com.planet_ink.coffee_web.interfaces.HTTPRequest;
+import com.planet_ink.web.interfaces.HTTPRequest;
 
 import java.util.LinkedList;
 import java.util.List;

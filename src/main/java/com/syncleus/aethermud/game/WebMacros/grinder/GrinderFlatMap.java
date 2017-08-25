@@ -23,7 +23,7 @@ import com.planet_ink.game.Common.interfaces.RoomnumberSet;
 import com.planet_ink.game.Exits.interfaces.Exit;
 import com.planet_ink.game.Locales.interfaces.Room;
 import com.planet_ink.game.core.*;
-import com.planet_ink.coffee_web.interfaces.HTTPRequest;
+import com.planet_ink.web.interfaces.HTTPRequest;
 
 import java.net.URLEncoder;
 import java.util.*;

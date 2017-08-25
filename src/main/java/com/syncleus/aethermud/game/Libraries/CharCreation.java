@@ -38,7 +38,7 @@ import com.planet_ink.game.core.CMProps.Int;
 import com.planet_ink.game.core.collections.*;
 import com.planet_ink.game.core.interfaces.MudHost;
 import com.planet_ink.game.core.interfaces.Tickable;
-import com.planet_ink.coffee_web.util.CWThread;
+import com.planet_ink.web.util.CWThread;
 
 import java.io.IOException;
 import java.net.SocketException;

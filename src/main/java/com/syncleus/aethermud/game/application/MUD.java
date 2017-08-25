@@ -44,8 +44,8 @@ import com.planet_ink.game.core.intermud.imc2.IMC2Driver;
 import com.planet_ink.game.core.smtp.SMTPserver;
 import com.planet_ink.game.core.threads.CMRunnable;
 import com.planet_ink.game.core.threads.ServiceEngine;
-import com.planet_ink.coffee_web.server.WebServer;
-import com.planet_ink.coffee_web.util.CWConfig;
+import com.planet_ink.web.server.WebServer;
+import com.planet_ink.web.util.CWConfig;
 
 import java.io.ByteArrayInputStream;
 import java.io.File;

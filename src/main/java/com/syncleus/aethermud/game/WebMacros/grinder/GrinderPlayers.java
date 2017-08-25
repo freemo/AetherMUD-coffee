@@ -23,7 +23,7 @@ import com.planet_ink.game.Locales.interfaces.Room;
 import com.planet_ink.game.MOBS.interfaces.MOB;
 import com.planet_ink.game.WebMacros.MUDGrinder;
 import com.planet_ink.game.core.*;
-import com.planet_ink.coffee_web.interfaces.HTTPRequest;
+import com.planet_ink.web.interfaces.HTTPRequest;
 
 import java.util.Enumeration;
 import java.util.List;

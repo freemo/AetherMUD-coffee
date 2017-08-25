@@ -21,7 +21,7 @@ import com.planet_ink.game.Common.interfaces.Tattoo;
 import com.planet_ink.game.MOBS.interfaces.MOB;
 import com.planet_ink.game.core.*;
 import com.planet_ink.game.core.collections.XVector;
-import com.planet_ink.coffee_web.interfaces.HTTPRequest;
+import com.planet_ink.web.interfaces.HTTPRequest;
 
 import java.util.Calendar;
 import java.util.Enumeration;

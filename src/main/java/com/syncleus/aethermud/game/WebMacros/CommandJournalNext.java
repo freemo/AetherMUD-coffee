@@ -20,9 +20,9 @@ import com.planet_ink.game.Libraries.interfaces.JournalsLibrary;
 import com.planet_ink.game.MOBS.interfaces.MOB;
 import com.planet_ink.game.core.CMLib;
 import com.planet_ink.game.core.CMath;
-import com.planet_ink.coffee_web.interfaces.HTTPRequest;
-import com.planet_ink.coffee_web.interfaces.HTTPResponse;
-import com.planet_ink.coffee_web.util.CWThread;
+import com.planet_ink.web.interfaces.HTTPRequest;
+import com.planet_ink.web.interfaces.HTTPResponse;
+import com.planet_ink.web.util.CWThread;
 
 import java.util.Enumeration;
 

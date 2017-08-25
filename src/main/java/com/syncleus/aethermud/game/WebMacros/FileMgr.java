@@ -19,9 +19,9 @@ package com.planet_ink.game.WebMacros;
 import com.planet_ink.game.MOBS.interfaces.MOB;
 import com.planet_ink.game.core.CMFile;
 import com.planet_ink.game.core.Resources;
-import com.planet_ink.coffee_web.http.MultiPartData;
-import com.planet_ink.coffee_web.interfaces.HTTPRequest;
-import com.planet_ink.coffee_web.interfaces.HTTPResponse;
+import com.planet_ink.web.http.MultiPartData;
+import com.planet_ink.web.interfaces.HTTPRequest;
+import com.planet_ink.web.interfaces.HTTPResponse;
 
 import java.util.Iterator;
 import java.util.Vector;

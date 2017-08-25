@@ -21,8 +21,8 @@ import com.planet_ink.game.Common.interfaces.Social;
 import com.planet_ink.game.MOBS.interfaces.MOB;
 import com.planet_ink.game.core.*;
 import com.planet_ink.game.core.collections.XVector;
-import com.planet_ink.coffee_web.interfaces.HTTPRequest;
-import com.planet_ink.coffee_web.interfaces.HTTPResponse;
+import com.planet_ink.web.interfaces.HTTPRequest;
+import com.planet_ink.web.interfaces.HTTPResponse;
 
 import java.util.List;
 import java.util.Vector;

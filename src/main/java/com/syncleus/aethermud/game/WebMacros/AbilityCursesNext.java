@@ -20,8 +20,8 @@ import com.planet_ink.game.Abilities.interfaces.Ability;
 import com.planet_ink.game.MOBS.interfaces.Deity;
 import com.planet_ink.game.core.CMLib;
 import com.planet_ink.game.core.CMProps;
-import com.planet_ink.coffee_web.interfaces.HTTPRequest;
-import com.planet_ink.coffee_web.interfaces.HTTPResponse;
+import com.planet_ink.web.interfaces.HTTPRequest;
+import com.planet_ink.web.interfaces.HTTPResponse;
 
 
 public class AbilityCursesNext extends StdWebMacro {

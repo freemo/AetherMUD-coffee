@@ -22,8 +22,8 @@ import com.planet_ink.game.Common.interfaces.CoffeeTableRow;
 import com.planet_ink.game.Common.interfaces.Quest;
 import com.planet_ink.game.core.*;
 import com.planet_ink.game.core.collections.PairSVector;
-import com.planet_ink.coffee_web.interfaces.HTTPRequest;
-import com.planet_ink.coffee_web.interfaces.HTTPResponse;
+import com.planet_ink.web.interfaces.HTTPRequest;
+import com.planet_ink.web.interfaces.HTTPResponse;
 
 import java.util.Calendar;
 import java.util.Enumeration;

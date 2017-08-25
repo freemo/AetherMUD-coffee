@@ -23,7 +23,7 @@ import com.planet_ink.game.core.CMParms;
 import com.planet_ink.game.core.CMStrings;
 import com.planet_ink.game.core.CMath;
 import com.planet_ink.game.core.collections.TriadList;
-import com.planet_ink.coffee_web.interfaces.HTTPRequest;
+import com.planet_ink.web.interfaces.HTTPRequest;
 
 import java.util.Enumeration;
 import java.util.HashSet;

@@ -19,8 +19,8 @@ package com.planet_ink.game.WebMacros;
 import com.planet_ink.game.Common.interfaces.ClanGovernment;
 import com.planet_ink.game.core.CMLib;
 import com.planet_ink.game.core.CMath;
-import com.planet_ink.coffee_web.interfaces.HTTPRequest;
-import com.planet_ink.coffee_web.interfaces.HTTPResponse;
+import com.planet_ink.web.interfaces.HTTPRequest;
+import com.planet_ink.web.interfaces.HTTPResponse;
 
 
 public class ClanGovernmentID extends StdWebMacro {

@@ -16,9 +16,9 @@
  */
 package com.planet_ink.game.WebMacros;
 
-import com.planet_ink.coffee_web.interfaces.HTTPRequest;
-import com.planet_ink.coffee_web.interfaces.HTTPResponse;
-import com.planet_ink.coffee_web.util.CWThread;
+import com.planet_ink.web.interfaces.HTTPRequest;
+import com.planet_ink.web.interfaces.HTTPResponse;
+import com.planet_ink.web.util.CWThread;
 
 
 public class WebServerName extends StdWebMacro {

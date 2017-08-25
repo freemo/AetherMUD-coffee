@@ -18,8 +18,8 @@ package com.planet_ink.game.WebMacros;
 
 import com.planet_ink.game.CharClasses.interfaces.CharClass;
 import com.planet_ink.game.core.CMClass;
-import com.planet_ink.coffee_web.interfaces.HTTPRequest;
-import com.planet_ink.coffee_web.interfaces.HTTPResponse;
+import com.planet_ink.web.interfaces.HTTPRequest;
+import com.planet_ink.web.interfaces.HTTPResponse;
 
 
 public class CharClassName extends StdWebMacro {

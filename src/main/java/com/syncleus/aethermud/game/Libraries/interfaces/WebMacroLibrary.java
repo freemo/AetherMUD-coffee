@@ -17,8 +17,8 @@
 package com.planet_ink.game.Libraries.interfaces;
 
 import com.planet_ink.game.core.exceptions.HTTPRedirectException;
-import com.planet_ink.coffee_web.interfaces.HTTPOutputConverter;
-import com.planet_ink.coffee_web.interfaces.HTTPRequest;
+import com.planet_ink.web.interfaces.HTTPOutputConverter;
+import com.planet_ink.web.interfaces.HTTPRequest;
 
 import java.util.Map;
 

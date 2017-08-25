@@ -27,7 +27,7 @@ import com.planet_ink.game.core.*;
 import com.planet_ink.game.core.interfaces.Economics;
 import com.planet_ink.game.core.interfaces.Physical;
 import com.planet_ink.game.core.interfaces.PhysicalAgent;
-import com.planet_ink.coffee_web.interfaces.HTTPRequest;
+import com.planet_ink.web.interfaces.HTTPRequest;
 
 import java.util.Enumeration;
 import java.util.Vector;

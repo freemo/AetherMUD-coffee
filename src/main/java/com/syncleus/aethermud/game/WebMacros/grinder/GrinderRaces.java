@@ -31,7 +31,7 @@ import com.planet_ink.game.core.collections.QuadVector;
 import com.planet_ink.game.core.collections.XVector;
 import com.planet_ink.game.core.interfaces.Environmental;
 import com.planet_ink.game.core.interfaces.Modifiable;
-import com.planet_ink.coffee_web.interfaces.HTTPRequest;
+import com.planet_ink.web.interfaces.HTTPRequest;
 
 import java.util.List;
 import java.util.Vector;

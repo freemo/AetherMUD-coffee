@@ -22,8 +22,8 @@ import com.planet_ink.game.Races.interfaces.Race;
 import com.planet_ink.game.core.CMClass;
 import com.planet_ink.game.core.CMProps;
 import com.planet_ink.game.core.CMath;
-import com.planet_ink.coffee_web.interfaces.HTTPRequest;
-import com.planet_ink.coffee_web.interfaces.HTTPResponse;
+import com.planet_ink.web.interfaces.HTTPRequest;
+import com.planet_ink.web.interfaces.HTTPResponse;
 
 import java.util.Enumeration;
 

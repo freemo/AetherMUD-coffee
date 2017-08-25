@@ -19,8 +19,8 @@ package com.planet_ink.game.WebMacros;
 import com.planet_ink.game.MOBS.interfaces.MOB;
 import com.planet_ink.game.core.CMFile;
 import com.planet_ink.game.core.collections.XVector;
-import com.planet_ink.coffee_web.interfaces.HTTPRequest;
-import com.planet_ink.coffee_web.interfaces.HTTPResponse;
+import com.planet_ink.web.interfaces.HTTPRequest;
+import com.planet_ink.web.interfaces.HTTPResponse;
 
 
 @SuppressWarnings({"unchecked", "rawtypes"})

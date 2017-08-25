@@ -20,8 +20,8 @@ import com.planet_ink.game.Common.interfaces.Poll;
 import com.planet_ink.game.Common.interfaces.Poll.PollResult;
 import com.planet_ink.game.MOBS.interfaces.MOB;
 import com.planet_ink.game.core.*;
-import com.planet_ink.coffee_web.interfaces.HTTPRequest;
-import com.planet_ink.coffee_web.interfaces.HTTPResponse;
+import com.planet_ink.web.interfaces.HTTPRequest;
+import com.planet_ink.web.interfaces.HTTPResponse;
 
 import java.util.Calendar;
 import java.util.List;

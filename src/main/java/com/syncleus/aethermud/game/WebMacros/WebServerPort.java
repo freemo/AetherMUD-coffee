@@ -19,10 +19,10 @@ package com.planet_ink.game.WebMacros;
 import com.planet_ink.game.core.CMLib;
 import com.planet_ink.game.core.CMParms;
 import com.planet_ink.game.core.interfaces.MudHost;
-import com.planet_ink.coffee_web.interfaces.HTTPRequest;
-import com.planet_ink.coffee_web.interfaces.HTTPResponse;
-import com.planet_ink.coffee_web.util.CWConfig;
-import com.planet_ink.coffee_web.util.CWThread;
+import com.planet_ink.web.interfaces.HTTPRequest;
+import com.planet_ink.web.interfaces.HTTPResponse;
+import com.planet_ink.web.util.CWConfig;
+import com.planet_ink.web.util.CWThread;
 
 
 public class WebServerPort extends StdWebMacro {

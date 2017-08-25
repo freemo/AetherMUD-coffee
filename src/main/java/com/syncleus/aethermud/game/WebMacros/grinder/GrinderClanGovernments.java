@@ -22,7 +22,7 @@ import com.planet_ink.game.Common.interfaces.ClanPosition;
 import com.planet_ink.game.core.CMClass;
 import com.planet_ink.game.core.CMLib;
 import com.planet_ink.game.core.CMath;
-import com.planet_ink.coffee_web.interfaces.HTTPRequest;
+import com.planet_ink.web.interfaces.HTTPRequest;
 
 import java.util.HashSet;
 import java.util.List;

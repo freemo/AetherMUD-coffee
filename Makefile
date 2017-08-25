@@ -177,12 +177,12 @@ com.planet_ink.game.MOBS.interfaces \
 com.planet_ink.game.Races.interfaces \
 com.planet_ink.game.WebMacros.grinder \
 com.planet_ink.game.WebMacros.interfaces \
-com.planet_ink.coffee_web.converters \
-com.planet_ink.coffee_web.http \
-com.planet_ink.coffee_web.interfaces \
-com.planet_ink.coffee_web.server \
-com.planet_ink.coffee_web.servlets \
-com.planet_ink.coffee_web.util \
+com.planet_ink.web.converters \
+com.planet_ink.web.http \
+com.planet_ink.web.interfaces \
+com.planet_ink.web.server \
+com.planet_ink.web.servlets \
+com.planet_ink.web.util \
 com.planet_ink.siplet.applet \
 com.planet_ink.siplet.support \
 

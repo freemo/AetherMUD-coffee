@@ -20,7 +20,7 @@ import com.planet_ink.game.Abilities.interfaces.Ability;
 import com.planet_ink.game.Abilities.interfaces.Language;
 import com.planet_ink.game.core.CMParms;
 import com.planet_ink.game.core.CMath;
-import com.planet_ink.coffee_web.interfaces.HTTPRequest;
+import com.planet_ink.web.interfaces.HTTPRequest;
 
 import java.util.Vector;
 

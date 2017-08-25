@@ -23,8 +23,8 @@ import com.planet_ink.game.Common.interfaces.Faction;
 import com.planet_ink.game.Common.interfaces.Faction.FactionChangeEvent;
 import com.planet_ink.game.core.*;
 import com.planet_ink.game.core.collections.PairVector;
-import com.planet_ink.coffee_web.interfaces.HTTPRequest;
-import com.planet_ink.coffee_web.interfaces.HTTPResponse;
+import com.planet_ink.web.interfaces.HTTPRequest;
+import com.planet_ink.web.interfaces.HTTPResponse;
 
 import java.util.Enumeration;
 import java.util.HashSet;

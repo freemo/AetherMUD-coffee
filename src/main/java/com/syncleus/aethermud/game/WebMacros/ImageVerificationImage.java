@@ -36,9 +36,9 @@ import com.planet_ink.game.core.Log;
 import com.planet_ink.game.core.Resources;
 import com.planet_ink.game.core.collections.SLinkedList;
 import com.planet_ink.game.core.exceptions.HTTPServerException;
-import com.planet_ink.coffee_web.http.MIMEType;
-import com.planet_ink.coffee_web.interfaces.HTTPRequest;
-import com.planet_ink.coffee_web.interfaces.HTTPResponse;
+import com.planet_ink.web.http.MIMEType;
+import com.planet_ink.web.interfaces.HTTPRequest;
+import com.planet_ink.web.interfaces.HTTPResponse;
 
 import javax.imageio.ImageIO;
 import java.awt.*;

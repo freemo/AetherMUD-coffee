@@ -79,12 +79,12 @@ IF "%1" == "docs" GOTO :DOCS
 %JAVACPATH% com/planet_ink/game/Races/interfaces/*.java
 %JAVACPATH% com/planet_ink/game/WebMacros/grinder/*.java
 %JAVACPATH% com/planet_ink/game/WebMacros/interfaces/*.java
-%JAVACPATH% com/planet_ink/coffee_web/converters/*.java
-%JAVACPATH% com/planet_ink/coffee_web/http/*.java
-%JAVACPATH% com/planet_ink/coffee_web/interfaces/*.java
-%JAVACPATH% com/planet_ink/coffee_web/server/*.java
-%JAVACPATH% com/planet_ink/coffee_web/servlets/*.java
-%JAVACPATH% com/planet_ink/coffee_web/util/*.java
+%JAVACPATH% com/planet_ink/web/converters/*.java
+%JAVACPATH% com/planet_ink/web/http/*.java
+%JAVACPATH% com/planet_ink/web/interfaces/*.java
+%JAVACPATH% com/planet_ink/web/server/*.java
+%JAVACPATH% com/planet_ink/web/servlets/*.java
+%JAVACPATH% com/planet_ink/web/util/*.java
 %JAVACPATH% com/planet_ink/siplet/applet/*.java
 %JAVACPATH% com/planet_ink/siplet/support/*.java
 

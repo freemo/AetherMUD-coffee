@@ -28,8 +28,8 @@ import com.planet_ink.game.core.interfaces.Environmental;
 import com.planet_ink.game.core.interfaces.ItemPossessor;
 import com.planet_ink.game.core.interfaces.PhysicalAgent;
 import com.planet_ink.game.core.interfaces.ShopKeeper;
-import com.planet_ink.coffee_web.interfaces.HTTPRequest;
-import com.planet_ink.coffee_web.interfaces.HTTPResponse;
+import com.planet_ink.web.interfaces.HTTPRequest;
+import com.planet_ink.web.interfaces.HTTPResponse;
 
 import java.util.*;
 

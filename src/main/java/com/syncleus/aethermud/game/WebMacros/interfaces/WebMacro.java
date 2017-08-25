@@ -18,8 +18,8 @@ package com.planet_ink.game.WebMacros.interfaces;
 
 import com.planet_ink.game.core.exceptions.HTTPServerException;
 import com.planet_ink.game.core.interfaces.CMObject;
-import com.planet_ink.coffee_web.interfaces.HTTPRequest;
-import com.planet_ink.coffee_web.interfaces.HTTPResponse;
+import com.planet_ink.web.interfaces.HTTPRequest;
+import com.planet_ink.web.interfaces.HTTPResponse;
 
 /*
    Copyright 2002-2017 Bo Zimmerman
@@ -90,7 +90,7 @@ public interface WebMacro extends CMObject {
      * and is only important when isAWebPath return true.
      *
      * @see WebMacro#preferBinary()
-     * @see com.planet_ink.coffee_web.interfaces.HTTPRequest
+     * @see com.planet_ink.web.interfaces.HTTPRequest
      * @param httpReq the external requests object
      * @param parm any parameter strings given to the macro
      * @param httpResp the response, with headers
@@ -111,7 +111,7 @@ public interface WebMacro extends CMObject {
      * and is only important when isAWebPath return true.
      *
      * @see WebMacro#preferBinary()
-     * @see com.planet_ink.coffee_web.interfaces.HTTPRequest
+     * @see com.planet_ink.web.interfaces.HTTPRequest
      * @param httpReq the external requests object
      * @param parm any parameter strings given to the macro
      * @param httpResp the response, with headers

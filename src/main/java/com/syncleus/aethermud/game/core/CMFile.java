@@ -21,7 +21,7 @@ import com.planet_ink.game.Libraries.interfaces.ClanManager;
 import com.planet_ink.game.Libraries.interfaces.WorldMap;
 import com.planet_ink.game.MOBS.interfaces.MOB;
 import com.planet_ink.game.core.interfaces.MudHost;
-import com.planet_ink.coffee_web.interfaces.FileManager;
+import com.planet_ink.web.interfaces.FileManager;
 
 import java.io.*;
 import java.nio.charset.Charset;

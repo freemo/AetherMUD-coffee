@@ -25,7 +25,7 @@ import com.planet_ink.game.core.collections.DVector;
 import com.planet_ink.game.core.collections.PairList;
 import com.planet_ink.game.core.exceptions.CMException;
 import com.planet_ink.game.core.interfaces.Affectable;
-import com.planet_ink.coffee_web.interfaces.HTTPRequest;
+import com.planet_ink.web.interfaces.HTTPRequest;
 
 import java.util.Enumeration;
 import java.util.List;

@@ -35,7 +35,7 @@ import com.planet_ink.game.core.*;
 import com.planet_ink.game.core.collections.*;
 import com.planet_ink.game.core.exceptions.CMException;
 import com.planet_ink.game.core.interfaces.*;
-import com.planet_ink.coffee_web.interfaces.HTTPRequest;
+import com.planet_ink.web.interfaces.HTTPRequest;
 
 import java.util.*;
 

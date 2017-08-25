@@ -23,8 +23,8 @@ import com.planet_ink.game.core.CMLib;
 import com.planet_ink.game.core.CMProps;
 import com.planet_ink.game.core.CMStrings;
 import com.planet_ink.game.core.collections.SLinkedList;
-import com.planet_ink.coffee_web.interfaces.HTTPRequest;
-import com.planet_ink.coffee_web.interfaces.HTTPResponse;
+import com.planet_ink.web.interfaces.HTTPRequest;
+import com.planet_ink.web.interfaces.HTTPResponse;
 
 import java.net.URLEncoder;
 import java.util.Iterator;

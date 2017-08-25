@@ -29,10 +29,10 @@ import com.planet_ink.game.core.collections.*;
 import com.planet_ink.game.core.interfaces.Environmental;
 import com.planet_ink.game.core.interfaces.Places;
 import com.planet_ink.game.core.interfaces.ShopKeeper;
-import com.planet_ink.coffee_web.http.HTTPMethod;
-import com.planet_ink.coffee_web.http.MultiPartData;
-import com.planet_ink.coffee_web.interfaces.HTTPRequest;
-import com.planet_ink.coffee_web.interfaces.HTTPResponse;
+import com.planet_ink.web.http.HTTPMethod;
+import com.planet_ink.web.http.MultiPartData;
+import com.planet_ink.web.interfaces.HTTPRequest;
+import com.planet_ink.web.interfaces.HTTPResponse;
 
 import java.io.InputStream;
 import java.net.InetAddress;
