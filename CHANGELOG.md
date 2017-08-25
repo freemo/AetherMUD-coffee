@@ -1,3 +1,6 @@
+# 6.0.0
+    * Migrated to maven and removed ANT.
+    * Removed all uses of "CoffeeMUD" and replaced with "AetherMUD".
 # Build 5.9.6 Release ??/??/2017
    *. Sections in the default coffeemud.ini file were moved around.  Don't be alarmed. :)
    1. Hunger and Thirst system can now be tweeked.  See coffeemud.ini file
