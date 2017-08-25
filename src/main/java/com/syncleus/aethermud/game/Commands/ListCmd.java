@@ -14,33 +14,33 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Commands;
+package com.syncleus.aethermud.game.Commands;
 
-import com.planet_ink.game.Abilities.interfaces.Ability;
-import com.planet_ink.game.Abilities.interfaces.CraftorAbility;
-import com.planet_ink.game.Areas.interfaces.Area;
-import com.planet_ink.game.Behaviors.interfaces.Behavior;
-import com.planet_ink.game.Behaviors.interfaces.LegalBehavior;
-import com.planet_ink.game.CharClasses.interfaces.CharClass;
-import com.planet_ink.game.Commands.interfaces.Command;
-import com.planet_ink.game.Common.interfaces.*;
-import com.planet_ink.game.Exits.interfaces.Exit;
-import com.planet_ink.game.Items.interfaces.*;
-import com.planet_ink.game.Libraries.interfaces.*;
-import com.planet_ink.game.Libraries.interfaces.AchievementLibrary.*;
-import com.planet_ink.game.Libraries.interfaces.ExpertiseLibrary.ExpertiseDefinition;
-import com.planet_ink.game.Locales.interfaces.GridLocale;
-import com.planet_ink.game.Locales.interfaces.Room;
-import com.planet_ink.game.MOBS.interfaces.Banker;
-import com.planet_ink.game.MOBS.interfaces.MOB;
-import com.planet_ink.game.MOBS.interfaces.PostOffice;
-import com.planet_ink.game.Races.interfaces.Race;
-import com.planet_ink.game.core.*;
-import com.planet_ink.game.core.CMSecurity.SecFlag;
-import com.planet_ink.game.core.collections.*;
-import com.planet_ink.game.core.interfaces.*;
-import com.planet_ink.game.core.interfaces.ShopKeeper.ShopPrice;
-import com.planet_ink.game.core.threads.CMRunnable;
+import com.syncleus.aethermud.game.Abilities.interfaces.Ability;
+import com.syncleus.aethermud.game.Abilities.interfaces.CraftorAbility;
+import com.syncleus.aethermud.game.Areas.interfaces.Area;
+import com.syncleus.aethermud.game.Behaviors.interfaces.Behavior;
+import com.syncleus.aethermud.game.Behaviors.interfaces.LegalBehavior;
+import com.syncleus.aethermud.game.CharClasses.interfaces.CharClass;
+import com.syncleus.aethermud.game.Commands.interfaces.Command;
+import com.syncleus.aethermud.game.Common.interfaces.*;
+import com.syncleus.aethermud.game.Exits.interfaces.Exit;
+import com.syncleus.aethermud.game.Items.interfaces.*;
+import com.syncleus.aethermud.game.Libraries.interfaces.*;
+import com.syncleus.aethermud.game.Libraries.interfaces.AchievementLibrary.*;
+import com.syncleus.aethermud.game.Libraries.interfaces.ExpertiseLibrary.ExpertiseDefinition;
+import com.syncleus.aethermud.game.Locales.interfaces.GridLocale;
+import com.syncleus.aethermud.game.Locales.interfaces.Room;
+import com.syncleus.aethermud.game.MOBS.interfaces.Banker;
+import com.syncleus.aethermud.game.MOBS.interfaces.MOB;
+import com.syncleus.aethermud.game.MOBS.interfaces.PostOffice;
+import com.syncleus.aethermud.game.Races.interfaces.Race;
+import com.syncleus.aethermud.game.core.*;
+import com.syncleus.aethermud.game.core.CMSecurity.SecFlag;
+import com.syncleus.aethermud.game.core.collections.*;
+import com.syncleus.aethermud.game.core.interfaces.*;
+import com.syncleus.aethermud.game.core.interfaces.ShopKeeper.ShopPrice;
+import com.syncleus.aethermud.game.core.threads.CMRunnable;
 
 import java.util.*;
 

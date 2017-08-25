@@ -14,16 +14,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.MOBS.interfaces;
+package com.syncleus.aethermud.game.MOBS.interfaces;
 
-import com.planet_ink.game.Abilities.interfaces.Ability;
-import com.planet_ink.game.Common.interfaces.*;
-import com.planet_ink.game.Items.interfaces.*;
-import com.planet_ink.game.Locales.interfaces.Room;
-import com.planet_ink.game.core.CMProps;
-import com.planet_ink.game.core.collections.Filterer;
-import com.planet_ink.game.core.collections.Pair;
-import com.planet_ink.game.core.interfaces.*;
+import com.syncleus.aethermud.game.Abilities.interfaces.Ability;
+import com.syncleus.aethermud.game.Common.interfaces.*;
+import com.syncleus.aethermud.game.Items.interfaces.*;
+import com.syncleus.aethermud.game.Locales.interfaces.Room;
+import com.syncleus.aethermud.game.core.CMProps;
+import com.syncleus.aethermud.game.core.collections.Filterer;
+import com.syncleus.aethermud.game.core.collections.Pair;
+import com.syncleus.aethermud.game.core.interfaces.*;
 
 import java.util.Enumeration;
 import java.util.List;
@@ -103,8 +103,8 @@ public interface MOB extends Rider, DBIdentifiable, PhysicalAgent, ItemPossessor
      * If this player is using a title, this method returns
      * the players Name() with the title.  If not using a
      * title, this method returns name().
-     * @see com.planet_ink.game.core.interfaces.Environmental#Name()
-     * @see com.planet_ink.game.core.interfaces.Tickable#name()
+     * @see com.syncleus.aethermud.game.core.interfaces.Environmental#Name()
+     * @see com.syncleus.aethermud.game.core.interfaces.Tickable#name()
      * @return the name with a title, or not
      */
     public String titledName();
@@ -128,7 +128,7 @@ public interface MOB extends Rider, DBIdentifiable, PhysicalAgent, ItemPossessor
      * Returns the PlayerStats object for this mob.  A null response indicated definitively
      * that this is a Player and not an NPC, even if there is no session attached.
      * @see MOB#setPlayerStats(PlayerStats)
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats
      * @return the PlayerStats object or NULL for an NPC
      */
     public PlayerStats playerStats();
@@ -137,7 +137,7 @@ public interface MOB extends Rider, DBIdentifiable, PhysicalAgent, ItemPossessor
      * Sets the PlayerStats object for this mob.  A null value indicated definitively
      * that this is a Player and not an NPC, even if there is no session attached.
      * @see MOB#playerStats()
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats
      * @param newStats the PlayerStats object or null for an NPC
      */
     public void setPlayerStats(PlayerStats newStats);
@@ -574,7 +574,7 @@ public interface MOB extends Rider, DBIdentifiable, PhysicalAgent, ItemPossessor
     /**
      * Gets the Base CharState object for this mob, which are the stats like health and mana.
      * The Base CharState are those stats before modification by equipment or spell effects.
-     * @see com.planet_ink.game.Common.interfaces.CharState
+     * @see com.syncleus.aethermud.game.Common.interfaces.CharState
      * @see MOB#setBaseState(CharState)
      * @see MOB#curState()
      * @see MOB#maxState()
@@ -587,7 +587,7 @@ public interface MOB extends Rider, DBIdentifiable, PhysicalAgent, ItemPossessor
     /**
      * Sets the Base CharState object for this mob, which are the stats like health and mana.
      * The Base CharState are those stats before modification by equipment or spell effects.
-     * @see com.planet_ink.game.Common.interfaces.CharState
+     * @see com.syncleus.aethermud.game.Common.interfaces.CharState
      * @see MOB#baseState()
      * @see MOB#curState()
      * @see MOB#maxState()
@@ -600,7 +600,7 @@ public interface MOB extends Rider, DBIdentifiable, PhysicalAgent, ItemPossessor
     /**
      * Gets the Current CharState object for this mob, which are the temp stats like health and mana.
      * The Current CharState are the max state after modification by casting, damage, and running around.
-     * @see com.planet_ink.game.Common.interfaces.CharState
+     * @see com.syncleus.aethermud.game.Common.interfaces.CharState
      * @see MOB#setBaseState(CharState)
      * @see MOB#baseState()
      * @see MOB#maxState()
@@ -614,7 +614,7 @@ public interface MOB extends Rider, DBIdentifiable, PhysicalAgent, ItemPossessor
      * Gets the Max CharState object for this mob, which are the stats like health and mana.
      * The Max CharState are those stats after modification by equipment or spell effects, but
      * before taking damage or using by resources with movement and casting
-     * @see com.planet_ink.game.Common.interfaces.CharState
+     * @see com.syncleus.aethermud.game.Common.interfaces.CharState
      * @see MOB#setBaseState(CharState)
      * @see MOB#curState()
      * @see MOB#baseState()
@@ -811,7 +811,7 @@ public interface MOB extends Rider, DBIdentifiable, PhysicalAgent, ItemPossessor
      * also refer to the room in which this mob/player WOULD be standing if they
      * were still in the game.
      * @see MOB#setLocation(Room)
-     * @see com.planet_ink.game.Locales.interfaces.Room#isInhabitant(MOB)
+     * @see com.syncleus.aethermud.game.Locales.interfaces.Room#isInhabitant(MOB)
      * @return the room in which this mob/player is currently standing
      */
     public Room location();
@@ -821,7 +821,7 @@ public interface MOB extends Rider, DBIdentifiable, PhysicalAgent, ItemPossessor
      * also refer to the room in which this mob/player WOULD be standing if they
      * were still in the game.
      * @see MOB#location()
-     * @see com.planet_ink.game.Locales.interfaces.Room#isInhabitant(MOB)
+     * @see com.syncleus.aethermud.game.Locales.interfaces.Room#isInhabitant(MOB)
      * @param newRoom the room in which this mob/player is currently standing
      */
     public void setLocation(Room newRoom);
@@ -839,7 +839,7 @@ public interface MOB extends Rider, DBIdentifiable, PhysicalAgent, ItemPossessor
      * Wearable filters.  Also allows specific container checks.  This method also
      * respects context numbers, such as .1, .2 for grabbing a specific duplicate
      * item.
-     * @see com.planet_ink.game.Items.interfaces.Wearable#FILTER_WORNONLY
+     * @see com.syncleus.aethermud.game.Items.interfaces.Wearable#FILTER_WORNONLY
      * @see MOB#fetchWornItems(long, short, short)
      * @see MOB#fetchWieldedItem()
      * @param goodLocation the container to look in, or null for uncontained
@@ -941,7 +941,7 @@ public interface MOB extends Rider, DBIdentifiable, PhysicalAgent, ItemPossessor
      * which only returns the effects properly owned by this mob.
      * @see MOB#addPriorityEffect(Ability)
      * @see MOB#personalEffects()
-     * @see com.planet_ink.game.core.interfaces.Physical#numEffects()
+     * @see com.syncleus.aethermud.game.core.interfaces.Physical#numEffects()
      * @return the total number of effects this mob/player is under
      */
     public int numAllEffects();
@@ -954,8 +954,8 @@ public interface MOB extends Rider, DBIdentifiable, PhysicalAgent, ItemPossessor
      * stat effect purposes.
      * @see MOB#numAllEffects()
      * @see MOB#personalEffects()
-     * @see com.planet_ink.game.Abilities.interfaces.Ability
-     * @see com.planet_ink.game.core.interfaces.Physical#addEffect(Ability)
+     * @see com.syncleus.aethermud.game.Abilities.interfaces.Ability
+     * @see com.syncleus.aethermud.game.core.interfaces.Physical#addEffect(Ability)
      * @param to the Ability to add as an effect
      */
     public void addPriorityEffect(Ability to);
@@ -965,8 +965,8 @@ public interface MOB extends Rider, DBIdentifiable, PhysicalAgent, ItemPossessor
      * by this mob, which means it will skip any Clan or Racial effects.
      * @see MOB#numAllEffects()
      * @see MOB#addPriorityEffect(Ability)
-     * @see com.planet_ink.game.Abilities.interfaces.Ability
-     * @see com.planet_ink.game.core.interfaces.Physical#effects()
+     * @see com.syncleus.aethermud.game.Abilities.interfaces.Ability
+     * @see com.syncleus.aethermud.game.core.interfaces.Physical#effects()
      * @return the enumeration of personal effect objects
      */
     public Enumeration<Ability> personalEffects();
@@ -974,8 +974,8 @@ public interface MOB extends Rider, DBIdentifiable, PhysicalAgent, ItemPossessor
     /**
      * This method recursively returns whoever this mob is riding, and
      * if they are a rideable, who all is riding with him.
-     * @see com.planet_ink.game.core.interfaces.Rider
-     * @see com.planet_ink.game.core.interfaces.Rideable
+     * @see com.syncleus.aethermud.game.core.interfaces.Rider
+     * @see com.syncleus.aethermud.game.core.interfaces.Rideable
      * @param list the required list to populate with riders and rideable
      * @return the same list sent in
      */
@@ -994,7 +994,7 @@ public interface MOB extends Rider, DBIdentifiable, PhysicalAgent, ItemPossessor
     /**
      * Returns the maximum number of followers that this Followable can
      * have.
-     * @see com.planet_ink.game.core.interfaces.Followable
+     * @see com.syncleus.aethermud.game.core.interfaces.Followable
      * @return the maximum number of followers
      */
     public int maxFollowers();
@@ -1013,7 +1013,7 @@ public interface MOB extends Rider, DBIdentifiable, PhysicalAgent, ItemPossessor
      * cost, indexed by the CACHEINDEX constants.  The second dimension is the
      * resource type, which is indexed by the USAGEINDEX constants.  Therefore
      * by default, the array is CACHEINDEX_TOTAL x 3.
-     * @see com.planet_ink.game.Abilities.interfaces.Ability#CACHEINDEX_TOTAL
+     * @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#CACHEINDEX_TOTAL
      * @param abilityID the specific Ability ID() to get the cache for
      * @return the ability usage cache array
      */

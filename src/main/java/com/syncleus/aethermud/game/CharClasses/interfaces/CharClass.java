@@ -14,20 +14,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.CharClasses.interfaces;
+package com.syncleus.aethermud.game.CharClasses.interfaces;
 
-import com.planet_ink.game.Abilities.interfaces.Ability;
-import com.planet_ink.game.Items.interfaces.Item;
-import com.planet_ink.game.Items.interfaces.RawMaterial;
-import com.planet_ink.game.Items.interfaces.Weapon;
-import com.planet_ink.game.Items.interfaces.Wearable;
-import com.planet_ink.game.Libraries.interfaces.ExpertiseLibrary;
-import com.planet_ink.game.MOBS.interfaces.MOB;
-import com.planet_ink.game.Races.interfaces.Race;
-import com.planet_ink.game.core.CMLib;
-import com.planet_ink.game.core.CMSecurity;
-import com.planet_ink.game.core.collections.Pair;
-import com.planet_ink.game.core.interfaces.*;
+import com.syncleus.aethermud.game.Abilities.interfaces.Ability;
+import com.syncleus.aethermud.game.Items.interfaces.Item;
+import com.syncleus.aethermud.game.Items.interfaces.RawMaterial;
+import com.syncleus.aethermud.game.Items.interfaces.Weapon;
+import com.syncleus.aethermud.game.Items.interfaces.Wearable;
+import com.syncleus.aethermud.game.Libraries.interfaces.ExpertiseLibrary;
+import com.syncleus.aethermud.game.MOBS.interfaces.MOB;
+import com.syncleus.aethermud.game.Races.interfaces.Race;
+import com.syncleus.aethermud.game.core.CMLib;
+import com.syncleus.aethermud.game.core.CMSecurity;
+import com.syncleus.aethermud.game.core.collections.Pair;
+import com.syncleus.aethermud.game.core.interfaces.*;
 
 import java.util.List;
 import java.util.Set;
@@ -35,24 +35,24 @@ import java.util.Set;
 /**
  * This class represents a player or mobs character class.  One of more of these
  * objects are associated with each mob through the mob interfaces charStats() object.
- * @see com.planet_ink.game.MOBS.interfaces.MOB#charStats()
- * @see com.planet_ink.game.Common.interfaces.CharStats
+ * @see com.syncleus.aethermud.game.MOBS.interfaces.MOB#charStats()
+ * @see com.syncleus.aethermud.game.Common.interfaces.CharStats
  * @author Bo Zimmerman
  */
 public interface CharClass extends Tickable, StatsAffecting, MsgListener, CMObject, Modifiable {
-    /** constant returned by allowedArmorLevel() to designate any allowed armors. @see com.planet_ink.game.CharClass.StdCharClass#allowedArmorLevel() */
+    /** constant returned by allowedArmorLevel() to designate any allowed armors. @see com.syncleus.aethermud.game.CharClass.StdCharClass#allowedArmorLevel() */
     public static final int ARMOR_ANY = 0;
-    /** constant returned by allowedArmorLevel() to designate only cloth armors. @see com.planet_ink.game.CharClass.StdCharClass#allowedArmorLevel() */
+    /** constant returned by allowedArmorLevel() to designate only cloth armors. @see com.syncleus.aethermud.game.CharClass.StdCharClass#allowedArmorLevel() */
     public static final int ARMOR_CLOTH = 1;
-    /** constant returned by allowedArmorLevel() to designate only leather armors. @see com.planet_ink.game.CharClass.StdCharClass#allowedArmorLevel() */
+    /** constant returned by allowedArmorLevel() to designate only leather armors. @see com.syncleus.aethermud.game.CharClass.StdCharClass#allowedArmorLevel() */
     public static final int ARMOR_LEATHER = 2;
-    /** constant returned by allowedArmorLevel() to designate only nonmetal armors. @see com.planet_ink.game.CharClass.StdCharClass#allowedArmorLevel() */
+    /** constant returned by allowedArmorLevel() to designate only nonmetal armors. @see com.syncleus.aethermud.game.CharClass.StdCharClass#allowedArmorLevel() */
     public static final int ARMOR_NONMETAL = 3;
-    /** constant returned by allowedArmorLevel() to designate only plant/wood armors. @see com.planet_ink.game.CharClass.StdCharClass#allowedArmorLevel() */
+    /** constant returned by allowedArmorLevel() to designate only plant/wood armors. @see com.syncleus.aethermud.game.CharClass.StdCharClass#allowedArmorLevel() */
     public static final int ARMOR_VEGAN = 4;
-    /** constant returned by allowedArmorLevel() to designate only metal armors. @see com.planet_ink.game.CharClass.StdCharClass#allowedArmorLevel() */
+    /** constant returned by allowedArmorLevel() to designate only metal armors. @see com.syncleus.aethermud.game.CharClass.StdCharClass#allowedArmorLevel() */
     public static final int ARMOR_METALONLY = 5;
-    /** constant returned by allowedArmorLevel() to designate only metal/stone armors. @see com.planet_ink.game.CharClass.StdCharClass#allowedArmorLevel() */
+    /** constant returned by allowedArmorLevel() to designate only metal/stone armors. @see com.syncleus.aethermud.game.CharClass.StdCharClass#allowedArmorLevel() */
     public static final int ARMOR_OREONLY = 6;
     /** useful constant for calculating the wear locations to which armor restrictions apply */
     public static long ARMOR_WEARMASK = Wearable.WORN_TORSO | Wearable.WORN_LEGS | Wearable.WORN_ARMS | Wearable.WORN_WAIST | Wearable.WORN_HEAD;
@@ -70,33 +70,33 @@ public interface CharClass extends Tickable, StatsAffecting, MsgListener, CMObje
         "Must wear metal armor",
         "Must wear stone, crystal, or metal armor."
     });
-    /** constant returned by allowedWeaponLevel() to designate any weapons. @see com.planet_ink.game.CharClass.StdCharClass#allowedWeaponLevel() */
+    /** constant returned by allowedWeaponLevel() to designate any weapons. @see com.syncleus.aethermud.game.CharClass.StdCharClass#allowedWeaponLevel() */
     public static final int WEAPONS_ANY = 0;
-    /** constant returned by allowedWeaponLevel() to designate daggers only. @see com.planet_ink.game.CharClass.StdCharClass#allowedWeaponLevel() */
+    /** constant returned by allowedWeaponLevel() to designate daggers only. @see com.syncleus.aethermud.game.CharClass.StdCharClass#allowedWeaponLevel() */
     public static final int WEAPONS_DAGGERONLY = 1;
-    /** constant returned by allowedWeaponLevel() to designate swords/daggers only. @see com.planet_ink.game.CharClass.StdCharClass#allowedWeaponLevel() */
+    /** constant returned by allowedWeaponLevel() to designate swords/daggers only. @see com.syncleus.aethermud.game.CharClass.StdCharClass#allowedWeaponLevel() */
     public static final int WEAPONS_THIEFLIKE = 2;
-    /** constant returned by allowedWeaponLevel() to designate natural weapons only. @see com.planet_ink.game.CharClass.StdCharClass#allowedWeaponLevel() */
+    /** constant returned by allowedWeaponLevel() to designate natural weapons only. @see com.syncleus.aethermud.game.CharClass.StdCharClass#allowedWeaponLevel() */
     public static final int WEAPONS_NATURAL = 3;
-    /** constant returned by allowedWeaponLevel() to designate burglar class weapons only. @see com.planet_ink.game.CharClass.StdCharClass#allowedWeaponLevel() */
+    /** constant returned by allowedWeaponLevel() to designate burglar class weapons only. @see com.syncleus.aethermud.game.CharClass.StdCharClass#allowedWeaponLevel() */
     public static final int WEAPONS_BURGLAR = 4;
-    /** constant returned by allowedWeaponLevel() to designate stone weapons only. @see com.planet_ink.game.CharClass.StdCharClass#allowedWeaponLevel() */
+    /** constant returned by allowedWeaponLevel() to designate stone weapons only. @see com.syncleus.aethermud.game.CharClass.StdCharClass#allowedWeaponLevel() */
     public static final int WEAPONS_ROCKY = 5;
-    /** constant returned by allowedWeaponLevel() to designate mage weapons only. @see com.planet_ink.game.CharClass.StdCharClass#allowedWeaponLevel() */
+    /** constant returned by allowedWeaponLevel() to designate mage weapons only. @see com.syncleus.aethermud.game.CharClass.StdCharClass#allowedWeaponLevel() */
     public static final int WEAPONS_MAGELIKE = 6;
-    /** constant returned by allowedWeaponLevel() to designate evil cleric weapons only. @see com.planet_ink.game.CharClass.StdCharClass#allowedWeaponLevel() */
+    /** constant returned by allowedWeaponLevel() to designate evil cleric weapons only. @see com.syncleus.aethermud.game.CharClass.StdCharClass#allowedWeaponLevel() */
     public static final int WEAPONS_EVILCLERIC = 7;
-    /** constant returned by allowedWeaponLevel() to designate good cleric weapons only. @see com.planet_ink.game.CharClass.StdCharClass#allowedWeaponLevel() */
+    /** constant returned by allowedWeaponLevel() to designate good cleric weapons only. @see com.syncleus.aethermud.game.CharClass.StdCharClass#allowedWeaponLevel() */
     public static final int WEAPONS_GOODCLERIC = 8;
-    /** constant returned by allowedWeaponLevel() to designate neutral cleric weapons only. @see com.planet_ink.game.CharClass.StdCharClass#allowedWeaponLevel() */
+    /** constant returned by allowedWeaponLevel() to designate neutral cleric weapons only. @see com.syncleus.aethermud.game.CharClass.StdCharClass#allowedWeaponLevel() */
     public static final int WEAPONS_NEUTRALCLERIC = 9;
-    /** constant returned by allowedWeaponLevel() to designate any cleric weapons only. @see com.planet_ink.game.CharClass.StdCharClass#allowedWeaponLevel() */
+    /** constant returned by allowedWeaponLevel() to designate any cleric weapons only. @see com.syncleus.aethermud.game.CharClass.StdCharClass#allowedWeaponLevel() */
     public static final int WEAPONS_ALLCLERIC = 10;
-    /** constant returned by allowedWeaponLevel() to designate flails only. @see com.planet_ink.game.CharClass.StdCharClass#allowedWeaponLevel() */
+    /** constant returned by allowedWeaponLevel() to designate flails only. @see com.syncleus.aethermud.game.CharClass.StdCharClass#allowedWeaponLevel() */
     public static final int WEAPONS_FLAILONLY = 11;
-    /** constant returned by allowedWeaponLevel() to designate natural weapons only. @see com.planet_ink.game.CharClass.StdCharClass#allowedWeaponLevel() */
+    /** constant returned by allowedWeaponLevel() to designate natural weapons only. @see com.syncleus.aethermud.game.CharClass.StdCharClass#allowedWeaponLevel() */
     public static final int WEAPONS_MERLIKE = 12;
-    /** constant returned by allowedWeaponLevel() to designate staffs only. @see com.planet_ink.game.CharClass.StdCharClass#allowedWeaponLevel() */
+    /** constant returned by allowedWeaponLevel() to designate staffs only. @see com.syncleus.aethermud.game.CharClass.StdCharClass#allowedWeaponLevel() */
     public static final int WEAPONS_STAFFONLY = 13;
     /** constant set of integer arrays defining the Weapon.CLASS_* constants for the CharClass.WEAPONS_* constants, ordered by CharClass.WEAPONS_* values. */
     public static final int[][] WEAPONS_SETS = {
@@ -189,7 +189,7 @@ public interface CharClass extends Tickable, StatsAffecting, MsgListener, CMObje
      * at char creation time, whether they can
      * change to this class via spells, or whether
      * the class is utterly unavailable to them.
-     * @see com.planet_ink.game.Areas.interfaces.Area
+     * @see com.syncleus.aethermud.game.Areas.interfaces.Area
      * @return the availability/theme of this class
      */
     public int availabilityCode();
@@ -334,7 +334,7 @@ public interface CharClass extends Tickable, StatsAffecting, MsgListener, CMObje
      * Typically called when a mob gains a level in this class, to allow the class to
      * assign any new skills.  Can also be called just to populate a mob with class skills,
      * so it should also confirm any lower level skills also.
-     * @see com.planet_ink.game.MOBS.interfaces.MOB#addAbility(Ability)
+     * @see com.syncleus.aethermud.game.MOBS.interfaces.MOB#addAbility(Ability)
      * @param mob the mob to give abilities to.
      * @param isBorrowedClass whether the skills are savable (false) or temporary (true)
      */
@@ -430,7 +430,7 @@ public interface CharClass extends Tickable, StatsAffecting, MsgListener, CMObje
      * Returns which of the CharStats.STAT_* constants should be
      * used to calculate the standard attack prowess points given
      * when a member of this class gains a level.
-     * @see com.planet_ink.game.Common.interfaces.CharStats
+     * @see com.syncleus.aethermud.game.Common.interfaces.CharStats
      * @return a CharStats.STAT_* attribute constant code
      */
     public int getAttackAttribute();
@@ -658,14 +658,14 @@ public interface CharClass extends Tickable, StatsAffecting, MsgListener, CMObje
      * maximum for the CharStats.STAT_* base statistics.
      * The maximum is the most a player can train up to.
      * The array only holds enough to the first 6 base stats.
-     * @see com.planet_ink.game.Common.interfaces.CharStats
+     * @see com.syncleus.aethermud.game.Common.interfaces.CharStats
      * @return a six element array of adjustments to max base stats
      */
     public int[] maxStatAdjustments();
 
     /**
      * Whether this class can be associated with a race.
-     * @see com.planet_ink.game.Races.interfaces.Race
+     * @see com.syncleus.aethermud.game.Races.interfaces.Race
      * @return whether this class can have a class
      */
     public boolean raceless();
@@ -728,8 +728,8 @@ public interface CharClass extends Tickable, StatsAffecting, MsgListener, CMObje
      * A code designating what kind of armor can be used by this class
      * without affecting their skills.  The worn locations this coded
      * type refers to locations defined by ARMOR_WEARMASK
-     * @see com.planet_ink.game.CharClasses.interfaces.CharClass#ARMOR_WEARMASK
-     * @see com.planet_ink.game.CharClasses.interfaces.CharClass#ARMOR_ANY
+     * @see com.syncleus.aethermud.game.CharClasses.interfaces.CharClass#ARMOR_WEARMASK
+     * @see com.syncleus.aethermud.game.CharClasses.interfaces.CharClass#ARMOR_ANY
      * @return the encoded allowed armor type
      */
     public int allowedArmorLevel();
@@ -737,7 +737,7 @@ public interface CharClass extends Tickable, StatsAffecting, MsgListener, CMObje
     /**
      * A code designating what kind of weapons can be used by this class
      * without fumbling their usage.
-     * @see com.planet_ink.game.CharClasses.interfaces.CharClass#WEAPONS_ANY
+     * @see com.syncleus.aethermud.game.CharClasses.interfaces.CharClass#WEAPONS_ANY
      * @return the encoded allowed weapon type
      */
     public int allowedWeaponLevel();

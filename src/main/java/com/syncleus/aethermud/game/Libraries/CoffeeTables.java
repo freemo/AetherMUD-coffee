@@ -14,15 +14,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Libraries;
+package com.syncleus.aethermud.game.Libraries;
 
-import com.planet_ink.game.Common.interfaces.CoffeeTableRow;
-import com.planet_ink.game.Libraries.interfaces.StatisticsLibrary;
-import com.planet_ink.game.core.*;
-import com.planet_ink.game.core.CMSecurity.DbgFlag;
-import com.planet_ink.game.core.interfaces.CMObject;
-import com.planet_ink.game.core.interfaces.MudHost;
-import com.planet_ink.game.core.interfaces.Tickable;
+import com.syncleus.aethermud.game.Common.interfaces.CoffeeTableRow;
+import com.syncleus.aethermud.game.Libraries.interfaces.StatisticsLibrary;
+import com.syncleus.aethermud.game.core.*;
+import com.syncleus.aethermud.game.core.CMSecurity.DbgFlag;
+import com.syncleus.aethermud.game.core.interfaces.CMObject;
+import com.syncleus.aethermud.game.core.interfaces.MudHost;
+import com.syncleus.aethermud.game.core.interfaces.Tickable;
 
 import java.util.Calendar;
 

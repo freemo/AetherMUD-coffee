@@ -14,18 +14,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.core.threads;
+package com.syncleus.aethermud.game.core.threads;
 
-import com.planet_ink.game.Abilities.interfaces.ItemTicker;
-import com.planet_ink.game.Libraries.interfaces.ThreadEngine;
-import com.planet_ink.game.Locales.interfaces.Room;
-import com.planet_ink.game.MOBS.interfaces.MOB;
-import com.planet_ink.game.core.CMLib;
-import com.planet_ink.game.core.CMProps;
-import com.planet_ink.game.core.collections.STreeSet;
-import com.planet_ink.game.core.interfaces.TickClient;
-import com.planet_ink.game.core.interfaces.Tickable;
-import com.planet_ink.game.core.interfaces.TickableGroup;
+import com.syncleus.aethermud.game.Abilities.interfaces.ItemTicker;
+import com.syncleus.aethermud.game.Libraries.interfaces.ThreadEngine;
+import com.syncleus.aethermud.game.Locales.interfaces.Room;
+import com.syncleus.aethermud.game.MOBS.interfaces.MOB;
+import com.syncleus.aethermud.game.core.CMLib;
+import com.syncleus.aethermud.game.core.CMProps;
+import com.syncleus.aethermud.game.core.collections.STreeSet;
+import com.syncleus.aethermud.game.core.interfaces.TickClient;
+import com.syncleus.aethermud.game.core.interfaces.Tickable;
+import com.syncleus.aethermud.game.core.interfaces.TickableGroup;
 
 import java.util.Iterator;
 import java.util.LinkedList;

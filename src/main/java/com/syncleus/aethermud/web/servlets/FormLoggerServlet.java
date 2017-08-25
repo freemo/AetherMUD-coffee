@@ -14,14 +14,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.web.servlets;
+package com.syncleus.aethermud.web.servlets;
 
-import com.planet_ink.web.http.HTTPHeader;
-import com.planet_ink.web.http.HTTPMethod;
-import com.planet_ink.web.http.HTTPStatus;
-import com.planet_ink.web.interfaces.SimpleServlet;
-import com.planet_ink.web.interfaces.SimpleServletRequest;
-import com.planet_ink.web.interfaces.SimpleServletResponse;
+import com.syncleus.aethermud.web.http.HTTPHeader;
+import com.syncleus.aethermud.web.http.HTTPMethod;
+import com.syncleus.aethermud.web.http.HTTPStatus;
+import com.syncleus.aethermud.web.interfaces.SimpleServlet;
+import com.syncleus.aethermud.web.interfaces.SimpleServletRequest;
+import com.syncleus.aethermud.web.interfaces.SimpleServletResponse;
 
 import java.io.IOException;
 import java.io.InputStreamReader;

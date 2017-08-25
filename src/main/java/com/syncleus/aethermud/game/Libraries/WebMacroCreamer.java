@@ -14,30 +14,30 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Libraries;
+package com.syncleus.aethermud.game.Libraries;
 
-import com.planet_ink.game.Common.interfaces.Clan;
-import com.planet_ink.game.Common.interfaces.HttpClient;
-import com.planet_ink.game.Common.interfaces.JournalEntry;
-import com.planet_ink.game.Common.interfaces.PlayerAccount;
-import com.planet_ink.game.Libraries.interfaces.JournalsLibrary;
-import com.planet_ink.game.Libraries.interfaces.WebMacroLibrary;
-import com.planet_ink.game.MOBS.interfaces.MOB;
-import com.planet_ink.game.WebMacros.interfaces.WebMacro;
-import com.planet_ink.game.core.*;
-import com.planet_ink.game.core.collections.XHashtable;
-import com.planet_ink.game.core.collections.XVector;
-import com.planet_ink.game.core.exceptions.HTTPRedirectException;
-import com.planet_ink.game.core.exceptions.HTTPServerException;
-import com.planet_ink.game.core.interfaces.TickClient;
-import com.planet_ink.game.core.interfaces.Tickable;
-import com.planet_ink.web.http.*;
-import com.planet_ink.web.interfaces.HTTPRequest;
-import com.planet_ink.web.interfaces.SimpleServlet;
-import com.planet_ink.web.interfaces.SimpleServletRequest;
-import com.planet_ink.web.interfaces.SimpleServletResponse;
-import com.planet_ink.web.util.CWConfig;
-import com.planet_ink.web.util.CWThread;
+import com.syncleus.aethermud.game.Common.interfaces.Clan;
+import com.syncleus.aethermud.game.Common.interfaces.HttpClient;
+import com.syncleus.aethermud.game.Common.interfaces.JournalEntry;
+import com.syncleus.aethermud.game.Common.interfaces.PlayerAccount;
+import com.syncleus.aethermud.game.Libraries.interfaces.JournalsLibrary;
+import com.syncleus.aethermud.game.Libraries.interfaces.WebMacroLibrary;
+import com.syncleus.aethermud.game.MOBS.interfaces.MOB;
+import com.syncleus.aethermud.game.WebMacros.interfaces.WebMacro;
+import com.syncleus.aethermud.game.core.*;
+import com.syncleus.aethermud.game.core.collections.XHashtable;
+import com.syncleus.aethermud.game.core.collections.XVector;
+import com.syncleus.aethermud.game.core.exceptions.HTTPRedirectException;
+import com.syncleus.aethermud.game.core.exceptions.HTTPServerException;
+import com.syncleus.aethermud.game.core.interfaces.TickClient;
+import com.syncleus.aethermud.game.core.interfaces.Tickable;
+import com.syncleus.aethermud.web.http.*;
+import com.syncleus.aethermud.web.interfaces.HTTPRequest;
+import com.syncleus.aethermud.web.interfaces.SimpleServlet;
+import com.syncleus.aethermud.web.interfaces.SimpleServletRequest;
+import com.syncleus.aethermud.web.interfaces.SimpleServletResponse;
+import com.syncleus.aethermud.web.util.CWConfig;
+import com.syncleus.aethermud.web.util.CWThread;
 import org.mozilla.javascript.Context;
 import org.mozilla.javascript.ScriptableObject;
 

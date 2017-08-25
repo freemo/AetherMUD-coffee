@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.fakedb;
+package com.syncleus.aethermud.fakedb;
 
 import java.io.*;
 import java.lang.reflect.Method;
@@ -331,7 +331,7 @@ public class DBUpgrade {
         }
         pl("");
         pl("");
-        String sclass = "com.planet_ink.fakedb.Driver";
+        String sclass = "com.syncleus.aethermud.fakedb.Driver";
         answer = answer.substring(0, 1);
         boolean tested = false;
         boolean secondTime = false;
@@ -449,7 +449,7 @@ public class DBUpgrade {
         }
         pl("");
         pl("");
-        String dclass = "com.planet_ink.fakedb.Driver";
+        String dclass = "com.syncleus.aethermud.fakedb.Driver";
         answer = answer.substring(0, 1);
         tested = false;
         secondTime = false;

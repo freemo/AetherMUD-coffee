@@ -14,14 +14,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.core.interfaces;
+package com.syncleus.aethermud.game.core.interfaces;
 
 /**
  *
  * Something that can potentially be read, because it may or may not
  * have writing on it.
  *
- * @see com.planet_ink.game.core.interfaces.Physical
+ * @see com.syncleus.aethermud.game.core.interfaces.Physical
  * @author Bo Zimmerman
  *
  */
@@ -31,9 +31,9 @@ public interface Readable extends Physical {
      * For things that are readable, this returns the readable string
      * for this thing.  That is to say, what the player sees when they
      * read the door.
-     * @see com.planet_ink.game.core.interfaces.Readable#isReadable()
-     * @see com.planet_ink.game.core.interfaces.Readable#setReadable(boolean)
-     * @see com.planet_ink.game.core.interfaces.Readable#setReadableText(String)
+     * @see com.syncleus.aethermud.game.core.interfaces.Readable#isReadable()
+     * @see com.syncleus.aethermud.game.core.interfaces.Readable#setReadable(boolean)
+     * @see com.syncleus.aethermud.game.core.interfaces.Readable#setReadableText(String)
      * @return the readable string
      */
     public String readableText();
@@ -41,9 +41,9 @@ public interface Readable extends Physical {
     /**
      * Returns whether this thing is readable when the player uses the READ command
      * and targets it.
-     * @see com.planet_ink.game.core.interfaces.Readable#readableText()
-     * @see com.planet_ink.game.core.interfaces.Readable#setReadable(boolean)
-     * @see com.planet_ink.game.core.interfaces.Readable#setReadableText(String)
+     * @see com.syncleus.aethermud.game.core.interfaces.Readable#readableText()
+     * @see com.syncleus.aethermud.game.core.interfaces.Readable#setReadable(boolean)
+     * @see com.syncleus.aethermud.game.core.interfaces.Readable#setReadableText(String)
      * @return true if the thing is readable.
      */
     public boolean isReadable();
@@ -51,9 +51,9 @@ public interface Readable extends Physical {
     /**
      * Returns whether this thing is readable when the player uses the READ command
      * and targets it.  Readable text should also be set or unset.
-     * @see com.planet_ink.game.core.interfaces.Readable#readableText()
-     * @see com.planet_ink.game.core.interfaces.Readable#isReadable()
-     * @see com.planet_ink.game.core.interfaces.Readable#setReadableText(String)
+     * @see com.syncleus.aethermud.game.core.interfaces.Readable#readableText()
+     * @see com.syncleus.aethermud.game.core.interfaces.Readable#isReadable()
+     * @see com.syncleus.aethermud.game.core.interfaces.Readable#setReadableText(String)
      * @param isTrue true if the thing is readable, and false otherwise
      */
     public void setReadable(boolean isTrue);
@@ -62,9 +62,9 @@ public interface Readable extends Physical {
      * For things that are readable, this set the readable string
      * for this thing.  That is to say, what the player sees when they
      * read the door.
-     * @see com.planet_ink.game.core.interfaces.Readable#isReadable()
-     * @see com.planet_ink.game.core.interfaces.Readable#setReadable(boolean)
-     * @see com.planet_ink.game.core.interfaces.Readable#readableText()
+     * @see com.syncleus.aethermud.game.core.interfaces.Readable#isReadable()
+     * @see com.syncleus.aethermud.game.core.interfaces.Readable#setReadable(boolean)
+     * @see com.syncleus.aethermud.game.core.interfaces.Readable#readableText()
      * @param text the readable text
      */
     public void setReadableText(String text);

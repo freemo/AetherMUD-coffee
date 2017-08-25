@@ -14,14 +14,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Commands;
+package com.syncleus.aethermud.game.Commands;
 
-import com.planet_ink.game.Abilities.interfaces.Ability;
-import com.planet_ink.game.MOBS.interfaces.MOB;
-import com.planet_ink.game.core.*;
-import com.planet_ink.game.core.collections.SHashtable;
-import com.planet_ink.game.core.collections.STreeSet;
-import com.planet_ink.game.core.collections.XVector;
+import com.syncleus.aethermud.game.Abilities.interfaces.Ability;
+import com.syncleus.aethermud.game.MOBS.interfaces.MOB;
+import com.syncleus.aethermud.game.core.*;
+import com.syncleus.aethermud.game.core.collections.SHashtable;
+import com.syncleus.aethermud.game.core.collections.STreeSet;
+import com.syncleus.aethermud.game.core.collections.XVector;
 
 import java.util.*;
 
@@ -89,9 +89,9 @@ public class Skills extends StdCommand {
     /**
      * Returns whether there are any crossings between a particular Ability type
      * and a particular Ability domain.
-     * @see com.planet_ink.game.Abilities.interfaces.Ability#abilityCode()
-     * @see com.planet_ink.game.Abilities.interfaces.Ability#DOMAIN_DESCS
-     * @see com.planet_ink.game.Abilities.interfaces.Ability#ACODE_DESCS
+     * @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#abilityCode()
+     * @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#DOMAIN_DESCS
+     * @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#ACODE_DESCS
      *
      * @param domain the domain mask
      * @param acode the ability code

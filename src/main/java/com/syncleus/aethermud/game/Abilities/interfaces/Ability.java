@@ -14,13 +14,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Abilities.interfaces;
+package com.syncleus.aethermud.game.Abilities.interfaces;
 
-import com.planet_ink.game.Libraries.interfaces.ExpertiseLibrary;
-import com.planet_ink.game.MOBS.interfaces.MOB;
-import com.planet_ink.game.core.CMStrings;
-import com.planet_ink.game.core.interfaces.Environmental;
-import com.planet_ink.game.core.interfaces.Physical;
+import com.syncleus.aethermud.game.Libraries.interfaces.ExpertiseLibrary;
+import com.syncleus.aethermud.game.MOBS.interfaces.MOB;
+import com.syncleus.aethermud.game.core.CMStrings;
+import com.syncleus.aethermud.game.core.interfaces.Environmental;
+import com.syncleus.aethermud.game.core.interfaces.Physical;
 
 import java.util.List;
 
@@ -30,8 +30,8 @@ import java.util.List;
  * and properties. Abilities are listed in a MOBs abilities
  * list, and may be listed on *any* Environmental objects effects
  * list.  Often the same class files act in both capacities.
- * @see com.planet_ink.game.MOBS.interfaces.MOB#addAbility(Ability)
- * @see com.planet_ink.game.core.interfaces.Affectable#addEffect(Ability)
+ * @see com.syncleus.aethermud.game.MOBS.interfaces.MOB#addAbility(Ability)
+ * @see com.syncleus.aethermud.game.core.interfaces.Affectable#addEffect(Ability)
  */
 
 public interface Ability extends Environmental {
@@ -39,65 +39,65 @@ public interface Ability extends Environmental {
     public static final int TICKS_FOREVER = Integer.MAX_VALUE - 1000;
     /** Constant shortcut for setting the ticks remaining on the skill to basically be almost endless. */
     public static final int TICKS_ALMOST_FOREVER = Integer.MAX_VALUE / 2;
-    /** usageType() constant meaning that the skill is free @see com.planet_ink.game.Abilities.interfaces.Ability#usageType()*/
+    /** usageType() constant meaning that the skill is free @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#usageType()*/
     public final static int USAGE_NADA = 0;
-    /** usageType() constant meaning that the skill costs mana @see com.planet_ink.game.Abilities.interfaces.Ability#usageType()*/
+    /** usageType() constant meaning that the skill costs mana @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#usageType()*/
     public final static int USAGE_MANA = 1;
-    /** usageType() constant meaning that the skill costs movement @see com.planet_ink.game.Abilities.interfaces.Ability#usageType()*/
+    /** usageType() constant meaning that the skill costs movement @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#usageType()*/
     public final static int USAGE_MOVEMENT = 2;
-    /** usageType() constant meaning that the skill costs hp @see com.planet_ink.game.Abilities.interfaces.Ability#usageType()*/
+    /** usageType() constant meaning that the skill costs hp @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#usageType()*/
     public final static int USAGE_HITPOINTS = 4;
-    /** constant descriptions for the USAGE_* values @see com.planet_ink.game.Abilities.interfaces.Ability#usageType() */
+    /** constant descriptions for the USAGE_* values @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#usageType() */
     public final static String[] USAGE_DESCS = {"MANA", "MOVEMENT", "HITPOINTS"};
-    /** index into internal cache used by usageCost(MOB,boolean) @see com.planet_ink.game.Abilities.interfaces.Ability#usageCost(MOB,boolean) */
+    /** index into internal cache used by usageCost(MOB,boolean) @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#usageCost(MOB,boolean) */
     public final static int CACHEINDEX_NORMAL = 0;
-    /** index into internal cache used by usageCost(MOB,boolean) @see com.planet_ink.game.Abilities.interfaces.Ability#usageCost(MOB,boolean) */
+    /** index into internal cache used by usageCost(MOB,boolean) @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#usageCost(MOB,boolean) */
     public final static int CACHEINDEX_CLASSLESS = 1;
-    /** index into internal cache used by usageCost(MOB,boolean) @see com.planet_ink.game.Abilities.interfaces.Ability#usageCost(MOB,boolean) */
+    /** index into internal cache used by usageCost(MOB,boolean) @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#usageCost(MOB,boolean) */
     public final static int CACHEINDEX_EXPERTISE = 2;
-    /** index into internal cache used by usageCost(MOB,boolean) @see com.planet_ink.game.Abilities.interfaces.Ability#usageCost(MOB,boolean) */
+    /** index into internal cache used by usageCost(MOB,boolean) @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#usageCost(MOB,boolean) */
     public final static int CACHEINDEX_TOTAL = 3;
-    /** Constant for overrideMana to denote that the skill uses all of a players mana @see com.planet_ink.game.Abilities.interfaces.Ability#usageCost(MOB,boolean) */
+    /** Constant for overrideMana to denote that the skill uses all of a players mana @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#usageCost(MOB,boolean) */
     public final static int COST_ALL = Integer.MAX_VALUE;
-    /** Constant for overrideMana to denote that the skill uses a % of a players mana @see com.planet_ink.game.Abilities.interfaces.Ability#usageCost(MOB,boolean) */
+    /** Constant for overrideMana to denote that the skill uses a % of a players mana @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#usageCost(MOB,boolean) */
     public final static int COST_PCT = Integer.MAX_VALUE - 100;
-    /** Constant for overrideMana to denote that the skill uses base mana formula @see com.planet_ink.game.Abilities.interfaces.Ability#usageCost(MOB,boolean) */
+    /** Constant for overrideMana to denote that the skill uses base mana formula @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#usageCost(MOB,boolean) */
     public final static int COST_NORMAL = -1;
-    /** index into usageCost(MOB,boolean) array for the amount of mana this skill costs @see com.planet_ink.game.Abilities.interfaces.Ability#usageCost(MOB,boolean) */
+    /** index into usageCost(MOB,boolean) array for the amount of mana this skill costs @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#usageCost(MOB,boolean) */
     public final static int USAGEINDEX_MANA = 0;
-    /** index into usageCost(MOB,boolean) array for the amount of moves this skill costs @see com.planet_ink.game.Abilities.interfaces.Ability#usageCost(MOB,boolean) */
+    /** index into usageCost(MOB,boolean) array for the amount of moves this skill costs @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#usageCost(MOB,boolean) */
     public final static int USAGEINDEX_MOVEMENT = 1;
-    /** index into usageCost(MOB,boolean) array for the amount of hp this skill costs @see com.planet_ink.game.Abilities.interfaces.Ability#usageCost(MOB,boolean) */
+    /** index into usageCost(MOB,boolean) array for the amount of hp this skill costs @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#usageCost(MOB,boolean) */
     public final static int USAGEINDEX_HITPOINTS = 2;
-    /** constant returned by classificationCode() designating this ability as a Skill @see com.planet_ink.game.Abilities.interfaces.Ability#classificationCode() */
+    /** constant returned by classificationCode() designating this ability as a Skill @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#classificationCode() */
     public static final int ACODE_SKILL = 0;
-    /** constant returned by classificationCode() designating this ability as a Spell @see com.planet_ink.game.Abilities.interfaces.Ability#classificationCode() */
+    /** constant returned by classificationCode() designating this ability as a Spell @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#classificationCode() */
     public static final int ACODE_SPELL = 1;
-    /** constant returned by classificationCode() designating this ability as a Prayer @see com.planet_ink.game.Abilities.interfaces.Ability#classificationCode() */
+    /** constant returned by classificationCode() designating this ability as a Prayer @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#classificationCode() */
     public static final int ACODE_PRAYER = 2;
-    /** constant returned by classificationCode() designating this ability as a Song @see com.planet_ink.game.Abilities.interfaces.Ability#classificationCode() */
+    /** constant returned by classificationCode() designating this ability as a Song @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#classificationCode() */
     public static final int ACODE_SONG = 3;
-    /** constant returned by classificationCode() designating this ability as a Trap @see com.planet_ink.game.Abilities.interfaces.Ability#classificationCode() */
+    /** constant returned by classificationCode() designating this ability as a Trap @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#classificationCode() */
     public static final int ACODE_TRAP = 4;
-    /** constant returned by classificationCode() designating this ability as a Property @see com.planet_ink.game.Abilities.interfaces.Ability#classificationCode() */
+    /** constant returned by classificationCode() designating this ability as a Property @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#classificationCode() */
     public static final int ACODE_PROPERTY = 5;
-    /** constant returned by classificationCode() designating this ability as a Thief Skill @see com.planet_ink.game.Abilities.interfaces.Ability#classificationCode() */
+    /** constant returned by classificationCode() designating this ability as a Thief Skill @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#classificationCode() */
     public static final int ACODE_THIEF_SKILL = 6;
-    /** constant returned by classificationCode() designating this ability as a Language @see com.planet_ink.game.Abilities.interfaces.Ability#classificationCode() */
+    /** constant returned by classificationCode() designating this ability as a Language @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#classificationCode() */
     public static final int ACODE_LANGUAGE = 7;
-    /** constant returned by classificationCode() designating this ability as a Chant @see com.planet_ink.game.Abilities.interfaces.Ability#classificationCode() */
+    /** constant returned by classificationCode() designating this ability as a Chant @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#classificationCode() */
     public static final int ACODE_CHANT = 8;
-    /** constant returned by classificationCode() designating this ability as a Common Skill @see com.planet_ink.game.Abilities.interfaces.Ability#classificationCode() */
+    /** constant returned by classificationCode() designating this ability as a Common Skill @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#classificationCode() */
     public static final int ACODE_COMMON_SKILL = 9;
-    /** constant returned by classificationCode() designating this ability as a Disease @see com.planet_ink.game.Abilities.interfaces.Ability#classificationCode() */
+    /** constant returned by classificationCode() designating this ability as a Disease @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#classificationCode() */
     public static final int ACODE_DISEASE = 10;
-    /** constant returned by classificationCode() designating this ability as a Poison @see com.planet_ink.game.Abilities.interfaces.Ability#classificationCode() */
+    /** constant returned by classificationCode() designating this ability as a Poison @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#classificationCode() */
     public static final int ACODE_POISON = 11;
-    /** constant returned by classificationCode() designating this ability as a Super Power @see com.planet_ink.game.Abilities.interfaces.Ability#classificationCode() */
+    /** constant returned by classificationCode() designating this ability as a Super Power @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#classificationCode() */
     public static final int ACODE_SUPERPOWER = 12;
-    /** constant returned by classificationCode() designating this ability as a Archon ONly Skill @see com.planet_ink.game.Abilities.interfaces.Ability#classificationCode() */
+    /** constant returned by classificationCode() designating this ability as a Archon ONly Skill @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#classificationCode() */
     public static final int ACODE_TECH = 13;
-    /** constant returned by classificationCode() designating this ability as a Tech-Only Skill @see com.planet_ink.game.Abilities.interfaces.Ability#classificationCode() */
+    /** constant returned by classificationCode() designating this ability as a Tech-Only Skill @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#classificationCode() */
     public static final int ALL_ACODES = 31;
     /** array of string describtions for the ACODE_* constants, indexed by their values */
     public static final String[] ACODE_DESCS =
@@ -109,161 +109,161 @@ public interface Ability extends Environmental {
         };
     /** array of string describtions for the ACODE_* constants, indexed by their values, with _ where spaces would be */
     public static final String[] ACODE_DESCS_ = CMStrings.replaceInAll(ACODE_DESCS.clone(), " ", "_");
-    /** constant mask returned by classificationCode() designating this ability as being Divination @see com.planet_ink.game.Abilities.interfaces.Ability#classificationCode() */
+    /** constant mask returned by classificationCode() designating this ability as being Divination @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#classificationCode() */
     public static final int DOMAIN_DIVINATION = 1 << 5;
-    /** constant mask returned by classificationCode() designating this ability as being Abjuration @see com.planet_ink.game.Abilities.interfaces.Ability#classificationCode() */
+    /** constant mask returned by classificationCode() designating this ability as being Abjuration @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#classificationCode() */
     public static final int DOMAIN_ABJURATION = 2 << 5;
-    /** constant mask returned by classificationCode() designating this ability as being Illusion @see com.planet_ink.game.Abilities.interfaces.Ability#classificationCode() */
+    /** constant mask returned by classificationCode() designating this ability as being Illusion @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#classificationCode() */
     public static final int DOMAIN_ILLUSION = 3 << 5;
-    /** constant mask returned by classificationCode() designating this ability as being Evocation @see com.planet_ink.game.Abilities.interfaces.Ability#classificationCode() */
+    /** constant mask returned by classificationCode() designating this ability as being Evocation @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#classificationCode() */
     public static final int DOMAIN_EVOCATION = 4 << 5;
-    /** constant mask returned by classificationCode() designating this ability as being Alteration @see com.planet_ink.game.Abilities.interfaces.Ability#classificationCode() */
+    /** constant mask returned by classificationCode() designating this ability as being Alteration @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#classificationCode() */
     public static final int DOMAIN_ALTERATION = 5 << 5;
-    /** constant mask returned by classificationCode() designating this ability as being Transmutation @see com.planet_ink.game.Abilities.interfaces.Ability#classificationCode() */
+    /** constant mask returned by classificationCode() designating this ability as being Transmutation @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#classificationCode() */
     public static final int DOMAIN_TRANSMUTATION = 6 << 5;
-    /** constant mask returned by classificationCode() designating this ability as being Enchantment @see com.planet_ink.game.Abilities.interfaces.Ability#classificationCode() */
+    /** constant mask returned by classificationCode() designating this ability as being Enchantment @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#classificationCode() */
     public static final int DOMAIN_ENCHANTMENT = 7 << 5;
-    /** constant mask returned by classificationCode() designating this ability as being Conjuration @see com.planet_ink.game.Abilities.interfaces.Ability#classificationCode() */
+    /** constant mask returned by classificationCode() designating this ability as being Conjuration @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#classificationCode() */
     public static final int DOMAIN_CONJURATION = 8 << 5;
-    /** constant mask returned by classificationCode() designating this ability as being Archon @see com.planet_ink.game.Abilities.interfaces.Ability#classificationCode() */
+    /** constant mask returned by classificationCode() designating this ability as being Archon @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#classificationCode() */
     public static final int DOMAIN_ARCHON = 9 << 5;
-    /** constant mask returned by classificationCode() designating this ability as being Singing @see com.planet_ink.game.Abilities.interfaces.Ability#classificationCode() */
+    /** constant mask returned by classificationCode() designating this ability as being Singing @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#classificationCode() */
     public static final int DOMAIN_SINGING = 10 << 5;
-    /** constant mask returned by classificationCode() designating this ability as being Dancing @see com.planet_ink.game.Abilities.interfaces.Ability#classificationCode() */
+    /** constant mask returned by classificationCode() designating this ability as being Dancing @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#classificationCode() */
     public static final int DOMAIN_DANCING = 11 << 5;
-    /** constant mask returned by classificationCode() designating this ability as being Playing @see com.planet_ink.game.Abilities.interfaces.Ability#classificationCode() */
+    /** constant mask returned by classificationCode() designating this ability as being Playing @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#classificationCode() */
     public static final int DOMAIN_PLAYING = 12 << 5;
-    /** constant mask returned by classificationCode() designating this ability as being Deceptive @see com.planet_ink.game.Abilities.interfaces.Ability#classificationCode() */
+    /** constant mask returned by classificationCode() designating this ability as being Deceptive @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#classificationCode() */
     public static final int DOMAIN_DECEPTIVE = 13 << 5;
-    /** constant mask returned by classificationCode() designating this ability as being Detrapping @see com.planet_ink.game.Abilities.interfaces.Ability#classificationCode() */
+    /** constant mask returned by classificationCode() designating this ability as being Detrapping @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#classificationCode() */
     public static final int DOMAIN_DETRAP = 14 << 5;
-    /** constant mask returned by classificationCode() designating this ability as being RopeUsing @see com.planet_ink.game.Abilities.interfaces.Ability#classificationCode() */
+    /** constant mask returned by classificationCode() designating this ability as being RopeUsing @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#classificationCode() */
     public static final int DOMAIN_BINDING = 15 << 5;
-    /** constant mask returned by classificationCode() designating this ability as being Stealing @see com.planet_ink.game.Abilities.interfaces.Ability#classificationCode() */
+    /** constant mask returned by classificationCode() designating this ability as being Stealing @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#classificationCode() */
     public static final int DOMAIN_STEALING = 16 << 5;
-    /** constant mask returned by classificationCode() designating this ability as being Stealthy @see com.planet_ink.game.Abilities.interfaces.Ability#classificationCode() */
+    /** constant mask returned by classificationCode() designating this ability as being Stealthy @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#classificationCode() */
     public static final int DOMAIN_STEALTHY = 17 << 5;
-    /** constant mask returned by classificationCode() designating this ability as being Trapping @see com.planet_ink.game.Abilities.interfaces.Ability#classificationCode() */
+    /** constant mask returned by classificationCode() designating this ability as being Trapping @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#classificationCode() */
     public static final int DOMAIN_TRAPPING = 18 << 5;
-    /** constant mask returned by classificationCode() designating this ability as being Alert @see com.planet_ink.game.Abilities.interfaces.Ability#classificationCode() */
+    /** constant mask returned by classificationCode() designating this ability as being Alert @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#classificationCode() */
     public static final int DOMAIN_ALERT = 19 << 5;
-    /** constant mask returned by classificationCode() designating this ability as being holy protection @see com.planet_ink.game.Abilities.interfaces.Ability#classificationCode() */
+    /** constant mask returned by classificationCode() designating this ability as being holy protection @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#classificationCode() */
     public static final int DOMAIN_HOLYPROTECTION = 20 << 5;
-    /** constant mask returned by classificationCode() designating this ability as being healing @see com.planet_ink.game.Abilities.interfaces.Ability#classificationCode() */
+    /** constant mask returned by classificationCode() designating this ability as being healing @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#classificationCode() */
     public static final int DOMAIN_HEALING = 21 << 5;
-    /** constant mask returned by classificationCode() designating this ability as being vexing @see com.planet_ink.game.Abilities.interfaces.Ability#classificationCode() */
+    /** constant mask returned by classificationCode() designating this ability as being vexing @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#classificationCode() */
     public static final int DOMAIN_VEXING = 22 << 5;
-    /** constant mask returned by classificationCode() designating this ability as being blessing @see com.planet_ink.game.Abilities.interfaces.Ability#classificationCode() */
+    /** constant mask returned by classificationCode() designating this ability as being blessing @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#classificationCode() */
     public static final int DOMAIN_BLESSING = 23 << 5;
-    /** constant mask returned by classificationCode() designating this ability as being cursing @see com.planet_ink.game.Abilities.interfaces.Ability#classificationCode() */
+    /** constant mask returned by classificationCode() designating this ability as being cursing @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#classificationCode() */
     public static final int DOMAIN_CURSING = 24 << 5;
-    /** constant mask returned by classificationCode() designating this ability as being evangelistic @see com.planet_ink.game.Abilities.interfaces.Ability#classificationCode() */
+    /** constant mask returned by classificationCode() designating this ability as being evangelistic @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#classificationCode() */
     public static final int DOMAIN_EVANGELISM = 25 << 5;
-    /** constant mask returned by classificationCode() designating this ability as being moon summoning @see com.planet_ink.game.Abilities.interfaces.Ability#classificationCode() */
+    /** constant mask returned by classificationCode() designating this ability as being moon summoning @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#classificationCode() */
     public static final int DOMAIN_MOONSUMMONING = 26 << 5;
-    /** constant mask returned by classificationCode() designating this ability as being moon altering @see com.planet_ink.game.Abilities.interfaces.Ability#classificationCode() */
+    /** constant mask returned by classificationCode() designating this ability as being moon altering @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#classificationCode() */
     public static final int DOMAIN_MOONALTERING = 27 << 5;
-    /** constant mask returned by classificationCode() designating this ability as being gathering skill @see com.planet_ink.game.Abilities.interfaces.Ability#classificationCode() */
+    /** constant mask returned by classificationCode() designating this ability as being gathering skill @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#classificationCode() */
     public static final int DOMAIN_GATHERINGSKILL = 28 << 5;
-    /** constant mask returned by classificationCode() designating this ability as being crafting skill @see com.planet_ink.game.Abilities.interfaces.Ability#classificationCode() */
+    /** constant mask returned by classificationCode() designating this ability as being crafting skill @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#classificationCode() */
     public static final int DOMAIN_CRAFTINGSKILL = 29 << 5;
-    /** constant used to mask classificationCode() designating this ability as being plant growth skil. @see com.planet_ink.game.Abilities.interfaces.Ability#classificationCode() */
+    /** constant used to mask classificationCode() designating this ability as being plant growth skil. @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#classificationCode() */
     public static final int DOMAIN_PLANTGROWTH = 30 << 5;
-    /** constant used to mask classificationCode() designating this ability as being shape shifting skil. @see com.planet_ink.game.Abilities.interfaces.Ability#classificationCode() */
+    /** constant used to mask classificationCode() designating this ability as being shape shifting skil. @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#classificationCode() */
     public static final int DOMAIN_SHAPE_SHIFTING = 31 << 5;
-    /** constant used to mask classificationCode() designating this ability as being foolish skil. @see com.planet_ink.game.Abilities.interfaces.Ability#classificationCode() */
+    /** constant used to mask classificationCode() designating this ability as being foolish skil. @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#classificationCode() */
     public static final int DOMAIN_FOOLISHNESS = 32 << 5;
-    /** constant used to mask classificationCode() designating this ability as being room ward skil. @see com.planet_ink.game.Abilities.interfaces.Ability#classificationCode() */
+    /** constant used to mask classificationCode() designating this ability as being room ward skil. @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#classificationCode() */
     public static final int DOMAIN_WARDING = 33 << 5;
-    /** constant used to mask classificationCode() designating this ability as being death lore skil. @see com.planet_ink.game.Abilities.interfaces.Ability#classificationCode() */
+    /** constant used to mask classificationCode() designating this ability as being death lore skil. @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#classificationCode() */
     public static final int DOMAIN_DEATHLORE = 34 << 5;
-    /** constant used to mask classificationCode() designating this ability as being weather skil. @see com.planet_ink.game.Abilities.interfaces.Ability#classificationCode() */
+    /** constant used to mask classificationCode() designating this ability as being weather skil. @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#classificationCode() */
     public static final int DOMAIN_WEATHER_MASTERY = 35 << 5;
-    /** constant used to mask classificationCode() designating this ability as being corrupting skil. @see com.planet_ink.game.Abilities.interfaces.Ability#classificationCode() */
+    /** constant used to mask classificationCode() designating this ability as being corrupting skil. @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#classificationCode() */
     public static final int DOMAIN_CORRUPTION = 36 << 5;
-    /** constant used to mask classificationCode() designating this ability as being restoring skil. @see com.planet_ink.game.Abilities.interfaces.Ability#classificationCode() */
+    /** constant used to mask classificationCode() designating this ability as being restoring skil. @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#classificationCode() */
     public static final int DOMAIN_RESTORATION = 37 << 5;
-    /** constant used to mask classificationCode() designating this ability as being neutralizing skil. @see com.planet_ink.game.Abilities.interfaces.Ability#classificationCode() */
+    /** constant used to mask classificationCode() designating this ability as being neutralizing skil. @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#classificationCode() */
     public static final int DOMAIN_NEUTRALIZATION = 38 << 5;
-    /** constant used to mask classificationCode() designating this ability as being neutralizing skil. @see com.planet_ink.game.Abilities.interfaces.Ability#classificationCode() */
+    /** constant used to mask classificationCode() designating this ability as being neutralizing skil. @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#classificationCode() */
     public static final int DOMAIN_CREATION = 39 << 5;
-    /** constant used to mask classificationCode() designating this ability as being communing skil. @see com.planet_ink.game.Abilities.interfaces.Ability#classificationCode() */
+    /** constant used to mask classificationCode() designating this ability as being communing skil. @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#classificationCode() */
     public static final int DOMAIN_COMMUNING = 40 << 5;
-    /** constant used to mask classificationCode() designating this ability as being preserving skil. @see com.planet_ink.game.Abilities.interfaces.Ability#classificationCode() */
+    /** constant used to mask classificationCode() designating this ability as being preserving skil. @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#classificationCode() */
     public static final int DOMAIN_PRESERVING = 41 << 5;
-    /** constant used to mask classificationCode() designating this ability as being enduring skil. @see com.planet_ink.game.Abilities.interfaces.Ability#classificationCode() */
+    /** constant used to mask classificationCode() designating this ability as being enduring skil. @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#classificationCode() */
     public static final int DOMAIN_ENDURING = 42 << 5;
-    /** constant used to mask classificationCode() designating this ability as being plant control skil. @see com.planet_ink.game.Abilities.interfaces.Ability#classificationCode() */
+    /** constant used to mask classificationCode() designating this ability as being plant control skil. @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#classificationCode() */
     public static final int DOMAIN_PLANTCONTROL = 43 << 5;
-    /** constant used to mask classificationCode() designating this ability as being animal affinity skil. @see com.planet_ink.game.Abilities.interfaces.Ability#classificationCode() */
+    /** constant used to mask classificationCode() designating this ability as being animal affinity skil. @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#classificationCode() */
     public static final int DOMAIN_ANIMALAFFINITY = 44 << 5;
-    /** constant used to mask classificationCode() designating this ability as being deep magic skil. @see com.planet_ink.game.Abilities.interfaces.Ability#classificationCode() */
+    /** constant used to mask classificationCode() designating this ability as being deep magic skil. @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#classificationCode() */
     public static final int DOMAIN_DEEPMAGIC = 45 << 5;
-    /** constant used to mask classificationCode() designating this ability as being breeding skill. @see com.planet_ink.game.Abilities.interfaces.Ability#classificationCode() */
+    /** constant used to mask classificationCode() designating this ability as being breeding skill. @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#classificationCode() */
     public static final int DOMAIN_BREEDING = 46 << 5;
-    /** constant used to mask classificationCode() designating this ability as being weapon use skil. @see com.planet_ink.game.Abilities.interfaces.Ability#classificationCode() */
+    /** constant used to mask classificationCode() designating this ability as being weapon use skil. @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#classificationCode() */
     public static final int DOMAIN_WEAPON_USE = 47 << 5;
-    /** constant used to mask classificationCode() designating this ability as being breeding skill. @see com.planet_ink.game.Abilities.interfaces.Ability#classificationCode() */
+    /** constant used to mask classificationCode() designating this ability as being breeding skill. @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#classificationCode() */
     public static final int DOMAIN_ROCKCONTROL = 48 << 5;
-    /** constant used to mask classificationCode() designating this ability as being kicking skill. @see com.planet_ink.game.Abilities.interfaces.Ability#classificationCode() */
+    /** constant used to mask classificationCode() designating this ability as being kicking skill. @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#classificationCode() */
     public static final int DOMAIN_KICKING = 49 << 5;
-    /** constant used to mask classificationCode() designating this ability as being punching skill. @see com.planet_ink.game.Abilities.interfaces.Ability#classificationCode() */
+    /** constant used to mask classificationCode() designating this ability as being punching skill. @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#classificationCode() */
     public static final int DOMAIN_PUNCHING = 50 << 5;
-    /** constant used to mask classificationCode() designating this ability as being grappling skill. @see com.planet_ink.game.Abilities.interfaces.Ability#classificationCode() */
+    /** constant used to mask classificationCode() designating this ability as being grappling skill. @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#classificationCode() */
     public static final int DOMAIN_GRAPPLING = 51 << 5;
-    /** constant used to mask classificationCode() designating this ability as being calligraphy skill. @see com.planet_ink.game.Abilities.interfaces.Ability#classificationCode() */
+    /** constant used to mask classificationCode() designating this ability as being calligraphy skill. @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#classificationCode() */
     public static final int DOMAIN_CALLIGRAPHY = 52 << 5;
-    /** constant used to mask classificationCode() designating this ability as being poisoning skill. @see com.planet_ink.game.Abilities.interfaces.Ability#classificationCode() */
+    /** constant used to mask classificationCode() designating this ability as being poisoning skill. @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#classificationCode() */
     public static final int DOMAIN_POISONING = 53 << 5;
-    /** constant used to mask classificationCode() designating this ability as being arcane lore skill. @see com.planet_ink.game.Abilities.interfaces.Ability#classificationCode() */
+    /** constant used to mask classificationCode() designating this ability as being arcane lore skill. @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#classificationCode() */
     public static final int DOMAIN_ARCANELORE = 54 << 5;
-    /** constant used to mask classificationCode() designating this ability as being acrobatic skill. @see com.planet_ink.game.Abilities.interfaces.Ability#classificationCode() */
+    /** constant used to mask classificationCode() designating this ability as being acrobatic skill. @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#classificationCode() */
     public static final int DOMAIN_ACROBATIC = 55 << 5;
-    /** constant used to mask classificationCode() designating this ability as being amorous skill. @see com.planet_ink.game.Abilities.interfaces.Ability#classificationCode() */
+    /** constant used to mask classificationCode() designating this ability as being amorous skill. @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#classificationCode() */
     public static final int DOMAIN_INFLUENTIAL = 56 << 5;
-    /** constant used to mask classificationCode() designating this ability as being street smarts skill. @see com.planet_ink.game.Abilities.interfaces.Ability#classificationCode() */
+    /** constant used to mask classificationCode() designating this ability as being street smarts skill. @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#classificationCode() */
     public static final int DOMAIN_STREETSMARTS = 57 << 5;
-    /** constant used to mask classificationCode() designating this ability as being nature lore skill. @see com.planet_ink.game.Abilities.interfaces.Ability#classificationCode() */
+    /** constant used to mask classificationCode() designating this ability as being nature lore skill. @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#classificationCode() */
     public static final int DOMAIN_NATURELORE = 58 << 5;
-    /** constant used to mask classificationCode() designating this ability as being dirty fighting skill. @see com.planet_ink.game.Abilities.interfaces.Ability#classificationCode() */
+    /** constant used to mask classificationCode() designating this ability as being dirty fighting skill. @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#classificationCode() */
     public static final int DOMAIN_DIRTYFIGHTING = 59 << 5;
-    /** constant used to mask classificationCode() designating this ability as being combat lore skill. @see com.planet_ink.game.Abilities.interfaces.Ability#classificationCode() */
+    /** constant used to mask classificationCode() designating this ability as being combat lore skill. @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#classificationCode() */
     public static final int DOMAIN_COMBATLORE = 60 << 5;
-    /** constant used to mask classificationCode() designating this ability as being combat fluidity skill. @see com.planet_ink.game.Abilities.interfaces.Ability#classificationCode() */
+    /** constant used to mask classificationCode() designating this ability as being combat fluidity skill. @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#classificationCode() */
     public static final int DOMAIN_COMBATFLUIDITY = 61 << 5;
-    /** constant used to mask classificationCode() designating this ability as being evasive skill. @see com.planet_ink.game.Abilities.interfaces.Ability#classificationCode() */
+    /** constant used to mask classificationCode() designating this ability as being evasive skill. @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#classificationCode() */
     public static final int DOMAIN_EVASIVE = 62 << 5;
-    /** constant used to mask classificationCode() designating this ability as being martial lore skill. @see com.planet_ink.game.Abilities.interfaces.Ability#classificationCode() */
+    /** constant used to mask classificationCode() designating this ability as being martial lore skill. @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#classificationCode() */
     public static final int DOMAIN_MARTIALLORE = 63 << 5;
-    /** constant used to mask classificationCode() designating this ability as being racial ability skill. @see com.planet_ink.game.Abilities.interfaces.Ability#classificationCode() */
+    /** constant used to mask classificationCode() designating this ability as being racial ability skill. @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#classificationCode() */
     public static final int DOMAIN_RACIALABILITY = 64 << 5;
-    /** constant used to mask classificationCode() designating this ability as being racial ability skill. @see com.planet_ink.game.Abilities.interfaces.Ability#classificationCode() */
+    /** constant used to mask classificationCode() designating this ability as being racial ability skill. @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#classificationCode() */
     public static final int DOMAIN_ARTISTIC = 65 << 5;
-    /** constant used to mask classificationCode() designating this ability as being racial ability skill. @see com.planet_ink.game.Abilities.interfaces.Ability#classificationCode() */
+    /** constant used to mask classificationCode() designating this ability as being racial ability skill. @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#classificationCode() */
     public static final int DOMAIN_ANATOMY = 66 << 5;
-    /** constant used to mask classificationCode() designating this ability as being racial ability skill. @see com.planet_ink.game.Abilities.interfaces.Ability#classificationCode() */
+    /** constant used to mask classificationCode() designating this ability as being racial ability skill. @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#classificationCode() */
     public static final int DOMAIN_ARMORUSE = 67 << 5;
-    /** constant used to mask classificationCode() designating this ability as being racial ability skill. @see com.planet_ink.game.Abilities.interfaces.Ability#classificationCode() */
+    /** constant used to mask classificationCode() designating this ability as being racial ability skill. @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#classificationCode() */
     public static final int DOMAIN_SHIELDUSE = 68 << 5;
-    /** constant used to mask classificationCode() designating this ability as being racial ability skill. @see com.planet_ink.game.Abilities.interfaces.Ability#classificationCode() */
+    /** constant used to mask classificationCode() designating this ability as being racial ability skill. @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#classificationCode() */
     public static final int DOMAIN_CRIMINAL = 69 << 5;
-    /** constant used to mask classificationCode() designating this ability as being racial ability skill. @see com.planet_ink.game.Abilities.interfaces.Ability#classificationCode() */
+    /** constant used to mask classificationCode() designating this ability as being racial ability skill. @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#classificationCode() */
     public static final int DOMAIN_LEGAL = 70 << 5;
-    /** constant used to mask classificationCode() designating this ability as being racial ability skill. @see com.planet_ink.game.Abilities.interfaces.Ability#classificationCode() */
+    /** constant used to mask classificationCode() designating this ability as being racial ability skill. @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#classificationCode() */
     public static final int DOMAIN_FITNESS = 71 << 5;
-    /** constant used to mask classificationCode() to return only the higher order DOMAIN_* constant. @see com.planet_ink.game.Abilities.interfaces.Ability#classificationCode() */
+    /** constant used to mask classificationCode() to return only the higher order DOMAIN_* constant. @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#classificationCode() */
     public static final int DOMAIN_THEATRE = 72 << 5;
-    /** constant mask returned by classificationCode() designating this ability as being a building skill @see com.planet_ink.game.Abilities.interfaces.Ability#classificationCode() */
+    /** constant mask returned by classificationCode() designating this ability as being a building skill @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#classificationCode() */
     public static final int DOMAIN_BUILDINGSKILL = 73 << 5;
-    /** constant mask returned by classificationCode() designating this ability as being a watery chant @see com.planet_ink.game.Abilities.interfaces.Ability#classificationCode() */
+    /** constant mask returned by classificationCode() designating this ability as being a watery chant @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#classificationCode() */
     public static final int DOMAIN_WATERLORE = 74 << 5;
-    /** constant mask returned by classificationCode() designating this ability as being a watery chant @see com.planet_ink.game.Abilities.interfaces.Ability#classificationCode() */
+    /** constant mask returned by classificationCode() designating this ability as being a watery chant @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#classificationCode() */
     public static final int DOMAIN_WATERCONTROL = 75 << 5;
-    /** constant mask returned by classificationCode() designating this ability as being a sea travel skill @see com.planet_ink.game.Abilities.interfaces.Ability#classificationCode() */
+    /** constant mask returned by classificationCode() designating this ability as being a sea travel skill @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#classificationCode() */
     public static final int DOMAIN_SEATRAVEL = 76 << 5;
-    /** constant mask returned by classificationCode() designating this ability as being a studying skill @see com.planet_ink.game.Abilities.interfaces.Ability#classificationCode() */
+    /** constant mask returned by classificationCode() designating this ability as being a studying skill @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#classificationCode() */
     public static final int DOMAIN_EDUCATIONLORE = 77 << 5;
-    /** constant used to mask classificationCode() to return only the higher order DOMAIN_* constant. @see com.planet_ink.game.Abilities.interfaces.Ability#classificationCode() */
+    /** constant used to mask classificationCode() to return only the higher order DOMAIN_* constant. @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#classificationCode() */
     public static final int ALL_DOMAINS = (255 << 5);
     /** array of string describtions for the DOMAIN_* constants, indexed by their values */
     public static final String[] DOMAIN_DESCS = {
@@ -310,67 +310,67 @@ public interface Ability extends Environmental {
         "Shield Using", "Crimemaking", "Legalizing", "Fitness", "Acting",
         "Building", "Water Lore", "Water Control", "Sea Travel"
     };
-    /** constant descriptions for the minRange()/maxRange() values @see com.planet_ink.game.Abilities.interfaces.Ability#minRange() */
+    /** constant descriptions for the minRange()/maxRange() values @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#minRange() */
     public static final String[] RANGE_CHOICES = {"MELEE", "CLOSE", "SHORT", "MEDIUM", "LONG", "LONGER", "LONGERSTILL", "VERYLONG", "EXTREMELYLONG", "INFINITE"};
-    /** constant mask for the flags() method designating that this ability is a binding effect @see com.planet_ink.game.Abilities.interfaces.Ability#flags() */
+    /** constant mask for the flags() method designating that this ability is a binding effect @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#flags() */
     public static final long FLAG_BINDING = 1;
-    /** constant mask for the flags() method designating that this ability is a room-moving skill @see com.planet_ink.game.Abilities.interfaces.Ability#flags() */
+    /** constant mask for the flags() method designating that this ability is a room-moving skill @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#flags() */
     public static final long FLAG_MOVING = 2;
-    /** constant mask for the flags() method designating that this ability is a transporting skill @see com.planet_ink.game.Abilities.interfaces.Ability#flags() */
+    /** constant mask for the flags() method designating that this ability is a transporting skill @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#flags() */
     public static final long FLAG_TRANSPORTING = 4;
-    /** constant mask for the flags() method designating that this ability is a weather-affecting skill @see com.planet_ink.game.Abilities.interfaces.Ability#flags() */
+    /** constant mask for the flags() method designating that this ability is a weather-affecting skill @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#flags() */
     public static final long FLAG_WEATHERAFFECTING = 8;
-    /** constant mask for the flags() method designating that this ability is a summoning skill @see com.planet_ink.game.Abilities.interfaces.Ability#flags() */
+    /** constant mask for the flags() method designating that this ability is a summoning skill @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#flags() */
     public static final long FLAG_SUMMONING = 16;
-    /** constant mask for the flags() method designating that this ability is a charming effect @see com.planet_ink.game.Abilities.interfaces.Ability#flags() */
+    /** constant mask for the flags() method designating that this ability is a charming effect @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#flags() */
     public static final long FLAG_CHARMING = 32;
-    /** constant mask for the flags() method designating that this ability is a tracking-causing effect @see com.planet_ink.game.Abilities.interfaces.Ability#flags() */
+    /** constant mask for the flags() method designating that this ability is a tracking-causing effect @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#flags() */
     public static final long FLAG_TRACKING = 64;
-    /** constant mask for the flags() method designating that this ability is a heating effect @see com.planet_ink.game.Abilities.interfaces.Ability#flags() */
+    /** constant mask for the flags() method designating that this ability is a heating effect @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#flags() */
     public static final long FLAG_HEATING = 128;
-    /** constant mask for the flags() method designating that this ability is a burning effect @see com.planet_ink.game.Abilities.interfaces.Ability#flags() */
+    /** constant mask for the flags() method designating that this ability is a burning effect @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#flags() */
     public static final long FLAG_FIREBASED = 256;
-    /** constant mask for the flags() method designating that this ability is a holy effect @see com.planet_ink.game.Abilities.interfaces.Ability#flags() */
+    /** constant mask for the flags() method designating that this ability is a holy effect @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#flags() */
     public static final long FLAG_HOLY = 512;
-    /** constant mask for the flags() method designating that this ability is a unholy  effect @see com.planet_ink.game.Abilities.interfaces.Ability#flags() */
+    /** constant mask for the flags() method designating that this ability is a unholy  effect @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#flags() */
     public static final long FLAG_UNHOLY = 1024;
-    /** constant mask for the flags() method designating that this ability is a neutral effect @see com.planet_ink.game.Abilities.interfaces.Ability#flags() */
+    /** constant mask for the flags() method designating that this ability is a neutral effect @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#flags() */
     public static final long FLAG_NEUTRAL = 1024 | 512;
-    /** constant mask for the flags() method designating that this ability is a paralyzing effect @see com.planet_ink.game.Abilities.interfaces.Ability#flags() */
+    /** constant mask for the flags() method designating that this ability is a paralyzing effect @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#flags() */
     public static final long FLAG_PARALYZING = 2048;
-    /** constant mask for the flags() method designating that this ability may not be ordered @see com.planet_ink.game.Abilities.interfaces.Ability#flags() */
+    /** constant mask for the flags() method designating that this ability may not be ordered @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#flags() */
     public static final long FLAG_NOORDERING = 4096;
-    /** constant mask for the flags() method designating that this ability is a clan magic @see com.planet_ink.game.Abilities.interfaces.Ability#flags() */
+    /** constant mask for the flags() method designating that this ability is a clan magic @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#flags() */
     public static final long FLAG_CLANMAGIC = 8192;
-    /** constant mask for the flags() method designating that this ability is healing magic @see com.planet_ink.game.Abilities.interfaces.Ability#flags() */
+    /** constant mask for the flags() method designating that this ability is healing magic @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#flags() */
     public static final long FLAG_HEALINGMAGIC = 16384;
-    /** constant mask for the flags() method designating that this ability is a freezing effect @see com.planet_ink.game.Abilities.interfaces.Ability#flags() */
+    /** constant mask for the flags() method designating that this ability is a freezing effect @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#flags() */
     public static final long FLAG_WATERBASED = 32768;
-    /** constant mask for the flags() method designating that this ability is a washing effect @see com.planet_ink.game.Abilities.interfaces.Ability#flags() */
+    /** constant mask for the flags() method designating that this ability is a washing effect @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#flags() */
     public static final long FLAG_AIRBASED = 65536;
-    /** constant mask for the flags() method designating that this ability is a grounded effect @see com.planet_ink.game.Abilities.interfaces.Ability#flags() */
+    /** constant mask for the flags() method designating that this ability is a grounded effect @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#flags() */
     public static final long FLAG_EARTHBASED = 131072;
-    /** constant mask for the flags() method designating that this ability is an intoxicating effect @see com.planet_ink.game.Abilities.interfaces.Ability#flags() */
+    /** constant mask for the flags() method designating that this ability is an intoxicating effect @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#flags() */
     public static final long FLAG_INTOXICATING = 262144;
-    /** constant mask for the flags() method designating that this ability adjusts char/phy/base stats @see com.planet_ink.game.Abilities.interfaces.Ability#flags() */
+    /** constant mask for the flags() method designating that this ability adjusts char/phy/base stats @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#flags() */
     public static final long FLAG_ADJUSTER = 524288;
-    /** constant mask for the flags() method designating that this ability resists/saves @see com.planet_ink.game.Abilities.interfaces.Ability#flags() */
+    /** constant mask for the flags() method designating that this ability resists/saves @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#flags() */
     public static final long FLAG_RESISTER = 1048576;
-    /** constant mask for the flags() method designating that this ability blocks certain negative affects @see com.planet_ink.game.Abilities.interfaces.Ability#flags() */
+    /** constant mask for the flags() method designating that this ability blocks certain negative affects @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#flags() */
     public static final long FLAG_IMMUNER = 2097152;
-    /** constant mask for the flags() method designating that this ability blocks getting and other mundane actions @see com.planet_ink.game.Abilities.interfaces.Ability#flags() */
+    /** constant mask for the flags() method designating that this ability blocks getting and other mundane actions @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#flags() */
     public static final long FLAG_ZAPPER = 4194304;
-    /** constant mask for the flags() method designating that this ability casts some other spell/ability @see com.planet_ink.game.Abilities.interfaces.Ability#flags() */
+    /** constant mask for the flags() method designating that this ability casts some other spell/ability @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#flags() */
     public static final long FLAG_CASTER = 8388608;
-    /** constant mask for the flags() method designating that this ability grants another spell/ability @see com.planet_ink.game.Abilities.interfaces.Ability#flags() */
+    /** constant mask for the flags() method designating that this ability grants another spell/ability @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#flags() */
     public static final long FLAG_ENABLER = 16777216;
-    /** constant mask for the flags() method designating that the thing with this ability cant be learned as a recipe @see com.planet_ink.game.Abilities.interfaces.Ability#flags() */
+    /** constant mask for the flags() method designating that the thing with this ability cant be learned as a recipe @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#flags() */
     public static final long FLAG_UNCRAFTABLE = 33554432L;
-    /** constant mask for the flags() method designating that the thing with this ability might kill you @see com.planet_ink.game.Abilities.interfaces.Ability#flags() */
+    /** constant mask for the flags() method designating that the thing with this ability might kill you @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#flags() */
     public static final long FLAG_POTENTIALLY_DEADLY = 67108864L;
-    /** constant mask for the flags() method designating that the thing with this ability might kill you @see com.planet_ink.game.Abilities.interfaces.Ability#flags() */
+    /** constant mask for the flags() method designating that the thing with this ability might kill you @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#flags() */
     public static final long FLAG_AGGROFYING = 134217728L;
-    /** constant mask for the flags() method designating that the thing with this ability alters the tides @see com.planet_ink.game.Abilities.interfaces.Ability#flags() */
+    /** constant mask for the flags() method designating that the thing with this ability alters the tides @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#flags() */
     public static final long FLAG_TIDEALTERING = 268435456L;
     /** array of string describtions for the FLAG_* constants, indexed by their values */
     public static final String[] FLAG_DESCS =
@@ -405,31 +405,31 @@ public interface Ability extends Environmental {
             "AGGROING",
             "TIDEALTERING"
         };
-    /** constant for the abstractQuality and other methods.  Means that this skill would not make the target happy. see {@link com.planet_ink.game.Abilities.interfaces.Ability#abstractQuality()}*/
+    /** constant for the abstractQuality and other methods.  Means that this skill would not make the target happy. see {@link com.syncleus.aethermud.game.Abilities.interfaces.Ability#abstractQuality()}*/
     public static final int QUALITY_MALICIOUS = 0;
-    /** constant for the abstractQuality and other methods.  Means that this skill would not make the target either happy or unhappy. see {@link com.planet_ink.game.Abilities.interfaces.Ability#abstractQuality()}*/
+    /** constant for the abstractQuality and other methods.  Means that this skill would not make the target either happy or unhappy. see {@link com.syncleus.aethermud.game.Abilities.interfaces.Ability#abstractQuality()}*/
     public static final int QUALITY_INDIFFERENT = 1;
-    /** constant for the abstractQuality and other methods.  Means that this skill targets the invoker, and is harmless, but only useful in qualified situations. see {@link com.planet_ink.game.Abilities.interfaces.Ability#abstractQuality()}*/
+    /** constant for the abstractQuality and other methods.  Means that this skill targets the invoker, and is harmless, but only useful in qualified situations. see {@link com.syncleus.aethermud.game.Abilities.interfaces.Ability#abstractQuality()}*/
     public static final int QUALITY_OK_SELF = 2;
-    /** constant for the abstractQuality and other methods.  Means that this skill targets the invoker or others, and is harmless, but only useful in qualified situations. see {@link com.planet_ink.game.Abilities.interfaces.Ability#abstractQuality()}*/
+    /** constant for the abstractQuality and other methods.  Means that this skill targets the invoker or others, and is harmless, but only useful in qualified situations. see {@link com.syncleus.aethermud.game.Abilities.interfaces.Ability#abstractQuality()}*/
     public static final int QUALITY_OK_OTHERS = 3;
-    /** constant for the abstractQuality and other methods.  Means that this skill targets the invoker, and is always beneficial. see {@link com.planet_ink.game.Abilities.interfaces.Ability#abstractQuality()}*/
+    /** constant for the abstractQuality and other methods.  Means that this skill targets the invoker, and is always beneficial. see {@link com.syncleus.aethermud.game.Abilities.interfaces.Ability#abstractQuality()}*/
     public static final int QUALITY_BENEFICIAL_SELF = 4;
-    /** constant for the abstractQuality and other methods.  Means that this skill targets the invoker or others, and is always beneficial. see {@link com.planet_ink.game.Abilities.interfaces.Ability#abstractQuality()}*/
+    /** constant for the abstractQuality and other methods.  Means that this skill targets the invoker or others, and is always beneficial. see {@link com.syncleus.aethermud.game.Abilities.interfaces.Ability#abstractQuality()}*/
     public static final int QUALITY_BENEFICIAL_OTHERS = 5;
-    /** descriptive list of the QUALITY_ flags. see {@link com.planet_ink.game.Abilities.interfaces.Ability#abstractQuality()}*/
+    /** descriptive list of the QUALITY_ flags. see {@link com.syncleus.aethermud.game.Abilities.interfaces.Ability#abstractQuality()}*/
     public static final String[] QUALITY_DESCS = {"MALICIOUS", "INDIFFERENT", "OK_SELF", "OK_OTHERS", "BENEFICIAL_SELF", "BENEFICIAL_OTHERS"};
-    /** descriptive list of the CAN_ flags. see {@link com.planet_ink.game.Abilities.interfaces.Ability#canAffect(int)} */
+    /** descriptive list of the CAN_ flags. see {@link com.syncleus.aethermud.game.Abilities.interfaces.Ability#canAffect(int)} */
     public static final String[] CAN_DESCS = {"MOBS", "ITEMS", "AREAS", "ROOMS", "EXITS"};
-    /** constant mask for the canTargetCode() and canAffectCode() methods.  Means it can target/affect mobs see {@link com.planet_ink.game.Abilities.interfaces.Ability#canAffect(int)} */
+    /** constant mask for the canTargetCode() and canAffectCode() methods.  Means it can target/affect mobs see {@link com.syncleus.aethermud.game.Abilities.interfaces.Ability#canAffect(int)} */
     public static final int CAN_MOBS = 1;
-    /** constant mask for the canTargetCode() and canAffectCode() methods.  Means it can target/affect items see {@link com.planet_ink.game.Abilities.interfaces.Ability#canAffect(int)} */
+    /** constant mask for the canTargetCode() and canAffectCode() methods.  Means it can target/affect items see {@link com.syncleus.aethermud.game.Abilities.interfaces.Ability#canAffect(int)} */
     public static final int CAN_ITEMS = 2;
-    /** constant mask for the canTargetCode() and canAffectCode() methods.  Means it can target/affect areas see {@link com.planet_ink.game.Abilities.interfaces.Ability#canAffect(int)} */
+    /** constant mask for the canTargetCode() and canAffectCode() methods.  Means it can target/affect areas see {@link com.syncleus.aethermud.game.Abilities.interfaces.Ability#canAffect(int)} */
     public static final int CAN_AREAS = 4;
-    /** constant mask for the canTargetCode() and canAffectCode() methods.  Means it can target/affect rooms see {@link com.planet_ink.game.Abilities.interfaces.Ability#canAffect(int)} */
+    /** constant mask for the canTargetCode() and canAffectCode() methods.  Means it can target/affect rooms see {@link com.syncleus.aethermud.game.Abilities.interfaces.Ability#canAffect(int)} */
     public static final int CAN_ROOMS = 8;
-    /** constant mask for the canTargetCode() and canAffectCode() methods.  Means it can target/affect exits see {@link com.planet_ink.game.Abilities.interfaces.Ability#canAffect(int)} */
+    /** constant mask for the canTargetCode() and canAffectCode() methods.  Means it can target/affect exits see {@link com.syncleus.aethermud.game.Abilities.interfaces.Ability#canAffect(int)} */
     public static final int CAN_EXITS = 16;
 
     /**
@@ -464,7 +464,7 @@ public interface Ability extends Environmental {
      * helps decide whether this skill is appropriate in
      * those roles.  These constants are defined in the
      * Ability interface and called QUALITY_*
-     * @see com.planet_ink.game.Abilities.interfaces.Ability#abstractQuality()
+     * @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#abstractQuality()
      * @see Ability
      * @return Ability.QUALITY_* constant classification
      */
@@ -478,7 +478,7 @@ public interface Ability extends Environmental {
      * reason, the QUALITY_OK_* constants should be avoided
      * in favor of the other Ability.QUALITY_* constants.
      * @see Ability
-     * @see com.planet_ink.game.Abilities.interfaces.Ability#abstractQuality()
+     * @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#abstractQuality()
      * @param mob the person to use the skill
      * @param target the potential target -- may be invoker
      * @return Ability.QUALITY_* constant classification
@@ -497,8 +497,8 @@ public interface Ability extends Environmental {
     /**
      * Always returns the mob that invoked or initiated the
      * skill or effect.
-     * @see com.planet_ink.game.MOBS.interfaces.MOB
-     * @see com.planet_ink.game.Abilities.interfaces.Ability#setInvoker(MOB)
+     * @see com.syncleus.aethermud.game.MOBS.interfaces.MOB
+     * @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#setInvoker(MOB)
      * @return the invoker mob
      */
     public MOB invoker();
@@ -506,8 +506,8 @@ public interface Ability extends Environmental {
     /**
      * Sets or changes the mob that invoked or initated the
      * skill or effect.
-     * @see com.planet_ink.game.MOBS.interfaces.MOB
-     * @see com.planet_ink.game.Abilities.interfaces.Ability#invoker()
+     * @see com.syncleus.aethermud.game.MOBS.interfaces.MOB
+     * @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#invoker()
      * @param mob the invoker mob
      */
     public void setInvoker(MOB mob);
@@ -518,7 +518,7 @@ public interface Ability extends Environmental {
      * not apply to non-affecting skills like kick, but more
      * to auto-invoking skills and spells that affect people
      * like sleep.
-     * @see com.planet_ink.game.Abilities.interfaces.Ability#setAffectedOne(Physical)
+     * @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#setAffectedOne(Physical)
      * @return the room, mob, or item being affected
      */
     public Physical affecting();
@@ -529,7 +529,7 @@ public interface Ability extends Environmental {
      * not apply to non-affecting skills like kick, but more
      * to auto-invoking skills and spells that affect people
      * like sleep, and especially to properties.
-     * @see com.planet_ink.game.Abilities.interfaces.Ability#affecting()
+     * @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#affecting()
      * @param P the room, mob, or item being affected
      */
     public void setAffectedOne(Physical P);
@@ -538,7 +538,7 @@ public interface Ability extends Environmental {
      * Returns whether this skills triggerStrings should be
      * places in the master list of commands, unlike
      * properties or other hidden skills.
-     * @see com.planet_ink.game.Abilities.interfaces.Ability#triggerStrings()
+     * @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#triggerStrings()
      * @return whether to add the triggerString to the commands list
      */
     public boolean putInCommandlist();
@@ -553,7 +553,7 @@ public interface Ability extends Environmental {
     /**
      * A set of the command strings the user types to access
      * this command when it is listed as a skill ability.
-     * @see com.planet_ink.game.Abilities.interfaces.Ability#putInCommandlist()
+     * @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#putInCommandlist()
      * @return an array of command invoking string words
      */
     public String[] triggerStrings();
@@ -563,8 +563,8 @@ public interface Ability extends Environmental {
      * activate this skill. A value of 0.0 means invoke
      * instantly.  This method only applies when the invoker
      * is not in combat.
-     * @see com.planet_ink.game.Abilities.interfaces.Ability#combatCastingTime(MOB, List)
-     * @see com.planet_ink.game.Abilities.interfaces.Ability#checkedCastingCost(MOB, List)
+     * @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#combatCastingTime(MOB, List)
+     * @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#checkedCastingCost(MOB, List)
      * @param mob the potential caster
      * @param commands the potential command set
      * @return the number of player free actions required to do this
@@ -576,8 +576,8 @@ public interface Ability extends Environmental {
      * activate this skill. A value of 0.0 means invoke
      * instantly.  This method only applies when the invoker
      * is in combat.
-     * @see com.planet_ink.game.Abilities.interfaces.Ability#castingTime(MOB, List)
-     * @see com.planet_ink.game.Abilities.interfaces.Ability#checkedCastingCost(MOB, List)
+     * @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#castingTime(MOB, List)
+     * @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#checkedCastingCost(MOB, List)
      * @param mob the potential caster
      * @param commands the potential command set
      * @return the number of player free actions required to do this
@@ -589,8 +589,8 @@ public interface Ability extends Environmental {
      * activate this skill. A value of 0.0 means invoke
      * instantly.  This method should return the correct time depending
      * on the nature of the skill, and whether the user is in combat.
-     * @see com.planet_ink.game.Abilities.interfaces.Ability#castingTime(MOB, List)
-     * @see com.planet_ink.game.Abilities.interfaces.Ability#combatCastingTime(MOB, List)
+     * @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#castingTime(MOB, List)
+     * @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#combatCastingTime(MOB, List)
      * @param mob the potential caster
      * @param commands the potential command set
      * @return the number of player free actions required to do this
@@ -603,7 +603,7 @@ public interface Ability extends Environmental {
      * method is called when the command is entered, and every second
      * afterwards until the invoker has enough actions to complete it.
      * At completion time, invoke is called.
-     * @see com.planet_ink.game.Abilities.interfaces.Ability#invoke(MOB, List, Physical, boolean, int)
+     * @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#invoke(MOB, List, Physical, boolean, int)
      * @param mob the player or mob invoking the skill
      * @param commands the parameters entered for the skill (minus trigger word)
      * @param givenTarget null, unless being auto-invoked. Represents an override target.
@@ -621,7 +621,7 @@ public interface Ability extends Environmental {
      * Calls the more complete invoke method without an empty command strings vector
      * unless target is non-null, in which case the vector will contain the name
      * of the target.
-     * @see com.planet_ink.game.Abilities.interfaces.Ability#invoke(MOB, List, Physical, boolean, int)
+     * @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#invoke(MOB, List, Physical, boolean, int)
      * @param mob the player or mob invoking the skill
      * @param target null, unless being auto-invoked. Represents an override target.
      * @param auto false if player enters command, true if system invokes the command
@@ -648,7 +648,7 @@ public interface Ability extends Environmental {
     /**
      * If this skill is uninvokable, this method will uninvoke it, remove it
      * as an effect on the target, and shut it down.
-     * @see com.planet_ink.game.Abilities.interfaces.Ability#canBeUninvoked()
+     * @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#canBeUninvoked()
      */
     public void unInvoke();
 
@@ -658,7 +658,7 @@ public interface Ability extends Environmental {
      * then those methods will be called only on the owner/mob of the item
      * currently being affected by this skill.  If false, those methods
      * behave normally.
-     * @see com.planet_ink.game.Items.interfaces.Item#owner()
+     * @see com.syncleus.aethermud.game.Items.interfaces.Item#owner()
      * @return whether this skill affects a mob owner of an item
      */
     public boolean bubbleAffect();
@@ -667,7 +667,7 @@ public interface Ability extends Environmental {
      * Whether this skill is allowed to be uninvoked.  If it returns false,
      * then it behaves as a permanent property of the object it is affecting.
      * Not death, dispelling, or other negations will remove it.
-     * @see com.planet_ink.game.Abilities.interfaces.Ability#makeNonUninvokable()
+     * @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#makeNonUninvokable()
      * @return whether this skill can be uninvoked.
      */
     public boolean canBeUninvoked();
@@ -676,8 +676,8 @@ public interface Ability extends Environmental {
      * Designates that this skill should never be uninvoked.  Designates that
      * this skill is a permanent property of the object it is affecting.
      * Is normally called by addNonUninvokableAffect
-     * @see com.planet_ink.game.core.interfaces.Affectable#addNonUninvokableEffect(Ability)
-     * @see com.planet_ink.game.Abilities.interfaces.Ability#canBeUninvoked()
+     * @see com.syncleus.aethermud.game.core.interfaces.Affectable#addNonUninvokableEffect(Ability)
+     * @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#canBeUninvoked()
      */
     public void makeNonUninvokable();
 
@@ -696,8 +696,8 @@ public interface Ability extends Environmental {
      * This method is called to initiate this, and is called whenever
      * a mob gains this skill as a new Ability.  This method will
      * add the ability to the mob as an effect.
-     * @see com.planet_ink.game.Abilities.interfaces.Ability#isAutoInvoked()
-     * @see com.planet_ink.game.Abilities.interfaces.Ability#isNowAnAutoEffect()
+     * @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#isAutoInvoked()
+     * @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#isNowAnAutoEffect()
      * @param mob the player or npc mob who has this ability
      * @param force if the skill has default-off settings, this overrides to ON
      * @return whether the ability autoinvoked correctly
@@ -732,7 +732,7 @@ public interface Ability extends Environmental {
      * represents a percentage of the cost.
      * The values in this method MUST be accompanied by properly
      * set usageType() bitmap.
-     * @see com.planet_ink.game.Abilities.interfaces.Ability#usageType()
+     * @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#usageType()
      * @see Ability
      * @param mob the invoker of the skill
      * @param ignoreClassOverride whether to ignore Class Overrides
@@ -779,8 +779,8 @@ public interface Ability extends Environmental {
      * this skill to the given student.  Error messages should be directed
      * to both.  This method should focus exclusively on the qualifications
      * of the teacher.
-     * @see com.planet_ink.game.Abilities.interfaces.Ability#canBeLearnedBy(MOB, MOB)
-     * @see com.planet_ink.game.Abilities.interfaces.Ability#teach(MOB, MOB)
+     * @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#canBeLearnedBy(MOB, MOB)
+     * @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#teach(MOB, MOB)
      * @param teacher the potential teacher of this skill
      * @param student the potential learner of this skill
      * @return whether the teacher can teach the skill to the student
@@ -792,7 +792,7 @@ public interface Ability extends Environmental {
      * this skill with the given student *and* whether the student is able
      * and allowed to practice this skill.  Error messages should be directed
      * to both.
-     * @see com.planet_ink.game.Abilities.interfaces.Ability#practice(MOB, MOB)
+     * @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#practice(MOB, MOB)
      * @param teacher the potential practice teacher of this skill
      * @param student the potential practicer of this skil
      * @return whether the teacher and student are capable of practicing together
@@ -804,8 +804,8 @@ public interface Ability extends Environmental {
      * this skill from the given teacher.  Error messages should be directed
      * to both.  This method should focus exclusively on the qualifications
      * of the student, and the teacher is optional.
-     * @see com.planet_ink.game.Abilities.interfaces.Ability#canBeTaughtBy(MOB, MOB)
-     * @see com.planet_ink.game.Abilities.interfaces.Ability#teach(MOB, MOB)
+     * @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#canBeTaughtBy(MOB, MOB)
+     * @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#teach(MOB, MOB)
      * @param teacher the potential teacher of this skill, may be null
      * @param student the potential learner of this skill, may NOT be null
      * @return whether the student can learn the skill from the teacher
@@ -816,8 +816,8 @@ public interface Ability extends Environmental {
      * Teaches this skill to the student mob, presumably from the teacher mob.
      * This method assumes that both the teacher and student are authorized.
      * Authorization comes from canBeTaughtBy and canBeLearnedBy
-     * @see com.planet_ink.game.Abilities.interfaces.Ability#canBeTaughtBy(MOB, MOB)
-     * @see com.planet_ink.game.Abilities.interfaces.Ability#canBeLearnedBy(MOB, MOB)
+     * @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#canBeTaughtBy(MOB, MOB)
+     * @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#canBeLearnedBy(MOB, MOB)
      * @param teacher the teacher of this skill
      * @param student the learner of this skill
      */
@@ -827,7 +827,7 @@ public interface Ability extends Environmental {
      * Causes the student to practice this skill, presumably with the teacher mob.
      * This method assumes that both the teacher and student are authorized.
      * Authorization comes from canBePracticedBy
-     * @see com.planet_ink.game.Abilities.interfaces.Ability#canBePracticedBy(MOB, MOB)
+     * @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#canBePracticedBy(MOB, MOB)
      * @param teacher the teacher of this skill
      * @param student the practicer of this skill
      */
@@ -845,7 +845,7 @@ public interface Ability extends Environmental {
      * Returns whether, when used as a skill, this ability can target itself
      * at the given object.  This method derives its answer from the protected
      * integer method canTargetCode()
-     * @see com.planet_ink.game.Abilities.StdAbility#canTargetCode()
+     * @see com.syncleus.aethermud.game.Abilities.StdAbility#canTargetCode()
      * @param P the potential target of this skill
      * @return whether E is a valid target
      */
@@ -855,7 +855,7 @@ public interface Ability extends Environmental {
      * Returns whether, when used as a property/effect, this ability can affect
      * the given object.  This method derives its answer from the protected
      * integer method canAffectCode()
-     * @see com.planet_ink.game.Abilities.StdAbility#canAffectCode()
+     * @see com.syncleus.aethermud.game.Abilities.StdAbility#canAffectCode()
      * @param P the potential object to have this as a property/effect
      * @return whether E is a valid object to have this as a property/effect
      */
@@ -866,7 +866,7 @@ public interface Ability extends Environmental {
      * at an object of the given type.  This method derives its answer from the protected
      * integer method canTargetCode(), and requires one of the Ability.CAN_*
      * constants.
-     * @see com.planet_ink.game.Abilities.StdAbility#canTargetCode()
+     * @see com.syncleus.aethermud.game.Abilities.StdAbility#canTargetCode()
      * @param can_code a bitmap of one or more Ability.CAN_* constants
      * @return whether the object type is a valid target
      */
@@ -878,7 +878,7 @@ public interface Ability extends Environmental {
      * integer method canAffectCode(), and requires one of the Ability.CAN_*
      * constants.
      * @see Ability
-     * @see com.planet_ink.game.Abilities.StdAbility#canAffectCode()
+     * @see com.syncleus.aethermud.game.Abilities.StdAbility#canAffectCode()
      * @param can_code a bitmap of one or more Ability.CAN_* constants
      * @return whether the object object type may have this as a property/effect
      */
@@ -896,8 +896,8 @@ public interface Ability extends Environmental {
      * Returns whether there are any Faction reasons why the given
      * mob should not use this skill.  Used primarily for alignment
      * checks of Prayers.
-     * @see com.planet_ink.game.Abilities.Prayers.Prayer
-     * @see com.planet_ink.game.Common.interfaces.Faction
+     * @see com.syncleus.aethermud.game.Abilities.Prayers.Prayer
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction
      * @param mob the mob whose factions to check
      * @return whether there are any faction reasons not to cast this.
      */
@@ -933,8 +933,8 @@ public interface Ability extends Environmental {
      * the mob or player who has this instance in their Abilities list has in
      * this skill.  Is also used for other miscellaneous purposes by other non-skill
      * Abilities, such as Drowning.
-     * @see com.planet_ink.game.MOBS.interfaces.MOB#addAbility(Ability)
-     * @see com.planet_ink.game.Abilities.interfaces.Ability#setProficiency(int)
+     * @see com.syncleus.aethermud.game.MOBS.interfaces.MOB#addAbility(Ability)
+     * @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#setProficiency(int)
      * @return the proficiency from 0-100
      */
     public int proficiency();
@@ -944,8 +944,8 @@ public interface Ability extends Environmental {
      * the mob or player who has this instance in their Abilities list has in
      * this skill.  Is also used for other miscellaneous purposes by other non-skill
      * Abilities, such as Drowning.
-     * @see com.planet_ink.game.MOBS.interfaces.MOB#addAbility(Ability)
-     * @see com.planet_ink.game.Abilities.interfaces.Ability#proficiency()
+     * @see com.syncleus.aethermud.game.MOBS.interfaces.MOB#addAbility(Ability)
+     * @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#proficiency()
      * @param newProficiency the proficiency from 0-100
      */
     public void setProficiency(int newProficiency);
@@ -955,7 +955,7 @@ public interface Ability extends Environmental {
      * at this time.  Will accept a numeric adjustment, positive or negative, to
      * their base proficiency.  Will also accept an auto parameter, which forces
      * this method to always return true.
-     * @see com.planet_ink.game.Abilities.interfaces.Ability#proficiency()
+     * @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#proficiency()
      * @param mob the mob whose proficiency to check
      * @param adjustment a positive or negative adjustment to the mobs base proficiency
      * @param auto if true, this method returns true always
@@ -970,7 +970,7 @@ public interface Ability extends Environmental {
      * that exercises this skill in some way.  How often proficiency is effected
      * by this method is up to the method, but is typically time-based, and based
      * on intelligence and other factors.
-     * @see com.planet_ink.game.Abilities.interfaces.Ability#proficiency()
+     * @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#proficiency()
      * @param mob the mob whose proficiency in this skill to possibly advance
      * @param adjustment up or down to the chance of becoming more proficient
      */

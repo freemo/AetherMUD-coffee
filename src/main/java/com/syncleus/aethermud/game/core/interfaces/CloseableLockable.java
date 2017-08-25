@@ -14,13 +14,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.core.interfaces;
+package com.syncleus.aethermud.game.core.interfaces;
 
 /**
  * An interface for all mechanisms that has a lockable door or lid, such
  * as containers and exits
- * @see com.planet_ink.game.Exits.interfaces.Exit
- * @see com.planet_ink.game.Items.interfaces.Container
+ * @see com.syncleus.aethermud.game.Exits.interfaces.Exit
+ * @see com.syncleus.aethermud.game.Items.interfaces.Container
  */
 public interface CloseableLockable extends Physical {
     /**
@@ -32,8 +32,8 @@ public interface CloseableLockable extends Physical {
     /**
      * Returns whether this is LOCKED, and must be unlocked before
      * being used.
-     * @see com.planet_ink.game.core.interfaces.CloseableLockable#hasADoor()
-     * @see com.planet_ink.game.core.interfaces.CloseableLockable#hasALock()
+     * @see com.syncleus.aethermud.game.core.interfaces.CloseableLockable#hasADoor()
+     * @see com.syncleus.aethermud.game.core.interfaces.CloseableLockable#hasALock()
      * @return true if locked, false otherwise
      */
     public boolean isLocked();
@@ -41,8 +41,8 @@ public interface CloseableLockable extends Physical {
     /**
      * Returns whether this has a door, and must be opened before
      * being used.
-     * @see com.planet_ink.game.core.interfaces.CloseableLockable#isOpen()
-     * @see com.planet_ink.game.core.interfaces.CloseableLockable#isLocked()
+     * @see com.syncleus.aethermud.game.core.interfaces.CloseableLockable#isOpen()
+     * @see com.syncleus.aethermud.game.core.interfaces.CloseableLockable#isLocked()
      * @return true if a door is present, false otherwise.
      */
     public boolean hasADoor();
@@ -50,9 +50,9 @@ public interface CloseableLockable extends Physical {
     /**
      * Returns whether this has a lock on it, and, if locked,
      * must be unlocked before being used.
-     * @see com.planet_ink.game.core.interfaces.CloseableLockable#isOpen()
-     * @see com.planet_ink.game.core.interfaces.CloseableLockable#isLocked()
-     * @see com.planet_ink.game.core.interfaces.CloseableLockable#hasADoor()
+     * @see com.syncleus.aethermud.game.core.interfaces.CloseableLockable#isOpen()
+     * @see com.syncleus.aethermud.game.core.interfaces.CloseableLockable#isLocked()
+     * @see com.syncleus.aethermud.game.core.interfaces.CloseableLockable#hasADoor()
      * @return whether a lock is present
      */
     public boolean hasALock();
@@ -60,8 +60,8 @@ public interface CloseableLockable extends Physical {
     /**
      * For exits with a door and lock, this returns whether this
      * defaults in a closed and locked state.
-     * @see com.planet_ink.game.core.interfaces.CloseableLockable#hasADoor()
-     * @see com.planet_ink.game.core.interfaces.CloseableLockable#defaultsClosed()
+     * @see com.syncleus.aethermud.game.core.interfaces.CloseableLockable#hasADoor()
+     * @see com.syncleus.aethermud.game.core.interfaces.CloseableLockable#defaultsClosed()
      * @return true if defaults closed and locked, false otherwise
      */
     public boolean defaultsLocked();
@@ -69,20 +69,20 @@ public interface CloseableLockable extends Physical {
     /**
      * For exits with a door, this returns whether this
      * defaults in a closed state.
-     * @see com.planet_ink.game.core.interfaces.CloseableLockable#hasADoor()
-     * @see com.planet_ink.game.core.interfaces.CloseableLockable#defaultsLocked()
+     * @see com.syncleus.aethermud.game.core.interfaces.CloseableLockable#hasADoor()
+     * @see com.syncleus.aethermud.game.core.interfaces.CloseableLockable#defaultsLocked()
      * @return true if defaults closed, false otherwise
      */
     public boolean defaultsClosed();
 
     /**
      * Modifies the various door/lock settings for this thing.
-     * @see com.planet_ink.game.core.interfaces.CloseableLockable#isOpen()
-     * @see com.planet_ink.game.core.interfaces.CloseableLockable#isLocked()
-     * @see com.planet_ink.game.core.interfaces.CloseableLockable#hasADoor()
-     * @see com.planet_ink.game.core.interfaces.CloseableLockable#hasALock()
-     * @see com.planet_ink.game.core.interfaces.CloseableLockable#defaultsClosed()
-     * @see com.planet_ink.game.core.interfaces.CloseableLockable#defaultsLocked()
+     * @see com.syncleus.aethermud.game.core.interfaces.CloseableLockable#isOpen()
+     * @see com.syncleus.aethermud.game.core.interfaces.CloseableLockable#isLocked()
+     * @see com.syncleus.aethermud.game.core.interfaces.CloseableLockable#hasADoor()
+     * @see com.syncleus.aethermud.game.core.interfaces.CloseableLockable#hasALock()
+     * @see com.syncleus.aethermud.game.core.interfaces.CloseableLockable#defaultsClosed()
+     * @see com.syncleus.aethermud.game.core.interfaces.CloseableLockable#defaultsLocked()
      * @param hasADoor whether this has a door
      * @param isOpen whether this is open for use
      * @param defaultsClosed whether this defaults closed
@@ -100,7 +100,7 @@ public interface CloseableLockable extends Physical {
     /**
      * For things with doors and locks, this returns the unique string
      * representing the key code required to unlock/lock it.
-     * @see com.planet_ink.game.core.interfaces.CloseableLockable#setKeyName(String)
+     * @see com.syncleus.aethermud.game.core.interfaces.CloseableLockable#setKeyName(String)
      * @return the key code
      */
     public String keyName();
@@ -108,7 +108,7 @@ public interface CloseableLockable extends Physical {
     /**
      * For things with doors and locks, this sets the unique string
      * representing the key code required to unlock/lock it.
-     * @see com.planet_ink.game.core.interfaces.CloseableLockable#keyName()
+     * @see com.syncleus.aethermud.game.core.interfaces.CloseableLockable#keyName()
      * @param keyName the new key code
      */
     public void setKeyName(String keyName);
@@ -117,8 +117,8 @@ public interface CloseableLockable extends Physical {
      * Returns the number of ticks that this remains open when a mob
      * or player changes it from a closed to an open state, and this thing
      * defaults in a closed state.
-     * @see com.planet_ink.game.core.interfaces.CloseableLockable#setOpenDelayTicks(int)
-     * @see com.planet_ink.game.core.interfaces.Tickable#TICKID_EXIT_REOPEN
+     * @see com.syncleus.aethermud.game.core.interfaces.CloseableLockable#setOpenDelayTicks(int)
+     * @see com.syncleus.aethermud.game.core.interfaces.Tickable#TICKID_EXIT_REOPEN
      * @return the number of ticks this remains open
      */
     public int openDelayTicks();
@@ -127,8 +127,8 @@ public interface CloseableLockable extends Physical {
      * Sets the number of ticks that this will remain open when a mob
      * or player changes it from a closed to an open state, and this thing
      * defaults in a closed state.
-     * @see com.planet_ink.game.core.interfaces.CloseableLockable#openDelayTicks()
-     * @see com.planet_ink.game.core.interfaces.Tickable#TICKID_EXIT_REOPEN
+     * @see com.syncleus.aethermud.game.core.interfaces.CloseableLockable#openDelayTicks()
+     * @see com.syncleus.aethermud.game.core.interfaces.Tickable#TICKID_EXIT_REOPEN
      * @param numTicks the number of ticks this will remain open
      */
     public void setOpenDelayTicks(int numTicks);

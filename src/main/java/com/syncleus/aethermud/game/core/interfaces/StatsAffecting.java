@@ -14,12 +14,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.core.interfaces;
+package com.syncleus.aethermud.game.core.interfaces;
 
-import com.planet_ink.game.Common.interfaces.CharState;
-import com.planet_ink.game.Common.interfaces.CharStats;
-import com.planet_ink.game.Common.interfaces.PhyStats;
-import com.planet_ink.game.MOBS.interfaces.MOB;
+import com.syncleus.aethermud.game.Common.interfaces.CharState;
+import com.syncleus.aethermud.game.Common.interfaces.CharStats;
+import com.syncleus.aethermud.game.Common.interfaces.PhyStats;
+import com.syncleus.aethermud.game.MOBS.interfaces.MOB;
 
 
 /**
@@ -33,11 +33,11 @@ public interface StatsAffecting {
      * This method is called by the recoverPhyStats() method on other Environmental objects.  It is used
      * to transform the Environmental basePhyStats() object into a finished phyStats() object,  both of
      * which are objects implementing the PhyStats interface.  See those methods for more information.
-     * @see com.planet_ink.game.Common.interfaces.PhyStats
+     * @see com.syncleus.aethermud.game.Common.interfaces.PhyStats
      * @see Environmental
-     * @see com.planet_ink.game.core.interfaces.Affectable#basePhyStats()
-     * @see com.planet_ink.game.core.interfaces.Affectable#phyStats()
-     * @see com.planet_ink.game.core.interfaces.Affectable#recoverPhyStats()
+     * @see com.syncleus.aethermud.game.core.interfaces.Affectable#basePhyStats()
+     * @see com.syncleus.aethermud.game.core.interfaces.Affectable#phyStats()
+     * @see com.syncleus.aethermud.game.core.interfaces.Affectable#recoverPhyStats()
      * @param affected the host of the PhyStats object being affected
      * @param affectableStats the particular PhyStats object being affected
      */
@@ -47,11 +47,11 @@ public interface StatsAffecting {
      * This method is called by the recoverCharStats() method on other MOB objects.  It is used
      * to transform the MOB baseCharStats() object into a finished charStats() object,  both of
      * which are objects implementing the CharStats interface.  See those methods for more information.
-     * @see com.planet_ink.game.Common.interfaces.CharStats
-     * @see com.planet_ink.game.MOBS.interfaces.MOB
-     * @see com.planet_ink.game.MOBS.interfaces.MOB#baseCharStats()
-     * @see com.planet_ink.game.MOBS.interfaces.MOB#charStats()
-     * @see com.planet_ink.game.MOBS.interfaces.MOB#recoverCharStats()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CharStats
+     * @see com.syncleus.aethermud.game.MOBS.interfaces.MOB
+     * @see com.syncleus.aethermud.game.MOBS.interfaces.MOB#baseCharStats()
+     * @see com.syncleus.aethermud.game.MOBS.interfaces.MOB#charStats()
+     * @see com.syncleus.aethermud.game.MOBS.interfaces.MOB#recoverCharStats()
      * @param affectedMob the host of the CharStats object being affected
      * @param affectableStats the particular CharStats object being affected
      */
@@ -61,11 +61,11 @@ public interface StatsAffecting {
      * This method is called by the recoverCharState() method on other MOB objects.  It is used
      * to transform the MOB baseCharState() object into a finished charState() object,  both of
      * which are objects implementing the CharState interface.  See those methods for more information.
-     * @see com.planet_ink.game.Common.interfaces.CharState
-     * @see com.planet_ink.game.MOBS.interfaces.MOB
-     * @see com.planet_ink.game.MOBS.interfaces.MOB#baseState()
-     * @see com.planet_ink.game.MOBS.interfaces.MOB#curState()
-     * @see com.planet_ink.game.MOBS.interfaces.MOB#recoverMaxState()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CharState
+     * @see com.syncleus.aethermud.game.MOBS.interfaces.MOB
+     * @see com.syncleus.aethermud.game.MOBS.interfaces.MOB#baseState()
+     * @see com.syncleus.aethermud.game.MOBS.interfaces.MOB#curState()
+     * @see com.syncleus.aethermud.game.MOBS.interfaces.MOB#recoverMaxState()
      * @param affectedMob the host of the CharState object being affected
      * @param affectableMaxState the particular CharState object being affected
      */

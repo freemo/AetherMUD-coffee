@@ -14,12 +14,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.core.threads;
+package com.syncleus.aethermud.game.core.threads;
 
-import com.planet_ink.game.Common.interfaces.Session;
-import com.planet_ink.game.core.CMLib;
-import com.planet_ink.game.core.Log;
-import com.planet_ink.game.core.interfaces.TickableGroup;
+import com.syncleus.aethermud.game.Common.interfaces.Session;
+import com.syncleus.aethermud.game.core.CMLib;
+import com.syncleus.aethermud.game.core.Log;
+import com.syncleus.aethermud.game.core.interfaces.TickableGroup;
 
 import java.util.Collection;
 import java.util.HashMap;

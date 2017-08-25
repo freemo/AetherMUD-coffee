@@ -14,21 +14,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Abilities.Thief;
+package com.syncleus.aethermud.game.Abilities.Thief;
 
-import com.planet_ink.game.Abilities.StdAbility;
-import com.planet_ink.game.Abilities.interfaces.Ability;
-import com.planet_ink.game.CharClasses.interfaces.CharClass;
-import com.planet_ink.game.Common.interfaces.CMMsg;
-import com.planet_ink.game.Exits.interfaces.Exit;
-import com.planet_ink.game.Items.interfaces.Container;
-import com.planet_ink.game.Items.interfaces.Wearable;
-import com.planet_ink.game.Locales.interfaces.Room;
-import com.planet_ink.game.MOBS.interfaces.MOB;
-import com.planet_ink.game.core.CMLib;
-import com.planet_ink.game.core.CMParms;
-import com.planet_ink.game.core.CMSecurity;
-import com.planet_ink.game.core.interfaces.Physical;
+import com.syncleus.aethermud.game.Abilities.StdAbility;
+import com.syncleus.aethermud.game.Abilities.interfaces.Ability;
+import com.syncleus.aethermud.game.CharClasses.interfaces.CharClass;
+import com.syncleus.aethermud.game.Common.interfaces.CMMsg;
+import com.syncleus.aethermud.game.Exits.interfaces.Exit;
+import com.syncleus.aethermud.game.Items.interfaces.Container;
+import com.syncleus.aethermud.game.Items.interfaces.Wearable;
+import com.syncleus.aethermud.game.Locales.interfaces.Room;
+import com.syncleus.aethermud.game.MOBS.interfaces.MOB;
+import com.syncleus.aethermud.game.core.CMLib;
+import com.syncleus.aethermud.game.core.CMParms;
+import com.syncleus.aethermud.game.core.CMSecurity;
+import com.syncleus.aethermud.game.core.interfaces.Physical;
 
 import java.util.HashSet;
 import java.util.List;

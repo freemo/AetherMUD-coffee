@@ -14,9 +14,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.core.interfaces;
+package com.syncleus.aethermud.game.core.interfaces;
 
-import com.planet_ink.game.MOBS.interfaces.MOB;
+import com.syncleus.aethermud.game.MOBS.interfaces.MOB;
 
 import java.util.Enumeration;
 import java.util.Set;
@@ -24,7 +24,7 @@ import java.util.Set;
 
 /**
  * The interface for an item or mob which may be ridden
- * @see com.planet_ink.game.core.interfaces.Rider
+ * @see com.syncleus.aethermud.game.core.interfaces.Rider
  * @author Bo Zimmerman
  *
  */

@@ -14,12 +14,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Abilities.Properties;
+package com.syncleus.aethermud.game.Abilities.Properties;
 
-import com.planet_ink.game.Abilities.interfaces.Ability;
-import com.planet_ink.game.Abilities.interfaces.TriggeredAffect;
-import com.planet_ink.game.MOBS.interfaces.MOB;
-import com.planet_ink.game.core.interfaces.Environmental;
+import com.syncleus.aethermud.game.Abilities.interfaces.Ability;
+import com.syncleus.aethermud.game.Abilities.interfaces.TriggeredAffect;
+import com.syncleus.aethermud.game.MOBS.interfaces.MOB;
+import com.syncleus.aethermud.game.core.interfaces.Environmental;
 
 
 public class Prop_Resistance extends Prop_HaveResister {

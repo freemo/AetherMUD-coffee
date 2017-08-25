@@ -14,12 +14,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Behaviors.interfaces;
+package com.syncleus.aethermud.game.Behaviors.interfaces;
 
-import com.planet_ink.game.Libraries.interfaces.MaskingLibrary;
-import com.planet_ink.game.MOBS.interfaces.MOB;
-import com.planet_ink.game.core.CMParms;
-import com.planet_ink.game.core.CMath;
+import com.syncleus.aethermud.game.Libraries.interfaces.MaskingLibrary;
+import com.syncleus.aethermud.game.MOBS.interfaces.MOB;
+import com.syncleus.aethermud.game.core.CMParms;
+import com.syncleus.aethermud.game.core.CMath;
 
 import java.util.List;
 
@@ -27,7 +27,7 @@ import java.util.List;
 /**
  * A ChattyBehavior is a Behavior causes a mob to have a conversation,
  * or even just simply respond to a player or even another mob.
- * @see com.planet_ink.game.Behaviors.interfaces.Behavior
+ * @see com.syncleus.aethermud.game.Behaviors.interfaces.Behavior
  */
 public interface ChattyBehavior extends Behavior {
     /**

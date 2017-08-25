@@ -14,17 +14,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.core.intermud.cm1;
+package com.syncleus.aethermud.game.core.intermud.cm1;
 
-import com.planet_ink.game.MOBS.interfaces.MOB;
-import com.planet_ink.game.core.CMLib;
-import com.planet_ink.game.core.CMParms;
-import com.planet_ink.game.core.CMStrings;
-import com.planet_ink.game.core.Log;
-import com.planet_ink.game.core.collections.SLinkedList;
-import com.planet_ink.game.core.collections.STreeMap;
-import com.planet_ink.game.core.interfaces.PhysicalAgent;
-import com.planet_ink.game.core.threads.CMRunnable;
+import com.syncleus.aethermud.game.MOBS.interfaces.MOB;
+import com.syncleus.aethermud.game.core.CMLib;
+import com.syncleus.aethermud.game.core.CMParms;
+import com.syncleus.aethermud.game.core.CMStrings;
+import com.syncleus.aethermud.game.core.Log;
+import com.syncleus.aethermud.game.core.collections.SLinkedList;
+import com.syncleus.aethermud.game.core.collections.STreeMap;
+import com.syncleus.aethermud.game.core.interfaces.PhysicalAgent;
+import com.syncleus.aethermud.game.core.threads.CMRunnable;
 
 import java.io.IOException;
 import java.nio.ByteBuffer;

@@ -14,10 +14,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Items.Basic;
+package com.syncleus.aethermud.game.Items.Basic;
 
-import com.planet_ink.game.Common.interfaces.PhyStats;
-import com.planet_ink.game.Items.interfaces.RawMaterial;
+import com.syncleus.aethermud.game.Common.interfaces.PhyStats;
+import com.syncleus.aethermud.game.Items.interfaces.RawMaterial;
 
 
 public class GenFountain extends GenWater {

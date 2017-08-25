@@ -14,9 +14,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Locales.interfaces;
+package com.syncleus.aethermud.game.Locales.interfaces;
 
-import com.planet_ink.game.Areas.interfaces.GridZones;
+import com.syncleus.aethermud.game.Areas.interfaces.GridZones;
 
 import java.util.Iterator;
 import java.util.List;
@@ -116,8 +116,8 @@ public interface GridLocale extends Room, GridZones {
      * this by pre-defining exits from grid children to elsewhere on the
      * map, including into other gridlocales.
      * @see GridLocale.CrossExit
-     * @see com.planet_ink.game.Locales.interfaces.GridLocale#addOuterExit(GridLocale.CrossExit)
-     * @see com.planet_ink.game.Locales.interfaces.GridLocale#delOuterExit(GridLocale.CrossExit)
+     * @see com.syncleus.aethermud.game.Locales.interfaces.GridLocale#addOuterExit(GridLocale.CrossExit)
+     * @see com.syncleus.aethermud.game.Locales.interfaces.GridLocale#delOuterExit(GridLocale.CrossExit)
      * @return an iterator of cross ("outer") exits.
      */
     public Iterator<CrossExit> outerExits();
@@ -130,7 +130,7 @@ public interface GridLocale extends Room, GridZones {
      * This method will add a new one.
      * @see GridLocale.CrossExit
      * @see GridLocale#outerExits()
-     * @see com.planet_ink.game.Locales.interfaces.GridLocale#delOuterExit(GridLocale.CrossExit)
+     * @see com.syncleus.aethermud.game.Locales.interfaces.GridLocale#delOuterExit(GridLocale.CrossExit)
      * @param x the new cross ("outer") exit
      */
     public void addOuterExit(CrossExit x);
@@ -143,7 +143,7 @@ public interface GridLocale extends Room, GridZones {
      * This method will remove an existing one
      * @see GridLocale.CrossExit
      * @see GridLocale#outerExits()
-     * @see com.planet_ink.game.Locales.interfaces.GridLocale#addOuterExit(GridLocale.CrossExit)
+     * @see com.syncleus.aethermud.game.Locales.interfaces.GridLocale#addOuterExit(GridLocale.CrossExit)
      * @param x the existing cross ("outer") exit to delete
      */
     public void delOuterExit(CrossExit x);

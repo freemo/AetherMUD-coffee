@@ -14,9 +14,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Common.interfaces;
+package com.syncleus.aethermud.game.Common.interfaces;
 
-import com.planet_ink.game.core.interfaces.Modifiable;
+import com.syncleus.aethermud.game.core.interfaces.Modifiable;
 
 
 /**
@@ -158,7 +158,7 @@ public interface ClanPosition extends Modifiable, CMCommon {
     /**
      * Gets the function chart.
      *
-     * @see ClanPosition#setFunctionChart(com.planet_ink.game.Common.interfaces.Clan.Authority[])
+     * @see ClanPosition#setFunctionChart(com.syncleus.aethermud.game.Common.interfaces.Clan.Authority[])
      * @return the function chart
      */
     public Clan.Authority[] getFunctionChart();

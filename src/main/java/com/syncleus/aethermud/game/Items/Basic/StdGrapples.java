@@ -14,17 +14,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Items.Basic;
+package com.syncleus.aethermud.game.Items.Basic;
 
-import com.planet_ink.game.Areas.interfaces.Area;
-import com.planet_ink.game.Common.interfaces.CMMsg;
-import com.planet_ink.game.Items.interfaces.BoardableShip;
-import com.planet_ink.game.Items.interfaces.RawMaterial;
-import com.planet_ink.game.Items.interfaces.Wearable;
-import com.planet_ink.game.Locales.interfaces.Room;
-import com.planet_ink.game.MOBS.interfaces.MOB;
-import com.planet_ink.game.core.CMLib;
-import com.planet_ink.game.core.interfaces.Environmental;
+import com.syncleus.aethermud.game.Areas.interfaces.Area;
+import com.syncleus.aethermud.game.Common.interfaces.CMMsg;
+import com.syncleus.aethermud.game.Items.interfaces.BoardableShip;
+import com.syncleus.aethermud.game.Items.interfaces.RawMaterial;
+import com.syncleus.aethermud.game.Items.interfaces.Wearable;
+import com.syncleus.aethermud.game.Locales.interfaces.Room;
+import com.syncleus.aethermud.game.MOBS.interfaces.MOB;
+import com.syncleus.aethermud.game.core.CMLib;
+import com.syncleus.aethermud.game.core.interfaces.Environmental;
 
 import java.util.Enumeration;
 

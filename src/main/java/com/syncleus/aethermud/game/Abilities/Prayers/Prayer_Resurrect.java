@@ -14,22 +14,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Abilities.Prayers;
+package com.syncleus.aethermud.game.Abilities.Prayers;
 
-import com.planet_ink.game.Abilities.interfaces.Ability;
-import com.planet_ink.game.Abilities.interfaces.MendingSkill;
-import com.planet_ink.game.Common.interfaces.CMMsg;
-import com.planet_ink.game.Items.interfaces.DeadBody;
-import com.planet_ink.game.Items.interfaces.Item;
-import com.planet_ink.game.Items.interfaces.Wearable;
-import com.planet_ink.game.Libraries.interfaces.DatabaseEngine;
-import com.planet_ink.game.Libraries.interfaces.DatabaseEngine.PlayerData;
-import com.planet_ink.game.Locales.interfaces.Room;
-import com.planet_ink.game.MOBS.interfaces.MOB;
-import com.planet_ink.game.core.*;
-import com.planet_ink.game.core.interfaces.Environmental;
-import com.planet_ink.game.core.interfaces.Physical;
-import com.planet_ink.game.core.interfaces.PhysicalAgent;
+import com.syncleus.aethermud.game.Abilities.interfaces.Ability;
+import com.syncleus.aethermud.game.Abilities.interfaces.MendingSkill;
+import com.syncleus.aethermud.game.Common.interfaces.CMMsg;
+import com.syncleus.aethermud.game.Items.interfaces.DeadBody;
+import com.syncleus.aethermud.game.Items.interfaces.Item;
+import com.syncleus.aethermud.game.Items.interfaces.Wearable;
+import com.syncleus.aethermud.game.Libraries.interfaces.DatabaseEngine;
+import com.syncleus.aethermud.game.Libraries.interfaces.DatabaseEngine.PlayerData;
+import com.syncleus.aethermud.game.Locales.interfaces.Room;
+import com.syncleus.aethermud.game.MOBS.interfaces.MOB;
+import com.syncleus.aethermud.game.core.*;
+import com.syncleus.aethermud.game.core.interfaces.Environmental;
+import com.syncleus.aethermud.game.core.interfaces.Physical;
+import com.syncleus.aethermud.game.core.interfaces.PhysicalAgent;
 
 import java.util.List;
 import java.util.Vector;

@@ -14,14 +14,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Abilities.Properties;
+package com.syncleus.aethermud.game.Abilities.Properties;
 
-import com.planet_ink.game.Abilities.interfaces.Ability;
-import com.planet_ink.game.Locales.interfaces.Room;
-import com.planet_ink.game.core.CMLib;
-import com.planet_ink.game.core.CMProps;
-import com.planet_ink.game.core.Directions;
-import com.planet_ink.game.core.interfaces.LandTitle;
+import com.syncleus.aethermud.game.Abilities.interfaces.Ability;
+import com.syncleus.aethermud.game.Locales.interfaces.Room;
+import com.syncleus.aethermud.game.core.CMLib;
+import com.syncleus.aethermud.game.core.CMProps;
+import com.syncleus.aethermud.game.core.Directions;
+import com.syncleus.aethermud.game.core.interfaces.LandTitle;
 
 import java.util.ArrayList;
 import java.util.List;

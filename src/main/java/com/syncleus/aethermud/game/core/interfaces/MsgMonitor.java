@@ -14,10 +14,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.core.interfaces;
+package com.syncleus.aethermud.game.core.interfaces;
 
-import com.planet_ink.game.Common.interfaces.CMMsg;
-import com.planet_ink.game.Locales.interfaces.Room;
+import com.syncleus.aethermud.game.Common.interfaces.CMMsg;
+import com.syncleus.aethermud.game.Locales.interfaces.Room;
 
 
 /**
@@ -32,7 +32,7 @@ public interface MsgMonitor {
      * message.
      * @param room the room the message was sent to
      * @param msg the CMMsg that needs to be executed
-     * @see com.planet_ink.game.Common.interfaces.CMMsg
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg
      */
     public void monitorMsg(Room room, CMMsg msg);
 }

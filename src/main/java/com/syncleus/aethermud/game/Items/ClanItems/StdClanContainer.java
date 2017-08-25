@@ -14,19 +14,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Items.ClanItems;
+package com.syncleus.aethermud.game.Items.ClanItems;
 
-import com.planet_ink.game.Common.interfaces.CMMsg;
-import com.planet_ink.game.Items.Basic.StdContainer;
-import com.planet_ink.game.Items.interfaces.ClanItem;
-import com.planet_ink.game.Items.interfaces.RawMaterial;
-import com.planet_ink.game.Libraries.interfaces.TimeManager;
-import com.planet_ink.game.Locales.interfaces.Room;
-import com.planet_ink.game.MOBS.interfaces.MOB;
-import com.planet_ink.game.core.CMLib;
-import com.planet_ink.game.core.interfaces.Environmental;
-import com.planet_ink.game.core.interfaces.ItemPossessor;
-import com.planet_ink.game.core.interfaces.Tickable;
+import com.syncleus.aethermud.game.Common.interfaces.CMMsg;
+import com.syncleus.aethermud.game.Items.Basic.StdContainer;
+import com.syncleus.aethermud.game.Items.interfaces.ClanItem;
+import com.syncleus.aethermud.game.Items.interfaces.RawMaterial;
+import com.syncleus.aethermud.game.Libraries.interfaces.TimeManager;
+import com.syncleus.aethermud.game.Locales.interfaces.Room;
+import com.syncleus.aethermud.game.MOBS.interfaces.MOB;
+import com.syncleus.aethermud.game.core.CMLib;
+import com.syncleus.aethermud.game.core.interfaces.Environmental;
+import com.syncleus.aethermud.game.core.interfaces.ItemPossessor;
+import com.syncleus.aethermud.game.core.interfaces.Tickable;
 
 /*
    Copyright 2004-2017 Bo Zimmerman

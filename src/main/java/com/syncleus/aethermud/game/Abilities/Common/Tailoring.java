@@ -14,20 +14,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Abilities.Common;
+package com.syncleus.aethermud.game.Abilities.Common;
 
-import com.planet_ink.game.Abilities.interfaces.ItemCraftor;
-import com.planet_ink.game.Abilities.interfaces.MendingSkill;
-import com.planet_ink.game.Common.interfaces.CMMsg;
-import com.planet_ink.game.Items.interfaces.*;
-import com.planet_ink.game.Libraries.interfaces.AchievementLibrary;
-import com.planet_ink.game.MOBS.interfaces.MOB;
-import com.planet_ink.game.core.*;
-import com.planet_ink.game.core.collections.PairVector;
-import com.planet_ink.game.core.interfaces.Environmental;
-import com.planet_ink.game.core.interfaces.Physical;
-import com.planet_ink.game.core.interfaces.Rideable;
-import com.planet_ink.game.core.interfaces.Tickable;
+import com.syncleus.aethermud.game.Abilities.interfaces.ItemCraftor;
+import com.syncleus.aethermud.game.Abilities.interfaces.MendingSkill;
+import com.syncleus.aethermud.game.Common.interfaces.CMMsg;
+import com.syncleus.aethermud.game.Items.interfaces.*;
+import com.syncleus.aethermud.game.Libraries.interfaces.AchievementLibrary;
+import com.syncleus.aethermud.game.MOBS.interfaces.MOB;
+import com.syncleus.aethermud.game.core.*;
+import com.syncleus.aethermud.game.core.collections.PairVector;
+import com.syncleus.aethermud.game.core.interfaces.Environmental;
+import com.syncleus.aethermud.game.core.interfaces.Physical;
+import com.syncleus.aethermud.game.core.interfaces.Rideable;
+import com.syncleus.aethermud.game.core.interfaces.Tickable;
 
 import java.util.List;
 import java.util.Vector;

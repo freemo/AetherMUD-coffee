@@ -14,12 +14,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Libraries.interfaces;
+package com.syncleus.aethermud.game.Libraries.interfaces;
 
-import com.planet_ink.game.Abilities.interfaces.Ability;
-import com.planet_ink.game.Items.interfaces.Armor;
-import com.planet_ink.game.Items.interfaces.Item;
-import com.planet_ink.game.Items.interfaces.Weapon;
+import com.syncleus.aethermud.game.Abilities.interfaces.Ability;
+import com.syncleus.aethermud.game.Items.interfaces.Armor;
+import com.syncleus.aethermud.game.Items.interfaces.Item;
+import com.syncleus.aethermud.game.Items.interfaces.Weapon;
 
 import java.util.Map;
 

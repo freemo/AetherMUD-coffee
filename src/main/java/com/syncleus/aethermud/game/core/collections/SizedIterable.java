@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.core.collections;
+package com.syncleus.aethermud.game.core.collections;
 
 public interface SizedIterable<K> extends Iterable<K> {
     /**

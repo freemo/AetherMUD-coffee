@@ -14,12 +14,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.core.threads;
+package com.syncleus.aethermud.game.core.threads;
 
-import com.planet_ink.game.core.CMProps;
-import com.planet_ink.game.core.Log;
-import com.planet_ink.game.core.interfaces.TickClient;
-import com.planet_ink.game.core.interfaces.Tickable;
+import com.syncleus.aethermud.game.core.CMProps;
+import com.syncleus.aethermud.game.core.Log;
+import com.syncleus.aethermud.game.core.interfaces.TickClient;
+import com.syncleus.aethermud.game.core.interfaces.Tickable;
 
 
 public class StdTickClient implements TickClient {

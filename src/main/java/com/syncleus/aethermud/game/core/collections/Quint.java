@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.core.collections;
+package com.syncleus.aethermud.game.core.collections;
 
 public class Quint<T, K, L, M, N> extends Quad<T, K, L, M> {
     public N fifth;

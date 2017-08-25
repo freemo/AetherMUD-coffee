@@ -14,14 +14,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.WebMacros;
+package com.syncleus.aethermud.game.WebMacros;
 
-import com.planet_ink.game.Commands.interfaces.Command;
-import com.planet_ink.game.MOBS.interfaces.MOB;
-import com.planet_ink.game.core.CMClass;
-import com.planet_ink.game.core.CMParms;
-import com.planet_ink.web.interfaces.HTTPRequest;
-import com.planet_ink.web.interfaces.HTTPResponse;
+import com.syncleus.aethermud.game.Commands.interfaces.Command;
+import com.syncleus.aethermud.game.MOBS.interfaces.MOB;
+import com.syncleus.aethermud.game.core.CMClass;
+import com.syncleus.aethermud.game.core.CMParms;
+import com.syncleus.aethermud.web.interfaces.HTTPRequest;
+import com.syncleus.aethermud.web.interfaces.HTTPResponse;
 
 
 public class SystemFunction extends StdWebMacro {
@@ -50,7 +50,7 @@ public class SystemFunction extends StdWebMacro {
             }
         }
         if (parms.get("SHUTDOWN") != null) {
-            //com.planet_ink.game.application.MUD.globalShutdown(null,(parms.get("RESTART")==null),null);
+            //com.syncleus.aethermud.game.application.MUD.globalShutdown(null,(parms.get("RESTART")==null),null);
             return "";
         }
         return "";

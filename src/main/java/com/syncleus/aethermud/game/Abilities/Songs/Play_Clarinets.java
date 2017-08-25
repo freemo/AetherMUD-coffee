@@ -14,12 +14,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Abilities.Songs;
+package com.syncleus.aethermud.game.Abilities.Songs;
 
-import com.planet_ink.game.Abilities.interfaces.Ability;
-import com.planet_ink.game.Items.interfaces.MusicalInstrument.InstrumentType;
-import com.planet_ink.game.core.CMClass;
-import com.planet_ink.game.core.CMLib;
+import com.syncleus.aethermud.game.Abilities.interfaces.Ability;
+import com.syncleus.aethermud.game.Items.interfaces.MusicalInstrument.InstrumentType;
+import com.syncleus.aethermud.game.core.CMClass;
+import com.syncleus.aethermud.game.core.CMLib;
 
 /*
    Copyright 2003-2017 Bo Zimmerman

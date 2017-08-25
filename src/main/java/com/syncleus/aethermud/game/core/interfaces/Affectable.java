@@ -14,11 +14,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.core.interfaces;
+package com.syncleus.aethermud.game.core.interfaces;
 
-import com.planet_ink.game.Abilities.interfaces.Ability;
-import com.planet_ink.game.Behaviors.interfaces.Behavior;
-import com.planet_ink.game.Common.interfaces.PhyStats;
+import com.syncleus.aethermud.game.Abilities.interfaces.Ability;
+import com.syncleus.aethermud.game.Behaviors.interfaces.Behavior;
+import com.syncleus.aethermud.game.Common.interfaces.PhyStats;
 
 import java.util.Enumeration;
 
@@ -35,9 +35,9 @@ public interface Affectable {
      * Object containing a set of base, unmodified, mostly numeric fields.  The values on the fields
      * in this object will be as they were set by the builder. This object is used as a basis for
      * the recoverPhyStats() method.  See the PhyStats interface for information on the fields herein.
-     * @see com.planet_ink.game.core.interfaces.Affectable#phyStats()
-     * @see com.planet_ink.game.core.interfaces.Affectable#recoverPhyStats()
-     * @see com.planet_ink.game.Common.interfaces.PhyStats
+     * @see com.syncleus.aethermud.game.core.interfaces.Affectable#phyStats()
+     * @see com.syncleus.aethermud.game.core.interfaces.Affectable#recoverPhyStats()
+     * @see com.syncleus.aethermud.game.Common.interfaces.PhyStats
      * @return a set of state fields
      */
     public PhyStats basePhyStats();
@@ -48,9 +48,9 @@ public interface Affectable {
      * the recoverPhyStats() method.  See the PhyStats interface for information on the fields herein. This
      * method is rarely called -- the fields therein are usually set using setter methods from the PhyStats
      * interface on the object itself.
-     * @see com.planet_ink.game.core.interfaces.Affectable#phyStats()
-     * @see com.planet_ink.game.core.interfaces.Affectable#recoverPhyStats()
-     * @see com.planet_ink.game.Common.interfaces.PhyStats
+     * @see com.syncleus.aethermud.game.core.interfaces.Affectable#phyStats()
+     * @see com.syncleus.aethermud.game.core.interfaces.Affectable#recoverPhyStats()
+     * @see com.syncleus.aethermud.game.Common.interfaces.PhyStats
      * @param newStats a set of state fields
      */
     public void setBasePhyStats(PhyStats newStats);
@@ -59,9 +59,9 @@ public interface Affectable {
      * Object containing a set of current, modified, usable, mostly numeric fields.  This object is based on
      * the object from basePhyStats() and then updated and modified by the recoverPhyStats() method.
      * See the PhyStats interface for information on the fields herein.
-     * @see com.planet_ink.game.core.interfaces.Affectable#basePhyStats()
-     * @see com.planet_ink.game.core.interfaces.Affectable#recoverPhyStats()
-     * @see com.planet_ink.game.Common.interfaces.PhyStats
+     * @see com.syncleus.aethermud.game.core.interfaces.Affectable#basePhyStats()
+     * @see com.syncleus.aethermud.game.core.interfaces.Affectable#recoverPhyStats()
+     * @see com.syncleus.aethermud.game.Common.interfaces.PhyStats
      * @return the current set of state fields
      */
     public PhyStats phyStats();
@@ -74,11 +74,11 @@ public interface Affectable {
      * adjustments to the values in the new phyStats() object.  When it returns, phyStats() will have a totally
      * updated object.  This method must be called in code whenever the object is placed on the map, or when
      * anything changes in its environment, such as location, effects, or other states.
-     * @see com.planet_ink.game.core.interfaces.Affectable#basePhyStats()
-     * @see com.planet_ink.game.core.interfaces.Affectable#phyStats()
-     * @see com.planet_ink.game.core.interfaces.Affectable#addEffect(Ability)
-     * @see com.planet_ink.game.core.interfaces.PhysicalAgent#addBehavior(Behavior)
-     * @see com.planet_ink.game.Common.interfaces.PhyStats
+     * @see com.syncleus.aethermud.game.core.interfaces.Affectable#basePhyStats()
+     * @see com.syncleus.aethermud.game.core.interfaces.Affectable#phyStats()
+     * @see com.syncleus.aethermud.game.core.interfaces.Affectable#addEffect(Ability)
+     * @see com.syncleus.aethermud.game.core.interfaces.PhysicalAgent#addBehavior(Behavior)
+     * @see com.syncleus.aethermud.game.Common.interfaces.PhyStats
      */
     public void recoverPhyStats();
 
@@ -86,8 +86,8 @@ public interface Affectable {
      * Add a new effect to this object, whether permanent or temporary.  After calling this method,
      * recoverPhyStats() should be called next in case this ability object modifies the stats.
      * An Ability with a given ID() can only be added once per object.
-     * @see com.planet_ink.game.Abilities.interfaces.Ability
-     * @see com.planet_ink.game.core.interfaces.Affectable#recoverPhyStats()
+     * @see com.syncleus.aethermud.game.Abilities.interfaces.Ability
+     * @see com.syncleus.aethermud.game.core.interfaces.Affectable#recoverPhyStats()
      * @param to The ability object to add as an effect.
      */
     public void addEffect(Ability to);
@@ -96,8 +96,8 @@ public interface Affectable {
      * Same as addEffect(Ability), but will set the Ability object as never being able to be uninvoked.
      * recoverPhyStats() method  should be called next.
      * An Ability with a given ID() can only be added once per object.
-     * @see com.planet_ink.game.Abilities.interfaces.Ability
-     * @see com.planet_ink.game.core.interfaces.Affectable#recoverPhyStats()
+     * @see com.syncleus.aethermud.game.Abilities.interfaces.Ability
+     * @see com.syncleus.aethermud.game.core.interfaces.Affectable#recoverPhyStats()
      * @param to The ability object to add as an effect.
      */
     public void addNonUninvokableEffect(Ability to);
@@ -105,15 +105,15 @@ public interface Affectable {
     /**
      * Delete an effect from this object, whether permanent or temporary.  After calling this method,
      * recoverPhyStats() should be called next in case this ability object modified the stats.
-     * @see com.planet_ink.game.Abilities.interfaces.Ability
-     * @see com.planet_ink.game.core.interfaces.Affectable#recoverPhyStats()
+     * @see com.syncleus.aethermud.game.Abilities.interfaces.Ability
+     * @see com.syncleus.aethermud.game.core.interfaces.Affectable#recoverPhyStats()
      * @param to The ability object to remove as an effect on this object
      */
     public void delEffect(Ability to);
 
     /**
      * Returns the number of ability objects listed as effects on this object.
-     * @see com.planet_ink.game.Abilities.interfaces.Ability
+     * @see com.syncleus.aethermud.game.Abilities.interfaces.Ability
      * @return the number of effects this object has
      */
     public int numEffects();
@@ -121,8 +121,8 @@ public interface Affectable {
     /**
      * Returns an ability object listed as an effect on this object. May return null even if the index
      * is correct to mark a race condition.
-     * @see com.planet_ink.game.Abilities.interfaces.Ability
-     * @see com.planet_ink.game.core.interfaces.Affectable#numEffects()
+     * @see com.syncleus.aethermud.game.Abilities.interfaces.Ability
+     * @see com.syncleus.aethermud.game.core.interfaces.Affectable#numEffects()
      * @param index which object to return
      * @return the ability object effecting this object
      */
@@ -131,7 +131,7 @@ public interface Affectable {
     /**
      * Returns an ability object listed as an effect on this object. The object will
      * be the one with the same ID() string as passed in.
-     * @see com.planet_ink.game.Abilities.interfaces.Ability
+     * @see com.syncleus.aethermud.game.Abilities.interfaces.Ability
      * @see CMObject#ID()
      * @param ID the Ability ID to look for in effects
      * @return the ability object effecting this object
@@ -140,7 +140,7 @@ public interface Affectable {
 
     /**
      * Returns an enumerator of abilities listed as effects on this object.
-     * @see com.planet_ink.game.Abilities.interfaces.Ability
+     * @see com.syncleus.aethermud.game.Abilities.interfaces.Ability
      * @return the enumerator of ability objects effecting this object
      */
     public Enumeration<Ability> effects();

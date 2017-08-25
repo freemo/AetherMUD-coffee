@@ -14,19 +14,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Behaviors;
+package com.syncleus.aethermud.game.Behaviors;
 
-import com.planet_ink.game.Behaviors.interfaces.Behavior;
-import com.planet_ink.game.Exits.interfaces.Exit;
-import com.planet_ink.game.Libraries.interfaces.MaskingLibrary;
-import com.planet_ink.game.Locales.interfaces.Room;
-import com.planet_ink.game.MOBS.interfaces.MOB;
-import com.planet_ink.game.core.CMLib;
-import com.planet_ink.game.core.CMParms;
-import com.planet_ink.game.core.CMSecurity;
-import com.planet_ink.game.core.Directions;
-import com.planet_ink.game.core.interfaces.Rideable;
-import com.planet_ink.game.core.interfaces.Tickable;
+import com.syncleus.aethermud.game.Behaviors.interfaces.Behavior;
+import com.syncleus.aethermud.game.Exits.interfaces.Exit;
+import com.syncleus.aethermud.game.Libraries.interfaces.MaskingLibrary;
+import com.syncleus.aethermud.game.Locales.interfaces.Room;
+import com.syncleus.aethermud.game.MOBS.interfaces.MOB;
+import com.syncleus.aethermud.game.core.CMLib;
+import com.syncleus.aethermud.game.core.CMParms;
+import com.syncleus.aethermud.game.core.CMSecurity;
+import com.syncleus.aethermud.game.core.Directions;
+import com.syncleus.aethermud.game.core.interfaces.Rideable;
+import com.syncleus.aethermud.game.core.interfaces.Tickable;
 
 
 public class VeryAggressive extends Aggressive {

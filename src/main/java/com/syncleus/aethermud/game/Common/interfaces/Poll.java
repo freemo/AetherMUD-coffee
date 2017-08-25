@@ -14,10 +14,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Common.interfaces;
+package com.syncleus.aethermud.game.Common.interfaces;
 
-import com.planet_ink.game.MOBS.interfaces.MOB;
-import com.planet_ink.game.core.interfaces.Environmental;
+import com.syncleus.aethermud.game.MOBS.interfaces.MOB;
+import com.syncleus.aethermud.game.core.interfaces.Environmental;
 
 import java.util.List;
 
@@ -28,8 +28,8 @@ import java.util.List;
  * CREATE POLL, LIST POLLS, etc.. commands.
  *
  * These objects are managed by the PollManager Library
- * @see com.planet_ink.game.Libraries.interfaces.PollManager
- * @see com.planet_ink.game.core.CMLib#polls()
+ * @see com.syncleus.aethermud.game.Libraries.interfaces.PollManager
+ * @see com.syncleus.aethermud.game.core.CMLib#polls()
  */
 public interface Poll extends CMCommon {
     /** bitmask poll flag denoting that the poll is ready to receive votes */
@@ -47,154 +47,154 @@ public interface Poll extends CMCommon {
 
     /**
      * A name for this poll, used for internal purposes only.
-     * @see com.planet_ink.game.Common.interfaces.Poll#setName(String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Poll#setName(String)
      * @return a name for this poll
      */
     public String getName();
 
     /**
      * Sets a name for this poll, used for internal purposes only.
-     * @see com.planet_ink.game.Common.interfaces.Poll#getName()
+     * @see com.syncleus.aethermud.game.Common.interfaces.Poll#getName()
      * @param newname a name for this poll
      */
     public void setName(String newname);
 
     /**
      * Returns the title used when showing poll results.
-     * @see com.planet_ink.game.Common.interfaces.Poll#setSubject(String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Poll#setSubject(String)
      * @return the title used when showing poll results.
      */
     public String getSubject();
 
     /**
      * Sets the title used when showing poll results.
-     * @see com.planet_ink.game.Common.interfaces.Poll#getSubject()
+     * @see com.syncleus.aethermud.game.Common.interfaces.Poll#getSubject()
      * @param newsubject the title used when showing poll results.
      */
     public void setSubject(String newsubject);
 
     /**
      * Returns the description shown when participating in the poll.
-     * @see com.planet_ink.game.Common.interfaces.Poll#setDescription(String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Poll#setDescription(String)
      * @return the description shown when participating in the poll.
      */
     public String getDescription();
 
     /**
      * Sets the description shown when participating in the poll.
-     * @see com.planet_ink.game.Common.interfaces.Poll#getDescription()
+     * @see com.syncleus.aethermud.game.Common.interfaces.Poll#getDescription()
      * @param newdescription the description shown when participating in the poll.
      */
     public void setDescription(String newdescription);
 
     /**
      * Returns the Name of the creator of this poll.
-     * @see com.planet_ink.game.Common.interfaces.Poll#setAuthor(String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Poll#setAuthor(String)
      * @return the Name of the creator of this poll.
      */
     public String getAuthor();
 
     /**
      * Sets the Name of the creator of this poll.
-     * @see com.planet_ink.game.Common.interfaces.Poll#getAuthor()
+     * @see com.syncleus.aethermud.game.Common.interfaces.Poll#getAuthor()
      * @param newname the Name of the creator of this poll.
      */
     public void setAuthor(String newname);
 
     /**
      * Returns a bitmap of flags related to this poll.
-     * @see com.planet_ink.game.Common.interfaces.Poll#setFlags(long)
-     * @see com.planet_ink.game.Common.interfaces.Poll#FLAG_ABSTAIN
-     * @see com.planet_ink.game.Common.interfaces.Poll#FLAG_ACTIVE
+     * @see com.syncleus.aethermud.game.Common.interfaces.Poll#setFlags(long)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Poll#FLAG_ABSTAIN
+     * @see com.syncleus.aethermud.game.Common.interfaces.Poll#FLAG_ACTIVE
      * @return a bitmap of flags related to this poll.
      */
     public long getFlags();
 
     /**
      * Sets a bitmap of flags related to this poll.
-     * @see com.planet_ink.game.Common.interfaces.Poll#getFlags()
-     * @see com.planet_ink.game.Common.interfaces.Poll#FLAG_ABSTAIN
-     * @see com.planet_ink.game.Common.interfaces.Poll#FLAG_ACTIVE
+     * @see com.syncleus.aethermud.game.Common.interfaces.Poll#getFlags()
+     * @see com.syncleus.aethermud.game.Common.interfaces.Poll#FLAG_ABSTAIN
+     * @see com.syncleus.aethermud.game.Common.interfaces.Poll#FLAG_ACTIVE
      * @param flag a bitmap of flags related to this poll.
      */
     public void setFlags(long flag);
 
     /**
      * Returns a zapper mask string to mask out valid participants.
-     * @see com.planet_ink.game.Common.interfaces.Poll#setQualZapper(String)
-     * @see com.planet_ink.game.Libraries.interfaces.MaskingLibrary#maskCheck(String, Environmental, boolean)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Poll#setQualZapper(String)
+     * @see com.syncleus.aethermud.game.Libraries.interfaces.MaskingLibrary#maskCheck(String, Environmental, boolean)
      * @return a zapper mask string to mask out valid participants.
      */
     public String getQualZapper();
 
     /**
      * Sets a zapper mask string to mask out valid participants.
-     * @see com.planet_ink.game.Common.interfaces.Poll#getQualZapper()
-     * @see com.planet_ink.game.Libraries.interfaces.MaskingLibrary#maskCheck(String, Environmental, boolean)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Poll#getQualZapper()
+     * @see com.syncleus.aethermud.game.Libraries.interfaces.MaskingLibrary#maskCheck(String, Environmental, boolean)
      * @param newZap a zapper mask string to mask out valid participants.
      */
     public void setQualZapper(String newZap);
 
     /**
      * Returns the time, in millis since 1970, that this poll expires.
-     * @see com.planet_ink.game.Common.interfaces.Poll#setExpiration(long)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Poll#setExpiration(long)
      * @return the time, in millis since 1970, that this poll expires.
      */
     public long getExpiration();
 
     /**
      * Sets the time, in millis since 1970, that this poll expires.
-     * @see com.planet_ink.game.Common.interfaces.Poll#getExpiration()
+     * @see com.syncleus.aethermud.game.Common.interfaces.Poll#getExpiration()
      * @param time the time, in millis since 1970, that this poll expires.
      */
     public void setExpiration(long time);
 
     /**
      * Returns a list of PollOption objects denoting the poll choices.
-     * @see com.planet_ink.game.Common.interfaces.Poll#setOptions(List)
-     * @see com.planet_ink.game.Common.interfaces.Poll.PollOption
+     * @see com.syncleus.aethermud.game.Common.interfaces.Poll#setOptions(List)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Poll.PollOption
      * @return a list of PollOption objects denoting the poll choices.
      */
     public List<PollOption> getOptions();
 
     /**
      * Sets a list of PollOption objects denoting the poll choices.
-     * @see com.planet_ink.game.Common.interfaces.Poll#getOptions()
-     * @see com.planet_ink.game.Common.interfaces.Poll.PollOption
+     * @see com.syncleus.aethermud.game.Common.interfaces.Poll#getOptions()
+     * @see com.syncleus.aethermud.game.Common.interfaces.Poll.PollOption
      * @param V a list of PollOption objects denoting the poll choices.
      */
     public void setOptions(List<PollOption> V);
 
     /**
      * Returns a list of PollResult objects renoting all poll votes.
-     * @see com.planet_ink.game.Common.interfaces.Poll#getResults()
-     * @see com.planet_ink.game.Common.interfaces.Poll.PollResult
+     * @see com.syncleus.aethermud.game.Common.interfaces.Poll#getResults()
+     * @see com.syncleus.aethermud.game.Common.interfaces.Poll.PollResult
      * @return a list of PollResult objects renoting all poll votes.
      */
     public List<PollResult> getResults();
 
     /**
      * Sets a list of PollResult objects renoting all poll votes.
-     * @see com.planet_ink.game.Common.interfaces.Poll#getResults()
-     * @see com.planet_ink.game.Common.interfaces.Poll.PollResult
+     * @see com.syncleus.aethermud.game.Common.interfaces.Poll#getResults()
+     * @see com.syncleus.aethermud.game.Common.interfaces.Poll.PollResult
      * @param V a list of PollResult objects renoting all poll votes.
      */
     public void setResults(List<PollResult> V);
 
     /**
      * Returns a String of PollOption objects rendered as an XML document.
-     * @see com.planet_ink.game.Common.interfaces.Poll#getOptions()
-     * @see com.planet_ink.game.Common.interfaces.Poll.PollOption
-     * @see com.planet_ink.game.Libraries.interfaces.PollManager#loadPollIfNecessary(Poll)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Poll#getOptions()
+     * @see com.syncleus.aethermud.game.Common.interfaces.Poll.PollOption
+     * @see com.syncleus.aethermud.game.Libraries.interfaces.PollManager#loadPollIfNecessary(Poll)
      * @return a String of PollOption objects rendered as an XML document.
      */
     public String getOptionsXML();
 
     /**
      * Returns a String of PollResult objects rendered as an XML document.
-     * @see com.planet_ink.game.Common.interfaces.Poll#getResults()
-     * @see com.planet_ink.game.Common.interfaces.Poll.PollResult
-     * @see com.planet_ink.game.Libraries.interfaces.PollManager#loadPollIfNecessary(Poll)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Poll#getResults()
+     * @see com.syncleus.aethermud.game.Common.interfaces.Poll.PollResult
+     * @see com.syncleus.aethermud.game.Libraries.interfaces.PollManager#loadPollIfNecessary(Poll)
      * @return a String of PollResult objects rendered as an XML document.
      */
     public String getResultsXML();
@@ -202,8 +202,8 @@ public interface Poll extends CMCommon {
     /**
      * Returns whether the PollOption and PollResult objects have already been
      * loaded and populated into this object from the database.
-     * @see com.planet_ink.game.Common.interfaces.Poll#setLoaded(boolean)
-     * @see com.planet_ink.game.Libraries.interfaces.PollManager#loadPollIfNecessary(Poll)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Poll#setLoaded(boolean)
+     * @see com.syncleus.aethermud.game.Libraries.interfaces.PollManager#loadPollIfNecessary(Poll)
      * @return true returns true if this object is fully populated from the database
      */
     public boolean loaded();
@@ -211,8 +211,8 @@ public interface Poll extends CMCommon {
     /**
      * Sets whether the PollOption and PollResult objects have already been
      * loaded and populated into this object from the database.
-     * @see com.planet_ink.game.Common.interfaces.Poll#loaded()
-     * @see com.planet_ink.game.Libraries.interfaces.PollManager#loadPollIfNecessary(Poll)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Poll#loaded()
+     * @see com.syncleus.aethermud.game.Libraries.interfaces.PollManager#loadPollIfNecessary(Poll)
      * @param truefalse set to true if this object is fully populated from the database
      */
     public void setLoaded(boolean truefalse);
@@ -220,9 +220,9 @@ public interface Poll extends CMCommon {
     /**
      * Populates this Poll object if necessary, and returns the PollResult
      * object that represents the given mobs vote in this Poll, or NULL otherwise.
-     * @see com.planet_ink.game.Libraries.interfaces.PollManager#loadPollIfNecessary(Poll)
-     * @see com.planet_ink.game.Common.interfaces.Poll#addVoteResult(com.planet_ink.game.Common.interfaces.Poll.PollResult)
-     * @see com.planet_ink.game.Common.interfaces.Poll.PollResult
+     * @see com.syncleus.aethermud.game.Libraries.interfaces.PollManager#loadPollIfNecessary(Poll)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Poll#addVoteResult(com.syncleus.aethermud.game.Common.interfaces.Poll.PollResult)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Poll.PollResult
      * @param mob the mob to find a result object for
      * @return the PollResult object denoting this mobs vote
      */
@@ -231,9 +231,9 @@ public interface Poll extends CMCommon {
     /**
      * Populates this Poll object if necessary, and adds the given PollResult
      * object that represents a mobs vote in this Poll to the list of results.
-     * @see com.planet_ink.game.Libraries.interfaces.PollManager#loadPollIfNecessary(Poll)
-     * @see com.planet_ink.game.Common.interfaces.Poll#getMyVote(MOB)
-     * @see com.planet_ink.game.Common.interfaces.Poll.PollResult
+     * @see com.syncleus.aethermud.game.Libraries.interfaces.PollManager#loadPollIfNecessary(Poll)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Poll#getMyVote(MOB)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Poll.PollResult
      * @param R the particular vote by a particular mob to add
      */
     public void addVoteResult(PollResult R);
@@ -241,9 +241,9 @@ public interface Poll extends CMCommon {
     /**
      * Returns true if the given mob is allowed to vote in this poll, false otherwise.
      * Always returns false if getMyVote(mob)!=null.
-     * @see com.planet_ink.game.Common.interfaces.Poll#getMyVote(MOB)
-     * @see com.planet_ink.game.Common.interfaces.Poll#FLAG_VOTEBYIP
-     * @see com.planet_ink.game.Common.interfaces.Poll#FLAG_ACTIVE
+     * @see com.syncleus.aethermud.game.Common.interfaces.Poll#getMyVote(MOB)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Poll#FLAG_VOTEBYIP
+     * @see com.syncleus.aethermud.game.Common.interfaces.Poll#FLAG_ACTIVE
      * @param mob the mob to check for elligibility
      * @return true if the given mob is allowed to vote in this poll, false otherwise.
      */
@@ -251,8 +251,8 @@ public interface Poll extends CMCommon {
 
     /**
      * Returns true if the given mob may not see the poll results, false otherwise.
-     * @see com.planet_ink.game.Common.interfaces.Poll#FLAG_HIDERESULTS
-     * @see com.planet_ink.game.Common.interfaces.Poll#FLAG_PREVIEWRESULTS
+     * @see com.syncleus.aethermud.game.Common.interfaces.Poll#FLAG_HIDERESULTS
+     * @see com.syncleus.aethermud.game.Common.interfaces.Poll#FLAG_PREVIEWRESULTS
      * @param mob the mob to check for elligibility
      * @return true if the given mob can not see the poll results, false otherwise
      */

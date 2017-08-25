@@ -14,21 +14,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Items.CompTech;
+package com.syncleus.aethermud.game.Items.CompTech;
 
-import com.planet_ink.game.Common.interfaces.CMMsg;
-import com.planet_ink.game.Items.interfaces.Software;
-import com.planet_ink.game.Items.interfaces.TechComponent;
-import com.planet_ink.game.Items.interfaces.Technical;
-import com.planet_ink.game.Libraries.interfaces.LanguageLibrary;
-import com.planet_ink.game.Locales.interfaces.Room;
-import com.planet_ink.game.MOBS.interfaces.MOB;
-import com.planet_ink.game.core.CMClass;
-import com.planet_ink.game.core.CMLib;
-import com.planet_ink.game.core.collections.Converter;
-import com.planet_ink.game.core.collections.Filterer;
-import com.planet_ink.game.core.interfaces.Environmental;
-import com.planet_ink.game.core.interfaces.SpaceObject;
+import com.syncleus.aethermud.game.Common.interfaces.CMMsg;
+import com.syncleus.aethermud.game.Items.interfaces.Software;
+import com.syncleus.aethermud.game.Items.interfaces.TechComponent;
+import com.syncleus.aethermud.game.Items.interfaces.Technical;
+import com.syncleus.aethermud.game.Libraries.interfaces.LanguageLibrary;
+import com.syncleus.aethermud.game.Locales.interfaces.Room;
+import com.syncleus.aethermud.game.MOBS.interfaces.MOB;
+import com.syncleus.aethermud.game.core.CMClass;
+import com.syncleus.aethermud.game.core.CMLib;
+import com.syncleus.aethermud.game.core.collections.Converter;
+import com.syncleus.aethermud.game.core.collections.Filterer;
+import com.syncleus.aethermud.game.core.interfaces.Environmental;
+import com.syncleus.aethermud.game.core.interfaces.SpaceObject;
 
 import java.util.List;
 
@@ -67,7 +67,7 @@ public class StdElecCompSensor extends StdElecCompItem implements TechComponent 
 
     /**
      * Filter to pick out which objects this sensor can actually pick up.
-     * @see com.planet_ink.game.core.collections.Filterer
+     * @see com.syncleus.aethermud.game.core.collections.Filterer
      * @return a Filterer to pick out which objects this sensor can actually pick up.
      */
     protected Filterer<SpaceObject> getSensedObjectFilter() {
@@ -77,7 +77,7 @@ public class StdElecCompSensor extends StdElecCompItem implements TechComponent 
     /**
      * Converter to convert from the actual sensed object, to a CMObject, which may
      * or may not contain all the information of the actual one.
-     * @see com.planet_ink.game.core.collections.Converter
+     * @see com.syncleus.aethermud.game.core.collections.Converter
      * @return to convert from the actual sensed object, to a CMObject
      */
     protected Converter<SpaceObject, Environmental> getSensedObjectConverter() {

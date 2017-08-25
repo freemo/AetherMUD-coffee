@@ -14,10 +14,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.core.intermud.cm1;
+package com.syncleus.aethermud.game.core.intermud.cm1;
 
-import com.planet_ink.game.core.CMClass;
-import com.planet_ink.game.core.intermud.cm1.commands.CM1Command;
+import com.syncleus.aethermud.game.core.CMClass;
+import com.syncleus.aethermud.game.core.intermud.cm1.commands.CM1Command;
 
 import java.io.File;
 import java.net.URL;

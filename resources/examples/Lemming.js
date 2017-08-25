@@ -5,7 +5,7 @@
 //then enter:
 //CREATE MOB Lemming
 //
-//extends com.planet_ink.game.MOBS.StdMOB
+//extends com.syncleus.aethermud.game.MOBS.StdMOB
 //do not change the above line -- it's actual code!
 
 // just like in all other cm classes, an ID method must be defined
@@ -24,7 +24,7 @@ function newInstance() {
 }
 
 // Define a shortcut to our libraries
-var lib = Packages.com.planet_ink.game.core.CMLib;
+var lib = Packages.com.syncleus.aethermud.game.core.CMLib;
 // and define a countdown variable to kill off our lemming.
 var countdown = 10;
 

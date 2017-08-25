@@ -14,24 +14,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Libraries;
+package com.syncleus.aethermud.game.Libraries;
 
-import com.planet_ink.game.Abilities.interfaces.Ability;
-import com.planet_ink.game.Areas.interfaces.Area;
-import com.planet_ink.game.Common.interfaces.CMMsg;
-import com.planet_ink.game.Common.interfaces.Faction;
-import com.planet_ink.game.Common.interfaces.Faction.FRange;
-import com.planet_ink.game.Common.interfaces.Faction.FactionChangeEvent;
-import com.planet_ink.game.Common.interfaces.Session;
-import com.planet_ink.game.Libraries.interfaces.FactionManager;
-import com.planet_ink.game.Locales.interfaces.Room;
-import com.planet_ink.game.MOBS.interfaces.MOB;
-import com.planet_ink.game.Races.interfaces.Race;
-import com.planet_ink.game.core.*;
-import com.planet_ink.game.core.collections.SHashtable;
-import com.planet_ink.game.core.collections.XVector;
-import com.planet_ink.game.core.interfaces.Environmental;
-import com.planet_ink.game.core.interfaces.Tickable;
+import com.syncleus.aethermud.game.Abilities.interfaces.Ability;
+import com.syncleus.aethermud.game.Areas.interfaces.Area;
+import com.syncleus.aethermud.game.Common.interfaces.CMMsg;
+import com.syncleus.aethermud.game.Common.interfaces.Faction;
+import com.syncleus.aethermud.game.Common.interfaces.Faction.FRange;
+import com.syncleus.aethermud.game.Common.interfaces.Faction.FactionChangeEvent;
+import com.syncleus.aethermud.game.Common.interfaces.Session;
+import com.syncleus.aethermud.game.Libraries.interfaces.FactionManager;
+import com.syncleus.aethermud.game.Locales.interfaces.Room;
+import com.syncleus.aethermud.game.MOBS.interfaces.MOB;
+import com.syncleus.aethermud.game.Races.interfaces.Race;
+import com.syncleus.aethermud.game.core.*;
+import com.syncleus.aethermud.game.core.collections.SHashtable;
+import com.syncleus.aethermud.game.core.collections.XVector;
+import com.syncleus.aethermud.game.core.interfaces.Environmental;
+import com.syncleus.aethermud.game.core.interfaces.Tickable;
 
 import java.io.IOException;
 import java.util.*;

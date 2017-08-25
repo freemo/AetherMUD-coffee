@@ -104,94 +104,94 @@ endif
 
 # Packages we should compile
 PACKAGES = \
-com.planet_ink.fakedb \
-com.planet_ink.game.Abilities \
-com.planet_ink.game.application \
-com.planet_ink.game.Areas \
-com.planet_ink.game.Behaviors \
-com.planet_ink.game.CharClasses \
-com.planet_ink.game.Commands \
-com.planet_ink.game.Common \
-com.planet_ink.game.core \
-com.planet_ink.game.core.collections \
-com.planet_ink.game.core.database \
-com.planet_ink.game.core.exceptions \
-com.planet_ink.game.core.interfaces \
-com.planet_ink.game.core.intermud \
-com.planet_ink.game.core.intermud.cm1 \
-com.planet_ink.game.core.intermud.cm1.commands \
-com.planet_ink.game.core.intermud.imc2 \
-com.planet_ink.game.core.intermud.i3 \
-com.planet_ink.game.core.intermud.i3.net \
-com.planet_ink.game.core.intermud.i3.packets \
-com.planet_ink.game.core.intermud.i3.persist \
-com.planet_ink.game.core.intermud.i3.server \
-com.planet_ink.game.core.smtp \
-com.planet_ink.game.core.threads \
-com.planet_ink.game.Exits \
-com.planet_ink.game.Libraries \
-com.planet_ink.game.Locales \
-com.planet_ink.game.MOBS \
-com.planet_ink.game.Races \
-com.planet_ink.game.WebMacros \
-com.planet_ink.game.Abilities.Archon \
-com.planet_ink.game.Abilities.Common \
-com.planet_ink.game.Abilities.Diseases \
-com.planet_ink.game.Abilities.Druid \
-com.planet_ink.game.Abilities.Fighter \
-com.planet_ink.game.Abilities.interfaces \
-com.planet_ink.game.Abilities.Languages \
-com.planet_ink.game.Abilities.Misc \
-com.planet_ink.game.Abilities.Paladin \
-com.planet_ink.game.Abilities.Poisons \
-com.planet_ink.game.Abilities.Prayers \
-com.planet_ink.game.Abilities.Properties \
-com.planet_ink.game.Abilities.Ranger \
-com.planet_ink.game.Abilities.Skills \
-com.planet_ink.game.Abilities.Songs \
-com.planet_ink.game.Abilities.Specializations \
-com.planet_ink.game.Abilities.Spells \
-com.planet_ink.game.Abilities.SuperPowers \
-com.planet_ink.game.Abilities.Tech \
-com.planet_ink.game.Abilities.Thief \
-com.planet_ink.game.Abilities.Traps \
-com.planet_ink.game.Areas.interfaces \
-com.planet_ink.game.Behaviors.interfaces \
-com.planet_ink.game.CharClasses.interfaces \
-com.planet_ink.game.Commands.interfaces \
-com.planet_ink.game.Common.interfaces \
-com.planet_ink.game.Exits.interfaces \
-com.planet_ink.game.Items.Armor \
-com.planet_ink.game.Items.Basic \
-com.planet_ink.game.Items.ClanItems \
-com.planet_ink.game.Items.interfaces \
-com.planet_ink.game.Items.MiscMagic \
-com.planet_ink.game.Items.BasicTech \
-com.planet_ink.game.Items.ShipTech \
-com.planet_ink.game.Items.Software \
-com.planet_ink.game.Items.Weapons \
-com.planet_ink.game.Libraries.interfaces \
-com.planet_ink.game.Libraries.layouts \
-com.planet_ink.game.Locales.interfaces \
-com.planet_ink.game.MOBS.interfaces \
-com.planet_ink.game.Races.interfaces \
-com.planet_ink.game.WebMacros.grinder \
-com.planet_ink.game.WebMacros.interfaces \
-com.planet_ink.web.converters \
-com.planet_ink.web.http \
-com.planet_ink.web.interfaces \
-com.planet_ink.web.server \
-com.planet_ink.web.servlets \
-com.planet_ink.web.util \
-com.planet_ink.siplet.applet \
-com.planet_ink.siplet.support \
+com.syncleus.aethermud.fakedb \
+com.syncleus.aethermud.game.Abilities \
+com.syncleus.aethermud.game.application \
+com.syncleus.aethermud.game.Areas \
+com.syncleus.aethermud.game.Behaviors \
+com.syncleus.aethermud.game.CharClasses \
+com.syncleus.aethermud.game.Commands \
+com.syncleus.aethermud.game.Common \
+com.syncleus.aethermud.game.core \
+com.syncleus.aethermud.game.core.collections \
+com.syncleus.aethermud.game.core.database \
+com.syncleus.aethermud.game.core.exceptions \
+com.syncleus.aethermud.game.core.interfaces \
+com.syncleus.aethermud.game.core.intermud \
+com.syncleus.aethermud.game.core.intermud.cm1 \
+com.syncleus.aethermud.game.core.intermud.cm1.commands \
+com.syncleus.aethermud.game.core.intermud.imc2 \
+com.syncleus.aethermud.game.core.intermud.i3 \
+com.syncleus.aethermud.game.core.intermud.i3.net \
+com.syncleus.aethermud.game.core.intermud.i3.packets \
+com.syncleus.aethermud.game.core.intermud.i3.persist \
+com.syncleus.aethermud.game.core.intermud.i3.server \
+com.syncleus.aethermud.game.core.smtp \
+com.syncleus.aethermud.game.core.threads \
+com.syncleus.aethermud.game.Exits \
+com.syncleus.aethermud.game.Libraries \
+com.syncleus.aethermud.game.Locales \
+com.syncleus.aethermud.game.MOBS \
+com.syncleus.aethermud.game.Races \
+com.syncleus.aethermud.game.WebMacros \
+com.syncleus.aethermud.game.Abilities.Archon \
+com.syncleus.aethermud.game.Abilities.Common \
+com.syncleus.aethermud.game.Abilities.Diseases \
+com.syncleus.aethermud.game.Abilities.Druid \
+com.syncleus.aethermud.game.Abilities.Fighter \
+com.syncleus.aethermud.game.Abilities.interfaces \
+com.syncleus.aethermud.game.Abilities.Languages \
+com.syncleus.aethermud.game.Abilities.Misc \
+com.syncleus.aethermud.game.Abilities.Paladin \
+com.syncleus.aethermud.game.Abilities.Poisons \
+com.syncleus.aethermud.game.Abilities.Prayers \
+com.syncleus.aethermud.game.Abilities.Properties \
+com.syncleus.aethermud.game.Abilities.Ranger \
+com.syncleus.aethermud.game.Abilities.Skills \
+com.syncleus.aethermud.game.Abilities.Songs \
+com.syncleus.aethermud.game.Abilities.Specializations \
+com.syncleus.aethermud.game.Abilities.Spells \
+com.syncleus.aethermud.game.Abilities.SuperPowers \
+com.syncleus.aethermud.game.Abilities.Tech \
+com.syncleus.aethermud.game.Abilities.Thief \
+com.syncleus.aethermud.game.Abilities.Traps \
+com.syncleus.aethermud.game.Areas.interfaces \
+com.syncleus.aethermud.game.Behaviors.interfaces \
+com.syncleus.aethermud.game.CharClasses.interfaces \
+com.syncleus.aethermud.game.Commands.interfaces \
+com.syncleus.aethermud.game.Common.interfaces \
+com.syncleus.aethermud.game.Exits.interfaces \
+com.syncleus.aethermud.game.Items.Armor \
+com.syncleus.aethermud.game.Items.Basic \
+com.syncleus.aethermud.game.Items.ClanItems \
+com.syncleus.aethermud.game.Items.interfaces \
+com.syncleus.aethermud.game.Items.MiscMagic \
+com.syncleus.aethermud.game.Items.BasicTech \
+com.syncleus.aethermud.game.Items.ShipTech \
+com.syncleus.aethermud.game.Items.Software \
+com.syncleus.aethermud.game.Items.Weapons \
+com.syncleus.aethermud.game.Libraries.interfaces \
+com.syncleus.aethermud.game.Libraries.layouts \
+com.syncleus.aethermud.game.Locales.interfaces \
+com.syncleus.aethermud.game.MOBS.interfaces \
+com.syncleus.aethermud.game.Races.interfaces \
+com.syncleus.aethermud.game.WebMacros.grinder \
+com.syncleus.aethermud.game.WebMacros.interfaces \
+com.syncleus.aethermud.web.converters \
+com.syncleus.aethermud.web.http \
+com.syncleus.aethermud.web.interfaces \
+com.syncleus.aethermud.web.server \
+com.syncleus.aethermud.web.servlets \
+com.syncleus.aethermud.web.util \
+com.syncleus.aethermud.siplet.applet \
+com.syncleus.aethermud.siplet.support \
 
 
 # All packages that can be recursively compiled.
 ALL_PACKAGES = \
-	com.planet_ink.game \
-	com.planet_ink \
-    com.planet_ink.game.Items \
+	com.syncleus.aethermud.game \
+	com.syncleus.aethermud \
+    com.syncleus.aethermud.game.Items \
 	com \
 	$(PACKAGES)
 
@@ -490,89 +490,89 @@ endif
 
 #package targets
 
-com.planet_ink.game : $(call PACKAGE_OBJS,com.planet_ink.game)
-com.planet_ink : $(call PACKAGE_OBJS,com.planet_ink)
-com.planet_ink.game.Items : $(call PACKAGE_OBJS,com.planet_ink.game.Items)
+com.syncleus.aethermud.game : $(call PACKAGE_OBJS,com.syncleus.aethermud.game)
+com.syncleus.aethermud : $(call PACKAGE_OBJS,com.syncleus.aethermud)
+com.syncleus.aethermud.game.Items : $(call PACKAGE_OBJS,com.syncleus.aethermud.game.Items)
 com : $(call PACKAGE_OBJS,com)
-com.planet_ink.fakedb : $(call PACKAGE_OBJS,com.planet_ink.fakedb)
-com.planet_ink.game.Abilities : $(call PACKAGE_OBJS,com.planet_ink.game.Abilities)
-com.planet_ink.game.application : $(call PACKAGE_OBJS,com.planet_ink.game.application)
-com.planet_ink.game.Areas : $(call PACKAGE_OBJS,com.planet_ink.game.Areas)
-com.planet_ink.game.Behaviors : $(call PACKAGE_OBJS,com.planet_ink.game.Behaviors)
-com.planet_ink.game.CharClasses : $(call PACKAGE_OBJS,com.planet_ink.game.CharClasses)
-com.planet_ink.game.Commands : $(call PACKAGE_OBJS,com.planet_ink.game.Commands)
-com.planet_ink.game.Common : $(call PACKAGE_OBJS,com.planet_ink.game.Common)
-com.planet_ink.game.core : $(call PACKAGE_OBJS,com.planet_ink.game.core)
-com.planet_ink.game.Exits : $(call PACKAGE_OBJS,com.planet_ink.game.Exits)
-com.planet_ink.game.Libraries : $(call PACKAGE_OBJS,com.planet_ink.game.Libraries)
-com.planet_ink.game.Locales : $(call PACKAGE_OBJS,com.planet_ink.game.Locales)
-com.planet_ink.game.MOBS : $(call PACKAGE_OBJS,com.planet_ink.game.MOBS)
-com.planet_ink.game.Races : $(call PACKAGE_OBJS,com.planet_ink.game.Races)
-com.planet_ink.game.WebMacros : $(call PACKAGE_OBJS,com.planet_ink.game.WebMacros)
-com.planet_ink.game.Abilities.Archon : $(call PACKAGE_OBJS,com.planet_ink.game.Abilities.Archon)
-com.planet_ink.game.Abilities.Common : $(call PACKAGE_OBJS,com.planet_ink.game.Abilities.Common)
-com.planet_ink.game.Abilities.Diseases : $(call PACKAGE_OBJS,com.planet_ink.game.Abilities.Diseases)
-com.planet_ink.game.Abilities.Druid : $(call PACKAGE_OBJS,com.planet_ink.game.Abilities.Druid)
-com.planet_ink.game.Abilities.Fighter : $(call PACKAGE_OBJS,com.planet_ink.game.Abilities.Fighter)
-com.planet_ink.game.Abilities.interfaces : $(call PACKAGE_OBJS,com.planet_ink.game.Abilities.interfaces)
-com.planet_ink.game.Abilities.Languages : $(call PACKAGE_OBJS,com.planet_ink.game.Abilities.Languages)
-com.planet_ink.game.Abilities.Misc : $(call PACKAGE_OBJS,com.planet_ink.game.Abilities.Misc)
-com.planet_ink.game.Abilities.Paladin : $(call PACKAGE_OBJS,com.planet_ink.game.Abilities.Paladin)
-com.planet_ink.game.Abilities.Poisons : $(call PACKAGE_OBJS,com.planet_ink.game.Abilities.Poisons)
-com.planet_ink.game.Abilities.Prayers : $(call PACKAGE_OBJS,com.planet_ink.game.Abilities.Prayers)
-com.planet_ink.game.Abilities.Properties : $(call PACKAGE_OBJS,com.planet_ink.game.Abilities.Properties)
-com.planet_ink.game.Abilities.Ranger : $(call PACKAGE_OBJS,com.planet_ink.game.Abilities.Ranger)
-com.planet_ink.game.Abilities.Skills : $(call PACKAGE_OBJS,com.planet_ink.game.Abilities.Skills)
-com.planet_ink.game.Abilities.Songs : $(call PACKAGE_OBJS,com.planet_ink.game.Abilities.Songs)
-com.planet_ink.game.Abilities.Specializations : $(call PACKAGE_OBJS,com.planet_ink.game.Abilities.Specializations)
-com.planet_ink.game.Abilities.Spells : $(call PACKAGE_OBJS,com.planet_ink.game.Abilities.Spells)
-com.planet_ink.game.Abilities.SuperPowers : $(call PACKAGE_OBJS,com.planet_ink.game.Abilities.SuperPowers)
-com.planet_ink.game.Abilities.Tech : $(call PACKAGE_OBJS,com.planet_ink.game.Abilities.Tech)
-com.planet_ink.game.Abilities.Thief : $(call PACKAGE_OBJS,com.planet_ink.game.Abilities.Thief)
-com.planet_ink.game.Abilities.Traps : $(call PACKAGE_OBJS,com.planet_ink.game.Abilities.Traps)
-com.planet_ink.game.Areas.interfaces : $(call PACKAGE_OBJS,com.planet_ink.game.Areas.interfaces)
-com.planet_ink.game.Behaviors.interfaces : $(call PACKAGE_OBJS,com.planet_ink.game.Behaviors.interfaces)
-com.planet_ink.game.CharClasses.interfaces : $(call PACKAGE_OBJS,com.planet_ink.game.CharClasses.interfaces)
-com.planet_ink.game.Commands.interfaces : $(call PACKAGE_OBJS,com.planet_ink.game.Commands.interfaces)
-com.planet_ink.game.Common.interfaces : $(call PACKAGE_OBJS,com.planet_ink.game.Common.interfaces)
-com.planet_ink.game.core.collections : $(call PACKAGE_OBJS,com.planet_ink.game.core.collections)
-com.planet_ink.game.core.database : $(call PACKAGE_OBJS,com.planet_ink.game.core.database)
-com.planet_ink.game.core.exceptions : $(call PACKAGE_OBJS,com.planet_ink.game.core.exceptions)
-com.planet_ink.game.core.interfaces : $(call PACKAGE_OBJS,com.planet_ink.game.core.interfaces)
-com.planet_ink.game.core.intermud : $(call PACKAGE_OBJS,com.planet_ink.game.core.intermud)
-com.planet_ink.game.core.smtp : $(call PACKAGE_OBJS,com.planet_ink.game.core.smtp)
-com.planet_ink.game.core.threads : $(call PACKAGE_OBJS,com.planet_ink.game.core.threads)
-com.planet_ink.game.core.intermud.cm1 : $(call PACKAGE_OBJS,com.planet_ink.game.core.intermud.cm1)
-com.planet_ink.game.core.intermud.cm1.commands : $(call PACKAGE_OBJS,com.planet_ink.game.core.intermud.cm1.commands)
-com.planet_ink.game.core.intermud.imc2 : $(call PACKAGE_OBJS,com.planet_ink.game.core.intermud.imc2)
-com.planet_ink.game.core.intermud.i3 : $(call PACKAGE_OBJS,com.planet_ink.game.core.intermud.i3)
-com.planet_ink.game.core.intermud.i3.net : $(call PACKAGE_OBJS,com.planet_ink.game.core.intermud.i3.net)
-com.planet_ink.game.core.intermud.i3.packets : $(call PACKAGE_OBJS,com.planet_ink.game.core.intermud.i3.packets)
-com.planet_ink.game.core.intermud.i3.persist : $(call PACKAGE_OBJS,com.planet_ink.game.core.intermud.i3.persist)
-com.planet_ink.game.core.intermud.i3.server : $(call PACKAGE_OBJS,com.planet_ink.game.core.intermud.i3.server)
-com.planet_ink.game.Exits.interfaces : $(call PACKAGE_OBJS,com.planet_ink.game.Exits.interfaces)
-com.planet_ink.game.Items.Armor : $(call PACKAGE_OBJS,com.planet_ink.game.Items.Armor)
-com.planet_ink.game.Items.Basic : $(call PACKAGE_OBJS,com.planet_ink.game.Items.Basic)
-com.planet_ink.game.Items.ClanItems : $(call PACKAGE_OBJS,com.planet_ink.game.Items.ClanItems)
-com.planet_ink.game.Items.interfaces : $(call PACKAGE_OBJS,com.planet_ink.game.Items.interfaces)
-com.planet_ink.game.Items.MiscMagic : $(call PACKAGE_OBJS,com.planet_ink.game.Items.MiscMagic)
-com.planet_ink.game.Items.BasicTech : $(call PACKAGE_OBJS,com.planet_ink.game.Items.BasicTech)
-com.planet_ink.game.Items.ShipTech : $(call PACKAGE_OBJS,com.planet_ink.game.Items.ShipTech)
-com.planet_ink.game.Items.Software : $(call PACKAGE_OBJS,com.planet_ink.game.Items.Software)
-com.planet_ink.game.Items.Weapons : $(call PACKAGE_OBJS,com.planet_ink.game.Items.Weapons)
-com.planet_ink.game.Libraries.interfaces : $(call PACKAGE_OBJS,com.planet_ink.game.Libraries.interfaces)
-com.planet_ink.game.Libraries.layouts : $(call PACKAGE_OBJS,com.planet_ink.game.Libraries.layouts)
-com.planet_ink.game.Locales.interfaces : $(call PACKAGE_OBJS,com.planet_ink.game.Locales.interfaces)
-com.planet_ink.game.MOBS.interfaces : $(call PACKAGE_OBJS,com.planet_ink.game.MOBS.interfaces)
-com.planet_ink.game.Races.interfaces : $(call PACKAGE_OBJS,com.planet_ink.game.Races.interfaces)
-com.planet_ink.game.WebMacros.grinder : $(call PACKAGE_OBJS,com.planet_ink.game.WebMacros.grinder)
-com.planet_ink.game.WebMacros.interfaces : $(call PACKAGE_OBJS,com.planet_ink.game.WebMacros.interfaces)
-com.planet_ink.miniweb.converters : $(call PACKAGE_OBJS,com.planet_ink.miniweb.converters)
-com.planet_ink.miniweb.http : $(call PACKAGE_OBJS,com.planet_ink.miniweb.http)
-com.planet_ink.miniweb.interfaces : $(call PACKAGE_OBJS,com.planet_ink.miniweb.interfaces)
-com.planet_ink.miniweb.server : $(call PACKAGE_OBJS,com.planet_ink.miniweb.server)
-com.planet_ink.miniweb.servlets : $(call PACKAGE_OBJS,com.planet_ink.miniweb.servlets)
-com.planet_ink.miniweb.util : $(call PACKAGE_OBJS,com.planet_ink.miniweb.util)
-com.planet_ink.siplet.applet : $(call PACKAGE_OBJS,com.planet_ink.siplet.applet)
-com.planet_ink.siplet.support : $(call PACKAGE_OBJS,com.planet_ink.siplet.support)
+com.syncleus.aethermud.fakedb : $(call PACKAGE_OBJS,com.syncleus.aethermud.fakedb)
+com.syncleus.aethermud.game.Abilities : $(call PACKAGE_OBJS,com.syncleus.aethermud.game.Abilities)
+com.syncleus.aethermud.game.application : $(call PACKAGE_OBJS,com.syncleus.aethermud.game.application)
+com.syncleus.aethermud.game.Areas : $(call PACKAGE_OBJS,com.syncleus.aethermud.game.Areas)
+com.syncleus.aethermud.game.Behaviors : $(call PACKAGE_OBJS,com.syncleus.aethermud.game.Behaviors)
+com.syncleus.aethermud.game.CharClasses : $(call PACKAGE_OBJS,com.syncleus.aethermud.game.CharClasses)
+com.syncleus.aethermud.game.Commands : $(call PACKAGE_OBJS,com.syncleus.aethermud.game.Commands)
+com.syncleus.aethermud.game.Common : $(call PACKAGE_OBJS,com.syncleus.aethermud.game.Common)
+com.syncleus.aethermud.game.core : $(call PACKAGE_OBJS,com.syncleus.aethermud.game.core)
+com.syncleus.aethermud.game.Exits : $(call PACKAGE_OBJS,com.syncleus.aethermud.game.Exits)
+com.syncleus.aethermud.game.Libraries : $(call PACKAGE_OBJS,com.syncleus.aethermud.game.Libraries)
+com.syncleus.aethermud.game.Locales : $(call PACKAGE_OBJS,com.syncleus.aethermud.game.Locales)
+com.syncleus.aethermud.game.MOBS : $(call PACKAGE_OBJS,com.syncleus.aethermud.game.MOBS)
+com.syncleus.aethermud.game.Races : $(call PACKAGE_OBJS,com.syncleus.aethermud.game.Races)
+com.syncleus.aethermud.game.WebMacros : $(call PACKAGE_OBJS,com.syncleus.aethermud.game.WebMacros)
+com.syncleus.aethermud.game.Abilities.Archon : $(call PACKAGE_OBJS,com.syncleus.aethermud.game.Abilities.Archon)
+com.syncleus.aethermud.game.Abilities.Common : $(call PACKAGE_OBJS,com.syncleus.aethermud.game.Abilities.Common)
+com.syncleus.aethermud.game.Abilities.Diseases : $(call PACKAGE_OBJS,com.syncleus.aethermud.game.Abilities.Diseases)
+com.syncleus.aethermud.game.Abilities.Druid : $(call PACKAGE_OBJS,com.syncleus.aethermud.game.Abilities.Druid)
+com.syncleus.aethermud.game.Abilities.Fighter : $(call PACKAGE_OBJS,com.syncleus.aethermud.game.Abilities.Fighter)
+com.syncleus.aethermud.game.Abilities.interfaces : $(call PACKAGE_OBJS,com.syncleus.aethermud.game.Abilities.interfaces)
+com.syncleus.aethermud.game.Abilities.Languages : $(call PACKAGE_OBJS,com.syncleus.aethermud.game.Abilities.Languages)
+com.syncleus.aethermud.game.Abilities.Misc : $(call PACKAGE_OBJS,com.syncleus.aethermud.game.Abilities.Misc)
+com.syncleus.aethermud.game.Abilities.Paladin : $(call PACKAGE_OBJS,com.syncleus.aethermud.game.Abilities.Paladin)
+com.syncleus.aethermud.game.Abilities.Poisons : $(call PACKAGE_OBJS,com.syncleus.aethermud.game.Abilities.Poisons)
+com.syncleus.aethermud.game.Abilities.Prayers : $(call PACKAGE_OBJS,com.syncleus.aethermud.game.Abilities.Prayers)
+com.syncleus.aethermud.game.Abilities.Properties : $(call PACKAGE_OBJS,com.syncleus.aethermud.game.Abilities.Properties)
+com.syncleus.aethermud.game.Abilities.Ranger : $(call PACKAGE_OBJS,com.syncleus.aethermud.game.Abilities.Ranger)
+com.syncleus.aethermud.game.Abilities.Skills : $(call PACKAGE_OBJS,com.syncleus.aethermud.game.Abilities.Skills)
+com.syncleus.aethermud.game.Abilities.Songs : $(call PACKAGE_OBJS,com.syncleus.aethermud.game.Abilities.Songs)
+com.syncleus.aethermud.game.Abilities.Specializations : $(call PACKAGE_OBJS,com.syncleus.aethermud.game.Abilities.Specializations)
+com.syncleus.aethermud.game.Abilities.Spells : $(call PACKAGE_OBJS,com.syncleus.aethermud.game.Abilities.Spells)
+com.syncleus.aethermud.game.Abilities.SuperPowers : $(call PACKAGE_OBJS,com.syncleus.aethermud.game.Abilities.SuperPowers)
+com.syncleus.aethermud.game.Abilities.Tech : $(call PACKAGE_OBJS,com.syncleus.aethermud.game.Abilities.Tech)
+com.syncleus.aethermud.game.Abilities.Thief : $(call PACKAGE_OBJS,com.syncleus.aethermud.game.Abilities.Thief)
+com.syncleus.aethermud.game.Abilities.Traps : $(call PACKAGE_OBJS,com.syncleus.aethermud.game.Abilities.Traps)
+com.syncleus.aethermud.game.Areas.interfaces : $(call PACKAGE_OBJS,com.syncleus.aethermud.game.Areas.interfaces)
+com.syncleus.aethermud.game.Behaviors.interfaces : $(call PACKAGE_OBJS,com.syncleus.aethermud.game.Behaviors.interfaces)
+com.syncleus.aethermud.game.CharClasses.interfaces : $(call PACKAGE_OBJS,com.syncleus.aethermud.game.CharClasses.interfaces)
+com.syncleus.aethermud.game.Commands.interfaces : $(call PACKAGE_OBJS,com.syncleus.aethermud.game.Commands.interfaces)
+com.syncleus.aethermud.game.Common.interfaces : $(call PACKAGE_OBJS,com.syncleus.aethermud.game.Common.interfaces)
+com.syncleus.aethermud.game.core.collections : $(call PACKAGE_OBJS,com.syncleus.aethermud.game.core.collections)
+com.syncleus.aethermud.game.core.database : $(call PACKAGE_OBJS,com.syncleus.aethermud.game.core.database)
+com.syncleus.aethermud.game.core.exceptions : $(call PACKAGE_OBJS,com.syncleus.aethermud.game.core.exceptions)
+com.syncleus.aethermud.game.core.interfaces : $(call PACKAGE_OBJS,com.syncleus.aethermud.game.core.interfaces)
+com.syncleus.aethermud.game.core.intermud : $(call PACKAGE_OBJS,com.syncleus.aethermud.game.core.intermud)
+com.syncleus.aethermud.game.core.smtp : $(call PACKAGE_OBJS,com.syncleus.aethermud.game.core.smtp)
+com.syncleus.aethermud.game.core.threads : $(call PACKAGE_OBJS,com.syncleus.aethermud.game.core.threads)
+com.syncleus.aethermud.game.core.intermud.cm1 : $(call PACKAGE_OBJS,com.syncleus.aethermud.game.core.intermud.cm1)
+com.syncleus.aethermud.game.core.intermud.cm1.commands : $(call PACKAGE_OBJS,com.syncleus.aethermud.game.core.intermud.cm1.commands)
+com.syncleus.aethermud.game.core.intermud.imc2 : $(call PACKAGE_OBJS,com.syncleus.aethermud.game.core.intermud.imc2)
+com.syncleus.aethermud.game.core.intermud.i3 : $(call PACKAGE_OBJS,com.syncleus.aethermud.game.core.intermud.i3)
+com.syncleus.aethermud.game.core.intermud.i3.net : $(call PACKAGE_OBJS,com.syncleus.aethermud.game.core.intermud.i3.net)
+com.syncleus.aethermud.game.core.intermud.i3.packets : $(call PACKAGE_OBJS,com.syncleus.aethermud.game.core.intermud.i3.packets)
+com.syncleus.aethermud.game.core.intermud.i3.persist : $(call PACKAGE_OBJS,com.syncleus.aethermud.game.core.intermud.i3.persist)
+com.syncleus.aethermud.game.core.intermud.i3.server : $(call PACKAGE_OBJS,com.syncleus.aethermud.game.core.intermud.i3.server)
+com.syncleus.aethermud.game.Exits.interfaces : $(call PACKAGE_OBJS,com.syncleus.aethermud.game.Exits.interfaces)
+com.syncleus.aethermud.game.Items.Armor : $(call PACKAGE_OBJS,com.syncleus.aethermud.game.Items.Armor)
+com.syncleus.aethermud.game.Items.Basic : $(call PACKAGE_OBJS,com.syncleus.aethermud.game.Items.Basic)
+com.syncleus.aethermud.game.Items.ClanItems : $(call PACKAGE_OBJS,com.syncleus.aethermud.game.Items.ClanItems)
+com.syncleus.aethermud.game.Items.interfaces : $(call PACKAGE_OBJS,com.syncleus.aethermud.game.Items.interfaces)
+com.syncleus.aethermud.game.Items.MiscMagic : $(call PACKAGE_OBJS,com.syncleus.aethermud.game.Items.MiscMagic)
+com.syncleus.aethermud.game.Items.BasicTech : $(call PACKAGE_OBJS,com.syncleus.aethermud.game.Items.BasicTech)
+com.syncleus.aethermud.game.Items.ShipTech : $(call PACKAGE_OBJS,com.syncleus.aethermud.game.Items.ShipTech)
+com.syncleus.aethermud.game.Items.Software : $(call PACKAGE_OBJS,com.syncleus.aethermud.game.Items.Software)
+com.syncleus.aethermud.game.Items.Weapons : $(call PACKAGE_OBJS,com.syncleus.aethermud.game.Items.Weapons)
+com.syncleus.aethermud.game.Libraries.interfaces : $(call PACKAGE_OBJS,com.syncleus.aethermud.game.Libraries.interfaces)
+com.syncleus.aethermud.game.Libraries.layouts : $(call PACKAGE_OBJS,com.syncleus.aethermud.game.Libraries.layouts)
+com.syncleus.aethermud.game.Locales.interfaces : $(call PACKAGE_OBJS,com.syncleus.aethermud.game.Locales.interfaces)
+com.syncleus.aethermud.game.MOBS.interfaces : $(call PACKAGE_OBJS,com.syncleus.aethermud.game.MOBS.interfaces)
+com.syncleus.aethermud.game.Races.interfaces : $(call PACKAGE_OBJS,com.syncleus.aethermud.game.Races.interfaces)
+com.syncleus.aethermud.game.WebMacros.grinder : $(call PACKAGE_OBJS,com.syncleus.aethermud.game.WebMacros.grinder)
+com.syncleus.aethermud.game.WebMacros.interfaces : $(call PACKAGE_OBJS,com.syncleus.aethermud.game.WebMacros.interfaces)
+com.syncleus.aethermud.miniweb.converters : $(call PACKAGE_OBJS,com.syncleus.aethermud.miniweb.converters)
+com.syncleus.aethermud.miniweb.http : $(call PACKAGE_OBJS,com.syncleus.aethermud.miniweb.http)
+com.syncleus.aethermud.miniweb.interfaces : $(call PACKAGE_OBJS,com.syncleus.aethermud.miniweb.interfaces)
+com.syncleus.aethermud.miniweb.server : $(call PACKAGE_OBJS,com.syncleus.aethermud.miniweb.server)
+com.syncleus.aethermud.miniweb.servlets : $(call PACKAGE_OBJS,com.syncleus.aethermud.miniweb.servlets)
+com.syncleus.aethermud.miniweb.util : $(call PACKAGE_OBJS,com.syncleus.aethermud.miniweb.util)
+com.syncleus.aethermud.siplet.applet : $(call PACKAGE_OBJS,com.syncleus.aethermud.siplet.applet)
+com.syncleus.aethermud.siplet.support : $(call PACKAGE_OBJS,com.syncleus.aethermud.siplet.support)
 

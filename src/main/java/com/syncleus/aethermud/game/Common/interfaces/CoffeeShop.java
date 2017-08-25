@@ -14,11 +14,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Common.interfaces;
+package com.syncleus.aethermud.game.Common.interfaces;
 
-import com.planet_ink.game.MOBS.interfaces.MOB;
-import com.planet_ink.game.core.interfaces.Environmental;
-import com.planet_ink.game.core.interfaces.ShopKeeper;
+import com.syncleus.aethermud.game.MOBS.interfaces.MOB;
+import com.syncleus.aethermud.game.core.interfaces.Environmental;
+import com.syncleus.aethermud.game.core.interfaces.ShopKeeper;
 
 import java.util.Iterator;
 import java.util.List;
@@ -37,17 +37,17 @@ import java.util.List;
  * a single copy of the original store inventory, to be used as a base of comparison
  * for situations where the stock is empty, but someone is wanting to sell.
  *
- * @see com.planet_ink.game.core.interfaces.ShopKeeper
- * @see com.planet_ink.game.core.interfaces.ShopKeeper#isSold(int)
- * @see com.planet_ink.game.core.interfaces.ShopKeeper#DEAL_INVENTORYONLY
+ * @see com.syncleus.aethermud.game.core.interfaces.ShopKeeper
+ * @see com.syncleus.aethermud.game.core.interfaces.ShopKeeper#isSold(int)
+ * @see com.syncleus.aethermud.game.core.interfaces.ShopKeeper#DEAL_INVENTORYONLY
  */
 public interface CoffeeShop extends CMCommon {
     /**
      * Returns whether an item sufficiently like the given item originally
      * existed in this shops inventory when it was created.  Applies only
      * to shops where their whatIsSold method returns ONLY_INVENTORY
-     * @see com.planet_ink.game.core.interfaces.ShopKeeper#isSold(int)
-     * @see com.planet_ink.game.core.interfaces.ShopKeeper#DEAL_INVENTORYONLY
+     * @see com.syncleus.aethermud.game.core.interfaces.ShopKeeper#isSold(int)
+     * @see com.syncleus.aethermud.game.core.interfaces.ShopKeeper#DEAL_INVENTORYONLY
      * @param thisThang the thing to compare against the base inventory
      * @return whether the item, or one just like it, is in the base inventory
      */
@@ -56,7 +56,7 @@ public interface CoffeeShop extends CMCommon {
     /**
      * Adds a new item to the store inventory.  Use this method when an item is sold
      * to the store, as pricing and other information will have to be derived.
-     * @see com.planet_ink.game.Common.interfaces.CoffeeShop#addStoreInventory(Environmental, int, int)
+     * @see com.syncleus.aethermud.game.Common.interfaces.CoffeeShop#addStoreInventory(Environmental, int, int)
      * @param thisThang the thing to sell
      * @return the core store inventory item added
      */
@@ -65,8 +65,8 @@ public interface CoffeeShop extends CMCommon {
     /**
      * Returns the number of items in the stores base inventory.  Only really useful
      * for historical reasons, or if the shop sells inventory only.
-     * @see com.planet_ink.game.core.interfaces.ShopKeeper#isSold(int)
-     * @see com.planet_ink.game.core.interfaces.ShopKeeper#DEAL_INVENTORYONLY
+     * @see com.syncleus.aethermud.game.core.interfaces.ShopKeeper#isSold(int)
+     * @see com.syncleus.aethermud.game.core.interfaces.ShopKeeper#DEAL_INVENTORYONLY
      * @return the number of items in the base inventory
      */
     public int enumerableStockSize();
@@ -74,7 +74,7 @@ public interface CoffeeShop extends CMCommon {
     /**
      * Returns the number of items this shop currently has for sale.  Does not
      * take number of duplicates into account.  For that call totalStockSizeIncludingDuplicates
-     * @see com.planet_ink.game.Common.interfaces.CoffeeShop#totalStockSizeIncludingDuplicates()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CoffeeShop#totalStockSizeIncludingDuplicates()
      * @return the number of items for sale.
      */
     public int totalStockSize();
@@ -110,8 +110,8 @@ public interface CoffeeShop extends CMCommon {
      * Returns a iterator of all the Environmental objects this shop has in its base
      * inventory.  Only useful for historical reasons, or if the shop sells inventory
      * only.
-     * @see com.planet_ink.game.core.interfaces.ShopKeeper#isSold(int)
-     * @see com.planet_ink.game.core.interfaces.ShopKeeper#DEAL_INVENTORYONLY
+     * @see com.syncleus.aethermud.game.core.interfaces.ShopKeeper#isSold(int)
+     * @see com.syncleus.aethermud.game.core.interfaces.ShopKeeper#DEAL_INVENTORYONLY
      * @return a iterator of objects in base inventory
      */
     public Iterator<Environmental> getEnumerableInventory();
@@ -144,14 +144,14 @@ public interface CoffeeShop extends CMCommon {
     /**
      * The number of items in the store inventory, taking number in stock into account.
      * Call this method to see how crowded the shop really is, as opposed to totalStockSize.
-     * @see com.planet_ink.game.Common.interfaces.CoffeeShop#totalStockSize()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CoffeeShop#totalStockSize()
      * @return the total number of all items in stock
      */
     public int totalStockSizeIncludingDuplicates();
 
     /**
      * Removes all items like the given item from the base and store inventory.
-     * @see com.planet_ink.game.core.interfaces.ShopKeeper#isSold(int)
+     * @see com.syncleus.aethermud.game.core.interfaces.ShopKeeper#isSold(int)
      * @param thisThang the item like which to remove
      */
     public void delAllStoreInventory(Environmental thisThang);
@@ -159,7 +159,7 @@ public interface CoffeeShop extends CMCommon {
     /**
      * Returns whether an item with the given name is presently in this stores
      * stock inventory, and available for sale.
-     * @see com.planet_ink.game.core.interfaces.ShopKeeper#isSold(int)
+     * @see com.syncleus.aethermud.game.core.interfaces.ShopKeeper#isSold(int)
      * @param name the name of the item to search for
      * @param mob the mob who is interested (stock can differ depending on customer)
      * @return whether the item is available
@@ -171,7 +171,7 @@ public interface CoffeeShop extends CMCommon {
      * will use as a foundation for determining the given items price.  -1 would mean
      * that the shopkeeper uses the valuation of the item as a basis, whereas another
      * value is in base gold.  Best to get likeThis item from the getStoreInventory()
-     * @see com.planet_ink.game.Common.interfaces.CoffeeShop#getStoreInventory()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CoffeeShop#getStoreInventory()
      * @param likeThis the item like which to compare
      * @return the stock price of the item given.
      */
@@ -180,7 +180,7 @@ public interface CoffeeShop extends CMCommon {
     /**
      * Returns the number of items like the one given that the shopkeeper presently
      * has in stock and available for sale.
-     * @see com.planet_ink.game.Common.interfaces.CoffeeShop#getStoreInventory()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CoffeeShop#getStoreInventory()
      * @param likeThis the item like which to compare
      * @return the number currently in stock.
      */
@@ -188,7 +188,7 @@ public interface CoffeeShop extends CMCommon {
 
     /**
      * Searches this shops stock of items for sale for one matching the given name.
-     * @see com.planet_ink.game.Common.interfaces.CoffeeShop#getStoreInventory()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CoffeeShop#getStoreInventory()
      * @param name the name of the item to search for
      * @param mob the mob who is interested (stock can differ depending on customer)
      * @return the available item, if found
@@ -199,7 +199,7 @@ public interface CoffeeShop extends CMCommon {
      * Searches this shops stock of items for sale for one matching the given name.
      * If one is found, it copies the item, removes one from the available stock, and
      * returns the copy.
-     * @see com.planet_ink.game.Common.interfaces.CoffeeShop#getStoreInventory()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CoffeeShop#getStoreInventory()
      * @param name the name of the item to search for
      * @param mob the mob who is interested (stock can differ depending on customer)
      * @return the available item, if found
@@ -211,7 +211,7 @@ public interface CoffeeShop extends CMCommon {
      * If one is found, it copies the item, removes one from the available stock, and
      * prepares it for sale by adding it to a list along with any necessary accessories,
      * such as necessary keys, or if a container, any contents of the container.
-     * @see com.planet_ink.game.Common.interfaces.CoffeeShop#getStoreInventory()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CoffeeShop#getStoreInventory()
      * @param named the name of the item to search for
      * @param mob the mob who is interested (stock can differ depending on customer)
      * @return the available items, if found, as a list of Environmental objects
@@ -220,8 +220,8 @@ public interface CoffeeShop extends CMCommon {
 
     /**
      * Generates an XML document of all available shop inventory, prices, and availability.
-     * @see com.planet_ink.game.Common.interfaces.CoffeeShop#getStoreInventory()
-     * @see com.planet_ink.game.Common.interfaces.CoffeeShop#buildShopFromXML(String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.CoffeeShop#getStoreInventory()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CoffeeShop#buildShopFromXML(String)
      * @return an XML document.
      */
     public String makeXML();
@@ -229,7 +229,7 @@ public interface CoffeeShop extends CMCommon {
     /**
      * Repopulates this shop inventory from a given xml document, restoring store inventory,
      * base inventory, prices, and availability.
-     * @see com.planet_ink.game.Common.interfaces.CoffeeShop#makeXML()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CoffeeShop#makeXML()
      * @param text the xml document to restore from
      */
     public void buildShopFromXML(String text);

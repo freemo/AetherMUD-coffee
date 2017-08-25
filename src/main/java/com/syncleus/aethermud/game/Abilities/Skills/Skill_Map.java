@@ -14,22 +14,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Abilities.Skills;
+package com.syncleus.aethermud.game.Abilities.Skills;
 
-import com.planet_ink.game.Abilities.interfaces.Ability;
-import com.planet_ink.game.Common.interfaces.CMMsg;
-import com.planet_ink.game.Common.interfaces.CharStats;
-import com.planet_ink.game.Common.interfaces.PhyStats;
-import com.planet_ink.game.Items.interfaces.Item;
-import com.planet_ink.game.Items.interfaces.Scroll;
-import com.planet_ink.game.Items.interfaces.Wearable;
-import com.planet_ink.game.Locales.interfaces.Room;
-import com.planet_ink.game.MOBS.interfaces.MOB;
-import com.planet_ink.game.core.CMClass;
-import com.planet_ink.game.core.CMLib;
-import com.planet_ink.game.core.CMath;
-import com.planet_ink.game.core.interfaces.Environmental;
-import com.planet_ink.game.core.interfaces.Physical;
+import com.syncleus.aethermud.game.Abilities.interfaces.Ability;
+import com.syncleus.aethermud.game.Common.interfaces.CMMsg;
+import com.syncleus.aethermud.game.Common.interfaces.CharStats;
+import com.syncleus.aethermud.game.Common.interfaces.PhyStats;
+import com.syncleus.aethermud.game.Items.interfaces.Item;
+import com.syncleus.aethermud.game.Items.interfaces.Scroll;
+import com.syncleus.aethermud.game.Items.interfaces.Wearable;
+import com.syncleus.aethermud.game.Locales.interfaces.Room;
+import com.syncleus.aethermud.game.MOBS.interfaces.MOB;
+import com.syncleus.aethermud.game.core.CMClass;
+import com.syncleus.aethermud.game.core.CMLib;
+import com.syncleus.aethermud.game.core.CMath;
+import com.syncleus.aethermud.game.core.interfaces.Environmental;
+import com.syncleus.aethermud.game.core.interfaces.Physical;
 
 import java.util.List;
 import java.util.Vector;
@@ -133,8 +133,8 @@ public class Skill_Map extends StdSkill {
                     if (R != null)
                         R.send(mob, CMClass.getMsg(mob, map, this, CMMsg.MSG_WROTE, null, CMMsg.MSG_WROTE, CMLib.map().getExtendedRoomID((Room) msg.target()), -1, null));
                     map.setReadableText(map.readableText() + ";" + CMLib.map().getExtendedRoomID((Room) msg.target()));
-                    if (map instanceof com.planet_ink.game.Items.interfaces.RoomMap)
-                        ((com.planet_ink.game.Items.interfaces.RoomMap) map).doMapArea();
+                    if (map instanceof com.syncleus.aethermud.game.Items.interfaces.RoomMap)
+                        ((com.syncleus.aethermud.game.Items.interfaces.RoomMap) map).doMapArea();
                 }
             }
         }
@@ -171,7 +171,7 @@ public class Skill_Map extends StdSkill {
             return false;
         }
 
-        if (item instanceof com.planet_ink.game.Items.interfaces.RoomMap) {
+        if (item instanceof com.syncleus.aethermud.game.Items.interfaces.RoomMap) {
             if (!item.ID().equals(getMapClass())) {
                 mob.tell(L("There's no more room to add to that map."));
                 return false;
@@ -213,8 +213,8 @@ public class Skill_Map extends StdSkill {
                 if (!roomsMappedAlready.contains(firstRoom)) {
                     roomsMappedAlready.addElement(firstRoom);
                     map.setReadableText(map.readableText() + ";" + CMLib.map().getExtendedRoomID(firstRoom));
-                    if (map instanceof com.planet_ink.game.Items.interfaces.RoomMap)
-                        ((com.planet_ink.game.Items.interfaces.RoomMap) map).doMapArea();
+                    if (map instanceof com.syncleus.aethermud.game.Items.interfaces.RoomMap)
+                        ((com.syncleus.aethermud.game.Items.interfaces.RoomMap) map).doMapArea();
                 }
                 String rooms = item.readableText();
                 int x = rooms.indexOf(';');

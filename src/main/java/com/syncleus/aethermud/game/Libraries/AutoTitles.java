@@ -14,15 +14,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Libraries;
+package com.syncleus.aethermud.game.Libraries;
 
-import com.planet_ink.game.Common.interfaces.PlayerStats;
-import com.planet_ink.game.Libraries.interfaces.AutoTitlesLibrary;
-import com.planet_ink.game.Libraries.interfaces.MaskingLibrary;
-import com.planet_ink.game.MOBS.interfaces.MOB;
-import com.planet_ink.game.core.*;
-import com.planet_ink.game.core.collections.Triad;
-import com.planet_ink.game.core.collections.TriadSVector;
+import com.syncleus.aethermud.game.Common.interfaces.PlayerStats;
+import com.syncleus.aethermud.game.Libraries.interfaces.AutoTitlesLibrary;
+import com.syncleus.aethermud.game.Libraries.interfaces.MaskingLibrary;
+import com.syncleus.aethermud.game.MOBS.interfaces.MOB;
+import com.syncleus.aethermud.game.core.*;
+import com.syncleus.aethermud.game.core.collections.Triad;
+import com.syncleus.aethermud.game.core.collections.TriadSVector;
 
 import java.util.Enumeration;
 import java.util.List;

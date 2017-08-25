@@ -14,15 +14,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Libraries;
+package com.syncleus.aethermud.game.Libraries;
 
-import com.planet_ink.game.Libraries.interfaces.CMLibrary;
-import com.planet_ink.game.core.CMClass;
-import com.planet_ink.game.core.CMLib;
-import com.planet_ink.game.core.Log;
-import com.planet_ink.game.core.interfaces.CMObject;
-import com.planet_ink.game.core.interfaces.TickClient;
-import com.planet_ink.game.core.interfaces.Tickable;
+import com.syncleus.aethermud.game.Libraries.interfaces.CMLibrary;
+import com.syncleus.aethermud.game.core.CMClass;
+import com.syncleus.aethermud.game.core.CMLib;
+import com.syncleus.aethermud.game.core.Log;
+import com.syncleus.aethermud.game.core.interfaces.CMObject;
+import com.syncleus.aethermud.game.core.interfaces.TickClient;
+import com.syncleus.aethermud.game.core.interfaces.Tickable;
 
 
 public class StdLibrary implements CMLibrary, Tickable {

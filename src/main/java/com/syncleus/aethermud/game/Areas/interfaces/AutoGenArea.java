@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Areas.interfaces;
+package com.syncleus.aethermud.game.Areas.interfaces;
 
 import java.util.Map;
 

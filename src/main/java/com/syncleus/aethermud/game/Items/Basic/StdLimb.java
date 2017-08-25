@@ -14,18 +14,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Items.Basic;
+package com.syncleus.aethermud.game.Items.Basic;
 
-import com.planet_ink.game.Common.interfaces.CMMsg;
-import com.planet_ink.game.Common.interfaces.CharStats;
-import com.planet_ink.game.Items.interfaces.FalseLimb;
-import com.planet_ink.game.Items.interfaces.Item;
-import com.planet_ink.game.Items.interfaces.RawMaterial;
-import com.planet_ink.game.Items.interfaces.Wearable;
-import com.planet_ink.game.MOBS.interfaces.MOB;
-import com.planet_ink.game.Races.interfaces.Race;
-import com.planet_ink.game.core.CMath;
-import com.planet_ink.game.core.interfaces.Environmental;
+import com.syncleus.aethermud.game.Common.interfaces.CMMsg;
+import com.syncleus.aethermud.game.Common.interfaces.CharStats;
+import com.syncleus.aethermud.game.Items.interfaces.FalseLimb;
+import com.syncleus.aethermud.game.Items.interfaces.Item;
+import com.syncleus.aethermud.game.Items.interfaces.RawMaterial;
+import com.syncleus.aethermud.game.Items.interfaces.Wearable;
+import com.syncleus.aethermud.game.MOBS.interfaces.MOB;
+import com.syncleus.aethermud.game.Races.interfaces.Race;
+import com.syncleus.aethermud.game.core.CMath;
+import com.syncleus.aethermud.game.core.interfaces.Environmental;
 
 
 public class StdLimb extends StdItem implements FalseLimb {

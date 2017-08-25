@@ -14,19 +14,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Commands;
+package com.syncleus.aethermud.game.Commands;
 
-import com.planet_ink.game.Common.interfaces.PlayerStats;
-import com.planet_ink.game.Common.interfaces.Session;
-import com.planet_ink.game.Common.interfaces.Session.InputCallback;
-import com.planet_ink.game.Libraries.interfaces.ChannelsLibrary.CMChannel;
-import com.planet_ink.game.Libraries.interfaces.ColorLibrary.Color;
-import com.planet_ink.game.MOBS.interfaces.MOB;
-import com.planet_ink.game.core.CMLib;
-import com.planet_ink.game.core.CMParms;
-import com.planet_ink.game.core.CMStrings;
-import com.planet_ink.game.core.CMath;
-import com.planet_ink.game.core.collections.Pair;
+import com.syncleus.aethermud.game.Common.interfaces.PlayerStats;
+import com.syncleus.aethermud.game.Common.interfaces.Session;
+import com.syncleus.aethermud.game.Common.interfaces.Session.InputCallback;
+import com.syncleus.aethermud.game.Libraries.interfaces.ChannelsLibrary.CMChannel;
+import com.syncleus.aethermud.game.Libraries.interfaces.ColorLibrary.Color;
+import com.syncleus.aethermud.game.MOBS.interfaces.MOB;
+import com.syncleus.aethermud.game.core.CMLib;
+import com.syncleus.aethermud.game.core.CMParms;
+import com.syncleus.aethermud.game.core.CMStrings;
+import com.syncleus.aethermud.game.core.CMath;
+import com.syncleus.aethermud.game.core.collections.Pair;
 
 import java.util.ArrayList;
 import java.util.List;

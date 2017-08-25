@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Common.interfaces;
+package com.syncleus.aethermud.game.Common.interfaces;
 
 /*
 Copyright 2015-2017 Bo Zimmerman

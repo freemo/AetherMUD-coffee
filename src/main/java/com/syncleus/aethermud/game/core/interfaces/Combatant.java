@@ -14,9 +14,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.core.interfaces;
+package com.syncleus.aethermud.game.core.interfaces;
 
-import com.planet_ink.game.MOBS.interfaces.MOB;
+import com.syncleus.aethermud.game.MOBS.interfaces.MOB;
 
 /**
  * A physical object in the world that is capable of engaging in combat

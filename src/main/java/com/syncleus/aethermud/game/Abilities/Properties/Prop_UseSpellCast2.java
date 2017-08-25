@@ -14,15 +14,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Abilities.Properties;
+package com.syncleus.aethermud.game.Abilities.Properties;
 
-import com.planet_ink.game.Abilities.interfaces.Ability;
-import com.planet_ink.game.Common.interfaces.CMMsg;
-import com.planet_ink.game.Items.interfaces.Food;
-import com.planet_ink.game.Items.interfaces.Item;
-import com.planet_ink.game.core.interfaces.Drink;
-import com.planet_ink.game.core.interfaces.Environmental;
-import com.planet_ink.game.core.interfaces.Physical;
+import com.syncleus.aethermud.game.Abilities.interfaces.Ability;
+import com.syncleus.aethermud.game.Common.interfaces.CMMsg;
+import com.syncleus.aethermud.game.Items.interfaces.Food;
+import com.syncleus.aethermud.game.Items.interfaces.Item;
+import com.syncleus.aethermud.game.core.interfaces.Drink;
+import com.syncleus.aethermud.game.core.interfaces.Environmental;
+import com.syncleus.aethermud.game.core.interfaces.Physical;
 
 
 public class Prop_UseSpellCast2 extends Prop_UseSpellCast {

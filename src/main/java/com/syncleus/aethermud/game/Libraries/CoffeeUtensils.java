@@ -14,27 +14,27 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Libraries;
+package com.syncleus.aethermud.game.Libraries;
 
-import com.planet_ink.game.Abilities.interfaces.Ability;
-import com.planet_ink.game.Abilities.interfaces.Language;
-import com.planet_ink.game.Abilities.interfaces.Trap;
-import com.planet_ink.game.Areas.interfaces.Area;
-import com.planet_ink.game.CharClasses.interfaces.CharClass;
-import com.planet_ink.game.Common.interfaces.*;
-import com.planet_ink.game.Exits.interfaces.Exit;
-import com.planet_ink.game.Items.interfaces.*;
-import com.planet_ink.game.Libraries.interfaces.CMMiscUtils;
-import com.planet_ink.game.Libraries.interfaces.MaskingLibrary;
-import com.planet_ink.game.Locales.interfaces.Room;
-import com.planet_ink.game.MOBS.interfaces.MOB;
-import com.planet_ink.game.Races.interfaces.Race;
-import com.planet_ink.game.core.*;
-import com.planet_ink.game.core.collections.DVector;
-import com.planet_ink.game.core.collections.DoubleFilterer;
-import com.planet_ink.game.core.collections.TriadVector;
-import com.planet_ink.game.core.collections.XVector;
-import com.planet_ink.game.core.interfaces.*;
+import com.syncleus.aethermud.game.Abilities.interfaces.Ability;
+import com.syncleus.aethermud.game.Abilities.interfaces.Language;
+import com.syncleus.aethermud.game.Abilities.interfaces.Trap;
+import com.syncleus.aethermud.game.Areas.interfaces.Area;
+import com.syncleus.aethermud.game.CharClasses.interfaces.CharClass;
+import com.syncleus.aethermud.game.Common.interfaces.*;
+import com.syncleus.aethermud.game.Exits.interfaces.Exit;
+import com.syncleus.aethermud.game.Items.interfaces.*;
+import com.syncleus.aethermud.game.Libraries.interfaces.CMMiscUtils;
+import com.syncleus.aethermud.game.Libraries.interfaces.MaskingLibrary;
+import com.syncleus.aethermud.game.Locales.interfaces.Room;
+import com.syncleus.aethermud.game.MOBS.interfaces.MOB;
+import com.syncleus.aethermud.game.Races.interfaces.Race;
+import com.syncleus.aethermud.game.core.*;
+import com.syncleus.aethermud.game.core.collections.DVector;
+import com.syncleus.aethermud.game.core.collections.DoubleFilterer;
+import com.syncleus.aethermud.game.core.collections.TriadVector;
+import com.syncleus.aethermud.game.core.collections.XVector;
+import com.syncleus.aethermud.game.core.interfaces.*;
 
 import java.util.*;
 

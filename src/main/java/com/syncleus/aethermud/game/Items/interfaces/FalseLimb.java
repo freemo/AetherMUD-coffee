@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Items.interfaces;
+package com.syncleus.aethermud.game.Items.interfaces;
 
 /**
  * A False, or Fake Limb is an item that re-provides a wear location,
@@ -28,7 +28,7 @@ public interface FalseLimb extends Armor {
     /**
      * Gets the racial body part code that corresponds with the
      * part of the body that this false limb replaces.
-     * @see com.planet_ink.game.Races.interfaces.Race#BODYPARTSTR
+     * @see com.syncleus.aethermud.game.Races.interfaces.Race#BODYPARTSTR
      * @return the racial body part code
      */
     public int getBodyPartCode();
@@ -36,7 +36,7 @@ public interface FalseLimb extends Armor {
     /**
      * Sets the racial body part code that corresponds with the
      * part of the body that this false limb replaces.
-     * @see com.planet_ink.game.Races.interfaces.Race#BODYPARTSTR
+     * @see com.syncleus.aethermud.game.Races.interfaces.Race#BODYPARTSTR
      * @param partNum the racial body part code
      */
     public void setBodyPartCode(int partNum);

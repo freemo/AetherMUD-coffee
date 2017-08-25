@@ -14,9 +14,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.core.interfaces;
+package com.syncleus.aethermud.game.core.interfaces;
 
-import com.planet_ink.game.Common.interfaces.CMMsg;
+import com.syncleus.aethermud.game.Common.interfaces.CMMsg;
 
 
 /**
@@ -32,7 +32,7 @@ public interface MsgListener {
      * have already been through an approval process, so this method is
      * called only to affect the final execution of the meaning of the
      * message.  Every game event goes through these methods.
-     * @see com.planet_ink.game.Common.interfaces.CMMsg
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg
      * @param myHost either the initiator of the event, or the host of this object
      * @param msg the CMMsg that needs to be executed
      */
@@ -47,8 +47,8 @@ public interface MsgListener {
      * always always return true UNLESS this message needs to be canceled, in which
      * case it is necessary to tell the mob initiating the event (CMMsg.source())
      * why it is being cancelled.  Every game event goes through these methods.
-     * @see com.planet_ink.game.Common.interfaces.CMMsg
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#source()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#source()
      * @param myHost either the initiator of the event, or the host of this object
      * @param msg the CMMsg that wants to be executed
      * @return whether this message is allowed to execute

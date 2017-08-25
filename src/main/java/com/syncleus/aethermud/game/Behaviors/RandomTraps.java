@@ -14,23 +14,23 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Behaviors;
+package com.syncleus.aethermud.game.Behaviors;
 
-import com.planet_ink.game.Abilities.interfaces.Ability;
-import com.planet_ink.game.Abilities.interfaces.Trap;
-import com.planet_ink.game.Areas.interfaces.Area;
-import com.planet_ink.game.Behaviors.interfaces.Behavior;
-import com.planet_ink.game.Exits.interfaces.Exit;
-import com.planet_ink.game.Items.interfaces.Container;
-import com.planet_ink.game.Items.interfaces.Item;
-import com.planet_ink.game.Locales.interfaces.GridLocale;
-import com.planet_ink.game.Locales.interfaces.Room;
-import com.planet_ink.game.core.CMClass;
-import com.planet_ink.game.core.CMLib;
-import com.planet_ink.game.core.CMParms;
-import com.planet_ink.game.core.Directions;
-import com.planet_ink.game.core.interfaces.Physical;
-import com.planet_ink.game.core.interfaces.Tickable;
+import com.syncleus.aethermud.game.Abilities.interfaces.Ability;
+import com.syncleus.aethermud.game.Abilities.interfaces.Trap;
+import com.syncleus.aethermud.game.Areas.interfaces.Area;
+import com.syncleus.aethermud.game.Behaviors.interfaces.Behavior;
+import com.syncleus.aethermud.game.Exits.interfaces.Exit;
+import com.syncleus.aethermud.game.Items.interfaces.Container;
+import com.syncleus.aethermud.game.Items.interfaces.Item;
+import com.syncleus.aethermud.game.Locales.interfaces.GridLocale;
+import com.syncleus.aethermud.game.Locales.interfaces.Room;
+import com.syncleus.aethermud.game.core.CMClass;
+import com.syncleus.aethermud.game.core.CMLib;
+import com.syncleus.aethermud.game.core.CMParms;
+import com.syncleus.aethermud.game.core.Directions;
+import com.syncleus.aethermud.game.core.interfaces.Physical;
+import com.syncleus.aethermud.game.core.interfaces.Tickable;
 
 import java.util.*;
 

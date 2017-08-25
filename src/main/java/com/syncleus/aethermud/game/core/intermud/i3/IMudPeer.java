@@ -14,16 +14,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.core.intermud.i3;
+package com.syncleus.aethermud.game.core.intermud.i3;
 
-import com.planet_ink.game.core.CMFile;
-import com.planet_ink.game.core.Log;
-import com.planet_ink.game.core.intermud.i3.packets.ChannelList;
-import com.planet_ink.game.core.intermud.i3.packets.Intermud;
-import com.planet_ink.game.core.intermud.i3.packets.MudList;
-import com.planet_ink.game.core.intermud.i3.persist.PersistenceException;
-import com.planet_ink.game.core.intermud.i3.persist.Persistent;
-import com.planet_ink.game.core.intermud.i3.persist.PersistentPeer;
+import com.syncleus.aethermud.game.core.CMFile;
+import com.syncleus.aethermud.game.core.Log;
+import com.syncleus.aethermud.game.core.intermud.i3.packets.ChannelList;
+import com.syncleus.aethermud.game.core.intermud.i3.packets.Intermud;
+import com.syncleus.aethermud.game.core.intermud.i3.packets.MudList;
+import com.syncleus.aethermud.game.core.intermud.i3.persist.PersistenceException;
+import com.syncleus.aethermud.game.core.intermud.i3.persist.Persistent;
+import com.syncleus.aethermud.game.core.intermud.i3.persist.PersistentPeer;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -56,7 +56,7 @@ public class IMudPeer implements PersistentPeer {
     /**
      * Gets data about this peer from storage and gives it
      * back to the object for which this peer exists.
-     * @exception com.planet_ink.game.core.intermud.i3.persist.PersistenceException if an error occurs during restore
+     * @exception com.syncleus.aethermud.game.core.intermud.i3.persist.PersistenceException if an error occurs during restore
      */
     @Override
     public void restore() throws PersistenceException {
@@ -95,7 +95,7 @@ public class IMudPeer implements PersistentPeer {
      * Triggers a save of its peer.  Implementing classes
      * should do whatever it takes to save the object in
      * this method.
-     * @exception com.planet_ink.game.core.intermud.i3.persist.PersistenceException if a problem occurs in saving
+     * @exception com.syncleus.aethermud.game.core.intermud.i3.persist.PersistenceException if a problem occurs in saving
      */
     @Override
     public void save() throws PersistenceException {
@@ -122,8 +122,8 @@ public class IMudPeer implements PersistentPeer {
     /**
      * Assigns a persistent object to this peer for
      * persistence operations.
-     * @param ob the implementation of com.planet_ink.game.core.intermud.i3.persist.Persistent that this is a peer for
-     * @see com.planet_ink.game.core.intermud.i3.persist.Persistent
+     * @param ob the implementation of com.syncleus.aethermud.game.core.intermud.i3.persist.Persistent that this is a peer for
+     * @see com.syncleus.aethermud.game.core.intermud.i3.persist.Persistent
      */
     @Override
     public void setPersistent(Persistent ob) {

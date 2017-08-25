@@ -14,23 +14,23 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.WebMacros;
+package com.syncleus.aethermud.game.WebMacros;
 
-import com.planet_ink.game.core.*;
-import com.planet_ink.game.core.collections.SHashtable;
-import com.planet_ink.game.core.exceptions.HTTPServerException;
-import com.planet_ink.game.core.interfaces.CMObject;
-import com.planet_ink.game.core.interfaces.MudHost;
-import com.planet_ink.game.core.interfaces.Tickable;
-import com.planet_ink.web.http.HTTPException;
-import com.planet_ink.web.http.HTTPHeader;
-import com.planet_ink.web.http.HTTPStatus;
-import com.planet_ink.web.interfaces.DataBuffers;
-import com.planet_ink.web.interfaces.HTTPRequest;
-import com.planet_ink.web.interfaces.HTTPResponse;
-import com.planet_ink.web.interfaces.ProtocolHandler;
-import com.planet_ink.web.util.CWDataBuffers;
-import com.planet_ink.siplet.applet.Siplet;
+import com.syncleus.aethermud.game.core.*;
+import com.syncleus.aethermud.game.core.collections.SHashtable;
+import com.syncleus.aethermud.game.core.exceptions.HTTPServerException;
+import com.syncleus.aethermud.game.core.interfaces.CMObject;
+import com.syncleus.aethermud.game.core.interfaces.MudHost;
+import com.syncleus.aethermud.game.core.interfaces.Tickable;
+import com.syncleus.aethermud.web.http.HTTPException;
+import com.syncleus.aethermud.web.http.HTTPHeader;
+import com.syncleus.aethermud.web.http.HTTPStatus;
+import com.syncleus.aethermud.web.interfaces.DataBuffers;
+import com.syncleus.aethermud.web.interfaces.HTTPRequest;
+import com.syncleus.aethermud.web.interfaces.HTTPResponse;
+import com.syncleus.aethermud.web.interfaces.ProtocolHandler;
+import com.syncleus.aethermud.web.util.CWDataBuffers;
+import com.syncleus.aethermud.siplet.applet.Siplet;
 
 import java.io.*;
 import java.net.InetAddress;

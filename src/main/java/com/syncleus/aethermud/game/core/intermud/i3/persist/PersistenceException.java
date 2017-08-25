@@ -14,13 +14,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.core.intermud.i3.persist;
+package com.syncleus.aethermud.game.core.intermud.i3.persist;
 
 import java.util.Enumeration;
 import java.util.NoSuchElementException;
 
 /**
- * com.planet_ink.game.core.intermud.i3.persist.PersistenceException
+ * com.syncleus.aethermud.game.core.intermud.i3.persist.PersistenceException
  * Copyright (c) 1996 George Reese
  * This source code may not be modified, copied,
  * redistributed, or used in any fashion without the

@@ -14,17 +14,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.WebMacros;
+package com.syncleus.aethermud.game.WebMacros;
 
-import com.planet_ink.game.Common.interfaces.PlayerAccount;
-import com.planet_ink.game.Libraries.interfaces.CharCreationLibrary;
-import com.planet_ink.game.core.CMClass;
-import com.planet_ink.game.core.CMLib;
-import com.planet_ink.game.core.CMProps;
-import com.planet_ink.game.core.CMStrings;
-import com.planet_ink.game.core.collections.SLinkedList;
-import com.planet_ink.web.interfaces.HTTPRequest;
-import com.planet_ink.web.interfaces.HTTPResponse;
+import com.syncleus.aethermud.game.Common.interfaces.PlayerAccount;
+import com.syncleus.aethermud.game.Libraries.interfaces.CharCreationLibrary;
+import com.syncleus.aethermud.game.core.CMClass;
+import com.syncleus.aethermud.game.core.CMLib;
+import com.syncleus.aethermud.game.core.CMProps;
+import com.syncleus.aethermud.game.core.CMStrings;
+import com.syncleus.aethermud.game.core.collections.SLinkedList;
+import com.syncleus.aethermud.web.interfaces.HTTPRequest;
+import com.syncleus.aethermud.web.interfaces.HTTPResponse;
 
 import java.net.URLEncoder;
 import java.util.Iterator;

@@ -14,9 +14,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Libraries.interfaces;
+package com.syncleus.aethermud.game.Libraries.interfaces;
 
-import com.planet_ink.game.core.exceptions.BadEmailAddressException;
+import com.syncleus.aethermud.game.core.exceptions.BadEmailAddressException;
 
 import java.io.IOException;
 import java.net.UnknownHostException;

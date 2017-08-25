@@ -14,20 +14,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Libraries.interfaces;
+package com.syncleus.aethermud.game.Libraries.interfaces;
 
-import com.planet_ink.game.Areas.interfaces.Area;
-import com.planet_ink.game.Common.interfaces.*;
-import com.planet_ink.game.Common.interfaces.Clan.MemberRecord;
-import com.planet_ink.game.Items.interfaces.Item;
-import com.planet_ink.game.Locales.interfaces.Room;
-import com.planet_ink.game.MOBS.interfaces.MOB;
-import com.planet_ink.game.core.CMFile;
-import com.planet_ink.game.core.CMProps;
-import com.planet_ink.game.core.collections.Pair;
-import com.planet_ink.game.core.database.DBConnector;
-import com.planet_ink.game.core.exceptions.CMException;
-import com.planet_ink.game.core.interfaces.Environmental;
+import com.syncleus.aethermud.game.Areas.interfaces.Area;
+import com.syncleus.aethermud.game.Common.interfaces.*;
+import com.syncleus.aethermud.game.Common.interfaces.Clan.MemberRecord;
+import com.syncleus.aethermud.game.Items.interfaces.Item;
+import com.syncleus.aethermud.game.Locales.interfaces.Room;
+import com.syncleus.aethermud.game.MOBS.interfaces.MOB;
+import com.syncleus.aethermud.game.core.CMFile;
+import com.syncleus.aethermud.game.core.CMProps;
+import com.syncleus.aethermud.game.core.collections.Pair;
+import com.syncleus.aethermud.game.core.database.DBConnector;
+import com.syncleus.aethermud.game.core.exceptions.CMException;
+import com.syncleus.aethermud.game.core.interfaces.Environmental;
 
 import java.util.List;
 import java.util.Map;
@@ -381,7 +381,7 @@ public interface DatabaseEngine extends CMLibrary {
      * Table category: DBMAP
      * Reads all the room numbers for the area with the given name from the
      * database and returns a compressed roomnumberset object.
-     * @see com.planet_ink.game.Common.interfaces.RoomnumberSet
+     * @see com.syncleus.aethermud.game.Common.interfaces.RoomnumberSet
      * @param areaName the name of the area to load numbers from
      * @param reportStatus true to update the global status, false otherwise
      * @return the rooms in this area, as a compressed set
@@ -548,8 +548,8 @@ public interface DatabaseEngine extends CMLibrary {
      * The cpu percent is the percent (0-100) of each second of work
      * to spend actually working.  The balance is spent sleeping.
      *
-     * @see com.planet_ink.game.Common.interfaces.TimeClock.TimePeriod
-     * @see com.planet_ink.game.Common.interfaces.AccountStats.PrideStat
+     * @see com.syncleus.aethermud.game.Common.interfaces.TimeClock.TimePeriod
+     * @see com.syncleus.aethermud.game.Common.interfaces.AccountStats.PrideStat
      * @param topThisMany the number of items in each list
      * @param scanCPUPercent the percent (0-100) to spend working
      * @return the arrays of lists of top winner players
@@ -568,8 +568,8 @@ public interface DatabaseEngine extends CMLibrary {
      * The cpu percent is the percent (0-100) of each second of work
      * to spend actually working.  The balance is spent sleeping.
      *
-     * @see com.planet_ink.game.Common.interfaces.TimeClock.TimePeriod
-     * @see com.planet_ink.game.Common.interfaces.AccountStats.PrideStat
+     * @see com.syncleus.aethermud.game.Common.interfaces.TimeClock.TimePeriod
+     * @see com.syncleus.aethermud.game.Common.interfaces.AccountStats.PrideStat
      * @param topThisMany the number of items in each list
      * @param scanCPUPercent the percent (0-100) to spend working
      * @return the arrays of lists of top winner accounts
@@ -1138,8 +1138,8 @@ public interface DatabaseEngine extends CMLibrary {
      * Table category: DBJOURNALS
      * For forum journals, updates the number of replies registered with the
      * parent message represented by the given message Key.
-     * @see DatabaseEngine#DBReadJournalMetaData(String, com.planet_ink.game.Libraries.interfaces.JournalsLibrary.JournalMetaData)
-     * @see DatabaseEngine#DBUpdateJournalMetaData(String, com.planet_ink.game.Libraries.interfaces.JournalsLibrary.JournalMetaData)
+     * @see DatabaseEngine#DBReadJournalMetaData(String, com.syncleus.aethermud.game.Libraries.interfaces.JournalsLibrary.JournalMetaData)
+     * @see DatabaseEngine#DBUpdateJournalMetaData(String, com.syncleus.aethermud.game.Libraries.interfaces.JournalsLibrary.JournalMetaData)
      * @param messageKey the key of the parent op message
      * @param numReplies the new number of replies to register
      */
@@ -1150,7 +1150,7 @@ public interface DatabaseEngine extends CMLibrary {
      * Takes an empty JournalMetaData object, and the journal NAME
      *  and fills in the rest by querying the database.
      * @see DatabaseEngine#DBUpdateMessageReplies(String, int)
-     * @see DatabaseEngine#DBUpdateJournalMetaData(String, com.planet_ink.game.Libraries.interfaces.JournalsLibrary.JournalMetaData)
+     * @see DatabaseEngine#DBUpdateJournalMetaData(String, com.syncleus.aethermud.game.Libraries.interfaces.JournalsLibrary.JournalMetaData)
      * @param journalID the name of the journals whose stats to update
      * @param metaData the created metadata object to fill in
      */
@@ -1161,7 +1161,7 @@ public interface DatabaseEngine extends CMLibrary {
      * Primarily for forum journals, this method updates all of the given
      * meta data, such as the intro, and so forth by deleting the old
      * record and re-inserting it into the database.
-     * @see DatabaseEngine#DBReadJournalMetaData(String, com.planet_ink.game.Libraries.interfaces.JournalsLibrary.JournalMetaData)
+     * @see DatabaseEngine#DBReadJournalMetaData(String, com.syncleus.aethermud.game.Libraries.interfaces.JournalsLibrary.JournalMetaData)
      * @see DatabaseEngine#DBUpdateMessageReplies(String, int)
      * @param journalID the name of the journals whose stats to update
      * @param metaData the metadata to resave into the database
@@ -1786,8 +1786,8 @@ public interface DatabaseEngine extends CMLibrary {
      * Table category: DBPOLLS
      * Creates a new poll in the DBPOLLS table.  Most of the arguments are
      * self explanatory.
-     * @see com.planet_ink.game.Common.interfaces.Poll
-     * @see com.planet_ink.game.Common.interfaces.Poll#FLAG_ABSTAIN
+     * @see com.syncleus.aethermud.game.Common.interfaces.Poll
+     * @see com.syncleus.aethermud.game.Common.interfaces.Poll#FLAG_ABSTAIN
      * @see DatabaseEngine#DBUpdatePoll(String, String, String, String, String, String, int, String, String, long)
      * @see DatabaseEngine#DBUpdatePollResults(String, String)
      * @see DatabaseEngine#DBDeletePoll(String)
@@ -1799,7 +1799,7 @@ public interface DatabaseEngine extends CMLibrary {
      * @param subject the title/subject of the poll
      * @param description the long descriptions
      * @param optionXML choices format &lt;OPTIONS&gt;&lt;OPTION&gt;option text...
-     * @param flag flag bitmap, see {@link com.planet_ink.game.Common.interfaces.Poll#FLAG_ABSTAIN}
+     * @param flag flag bitmap, see {@link com.syncleus.aethermud.game.Common.interfaces.Poll#FLAG_ABSTAIN}
      * @param qualZapper the zapper mask for who can answer the poll
      * @param results &lt;RESULTS&gt;&lt;RESULT&gt;&lt;USER&gt;&lt;IP&gt;&lt;ANS&gt;
      * @param expiration the rl date/timestamp of when the poll auto-closes
@@ -1811,8 +1811,8 @@ public interface DatabaseEngine extends CMLibrary {
      * Table category: DBPOLLS
      * Updates and/or renames a poll in the DBPOLLS table.  Most of the arguments are
      * self explanatory.
-     * @see com.planet_ink.game.Common.interfaces.Poll
-     * @see com.planet_ink.game.Common.interfaces.Poll#FLAG_ABSTAIN
+     * @see com.syncleus.aethermud.game.Common.interfaces.Poll
+     * @see com.syncleus.aethermud.game.Common.interfaces.Poll#FLAG_ABSTAIN
      * @see DatabaseEngine#DBCreatePoll(String, String, String, String, String, int, String, String, long)
      * @see DatabaseEngine#DBUpdatePollResults(String, String)
      * @see DatabaseEngine#DBDeletePoll(String)
@@ -1825,7 +1825,7 @@ public interface DatabaseEngine extends CMLibrary {
      * @param subject the title/subject of the poll
      * @param description the long descriptions
      * @param optionXML choices format &lt;OPTIONS&gt;&lt;OPTION&gt;option text...
-     * @param flag flag bitmap, see {@link com.planet_ink.game.Common.interfaces.Poll#FLAG_ABSTAIN}
+     * @param flag flag bitmap, see {@link com.syncleus.aethermud.game.Common.interfaces.Poll#FLAG_ABSTAIN}
      * @param qualZapper the zapper mask for who can answer the poll
      * @param results xml doc: &lt;RESULTS&gt;&lt;RESULT&gt;&lt;USER&gt;&lt;IP&gt;&lt;ANS&gt;
      * @param expiration the rl date/timestamp of when the poll auto-closes
@@ -1838,8 +1838,8 @@ public interface DatabaseEngine extends CMLibrary {
      * Updates the results xml array for an existing poll.  Called when a new result is added, removed,
      * or modified.
      *
-     * @see com.planet_ink.game.Common.interfaces.Poll
-     * @see com.planet_ink.game.Common.interfaces.Poll#FLAG_ABSTAIN
+     * @see com.syncleus.aethermud.game.Common.interfaces.Poll
+     * @see com.syncleus.aethermud.game.Common.interfaces.Poll#FLAG_ABSTAIN
      * @see DatabaseEngine#DBCreatePoll(String, String, String, String, String, int, String, String, long)
      * @see DatabaseEngine#DBUpdatePoll(String, String, String, String, String, String, int, String, String, long)
      * @see DatabaseEngine#DBDeletePoll(String)
@@ -1855,8 +1855,8 @@ public interface DatabaseEngine extends CMLibrary {
      * Table category: DBPOLLS
      * Deletes a poll, and all its options and results, forever.
      *
-     * @see com.planet_ink.game.Common.interfaces.Poll
-     * @see com.planet_ink.game.Common.interfaces.Poll#FLAG_ABSTAIN
+     * @see com.syncleus.aethermud.game.Common.interfaces.Poll
+     * @see com.syncleus.aethermud.game.Common.interfaces.Poll#FLAG_ABSTAIN
      * @see DatabaseEngine#DBCreatePoll(String, String, String, String, String, int, String, String, long)
      * @see DatabaseEngine#DBUpdatePoll(String, String, String, String, String, String, int, String, String, long)
      * @see DatabaseEngine#DBUpdatePollResults(String, String)
@@ -1872,8 +1872,8 @@ public interface DatabaseEngine extends CMLibrary {
      * Reads the raw data for all the polls from DBPOLLs table.
      *
      * @see PollData
-     * @see com.planet_ink.game.Common.interfaces.Poll
-     * @see com.planet_ink.game.Common.interfaces.Poll#FLAG_ABSTAIN
+     * @see com.syncleus.aethermud.game.Common.interfaces.Poll
+     * @see com.syncleus.aethermud.game.Common.interfaces.Poll#FLAG_ABSTAIN
      * @see DatabaseEngine#DBCreatePoll(String, String, String, String, String, int, String, String, long)
      * @see DatabaseEngine#DBUpdatePoll(String, String, String, String, String, String, int, String, String, long)
      * @see DatabaseEngine#DBUpdatePollResults(String, String)
@@ -1889,8 +1889,8 @@ public interface DatabaseEngine extends CMLibrary {
      * Reads the raw data for a specific poll of a given name.
      *
      * @see PollData
-     * @see com.planet_ink.game.Common.interfaces.Poll
-     * @see com.planet_ink.game.Common.interfaces.Poll#FLAG_ABSTAIN
+     * @see com.syncleus.aethermud.game.Common.interfaces.Poll
+     * @see com.syncleus.aethermud.game.Common.interfaces.Poll#FLAG_ABSTAIN
      * @see DatabaseEngine#DBCreatePoll(String, String, String, String, String, int, String, String, long)
      * @see DatabaseEngine#DBUpdatePoll(String, String, String, String, String, String, int, String, String, long)
      * @see DatabaseEngine#DBUpdatePollResults(String, String)

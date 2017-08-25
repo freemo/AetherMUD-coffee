@@ -14,23 +14,23 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.core.database;
+package com.syncleus.aethermud.game.core.database;
 
-import com.planet_ink.game.Areas.interfaces.Area;
-import com.planet_ink.game.Common.interfaces.*;
-import com.planet_ink.game.Common.interfaces.Clan.MemberRecord;
-import com.planet_ink.game.Items.interfaces.Item;
-import com.planet_ink.game.Libraries.interfaces.DatabaseEngine;
-import com.planet_ink.game.Libraries.interfaces.JournalsLibrary;
-import com.planet_ink.game.Libraries.interfaces.PlayerLibrary;
-import com.planet_ink.game.Locales.interfaces.Room;
-import com.planet_ink.game.MOBS.interfaces.MOB;
-import com.planet_ink.game.core.*;
-import com.planet_ink.game.core.collections.Pair;
-import com.planet_ink.game.core.exceptions.CMException;
-import com.planet_ink.game.core.interfaces.CMObject;
-import com.planet_ink.game.core.interfaces.MudHost;
-import com.planet_ink.game.core.interfaces.TickClient;
+import com.syncleus.aethermud.game.Areas.interfaces.Area;
+import com.syncleus.aethermud.game.Common.interfaces.*;
+import com.syncleus.aethermud.game.Common.interfaces.Clan.MemberRecord;
+import com.syncleus.aethermud.game.Items.interfaces.Item;
+import com.syncleus.aethermud.game.Libraries.interfaces.DatabaseEngine;
+import com.syncleus.aethermud.game.Libraries.interfaces.JournalsLibrary;
+import com.syncleus.aethermud.game.Libraries.interfaces.PlayerLibrary;
+import com.syncleus.aethermud.game.Locales.interfaces.Room;
+import com.syncleus.aethermud.game.MOBS.interfaces.MOB;
+import com.syncleus.aethermud.game.core.*;
+import com.syncleus.aethermud.game.core.collections.Pair;
+import com.syncleus.aethermud.game.core.exceptions.CMException;
+import com.syncleus.aethermud.game.core.interfaces.CMObject;
+import com.syncleus.aethermud.game.core.interfaces.MudHost;
+import com.syncleus.aethermud.game.core.interfaces.TickClient;
 
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;

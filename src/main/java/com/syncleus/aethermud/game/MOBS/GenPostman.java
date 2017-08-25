@@ -14,14 +14,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.MOBS;
+package com.syncleus.aethermud.game.MOBS;
 
-import com.planet_ink.game.Libraries.interfaces.GenericBuilder;
-import com.planet_ink.game.core.CMLib;
-import com.planet_ink.game.core.CMParms;
-import com.planet_ink.game.core.CMProps;
-import com.planet_ink.game.core.CMath;
-import com.planet_ink.game.core.interfaces.Environmental;
+import com.syncleus.aethermud.game.Libraries.interfaces.GenericBuilder;
+import com.syncleus.aethermud.game.core.CMLib;
+import com.syncleus.aethermud.game.core.CMParms;
+import com.syncleus.aethermud.game.core.CMProps;
+import com.syncleus.aethermud.game.core.CMath;
+import com.syncleus.aethermud.game.core.interfaces.Environmental;
 
 
 public class GenPostman extends StdPostman {

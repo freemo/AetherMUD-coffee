@@ -14,14 +14,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.core.database;
+package com.syncleus.aethermud.game.core.database;
 
-import com.planet_ink.game.Common.interfaces.JournalEntry;
-import com.planet_ink.game.Libraries.interfaces.JournalsLibrary;
-import com.planet_ink.game.Libraries.interfaces.TimeManager;
-import com.planet_ink.game.core.*;
-import com.planet_ink.game.core.collections.FullConverter;
-import com.planet_ink.game.core.collections.FullConvertingList;
+import com.syncleus.aethermud.game.Common.interfaces.JournalEntry;
+import com.syncleus.aethermud.game.Libraries.interfaces.JournalsLibrary;
+import com.syncleus.aethermud.game.Libraries.interfaces.TimeManager;
+import com.syncleus.aethermud.game.core.*;
+import com.syncleus.aethermud.game.core.collections.FullConverter;
+import com.syncleus.aethermud.game.core.collections.FullConvertingList;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;

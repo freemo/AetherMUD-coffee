@@ -14,28 +14,28 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Libraries;
+package com.syncleus.aethermud.game.Libraries;
 
-import com.planet_ink.game.Abilities.interfaces.Ability;
-import com.planet_ink.game.Areas.interfaces.Area;
-import com.planet_ink.game.CharClasses.interfaces.CharClass;
-import com.planet_ink.game.Commands.interfaces.Command;
-import com.planet_ink.game.Common.interfaces.AbilityComponent;
-import com.planet_ink.game.Common.interfaces.Faction;
-import com.planet_ink.game.Items.interfaces.Coins;
-import com.planet_ink.game.Items.interfaces.Item;
-import com.planet_ink.game.Libraries.interfaces.ExpertiseLibrary;
-import com.planet_ink.game.Libraries.interfaces.HelpLibrary;
-import com.planet_ink.game.Libraries.interfaces.MoneyLibrary;
-import com.planet_ink.game.Libraries.interfaces.MoneyLibrary.MoneyDenomination;
-import com.planet_ink.game.MOBS.interfaces.Deity;
-import com.planet_ink.game.MOBS.interfaces.MOB;
-import com.planet_ink.game.Races.interfaces.Race;
-import com.planet_ink.game.core.*;
-import com.planet_ink.game.core.collections.DVector;
-import com.planet_ink.game.core.collections.PairList;
-import com.planet_ink.game.core.collections.SHashtable;
-import com.planet_ink.game.core.interfaces.MUDCmdProcessor;
+import com.syncleus.aethermud.game.Abilities.interfaces.Ability;
+import com.syncleus.aethermud.game.Areas.interfaces.Area;
+import com.syncleus.aethermud.game.CharClasses.interfaces.CharClass;
+import com.syncleus.aethermud.game.Commands.interfaces.Command;
+import com.syncleus.aethermud.game.Common.interfaces.AbilityComponent;
+import com.syncleus.aethermud.game.Common.interfaces.Faction;
+import com.syncleus.aethermud.game.Items.interfaces.Coins;
+import com.syncleus.aethermud.game.Items.interfaces.Item;
+import com.syncleus.aethermud.game.Libraries.interfaces.ExpertiseLibrary;
+import com.syncleus.aethermud.game.Libraries.interfaces.HelpLibrary;
+import com.syncleus.aethermud.game.Libraries.interfaces.MoneyLibrary;
+import com.syncleus.aethermud.game.Libraries.interfaces.MoneyLibrary.MoneyDenomination;
+import com.syncleus.aethermud.game.MOBS.interfaces.Deity;
+import com.syncleus.aethermud.game.MOBS.interfaces.MOB;
+import com.syncleus.aethermud.game.Races.interfaces.Race;
+import com.syncleus.aethermud.game.core.*;
+import com.syncleus.aethermud.game.core.collections.DVector;
+import com.syncleus.aethermud.game.core.collections.PairList;
+import com.syncleus.aethermud.game.core.collections.SHashtable;
+import com.syncleus.aethermud.game.core.interfaces.MUDCmdProcessor;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -611,7 +611,7 @@ public class MUDHelp extends StdLibrary implements HelpLibrary {
         try {
             if ((str != null) && (str.indexOf('@') >= 0))
                 return CMLib.webMacroFilter().virtualPageFilter(str);
-        } catch (final com.planet_ink.game.core.exceptions.HTTPRedirectException x) {
+        } catch (final com.syncleus.aethermud.game.core.exceptions.HTTPRedirectException x) {
         }
         return str;
     }

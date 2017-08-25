@@ -14,23 +14,23 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.core.intermud;
+package com.syncleus.aethermud.game.core.intermud;
 
-import com.planet_ink.game.Common.interfaces.CMMsg;
-import com.planet_ink.game.Common.interfaces.Social;
-import com.planet_ink.game.Libraries.interfaces.I3Interface;
-import com.planet_ink.game.Locales.interfaces.Room;
-import com.planet_ink.game.MOBS.interfaces.MOB;
-import com.planet_ink.game.core.*;
-import com.planet_ink.game.core.CMSecurity.DisFlag;
-import com.planet_ink.game.core.collections.XVector;
-import com.planet_ink.game.core.interfaces.CMObject;
-import com.planet_ink.game.core.interfaces.TickClient;
-import com.planet_ink.game.core.intermud.i3.packets.*;
-import com.planet_ink.game.core.intermud.i3.server.I3Server;
-import com.planet_ink.game.core.intermud.imc2.IMC2Driver;
-import com.planet_ink.game.core.intermud.imc2.IMC_CHANNEL;
-import com.planet_ink.game.core.intermud.imc2.REMOTEINFO;
+import com.syncleus.aethermud.game.Common.interfaces.CMMsg;
+import com.syncleus.aethermud.game.Common.interfaces.Social;
+import com.syncleus.aethermud.game.Libraries.interfaces.I3Interface;
+import com.syncleus.aethermud.game.Locales.interfaces.Room;
+import com.syncleus.aethermud.game.MOBS.interfaces.MOB;
+import com.syncleus.aethermud.game.core.*;
+import com.syncleus.aethermud.game.core.CMSecurity.DisFlag;
+import com.syncleus.aethermud.game.core.collections.XVector;
+import com.syncleus.aethermud.game.core.interfaces.CMObject;
+import com.syncleus.aethermud.game.core.interfaces.TickClient;
+import com.syncleus.aethermud.game.core.intermud.i3.packets.*;
+import com.syncleus.aethermud.game.core.intermud.i3.server.I3Server;
+import com.syncleus.aethermud.game.core.intermud.imc2.IMC2Driver;
+import com.syncleus.aethermud.game.core.intermud.imc2.IMC_CHANNEL;
+import com.syncleus.aethermud.game.core.intermud.imc2.REMOTEINFO;
 
 import java.util.*;
 

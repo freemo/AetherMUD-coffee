@@ -14,12 +14,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.core.intermud.cm1;
+package com.syncleus.aethermud.game.core.intermud.cm1;
 
-import com.planet_ink.game.core.CMLib;
-import com.planet_ink.game.core.CMProps;
-import com.planet_ink.game.core.Log;
-import com.planet_ink.game.core.collections.SHashtable;
+import com.syncleus.aethermud.game.core.CMLib;
+import com.syncleus.aethermud.game.core.CMProps;
+import com.syncleus.aethermud.game.core.Log;
+import com.syncleus.aethermud.game.core.collections.SHashtable;
 
 import java.io.IOException;
 import java.net.InetAddress;

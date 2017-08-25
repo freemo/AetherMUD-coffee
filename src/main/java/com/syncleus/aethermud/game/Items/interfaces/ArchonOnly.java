@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Items.interfaces;
+package com.syncleus.aethermud.game.Items.interfaces;
 
 /**
  * An empty interface designating an item which can only be used by Archons.

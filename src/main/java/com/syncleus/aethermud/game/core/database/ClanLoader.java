@@ -14,18 +14,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.core.database;
+package com.syncleus.aethermud.game.core.database;
 
-import com.planet_ink.game.Common.interfaces.Clan;
-import com.planet_ink.game.Items.interfaces.BoardableShip;
-import com.planet_ink.game.Items.interfaces.Container;
-import com.planet_ink.game.Items.interfaces.Item;
-import com.planet_ink.game.Libraries.interfaces.XMLLibrary;
-import com.planet_ink.game.Locales.interfaces.Room;
-import com.planet_ink.game.core.*;
-import com.planet_ink.game.core.database.DBConnector.DBPreparedBatchEntry;
-import com.planet_ink.game.core.interfaces.ItemCollection;
-import com.planet_ink.game.core.interfaces.SpaceObject;
+import com.syncleus.aethermud.game.Common.interfaces.Clan;
+import com.syncleus.aethermud.game.Items.interfaces.BoardableShip;
+import com.syncleus.aethermud.game.Items.interfaces.Container;
+import com.syncleus.aethermud.game.Items.interfaces.Item;
+import com.syncleus.aethermud.game.Libraries.interfaces.XMLLibrary;
+import com.syncleus.aethermud.game.Locales.interfaces.Room;
+import com.syncleus.aethermud.game.core.*;
+import com.syncleus.aethermud.game.core.database.DBConnector.DBPreparedBatchEntry;
+import com.syncleus.aethermud.game.core.interfaces.ItemCollection;
+import com.syncleus.aethermud.game.core.interfaces.SpaceObject;
 
 import java.sql.ResultSet;
 import java.util.*;

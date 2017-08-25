@@ -14,20 +14,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Commands;
+package com.syncleus.aethermud.game.Commands;
 
-import com.planet_ink.game.Common.interfaces.AccountStats;
-import com.planet_ink.game.Common.interfaces.AccountStats.Agent;
-import com.planet_ink.game.Common.interfaces.PlayerAccount;
-import com.planet_ink.game.Common.interfaces.PlayerStats;
-import com.planet_ink.game.Common.interfaces.Tattoo;
-import com.planet_ink.game.Libraries.interfaces.AchievementLibrary;
-import com.planet_ink.game.Libraries.interfaces.AchievementLibrary.Achievement;
-import com.planet_ink.game.Libraries.interfaces.AchievementLibrary.Award;
-import com.planet_ink.game.Libraries.interfaces.AchievementLibrary.Event;
-import com.planet_ink.game.MOBS.interfaces.MOB;
-import com.planet_ink.game.core.*;
-import com.planet_ink.game.core.interfaces.Tattooable;
+import com.syncleus.aethermud.game.Common.interfaces.AccountStats;
+import com.syncleus.aethermud.game.Common.interfaces.AccountStats.Agent;
+import com.syncleus.aethermud.game.Common.interfaces.PlayerAccount;
+import com.syncleus.aethermud.game.Common.interfaces.PlayerStats;
+import com.syncleus.aethermud.game.Common.interfaces.Tattoo;
+import com.syncleus.aethermud.game.Libraries.interfaces.AchievementLibrary;
+import com.syncleus.aethermud.game.Libraries.interfaces.AchievementLibrary.Achievement;
+import com.syncleus.aethermud.game.Libraries.interfaces.AchievementLibrary.Award;
+import com.syncleus.aethermud.game.Libraries.interfaces.AchievementLibrary.Event;
+import com.syncleus.aethermud.game.MOBS.interfaces.MOB;
+import com.syncleus.aethermud.game.core.*;
+import com.syncleus.aethermud.game.core.interfaces.Tattooable;
 
 import java.util.*;
 

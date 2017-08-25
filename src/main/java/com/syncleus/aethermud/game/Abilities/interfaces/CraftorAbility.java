@@ -14,10 +14,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Abilities.interfaces;
+package com.syncleus.aethermud.game.Abilities.interfaces;
 
-import com.planet_ink.game.MOBS.interfaces.MOB;
-import com.planet_ink.game.core.collections.Pair;
+import com.syncleus.aethermud.game.MOBS.interfaces.MOB;
+import com.syncleus.aethermud.game.core.collections.Pair;
 
 import java.util.List;
 
@@ -63,7 +63,7 @@ public interface CraftorAbility extends Ability {
     /**
      * Returns a list of Integer objects where each Integer
      * is a fully qualified RawMaterial code.
-     * @see com.planet_ink.game.Items.interfaces.RawMaterial
+     * @see com.syncleus.aethermud.game.Items.interfaces.RawMaterial
      * @return a vector of integers
      */
     public List<Integer> myResources();

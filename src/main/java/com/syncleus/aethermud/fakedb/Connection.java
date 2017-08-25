@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.fakedb;
+package com.syncleus.aethermud.fakedb;
 
 import java.lang.ref.WeakReference;
 import java.sql.*;

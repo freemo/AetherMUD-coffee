@@ -14,11 +14,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.web.interfaces;
+package com.syncleus.aethermud.web.interfaces;
 
-import com.planet_ink.web.http.HTTPHeader;
-import com.planet_ink.web.http.HTTPStatus;
-import com.planet_ink.web.server.WebServer;
+import com.syncleus.aethermud.web.http.HTTPHeader;
+import com.syncleus.aethermud.web.http.HTTPStatus;
+import com.syncleus.aethermud.web.server.WebServer;
 
 import java.io.IOException;
 import java.text.DateFormat;

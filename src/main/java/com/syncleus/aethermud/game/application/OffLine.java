@@ -14,12 +14,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.application;
+package com.syncleus.aethermud.game.application;
 
-import com.planet_ink.game.Common.interfaces.Session;
-import com.planet_ink.game.core.*;
-import com.planet_ink.game.core.collections.DVector;
-import com.planet_ink.game.core.interfaces.MudHost;
+import com.syncleus.aethermud.game.Common.interfaces.Session;
+import com.syncleus.aethermud.game.core.*;
+import com.syncleus.aethermud.game.core.collections.DVector;
+import com.syncleus.aethermud.game.core.interfaces.MudHost;
 
 import java.io.*;
 import java.net.*;

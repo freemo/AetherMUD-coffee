@@ -14,33 +14,33 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Libraries;
+package com.syncleus.aethermud.game.Libraries;
 
-import com.planet_ink.game.Abilities.interfaces.Ability;
-import com.planet_ink.game.Abilities.interfaces.ItemCraftor;
-import com.planet_ink.game.Areas.interfaces.Area;
-import com.planet_ink.game.Behaviors.interfaces.Behavior;
-import com.planet_ink.game.Common.interfaces.CharState;
-import com.planet_ink.game.Common.interfaces.CharStats;
-import com.planet_ink.game.Common.interfaces.CoffeeShop;
-import com.planet_ink.game.Common.interfaces.PhyStats;
-import com.planet_ink.game.Exits.interfaces.Exit;
-import com.planet_ink.game.Items.interfaces.*;
-import com.planet_ink.game.Libraries.interfaces.AbilityMapper.AbilityMapping;
-import com.planet_ink.game.Libraries.interfaces.AreaGenerationLibrary;
-import com.planet_ink.game.Libraries.interfaces.GenericBuilder;
-import com.planet_ink.game.Libraries.interfaces.XMLLibrary;
-import com.planet_ink.game.Libraries.interfaces.XMLLibrary.XMLTag;
-import com.planet_ink.game.Locales.interfaces.Room;
-import com.planet_ink.game.MOBS.interfaces.MOB;
-import com.planet_ink.game.Races.interfaces.Race;
-import com.planet_ink.game.core.*;
-import com.planet_ink.game.core.collections.*;
-import com.planet_ink.game.core.exceptions.CMException;
-import com.planet_ink.game.core.interfaces.Environmental;
-import com.planet_ink.game.core.interfaces.Modifiable;
-import com.planet_ink.game.core.interfaces.Physical;
-import com.planet_ink.game.core.interfaces.ShopKeeper;
+import com.syncleus.aethermud.game.Abilities.interfaces.Ability;
+import com.syncleus.aethermud.game.Abilities.interfaces.ItemCraftor;
+import com.syncleus.aethermud.game.Areas.interfaces.Area;
+import com.syncleus.aethermud.game.Behaviors.interfaces.Behavior;
+import com.syncleus.aethermud.game.Common.interfaces.CharState;
+import com.syncleus.aethermud.game.Common.interfaces.CharStats;
+import com.syncleus.aethermud.game.Common.interfaces.CoffeeShop;
+import com.syncleus.aethermud.game.Common.interfaces.PhyStats;
+import com.syncleus.aethermud.game.Exits.interfaces.Exit;
+import com.syncleus.aethermud.game.Items.interfaces.*;
+import com.syncleus.aethermud.game.Libraries.interfaces.AbilityMapper.AbilityMapping;
+import com.syncleus.aethermud.game.Libraries.interfaces.AreaGenerationLibrary;
+import com.syncleus.aethermud.game.Libraries.interfaces.GenericBuilder;
+import com.syncleus.aethermud.game.Libraries.interfaces.XMLLibrary;
+import com.syncleus.aethermud.game.Libraries.interfaces.XMLLibrary.XMLTag;
+import com.syncleus.aethermud.game.Locales.interfaces.Room;
+import com.syncleus.aethermud.game.MOBS.interfaces.MOB;
+import com.syncleus.aethermud.game.Races.interfaces.Race;
+import com.syncleus.aethermud.game.core.*;
+import com.syncleus.aethermud.game.core.collections.*;
+import com.syncleus.aethermud.game.core.exceptions.CMException;
+import com.syncleus.aethermud.game.core.interfaces.Environmental;
+import com.syncleus.aethermud.game.core.interfaces.Modifiable;
+import com.syncleus.aethermud.game.core.interfaces.Physical;
+import com.syncleus.aethermud.game.core.interfaces.ShopKeeper;
 
 import java.util.*;
 
@@ -171,7 +171,7 @@ public class MUDPercolator extends StdLibrary implements AreaGenerationLibrary {
     @Override
     @SuppressWarnings("unchecked")
     public boolean activate() {
-        final String filePath = "src/man/java/com/planet_ink/game/Libraries/layouts";
+        final String filePath = "src/man/java/com/syncleus/aethermud/game/Libraries/layouts";
         final CMProps page = CMProps.instance();
         final Vector<Object> layouts = CMClass.loadClassList(filePath, page.getStr("LIBRARY"), "/layouts", LayoutManager.class, true);
         for (int f = 0; f < layouts.size(); f++) {

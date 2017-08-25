@@ -14,10 +14,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.web.interfaces;
+package com.syncleus.aethermud.web.interfaces;
 
-import com.planet_ink.web.http.MIMEType;
-import com.planet_ink.web.util.RequestStats;
+import com.syncleus.aethermud.web.http.MIMEType;
+import com.syncleus.aethermud.web.util.RequestStats;
 
 import java.util.Collection;
 

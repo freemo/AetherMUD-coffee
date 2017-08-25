@@ -14,16 +14,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.core.interfaces;
+package com.syncleus.aethermud.game.core.interfaces;
 
-import com.planet_ink.game.MOBS.interfaces.MOB;
+import com.syncleus.aethermud.game.MOBS.interfaces.MOB;
 
 
 /**
  *
  * Something that exists in the physical world and can be affected by the
  * world
- * @see com.planet_ink.game.core.interfaces.Environmental
+ * @see com.syncleus.aethermud.game.core.interfaces.Environmental
  * @author Bo Zimmerman
  *
  */

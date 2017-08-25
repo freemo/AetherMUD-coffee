@@ -14,14 +14,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Libraries.interfaces;
+package com.syncleus.aethermud.game.Libraries.interfaces;
 
-import com.planet_ink.game.Locales.interfaces.Room;
-import com.planet_ink.game.core.interfaces.CMObject;
-import com.planet_ink.game.core.interfaces.TickClient;
-import com.planet_ink.game.core.interfaces.Tickable;
-import com.planet_ink.game.core.interfaces.TickableGroup;
-import com.planet_ink.game.core.threads.CMRunnable;
+import com.syncleus.aethermud.game.Locales.interfaces.Room;
+import com.syncleus.aethermud.game.core.interfaces.CMObject;
+import com.syncleus.aethermud.game.core.interfaces.TickClient;
+import com.syncleus.aethermud.game.core.interfaces.Tickable;
+import com.syncleus.aethermud.game.core.interfaces.TickableGroup;
+import com.syncleus.aethermud.game.core.threads.CMRunnable;
 
 import java.util.Iterator;
 import java.util.List;

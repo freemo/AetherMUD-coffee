@@ -14,10 +14,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Common;
+package com.syncleus.aethermud.game.Common;
 
-import com.planet_ink.game.Common.interfaces.JournalEntry;
-import com.planet_ink.game.core.interfaces.CMObject;
+import com.syncleus.aethermud.game.Common.interfaces.JournalEntry;
+import com.syncleus.aethermud.game.core.interfaces.CMObject;
 
 
 public class DefaultJournalEntry implements JournalEntry {

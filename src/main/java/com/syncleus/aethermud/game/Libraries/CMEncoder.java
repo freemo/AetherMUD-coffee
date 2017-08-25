@@ -14,10 +14,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Libraries;
+package com.syncleus.aethermud.game.Libraries;
 
-import com.planet_ink.game.Libraries.interfaces.TextEncoders;
-import com.planet_ink.game.core.*;
+import com.syncleus.aethermud.game.Libraries.interfaces.TextEncoders;
+import com.syncleus.aethermud.game.core.*;
 
 import java.nio.ByteBuffer;
 import java.util.zip.Deflater;

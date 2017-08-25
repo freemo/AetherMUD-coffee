@@ -14,11 +14,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.core.collections;
+package com.syncleus.aethermud.game.core.collections;
 
-import com.planet_ink.game.core.CMParms;
-import com.planet_ink.game.core.Log;
-import com.planet_ink.game.core.interfaces.CMObject;
+import com.syncleus.aethermud.game.core.CMParms;
+import com.syncleus.aethermud.game.core.Log;
+import com.syncleus.aethermud.game.core.interfaces.CMObject;
 
 import java.util.List;
 import java.util.Stack;

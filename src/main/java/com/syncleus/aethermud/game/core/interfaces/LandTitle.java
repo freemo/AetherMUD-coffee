@@ -14,9 +14,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.core.interfaces;
+package com.syncleus.aethermud.game.core.interfaces;
 
-import com.planet_ink.game.Locales.interfaces.Room;
+import com.syncleus.aethermud.game.Locales.interfaces.Room;
 
 import java.util.List;
 
@@ -58,14 +58,14 @@ public interface LandTitle extends PrivateProperty {
 
     /**
      * The complete set of room objects represented by this title
-     * @see com.planet_ink.game.Locales.interfaces.Room
+     * @see com.syncleus.aethermud.game.Locales.interfaces.Room
      * @return a list of the complete set of Room objects represented by this title
      */
     public List<Room> getAllTitledRooms();
 
     /**
      * The complete set of room objects that are tied together by one or more titles.
-     * @see com.planet_ink.game.Locales.interfaces.Room
+     * @see com.syncleus.aethermud.game.Locales.interfaces.Room
      * @return a list of the complete set of Room objects represented by property
      */
     public List<Room> getConnectedPropertyRooms();

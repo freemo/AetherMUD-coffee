@@ -14,10 +14,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Abilities.Languages;
+package com.syncleus.aethermud.game.Abilities.Languages;
 
-import com.planet_ink.game.core.CMLib;
-import com.planet_ink.game.core.interfaces.CMObject;
+import com.syncleus.aethermud.game.core.CMLib;
+import com.syncleus.aethermud.game.core.interfaces.CMObject;
 
 import java.util.Hashtable;
 import java.util.List;

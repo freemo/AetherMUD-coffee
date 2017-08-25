@@ -14,14 +14,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.core;
+package com.syncleus.aethermud.game.core;
 
-import com.planet_ink.game.Libraries.interfaces.CatalogLibrary;
-import com.planet_ink.game.Libraries.interfaces.ClanManager;
-import com.planet_ink.game.Libraries.interfaces.WorldMap;
-import com.planet_ink.game.MOBS.interfaces.MOB;
-import com.planet_ink.game.core.interfaces.MudHost;
-import com.planet_ink.web.interfaces.FileManager;
+import com.syncleus.aethermud.game.Libraries.interfaces.CatalogLibrary;
+import com.syncleus.aethermud.game.Libraries.interfaces.ClanManager;
+import com.syncleus.aethermud.game.Libraries.interfaces.WorldMap;
+import com.syncleus.aethermud.game.MOBS.interfaces.MOB;
+import com.syncleus.aethermud.game.core.interfaces.MudHost;
+import com.syncleus.aethermud.web.interfaces.FileManager;
 
 import java.io.*;
 import java.nio.charset.Charset;

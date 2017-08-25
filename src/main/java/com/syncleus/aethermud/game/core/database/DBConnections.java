@@ -14,15 +14,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.core.database;
+package com.syncleus.aethermud.game.core.database;
 
-import com.planet_ink.game.core.CMLib;
-import com.planet_ink.game.core.CMSecurity;
-import com.planet_ink.game.core.CMath;
-import com.planet_ink.game.core.Log;
-import com.planet_ink.game.core.collections.SVector;
-import com.planet_ink.game.core.database.DBConnection.FetchType;
-import com.planet_ink.game.core.database.DBConnector.DBPreparedBatchEntry;
+import com.syncleus.aethermud.game.core.CMLib;
+import com.syncleus.aethermud.game.core.CMSecurity;
+import com.syncleus.aethermud.game.core.CMath;
+import com.syncleus.aethermud.game.core.Log;
+import com.syncleus.aethermud.game.core.collections.SVector;
+import com.syncleus.aethermud.game.core.database.DBConnection.FetchType;
+import com.syncleus.aethermud.game.core.database.DBConnector.DBPreparedBatchEntry;
 
 import java.io.*;
 import java.sql.ResultSet;

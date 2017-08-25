@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.siplet.support;
+package com.syncleus.aethermud.siplet.support;
 
 /*
    Copyright 2008-2017 Bo Zimmerman

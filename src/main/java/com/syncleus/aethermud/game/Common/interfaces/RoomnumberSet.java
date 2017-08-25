@@ -14,9 +14,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Common.interfaces;
+package com.syncleus.aethermud.game.Common.interfaces;
 
-import com.planet_ink.game.core.collections.LongSet;
+import com.syncleus.aethermud.game.core.collections.LongSet;
 
 import java.util.Enumeration;
 import java.util.Iterator;
@@ -31,7 +31,7 @@ import java.util.Iterator;
  * reads.
  *
  * Stores the internal numbers using LongSet
- * @see com.planet_ink.game.core.collections.LongSet
+ * @see com.syncleus.aethermud.game.core.collections.LongSet
  */
 public interface RoomnumberSet extends CMCommon {
     /**
@@ -114,7 +114,7 @@ public interface RoomnumberSet extends CMCommon {
     /**
      * Returns the number parts of the room ids stored in this
      * object for a given area.
-     * @see com.planet_ink.game.core.collections.LongSet
+     * @see com.syncleus.aethermud.game.core.collections.LongSet
      * @param areaName the area name to look for
      * @return a set of numbers.
      */

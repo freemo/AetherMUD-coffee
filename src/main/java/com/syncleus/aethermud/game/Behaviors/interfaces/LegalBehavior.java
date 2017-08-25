@@ -14,14 +14,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Behaviors.interfaces;
+package com.syncleus.aethermud.game.Behaviors.interfaces;
 
-import com.planet_ink.game.Areas.interfaces.Area;
-import com.planet_ink.game.Common.interfaces.Law;
-import com.planet_ink.game.Common.interfaces.LegalWarrant;
-import com.planet_ink.game.Locales.interfaces.Room;
-import com.planet_ink.game.MOBS.interfaces.MOB;
-import com.planet_ink.game.core.interfaces.Environmental;
+import com.syncleus.aethermud.game.Areas.interfaces.Area;
+import com.syncleus.aethermud.game.Common.interfaces.Law;
+import com.syncleus.aethermud.game.Common.interfaces.LegalWarrant;
+import com.syncleus.aethermud.game.Locales.interfaces.Room;
+import com.syncleus.aethermud.game.MOBS.interfaces.MOB;
+import com.syncleus.aethermud.game.core.interfaces.Environmental;
 
 import java.util.List;
 
@@ -34,9 +34,9 @@ import java.util.List;
  * of arresting officers and judges, and dispenses justice by taking mobs and
  * players to jail, putting them on parole, or issuing warnings or other
  * punishments.
- * @see com.planet_ink.game.Behaviors.interfaces.Behavior
- * @see com.planet_ink.game.Common.interfaces.LegalWarrant
- * @see com.planet_ink.game.Common.interfaces.Law
+ * @see com.syncleus.aethermud.game.Behaviors.interfaces.Behavior
+ * @see com.syncleus.aethermud.game.Common.interfaces.LegalWarrant
+ * @see com.syncleus.aethermud.game.Common.interfaces.Law
  */
 public interface LegalBehavior extends Behavior {
     /** constant for the number of miliseconds in a real-life day */
@@ -49,7 +49,7 @@ public interface LegalBehavior extends Behavior {
     /**
      * Returns whether or not the given legal warrant is still a valid, timely
      * warrant that can be acted upon by law enforcement.
-     * @see com.planet_ink.game.Common.interfaces.LegalWarrant
+     * @see com.syncleus.aethermud.game.Common.interfaces.LegalWarrant
      * @param W the legal warrant to inspect
      * @param debugging whether debug information should be sent to the log
      * @return whether the given warrant is still a valid, timely crime.
@@ -62,9 +62,9 @@ public interface LegalBehavior extends Behavior {
      * if you want to add a warrant for a custom crime with your own qualifying
      * flags.  For recognized crimes with crime keys, however, use the accuse
      * command.
-     * @see com.planet_ink.game.Behaviors.interfaces.LegalBehavior#accuse(Area, MOB, MOB, String[])
-     * @see com.planet_ink.game.Common.interfaces.Law
-     * @see com.planet_ink.game.Common.interfaces.Law#PUNISHMENTMASK_DESCS
+     * @see com.syncleus.aethermud.game.Behaviors.interfaces.LegalBehavior#accuse(Area, MOB, MOB, String[])
+     * @see com.syncleus.aethermud.game.Common.interfaces.Law
+     * @see com.syncleus.aethermud.game.Common.interfaces.Law#PUNISHMENTMASK_DESCS
      * @param mob the accused character
      * @param laws the system of laws to use as a basis
      * @param myArea the geographical domain that the laws apply to
@@ -110,7 +110,7 @@ public interface LegalBehavior extends Behavior {
     /**
      * Returns the set of laws governing the given geographic legal area,
      * assuming that this LegalBehavior is the behavior governing the same.
-     * @see com.planet_ink.game.Common.interfaces.Law
+     * @see com.syncleus.aethermud.game.Common.interfaces.Law
      * @param myArea  the geographic legal area
      * @return the Law object that governs the area and behavior
      */
@@ -177,7 +177,7 @@ public interface LegalBehavior extends Behavior {
 
     /**
      * Get the name of the clan that currently rules this area, if applicable.
-     * @see com.planet_ink.game.Common.interfaces.Clan
+     * @see com.syncleus.aethermud.game.Common.interfaces.Clan
      * @return Empty string if the area is unruled, or ruled by the system. ClanID otherwise.
      */
     public String rulingOrganization();
@@ -203,8 +203,8 @@ public interface LegalBehavior extends Behavior {
      * Returns the number of control points necessary to conquer the area governed
      * by this legal behavior.  Not applicable if the legal behavior doesn't permit
      * government changes or conquest.
-     * @see com.planet_ink.game.Behaviors.interfaces.LegalBehavior#setControlPoints(String, int)
-     * @see com.planet_ink.game.Behaviors.interfaces.LegalBehavior#getControlPoints(String)
+     * @see com.syncleus.aethermud.game.Behaviors.interfaces.LegalBehavior#setControlPoints(String, int)
+     * @see com.syncleus.aethermud.game.Behaviors.interfaces.LegalBehavior#getControlPoints(String)
      * @return the number of control points needed to control this legal behavior
      */
     public int controlPoints();
@@ -220,8 +220,8 @@ public interface LegalBehavior extends Behavior {
     /**
      * Modify the number of control points earned by the given clanID. Not
      * applicable if the legal behavior doesn't permit government changes or conquest.
-     * @see com.planet_ink.game.Behaviors.interfaces.LegalBehavior#controlPoints()
-     * @see com.planet_ink.game.Behaviors.interfaces.LegalBehavior#getControlPoints(String)
+     * @see com.syncleus.aethermud.game.Behaviors.interfaces.LegalBehavior#controlPoints()
+     * @see com.syncleus.aethermud.game.Behaviors.interfaces.LegalBehavior#getControlPoints(String)
      * @param clanID the clan to assign the control points to
      * @param newControlPoints the number of points to assign
      */
@@ -230,8 +230,8 @@ public interface LegalBehavior extends Behavior {
     /**
      * Returns the number of control points earned by the given clanID. Not
      * applicable if the legal behavior doesn't permit government changes or conquest.
-     * @see com.planet_ink.game.Behaviors.interfaces.LegalBehavior#controlPoints()
-     * @see com.planet_ink.game.Behaviors.interfaces.LegalBehavior#setControlPoints(String, int)
+     * @see com.syncleus.aethermud.game.Behaviors.interfaces.LegalBehavior#controlPoints()
+     * @see com.syncleus.aethermud.game.Behaviors.interfaces.LegalBehavior#setControlPoints(String, int)
      * @param clanID the clan to assign the control points to
      * @return The number of control points earned by this clan/organization
      */
@@ -241,7 +241,7 @@ public interface LegalBehavior extends Behavior {
      * Searches the list of warrants, returning those criminal mobs whose names
      * match the search string, and still have legal warrants available for them.
      * Use a search name of NULL to return all criminals.
-     * @see com.planet_ink.game.MOBS.interfaces.MOB
+     * @see com.syncleus.aethermud.game.MOBS.interfaces.MOB
      * @param myArea the geographic legal area
      * @param searchStr the name/search string to use
      * @return a list of MOB objects
@@ -251,7 +251,7 @@ public interface LegalBehavior extends Behavior {
     /**
      * Returns a list of all active legal warrants available on the given
      * mob.
-     * @see com.planet_ink.game.Common.interfaces.LegalWarrant
+     * @see com.syncleus.aethermud.game.Common.interfaces.LegalWarrant
      * @param myArea the geographic legal area
      * @param accused the mob to look for warrants for
      * @return a list of LegalWarrant objects
@@ -262,9 +262,9 @@ public interface LegalBehavior extends Behavior {
      * Puts a warrant on the official docket so that officers can act
      * on them.  This method is called by other methods to finish off
      * their work.  Any WARRANTS channels are also notified.
-     * @see com.planet_ink.game.Behaviors.interfaces.LegalBehavior#fillOutWarrant(MOB, Law, Area, Environmental, String, String, String, String, String)
-     * @see com.planet_ink.game.Behaviors.interfaces.LegalBehavior#addWarrant(Area, MOB, MOB, String, String, String, String, String)
-     * @see com.planet_ink.game.Common.interfaces.LegalWarrant
+     * @see com.syncleus.aethermud.game.Behaviors.interfaces.LegalBehavior#fillOutWarrant(MOB, Law, Area, Environmental, String, String, String, String, String)
+     * @see com.syncleus.aethermud.game.Behaviors.interfaces.LegalBehavior#addWarrant(Area, MOB, MOB, String, String, String, String, String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.LegalWarrant
      * @param myArea the geographic legal area
      * @param W the LegalWarrant to put on the docket
      * @return whether the warrant was successfully added
@@ -274,7 +274,7 @@ public interface LegalBehavior extends Behavior {
     /**
      * Fills out and, if possible, issues a warrant for arrest using the given
      * crime data.  Calls fillOutWarrant to do its work.
-     * @see com.planet_ink.game.Behaviors.interfaces.LegalBehavior#fillOutWarrant(MOB, Law, Area, Environmental, String, String, String, String, String)
+     * @see com.syncleus.aethermud.game.Behaviors.interfaces.LegalBehavior#fillOutWarrant(MOB, Law, Area, Environmental, String, String, String, String, String)
      * @param myArea the geographic legal area
      * @param accused the accused character
      * @param victim the victim of a crime, if any
@@ -290,7 +290,7 @@ public interface LegalBehavior extends Behavior {
     /**
      * Removes the given warrants from the list of issued warrants.  Does not update
      * the old-warrants (prior convictions) record, but erases the warrant completely.
-     * @see com.planet_ink.game.Common.interfaces.LegalWarrant
+     * @see com.syncleus.aethermud.game.Common.interfaces.LegalWarrant
      * @param myArea the geographic legal area
      * @param W the legal warrant to remove
      * @return true if the warrant was found to remove, false otherwise
@@ -311,7 +311,7 @@ public interface LegalBehavior extends Behavior {
     /**
      * Returns whether any of the given Room objects in the jails Vector
      * is indeed an official Jail room as defined by this legal behavior.
-     * @see com.planet_ink.game.Locales.interfaces.Room
+     * @see com.syncleus.aethermud.game.Locales.interfaces.Room
      * @param myArea the geographic legal area
      * @param jails a list of Room objects to inspect
      * @return whether any one of the room objects is, in fact, a jail
@@ -323,7 +323,7 @@ public interface LegalBehavior extends Behavior {
      * victim, for a crime listed in the list of crime keys.
      * Calls fillOutWarrant after retreiving the remaining information about
      * the crime key described by the parameter accusableLaws.
-     * @see com.planet_ink.game.Behaviors.interfaces.LegalBehavior#fillOutWarrant(MOB, Law, Area, Environmental, String, String, String, String, String)
+     * @see com.syncleus.aethermud.game.Behaviors.interfaces.LegalBehavior#fillOutWarrant(MOB, Law, Area, Environmental, String, String, String, String, String)
      * @param myArea the geographic legal area
      * @param accused the accused mob
      * @param victim the victim of the crime

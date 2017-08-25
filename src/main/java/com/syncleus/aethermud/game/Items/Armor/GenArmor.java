@@ -14,18 +14,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Items.Armor;
+package com.syncleus.aethermud.game.Items.Armor;
 
-import com.planet_ink.game.Items.interfaces.Armor;
-import com.planet_ink.game.Items.interfaces.Container;
-import com.planet_ink.game.Items.interfaces.RawMaterial;
-import com.planet_ink.game.Items.interfaces.Wearable;
-import com.planet_ink.game.Libraries.interfaces.GenericBuilder;
-import com.planet_ink.game.core.CMLib;
-import com.planet_ink.game.core.CMParms;
-import com.planet_ink.game.core.CMProps;
-import com.planet_ink.game.core.CMath;
-import com.planet_ink.game.core.interfaces.Environmental;
+import com.syncleus.aethermud.game.Items.interfaces.Armor;
+import com.syncleus.aethermud.game.Items.interfaces.Container;
+import com.syncleus.aethermud.game.Items.interfaces.RawMaterial;
+import com.syncleus.aethermud.game.Items.interfaces.Wearable;
+import com.syncleus.aethermud.game.Libraries.interfaces.GenericBuilder;
+import com.syncleus.aethermud.game.core.CMLib;
+import com.syncleus.aethermud.game.core.CMParms;
+import com.syncleus.aethermud.game.core.CMProps;
+import com.syncleus.aethermud.game.core.CMath;
+import com.syncleus.aethermud.game.core.interfaces.Environmental;
 
 
 public class GenArmor extends StdArmor {

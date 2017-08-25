@@ -14,26 +14,26 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.WebMacros;
+package com.syncleus.aethermud.game.WebMacros;
 
-import com.planet_ink.game.Abilities.interfaces.Ability;
-import com.planet_ink.game.Areas.interfaces.Area;
-import com.planet_ink.game.CharClasses.interfaces.CharClass;
-import com.planet_ink.game.Common.interfaces.CMMsg;
-import com.planet_ink.game.Common.interfaces.CharState;
-import com.planet_ink.game.Common.interfaces.CharStats;
-import com.planet_ink.game.Common.interfaces.PhyStats;
-import com.planet_ink.game.Items.interfaces.Item;
-import com.planet_ink.game.Items.interfaces.RawMaterial;
-import com.planet_ink.game.Items.interfaces.Weapon;
-import com.planet_ink.game.Libraries.interfaces.AbilityMapper;
-import com.planet_ink.game.MOBS.interfaces.MOB;
-import com.planet_ink.game.core.*;
-import com.planet_ink.game.core.CMClass.CMObjectType;
-import com.planet_ink.game.core.collections.DVector;
-import com.planet_ink.game.core.collections.Pair;
-import com.planet_ink.web.interfaces.HTTPRequest;
-import com.planet_ink.web.interfaces.HTTPResponse;
+import com.syncleus.aethermud.game.Abilities.interfaces.Ability;
+import com.syncleus.aethermud.game.Areas.interfaces.Area;
+import com.syncleus.aethermud.game.CharClasses.interfaces.CharClass;
+import com.syncleus.aethermud.game.Common.interfaces.CMMsg;
+import com.syncleus.aethermud.game.Common.interfaces.CharState;
+import com.syncleus.aethermud.game.Common.interfaces.CharStats;
+import com.syncleus.aethermud.game.Common.interfaces.PhyStats;
+import com.syncleus.aethermud.game.Items.interfaces.Item;
+import com.syncleus.aethermud.game.Items.interfaces.RawMaterial;
+import com.syncleus.aethermud.game.Items.interfaces.Weapon;
+import com.syncleus.aethermud.game.Libraries.interfaces.AbilityMapper;
+import com.syncleus.aethermud.game.MOBS.interfaces.MOB;
+import com.syncleus.aethermud.game.core.*;
+import com.syncleus.aethermud.game.core.CMClass.CMObjectType;
+import com.syncleus.aethermud.game.core.collections.DVector;
+import com.syncleus.aethermud.game.core.collections.Pair;
+import com.syncleus.aethermud.web.interfaces.HTTPRequest;
+import com.syncleus.aethermud.web.interfaces.HTTPResponse;
 
 import java.util.*;
 
@@ -224,7 +224,7 @@ public class CharClassData extends StdWebMacro {
         String C2ID = null;
         for (final Enumeration<CharClass> e = CMClass.charClasses(); e.hasMoreElements(); ) {
             C2 = e.nextElement();
-            C2ID = "com.planet_ink.game.CharClasses." + C2.ID();
+            C2ID = "com.syncleus.aethermud.game.CharClasses." + C2.ID();
             if (C2.isGeneric() && CMClass.checkForCMClass(CMObjectType.CHARCLASS, C2ID)) {
                 str.append("<OPTION VALUE=\"" + C2.ID() + "\" " + ((old.equalsIgnoreCase(C2.ID())) ? "SELECTED" : "") + ">" + C2.ID() + " (Generic)");
                 str.append("<OPTION VALUE=\"" + C2ID + "\" " + ((old.equalsIgnoreCase(C2ID)) ? "SELECTED" : "") + ">" + C2ID);

@@ -14,9 +14,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.MOBS;
+package com.syncleus.aethermud.game.MOBS;
 
-import com.planet_ink.game.Common.interfaces.CharStats;
+import com.syncleus.aethermud.game.Common.interfaces.CharStats;
 
 
 public class Doe extends Deer {

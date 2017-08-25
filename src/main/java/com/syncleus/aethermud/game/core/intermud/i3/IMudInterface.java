@@ -14,21 +14,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.core.intermud.i3;
+package com.syncleus.aethermud.game.core.intermud.i3;
 
-import com.planet_ink.game.Common.interfaces.CMMsg;
-import com.planet_ink.game.Common.interfaces.CharStats;
-import com.planet_ink.game.Common.interfaces.PlayerStats;
-import com.planet_ink.game.Common.interfaces.Session;
-import com.planet_ink.game.Libraries.interfaces.ChannelsLibrary.CMChannel;
-import com.planet_ink.game.Libraries.interfaces.ChannelsLibrary.ChannelFlag;
-import com.planet_ink.game.Locales.interfaces.Room;
-import com.planet_ink.game.MOBS.interfaces.MOB;
-import com.planet_ink.game.core.*;
-import com.planet_ink.game.core.CMSecurity.DbgFlag;
-import com.planet_ink.game.core.collections.XVector;
-import com.planet_ink.game.core.intermud.i3.packets.*;
-import com.planet_ink.game.core.intermud.i3.server.I3Server;
+import com.syncleus.aethermud.game.Common.interfaces.CMMsg;
+import com.syncleus.aethermud.game.Common.interfaces.CharStats;
+import com.syncleus.aethermud.game.Common.interfaces.PlayerStats;
+import com.syncleus.aethermud.game.Common.interfaces.Session;
+import com.syncleus.aethermud.game.Libraries.interfaces.ChannelsLibrary.CMChannel;
+import com.syncleus.aethermud.game.Libraries.interfaces.ChannelsLibrary.ChannelFlag;
+import com.syncleus.aethermud.game.Locales.interfaces.Room;
+import com.syncleus.aethermud.game.MOBS.interfaces.MOB;
+import com.syncleus.aethermud.game.core.*;
+import com.syncleus.aethermud.game.core.CMSecurity.DbgFlag;
+import com.syncleus.aethermud.game.core.collections.XVector;
+import com.syncleus.aethermud.game.core.intermud.i3.packets.*;
+import com.syncleus.aethermud.game.core.intermud.i3.server.I3Server;
 
 import java.io.Serializable;
 import java.util.HashSet;
@@ -566,7 +566,7 @@ public class IMudInterface implements ImudServices, Serializable {
      * Register a fake channel
      * @param chan the remote channel name
      * @return the local channel name for the specified new local channel name
-     * @see com.planet_ink.game.core.intermud.i3.packets.ImudServices#getLocalChannel
+     * @see com.syncleus.aethermud.game.core.intermud.i3.packets.ImudServices#getLocalChannel
      */
     @Override
     public boolean addChannel(CMChannel chan) {

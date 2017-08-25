@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Items.interfaces;
+package com.syncleus.aethermud.game.Items.interfaces;
 
 /**
  * An interface for a particular kind of container that is invisible
@@ -30,7 +30,7 @@ public interface ElecPanel extends Electronics {
      * A list of TechType objects denoting what the
      * valid types of panels there are.  These determine
      * that kinds of items the panel can hold.
-     * @see com.planet_ink.game.Items.interfaces.Technical.TechType
+     * @see com.syncleus.aethermud.game.Items.interfaces.Technical.TechType
      */
     public static final TechType[] PANELTYPES =
         {
@@ -52,8 +52,8 @@ public interface ElecPanel extends Electronics {
      * Gets the type of panel this is, which shows what
      * sorts of items can be "installed into it.  This method is
      * a sort of companion to {@link Container#containTypes()}
-     * @see ElecPanel#setPanelType(com.planet_ink.game.Items.interfaces.Technical.TechType)
-     * @see com.planet_ink.game.Items.interfaces.Technical.TechType
+     * @see ElecPanel#setPanelType(com.syncleus.aethermud.game.Items.interfaces.Technical.TechType)
+     * @see com.syncleus.aethermud.game.Items.interfaces.Technical.TechType
      * @return the type of panel this is
      */
     public TechType panelType();
@@ -62,8 +62,8 @@ public interface ElecPanel extends Electronics {
      * Sets the type of panel this is, which shows what
      * sorts of items can be "installed into it.  This method is
      * a sort of companion to {@link Container#setContainTypes(long)}
-     * @see ElecPanel#setPanelType(com.planet_ink.game.Items.interfaces.Technical.TechType)
-     * @see com.planet_ink.game.Items.interfaces.Technical.TechType
+     * @see ElecPanel#setPanelType(com.syncleus.aethermud.game.Items.interfaces.Technical.TechType)
+     * @see com.syncleus.aethermud.game.Items.interfaces.Technical.TechType
      * @param type the type of panel this is
      */
     public void setPanelType(TechType type);

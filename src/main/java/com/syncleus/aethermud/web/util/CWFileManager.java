@@ -14,9 +14,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.web.util;
+package com.syncleus.aethermud.web.util;
 
-import com.planet_ink.web.interfaces.FileManager;
+import com.syncleus.aethermud.web.interfaces.FileManager;
 
 import java.io.*;
 

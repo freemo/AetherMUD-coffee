@@ -14,12 +14,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.core.interfaces;
+package com.syncleus.aethermud.game.core.interfaces;
 
 /**
  * The general base interface which is implemented by every class
  * which the CoffeeMud ClassLoader (CMClass) handles.
- * @see com.planet_ink.game.core.CMClass
+ * @see com.syncleus.aethermud.game.core.CMClass
  * @author Bo Zimmerman
  *
  */

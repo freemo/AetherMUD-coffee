@@ -14,25 +14,25 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.core.interfaces;
+package com.syncleus.aethermud.game.core.interfaces;
 
 /**
  * The interface for an item or mob which ride a Rideable
- * @see com.planet_ink.game.core.interfaces.Rideable
+ * @see com.syncleus.aethermud.game.core.interfaces.Rideable
  * @author Bo Zimmerman
  *
  */
 public interface Rider extends PhysicalAgent {
     /**
      * Sets the Rideable upon which this Rider is Riding.
-     * @see com.planet_ink.game.core.interfaces.Rideable
+     * @see com.syncleus.aethermud.game.core.interfaces.Rideable
      * @param ride the Rideable to ride upon
      */
     public void setRiding(Rideable ride);
 
     /**
      * Returns the Rideable upon which this Rider is Riding.
-     * @see com.planet_ink.game.core.interfaces.Rideable
+     * @see com.syncleus.aethermud.game.core.interfaces.Rideable
      * @return the Rideable upon which this Rider is Riding.
      */
     public Rideable riding();

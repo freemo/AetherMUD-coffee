@@ -14,18 +14,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Common.interfaces;
+package com.syncleus.aethermud.game.Common.interfaces;
 
-import com.planet_ink.game.Areas.interfaces.Area;
-import com.planet_ink.game.Libraries.interfaces.AbilityMapper.AbilityMapping;
-import com.planet_ink.game.Libraries.interfaces.ExpertiseLibrary.ExpertiseDefinition;
-import com.planet_ink.game.Locales.interfaces.Room;
-import com.planet_ink.game.MOBS.interfaces.MOB;
-import com.planet_ink.game.Races.interfaces.Race;
-import com.planet_ink.game.core.CMSecurity;
-import com.planet_ink.game.core.interfaces.Contingent;
-import com.planet_ink.game.core.interfaces.ItemCollection;
-import com.planet_ink.game.core.interfaces.Modifiable;
+import com.syncleus.aethermud.game.Areas.interfaces.Area;
+import com.syncleus.aethermud.game.Libraries.interfaces.AbilityMapper.AbilityMapping;
+import com.syncleus.aethermud.game.Libraries.interfaces.ExpertiseLibrary.ExpertiseDefinition;
+import com.syncleus.aethermud.game.Locales.interfaces.Room;
+import com.syncleus.aethermud.game.MOBS.interfaces.MOB;
+import com.syncleus.aethermud.game.Races.interfaces.Race;
+import com.syncleus.aethermud.game.core.CMSecurity;
+import com.syncleus.aethermud.game.core.interfaces.Contingent;
+import com.syncleus.aethermud.game.core.interfaces.ItemCollection;
+import com.syncleus.aethermud.game.core.interfaces.Modifiable;
 
 import java.util.List;
 import java.util.Map;
@@ -36,7 +36,7 @@ import java.util.Map;
  * the repository for all manner of player specific
  * mob values.
  *
- * @see com.planet_ink.game.MOBS.interfaces.MOB#playerStats()
+ * @see com.syncleus.aethermud.game.MOBS.interfaces.MOB#playerStats()
  */
 public interface PlayerStats extends CMCommon, Modifiable, AccountStats, Contingent {
     /** Constant for day of birthday, as from {@link PlayerStats#getBirthday()} */
@@ -67,7 +67,7 @@ public interface PlayerStats extends CMCommon, Modifiable, AccountStats, Conting
     /**
      * The time, in milis since 1970, that the player was last saved.
      *
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#setLastUpdated(long)
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#setLastUpdated(long)
      *
      * @return the time, in milis since 1970, that the player was last saved.
      */
@@ -77,7 +77,7 @@ public interface PlayerStats extends CMCommon, Modifiable, AccountStats, Conting
     /**
      * Sets the time, in milis since 1970, that the player was last saved.
      *
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#getLastUpdated()
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#getLastUpdated()
      *
      * @param time the time, in milis since 1970, that the player was last saved.
      */
@@ -87,7 +87,7 @@ public interface PlayerStats extends CMCommon, Modifiable, AccountStats, Conting
     /**
      * The time, in milis since 1970, that the player gained the given level
      *
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#setLeveledDateTime(int, long, Room)
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#setLeveledDateTime(int, long, Room)
      *
      * @param level the level to check for
      * @return the time, in milis since 1970, that the player gained the given level
@@ -97,7 +97,7 @@ public interface PlayerStats extends CMCommon, Modifiable, AccountStats, Conting
     /**
      * The roomID that the player gained the given level
      *
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#setLeveledDateTime(int, long, Room)
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#setLeveledDateTime(int, long, Room)
      *
      * @param level  the level to check for
      * @return roomID that the player gained the given level
@@ -107,7 +107,7 @@ public interface PlayerStats extends CMCommon, Modifiable, AccountStats, Conting
     /**
      * The number of minutes played when the player gained the given level
      *
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#setLeveledDateTime(int, long, Room)
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#setLeveledDateTime(int, long, Room)
      *
      * @param level the level to check for
      * @return the minutes played before the player gained the given level
@@ -118,7 +118,7 @@ public interface PlayerStats extends CMCommon, Modifiable, AccountStats, Conting
      * Notifies the player records that, at the moment this method was called,
      * the player gained the given level.
      *
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#leveledDateTime(int)
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#leveledDateTime(int)
      *
      * @param level the level to set up
      * @param ageHours the hours played at this point
@@ -129,7 +129,7 @@ public interface PlayerStats extends CMCommon, Modifiable, AccountStats, Conting
     /**
      * Returns a bitmask of channels turned on/off. (32 channels supported)
      *
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#setChannelMask(int)
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#setChannelMask(int)
      *
      * @return a bitmask of channels turned on/off. (1=off)
      */
@@ -138,7 +138,7 @@ public interface PlayerStats extends CMCommon, Modifiable, AccountStats, Conting
     /**
      * Sets the bitmask of channels turned on/off. (32 channels supported)
      *
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#setChannelMask(int)
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#setChannelMask(int)
      *
      * @param newMask the bitmask of channels turned on/off. (1=off)
      */
@@ -150,7 +150,7 @@ public interface PlayerStats extends CMCommon, Modifiable, AccountStats, Conting
      * Code Letter (the one after the ^ character) followed by the ansi color
      * from the basic set, followed by a # character, repeated.
      *
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#setColorStr(String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#setColorStr(String)
      *
      * @return a custom coded color string
      */
@@ -162,7 +162,7 @@ public interface PlayerStats extends CMCommon, Modifiable, AccountStats, Conting
      * Code Letter (the one after the ^ character) followed by the ansi color
      * from the basic set, followed by a # character, repeated.
      *
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#getColorStr()
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#getColorStr()
      *
      * @param color a custom coded color string
      */
@@ -171,7 +171,7 @@ public interface PlayerStats extends CMCommon, Modifiable, AccountStats, Conting
     /**
      * Gets the saved pose string for players.
      *
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#setSavedPose(String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#setSavedPose(String)
      *
      * @return a saved pose string
      */
@@ -180,7 +180,7 @@ public interface PlayerStats extends CMCommon, Modifiable, AccountStats, Conting
     /**
      * Sets the saved pose string for players.
      *
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#getSavedPose()
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#getSavedPose()
      *
      * @param msg a saved pose string
      */
@@ -189,7 +189,7 @@ public interface PlayerStats extends CMCommon, Modifiable, AccountStats, Conting
     /**
      * Returns the word wrap column number for this player, or 0.
      *
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#setWrap(int)
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#setWrap(int)
      *
      * @return the word wrap column number for this player, or 0.
      */
@@ -198,7 +198,7 @@ public interface PlayerStats extends CMCommon, Modifiable, AccountStats, Conting
     /**
      * Sets the word wrap column number for this player, or 0.
      *
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#getWrap()
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#getWrap()
      *
      * @param newWrap the word wrap column number for this player, or 0.
      */
@@ -207,7 +207,7 @@ public interface PlayerStats extends CMCommon, Modifiable, AccountStats, Conting
     /**
      * Returns the page break row for this player, or 0.
      *
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#setPageBreak(int)
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#setPageBreak(int)
      *
      * @return the page break row for this player, or 0.
      */
@@ -216,7 +216,7 @@ public interface PlayerStats extends CMCommon, Modifiable, AccountStats, Conting
     /**
      * Sets the page break row for this player, or 0.
      *
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#getPageBreak()
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#getPageBreak()
      *
      * @param newBreak the page break row for this player, or 0.
      */
@@ -226,7 +226,7 @@ public interface PlayerStats extends CMCommon, Modifiable, AccountStats, Conting
      * Returns the custom prompt, an encoded string, for this player.  "" means
      * default is used.
      *
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#setPrompt(String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#setPrompt(String)
      *
      * @return the custom prompt, an encoded string, or ""
      */
@@ -236,7 +236,7 @@ public interface PlayerStats extends CMCommon, Modifiable, AccountStats, Conting
      * Sets the custom prompt, an encoded string, for this player.  "" means
      * default is used.
      *
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#getPrompt()
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#getPrompt()
      *
      * @param prompt the custom prompt, an encoded string, or ""
      */
@@ -246,7 +246,7 @@ public interface PlayerStats extends CMCommon, Modifiable, AccountStats, Conting
      * Returns a list of modifiable title definitions.  These are things
      * like *, the bunny slayer and such.
      *
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#getActiveTitle()
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#getActiveTitle()
      *
      * @return a list of modifiable title definitions
      */
@@ -256,7 +256,7 @@ public interface PlayerStats extends CMCommon, Modifiable, AccountStats, Conting
      * Returns which of the player available titles is currently being used by
      * this player.  Its a string like *, the bunny slayer
      *
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#getTitles()
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#getTitles()
      *
      * @return a title being used by this player
      */
@@ -266,7 +266,7 @@ public interface PlayerStats extends CMCommon, Modifiable, AccountStats, Conting
      * Returns a List of the last few string messages sent and received to and
      * from this player.
      *
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#addTellStack(String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#addTellStack(String)
      *
      * @return a List of strings, the last few tell messages
      */
@@ -275,7 +275,7 @@ public interface PlayerStats extends CMCommon, Modifiable, AccountStats, Conting
     /**
      * Adds a new string message to the tell stack.
      *
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#getTellStack()
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#getTellStack()
      *
      * @param msg the new message for the tell stack.
      */
@@ -285,7 +285,7 @@ public interface PlayerStats extends CMCommon, Modifiable, AccountStats, Conting
      * Returns a List of the last few string messages sent and received to and
      * from this players group.
      *
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#addGTellStack(String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#addGTellStack(String)
      *
      * @return a List of strings, the last few gtell messages
      */
@@ -294,7 +294,7 @@ public interface PlayerStats extends CMCommon, Modifiable, AccountStats, Conting
     /**
      * Adds a new string message to the gtell stack.
      *
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#getGTellStack()
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#getGTellStack()
      *
      * @param msg the new message for the gtell stack.
      */
@@ -304,8 +304,8 @@ public interface PlayerStats extends CMCommon, Modifiable, AccountStats, Conting
      * For player with the GOTO command, this is the message seen by all when
      * the player arrives from using GOTO.
      *
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#getPoofOut()
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#setPoofs(String, String, String, String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#getPoofOut()
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#setPoofs(String, String, String, String)
      *
      * @return the poof-in GOTO message
      */
@@ -315,8 +315,8 @@ public interface PlayerStats extends CMCommon, Modifiable, AccountStats, Conting
      * For player with the GOTO command, this is the message seen by all when
      * the player leaves using GOTO.
      *
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#getPoofIn()
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#setPoofs(String, String, String, String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#getPoofIn()
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#setPoofs(String, String, String, String)
      *
      * @return the poof-out GOTO message
      */
@@ -326,8 +326,8 @@ public interface PlayerStats extends CMCommon, Modifiable, AccountStats, Conting
      * For player with the TRANSFER command, this is the message seen by all when
      * the player arrives from using TRANSFER.
      *
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#getTranPoofOut()
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#setPoofs(String, String, String, String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#getTranPoofOut()
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#setPoofs(String, String, String, String)
      *
      * @return the poof-in TRANSFER message
      */
@@ -337,8 +337,8 @@ public interface PlayerStats extends CMCommon, Modifiable, AccountStats, Conting
      * For player with the TRANSFER command, this is the message seen by all when
      * the player leaves using TRANSFER.
      *
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#getTranPoofIn()
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#setPoofs(String, String, String, String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#getTranPoofIn()
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#setPoofs(String, String, String, String)
      *
      * @return the poof-out TRANSFER message
      */
@@ -348,10 +348,10 @@ public interface PlayerStats extends CMCommon, Modifiable, AccountStats, Conting
      * For players with either the GOTO or TRANSFER command, this will set the
      * various messages seen when coming and going using either of those commands.
      *
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#getTranPoofIn()
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#getTranPoofOut()
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#getPoofIn()
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#getPoofOut()
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#getTranPoofIn()
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#getTranPoofOut()
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#getPoofIn()
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#getPoofOut()
      *
      * @param poofIn the msg seen when entering a room using GOTO
      * @param poofOut the msg seen when leaving a room using TRANSFER
@@ -364,7 +364,7 @@ public interface PlayerStats extends CMCommon, Modifiable, AccountStats, Conting
      * For players with the ANNOUNCE command, this is the message used to
      * prefix the announcements proclaimed.
      *
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#setAnnounceMessage(String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#setAnnounceMessage(String)
      *
      * @return prefix to announcements
      */
@@ -374,7 +374,7 @@ public interface PlayerStats extends CMCommon, Modifiable, AccountStats, Conting
      * For players with the ANNOUNCE command, this sets the message used to
      * prefix the announcements proclaimed.
      *
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#getAnnounceMessage()
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#getAnnounceMessage()
      *
      * @param msg prefix to announcements
      */
@@ -383,9 +383,9 @@ public interface PlayerStats extends CMCommon, Modifiable, AccountStats, Conting
     /**
      * Returns the last MOB player who sent this player a private instant message.
      *
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#setReplyTo(MOB, int)
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#getReplyType()
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#getReplyToTime()
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#setReplyTo(MOB, int)
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#getReplyType()
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#getReplyToTime()
      *
      * @return the last MOB player who sent this player a private instant message.
      */
@@ -395,12 +395,12 @@ public interface PlayerStats extends CMCommon, Modifiable, AccountStats, Conting
      * Sets the last MOB player who sent this player a private instant message,
      * and some information about that tell (a defined constant).
      *
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#getReplyToMOB()
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#getReplyType()
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#getReplyToTime()
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#REPLY_SAY
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#REPLY_TELL
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#REPLY_YELL
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#getReplyToMOB()
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#getReplyType()
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#getReplyToTime()
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#REPLY_SAY
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#REPLY_TELL
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#REPLY_YELL
      *
      * @param mob the last MOB player who sent this player a private instant message.
      * @param replyType the type of
@@ -411,12 +411,12 @@ public interface PlayerStats extends CMCommon, Modifiable, AccountStats, Conting
      * Returns the type of private message last sent to this player, an
      * encoded constant.
      *
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#setReplyTo(MOB, int)
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#getReplyToMOB()
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#getReplyToTime()
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#REPLY_SAY
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#REPLY_TELL
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#REPLY_YELL
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#setReplyTo(MOB, int)
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#getReplyToMOB()
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#getReplyToTime()
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#REPLY_SAY
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#REPLY_TELL
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#REPLY_YELL
      *
      * @return the type of private message last sent to this player
      */
@@ -426,9 +426,9 @@ public interface PlayerStats extends CMCommon, Modifiable, AccountStats, Conting
      * Returns the last time, in millis since 1970, that a player last
      * sent this playe a private message.
      *
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#setReplyTo(MOB, int)
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#getReplyToMOB()
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#getReplyType()
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#setReplyTo(MOB, int)
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#getReplyToMOB()
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#getReplyType()
      *
      * @return the last time this player got a private message
      */
@@ -456,9 +456,9 @@ public interface PlayerStats extends CMCommon, Modifiable, AccountStats, Conting
      * either initialize their birthday, or derive their
      * birthday based on the number of hours they've played.
      *
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#getBirthday()
-     * @see com.planet_ink.game.MOBS.interfaces.MOB#getAgeMinutes()
-     * @see com.planet_ink.game.Races.interfaces.Race
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#getBirthday()
+     * @see com.syncleus.aethermud.game.MOBS.interfaces.MOB#getAgeMinutes()
+     * @see com.syncleus.aethermud.game.Races.interfaces.Race
      *
      * @param clock the local clock to use for month/day calculations
      * @param ageHours the number of hours the player played
@@ -471,7 +471,7 @@ public interface PlayerStats extends CMCommon, Modifiable, AccountStats, Conting
      * Returns a 2-dimensional integer array with the players birth
      * day and month (in mud calendar)
      *
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#initializeBirthday(TimeClock, int, Race)
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#initializeBirthday(TimeClock, int, Race)
      *
      * @return a 2-dimensional integer array (day/month)
      */
@@ -480,9 +480,9 @@ public interface PlayerStats extends CMCommon, Modifiable, AccountStats, Conting
     /**
      * Returns a long value of how stinky this player is.
      *
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#adjHygiene(long)
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#setHygiene(long)
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#HYGIENE_DELIMIT
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#adjHygiene(long)
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#setHygiene(long)
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#HYGIENE_DELIMIT
      *
      * @return how stinky this player is
      */
@@ -491,9 +491,9 @@ public interface PlayerStats extends CMCommon, Modifiable, AccountStats, Conting
     /**
      * Sets the number meaning how stinky this player is.
      *
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#getHygiene()
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#adjHygiene(long)
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#HYGIENE_DELIMIT
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#getHygiene()
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#adjHygiene(long)
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#HYGIENE_DELIMIT
      *
      * @param newVal how stinky this player is.
      */
@@ -502,12 +502,12 @@ public interface PlayerStats extends CMCommon, Modifiable, AccountStats, Conting
     /**
      * Modifies, up or down, how stinky this player is.
      *
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#getHygiene()
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#setHygiene(long)
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#HYGIENE_COMMONDIRTY
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#HYGIENE_FIGHTDIRTY
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#HYGIENE_WATERCLEAN
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#HYGIENE_DELIMIT
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#getHygiene()
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#setHygiene(long)
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#HYGIENE_COMMONDIRTY
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#HYGIENE_FIGHTDIRTY
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#HYGIENE_WATERCLEAN
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#HYGIENE_DELIMIT
      *
      * @param byThisMuch an amount to adjust the stinkiness by.
      *
@@ -518,11 +518,11 @@ public interface PlayerStats extends CMCommon, Modifiable, AccountStats, Conting
     /**
      * Returns whether this player has visited the given room.
      *
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#hasVisited(Area)
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#percentVisited(MOB, Area)
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#addRoomVisit(Room)
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#unVisit(Room)
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#unVisit(Area)
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#hasVisited(Area)
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#percentVisited(MOB, Area)
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#addRoomVisit(Room)
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#unVisit(Room)
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#unVisit(Area)
      *
      * @param R the room to check and see whether the player has been there.
      *
@@ -533,11 +533,11 @@ public interface PlayerStats extends CMCommon, Modifiable, AccountStats, Conting
     /**
      * Returns whether this player has visited the given area.
      *
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#hasVisited(Room)
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#percentVisited(MOB, Area)
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#addRoomVisit(Room)
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#unVisit(Room)
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#unVisit(Area)
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#hasVisited(Room)
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#percentVisited(MOB, Area)
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#addRoomVisit(Room)
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#unVisit(Room)
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#unVisit(Area)
      *
      * @param A the area to check
      * @return true if the player has been there, false otherwise
@@ -548,11 +548,11 @@ public interface PlayerStats extends CMCommon, Modifiable, AccountStats, Conting
      * Returns the percentage (0-100) of the given area that the
      * given player has explored.
      *
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#hasVisited(Room)
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#hasVisited(Area)
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#addRoomVisit(Room)
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#unVisit(Room)
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#unVisit(Area)
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#hasVisited(Room)
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#hasVisited(Area)
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#addRoomVisit(Room)
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#unVisit(Room)
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#unVisit(Area)
      *
      * @param mob the player of these stats
      * @param A the Area to check
@@ -563,11 +563,11 @@ public interface PlayerStats extends CMCommon, Modifiable, AccountStats, Conting
     /**
      * Records the fact that this player has been to the given room.
      *
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#hasVisited(Room)
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#hasVisited(Area)
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#percentVisited(MOB, Area)
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#unVisit(Room)
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#unVisit(Area)
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#hasVisited(Room)
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#hasVisited(Area)
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#percentVisited(MOB, Area)
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#unVisit(Room)
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#unVisit(Area)
      *
      * @param R the room to credit the player with
      * @return true if this was first visit, false otherwise
@@ -576,10 +576,10 @@ public interface PlayerStats extends CMCommon, Modifiable, AccountStats, Conting
 
     /**
      * Deletes the visitation record for all rooms in the given area.
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#hasVisited(Room)
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#hasVisited(Area)
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#percentVisited(MOB, Area)
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#unVisit(Room)
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#hasVisited(Room)
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#hasVisited(Area)
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#percentVisited(MOB, Area)
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#unVisit(Room)
      *
      * @param A area of rooms to remove
      */
@@ -587,10 +587,10 @@ public interface PlayerStats extends CMCommon, Modifiable, AccountStats, Conting
 
     /**
      * Deletes the visitation record for the given room
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#hasVisited(Room)
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#hasVisited(Area)
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#percentVisited(MOB, Area)
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#unVisit(Area)
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#hasVisited(Room)
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#hasVisited(Area)
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#percentVisited(MOB, Area)
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#unVisit(Area)
      *
      * @param R the room to remove
      */
@@ -600,10 +600,10 @@ public interface PlayerStats extends CMCommon, Modifiable, AccountStats, Conting
      * Returns the string array set of defined alias commands
      * for this player.
      *
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#getAlias(String)
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#addAliasName(String)
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#delAliasName(String)
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#setAlias(String, String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#getAlias(String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#addAliasName(String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#delAliasName(String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#setAlias(String, String)
      *
      * @return the string array set of defined alias commands.
      */
@@ -612,10 +612,10 @@ public interface PlayerStats extends CMCommon, Modifiable, AccountStats, Conting
     /**
      * Returns the definition of the given alias command for this player.
      *
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#getAliasNames()
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#addAliasName(String)
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#delAliasName(String)
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#setAlias(String, String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#getAliasNames()
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#addAliasName(String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#delAliasName(String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#setAlias(String, String)
      *
      * @param named the alias command to get the definition of
      * @return the command(s) to execute when the command is entered.
@@ -625,10 +625,10 @@ public interface PlayerStats extends CMCommon, Modifiable, AccountStats, Conting
     /**
      * Adds a new alias command for this player, undefined at first.
      *
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#getAliasNames()
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#getAlias(String)
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#delAliasName(String)
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#setAlias(String, String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#getAliasNames()
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#getAlias(String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#delAliasName(String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#setAlias(String, String)
      *
      * @param named the name of the alias command to add
      */
@@ -637,10 +637,10 @@ public interface PlayerStats extends CMCommon, Modifiable, AccountStats, Conting
     /**
      * Removes an old alias command for this player.
      *
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#getAliasNames()
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#getAlias(String)
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#addAliasName(String)
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#setAlias(String, String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#getAliasNames()
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#getAlias(String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#addAliasName(String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#setAlias(String, String)
      *
      * @param named the name of the alias command to delete
      */
@@ -649,10 +649,10 @@ public interface PlayerStats extends CMCommon, Modifiable, AccountStats, Conting
     /**
      * Modifies the commands executed by an existing alias command.
      *
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#getAliasNames()
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#getAlias(String)
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#addAliasName(String)
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#delAliasName(String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#getAliasNames()
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#getAlias(String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#addAliasName(String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#delAliasName(String)
      *
      * @param named the alias command to modify
      * @param value the new command(s) to execute
@@ -663,7 +663,7 @@ public interface PlayerStats extends CMCommon, Modifiable, AccountStats, Conting
      * If the INTRODUCTIONSYSTEM is used, this returns true if the player has
      * been introduced to the other player of the given name.
      *
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#introduceTo(String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#introduceTo(String)
      *
      * @param name the name of the other player
      * @return true if this player has met that one, false otherwise
@@ -674,7 +674,7 @@ public interface PlayerStats extends CMCommon, Modifiable, AccountStats, Conting
      * If the INTRODUCTIONSYSTEM is used, this notifys the system that this
      * player has met the player of the given name.
      *
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#isIntroducedTo(String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#isIntroducedTo(String)
      *
      * @param name the player whom this player just met.
      */
@@ -699,8 +699,8 @@ public interface PlayerStats extends CMCommon, Modifiable, AccountStats, Conting
      * player, but can still be transient.  These are items like player corpses, buried
      * items, perhaps artifacts, or ships, vehicles, children, etc.
      *
-     * @see com.planet_ink.game.core.interfaces.ItemCollection
-     * @see com.planet_ink.game.Items.interfaces.Item
+     * @see com.syncleus.aethermud.game.core.interfaces.ItemCollection
+     * @see com.syncleus.aethermud.game.Items.interfaces.Item
      *
      * @return an item collection
      */
@@ -709,8 +709,8 @@ public interface PlayerStats extends CMCommon, Modifiable, AccountStats, Conting
     /**
      * Whether this object instance is functionally identical to the object passed in.  Works by repeatedly
      * calling getStat on both objects and comparing the values.
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#getStatCodes()
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#getStat(String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#getStatCodes()
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#getStat(String)
      * @param E the object to compare this one to
      * @return whether this object is the same as the one passed in
      */
@@ -718,32 +718,32 @@ public interface PlayerStats extends CMCommon, Modifiable, AccountStats, Conting
 
     /**
      * Returns the theme used to create this player.
-     * @see com.planet_ink.game.Areas.interfaces.Area#THEME_BIT_NAMES
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#setTheme(int)
+     * @see com.syncleus.aethermud.game.Areas.interfaces.Area#THEME_BIT_NAMES
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#setTheme(int)
      * @return the theme used to create this player.
      */
     public int getTheme();
 
     /**
      * Sets the theme used to create this player.
-     * @see com.planet_ink.game.Areas.interfaces.Area#THEME_BIT_NAMES
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#getTheme()
+     * @see com.syncleus.aethermud.game.Areas.interfaces.Area#THEME_BIT_NAMES
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#getTheme()
      * @param theme the theme used to create this player.
      */
     public void setTheme(int theme);
 
     /**
      * Returns the total legacy levels for this player, all categories
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#addLegacyLevel(String)
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#getLegacyLevel(String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#addLegacyLevel(String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#getLegacyLevel(String)
      * @return the total legacy levels for this player
      */
     public int getTotalLegacyLevels();
 
     /**
      * Adds a new legacy level in the given category.
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#getTotalLegacyLevels()
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#getLegacyLevel(String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#getTotalLegacyLevels()
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#getLegacyLevel(String)
      * @param category the category to add a legacy level for
      */
     public void addLegacyLevel(String category);
@@ -776,8 +776,8 @@ public interface PlayerStats extends CMCommon, Modifiable, AccountStats, Conting
 
     /**
      * Returns the legacy levels for this player, in the given categories
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#addLegacyLevel(String)
-     * @see com.planet_ink.game.Common.interfaces.PlayerStats#getTotalLegacyLevels()
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#addLegacyLevel(String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerStats#getTotalLegacyLevels()
      * @param category the category to add a legacy level for
      * @return the legacy levels for this player this category
      */

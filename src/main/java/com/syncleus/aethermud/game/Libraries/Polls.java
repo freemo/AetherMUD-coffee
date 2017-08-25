@@ -14,16 +14,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Libraries;
+package com.syncleus.aethermud.game.Libraries;
 
-import com.planet_ink.game.Common.interfaces.Poll;
-import com.planet_ink.game.Libraries.interfaces.DatabaseEngine;
-import com.planet_ink.game.Libraries.interfaces.PollManager;
-import com.planet_ink.game.Libraries.interfaces.XMLLibrary;
-import com.planet_ink.game.Libraries.interfaces.XMLLibrary.XMLTag;
-import com.planet_ink.game.MOBS.interfaces.MOB;
-import com.planet_ink.game.core.*;
-import com.planet_ink.game.core.collections.SVector;
+import com.syncleus.aethermud.game.Common.interfaces.Poll;
+import com.syncleus.aethermud.game.Libraries.interfaces.DatabaseEngine;
+import com.syncleus.aethermud.game.Libraries.interfaces.PollManager;
+import com.syncleus.aethermud.game.Libraries.interfaces.XMLLibrary;
+import com.syncleus.aethermud.game.Libraries.interfaces.XMLLibrary.XMLTag;
+import com.syncleus.aethermud.game.MOBS.interfaces.MOB;
+import com.syncleus.aethermud.game.core.*;
+import com.syncleus.aethermud.game.core.collections.SVector;
 
 import java.util.Iterator;
 import java.util.List;

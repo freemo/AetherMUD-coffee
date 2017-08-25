@@ -14,19 +14,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.core.smtp;
+package com.syncleus.aethermud.game.core.smtp;
 
-import com.planet_ink.game.Common.interfaces.JournalEntry;
-import com.planet_ink.game.Common.interfaces.Session;
-import com.planet_ink.game.Libraries.interfaces.JournalsLibrary;
-import com.planet_ink.game.Libraries.interfaces.MaskingLibrary;
-import com.planet_ink.game.Libraries.interfaces.MaskingLibrary.CompiledZMask;
-import com.planet_ink.game.core.*;
-import com.planet_ink.game.core.interfaces.CMObject;
-import com.planet_ink.game.core.interfaces.MudHost;
-import com.planet_ink.game.core.interfaces.Tickable;
-import com.planet_ink.game.core.threads.CMThreadFactory;
-import com.planet_ink.game.core.threads.CMThreadPoolExecutor;
+import com.syncleus.aethermud.game.Common.interfaces.JournalEntry;
+import com.syncleus.aethermud.game.Common.interfaces.Session;
+import com.syncleus.aethermud.game.Libraries.interfaces.JournalsLibrary;
+import com.syncleus.aethermud.game.Libraries.interfaces.MaskingLibrary;
+import com.syncleus.aethermud.game.Libraries.interfaces.MaskingLibrary.CompiledZMask;
+import com.syncleus.aethermud.game.core.*;
+import com.syncleus.aethermud.game.core.interfaces.CMObject;
+import com.syncleus.aethermud.game.core.interfaces.MudHost;
+import com.syncleus.aethermud.game.core.interfaces.Tickable;
+import com.syncleus.aethermud.game.core.threads.CMThreadFactory;
+import com.syncleus.aethermud.game.core.threads.CMThreadPoolExecutor;
 
 import java.io.IOException;
 import java.net.InetAddress;

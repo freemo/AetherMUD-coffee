@@ -14,12 +14,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Common.interfaces;
+package com.syncleus.aethermud.game.Common.interfaces;
 
-import com.planet_ink.game.Locales.interfaces.Room;
-import com.planet_ink.game.MOBS.interfaces.MOB;
-import com.planet_ink.game.core.CMProps;
-import com.planet_ink.game.core.interfaces.Tickable;
+import com.syncleus.aethermud.game.Locales.interfaces.Room;
+import com.syncleus.aethermud.game.MOBS.interfaces.MOB;
+import com.syncleus.aethermud.game.core.CMProps;
+import com.syncleus.aethermud.game.core.interfaces.Tickable;
 
 import java.util.Calendar;
 
@@ -30,8 +30,8 @@ import java.util.Calendar;
  * schedule for days and nights.  Oh, and it also manages
  * the current date and time.
  *
- *  @see com.planet_ink.game.Areas.interfaces.Area#setTimeObj(TimeClock)
- *  @see com.planet_ink.game.Areas.interfaces.Area#getTimeObj()
+ *  @see com.syncleus.aethermud.game.Areas.interfaces.Area#setTimeObj(TimeClock)
+ *  @see com.syncleus.aethermud.game.Areas.interfaces.Area#getTimeObj()
  */
 public interface TimeClock extends Tickable, CMCommon {
     /**
@@ -39,8 +39,8 @@ public interface TimeClock extends Tickable, CMCommon {
      * orientation, and day of the week in a full sentence word
      * format.
      *
-     * @see com.planet_ink.game.Common.interfaces.TimeClock#getShortTimeDescription()
-     * @see com.planet_ink.game.Common.interfaces.TimeClock#getShortestTimeDescription()
+     * @see com.syncleus.aethermud.game.Common.interfaces.TimeClock#getShortTimeDescription()
+     * @see com.syncleus.aethermud.game.Common.interfaces.TimeClock#getShortestTimeDescription()
      *
      * @param mob the mob who wants to know the time
      * @param room the room the room where the mob is wanting the time
@@ -53,8 +53,8 @@ public interface TimeClock extends Tickable, CMCommon {
      * Gets a shorter time description, showing the date and time in
      * full sentence format, but skipping lunar orientation.
      *
-     * @see com.planet_ink.game.Common.interfaces.TimeClock#timeDescription(MOB, Room)
-     * @see com.planet_ink.game.Common.interfaces.TimeClock#getShortestTimeDescription()
+     * @see com.syncleus.aethermud.game.Common.interfaces.TimeClock#timeDescription(MOB, Room)
+     * @see com.syncleus.aethermud.game.Common.interfaces.TimeClock#getShortestTimeDescription()
      *
      * @return the short time description
      */
@@ -64,8 +64,8 @@ public interface TimeClock extends Tickable, CMCommon {
      * Gets the shortest time description, showing only the date and
      * time in brief numeric format.
      *
-     * @see com.planet_ink.game.Common.interfaces.TimeClock#timeDescription(MOB, Room)
-     * @see com.planet_ink.game.Common.interfaces.TimeClock#getShortTimeDescription()
+     * @see com.syncleus.aethermud.game.Common.interfaces.TimeClock#timeDescription(MOB, Room)
+     * @see com.syncleus.aethermud.game.Common.interfaces.TimeClock#getShortTimeDescription()
      *
      * @return the shortest time description
      */
@@ -74,7 +74,7 @@ public interface TimeClock extends Tickable, CMCommon {
     /**
      * Gets the current year.
      *
-     * @see com.planet_ink.game.Common.interfaces.TimeClock#setYear(int)
+     * @see com.syncleus.aethermud.game.Common.interfaces.TimeClock#setYear(int)
      *
      * @return the current year
      */
@@ -83,7 +83,7 @@ public interface TimeClock extends Tickable, CMCommon {
     /**
      * Sets the current year.
      *
-     * @see com.planet_ink.game.Common.interfaces.TimeClock#getYear()
+     * @see com.syncleus.aethermud.game.Common.interfaces.TimeClock#getYear()
      *
      * @param y the new year
      */
@@ -92,7 +92,7 @@ public interface TimeClock extends Tickable, CMCommon {
     /**
      * Gets the current month.
      *
-     * @see com.planet_ink.game.Common.interfaces.TimeClock#setMonth(int)
+     * @see com.syncleus.aethermud.game.Common.interfaces.TimeClock#setMonth(int)
      *
      * @return the current month
      */
@@ -101,7 +101,7 @@ public interface TimeClock extends Tickable, CMCommon {
     /**
      * Sets the current month.
      *
-     * @see com.planet_ink.game.Common.interfaces.TimeClock#getMonth()
+     * @see com.syncleus.aethermud.game.Common.interfaces.TimeClock#getMonth()
      *
      * @param m the new month
      */
@@ -110,7 +110,7 @@ public interface TimeClock extends Tickable, CMCommon {
     /**
      * Gets the current day of month.
      *
-     * @see com.planet_ink.game.Common.interfaces.TimeClock#setDayOfMonth(int)
+     * @see com.syncleus.aethermud.game.Common.interfaces.TimeClock#setDayOfMonth(int)
      *
      * @return the day of month
      */
@@ -119,7 +119,7 @@ public interface TimeClock extends Tickable, CMCommon {
     /**
      * Sets the current day of month.
      *
-     * @see com.planet_ink.game.Common.interfaces.TimeClock#getDayOfMonth()
+     * @see com.syncleus.aethermud.game.Common.interfaces.TimeClock#getDayOfMonth()
      *
      * @param d the new day of month
      */
@@ -128,7 +128,7 @@ public interface TimeClock extends Tickable, CMCommon {
     /**
      * Gets the current time of day (the hour).
      *
-     * @see com.planet_ink.game.Common.interfaces.TimeClock#setHourOfDay(int)
+     * @see com.syncleus.aethermud.game.Common.interfaces.TimeClock#setHourOfDay(int)
      *
      * @return the time of day (hour)
      */
@@ -137,7 +137,7 @@ public interface TimeClock extends Tickable, CMCommon {
     /**
      * Sets the time of day (the hour).
      *
-     * @see com.planet_ink.game.Common.interfaces.TimeClock#getHourOfDay()
+     * @see com.syncleus.aethermud.game.Common.interfaces.TimeClock#getHourOfDay()
      *
      * @param t the time of day (the hour)
      *
@@ -148,9 +148,9 @@ public interface TimeClock extends Tickable, CMCommon {
     /**
      * Gets the TOD code, which is the sun-orientation (morning, evening, etc)
      *
-     * @see com.planet_ink.game.Common.interfaces.TimeClock#setHourOfDay(int)
-     * @see com.planet_ink.game.Common.interfaces.TimeClock#setDawnToDusk(int, int, int, int)
-     * @see com.planet_ink.game.Common.interfaces.TimeClock.TimeOfDay
+     * @see com.syncleus.aethermud.game.Common.interfaces.TimeClock#setHourOfDay(int)
+     * @see com.syncleus.aethermud.game.Common.interfaces.TimeClock#setDawnToDusk(int, int, int, int)
+     * @see com.syncleus.aethermud.game.Common.interfaces.TimeClock.TimeOfDay
      *
      * @return the TOD code
      */
@@ -159,7 +159,7 @@ public interface TimeClock extends Tickable, CMCommon {
     /**
      * Gets the moon phase an an enumeration.
      *
-     * @see com.planet_ink.game.Common.interfaces.TimeClock.MoonPhase
+     * @see com.syncleus.aethermud.game.Common.interfaces.TimeClock.MoonPhase
      *
      * @param room the room to check the moon phase for
      * @return the moon phase as an enumeration
@@ -169,7 +169,7 @@ public interface TimeClock extends Tickable, CMCommon {
     /**
      * Gets the phase of the tides as an enumeration.
      *
-     * @see com.planet_ink.game.Common.interfaces.TimeClock.TidePhase
+     * @see com.syncleus.aethermud.game.Common.interfaces.TimeClock.TidePhase
      *
      * @param room the room to check the tide phase for
      * @return the tide phase as an enumeration
@@ -179,7 +179,7 @@ public interface TimeClock extends Tickable, CMCommon {
     /**
      * Gets the season code.
      *
-     * @see com.planet_ink.game.Common.interfaces.TimeClock.Season
+     * @see com.syncleus.aethermud.game.Common.interfaces.TimeClock.Season
      *
      * @return the season code
      */
@@ -197,7 +197,7 @@ public interface TimeClock extends Tickable, CMCommon {
      * Saves the current time/date information where ever its supposed
      * to be saved.  Requires that setLoadName be called before.
      *
-     * @see com.planet_ink.game.Common.interfaces.TimeClock#setLoadName(String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.TimeClock#setLoadName(String)
      */
     public void save();
 
@@ -205,7 +205,7 @@ public interface TimeClock extends Tickable, CMCommon {
      * Sets the name of this time object for the purposes of database loading
      * and saving.  This is required for the save method to do anything at all.
      *
-     * @see com.planet_ink.game.Common.interfaces.TimeClock#save()
+     * @see com.syncleus.aethermud.game.Common.interfaces.TimeClock#save()
      *
      * @param name the new load name
      */
@@ -214,7 +214,7 @@ public interface TimeClock extends Tickable, CMCommon {
     /**
      * Gets the hours in a day.
      *
-     * @see com.planet_ink.game.Common.interfaces.TimeClock#setHoursInDay(int)
+     * @see com.syncleus.aethermud.game.Common.interfaces.TimeClock#setHoursInDay(int)
      *
      * @return the hours in a day
      */
@@ -223,7 +223,7 @@ public interface TimeClock extends Tickable, CMCommon {
     /**
      * Sets the hours in a day.
      *
-     * @see com.planet_ink.game.Common.interfaces.TimeClock#getHoursInDay()
+     * @see com.syncleus.aethermud.game.Common.interfaces.TimeClock#getHoursInDay()
      *
      * @param h the new hours in a day
      */
@@ -232,7 +232,7 @@ public interface TimeClock extends Tickable, CMCommon {
     /**
      * Gets the days in a month.
      *
-     * @see com.planet_ink.game.Common.interfaces.TimeClock#setDaysInMonth(int)
+     * @see com.syncleus.aethermud.game.Common.interfaces.TimeClock#setDaysInMonth(int)
      *
      * @return the days in a month
      */
@@ -241,7 +241,7 @@ public interface TimeClock extends Tickable, CMCommon {
     /**
      * Sets the days in a month.
      *
-     * @see com.planet_ink.game.Common.interfaces.TimeClock#getDaysInMonth()
+     * @see com.syncleus.aethermud.game.Common.interfaces.TimeClock#getDaysInMonth()
      *
      * @param d the new days in a month
      */
@@ -250,8 +250,8 @@ public interface TimeClock extends Tickable, CMCommon {
     /**
      * Gets the months in a year.
      *
-     * @see com.planet_ink.game.Common.interfaces.TimeClock#setMonthsInYear(String[])
-     * @see com.planet_ink.game.Common.interfaces.TimeClock#getMonthNames()
+     * @see com.syncleus.aethermud.game.Common.interfaces.TimeClock#setMonthsInYear(String[])
+     * @see com.syncleus.aethermud.game.Common.interfaces.TimeClock#getMonthNames()
      *
      * @return the months in a year
      */
@@ -260,8 +260,8 @@ public interface TimeClock extends Tickable, CMCommon {
     /**
      * Sets the months in year as a string array of names, arranged in order.
      *
-     * @see com.planet_ink.game.Common.interfaces.TimeClock#getMonthNames()
-     * @see com.planet_ink.game.Common.interfaces.TimeClock#getMonthsInYear()
+     * @see com.syncleus.aethermud.game.Common.interfaces.TimeClock#getMonthNames()
+     * @see com.syncleus.aethermud.game.Common.interfaces.TimeClock#getMonthsInYear()
      *
      * @param months the new month names in a year
      */
@@ -270,8 +270,8 @@ public interface TimeClock extends Tickable, CMCommon {
     /**
      * Gets the month names, in order, indexed by 0.
      *
-     * @see com.planet_ink.game.Common.interfaces.TimeClock#setMonthsInYear(String[])
-     * @see com.planet_ink.game.Common.interfaces.TimeClock#getMonthNames()
+     * @see com.syncleus.aethermud.game.Common.interfaces.TimeClock#setMonthsInYear(String[])
+     * @see com.syncleus.aethermud.game.Common.interfaces.TimeClock#getMonthNames()
      *
      * @return the month names
      */
@@ -282,9 +282,9 @@ public interface TimeClock extends Tickable, CMCommon {
      * Each entry is an hour when the TOD starts. The order of the
      * values is DAWN, DAY, DUSK, NIGHT.
      *
-     * @see com.planet_ink.game.Common.interfaces.TimeClock#getTODCode()
-     * @see com.planet_ink.game.Common.interfaces.TimeClock#setDawnToDusk(int, int, int, int)
-     * @see com.planet_ink.game.Common.interfaces.TimeClock.TimeOfDay
+     * @see com.syncleus.aethermud.game.Common.interfaces.TimeClock#getTODCode()
+     * @see com.syncleus.aethermud.game.Common.interfaces.TimeClock#setDawnToDusk(int, int, int, int)
+     * @see com.syncleus.aethermud.game.Common.interfaces.TimeClock.TimeOfDay
      *
      * @return the dawn to dusk array
      */
@@ -294,9 +294,9 @@ public interface TimeClock extends Tickable, CMCommon {
      * Sets the dawn to dusk values as absolute hours when that particular
      * time of day begins.
      *
-     * @see com.planet_ink.game.Common.interfaces.TimeClock#getDawnToDusk()
-     * @see com.planet_ink.game.Common.interfaces.TimeClock#getTODCode()
-     * @see com.planet_ink.game.Common.interfaces.TimeClock.TimeOfDay
+     * @see com.syncleus.aethermud.game.Common.interfaces.TimeClock#getDawnToDusk()
+     * @see com.syncleus.aethermud.game.Common.interfaces.TimeClock#getTODCode()
+     * @see com.syncleus.aethermud.game.Common.interfaces.TimeClock.TimeOfDay
      *
      * @param dawn the dawn hour
      * @param day the day hour
@@ -309,8 +309,8 @@ public interface TimeClock extends Tickable, CMCommon {
      * Gets the week names, which is the names of the days of each week,
      * a string array indexed by the day of the week - 1.
      *
-     * @see com.planet_ink.game.Common.interfaces.TimeClock#setDaysInWeek(String[])
-     * @see com.planet_ink.game.Common.interfaces.TimeClock#getDaysInWeek()
+     * @see com.syncleus.aethermud.game.Common.interfaces.TimeClock#setDaysInWeek(String[])
+     * @see com.syncleus.aethermud.game.Common.interfaces.TimeClock#getDaysInWeek()
      *
      * @return the week names as an array of strings
      */
@@ -319,8 +319,8 @@ public interface TimeClock extends Tickable, CMCommon {
     /**
      * Gets the number of days in each week
      *
-     * @see com.planet_ink.game.Common.interfaces.TimeClock#setDaysInWeek(String[])
-     * @see com.planet_ink.game.Common.interfaces.TimeClock#getWeekNames()
+     * @see com.syncleus.aethermud.game.Common.interfaces.TimeClock#setDaysInWeek(String[])
+     * @see com.syncleus.aethermud.game.Common.interfaces.TimeClock#getWeekNames()
      *
      * @return the days in each week
      */
@@ -329,8 +329,8 @@ public interface TimeClock extends Tickable, CMCommon {
     /**
      * Sets the number of days in each week by naming each of them in a string array
      *
-     * @see com.planet_ink.game.Common.interfaces.TimeClock#getDaysInWeek()
-     * @see com.planet_ink.game.Common.interfaces.TimeClock#getWeekNames()
+     * @see com.syncleus.aethermud.game.Common.interfaces.TimeClock#getDaysInWeek()
+     * @see com.syncleus.aethermud.game.Common.interfaces.TimeClock#getWeekNames()
      *
      * @param days the new days in each week string array
      */
@@ -340,7 +340,7 @@ public interface TimeClock extends Tickable, CMCommon {
      * Gets the names of the year, an arbitrary sized list that is rotated
      * through from year to year. (think: "year of the donkey", etc..)
      *
-     * @see com.planet_ink.game.Common.interfaces.TimeClock#setYearNames(String[])
+     * @see com.syncleus.aethermud.game.Common.interfaces.TimeClock#setYearNames(String[])
      *
      * @return the year names, if any.
      */
@@ -350,7 +350,7 @@ public interface TimeClock extends Tickable, CMCommon {
      * Sets the year names, which is an arbitrary sized list that is rotated
      * through from year to year. (think: "year of the donkey", etc..)
      *
-     * @see com.planet_ink.game.Common.interfaces.TimeClock#getYearNames()
+     * @see com.syncleus.aethermud.game.Common.interfaces.TimeClock#getYearNames()
      *
      * @param years the new years names
      */
@@ -361,8 +361,8 @@ public interface TimeClock extends Tickable, CMCommon {
      * running and perfect timing, this method will derive a mud date and time
      * from the given real life date/time in milliseconds.
      *
-     * @see com.planet_ink.game.Common.interfaces.TimeClock#deriveMillisAfter(TimeClock)
-     * @see com.planet_ink.game.Common.interfaces.TimeClock#deriveEllapsedTimeString(long)
+     * @see com.syncleus.aethermud.game.Common.interfaces.TimeClock#deriveMillisAfter(TimeClock)
+     * @see com.syncleus.aethermud.game.Common.interfaces.TimeClock#deriveEllapsedTimeString(long)
      *
      * @param millis the milliseconds since 1970
      *
@@ -376,8 +376,8 @@ public interface TimeClock extends Tickable, CMCommon {
      * It will then return the number of actual milliseconds would have elapsed,
      * assuming constant running and perfect timing.
      *
-     * @see com.planet_ink.game.Common.interfaces.TimeClock#deriveClock(long)
-     * @see com.planet_ink.game.Common.interfaces.TimeClock#deriveEllapsedTimeString(long)
+     * @see com.syncleus.aethermud.game.Common.interfaces.TimeClock#deriveClock(long)
+     * @see com.syncleus.aethermud.game.Common.interfaces.TimeClock#deriveEllapsedTimeString(long)
      *
      * @param C the earlier time clock object
      *
@@ -390,8 +390,8 @@ public interface TimeClock extends Tickable, CMCommon {
      * and the given EARLIER clock, assuming they use the same scale of measurement.
      * It will then return the number of actual mud hours would have elapsed.
      *
-     * @see com.planet_ink.game.Common.interfaces.TimeClock#deriveClock(long)
-     * @see com.planet_ink.game.Common.interfaces.TimeClock#deriveEllapsedTimeString(long)
+     * @see com.syncleus.aethermud.game.Common.interfaces.TimeClock#deriveClock(long)
+     * @see com.syncleus.aethermud.game.Common.interfaces.TimeClock#deriveEllapsedTimeString(long)
      *
      * @param C the earlier time clock object
      *
@@ -404,8 +404,8 @@ public interface TimeClock extends Tickable, CMCommon {
      * describing the number of mud days, hours, etc that is represented by
      * that amount of real time, assuming constant running and perfect timing.
      *
-     * @see com.planet_ink.game.Common.interfaces.TimeClock#deriveMillisAfter(TimeClock)
-     * @see com.planet_ink.game.Common.interfaces.TimeClock#deriveClock(long)
+     * @see com.syncleus.aethermud.game.Common.interfaces.TimeClock#deriveMillisAfter(TimeClock)
+     * @see com.syncleus.aethermud.game.Common.interfaces.TimeClock#deriveClock(long)
      *
      * @param millis the milliseconds of elapsed time represented
      *

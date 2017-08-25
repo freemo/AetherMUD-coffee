@@ -14,43 +14,43 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Libraries;
+package com.syncleus.aethermud.game.Libraries;
 
-import com.planet_ink.game.Abilities.interfaces.Ability;
-import com.planet_ink.game.Abilities.interfaces.CraftorAbility;
-import com.planet_ink.game.Abilities.interfaces.Language;
-import com.planet_ink.game.Areas.interfaces.Area;
-import com.planet_ink.game.Areas.interfaces.AutoGenArea;
-import com.planet_ink.game.Areas.interfaces.GridZones;
-import com.planet_ink.game.Behaviors.interfaces.Behavior;
-import com.planet_ink.game.CharClasses.interfaces.CharClass;
-import com.planet_ink.game.Common.interfaces.*;
-import com.planet_ink.game.Common.interfaces.Clan.MemberRecord;
-import com.planet_ink.game.Exits.interfaces.Exit;
-import com.planet_ink.game.Items.interfaces.*;
-import com.planet_ink.game.Items.interfaces.ClanItem.ClanItemType;
-import com.planet_ink.game.Items.interfaces.MusicalInstrument.InstrumentType;
-import com.planet_ink.game.Items.interfaces.Technical.TechType;
-import com.planet_ink.game.Libraries.interfaces.AbilityMapper;
-import com.planet_ink.game.Libraries.interfaces.GenericEditor;
-import com.planet_ink.game.Libraries.interfaces.ListingLibrary;
-import com.planet_ink.game.Libraries.interfaces.ListingLibrary.ListStringer;
-import com.planet_ink.game.Libraries.interfaces.MoneyLibrary;
-import com.planet_ink.game.Libraries.interfaces.MoneyLibrary.MoneyDenomination;
-import com.planet_ink.game.Locales.interfaces.GridLocale;
-import com.planet_ink.game.Locales.interfaces.LocationRoom;
-import com.planet_ink.game.Locales.interfaces.Room;
-import com.planet_ink.game.MOBS.interfaces.*;
-import com.planet_ink.game.Races.interfaces.Race;
-import com.planet_ink.game.core.*;
-import com.planet_ink.game.core.CMClass.CMObjectType;
-import com.planet_ink.game.core.CMSecurity.SecGroup;
-import com.planet_ink.game.core.collections.DVector;
-import com.planet_ink.game.core.collections.Pair;
-import com.planet_ink.game.core.collections.PairList;
-import com.planet_ink.game.core.collections.XVector;
-import com.planet_ink.game.core.exceptions.CMException;
-import com.planet_ink.game.core.interfaces.*;
+import com.syncleus.aethermud.game.Abilities.interfaces.Ability;
+import com.syncleus.aethermud.game.Abilities.interfaces.CraftorAbility;
+import com.syncleus.aethermud.game.Abilities.interfaces.Language;
+import com.syncleus.aethermud.game.Areas.interfaces.Area;
+import com.syncleus.aethermud.game.Areas.interfaces.AutoGenArea;
+import com.syncleus.aethermud.game.Areas.interfaces.GridZones;
+import com.syncleus.aethermud.game.Behaviors.interfaces.Behavior;
+import com.syncleus.aethermud.game.CharClasses.interfaces.CharClass;
+import com.syncleus.aethermud.game.Common.interfaces.*;
+import com.syncleus.aethermud.game.Common.interfaces.Clan.MemberRecord;
+import com.syncleus.aethermud.game.Exits.interfaces.Exit;
+import com.syncleus.aethermud.game.Items.interfaces.*;
+import com.syncleus.aethermud.game.Items.interfaces.ClanItem.ClanItemType;
+import com.syncleus.aethermud.game.Items.interfaces.MusicalInstrument.InstrumentType;
+import com.syncleus.aethermud.game.Items.interfaces.Technical.TechType;
+import com.syncleus.aethermud.game.Libraries.interfaces.AbilityMapper;
+import com.syncleus.aethermud.game.Libraries.interfaces.GenericEditor;
+import com.syncleus.aethermud.game.Libraries.interfaces.ListingLibrary;
+import com.syncleus.aethermud.game.Libraries.interfaces.ListingLibrary.ListStringer;
+import com.syncleus.aethermud.game.Libraries.interfaces.MoneyLibrary;
+import com.syncleus.aethermud.game.Libraries.interfaces.MoneyLibrary.MoneyDenomination;
+import com.syncleus.aethermud.game.Locales.interfaces.GridLocale;
+import com.syncleus.aethermud.game.Locales.interfaces.LocationRoom;
+import com.syncleus.aethermud.game.Locales.interfaces.Room;
+import com.syncleus.aethermud.game.MOBS.interfaces.*;
+import com.syncleus.aethermud.game.Races.interfaces.Race;
+import com.syncleus.aethermud.game.core.*;
+import com.syncleus.aethermud.game.core.CMClass.CMObjectType;
+import com.syncleus.aethermud.game.core.CMSecurity.SecGroup;
+import com.syncleus.aethermud.game.core.collections.DVector;
+import com.syncleus.aethermud.game.core.collections.Pair;
+import com.syncleus.aethermud.game.core.collections.PairList;
+import com.syncleus.aethermud.game.core.collections.XVector;
+import com.syncleus.aethermud.game.core.exceptions.CMException;
+import com.syncleus.aethermud.game.core.interfaces.*;
 
 import java.io.IOException;
 import java.util.*;
@@ -1431,7 +1431,7 @@ public class CMGenEditor extends StdLibrary implements GenericEditor {
             CMLib.flags().setReadable(E, false);
         else if ((CMClass.classID(E).endsWith("Readable"))
             || (E instanceof Recipe)
-            || (E instanceof com.planet_ink.game.Items.interfaces.RoomMap))
+            || (E instanceof com.syncleus.aethermud.game.Items.interfaces.RoomMap))
             CMLib.flags().setReadable(E, true);
         else if ((showFlag != showNumber) && (showFlag > -999))
             mob.tell(L("@x1. Item is readable: @x2", "" + showNumber, "" + E.isReadable()));
@@ -1474,7 +1474,7 @@ public class CMGenEditor extends StdLibrary implements GenericEditor {
                 else if (E instanceof DoorKey) {
                     mob.tell(L("@x1. Assigned Key Code: '@x2'.", "" + showNumber, E.readableText()));
                     ok = true;
-                } else if (E instanceof com.planet_ink.game.Items.interfaces.RoomMap) {
+                } else if (E instanceof com.syncleus.aethermud.game.Items.interfaces.RoomMap) {
                     mob.tell(L("@x1. Assigned Map Area(s): '@x2'.", "" + showNumber, E.readableText()));
                     ok = true;
                 } else if (E instanceof Light) {
@@ -2240,8 +2240,8 @@ public class CMGenEditor extends StdLibrary implements GenericEditor {
                     modifyPlayer(mob, (MOB) E, showFlag);
             } else if ((E instanceof Exit) && (!(E instanceof Item)))
                 modifyGenExit(mob, (Exit) E, showFlag);
-            else if (E instanceof com.planet_ink.game.Items.interfaces.RoomMap)
-                modifyGenMap(mob, (com.planet_ink.game.Items.interfaces.RoomMap) E, showFlag);
+            else if (E instanceof com.syncleus.aethermud.game.Items.interfaces.RoomMap)
+                modifyGenMap(mob, (com.syncleus.aethermud.game.Items.interfaces.RoomMap) E, showFlag);
             else if (E instanceof Armor)
                 modifyGenArmor(mob, (Armor) E, showFlag);
             else if (E instanceof MusicalInstrument)
@@ -7448,7 +7448,7 @@ public class CMGenEditor extends StdLibrary implements GenericEditor {
         }
     }
 
-    protected void modifyGenMap(MOB mob, com.planet_ink.game.Items.interfaces.RoomMap me, int showFlag)
+    protected void modifyGenMap(MOB mob, com.syncleus.aethermud.game.Items.interfaces.RoomMap me, int showFlag)
         throws IOException {
         if (mob.isMonster())
             return;

@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.core.interfaces;
+package com.syncleus.aethermud.game.core.interfaces;
 
 /**
  * A Drinkable object containing its own liquid material type, and liquid capacity management.
@@ -24,7 +24,7 @@ package com.planet_ink.game.core.interfaces;
 public interface Drink extends PhysicalAgent, Decayable {
     /**
      * The amount of thirst points quenched every time this item is drank from.
-     * @see com.planet_ink.game.Common.interfaces.CharState
+     * @see com.syncleus.aethermud.game.Common.interfaces.CharState
      * @return amount of thirst quenched
      */
     public int thirstQuenched();
@@ -49,7 +49,7 @@ public interface Drink extends PhysicalAgent, Decayable {
      * often, a Drink interface implementing class is a mob without a material to draw from
      * or an Item having its own non-liquid material (like a leather waterskin containing milk).
      * Either way, this is necessary.  The material types are constants in RawMaterial.
-     * @see com.planet_ink.game.Items.interfaces.RawMaterial
+     * @see com.syncleus.aethermud.game.Items.interfaces.RawMaterial
      * @return the type of liquid contained herein
      */
     public int liquidType();
@@ -60,14 +60,14 @@ public interface Drink extends PhysicalAgent, Decayable {
      * often, a Drink interface implementing class is a mob without a material to draw from
      * or an Item having its own non-liquid material (like a leather waterskin containing milk).
      * Either way, this is necessary.  The material types are constants in RawMaterial.
-     * @see com.planet_ink.game.Items.interfaces.RawMaterial
+     * @see com.syncleus.aethermud.game.Items.interfaces.RawMaterial
      * @param newLiquidType the type of liquid contained herein
      */
     public void setLiquidType(int newLiquidType);
 
     /**
      * Set the amount of thirst points quenched every time this item is drank from.
-     * @see com.planet_ink.game.Common.interfaces.CharState
+     * @see com.syncleus.aethermud.game.Common.interfaces.CharState
      * @param amount of thirst quenched
      */
     public void setThirstQuenched(int amount);

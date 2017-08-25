@@ -14,9 +14,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Common.interfaces;
+package com.syncleus.aethermud.game.Common.interfaces;
 
-import com.planet_ink.game.MOBS.interfaces.Auctioneer;
+import com.syncleus.aethermud.game.MOBS.interfaces.Auctioneer;
 
 /**
  * Class for storing basic Auction House policies.  
@@ -148,7 +148,7 @@ public interface AuctionPolicy extends CMCommon {
     /**
      * Alters this policy to take account of the policies
      * of the policies of a full timed auctioneer.
-     * @see com.planet_ink.game.MOBS.interfaces.Auctioneer
+     * @see com.syncleus.aethermud.game.MOBS.interfaces.Auctioneer
      * @param auction the auctioneer
      */
     public void mergeAuctioneerPolicy(Auctioneer auction);

@@ -14,14 +14,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Items.Software;
+package com.syncleus.aethermud.game.Items.Software;
 
-import com.planet_ink.game.Items.interfaces.ArchonOnly;
-import com.planet_ink.game.Items.interfaces.Computer;
-import com.planet_ink.game.Items.interfaces.RawMaterial;
-import com.planet_ink.game.MOBS.interfaces.MOB;
-import com.planet_ink.game.core.CMParms;
-import com.planet_ink.game.core.CMath;
+import com.syncleus.aethermud.game.Items.interfaces.ArchonOnly;
+import com.syncleus.aethermud.game.Items.interfaces.Computer;
+import com.syncleus.aethermud.game.Items.interfaces.RawMaterial;
+import com.syncleus.aethermud.game.MOBS.interfaces.MOB;
+import com.syncleus.aethermud.game.core.CMParms;
+import com.syncleus.aethermud.game.core.CMath;
 
 import java.io.*;
 import java.net.Socket;

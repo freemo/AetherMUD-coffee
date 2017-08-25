@@ -1,4 +1,4 @@
-var lib = Packages.com.planet_ink.game.core.CMLib;
+var lib = Packages.com.syncleus.aethermud.game.core.CMLib;
 var parms = getParms().toUpperCase();
 var channelInt = lib.channels().getChannelIndex(parms);
 if (channelInt < 0)

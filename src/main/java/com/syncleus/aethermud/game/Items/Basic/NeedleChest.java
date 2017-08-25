@@ -14,12 +14,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Items.Basic;
+package com.syncleus.aethermud.game.Items.Basic;
 
-import com.planet_ink.game.Abilities.interfaces.Trap;
-import com.planet_ink.game.Items.interfaces.RawMaterial;
-import com.planet_ink.game.core.CMClass;
-import com.planet_ink.game.core.CMLib;
+import com.syncleus.aethermud.game.Abilities.interfaces.Trap;
+import com.syncleus.aethermud.game.Items.interfaces.RawMaterial;
+import com.syncleus.aethermud.game.core.CMClass;
+import com.syncleus.aethermud.game.core.CMLib;
 
 
 public class NeedleChest extends LargeChest {

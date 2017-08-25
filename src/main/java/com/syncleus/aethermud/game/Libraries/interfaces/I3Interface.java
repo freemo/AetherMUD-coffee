@@ -14,9 +14,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Libraries.interfaces;
+package com.syncleus.aethermud.game.Libraries.interfaces;
 
-import com.planet_ink.game.MOBS.interfaces.MOB;
+import com.syncleus.aethermud.game.MOBS.interfaces.MOB;
 
 import java.util.List;
 

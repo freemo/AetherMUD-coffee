@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Locales.interfaces;
+package com.syncleus.aethermud.game.Locales.interfaces;
 
 /**
  * This is a type of room that can be located as a coordinate on a

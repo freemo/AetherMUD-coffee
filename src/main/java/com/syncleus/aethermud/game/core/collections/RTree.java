@@ -14,10 +14,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.core.collections;
+package com.syncleus.aethermud.game.core.collections;
 
-import com.planet_ink.game.core.interfaces.BoundedObject;
-import com.planet_ink.game.core.interfaces.BoundedObject.BoundedCube;
+import com.syncleus.aethermud.game.core.interfaces.BoundedObject;
+import com.syncleus.aethermud.game.core.interfaces.BoundedObject.BoundedCube;
 
 import java.lang.ref.WeakReference;
 import java.util.Collection;

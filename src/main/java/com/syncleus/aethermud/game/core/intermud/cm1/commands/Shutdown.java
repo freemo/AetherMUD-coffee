@@ -14,13 +14,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.core.intermud.cm1.commands;
+package com.syncleus.aethermud.game.core.intermud.cm1.commands;
 
-import com.planet_ink.game.MOBS.interfaces.MOB;
-import com.planet_ink.game.core.CMSecurity;
-import com.planet_ink.game.core.Log;
-import com.planet_ink.game.core.interfaces.PhysicalAgent;
-import com.planet_ink.game.core.intermud.cm1.RequestHandler;
+import com.syncleus.aethermud.game.MOBS.interfaces.MOB;
+import com.syncleus.aethermud.game.core.CMSecurity;
+import com.syncleus.aethermud.game.core.Log;
+import com.syncleus.aethermud.game.core.interfaces.PhysicalAgent;
+import com.syncleus.aethermud.game.core.intermud.cm1.RequestHandler;
 
 
 public class Shutdown extends CM1Command {
@@ -37,7 +37,7 @@ public class Shutdown extends CM1Command {
     public void run() {
         try {
             req.sendMsg("[OK]");
-            com.planet_ink.game.application.MUD.globalShutdown(null, true, null);
+            com.syncleus.aethermud.game.application.MUD.globalShutdown(null, true, null);
             req.close();
         } catch (final java.io.IOException ioe) {
             Log.errOut(className, ioe);

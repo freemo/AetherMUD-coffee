@@ -14,10 +14,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Areas.interfaces;
+package com.syncleus.aethermud.game.Areas.interfaces;
 
-import com.planet_ink.game.Locales.interfaces.Room;
-import com.planet_ink.game.core.interfaces.Environmental;
+import com.syncleus.aethermud.game.Locales.interfaces.Room;
+import com.syncleus.aethermud.game.core.interfaces.Environmental;
 
 /**
  * GridZones is a cross-object interface that applies both to Areas, and Locales.
@@ -28,7 +28,7 @@ public interface GridZones extends Environmental {
     /**
      * Returns whether the given Room is a child of this
      * particular Grid instance.
-     * @see com.planet_ink.game.Locales.interfaces.Room
+     * @see com.syncleus.aethermud.game.Locales.interfaces.Room
      * @param loc a Room object
      * @return whether the room is a child
      */
@@ -36,8 +36,8 @@ public interface GridZones extends Environmental {
 
     /**
      * Returns the fully-qualified Room ID of this room
-     * @see com.planet_ink.game.Locales.interfaces.Room
-     * @see com.planet_ink.game.Areas.interfaces.GridZones#getGridChild(String)
+     * @see com.syncleus.aethermud.game.Locales.interfaces.Room
+     * @see com.syncleus.aethermud.game.Areas.interfaces.GridZones#getGridChild(String)
      * @param loc a Room object
      * @return a fully qualified room ID
      */
@@ -45,8 +45,8 @@ public interface GridZones extends Environmental {
 
     /**
      * Returns the fully-qualified Room ID of this room
-     * @see com.planet_ink.game.Locales.interfaces.Room
-     * @see com.planet_ink.game.Areas.interfaces.GridZones#getGridChildCode(Room)
+     * @see com.syncleus.aethermud.game.Locales.interfaces.Room
+     * @see com.syncleus.aethermud.game.Areas.interfaces.GridZones#getGridChildCode(Room)
      * @param childCode a fully-qualified Room ID for this Room
      * @return a Room object
      */
@@ -54,14 +54,14 @@ public interface GridZones extends Environmental {
 
     /**
      * Returns a random Room object that is a child of this one.
-     * @see com.planet_ink.game.Locales.interfaces.Room
+     * @see com.syncleus.aethermud.game.Locales.interfaces.Room
      * @return a Room object
      */
     public Room getRandomGridChild();
 
     /**
      * Returns the X coordinate of the given Room object
-     * @see com.planet_ink.game.Locales.interfaces.Room
+     * @see com.syncleus.aethermud.game.Locales.interfaces.Room
      * @param loc the Room object
      * @return the x coordinate of the room
      */
@@ -69,7 +69,7 @@ public interface GridZones extends Environmental {
 
     /**
      * Returns the Y coordinate of the given Room object
-     * @see com.planet_ink.game.Locales.interfaces.Room
+     * @see com.syncleus.aethermud.game.Locales.interfaces.Room
      * @param loc the Room object
      * @return the y coordinate of the room
      */
@@ -119,7 +119,7 @@ public interface GridZones extends Environmental {
 
     /**
      * Returns the Room object at the given coordinates.
-     * @see com.planet_ink.game.Locales.interfaces.Room
+     * @see com.syncleus.aethermud.game.Locales.interfaces.Room
      * @param x the x coordinate
      * @param y the y coordinate
      * @return the Room object at those coordinates
@@ -128,7 +128,7 @@ public interface GridZones extends Environmental {
 
     /**
      * Returns the Room object at the given coordinates.
-     * @see com.planet_ink.game.Locales.interfaces.Room
+     * @see com.syncleus.aethermud.game.Locales.interfaces.Room
      * @see XYVector
      * @param xy the x and y coordinate
      * @return the Room object at those coordinates

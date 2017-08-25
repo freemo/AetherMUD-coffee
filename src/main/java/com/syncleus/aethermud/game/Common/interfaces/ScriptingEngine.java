@@ -14,16 +14,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Common.interfaces;
+package com.syncleus.aethermud.game.Common.interfaces;
 
-import com.planet_ink.game.Items.interfaces.Item;
-import com.planet_ink.game.MOBS.interfaces.MOB;
-import com.planet_ink.game.core.collections.DVector;
-import com.planet_ink.game.core.exceptions.ScriptParseException;
-import com.planet_ink.game.core.interfaces.Environmental;
-import com.planet_ink.game.core.interfaces.MsgListener;
-import com.planet_ink.game.core.interfaces.PhysicalAgent;
-import com.planet_ink.game.core.interfaces.Tickable;
+import com.syncleus.aethermud.game.Items.interfaces.Item;
+import com.syncleus.aethermud.game.MOBS.interfaces.MOB;
+import com.syncleus.aethermud.game.core.collections.DVector;
+import com.syncleus.aethermud.game.core.exceptions.ScriptParseException;
+import com.syncleus.aethermud.game.core.interfaces.Environmental;
+import com.syncleus.aethermud.game.core.interfaces.MsgListener;
+import com.syncleus.aethermud.game.core.interfaces.PhysicalAgent;
+import com.syncleus.aethermud.game.core.interfaces.Tickable;
 
 import java.util.List;
 
@@ -35,7 +35,7 @@ import java.util.List;
  * event-oriented triggers, making all mud commands implicit scripting
  * commands.  It also includes methods for embedding javascript.
  *
- * @see com.planet_ink.game.Behaviors.Scriptable
+ * @see com.syncleus.aethermud.game.Behaviors.Scriptable
  */
 public interface ScriptingEngine extends CMCommon, Tickable, MsgListener {
     /** The number of local variables associated with an execution of a script */
@@ -346,7 +346,7 @@ public interface ScriptingEngine extends CMCommon, Tickable, MsgListener {
      * with the first row being the trigger information.  Each
      * row consists of the String command, and a parsed String[]
      * array as dimension 2.
-     * @see com.planet_ink.game.Common.interfaces.ScriptingEngine.ScriptableResponse
+     * @see com.syncleus.aethermud.game.Common.interfaces.ScriptingEngine.ScriptableResponse
      * @param scripted the object that is scripted
      * @param source the source of the event
      * @param target the target of the event
@@ -485,23 +485,23 @@ public interface ScriptingEngine extends CMCommon, Tickable, MsgListener {
 
     /**
      * Returns the script or load command(s).
-     * @see com.planet_ink.game.Common.interfaces.ScriptingEngine#setScript(String)
-     * @see com.planet_ink.game.Common.interfaces.ScriptingEngine#externalFiles()
+     * @see com.syncleus.aethermud.game.Common.interfaces.ScriptingEngine#setScript(String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.ScriptingEngine#externalFiles()
      * @return the script or load command(s)
      */
     public String getScript();
 
     /**
      * Sets the script or load command(s).
-     * @see com.planet_ink.game.Common.interfaces.ScriptingEngine#getScript()
-     * @see com.planet_ink.game.Common.interfaces.ScriptingEngine#externalFiles()
+     * @see com.syncleus.aethermud.game.Common.interfaces.ScriptingEngine#getScript()
+     * @see com.syncleus.aethermud.game.Common.interfaces.ScriptingEngine#externalFiles()
      * @param newParms the script or load command(s)
      */
     public void setScript(String newParms);
 
     /**
      * Returns the hey used to cache the script or load commands in here.
-     * @see com.planet_ink.game.Common.interfaces.ScriptingEngine#getScript()
+     * @see com.syncleus.aethermud.game.Common.interfaces.ScriptingEngine#getScript()
      * @return the key to the script or load command(s)
      */
     public String getScriptResourceKey();
@@ -509,8 +509,8 @@ public interface ScriptingEngine extends CMCommon, Tickable, MsgListener {
     /**
      * If the script is a load command, this will return the
      * list of loaded script files referenced by the load command
-     * @see com.planet_ink.game.Common.interfaces.ScriptingEngine#getScript()
-     * @see com.planet_ink.game.Common.interfaces.ScriptingEngine#setScript(String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.ScriptingEngine#getScript()
+     * @see com.syncleus.aethermud.game.Common.interfaces.ScriptingEngine#setScript(String)
      * @return a list of loaded script files.
      */
     public List<String> externalFiles();
@@ -518,7 +518,7 @@ public interface ScriptingEngine extends CMCommon, Tickable, MsgListener {
     /**
      * If this script is associated with a particular quest, this
      * method is called to register that quest name.
-     * @see com.planet_ink.game.Common.interfaces.ScriptingEngine#defaultQuestName()
+     * @see com.syncleus.aethermud.game.Common.interfaces.ScriptingEngine#defaultQuestName()
      * @param questName the quest associated with this script
      */
     public void registerDefaultQuest(String questName);
@@ -526,7 +526,7 @@ public interface ScriptingEngine extends CMCommon, Tickable, MsgListener {
     /**
      * If this script is associated with a particular quest, this
      * method is called to return that quest name.
-     * @see com.planet_ink.game.Common.interfaces.ScriptingEngine#registerDefaultQuest(String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.ScriptingEngine#registerDefaultQuest(String)
      * @return the quest associated with this script, if any
      */
     public String defaultQuestName();
@@ -535,9 +535,9 @@ public interface ScriptingEngine extends CMCommon, Tickable, MsgListener {
      * Returns the scope of any variables defined within the script.  Although the scope
      * is somewhat modified if this script is quest-bound, it is usually honored.
      * Valid scopes include: "" for global, "*" for local, or a shared named scope.
-     * @see com.planet_ink.game.Common.interfaces.ScriptingEngine#setVarScope(String)
-     * @see com.planet_ink.game.Common.interfaces.ScriptingEngine#setVar(String, String, String)
-     * @see com.planet_ink.game.Common.interfaces.ScriptingEngine#setLocalVarXML(String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.ScriptingEngine#setVarScope(String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.ScriptingEngine#setVar(String, String, String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.ScriptingEngine#setLocalVarXML(String)
      * @return the scope of variables
      */
     public String getVarScope();
@@ -546,9 +546,9 @@ public interface ScriptingEngine extends CMCommon, Tickable, MsgListener {
      * Sets the scope of any variables defined within the script.  Although the scope
      * is somewhat modified if this script is quest-bound, it is usually honored.
      * Valid scopes include: "" for global, "*" for local, or a shared named scope.
-     * @see com.planet_ink.game.Common.interfaces.ScriptingEngine#getVarScope()
-     * @see com.planet_ink.game.Common.interfaces.ScriptingEngine#getVar(String, String)
-     * @see com.planet_ink.game.Common.interfaces.ScriptingEngine#getLocalVarXML()
+     * @see com.syncleus.aethermud.game.Common.interfaces.ScriptingEngine#getVarScope()
+     * @see com.syncleus.aethermud.game.Common.interfaces.ScriptingEngine#getVar(String, String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.ScriptingEngine#getLocalVarXML()
      * @param scope the scope of variables
      */
     public void setVarScope(String scope);
@@ -556,9 +556,9 @@ public interface ScriptingEngine extends CMCommon, Tickable, MsgListener {
     /**
      * If the variable scope of this script is local, this will return all the variables
      * and values defined as an xml document for easy storage.
-     * @see com.planet_ink.game.Common.interfaces.ScriptingEngine#setVarScope(String)
-     * @see com.planet_ink.game.Common.interfaces.ScriptingEngine#setVar(String, String, String)
-     * @see com.planet_ink.game.Common.interfaces.ScriptingEngine#setLocalVarXML(String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.ScriptingEngine#setVarScope(String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.ScriptingEngine#setVar(String, String, String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.ScriptingEngine#setLocalVarXML(String)
      * @return the local variable values as xml
      */
     public String getLocalVarXML();
@@ -566,9 +566,9 @@ public interface ScriptingEngine extends CMCommon, Tickable, MsgListener {
     /**
      * If the variable scope of this script is local, this will set all the variables
      * and values defined from a passed in xml document.
-     * @see com.planet_ink.game.Common.interfaces.ScriptingEngine#getVarScope()
-     * @see com.planet_ink.game.Common.interfaces.ScriptingEngine#getVar(String, String)
-     * @see com.planet_ink.game.Common.interfaces.ScriptingEngine#getLocalVarXML()
+     * @see com.syncleus.aethermud.game.Common.interfaces.ScriptingEngine#getVarScope()
+     * @see com.syncleus.aethermud.game.Common.interfaces.ScriptingEngine#getVar(String, String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.ScriptingEngine#getLocalVarXML()
      * @param xml the local variable values as xml
      */
     public void setLocalVarXML(String xml);
@@ -576,7 +576,7 @@ public interface ScriptingEngine extends CMCommon, Tickable, MsgListener {
     /**
      * Returns whether this script is a temporary attributed of the scripted object,
      * or a permanent on that should be saved with the object.
-     * @see com.planet_ink.game.Common.interfaces.ScriptingEngine#setSavable(boolean)
+     * @see com.syncleus.aethermud.game.Common.interfaces.ScriptingEngine#setSavable(boolean)
      * @return whether this script is a saveable attribute of the scripted object
      */
     public boolean isSavable();
@@ -584,7 +584,7 @@ public interface ScriptingEngine extends CMCommon, Tickable, MsgListener {
     /**
      * Sets whether this script is a temporary attributed of the scripted object,
      * or a permanent on that should be saved with the object.
-     * @see com.planet_ink.game.Common.interfaces.ScriptingEngine#isSavable()
+     * @see com.syncleus.aethermud.game.Common.interfaces.ScriptingEngine#isSavable()
      * @param truefalse true if this script is a saveable attribute of the scripted object
      */
     public void setSavable(boolean truefalse);
@@ -592,12 +592,12 @@ public interface ScriptingEngine extends CMCommon, Tickable, MsgListener {
     /**
      * Returns the value of one of the internal variables, determined by the scope
      * of the script, the context of the variable, and the name of the variable.
-     * @see com.planet_ink.game.Common.interfaces.ScriptingEngine#setVarScope(String)
-     * @see com.planet_ink.game.Common.interfaces.ScriptingEngine#getVarScope()
-     * @see com.planet_ink.game.Common.interfaces.ScriptingEngine#setVar(String, String, String)
-     * @see com.planet_ink.game.Common.interfaces.ScriptingEngine#isVar(String, String)
-     * @see com.planet_ink.game.Common.interfaces.ScriptingEngine#getLocalVarXML()
-     * @see com.planet_ink.game.Common.interfaces.ScriptingEngine#setLocalVarXML(String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.ScriptingEngine#setVarScope(String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.ScriptingEngine#getVarScope()
+     * @see com.syncleus.aethermud.game.Common.interfaces.ScriptingEngine#setVar(String, String, String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.ScriptingEngine#isVar(String, String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.ScriptingEngine#getLocalVarXML()
+     * @see com.syncleus.aethermud.game.Common.interfaces.ScriptingEngine#setLocalVarXML(String)
      * @param context the context of the variable, usually a mob or object name
      * @param variable the name of the variable
      * @return the value of the variable
@@ -607,12 +607,12 @@ public interface ScriptingEngine extends CMCommon, Tickable, MsgListener {
     /**
      * Returns whether an internal variables, determined by the scope
      * of the script, the context of the variable, and the name of the variable, is defined.
-     * @see com.planet_ink.game.Common.interfaces.ScriptingEngine#setVarScope(String)
-     * @see com.planet_ink.game.Common.interfaces.ScriptingEngine#getVarScope()
-     * @see com.planet_ink.game.Common.interfaces.ScriptingEngine#getVar(String, String)
-     * @see com.planet_ink.game.Common.interfaces.ScriptingEngine#setVar(String, String, String)
-     * @see com.planet_ink.game.Common.interfaces.ScriptingEngine#getLocalVarXML()
-     * @see com.planet_ink.game.Common.interfaces.ScriptingEngine#setLocalVarXML(String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.ScriptingEngine#setVarScope(String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.ScriptingEngine#getVarScope()
+     * @see com.syncleus.aethermud.game.Common.interfaces.ScriptingEngine#getVar(String, String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.ScriptingEngine#setVar(String, String, String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.ScriptingEngine#getLocalVarXML()
+     * @see com.syncleus.aethermud.game.Common.interfaces.ScriptingEngine#setLocalVarXML(String)
      * @param context the context of the variable, usually a mob or object name
      * @param variable the name of the variable
      * @return true if the variable has been set in the past, false otherwise
@@ -622,12 +622,12 @@ public interface ScriptingEngine extends CMCommon, Tickable, MsgListener {
     /**
      * Sets the value of one of the internal variables, determined by the scope
      * of the script, the context of the variable, and the name of the variable.
-     * @see com.planet_ink.game.Common.interfaces.ScriptingEngine#setVarScope(String)
-     * @see com.planet_ink.game.Common.interfaces.ScriptingEngine#getVarScope()
-     * @see com.planet_ink.game.Common.interfaces.ScriptingEngine#getVar(String, String)
-     * @see com.planet_ink.game.Common.interfaces.ScriptingEngine#isVar(String, String)
-     * @see com.planet_ink.game.Common.interfaces.ScriptingEngine#getLocalVarXML()
-     * @see com.planet_ink.game.Common.interfaces.ScriptingEngine#setLocalVarXML(String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.ScriptingEngine#setVarScope(String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.ScriptingEngine#getVarScope()
+     * @see com.syncleus.aethermud.game.Common.interfaces.ScriptingEngine#getVar(String, String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.ScriptingEngine#isVar(String, String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.ScriptingEngine#getLocalVarXML()
+     * @see com.syncleus.aethermud.game.Common.interfaces.ScriptingEngine#setLocalVarXML(String)
      * @param context the context of the variable, usually a mob or object name
      * @param variable the name of the variable
      * @param value the value of the variable

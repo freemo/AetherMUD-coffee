@@ -14,21 +14,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.core.intermud.cm1.commands;
+package com.syncleus.aethermud.game.core.intermud.cm1.commands;
 
-import com.planet_ink.game.Abilities.interfaces.Ability;
-import com.planet_ink.game.Behaviors.interfaces.Behavior;
-import com.planet_ink.game.Common.interfaces.Faction;
-import com.planet_ink.game.Items.interfaces.Item;
-import com.planet_ink.game.Libraries.interfaces.ExpertiseLibrary;
-import com.planet_ink.game.Locales.interfaces.Room;
-import com.planet_ink.game.MOBS.interfaces.MOB;
-import com.planet_ink.game.core.*;
-import com.planet_ink.game.core.interfaces.ItemPossessor;
-import com.planet_ink.game.core.interfaces.Modifiable;
-import com.planet_ink.game.core.interfaces.Physical;
-import com.planet_ink.game.core.interfaces.PhysicalAgent;
-import com.planet_ink.game.core.intermud.cm1.RequestHandler;
+import com.syncleus.aethermud.game.Abilities.interfaces.Ability;
+import com.syncleus.aethermud.game.Behaviors.interfaces.Behavior;
+import com.syncleus.aethermud.game.Common.interfaces.Faction;
+import com.syncleus.aethermud.game.Items.interfaces.Item;
+import com.syncleus.aethermud.game.Libraries.interfaces.ExpertiseLibrary;
+import com.syncleus.aethermud.game.Locales.interfaces.Room;
+import com.syncleus.aethermud.game.MOBS.interfaces.MOB;
+import com.syncleus.aethermud.game.core.*;
+import com.syncleus.aethermud.game.core.interfaces.ItemPossessor;
+import com.syncleus.aethermud.game.core.interfaces.Modifiable;
+import com.syncleus.aethermud.game.core.interfaces.Physical;
+import com.syncleus.aethermud.game.core.interfaces.PhysicalAgent;
+import com.syncleus.aethermud.game.core.intermud.cm1.RequestHandler;
 
 
 public class SetStat extends GetStat {

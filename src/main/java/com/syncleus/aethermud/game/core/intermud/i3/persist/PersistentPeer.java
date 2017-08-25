@@ -14,10 +14,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.core.intermud.i3.persist;
+package com.syncleus.aethermud.game.core.intermud.i3.persist;
 
 /**
- * com.planet_ink.game.core.intermud.i3.persist.PersistentPeer
+ * com.syncleus.aethermud.game.core.intermud.i3.persist.PersistentPeer
  * Copyright (c) 1996 George Reese
  * This source code may not be modified, copied,
  * redistributed, or used in any fashion without the
@@ -42,7 +42,7 @@ public interface PersistentPeer {
     /**
      * Gets data about this peer from storage and gives it
      * back to the object for which this peer exists.
-     * @exception com.planet_ink.game.core.intermud.i3.persist.PersistenceException if an error occurs during restore
+     * @exception com.syncleus.aethermud.game.core.intermud.i3.persist.PersistenceException if an error occurs during restore
      */
     public abstract void restore() throws PersistenceException;
 
@@ -50,15 +50,15 @@ public interface PersistentPeer {
      * Triggers a save of its peer.  Implementing classes
      * should do whatever it takes to save the object in
      * this method.
-     * @exception com.planet_ink.game.core.intermud.i3.persist.PersistenceException if a problem occurs in saving
+     * @exception com.syncleus.aethermud.game.core.intermud.i3.persist.PersistenceException if a problem occurs in saving
      */
     public abstract void save() throws PersistenceException;
 
     /**
      * Assigns a persistent object to this peer for
      * persistence operations.
-     * @param ob the implementation of com.planet_ink.game.core.intermud.i3.persist.Persistent that this is a peer for
-     * @see com.planet_ink.game.core.intermud.i3.persist.Persistent
+     * @param ob the implementation of com.syncleus.aethermud.game.core.intermud.i3.persist.Persistent that this is a peer for
+     * @see com.syncleus.aethermud.game.core.intermud.i3.persist.Persistent
      */
     public abstract void setPersistent(Persistent ob);
 

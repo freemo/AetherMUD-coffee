@@ -14,19 +14,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Libraries;
+package com.syncleus.aethermud.game.Libraries;
 
-import com.planet_ink.game.Abilities.interfaces.Language;
-import com.planet_ink.game.Common.interfaces.*;
-import com.planet_ink.game.Libraries.interfaces.ChannelsLibrary;
-import com.planet_ink.game.Libraries.interfaces.ColorLibrary.Color;
-import com.planet_ink.game.Libraries.interfaces.TimeManager;
-import com.planet_ink.game.Locales.interfaces.Room;
-import com.planet_ink.game.MOBS.interfaces.MOB;
-import com.planet_ink.game.core.*;
-import com.planet_ink.game.core.collections.*;
-import com.planet_ink.game.core.interfaces.MudHost;
-import com.planet_ink.game.core.interfaces.Tickable;
+import com.syncleus.aethermud.game.Abilities.interfaces.Language;
+import com.syncleus.aethermud.game.Common.interfaces.*;
+import com.syncleus.aethermud.game.Libraries.interfaces.ChannelsLibrary;
+import com.syncleus.aethermud.game.Libraries.interfaces.ColorLibrary.Color;
+import com.syncleus.aethermud.game.Libraries.interfaces.TimeManager;
+import com.syncleus.aethermud.game.Locales.interfaces.Room;
+import com.syncleus.aethermud.game.MOBS.interfaces.MOB;
+import com.syncleus.aethermud.game.core.*;
+import com.syncleus.aethermud.game.core.collections.*;
+import com.syncleus.aethermud.game.core.interfaces.MudHost;
+import com.syncleus.aethermud.game.core.interfaces.Tickable;
 
 import java.lang.reflect.Method;
 import java.util.*;

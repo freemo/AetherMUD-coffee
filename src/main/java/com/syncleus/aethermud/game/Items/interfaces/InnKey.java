@@ -14,9 +14,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Items.interfaces;
+package com.syncleus.aethermud.game.Items.interfaces;
 
-import com.planet_ink.game.core.interfaces.ShopKeeper;
+import com.syncleus.aethermud.game.core.interfaces.ShopKeeper;
 
 /**
  * An InnKey is a door key that can fly back into the inventory of its

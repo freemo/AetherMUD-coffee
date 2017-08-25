@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.MOBS;
+package com.syncleus.aethermud.game.MOBS;
 
 public class WhiteDragon extends Dragon {
     public WhiteDragon() {

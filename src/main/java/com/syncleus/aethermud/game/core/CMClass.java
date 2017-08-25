@@ -14,28 +14,28 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.core;
+package com.syncleus.aethermud.game.core;
 
-import com.planet_ink.game.Abilities.interfaces.Ability;
-import com.planet_ink.game.Areas.interfaces.Area;
-import com.planet_ink.game.Behaviors.interfaces.Behavior;
-import com.planet_ink.game.CharClasses.interfaces.CharClass;
-import com.planet_ink.game.Commands.interfaces.Command;
-import com.planet_ink.game.Common.interfaces.*;
-import com.planet_ink.game.Exits.interfaces.Exit;
-import com.planet_ink.game.Items.interfaces.*;
-import com.planet_ink.game.Libraries.interfaces.CMLibrary;
-import com.planet_ink.game.Libraries.interfaces.DatabaseEngine;
-import com.planet_ink.game.Locales.interfaces.Room;
-import com.planet_ink.game.MOBS.interfaces.MOB;
-import com.planet_ink.game.Races.interfaces.Race;
-import com.planet_ink.game.WebMacros.interfaces.WebMacro;
-import com.planet_ink.game.core.collections.FilteredEnumeration;
-import com.planet_ink.game.core.collections.Filterer;
-import com.planet_ink.game.core.collections.XVector;
-import com.planet_ink.game.core.interfaces.CMObject;
-import com.planet_ink.game.core.interfaces.Environmental;
-import com.planet_ink.game.core.interfaces.MudHost;
+import com.syncleus.aethermud.game.Abilities.interfaces.Ability;
+import com.syncleus.aethermud.game.Areas.interfaces.Area;
+import com.syncleus.aethermud.game.Behaviors.interfaces.Behavior;
+import com.syncleus.aethermud.game.CharClasses.interfaces.CharClass;
+import com.syncleus.aethermud.game.Commands.interfaces.Command;
+import com.syncleus.aethermud.game.Common.interfaces.*;
+import com.syncleus.aethermud.game.Exits.interfaces.Exit;
+import com.syncleus.aethermud.game.Items.interfaces.*;
+import com.syncleus.aethermud.game.Libraries.interfaces.CMLibrary;
+import com.syncleus.aethermud.game.Libraries.interfaces.DatabaseEngine;
+import com.syncleus.aethermud.game.Locales.interfaces.Room;
+import com.syncleus.aethermud.game.MOBS.interfaces.MOB;
+import com.syncleus.aethermud.game.Races.interfaces.Race;
+import com.syncleus.aethermud.game.WebMacros.interfaces.WebMacro;
+import com.syncleus.aethermud.game.core.collections.FilteredEnumeration;
+import com.syncleus.aethermud.game.core.collections.Filterer;
+import com.syncleus.aethermud.game.core.collections.XVector;
+import com.syncleus.aethermud.game.core.interfaces.CMObject;
+import com.syncleus.aethermud.game.core.interfaces.Environmental;
+import com.syncleus.aethermud.game.core.interfaces.MudHost;
 import org.apache.commons.io.IOUtils;
 import org.mozilla.javascript.CompilerEnvirons;
 import org.mozilla.javascript.Context;
@@ -229,7 +229,7 @@ public class CMClass extends ClassLoader {
 
     /**
      * Checks the given object against the given object type
-     * @see com.planet_ink.game.core.CMClass.CMObjectType
+     * @see com.syncleus.aethermud.game.core.CMClass.CMObjectType
      * @param O the object to inspect
      * @param type the type to compare against
      * @return true if theres a match, and false otherwise
@@ -284,7 +284,7 @@ public class CMClass extends ClassLoader {
 
     /**
      * Returns a newInstance of an object of the given type and ID. NULL if not found.
-     * @see com.planet_ink.game.core.CMClass.CMObjectType
+     * @see com.syncleus.aethermud.game.core.CMClass.CMObjectType
      * @param ID the ID of the object to look for
      * @param type the type of object to check
      * @return a newInstance of an object of the given type and ID.
@@ -339,7 +339,7 @@ public class CMClass extends ClassLoader {
 
     /**
      * Returns the object type of the given object
-     * @see com.planet_ink.game.core.CMClass.CMObjectType
+     * @see com.syncleus.aethermud.game.core.CMClass.CMObjectType
      * @param O the object to inspect
      * @return the cmobjectype type
      */
@@ -392,7 +392,7 @@ public class CMClass extends ClassLoader {
     /**
      * Given a string, Integer, or some other stringable object, this will return the
      * cmobjecttype based on its name or ordinal relationship.
-     * @see com.planet_ink.game.core.CMClass.CMObjectType
+     * @see com.syncleus.aethermud.game.core.CMClass.CMObjectType
      * @param nameOrOrdinal the string, integer, or whatever object
      * @return the cmobjecttype it refers to
      */
@@ -479,7 +479,7 @@ public class CMClass extends ClassLoader {
     /**
      * Returns the total number of template/prototypes of the given type stored by
      * this CMClass instance.
-     * @see com.planet_ink.game.core.CMClass.CMObjectType
+     * @see com.syncleus.aethermud.game.core.CMClass.CMObjectType
      * @param type the type of object to count
      * @return the number stored
      */
@@ -2156,7 +2156,7 @@ public class CMClass extends ClassLoader {
 
     /**
      * Returns the address part of an instance objects "default string name", which
-     * looks like com.planet_ink.game.blah.ClassName{@literal @}ab476d87e
+     * looks like com.syncleus.aethermud.game.blah.ClassName{@literal @}ab476d87e
      * where the part after the at sign is the address
      * @param e the object to get an address for
      * @return the address
@@ -2228,7 +2228,7 @@ public class CMClass extends ClassLoader {
             }
         }
         try {
-            final String prefix = "target/classes/com/planet_ink/game/";
+            final String prefix = "target/classes/com/syncleus/aethermud/game/";
             debugging = CMSecurity.isDebugging(CMSecurity.DbgFlag.CLASSLOADER);
 
             c.libraries = loadVectorListToObj(prefix + "Libraries/", page.getStr("LIBRARY"), CMObjectType.LIBRARY.ancestorName);
@@ -2637,9 +2637,9 @@ public class CMClass extends ClassLoader {
 
     /**
      * Creates and configures a CMMsg object for use in the game
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#source()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#sourceCode()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#sourceMessage()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#source()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#sourceCode()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#sourceMessage()
      * @param source the agent source of the action
      * @param newAllCode the source, target, and others code to use
      * @param allMessage the source, target, and others string msg to send
@@ -2653,10 +2653,10 @@ public class CMClass extends ClassLoader {
 
     /**
      * Creates and configures a CMMsg object for use in the game
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#source()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#sourceCode()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#sourceMessage()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#value()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#source()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#sourceCode()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#sourceMessage()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#value()
      * @param source the agent source of the action
      * @param newAllCode the source, target, and others code to use
      * @param allMessage the source, target, and others string msg to send
@@ -2671,10 +2671,10 @@ public class CMClass extends ClassLoader {
 
     /**
      * Creates and configures a CMMsg object for use in the game
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#source()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#target()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#sourceCode()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#sourceMessage()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#source()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#target()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#sourceCode()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#sourceMessage()
      * @param source the agent source of the action
      * @param target the target of the action
      * @param newAllCode the source, target, and others code to use
@@ -2689,11 +2689,11 @@ public class CMClass extends ClassLoader {
 
     /**
      * Creates and configures a CMMsg object for use in the game
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#source()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#target()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#tool()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#sourceCode()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#sourceMessage()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#source()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#target()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#tool()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#sourceCode()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#sourceMessage()
      * @param source the agent source of the action
      * @param target the target of the action
      * @param tool the tool used by the source to do the action
@@ -2709,13 +2709,13 @@ public class CMClass extends ClassLoader {
 
     /**
      * Creates and configures a CMMsg object for use in the game
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#source()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#target()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#tool()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#sourceCode()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#targetCode()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#othersCode()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#sourceMessage()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#source()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#target()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#tool()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#sourceCode()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#targetCode()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#othersCode()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#sourceMessage()
      * @param source the agent source of the action
      * @param target the target of the action
      * @param tool the tool used by the source to do the action
@@ -2734,13 +2734,13 @@ public class CMClass extends ClassLoader {
 
     /**
      * Creates and configures a CMMsg object for use in the game
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#source()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#target()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#tool()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#sourceCode()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#sourceMessage()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#targetMessage()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#othersMessage()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#source()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#target()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#tool()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#sourceCode()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#sourceMessage()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#targetMessage()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#othersMessage()
      * @param source the agent source of the action
      * @param target the target of the action
      * @param tool the tool used by the source to do the action
@@ -2759,15 +2759,15 @@ public class CMClass extends ClassLoader {
 
     /**
      * Creates and configures a CMMsg object for use in the game
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#source()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#target()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#tool()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#sourceCode()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#targetCode()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#othersCode()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#sourceMessage()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#targetMessage()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#othersMessage()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#source()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#target()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#tool()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#sourceCode()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#targetCode()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#othersCode()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#sourceMessage()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#targetMessage()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#othersMessage()
      * @param source the agent source of the action
      * @param target the target of the action
      * @param tool the tool used by the source to do the action
@@ -2975,7 +2975,7 @@ public class CMClass extends ClassLoader {
 //            className = className.substring(0, className.length() - 3);
 //        } else {
 //            pathName = className.replace('.', '/') + ".class";
-//            if( pathName.contains("com/planet_ink") && !pathName.startsWith("target") )
+//            if( pathName.contains("com/syncleus/aethermud") && !pathName.startsWith("target") )
 //                pathName = "target/classes/" + pathName;
 //        }
 //        Class<?> result = classes.get(className);
@@ -2985,9 +2985,9 @@ public class CMClass extends ClassLoader {
 //            return result;
 //        }
 //        if ((super.findLoadedClass(className) != null)
-//            || (className.indexOf("com.planet_ink.game.") < 0)
-//            || (className.startsWith("com.planet_ink.game.core."))
-//            || (className.startsWith("com.planet_ink.game.application."))
+//            || (className.indexOf("com.syncleus.aethermud.game.") < 0)
+//            || (className.startsWith("com.syncleus.aethermud.game.core."))
+//            || (className.startsWith("com.syncleus.aethermud.game.application."))
 //            || (className.indexOf(".interfaces.") >= 0)) {
 //            try {
 //                result = super.findSystemClass(className);
@@ -3001,7 +3001,7 @@ public class CMClass extends ClassLoader {
 //        }
 //		/* Try to load it from our repository */
 //        final byte[] classData;
-//        if( !pathName.contains("com/planet_ink") ) {
+//        if( !pathName.contains("com/syncleus/aethermud") ) {
 //		    Class clazz = Class.forName(className);
 //            String clazzPathString = "jar:file:" + clazz.getProtectionDomain().getCodeSource().getLocation().getPath() + "!/" + pathName;
 //            try {
@@ -3117,47 +3117,47 @@ public class CMClass extends ClassLoader {
 
     public static enum CMObjectType {
         /** stat constant for race type objects */
-        RACE("com.planet_ink.game.Races.interfaces.Race"),
+        RACE("com.syncleus.aethermud.game.Races.interfaces.Race"),
         /** stat constant for char class type objects */
-        CHARCLASS("com.planet_ink.game.CharClasses.interfaces.CharClass"),
+        CHARCLASS("com.syncleus.aethermud.game.CharClasses.interfaces.CharClass"),
         /** stat constant for mob type objects */
-        MOB("com.planet_ink.game.MOBS.interfaces.MOB"),
+        MOB("com.syncleus.aethermud.game.MOBS.interfaces.MOB"),
         /** stat constant for ability type objects */
-        ABILITY("com.planet_ink.game.Abilities.interfaces.Ability"),
+        ABILITY("com.syncleus.aethermud.game.Abilities.interfaces.Ability"),
         /** stat constant for locale/room type objects */
-        LOCALE("com.planet_ink.game.Locales.interfaces.Room"),
+        LOCALE("com.syncleus.aethermud.game.Locales.interfaces.Room"),
         /** stat constant for exit type objects */
-        EXIT("com.planet_ink.game.Exits.interfaces.Exit"),
+        EXIT("com.syncleus.aethermud.game.Exits.interfaces.Exit"),
         /** stat constant for item type objects */
-        ITEM("com.planet_ink.game.Items.interfaces.Item"),
+        ITEM("com.syncleus.aethermud.game.Items.interfaces.Item"),
         /** stat constant for behavior type objects */
-        BEHAVIOR("com.planet_ink.game.Behaviors.interfaces.Behavior"),
+        BEHAVIOR("com.syncleus.aethermud.game.Behaviors.interfaces.Behavior"),
         /** stat constant for clan type objects */
-        CLAN("com.planet_ink.game.core.interfaces.Clan"),
+        CLAN("com.syncleus.aethermud.game.core.interfaces.Clan"),
         /** stat constant for weapon type objects */
-        WEAPON("com.planet_ink.game.Items.interfaces.Weapon"),
+        WEAPON("com.syncleus.aethermud.game.Items.interfaces.Weapon"),
         /** stat constant for armor type objects */
-        ARMOR("com.planet_ink.game.Items.interfaces.Armor"),
+        ARMOR("com.syncleus.aethermud.game.Items.interfaces.Armor"),
         /** stat constant for misc magic type objects */
-        MISCMAGIC("com.planet_ink.game.Items.interfaces.MiscMagic"),
+        MISCMAGIC("com.syncleus.aethermud.game.Items.interfaces.MiscMagic"),
         /** stat constant for area type objects */
-        AREA("com.planet_ink.game.Areas.interfaces.Area"),
+        AREA("com.syncleus.aethermud.game.Areas.interfaces.Area"),
         /** stat constant for command type objects */
-        COMMAND("com.planet_ink.game.Commands.interfaces.Command"),
+        COMMAND("com.syncleus.aethermud.game.Commands.interfaces.Command"),
         /** stat constant for clan items type objects */
-        CLANITEM("com.planet_ink.game.Items.interfaces.ClanItem"),
+        CLANITEM("com.syncleus.aethermud.game.Items.interfaces.ClanItem"),
         /** stat constant for misc tech type objects */
-        TECH("com.planet_ink.game.Items.interfaces.Technical"),
+        TECH("com.syncleus.aethermud.game.Items.interfaces.Technical"),
         /** stat constant for misc tech type objects */
-        COMPTECH("com.planet_ink.game.Items.interfaces.TechComponent"),
+        COMPTECH("com.syncleus.aethermud.game.Items.interfaces.TechComponent"),
         /** stat constant for misc tech type objects */
-        SOFTWARE("com.planet_ink.game.Items.interfaces.Software"),
+        SOFTWARE("com.syncleus.aethermud.game.Items.interfaces.Software"),
         /** stat constant for webmacros type objects */
-        WEBMACRO("com.planet_ink.game.WebMacros.interfaces.WebMacro"),
+        WEBMACRO("com.syncleus.aethermud.game.WebMacros.interfaces.WebMacro"),
         /** stat constant for common type objects */
-        COMMON("com.planet_ink.game.Common.interfaces.CMCommon"),
+        COMMON("com.syncleus.aethermud.game.Common.interfaces.CMCommon"),
         /** stat constant for library type objects */
-        LIBRARY("com.planet_ink.game.Libraries.interfaces.CMLibrary");
+        LIBRARY("com.syncleus.aethermud.game.Libraries.interfaces.CMLibrary");
 
         public final String ancestorName; // in meters
 

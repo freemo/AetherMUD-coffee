@@ -14,22 +14,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.WebMacros.grinder;
+package com.syncleus.aethermud.game.WebMacros.grinder;
 
-import com.planet_ink.game.Abilities.interfaces.Ability;
-import com.planet_ink.game.Common.interfaces.*;
-import com.planet_ink.game.Items.interfaces.Container;
-import com.planet_ink.game.Items.interfaces.Item;
-import com.planet_ink.game.Libraries.interfaces.CatalogLibrary;
-import com.planet_ink.game.Libraries.interfaces.ExpertiseLibrary;
-import com.planet_ink.game.Locales.interfaces.Room;
-import com.planet_ink.game.MOBS.interfaces.*;
-import com.planet_ink.game.WebMacros.RoomData;
-import com.planet_ink.game.core.*;
-import com.planet_ink.game.core.collections.Pair;
-import com.planet_ink.game.core.collections.XVector;
-import com.planet_ink.game.core.interfaces.*;
-import com.planet_ink.web.interfaces.HTTPRequest;
+import com.syncleus.aethermud.game.Abilities.interfaces.Ability;
+import com.syncleus.aethermud.game.Common.interfaces.*;
+import com.syncleus.aethermud.game.Items.interfaces.Container;
+import com.syncleus.aethermud.game.Items.interfaces.Item;
+import com.syncleus.aethermud.game.Libraries.interfaces.CatalogLibrary;
+import com.syncleus.aethermud.game.Libraries.interfaces.ExpertiseLibrary;
+import com.syncleus.aethermud.game.Locales.interfaces.Room;
+import com.syncleus.aethermud.game.MOBS.interfaces.*;
+import com.syncleus.aethermud.game.WebMacros.RoomData;
+import com.syncleus.aethermud.game.core.*;
+import com.syncleus.aethermud.game.core.collections.Pair;
+import com.syncleus.aethermud.game.core.collections.XVector;
+import com.syncleus.aethermud.game.core.interfaces.*;
+import com.syncleus.aethermud.web.interfaces.HTTPRequest;
 
 import java.util.Enumeration;
 import java.util.LinkedList;

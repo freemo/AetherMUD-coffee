@@ -14,9 +14,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Items.Basic;
+package com.syncleus.aethermud.game.Items.Basic;
 
-import com.planet_ink.game.Items.interfaces.Wearable;
+import com.syncleus.aethermud.game.Items.interfaces.Wearable;
 
 
 public class Ring extends StdItem {

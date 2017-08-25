@@ -14,14 +14,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Locales;
+package com.syncleus.aethermud.game.Locales;
 
-import com.planet_ink.game.Locales.interfaces.LocationRoom;
-import com.planet_ink.game.Locales.interfaces.Room;
-import com.planet_ink.game.core.CMLib;
-import com.planet_ink.game.core.CMParms;
-import com.planet_ink.game.core.CMProps;
-import com.planet_ink.game.core.interfaces.SpaceObject;
+import com.syncleus.aethermud.game.Locales.interfaces.LocationRoom;
+import com.syncleus.aethermud.game.Locales.interfaces.Room;
+import com.syncleus.aethermud.game.core.CMLib;
+import com.syncleus.aethermud.game.core.CMParms;
+import com.syncleus.aethermud.game.core.CMProps;
+import com.syncleus.aethermud.game.core.interfaces.SpaceObject;
 
 
 public class SpacePort extends StdRoom implements LocationRoom {

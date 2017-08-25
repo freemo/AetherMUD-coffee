@@ -14,13 +14,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Locales;
+package com.syncleus.aethermud.game.Locales;
 
-import com.planet_ink.game.Common.interfaces.CMMsg;
-import com.planet_ink.game.core.CMLib;
-import com.planet_ink.game.core.Directions;
-import com.planet_ink.game.core.interfaces.Environmental;
-import com.planet_ink.game.core.interfaces.Rideable;
+import com.syncleus.aethermud.game.Common.interfaces.CMMsg;
+import com.syncleus.aethermud.game.core.CMLib;
+import com.syncleus.aethermud.game.core.Directions;
+import com.syncleus.aethermud.game.core.interfaces.Environmental;
+import com.syncleus.aethermud.game.core.interfaces.Rideable;
 
 
 public class ClimbableLedge extends ClimbableSurface {

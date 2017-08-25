@@ -14,10 +14,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Items.interfaces;
+package com.syncleus.aethermud.game.Items.interfaces;
 
-import com.planet_ink.game.core.interfaces.*;
-import com.planet_ink.game.core.interfaces.Readable;
+import com.syncleus.aethermud.game.core.interfaces.*;
+import com.syncleus.aethermud.game.core.interfaces.Readable;
 
 
 /**
@@ -186,8 +186,8 @@ public interface Item extends Rider, DBIdentifiable, Wearable, PhysicalAgent, Re
      * The Room or MOB representing where this item is located.  Containers are handled
      * by another pointer, container(), so those two methods be used together to determine
      * where a given item is.
-     * @see com.planet_ink.game.MOBS.interfaces.MOB
-     * @see com.planet_ink.game.Items.interfaces.Item
+     * @see com.syncleus.aethermud.game.MOBS.interfaces.MOB
+     * @see com.syncleus.aethermud.game.Items.interfaces.Item
      * @return the mob or room where the item is located
      */
     public ItemPossessor owner();
@@ -198,7 +198,7 @@ public interface Item extends Rider, DBIdentifiable, Wearable, PhysicalAgent, Re
      * where a given item is.  This method is called by the addItem method on mobs
      * and the addItem interface on Rooms.  Alone, this method is insufficient to properly
      * determine an items location, so one of the two above should be called instead.
-     * @see com.planet_ink.game.core.interfaces.ItemPossessor#addItem(Item)
+     * @see com.syncleus.aethermud.game.core.interfaces.ItemPossessor#addItem(Item)
      * @param E the mob or room where the item is located
      */
     public void setOwner(ItemPossessor E);

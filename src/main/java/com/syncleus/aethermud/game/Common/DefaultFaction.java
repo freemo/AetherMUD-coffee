@@ -14,21 +14,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Common;
+package com.syncleus.aethermud.game.Common;
 
-import com.planet_ink.game.Abilities.interfaces.Ability;
-import com.planet_ink.game.Behaviors.interfaces.Behavior;
-import com.planet_ink.game.Behaviors.interfaces.ChattyBehavior;
-import com.planet_ink.game.Behaviors.interfaces.LegalBehavior;
-import com.planet_ink.game.CharClasses.interfaces.CharClass;
-import com.planet_ink.game.Common.interfaces.*;
-import com.planet_ink.game.Items.interfaces.Coins;
-import com.planet_ink.game.Libraries.interfaces.MaskingLibrary;
-import com.planet_ink.game.Locales.interfaces.Room;
-import com.planet_ink.game.MOBS.interfaces.MOB;
-import com.planet_ink.game.core.*;
-import com.planet_ink.game.core.collections.*;
-import com.planet_ink.game.core.interfaces.*;
+import com.syncleus.aethermud.game.Abilities.interfaces.Ability;
+import com.syncleus.aethermud.game.Behaviors.interfaces.Behavior;
+import com.syncleus.aethermud.game.Behaviors.interfaces.ChattyBehavior;
+import com.syncleus.aethermud.game.Behaviors.interfaces.LegalBehavior;
+import com.syncleus.aethermud.game.CharClasses.interfaces.CharClass;
+import com.syncleus.aethermud.game.Common.interfaces.*;
+import com.syncleus.aethermud.game.Items.interfaces.Coins;
+import com.syncleus.aethermud.game.Libraries.interfaces.MaskingLibrary;
+import com.syncleus.aethermud.game.Locales.interfaces.Room;
+import com.syncleus.aethermud.game.MOBS.interfaces.MOB;
+import com.syncleus.aethermud.game.core.*;
+import com.syncleus.aethermud.game.core.collections.*;
+import com.syncleus.aethermud.game.core.interfaces.*;
 
 import java.io.ByteArrayInputStream;
 import java.util.*;

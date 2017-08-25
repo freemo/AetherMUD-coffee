@@ -14,10 +14,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Commands.interfaces;
+package com.syncleus.aethermud.game.Commands.interfaces;
 
-import com.planet_ink.game.MOBS.interfaces.MOB;
-import com.planet_ink.game.core.interfaces.CMObject;
+import com.syncleus.aethermud.game.MOBS.interfaces.MOB;
+import com.syncleus.aethermud.game.core.interfaces.CMObject;
 
 import java.util.List;
 
@@ -95,8 +95,8 @@ public interface Command extends CMObject {
      * anything to be in the commands list, or even for the commands to be null.
      * This method is not allowed to be called until the player or mob has
      * satisfied the actionsCost requirements and the securityCheck
-     * @see com.planet_ink.game.Commands.interfaces.Command#actionsCost(MOB, List)
-     * @see com.planet_ink.game.Commands.interfaces.Command#securityCheck(MOB)
+     * @see com.syncleus.aethermud.game.Commands.interfaces.Command#actionsCost(MOB, List)
+     * @see com.syncleus.aethermud.game.Commands.interfaces.Command#securityCheck(MOB)
      * @param mob the mob or player issueing the command
      * @param commands usually the command words and parameters; a set of strings
      * @param metaFlags flags denoting how the command is being executed

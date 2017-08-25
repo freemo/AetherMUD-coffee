@@ -14,12 +14,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Libraries.interfaces;
+package com.syncleus.aethermud.game.Libraries.interfaces;
 
-import com.planet_ink.game.Common.interfaces.Social;
-import com.planet_ink.game.MOBS.interfaces.MOB;
-import com.planet_ink.game.core.Resources;
-import com.planet_ink.game.core.interfaces.Environmental;
+import com.syncleus.aethermud.game.Common.interfaces.Social;
+import com.syncleus.aethermud.game.MOBS.interfaces.MOB;
+import com.syncleus.aethermud.game.core.Resources;
+import com.syncleus.aethermud.game.core.interfaces.Environmental;
 
 import java.io.IOException;
 import java.util.List;

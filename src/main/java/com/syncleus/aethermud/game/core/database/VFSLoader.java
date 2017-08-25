@@ -14,9 +14,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.core.database;
+package com.syncleus.aethermud.game.core.database;
 
-import com.planet_ink.game.core.*;
+import com.syncleus.aethermud.game.core.*;
 
 import java.sql.ResultSet;
 

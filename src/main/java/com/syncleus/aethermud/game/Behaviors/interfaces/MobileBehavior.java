@@ -14,11 +14,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Behaviors.interfaces;
+package com.syncleus.aethermud.game.Behaviors.interfaces;
 
 /**
  * A MobileBehavior is a Behavior causes a mob to move about
- * @see com.planet_ink.game.Behaviors.interfaces.Behavior
+ * @see com.syncleus.aethermud.game.Behaviors.interfaces.Behavior
  */
 public interface MobileBehavior extends Behavior {
     /**

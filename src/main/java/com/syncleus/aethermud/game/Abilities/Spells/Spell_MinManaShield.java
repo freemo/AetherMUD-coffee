@@ -14,9 +14,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Abilities.Spells;
+package com.syncleus.aethermud.game.Abilities.Spells;
 
-import com.planet_ink.game.core.CMLib;
+import com.syncleus.aethermud.game.core.CMLib;
 
 
 public class Spell_MinManaShield extends Spell_ManaShield {

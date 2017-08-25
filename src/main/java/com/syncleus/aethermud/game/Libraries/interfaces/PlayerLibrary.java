@@ -14,15 +14,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Libraries.interfaces;
+package com.syncleus.aethermud.game.Libraries.interfaces;
 
-import com.planet_ink.game.Common.interfaces.AccountStats;
-import com.planet_ink.game.Common.interfaces.PlayerAccount;
-import com.planet_ink.game.Common.interfaces.TimeClock;
-import com.planet_ink.game.Locales.interfaces.Room;
-import com.planet_ink.game.MOBS.interfaces.MOB;
-import com.planet_ink.game.core.CMLib;
-import com.planet_ink.game.core.collections.Pair;
+import com.syncleus.aethermud.game.Common.interfaces.AccountStats;
+import com.syncleus.aethermud.game.Common.interfaces.PlayerAccount;
+import com.syncleus.aethermud.game.Common.interfaces.TimeClock;
+import com.syncleus.aethermud.game.Locales.interfaces.Room;
+import com.syncleus.aethermud.game.MOBS.interfaces.MOB;
+import com.syncleus.aethermud.game.core.CMLib;
+import com.syncleus.aethermud.game.core.collections.Pair;
 
 import java.util.Enumeration;
 import java.util.List;

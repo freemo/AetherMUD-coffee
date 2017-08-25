@@ -14,9 +14,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Libraries.interfaces;
+package com.syncleus.aethermud.game.Libraries.interfaces;
 
-import com.planet_ink.game.MOBS.interfaces.MOB;
+import com.syncleus.aethermud.game.MOBS.interfaces.MOB;
 
 import java.util.Enumeration;
 
@@ -25,7 +25,7 @@ import java.util.Enumeration;
  * titles that can, according to a mask, be automatically added and
  * removed from players as they meet, and stop meeting, various
  * criterium.
- * @see com.planet_ink.game.Libraries.interfaces.AutoTitlesLibrary#reloadAutoTitles()
+ * @see com.syncleus.aethermud.game.Libraries.interfaces.AutoTitlesLibrary#reloadAutoTitles()
  */
 public interface AutoTitlesLibrary extends CMLibrary {
 
@@ -41,7 +41,7 @@ public interface AutoTitlesLibrary extends CMLibrary {
      * Returns the string mask attributed to a particular
      * title string.  The mask is as described by the masking
      * library.
-     * @see com.planet_ink.game.Libraries.interfaces.MaskingLibrary
+     * @see com.syncleus.aethermud.game.Libraries.interfaces.MaskingLibrary
      * @param title the title itself
      * @return the zapper mask to determine who should get this title
      */

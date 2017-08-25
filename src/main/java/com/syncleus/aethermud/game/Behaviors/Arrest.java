@@ -14,32 +14,32 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Behaviors;
+package com.syncleus.aethermud.game.Behaviors;
 
-import com.planet_ink.game.Abilities.interfaces.Ability;
-import com.planet_ink.game.Abilities.interfaces.DiseaseAffect;
-import com.planet_ink.game.Areas.interfaces.Area;
-import com.planet_ink.game.Behaviors.interfaces.Behavior;
-import com.planet_ink.game.Behaviors.interfaces.LegalBehavior;
-import com.planet_ink.game.Behaviors.interfaces.MobileBehavior;
-import com.planet_ink.game.Common.interfaces.*;
-import com.planet_ink.game.Items.interfaces.Item;
-import com.planet_ink.game.Items.interfaces.RawMaterial;
-import com.planet_ink.game.Items.interfaces.Weapon;
-import com.planet_ink.game.Items.interfaces.Wearable;
-import com.planet_ink.game.Libraries.interfaces.ChannelsLibrary;
-import com.planet_ink.game.Libraries.interfaces.DatabaseEngine;
-import com.planet_ink.game.Libraries.interfaces.DatabaseEngine.PlayerData;
-import com.planet_ink.game.Locales.interfaces.Room;
-import com.planet_ink.game.MOBS.interfaces.Deity;
-import com.planet_ink.game.MOBS.interfaces.MOB;
-import com.planet_ink.game.core.*;
-import com.planet_ink.game.core.CMSecurity.DbgFlag;
-import com.planet_ink.game.core.collections.Pair;
-import com.planet_ink.game.core.collections.XVector;
-import com.planet_ink.game.core.interfaces.Environmental;
-import com.planet_ink.game.core.interfaces.MUDCmdProcessor;
-import com.planet_ink.game.core.interfaces.Tickable;
+import com.syncleus.aethermud.game.Abilities.interfaces.Ability;
+import com.syncleus.aethermud.game.Abilities.interfaces.DiseaseAffect;
+import com.syncleus.aethermud.game.Areas.interfaces.Area;
+import com.syncleus.aethermud.game.Behaviors.interfaces.Behavior;
+import com.syncleus.aethermud.game.Behaviors.interfaces.LegalBehavior;
+import com.syncleus.aethermud.game.Behaviors.interfaces.MobileBehavior;
+import com.syncleus.aethermud.game.Common.interfaces.*;
+import com.syncleus.aethermud.game.Items.interfaces.Item;
+import com.syncleus.aethermud.game.Items.interfaces.RawMaterial;
+import com.syncleus.aethermud.game.Items.interfaces.Weapon;
+import com.syncleus.aethermud.game.Items.interfaces.Wearable;
+import com.syncleus.aethermud.game.Libraries.interfaces.ChannelsLibrary;
+import com.syncleus.aethermud.game.Libraries.interfaces.DatabaseEngine;
+import com.syncleus.aethermud.game.Libraries.interfaces.DatabaseEngine.PlayerData;
+import com.syncleus.aethermud.game.Locales.interfaces.Room;
+import com.syncleus.aethermud.game.MOBS.interfaces.Deity;
+import com.syncleus.aethermud.game.MOBS.interfaces.MOB;
+import com.syncleus.aethermud.game.core.*;
+import com.syncleus.aethermud.game.core.CMSecurity.DbgFlag;
+import com.syncleus.aethermud.game.core.collections.Pair;
+import com.syncleus.aethermud.game.core.collections.XVector;
+import com.syncleus.aethermud.game.core.interfaces.Environmental;
+import com.syncleus.aethermud.game.core.interfaces.MUDCmdProcessor;
+import com.syncleus.aethermud.game.core.interfaces.Tickable;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;

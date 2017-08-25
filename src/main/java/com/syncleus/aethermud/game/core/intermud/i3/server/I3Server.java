@@ -14,13 +14,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.core.intermud.i3.server;
+package com.syncleus.aethermud.game.core.intermud.i3.server;
 
-import com.planet_ink.game.core.Log;
-import com.planet_ink.game.core.intermud.i3.packets.ImudServices;
-import com.planet_ink.game.core.intermud.i3.packets.ShutdownPacket;
+import com.syncleus.aethermud.game.core.Log;
+import com.syncleus.aethermud.game.core.intermud.i3.packets.ImudServices;
+import com.syncleus.aethermud.game.core.intermud.i3.packets.ShutdownPacket;
 /*
- * com.planet_ink.game.core.intermud.i3.server.Server
+ * com.syncleus.aethermud.game.core.intermud.i3.server.Server
  * Copyright (c) 1996 George Reese
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.

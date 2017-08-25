@@ -14,24 +14,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.WebMacros;
+package com.syncleus.aethermud.game.WebMacros;
 
-import com.planet_ink.game.WebMacros.interfaces.WebMacro;
-import com.planet_ink.game.core.CMClass;
-import com.planet_ink.game.core.CMLib;
-import com.planet_ink.game.core.collections.Pair;
-import com.planet_ink.game.core.collections.PairSVector;
-import com.planet_ink.game.core.collections.XHashtable;
-import com.planet_ink.game.core.exceptions.HTTPServerException;
-import com.planet_ink.game.core.interfaces.CMObject;
-import com.planet_ink.web.http.HTTPException;
-import com.planet_ink.web.http.HTTPMethod;
-import com.planet_ink.web.http.MultiPartData;
-import com.planet_ink.web.interfaces.DataBuffers;
-import com.planet_ink.web.interfaces.HTTPRequest;
-import com.planet_ink.web.interfaces.HTTPResponse;
-import com.planet_ink.web.util.CWConfig;
-import com.planet_ink.web.util.CWThread;
+import com.syncleus.aethermud.game.WebMacros.interfaces.WebMacro;
+import com.syncleus.aethermud.game.core.CMClass;
+import com.syncleus.aethermud.game.core.CMLib;
+import com.syncleus.aethermud.game.core.collections.Pair;
+import com.syncleus.aethermud.game.core.collections.PairSVector;
+import com.syncleus.aethermud.game.core.collections.XHashtable;
+import com.syncleus.aethermud.game.core.exceptions.HTTPServerException;
+import com.syncleus.aethermud.game.core.interfaces.CMObject;
+import com.syncleus.aethermud.web.http.HTTPException;
+import com.syncleus.aethermud.web.http.HTTPMethod;
+import com.syncleus.aethermud.web.http.MultiPartData;
+import com.syncleus.aethermud.web.interfaces.DataBuffers;
+import com.syncleus.aethermud.web.interfaces.HTTPRequest;
+import com.syncleus.aethermud.web.interfaces.HTTPResponse;
+import com.syncleus.aethermud.web.util.CWConfig;
+import com.syncleus.aethermud.web.util.CWThread;
 
 import java.io.File;
 import java.io.InputStream;

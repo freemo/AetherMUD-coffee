@@ -14,30 +14,30 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Libraries;
+package com.syncleus.aethermud.game.Libraries;
 
-import com.planet_ink.game.Abilities.interfaces.Ability;
-import com.planet_ink.game.Commands.interfaces.Command;
-import com.planet_ink.game.Common.interfaces.CharState;
-import com.planet_ink.game.Common.interfaces.Clan;
-import com.planet_ink.game.Common.interfaces.Faction;
-import com.planet_ink.game.Common.interfaces.Session;
-import com.planet_ink.game.Exits.interfaces.Exit;
-import com.planet_ink.game.Items.interfaces.*;
-import com.planet_ink.game.Libraries.interfaces.ChannelsLibrary;
-import com.planet_ink.game.Libraries.interfaces.ProtocolLibrary;
-import com.planet_ink.game.Locales.interfaces.Room;
-import com.planet_ink.game.MOBS.interfaces.MOB;
-import com.planet_ink.game.Races.interfaces.Race;
-import com.planet_ink.game.core.*;
-import com.planet_ink.game.core.CMProps.Str;
-import com.planet_ink.game.core.CMSecurity.DbgFlag;
-import com.planet_ink.game.core.MiniJSON.MJSONException;
-import com.planet_ink.game.core.collections.Pair;
-import com.planet_ink.game.core.interfaces.Drink;
-import com.planet_ink.game.core.interfaces.Environmental;
-import com.planet_ink.game.core.interfaces.LandTitle;
-import com.planet_ink.game.core.interfaces.Rideable;
+import com.syncleus.aethermud.game.Abilities.interfaces.Ability;
+import com.syncleus.aethermud.game.Commands.interfaces.Command;
+import com.syncleus.aethermud.game.Common.interfaces.CharState;
+import com.syncleus.aethermud.game.Common.interfaces.Clan;
+import com.syncleus.aethermud.game.Common.interfaces.Faction;
+import com.syncleus.aethermud.game.Common.interfaces.Session;
+import com.syncleus.aethermud.game.Exits.interfaces.Exit;
+import com.syncleus.aethermud.game.Items.interfaces.*;
+import com.syncleus.aethermud.game.Libraries.interfaces.ChannelsLibrary;
+import com.syncleus.aethermud.game.Libraries.interfaces.ProtocolLibrary;
+import com.syncleus.aethermud.game.Locales.interfaces.Room;
+import com.syncleus.aethermud.game.MOBS.interfaces.MOB;
+import com.syncleus.aethermud.game.Races.interfaces.Race;
+import com.syncleus.aethermud.game.core.*;
+import com.syncleus.aethermud.game.core.CMProps.Str;
+import com.syncleus.aethermud.game.core.CMSecurity.DbgFlag;
+import com.syncleus.aethermud.game.core.MiniJSON.MJSONException;
+import com.syncleus.aethermud.game.core.collections.Pair;
+import com.syncleus.aethermud.game.core.interfaces.Drink;
+import com.syncleus.aethermud.game.core.interfaces.Environmental;
+import com.syncleus.aethermud.game.core.interfaces.LandTitle;
+import com.syncleus.aethermud.game.core.interfaces.Rideable;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -321,7 +321,7 @@ public class CMProtocols extends StdLibrary implements ProtocolLibrary {
                 if (mcpPackages == null) {
                     mcpPackages = new Hashtable<String, MCPPackage>();
                     List<MCPPackage> pkgs = new ArrayList<MCPPackage>();
-                    if (CMClass.loadObjectListToObj(pkgs, "src/man/java/com/planet_ink/game/Libraries/mcppkgs/", CMProps.instance().getStr("MCPPACKAGES"), "com.planet_ink.game.Libraries.interfaces.ProtocolLibrary$MCPPackage")) {
+                    if (CMClass.loadObjectListToObj(pkgs, "src/man/java/com/syncleus/aethermud/game/Libraries/mcppkgs/", CMProps.instance().getStr("MCPPACKAGES"), "com.syncleus.aethermud.game.Libraries.interfaces.ProtocolLibrary$MCPPackage")) {
                         for (MCPPackage pkg : pkgs) {
                             mcpPackages.put(pkg.packageName(), pkg);
                         }
@@ -597,7 +597,7 @@ public class CMProtocols extends StdLibrary implements ProtocolLibrary {
                 image = getHashedMXPImage(H, "DUST_" + V.get(0).ID().toUpperCase());
             if (image == null)
                 image = getHashedMXPImage(H, "DUST_*");
-        } else if (O instanceof com.planet_ink.game.Items.interfaces.RoomMap)
+        } else if (O instanceof com.syncleus.aethermud.game.Items.interfaces.RoomMap)
             image = getHashedMXPImage(H, "ITEM_MAP");
         else if (O instanceof MusicalInstrument) {
             image = getHashedMXPImage(H, "MUSINSTR_" + ((MusicalInstrument) O).getInstrumentTypeName());

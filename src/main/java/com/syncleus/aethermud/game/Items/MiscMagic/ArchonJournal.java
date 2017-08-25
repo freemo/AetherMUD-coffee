@@ -14,16 +14,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Items.MiscMagic;
+package com.syncleus.aethermud.game.Items.MiscMagic;
 
-import com.planet_ink.game.Common.interfaces.CMMsg;
-import com.planet_ink.game.Items.Basic.StdJournal;
-import com.planet_ink.game.Items.interfaces.ArchonOnly;
-import com.planet_ink.game.Items.interfaces.MiscMagic;
-import com.planet_ink.game.Items.interfaces.RawMaterial;
-import com.planet_ink.game.MOBS.interfaces.MOB;
-import com.planet_ink.game.core.CMSecurity;
-import com.planet_ink.game.core.interfaces.Environmental;
+import com.syncleus.aethermud.game.Common.interfaces.CMMsg;
+import com.syncleus.aethermud.game.Items.Basic.StdJournal;
+import com.syncleus.aethermud.game.Items.interfaces.ArchonOnly;
+import com.syncleus.aethermud.game.Items.interfaces.MiscMagic;
+import com.syncleus.aethermud.game.Items.interfaces.RawMaterial;
+import com.syncleus.aethermud.game.MOBS.interfaces.MOB;
+import com.syncleus.aethermud.game.core.CMSecurity;
+import com.syncleus.aethermud.game.core.interfaces.Environmental;
 
 
 public class ArchonJournal extends StdJournal implements ArchonOnly, MiscMagic {

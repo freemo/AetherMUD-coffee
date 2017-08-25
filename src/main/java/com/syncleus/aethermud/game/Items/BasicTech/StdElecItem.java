@@ -14,14 +14,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Items.BasicTech;
+package com.syncleus.aethermud.game.Items.BasicTech;
 
-import com.planet_ink.game.Common.interfaces.Manufacturer;
-import com.planet_ink.game.Items.Basic.StdItem;
-import com.planet_ink.game.Items.interfaces.Electronics;
-import com.planet_ink.game.Items.interfaces.RawMaterial;
-import com.planet_ink.game.core.CMLib;
-import com.planet_ink.game.core.CMath;
+import com.syncleus.aethermud.game.Common.interfaces.Manufacturer;
+import com.syncleus.aethermud.game.Items.Basic.StdItem;
+import com.syncleus.aethermud.game.Items.interfaces.Electronics;
+import com.syncleus.aethermud.game.Items.interfaces.RawMaterial;
+import com.syncleus.aethermud.game.core.CMLib;
+import com.syncleus.aethermud.game.core.CMath;
 
 /*
    Copyright 2004-2017 Bo Zimmerman

@@ -14,16 +14,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Common.interfaces;
+package com.syncleus.aethermud.game.Common.interfaces;
 
-import com.planet_ink.game.Abilities.interfaces.Ability;
-import com.planet_ink.game.Behaviors.interfaces.Behavior;
-import com.planet_ink.game.Libraries.interfaces.MaskingLibrary;
-import com.planet_ink.game.MOBS.interfaces.MOB;
-import com.planet_ink.game.core.interfaces.Contingent;
-import com.planet_ink.game.core.interfaces.MsgListener;
-import com.planet_ink.game.core.interfaces.StatsAffecting;
-import com.planet_ink.game.core.interfaces.Tickable;
+import com.syncleus.aethermud.game.Abilities.interfaces.Ability;
+import com.syncleus.aethermud.game.Behaviors.interfaces.Behavior;
+import com.syncleus.aethermud.game.Libraries.interfaces.MaskingLibrary;
+import com.syncleus.aethermud.game.MOBS.interfaces.MOB;
+import com.syncleus.aethermud.game.core.interfaces.Contingent;
+import com.syncleus.aethermud.game.core.interfaces.MsgListener;
+import com.syncleus.aethermud.game.core.interfaces.StatsAffecting;
+import com.syncleus.aethermud.game.core.interfaces.Tickable;
 
 import java.util.Enumeration;
 import java.util.List;
@@ -46,8 +46,8 @@ import java.util.List;
  * and adjust themselves relative to other factions. Subsets of the faction can
  * be given readable names for display to the user.
  *
- * @see com.planet_ink.game.MOBS.interfaces.MOB#fetchFaction(String)
- * @see com.planet_ink.game.MOBS.interfaces.MOB#addFaction(String, int)
+ * @see com.syncleus.aethermud.game.MOBS.interfaces.MOB#fetchFaction(String)
+ * @see com.syncleus.aethermud.game.MOBS.interfaces.MOB#addFaction(String, int)
  */
 public interface Faction extends CMCommon, MsgListener, Contingent {
     /** internal flag masks meaning to skip standard auto system, retrieved by {@link Faction#getInternalFlags()} */
@@ -111,8 +111,8 @@ public interface Faction extends CMCommon, MsgListener, Contingent {
 
     /**
      * Initializes a new faction with default values
-     * @see com.planet_ink.game.Common.interfaces.Faction#initializeFaction(StringBuffer, String)
-     * @see com.planet_ink.game.Common.interfaces.Faction#factionID()
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#initializeFaction(StringBuffer, String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#factionID()
      * @param aname the factionID (and default name)
      */
     public void initializeFaction(String aname);
@@ -120,9 +120,9 @@ public interface Faction extends CMCommon, MsgListener, Contingent {
     /**
      * Initializes a new faction from a faction.ini properties formatted document,
      * and a given new faction ID
-     * @see com.planet_ink.game.Common.interfaces.Faction#initializeFaction(String)
-     * @see com.planet_ink.game.Common.interfaces.Faction#factionID()
-     * @see com.planet_ink.game.Common.interfaces.Faction#getINIDef(String, String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#initializeFaction(String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#factionID()
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#getINIDef(String, String)
      * @param file the ini properties style document
      * @param fID the new factionID
      */
@@ -130,7 +130,7 @@ public interface Faction extends CMCommon, MsgListener, Contingent {
 
     /**
      * Returns the value of a given internal faction variable.
-     * @see com.planet_ink.game.Common.interfaces.Faction#TAG_NAMES
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#TAG_NAMES
      * @param tag the tag to get the value of
      * @return the value of the given tag
      */
@@ -138,9 +138,9 @@ public interface Faction extends CMCommon, MsgListener, Contingent {
 
     /**
      * Retrieves an entry for an ini properties definition document that describes this faction.
-     * @see com.planet_ink.game.Common.interfaces.Faction#getINIDef(String, String)
-     * @see com.planet_ink.game.Common.interfaces.Faction#initializeFaction(StringBuffer, String)
-     * @see com.planet_ink.game.Common.interfaces.Faction#TAG_NAMES
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#getINIDef(String, String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#initializeFaction(StringBuffer, String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#TAG_NAMES
      * @param tag the tag to retrieve a properties definition for
      * @param delimeter if the tag represents a list, this is the delimiter for entries.
      * @return the ini properties definition entry for the tag
@@ -153,7 +153,7 @@ public interface Faction extends CMCommon, MsgListener, Contingent {
      * and other information necessary to maintain a relationship between
      * the given mob and this faction.
      * Any parameters should be set on the affects or behaviors before returning them.
-     * @see com.planet_ink.game.Common.interfaces.Faction.FData
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FData
      * @param mob the mob to generate affects and behaviors for
      * @return a FactionData object with all the appropriate affects and behaviors
      */
@@ -165,7 +165,7 @@ public interface Faction extends CMCommon, MsgListener, Contingent {
      * and other information necessary to maintain a relationship between
      * the given mob and this faction.
      * Any parameters should be set on the affects or behaviors before returning them.
-     * @see com.planet_ink.game.Common.interfaces.Faction.FData
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FData
      * @param mob the mob to generate affects and behaviors for
      * @param data the old faction data object
      */
@@ -229,7 +229,7 @@ public interface Faction extends CMCommon, MsgListener, Contingent {
      * the CoffeeMud VFS path from the resources directory, of the properties ini
      * file that defines the faction.  The ID (and therefore the properties file location)
      * should not be changed once a faction is "deployed".
-     * @see com.planet_ink.game.Common.interfaces.Faction#setFactionID(String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#setFactionID(String)
      * @return the unique id of this faction
      */
     public String factionID();
@@ -239,14 +239,14 @@ public interface Faction extends CMCommon, MsgListener, Contingent {
      * the CoffeeMud VFS path from the resources directory, of the properties ini
      * file that defines the faction.  The ID (and therefore the properties file location)
      * should not be changed once a faction is "deployed".
-     * @see com.planet_ink.game.Common.interfaces.Faction#factionID()
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#factionID()
      * @param newStr the new unique id of this faction
      */
     public void setFactionID(String newStr);
 
     /**
      * The friendly, displayable name of this faction.
-     * @see com.planet_ink.game.Common.interfaces.Faction#setName(String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#setName(String)
      * @return the name of this faction
      */
     @Override
@@ -254,7 +254,7 @@ public interface Faction extends CMCommon, MsgListener, Contingent {
 
     /**
      * Sets the friendly, displayable name of this faction.
-     * @see com.planet_ink.game.Common.interfaces.Faction#name()
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#name()
      * @param newStr the new name of this faction
      */
     public void setName(String newStr);
@@ -264,7 +264,7 @@ public interface Faction extends CMCommon, MsgListener, Contingent {
      * that is displayed to users when they are given the choice
      * of a starting value to this faction.  Requires more than
      * one choice range be available.
-     * @see com.planet_ink.game.Common.interfaces.Faction#findChoices(MOB)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#findChoices(MOB)
      * @return the filename of the choice description file
      */
     public String choiceIntro();
@@ -274,7 +274,7 @@ public interface Faction extends CMCommon, MsgListener, Contingent {
      * that is displayed to users when they are given the choice
      * of a starting value to this faction.  Requires more than
      * one choice range be available.
-     * @see com.planet_ink.game.Common.interfaces.Faction#findChoices(MOB)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#findChoices(MOB)
      * @param newStr the new filename of the choice description file
      */
     public void setChoiceIntro(String newStr);
@@ -306,8 +306,8 @@ public interface Faction extends CMCommon, MsgListener, Contingent {
     /**
      * Returns the string code describing how a faction-holders experience
      * changes from killing another faction holder affect his own faction value.
-     * @see com.planet_ink.game.Common.interfaces.Faction#EXPAFFECT_NAMES
-     * @see com.planet_ink.game.Common.interfaces.Faction#EXPAFFECT_DESCS
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#EXPAFFECT_NAMES
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#EXPAFFECT_DESCS
      * @return the string code for xp changes to faction changes
      */
     public String experienceFlag();
@@ -315,8 +315,8 @@ public interface Faction extends CMCommon, MsgListener, Contingent {
     /**
      * Sets the string code describing how a faction-holders experience
      * changes from killing another faction holder affect his own faction value.
-     * @see com.planet_ink.game.Common.interfaces.Faction#EXPAFFECT_NAMES
-     * @see com.planet_ink.game.Common.interfaces.Faction#EXPAFFECT_DESCS
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#EXPAFFECT_NAMES
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#EXPAFFECT_DESCS
      * @param newStr the new string code for xp changes to faction changes
      */
     public void setExperienceFlag(String newStr);
@@ -374,9 +374,9 @@ public interface Faction extends CMCommon, MsgListener, Contingent {
      * a Faction Change Event applies a Faction Add command.
      * A default faction mask/value is defined as a number, along with an
      * optional Zapper mask describing to whom the value is applied.
-     * @see com.planet_ink.game.Common.interfaces.Faction#changeEventKeys()
-     * @see com.planet_ink.game.Common.interfaces.Faction#setDefaults(List)
-     * @see com.planet_ink.game.Libraries.interfaces.MaskingLibrary
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#changeEventKeys()
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#setDefaults(List)
+     * @see com.syncleus.aethermud.game.Libraries.interfaces.MaskingLibrary
      * @return the default faction mask/value list
      */
     public Enumeration<String> defaults();
@@ -387,7 +387,7 @@ public interface Faction extends CMCommon, MsgListener, Contingent {
      * Faction Add command. Returns Integer.MAX_VALUE if no default
      * value applies to this mob.
      * Each list item is a string.
-     * @see com.planet_ink.game.Common.interfaces.Faction#defaults()
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#defaults()
      * @param mob the mob to find a default faction value for
      * @return the faction value that applies, or Integer.MAX_VALUE
      */
@@ -399,9 +399,9 @@ public interface Faction extends CMCommon, MsgListener, Contingent {
      * A default faction mask/value is defined as a number, along with an
      * optional Zapper mask describing to whom the value is applied.
      * Each list item is a string.
-     * @see com.planet_ink.game.Common.interfaces.Faction#changeEventKeys()
-     * @see com.planet_ink.game.Libraries.interfaces.MaskingLibrary
-     * @see com.planet_ink.game.Common.interfaces.Faction#defaults()
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#changeEventKeys()
+     * @see com.syncleus.aethermud.game.Libraries.interfaces.MaskingLibrary
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#defaults()
      * @param v the new default faction mask/value list
      */
     public void setDefaults(List<String> v);
@@ -412,8 +412,8 @@ public interface Faction extends CMCommon, MsgListener, Contingent {
      * the first time. An automatic default faction mask/value is defined
      * as a number, along with an optional Zapper mask describing to whom
      * the value is applied. Each list item is a string.
-     * @see com.planet_ink.game.Libraries.interfaces.MaskingLibrary
-     * @see com.planet_ink.game.Common.interfaces.Faction#setAutoDefaults(List)
+     * @see com.syncleus.aethermud.game.Libraries.interfaces.MaskingLibrary
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#setAutoDefaults(List)
      * @return the automatic default faction mask/value list
      */
     public Enumeration<String> autoDefaults();
@@ -423,7 +423,7 @@ public interface Faction extends CMCommon, MsgListener, Contingent {
      * given mob.  This method is called when a mob is brought into the
      * world.  Returns Integer.MAX_VALUE if no default value applies
      * to this mob.
-     * @see com.planet_ink.game.Common.interfaces.Faction#defaults()
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#defaults()
      * @param mob the mob to find a default value of this faction for.
      * @return the value to give to the given mob, or Integer.MAX_VALUE
      */
@@ -435,22 +435,22 @@ public interface Faction extends CMCommon, MsgListener, Contingent {
      * the first time. An automatic default faction mask/value is defined
      * as a number, along with an optional Zapper mask describing to whom
      * the value is applied. Each list item is a string.
-     * @see com.planet_ink.game.Common.interfaces.Faction#defaults()
-     * @see com.planet_ink.game.Libraries.interfaces.MaskingLibrary
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#defaults()
+     * @see com.syncleus.aethermud.game.Libraries.interfaces.MaskingLibrary
      * @param v the new automatic default faction mask/value list
      */
     public void setAutoDefaults(List<String> v);
 
     /**
      * A modifier of the base amount of faction value change, namely 100.
-     * @see com.planet_ink.game.Common.interfaces.Faction#setRateModifier(double)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#setRateModifier(double)
      * @return a modifier of the base amount of faction change
      */
     public double rateModifier();
 
     /**
      * Sets the modifier of the base amount of faction value change, namely 100.
-     * @see com.planet_ink.game.Common.interfaces.Faction#rateModifier()
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#rateModifier()
      * @param d the new modifier of the base amount of faction value change
      */
     public void setRateModifier(double d);
@@ -461,8 +461,8 @@ public interface Faction extends CMCommon, MsgListener, Contingent {
      * An faction mask/value is defined as a number, along with an
      * optional Zapper mask describing to whom the value is applied.
      * Each list item is a string.
-     * @see com.planet_ink.game.Libraries.interfaces.MaskingLibrary
-     * @see com.planet_ink.game.Common.interfaces.Faction#setChoices(List)
+     * @see com.syncleus.aethermud.game.Libraries.interfaces.MaskingLibrary
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#setChoices(List)
      * @return the choosable faction mask/value list
      */
     public Enumeration<String> choices();
@@ -471,7 +471,7 @@ public interface Faction extends CMCommon, MsgListener, Contingent {
      * Returns a vector of Integer objects representing the choosable
      * faction values available to the given mob when they create
      * a new character.
-     * @see com.planet_ink.game.Common.interfaces.Faction#choices()
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#choices()
      * @param mob the player mob to evaluate
      * @return a vector of integer faction values that applies
      */
@@ -483,8 +483,8 @@ public interface Faction extends CMCommon, MsgListener, Contingent {
      * An faction mask/value is defined as a number, along with an
      * optional Zapper mask describing to whom the value is applied.
      * Each list item is a string.
-     * @see com.planet_ink.game.Libraries.interfaces.MaskingLibrary
-     * @see com.planet_ink.game.Common.interfaces.Faction#choices()
+     * @see com.syncleus.aethermud.game.Libraries.interfaces.MaskingLibrary
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#choices()
      * @param v the list of choosable faction mask/values
      */
     public void setChoices(List<String> v);
@@ -492,9 +492,9 @@ public interface Faction extends CMCommon, MsgListener, Contingent {
     /**
      * Returns an enumeration of all available Faction.FactionRange objects,
      * representing the entire score of available values valid for this faction.
-     * @see com.planet_ink.game.Common.interfaces.Faction#addRange(String)
-     * @see com.planet_ink.game.Common.interfaces.Faction#delRange(com.planet_ink.game.Common.interfaces.Faction.FRange)
-     * @see com.planet_ink.game.Common.interfaces.Faction.FRange
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#addRange(String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#delRange(com.syncleus.aethermud.game.Common.interfaces.Faction.FRange)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FRange
      * @return an enumeration of all available ranges
      */
     public Enumeration<Faction.FRange> ranges();
@@ -502,8 +502,8 @@ public interface Faction extends CMCommon, MsgListener, Contingent {
     /**
      * Returns the Faction.FactionRange object that applies to the given faction
      * value.
-     * @see com.planet_ink.game.Common.interfaces.Faction.FRange
-     * @see com.planet_ink.game.Common.interfaces.Faction#ranges()
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FRange
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#ranges()
      * @param faction the value to find a matching range object for
      * @return the range object that matches the given faction value
      */
@@ -512,7 +512,7 @@ public interface Faction extends CMCommon, MsgListener, Contingent {
     /**
      * Returns the name of the Faction.FactionRange object that applies to
      * the given faction value.
-     * @see com.planet_ink.game.Common.interfaces.Faction#ranges()
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#ranges()
      * @param faction the value to find a matching range object for
      * @return the name of the given faction object
      */
@@ -522,8 +522,8 @@ public interface Faction extends CMCommon, MsgListener, Contingent {
      * Adds a new Faction.FactionRange object to this faction using an encoded key.
      * The key is encoded as semicolon separated values of low, high, name, code name,
      * and alignment flag.
-     * @see com.planet_ink.game.Common.interfaces.Faction.FRange
-     * @see com.planet_ink.game.Common.interfaces.Faction#ranges()
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FRange
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#ranges()
      * @param key the encoded values for the new faction range
      * @return the faction range object created and added.
      */
@@ -531,8 +531,8 @@ public interface Faction extends CMCommon, MsgListener, Contingent {
 
     /**
      * Removes the given FactionRange object from the faction.
-     * @see com.planet_ink.game.Common.interfaces.Faction.FRange
-     * @see com.planet_ink.game.Common.interfaces.Faction#ranges()
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FRange
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#ranges()
      * @param FR the faction range object to remove
      * @return whether a removal was necessary
      */
@@ -541,8 +541,8 @@ public interface Faction extends CMCommon, MsgListener, Contingent {
     /**
      * Returns the Faction.FactionRange object that applies to
      * the given faction range code name.
-     * @see com.planet_ink.game.Common.interfaces.Faction#ranges()
-     * @see com.planet_ink.game.Common.interfaces.Faction.FRange#codeName()
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#ranges()
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FRange#codeName()
      * @param codeName the code name to find a matching range object for
      * @return the correct faction range object, or null
      */
@@ -551,21 +551,21 @@ public interface Faction extends CMCommon, MsgListener, Contingent {
     /**
      * Returns an enumeration of change event keys, which are the code names of
      * the triggers that cause faction values to change automatically.
-     * @see com.planet_ink.game.Common.interfaces.Faction.FactionChangeEvent
-     * @see com.planet_ink.game.Common.interfaces.Faction#createChangeEvent(String eventID)
-     * @see com.planet_ink.game.Common.interfaces.Faction#delChangeEvent(Faction.FactionChangeEvent event)
-     * @see com.planet_ink.game.Common.interfaces.Faction#ALL_CHANGE_EVENT_TYPES()
-     * @see com.planet_ink.game.Common.interfaces.Faction#executeChange(MOB, MOB, com.planet_ink.game.Common.interfaces.Faction.FactionChangeEvent)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FactionChangeEvent
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#createChangeEvent(String eventID)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#delChangeEvent(Faction.FactionChangeEvent event)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#ALL_CHANGE_EVENT_TYPES()
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#executeChange(MOB, MOB, com.syncleus.aethermud.game.Common.interfaces.Faction.FactionChangeEvent)
      * @return an enumeration of the event keys (triggers)
      */
     public Enumeration<String> changeEventKeys();
 
     /**
      * Returns a FactionChangeEvent that applies when the given Ability is used
-     * @see com.planet_ink.game.Common.interfaces.Faction.FactionChangeEvent
-     * @see com.planet_ink.game.Common.interfaces.Faction#changeEventKeys()
-     * @see com.planet_ink.game.Common.interfaces.Faction#executeChange(MOB, MOB, com.planet_ink.game.Common.interfaces.Faction.FactionChangeEvent)
-     * @see com.planet_ink.game.Common.interfaces.Faction#ALL_CHANGE_EVENT_TYPES()
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FactionChangeEvent
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#changeEventKeys()
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#executeChange(MOB, MOB, com.syncleus.aethermud.game.Common.interfaces.Faction.FactionChangeEvent)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#ALL_CHANGE_EVENT_TYPES()
      * @param key the Ability to find a change event for.
      * @return the FactionChangeEvent that applies, or null.
      */
@@ -574,11 +574,11 @@ public interface Faction extends CMCommon, MsgListener, Contingent {
     /**
      * Returns a FactionChangeEvent that applies when the given event name (a trigger
      * code) occurs in the game.
-     * @see com.planet_ink.game.Common.interfaces.Faction.FactionChangeEvent
-     * @see com.planet_ink.game.Common.interfaces.Faction#changeEventKeys()
-     * @see com.planet_ink.game.Common.interfaces.Faction.FactionChangeEvent#MISC_TRIGGERS
-     * @see com.planet_ink.game.Common.interfaces.Faction#executeChange(MOB, MOB, com.planet_ink.game.Common.interfaces.Faction.FactionChangeEvent)
-     * @see com.planet_ink.game.Common.interfaces.Faction#ALL_CHANGE_EVENT_TYPES()
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FactionChangeEvent
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#changeEventKeys()
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FactionChangeEvent#MISC_TRIGGERS
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#executeChange(MOB, MOB, com.syncleus.aethermud.game.Common.interfaces.Faction.FactionChangeEvent)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#ALL_CHANGE_EVENT_TYPES()
      * @param key the code name of the event that occurred
      * @return the FactionChangeEvent triggered by that event
      */
@@ -590,10 +590,10 @@ public interface Faction extends CMCommon, MsgListener, Contingent {
      * trigger code (an ability name, event code name), or a fully encoded string
      * which is a semicolon delimited field consisting of event (trigger) id, direction
      * code, and amount
-     * @see com.planet_ink.game.Common.interfaces.Faction.FactionChangeEvent
-     * @see com.planet_ink.game.Common.interfaces.Faction#changeEventKeys()
-     * @see com.planet_ink.game.Common.interfaces.Faction.FactionChangeEvent#MISC_TRIGGERS
-     * @see com.planet_ink.game.Common.interfaces.Faction#ALL_CHANGE_EVENT_TYPES()
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FactionChangeEvent
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#changeEventKeys()
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FactionChangeEvent#MISC_TRIGGERS
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#ALL_CHANGE_EVENT_TYPES()
      * @param key the field used to create the new FactionChangeEvent
      * @return the FactionChangeEvent object created and added to this faction, or null
      */
@@ -601,10 +601,10 @@ public interface Faction extends CMCommon, MsgListener, Contingent {
 
     /**
      * Removes a FactionChangeEvent of the given event (trigger) id.
-     * @see com.planet_ink.game.Common.interfaces.Faction.FactionChangeEvent
-     * @see com.planet_ink.game.Common.interfaces.Faction#changeEventKeys()
-     * @see com.planet_ink.game.Common.interfaces.Faction.FactionChangeEvent#MISC_TRIGGERS
-     * @see com.planet_ink.game.Common.interfaces.Faction#ALL_CHANGE_EVENT_TYPES()
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FactionChangeEvent
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#changeEventKeys()
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FactionChangeEvent#MISC_TRIGGERS
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#ALL_CHANGE_EVENT_TYPES()
      * @param event the event object to remove from the list of change events
      * @return whether the event id was found to remove
      */
@@ -612,19 +612,19 @@ public interface Faction extends CMCommon, MsgListener, Contingent {
 
     /**
      * Removes all FactionChangeEvents
-     * @see com.planet_ink.game.Common.interfaces.Faction.FactionChangeEvent
-     * @see com.planet_ink.game.Common.interfaces.Faction#changeEventKeys()
-     * @see com.planet_ink.game.Common.interfaces.Faction.FactionChangeEvent#MISC_TRIGGERS
-     * @see com.planet_ink.game.Common.interfaces.Faction#ALL_CHANGE_EVENT_TYPES()
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FactionChangeEvent
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#changeEventKeys()
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FactionChangeEvent#MISC_TRIGGERS
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#ALL_CHANGE_EVENT_TYPES()
      */
     public void clearChangeEvents();
 
     /**
      * Executes a Faction change event for the given event source and target, and the
      * applicable FactionChangeEvent event object for this faction
-     * @see com.planet_ink.game.Common.interfaces.Faction.FactionChangeEvent
-     * @see com.planet_ink.game.Common.interfaces.Faction#changeEventKeys()
-     * @see com.planet_ink.game.Common.interfaces.Faction#ALL_CHANGE_EVENT_TYPES()
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FactionChangeEvent
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#changeEventKeys()
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#ALL_CHANGE_EVENT_TYPES()
      * @param source the source of the event
      * @param target the target of the event
      * @param event the applicable event object for this faction
@@ -634,8 +634,8 @@ public interface Faction extends CMCommon, MsgListener, Contingent {
     /**
      * Computed completed at runtime, this method returns all possible valid FactionChangeEvent
      * event ids that can be used to define triggers.
-     * @see com.planet_ink.game.Common.interfaces.Faction.FactionChangeEvent
-     * @see com.planet_ink.game.Common.interfaces.Faction#changeEventKeys()
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FactionChangeEvent
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#changeEventKeys()
      * @return a list of all valid event trigger ids.
      */
     public String ALL_CHANGE_EVENT_TYPES();
@@ -646,17 +646,17 @@ public interface Faction extends CMCommon, MsgListener, Contingent {
      * mobs who match a given Zapper mask.  Each Object array consists of a factor
      * to apply on faction gains, a factor to apply on factor drops, and the zapper
      * mask to decide which mobs it applies to (or mob states).
-     * @see com.planet_ink.game.Common.interfaces.Faction#addFactor(double, double, String)
-     * @see com.planet_ink.game.Common.interfaces.Faction#delFactor(Faction.FZapFactor)
-     * @see com.planet_ink.game.Common.interfaces.Faction#findFactor(MOB, boolean)
-     * @see com.planet_ink.game.Libraries.interfaces.MaskingLibrary
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#addFactor(double, double, String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#delFactor(Faction.FZapFactor)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#findFactor(MOB, boolean)
+     * @see com.syncleus.aethermud.game.Libraries.interfaces.MaskingLibrary
      * @return the enumeration of change factor object arrays
      */
     public Enumeration<Faction.FZapFactor> factors();
 
     /**
      * Removes the given change factor from this faction.
-     * @see com.planet_ink.game.Common.interfaces.Faction#factors()
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#factors()
      * @param f the factor to remove
      * @return whether the given factor was found to remove
      */
@@ -664,7 +664,7 @@ public interface Faction extends CMCommon, MsgListener, Contingent {
 
     /**
      * Returns the given enumerated change factor
-     * @see com.planet_ink.game.Common.interfaces.Faction#factors()
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#factors()
      * @param x which factor (0-number) to return
      * @return the given factor, or null.
      */
@@ -675,8 +675,8 @@ public interface Faction extends CMCommon, MsgListener, Contingent {
      * dependent multiplier by a change in faction.  It consists of a Zapper
      * mask to determine whether the factor applies to the given mob/player
      * state, and a factor to apply on gains in faction or losses in faction.
-     * @see com.planet_ink.game.Common.interfaces.Faction#factors()
-     * @see com.planet_ink.game.Libraries.interfaces.MaskingLibrary
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#factors()
+     * @see com.syncleus.aethermud.game.Libraries.interfaces.MaskingLibrary
      * @param gain the factor to apply on gains in faction
      * @param loss the factor to apply on losses of faction
      * @param mask the zapper mask to use to determine if this factor applies to a mob
@@ -687,8 +687,8 @@ public interface Faction extends CMCommon, MsgListener, Contingent {
     /**
      * Returns the applicable change factor for the given mob, and the
      * whether the faction change was a gain or loss (not a gain).
-     * @see com.planet_ink.game.Common.interfaces.Faction#factors()
-     * @see com.planet_ink.game.Libraries.interfaces.MaskingLibrary
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#factors()
+     * @see com.syncleus.aethermud.game.Libraries.interfaces.MaskingLibrary
      * @param mob the mob to compare against the zapper masks of the various factors
      * @param gain return the gain factor if true, or the loss factor if false
      * @return the factor value that applies, or 1.0 (meaning no change).
@@ -701,10 +701,10 @@ public interface Faction extends CMCommon, MsgListener, Contingent {
      * factor is a number multiplied by the change in this faction to determine
      * the amount that another faction on the same mob is changed by.  The factor
      * can be positive or negative to cause the other faction to rise or fall.
-     * @see com.planet_ink.game.Common.interfaces.Faction#factionID()
-     * @see com.planet_ink.game.Common.interfaces.Faction#addRelation(String, double)
-     * @see com.planet_ink.game.Common.interfaces.Faction#delRelation(String)
-     * @see com.planet_ink.game.Common.interfaces.Faction#getRelation(String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#factionID()
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#addRelation(String, double)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#delRelation(String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#getRelation(String)
      * @return an enumeration of faction ids
      */
     public Enumeration<String> relationFactions();
@@ -712,8 +712,8 @@ public interface Faction extends CMCommon, MsgListener, Contingent {
     /**
      * Removes the give faction relation from this faction.  Requires a faction id
      * of another faction.
-     * @see com.planet_ink.game.Common.interfaces.Faction#factionID()
-     * @see com.planet_ink.game.Common.interfaces.Faction#relationFactions()
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#factionID()
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#relationFactions()
      * @param factionID the faction id to remove
      * @return whether the faction id was found and removed
      */
@@ -725,8 +725,8 @@ public interface Faction extends CMCommon, MsgListener, Contingent {
      * by thge change in this faction to determine the amount the given faction id
      * faction is changed by. The relation factor can be positive or negative to cause
      * the faction id faction to rise or fall.
-     * @see com.planet_ink.game.Common.interfaces.Faction#factionID()
-     * @see com.planet_ink.game.Common.interfaces.Faction#relationFactions()
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#factionID()
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#relationFactions()
      * @param factionID the faction id of the other faction
      * @param relation the relation factor to use as a multiplier
      * @return whether the new faction id was successfully added
@@ -736,9 +736,9 @@ public interface Faction extends CMCommon, MsgListener, Contingent {
     /**
      * Returns the relation factor of the given faction id.  See addRelation for
      * more information.
-     * @see com.planet_ink.game.Common.interfaces.Faction#factionID()
-     * @see com.planet_ink.game.Common.interfaces.Faction#relationFactions()
-     * @see com.planet_ink.game.Common.interfaces.Faction#addRelation(String, double)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#factionID()
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#relationFactions()
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#addRelation(String, double)
      * @param factionID the other factions faction id
      * @return the factor to multiply a change in the other faction by
      */
@@ -747,11 +747,11 @@ public interface Faction extends CMCommon, MsgListener, Contingent {
     /**
      * Returns an enumeration of Abilities or Behavior IDs that are
      * automatically but conditionally added to mobs (not players) with this faction.
-     * @see com.planet_ink.game.Abilities.interfaces.Ability
-     * @see com.planet_ink.game.Behaviors.interfaces.Behavior
-     * @see com.planet_ink.game.Common.interfaces.Faction#addAffectBehav(String, String, String)
-     * @see com.planet_ink.game.Common.interfaces.Faction#delAffectBehav(String)
-     * @see com.planet_ink.game.Common.interfaces.Faction#getAffectBehav(String)
+     * @see com.syncleus.aethermud.game.Abilities.interfaces.Ability
+     * @see com.syncleus.aethermud.game.Behaviors.interfaces.Behavior
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#addAffectBehav(String, String, String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#delAffectBehav(String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#getAffectBehav(String)
      * @return an enumeration of Abilities or Behavior ID
      */
     public Enumeration<String> affectsBehavs();
@@ -759,9 +759,9 @@ public interface Faction extends CMCommon, MsgListener, Contingent {
     /**
      * Removes the given ability or behavior from this Faction.  It will require the
      * mob be reset or rejuved in order for this to take affect.
-     * @see com.planet_ink.game.Abilities.interfaces.Ability
-     * @see com.planet_ink.game.Behaviors.interfaces.Behavior
-     * @see com.planet_ink.game.Common.interfaces.Faction#affectsBehavs()
+     * @see com.syncleus.aethermud.game.Abilities.interfaces.Ability
+     * @see com.syncleus.aethermud.game.Behaviors.interfaces.Behavior
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#affectsBehavs()
      * @param ID the Abilities or Behavior ID to remove
      * @return whether the Abilities or Behavior ID was found and removed
      */
@@ -774,10 +774,10 @@ public interface Faction extends CMCommon, MsgListener, Contingent {
      * a simple mask to further narrow what kind of mobs receive the
      * given Ability or Behavior when first receiving this Faction.  It
      * will require the mob be reset or rejuved in order for this to take affect.
-     * @see com.planet_ink.game.Abilities.interfaces.Ability
-     * @see com.planet_ink.game.Behaviors.interfaces.Behavior
-     * @see com.planet_ink.game.Common.interfaces.Faction#affectsBehavs()
-     * @see com.planet_ink.game.Common.interfaces.Faction#delAffectBehav(String)
+     * @see com.syncleus.aethermud.game.Abilities.interfaces.Ability
+     * @see com.syncleus.aethermud.game.Behaviors.interfaces.Behavior
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#affectsBehavs()
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#delAffectBehav(String)
      * @param ID the Abilities or Behavior ID to add
      * @param parms the parameters for the new affect or behavior
      * @param gainMask the zapper mask to check to see who qualifies
@@ -788,10 +788,10 @@ public interface Faction extends CMCommon, MsgListener, Contingent {
     /**
      * Returns a string array containing the parms at index 0, and the gainMask at 1.
      * See addAffectBehav for more information.
-     * @see com.planet_ink.game.Abilities.interfaces.Ability
-     * @see com.planet_ink.game.Behaviors.interfaces.Behavior
-     * @see com.planet_ink.game.Common.interfaces.Faction#affectsBehavs()
-     * @see com.planet_ink.game.Common.interfaces.Faction#addAffectBehav(String, String, String)
+     * @see com.syncleus.aethermud.game.Abilities.interfaces.Ability
+     * @see com.syncleus.aethermud.game.Behaviors.interfaces.Behavior
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#affectsBehavs()
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#addAffectBehav(String, String, String)
      * @param ID the Abilities or Behavior ID
      * @return a string array containing the parms at index 0, and the gainMask at 1
      */
@@ -801,8 +801,8 @@ public interface Faction extends CMCommon, MsgListener, Contingent {
      * Returns an enumeration of Faction.FactionReaction items associated
      * with this faction.  These are automatically added to mobs in the presence
      * of one with this faction.
-     * @see com.planet_ink.game.Common.interfaces.Faction#addReaction(String, String, String, String)
-     * @see com.planet_ink.game.Common.interfaces.Faction#delReaction(Faction.FReactionItem)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#addReaction(String, String, String, String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#delReaction(Faction.FReactionItem)
      * @return an enumeration of Faction.FactionReaction items
      */
     public Enumeration<Faction.FReactionItem> reactions();
@@ -811,8 +811,8 @@ public interface Faction extends CMCommon, MsgListener, Contingent {
      * Returns an enumeration of Faction.FactionReaction items associated
      * with this faction and the given range code.  These are automatically
      * added to mobs in the presence of one with this faction.
-     * @see com.planet_ink.game.Common.interfaces.Faction#addReaction(String, String, String, String)
-     * @see com.planet_ink.game.Common.interfaces.Faction#delReaction(Faction.FReactionItem)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#addReaction(String, String, String, String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#delReaction(Faction.FReactionItem)
      * @param rangeCode the range code to filter by
      * @return an enumeration of Faction.FactionReaction items
      */
@@ -820,8 +820,8 @@ public interface Faction extends CMCommon, MsgListener, Contingent {
 
     /**
      * Removes the given reaction from this Faction.
-     * @see com.planet_ink.game.Common.interfaces.Faction#addReaction(String, String, String, String)
-     * @see com.planet_ink.game.Common.interfaces.Faction#reactions()
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#addReaction(String, String, String, String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#reactions()
      * @param item the faction reaction item to remove
      * @return whether the reaction was found and removed
      */
@@ -829,11 +829,11 @@ public interface Faction extends CMCommon, MsgListener, Contingent {
 
     /**
      * Adds a new reaction to this faction.
-     * @see com.planet_ink.game.Common.interfaces.Faction#delReaction(Faction.FReactionItem)
-     * @see com.planet_ink.game.Common.interfaces.Faction#reactions()
-     * @see com.planet_ink.game.Abilities.interfaces.Ability
-     * @see com.planet_ink.game.Commands.interfaces.Command
-     * @see com.planet_ink.game.Behaviors.interfaces.Behavior
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#delReaction(Faction.FReactionItem)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#reactions()
+     * @see com.syncleus.aethermud.game.Abilities.interfaces.Ability
+     * @see com.syncleus.aethermud.game.Commands.interfaces.Command
+     * @see com.syncleus.aethermud.game.Behaviors.interfaces.Behavior
      * @param range the faction range to use as a determinate
      * @param abilityID the ability/Behavior/or command ID
      * @param parms the parameters for the new affect or behavior or command
@@ -845,7 +845,7 @@ public interface Faction extends CMCommon, MsgListener, Contingent {
     /**
      * Set this faction to use the light-reaction system, which is easier on resources, but
      * not as powerful.
-     * @see com.planet_ink.game.Common.interfaces.Faction#useLightReactions()
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#useLightReactions()
      * @param truefalse true to use the light reaction system, false otherwise
      */
     public void setLightReactions(boolean truefalse);
@@ -853,7 +853,7 @@ public interface Faction extends CMCommon, MsgListener, Contingent {
     /**
      * Return whether this faction uses the light-reaction system, which is easier on resources, but
      * not as powerful.
-     * @see com.planet_ink.game.Common.interfaces.Faction#setLightReactions(boolean)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#setLightReactions(boolean)
      * @return true if this faction to use the light-reaction system
      */
     public boolean useLightReactions();
@@ -862,12 +862,12 @@ public interface Faction extends CMCommon, MsgListener, Contingent {
      * Returns an enumeration of Faction.FactionAbilityUsage objects for this Faction.
      * A FactionAbilityUsage object defines restrictions on the use of a mob or players
      * abilities based on values in this faction and other variables.
-     * @see com.planet_ink.game.Common.interfaces.Faction.FAbilityUsage
-     * @see com.planet_ink.game.Common.interfaces.Faction#addAbilityUsage(String)
-     * @see com.planet_ink.game.Common.interfaces.Faction#delAbilityUsage(com.planet_ink.game.Common.interfaces.Faction.FAbilityUsage)
-     * @see com.planet_ink.game.Common.interfaces.Faction#usageFactorRangeDescription(Ability)
-     * @see com.planet_ink.game.Common.interfaces.Faction#hasUsage(Ability)
-     * @see com.planet_ink.game.Common.interfaces.Faction#canUse(MOB, Ability)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FAbilityUsage
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#addAbilityUsage(String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#delAbilityUsage(com.syncleus.aethermud.game.Common.interfaces.Faction.FAbilityUsage)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#usageFactorRangeDescription(Ability)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#hasUsage(Ability)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#canUse(MOB, Ability)
      * @return an enumeration of Faction.FactionAbilityUsage objects for this Faction
      */
     public Enumeration<Faction.FAbilityUsage> abilityUsages();
@@ -876,9 +876,9 @@ public interface Faction extends CMCommon, MsgListener, Contingent {
      * Returns the list of faction ranges that apply based on Faction.FactionAbilityUsage
      * usage factor that apply to the given ability.  An empty string means it does not
      * apply.
-     * @see com.planet_ink.game.Common.interfaces.Faction.FAbilityUsage
-     * @see com.planet_ink.game.Common.interfaces.Faction#abilityUsages()
-     * @see com.planet_ink.game.Common.interfaces.Faction.FRange
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FAbilityUsage
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#abilityUsages()
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FRange
      * @param A the ability to find a usage factor for, and then use to find applicable ranges
      * @return the list of faction range names that apply to this ability from usage factors
      */
@@ -887,8 +887,8 @@ public interface Faction extends CMCommon, MsgListener, Contingent {
     /**
      * Returns whether any of the Faction.FactionAbilityUsage objects for this Faction
      * apply to the given ability.
-     * @see com.planet_ink.game.Common.interfaces.Faction.FAbilityUsage
-     * @see com.planet_ink.game.Common.interfaces.Faction#abilityUsages()
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FAbilityUsage
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#abilityUsages()
      * @param A the ability to find a usage criterium for
      * @return true if a criterium exists, false otherwise.
      */
@@ -898,8 +898,8 @@ public interface Faction extends CMCommon, MsgListener, Contingent {
      * Returns whether the given player/mob is prevented from using the given Ability
      * based on any of the Faction.FactionAbilityUsage (faction ability usage)
      * criterium defined for this Faction.
-     * @see com.planet_ink.game.Common.interfaces.Faction.FAbilityUsage
-     * @see com.planet_ink.game.Common.interfaces.Faction#abilityUsages()
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FAbilityUsage
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#abilityUsages()
      * @param mob the mob/player to evaluate
      * @param A the ability to evaluate
      * @return true if the player can use the ability, false otherwise
@@ -912,9 +912,9 @@ public interface Faction extends CMCommon, MsgListener, Contingent {
      * a definitional string that consists of one or more ability names, domains,
      * flags, etc followed by a semicolon and a minimum faction value, and another
      * semicolon and a maximum faction value.
-     * @see com.planet_ink.game.Common.interfaces.Faction.FAbilityUsage
-     * @see com.planet_ink.game.Common.interfaces.Faction#abilityUsages()
-     * @see com.planet_ink.game.Common.interfaces.Faction#delAbilityUsage(com.planet_ink.game.Common.interfaces.Faction.FAbilityUsage)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FAbilityUsage
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#abilityUsages()
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#delAbilityUsage(com.syncleus.aethermud.game.Common.interfaces.Faction.FAbilityUsage)
      * @param key the definitional key, or null
      * @return the new Faction.FactionAbilityUsage added
      */
@@ -922,8 +922,8 @@ public interface Faction extends CMCommon, MsgListener, Contingent {
 
     /**
      * Returns the enumerated Faction.FactionAbilityUsage object at the given index.
-     * @see com.planet_ink.game.Common.interfaces.Faction.FAbilityUsage
-     * @see com.planet_ink.game.Common.interfaces.Faction#abilityUsages()
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FAbilityUsage
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#abilityUsages()
      * @param x the index of the Faction.FactionAbilityUsage object to return
      * @return the Faction.FactionAbilityUsage object at that index
      */
@@ -931,9 +931,9 @@ public interface Faction extends CMCommon, MsgListener, Contingent {
 
     /**
      * Removes the given Faction.FactionAbilityUsage object from this faction
-     * @see com.planet_ink.game.Common.interfaces.Faction.FAbilityUsage
-     * @see com.planet_ink.game.Common.interfaces.Faction#abilityUsages()
-     * @see com.planet_ink.game.Common.interfaces.Faction#addAbilityUsage(String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FAbilityUsage
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#abilityUsages()
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#addAbilityUsage(String)
      * @param usage the Faction.FactionAbilityUsage object to remove
      * @return true if the object was found and removed
      */
@@ -941,14 +941,14 @@ public interface Faction extends CMCommon, MsgListener, Contingent {
 
     /**
      * Return the bitmap of internal-use flags for this faction.
-     * @see com.planet_ink.game.Common.interfaces.Faction#setInternalFlags(long)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#setInternalFlags(long)
      * @return the bitmap of internal-use flags for this faction.
      */
     public long getInternalFlags();
 
     /**
      * Set the bitmap of internal-use flags for this faction.
-     * @see com.planet_ink.game.Common.interfaces.Faction#getInternalFlags()
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#getInternalFlags()
      * @param bitmap the bitmap of internal-use flags for this faction.
      */
     public void setInternalFlags(long bitmap);
@@ -960,8 +960,8 @@ public interface Faction extends CMCommon, MsgListener, Contingent {
      * A Faction Change Event is an event that triggers an automatic change in
      * a mob or players faction value.  Triggers can be the use of abilities,
      * or certain specific coded events (such as killing another mob).
-     * @see com.planet_ink.game.Common.interfaces.Faction#ALL_CHANGE_EVENT_TYPES()
-     * @see com.planet_ink.game.Common.interfaces.Faction#executeChange(MOB, MOB, com.planet_ink.game.Common.interfaces.Faction.FactionChangeEvent)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#ALL_CHANGE_EVENT_TYPES()
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#executeChange(MOB, MOB, com.syncleus.aethermud.game.Common.interfaces.Faction.FactionChangeEvent)
      *
      * @author Bo Zimmerman
      *
@@ -994,22 +994,22 @@ public interface Faction extends CMCommon, MsgListener, Contingent {
 
         /**
          * Returns the event trigger id
-         * @see com.planet_ink.game.Common.interfaces.Faction#ALL_CHANGE_EVENT_TYPES()
-         * @see com.planet_ink.game.Common.interfaces.Faction.FactionChangeEvent#setEventID(String)
-         * @see com.planet_ink.game.Common.interfaces.Faction.FactionChangeEvent#IDclassFilter()
-         * @see com.planet_ink.game.Common.interfaces.Faction.FactionChangeEvent#IDdomainFilter()
-         * @see com.planet_ink.game.Common.interfaces.Faction.FactionChangeEvent#IDflagFilter()
+         * @see com.syncleus.aethermud.game.Common.interfaces.Faction#ALL_CHANGE_EVENT_TYPES()
+         * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FactionChangeEvent#setEventID(String)
+         * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FactionChangeEvent#IDclassFilter()
+         * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FactionChangeEvent#IDdomainFilter()
+         * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FactionChangeEvent#IDflagFilter()
          * @return the event trigger id
          */
         public String eventID();
 
         /**
          * Sets the event trigger id
-         * @see com.planet_ink.game.Common.interfaces.Faction#ALL_CHANGE_EVENT_TYPES()
-         * @see com.planet_ink.game.Common.interfaces.Faction.FactionChangeEvent#eventID()
-         * @see com.planet_ink.game.Common.interfaces.Faction.FactionChangeEvent#IDclassFilter()
-         * @see com.planet_ink.game.Common.interfaces.Faction.FactionChangeEvent#IDdomainFilter()
-         * @see com.planet_ink.game.Common.interfaces.Faction.FactionChangeEvent#IDflagFilter()
+         * @see com.syncleus.aethermud.game.Common.interfaces.Faction#ALL_CHANGE_EVENT_TYPES()
+         * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FactionChangeEvent#eventID()
+         * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FactionChangeEvent#IDclassFilter()
+         * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FactionChangeEvent#IDdomainFilter()
+         * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FactionChangeEvent#IDflagFilter()
          * @param newID the new event trigger id
          * @return true if the event id is valid
          */
@@ -1019,10 +1019,10 @@ public interface Faction extends CMCommon, MsgListener, Contingent {
          * A derivative of the event id, this will return a value of 0 or above
          * if the event id was of a particular Ability ACODE_.  Returns -1 if
          * this value does not apply, or an index into ACODE_DESCS.
-         * @see com.planet_ink.game.Abilities.interfaces.Ability#ACODE_DESCS
-         * @see com.planet_ink.game.Common.interfaces.Faction.FactionChangeEvent#eventID()
-         * @see com.planet_ink.game.Common.interfaces.Faction.FactionChangeEvent#IDdomainFilter()
-         * @see com.planet_ink.game.Common.interfaces.Faction.FactionChangeEvent#IDflagFilter()
+         * @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#ACODE_DESCS
+         * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FactionChangeEvent#eventID()
+         * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FactionChangeEvent#IDdomainFilter()
+         * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FactionChangeEvent#IDflagFilter()
          * @return -1, or an index into an Ability ACODE
          */
         public int IDclassFilter();
@@ -1031,10 +1031,10 @@ public interface Faction extends CMCommon, MsgListener, Contingent {
          * A derivative of the event id, this will return a value of 0 or above
          * if the event id was of a particular Ability FLAG_.  Returns -1 if
          * this value does not apply, or an index into FLAG_DESCS.
-         * @see com.planet_ink.game.Abilities.interfaces.Ability#FLAG_DESCS
-         * @see com.planet_ink.game.Common.interfaces.Faction.FactionChangeEvent#eventID()
-         * @see com.planet_ink.game.Common.interfaces.Faction.FactionChangeEvent#IDclassFilter()
-         * @see com.planet_ink.game.Common.interfaces.Faction.FactionChangeEvent#IDdomainFilter()
+         * @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#FLAG_DESCS
+         * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FactionChangeEvent#eventID()
+         * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FactionChangeEvent#IDclassFilter()
+         * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FactionChangeEvent#IDdomainFilter()
          * @return -1, or an index into an Ability FLAG
          */
         public int IDflagFilter();
@@ -1043,32 +1043,32 @@ public interface Faction extends CMCommon, MsgListener, Contingent {
          * A derivative of the event id, this will return a value of 0 or above
          * if the event id was of a particular Ability DOMAIN_.  Returns -1 if
          * this value does not apply, or an index into DOMAIN_DESCS.
-         * @see com.planet_ink.game.Abilities.interfaces.Ability#DOMAIN_DESCS
-         * @see com.planet_ink.game.Common.interfaces.Faction.FactionChangeEvent#eventID()
-         * @see com.planet_ink.game.Common.interfaces.Faction.FactionChangeEvent#IDclassFilter()
-         * @see com.planet_ink.game.Common.interfaces.Faction.FactionChangeEvent#IDflagFilter()
+         * @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#DOMAIN_DESCS
+         * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FactionChangeEvent#eventID()
+         * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FactionChangeEvent#IDclassFilter()
+         * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FactionChangeEvent#IDflagFilter()
          * @return -1, or an index into an Ability ACODE
          */
         public int IDdomainFilter();
 
         /**
          * Returns the list of flags that apply to this event.
-         * @see com.planet_ink.game.Common.interfaces.Faction.FactionChangeEvent#FLAG_DESCS
-         * @see com.planet_ink.game.Common.interfaces.Faction.FactionChangeEvent#setFlags(String)
-         * @see com.planet_ink.game.Common.interfaces.Faction.FactionChangeEvent#outsiderTargetOK()
-         * @see com.planet_ink.game.Common.interfaces.Faction.FactionChangeEvent#selfTargetOK()
-         * @see com.planet_ink.game.Common.interfaces.Faction.FactionChangeEvent#just100()
+         * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FactionChangeEvent#FLAG_DESCS
+         * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FactionChangeEvent#setFlags(String)
+         * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FactionChangeEvent#outsiderTargetOK()
+         * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FactionChangeEvent#selfTargetOK()
+         * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FactionChangeEvent#just100()
          * @return the list of applicable flags
          */
         public String flagCache();
 
         /**
          * Sets the list of flags that apply to this event.
-         * @see com.planet_ink.game.Common.interfaces.Faction.FactionChangeEvent#FLAG_DESCS
-         * @see com.planet_ink.game.Common.interfaces.Faction.FactionChangeEvent#flagCache()
-         * @see com.planet_ink.game.Common.interfaces.Faction.FactionChangeEvent#outsiderTargetOK()
-         * @see com.planet_ink.game.Common.interfaces.Faction.FactionChangeEvent#selfTargetOK()
-         * @see com.planet_ink.game.Common.interfaces.Faction.FactionChangeEvent#just100()
+         * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FactionChangeEvent#FLAG_DESCS
+         * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FactionChangeEvent#flagCache()
+         * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FactionChangeEvent#outsiderTargetOK()
+         * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FactionChangeEvent#selfTargetOK()
+         * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FactionChangeEvent#just100()
          * @param newFlagCache the new list of applicable flags
          */
         public void setFlags(String newFlagCache);
@@ -1077,9 +1077,9 @@ public interface Faction extends CMCommon, MsgListener, Contingent {
          * A derivative of the flag cache, this method returns whether the flag was set that
          * allows this event to trigger when the target of the event does not have any value
          * with this faction
-         * @see com.planet_ink.game.Common.interfaces.Faction.FactionChangeEvent#flagCache()
-         * @see com.planet_ink.game.Common.interfaces.Faction.FactionChangeEvent#selfTargetOK()
-         * @see com.planet_ink.game.Common.interfaces.Faction.FactionChangeEvent#just100()
+         * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FactionChangeEvent#flagCache()
+         * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FactionChangeEvent#selfTargetOK()
+         * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FactionChangeEvent#just100()
          * @return true if the target does not have to have this faction, false otherwise
          */
         public boolean outsiderTargetOK();
@@ -1087,9 +1087,9 @@ public interface Faction extends CMCommon, MsgListener, Contingent {
         /**
          * A derivative of the flag cache, this method returns whether the flag was set that
          * allows this event to trigger when the target and source of the event are the same.
-         * @see com.planet_ink.game.Common.interfaces.Faction.FactionChangeEvent#flagCache()
-         * @see com.planet_ink.game.Common.interfaces.Faction.FactionChangeEvent#outsiderTargetOK()
-         * @see com.planet_ink.game.Common.interfaces.Faction.FactionChangeEvent#just100()
+         * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FactionChangeEvent#flagCache()
+         * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FactionChangeEvent#outsiderTargetOK()
+         * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FactionChangeEvent#just100()
          * @return true if src and target are the same, false otherwise
          */
         public boolean selfTargetOK();
@@ -1098,9 +1098,9 @@ public interface Faction extends CMCommon, MsgListener, Contingent {
          * A derivative of the flag cache, this method returns whether the flag was set that
          * causes the determination of the amount of faction move to apply to NOT take the
          * difference between the source and targets levels into account.
-         * @see com.planet_ink.game.Common.interfaces.Faction.FactionChangeEvent#flagCache()
-         * @see com.planet_ink.game.Common.interfaces.Faction.FactionChangeEvent#outsiderTargetOK()
-         * @see com.planet_ink.game.Common.interfaces.Faction.FactionChangeEvent#selfTargetOK()
+         * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FactionChangeEvent#flagCache()
+         * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FactionChangeEvent#outsiderTargetOK()
+         * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FactionChangeEvent#selfTargetOK()
          * @return true to NOT take level into account when determining amount of faction change
          */
         public boolean just100();
@@ -1109,8 +1109,8 @@ public interface Faction extends CMCommon, MsgListener, Contingent {
          * Returns a code for a description of how an event, if applicable, will affect this
          * factions value.  The direction is an index into CHANGE_DIRECTION_DESCS, or one of the
          * CHANGE_DIRECTION_ constants.
-         * @see com.planet_ink.game.Common.interfaces.Faction.FactionChangeEvent#CHANGE_DIRECTION_DESCS
-         * @see com.planet_ink.game.Common.interfaces.Faction.FactionChangeEvent#setDirection(int)
+         * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FactionChangeEvent#CHANGE_DIRECTION_DESCS
+         * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FactionChangeEvent#setDirection(int)
          * @return a FactionChangeEvent#CHANGE_DIRECTION_ constant
          */
         public int direction();
@@ -1119,8 +1119,8 @@ public interface Faction extends CMCommon, MsgListener, Contingent {
          * Sets a code for a description of how an event, if applicable, will affect this
          * factions value.  The direction is an index into CHANGE_DIRECTION_DESCS, or one of the
          * CHANGE_DIRECTION_ constants.
-         * @see com.planet_ink.game.Common.interfaces.Faction.FactionChangeEvent#CHANGE_DIRECTION_DESCS
-         * @see com.planet_ink.game.Common.interfaces.Faction.FactionChangeEvent#direction()
+         * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FactionChangeEvent#CHANGE_DIRECTION_DESCS
+         * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FactionChangeEvent#direction()
          * @param newVal a new FactionChangeEvent#CHANGE_DIRECTION_ constant
          */
         public void setDirection(int newVal);
@@ -1128,8 +1128,8 @@ public interface Faction extends CMCommon, MsgListener, Contingent {
         /**
          * Returns the factor to multiply the base faction change amount (100) by, to determine
          * the amount of this faction changed by this event, in accordance with the given direction.
-         * @see com.planet_ink.game.Common.interfaces.Faction.FactionChangeEvent#direction()
-         * @see com.planet_ink.game.Common.interfaces.Faction.FactionChangeEvent#setFactor(double)
+         * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FactionChangeEvent#direction()
+         * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FactionChangeEvent#setFactor(double)
          * @return the factor to multiply the base amount of the faction by
          */
         public double factor();
@@ -1137,8 +1137,8 @@ public interface Faction extends CMCommon, MsgListener, Contingent {
         /**
          * Sets the factor to multiply the base faction change amount (100) by, to determine
          * the amount of this faction changed by this event, in accordance with the given direction.
-         * @see com.planet_ink.game.Common.interfaces.Faction.FactionChangeEvent#direction()
-         * @see com.planet_ink.game.Common.interfaces.Faction.FactionChangeEvent#factor()
+         * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FactionChangeEvent#direction()
+         * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FactionChangeEvent#factor()
          * @param newVal the new faction change factor amount
          */
         public void setFactor(double newVal);
@@ -1146,8 +1146,8 @@ public interface Faction extends CMCommon, MsgListener, Contingent {
         /**
          * Returns the zapper mask that is used to see if the target of the event qualifies in
          * order to trigger a faction change by this defined event.
-         * @see com.planet_ink.game.Common.interfaces.Faction.FactionChangeEvent#setTargetZapper(String)
-         * @see com.planet_ink.game.Libraries.interfaces.MaskingLibrary
+         * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FactionChangeEvent#setTargetZapper(String)
+         * @see com.syncleus.aethermud.game.Libraries.interfaces.MaskingLibrary
          * @return the zapper mask string
          */
         public String targetZapper();
@@ -1155,8 +1155,8 @@ public interface Faction extends CMCommon, MsgListener, Contingent {
         /**
          * Returns the zapper mask that is used to see if the target of the event qualifies in
          * order to trigger a faction change by this defined event.
-         * @see com.planet_ink.game.Common.interfaces.Faction.FactionChangeEvent#setTargetZapper(String)
-         * @see com.planet_ink.game.Libraries.interfaces.MaskingLibrary
+         * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FactionChangeEvent#setTargetZapper(String)
+         * @see com.syncleus.aethermud.game.Libraries.interfaces.MaskingLibrary
          * @return the zapper mask compiled
          */
         public MaskingLibrary.CompiledZMask compiledTargetZapper();
@@ -1164,8 +1164,8 @@ public interface Faction extends CMCommon, MsgListener, Contingent {
         /**
          * Returns the zapper mask that is used to see if the source of the event qualifies in
          * order to trigger a faction change by this defined event.
-         * @see com.planet_ink.game.Common.interfaces.Faction.FactionChangeEvent#setTriggerParameters(String)
-         * @see com.planet_ink.game.Libraries.interfaces.MaskingLibrary
+         * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FactionChangeEvent#setTriggerParameters(String)
+         * @see com.syncleus.aethermud.game.Libraries.interfaces.MaskingLibrary
          * @return the zapper mask compiled
          */
         public MaskingLibrary.CompiledZMask compiledSourceZapper();
@@ -1173,22 +1173,22 @@ public interface Faction extends CMCommon, MsgListener, Contingent {
         /**
          * Sets the zapper mask that is used to see if the target of the event qualifies in
          * order to trigger a faction change by this defined event.
-         * @see com.planet_ink.game.Common.interfaces.Faction.FactionChangeEvent#targetZapper()
-         * @see com.planet_ink.game.Libraries.interfaces.MaskingLibrary
+         * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FactionChangeEvent#targetZapper()
+         * @see com.syncleus.aethermud.game.Libraries.interfaces.MaskingLibrary
          * @param newVal the new zapper mask string
          */
         public void setTargetZapper(String newVal);
 
         /**
          * Returns any trigger parameters defined that modify the way the trigger behaves.
-         * @see com.planet_ink.game.Common.interfaces.Faction.FactionChangeEvent#setTriggerParameters(String)
+         * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FactionChangeEvent#setTriggerParameters(String)
          * @return the trigger parameters
          */
         public String triggerParameters();
 
         /**
          * Returns the named trigger parameters defined
-         * @see com.planet_ink.game.Common.interfaces.Faction.FactionChangeEvent#setTriggerParameters(String)
+         * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FactionChangeEvent#setTriggerParameters(String)
          * @param parmName the name of the trigger parm to look for
          * @return the specific named trigger parameter
          */
@@ -1196,14 +1196,14 @@ public interface Faction extends CMCommon, MsgListener, Contingent {
 
         /**
          * Sets any trigger parameters defined that modify the way the trigger behaves.
-         * @see com.planet_ink.game.Common.interfaces.Faction.FactionChangeEvent#triggerParameters()
+         * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FactionChangeEvent#triggerParameters()
          * @param newVal the trigger parameters
          */
         public void setTriggerParameters(String newVal);
 
         /**
          * Returns the internal state variable stored for this change event.
-         * @see com.planet_ink.game.Common.interfaces.Faction.FactionChangeEvent#setStateVariable(int, Object)
+         * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FactionChangeEvent#setStateVariable(int, Object)
          * @param x which internal state variable to get
          * @return the state variable
          */
@@ -1211,7 +1211,7 @@ public interface Faction extends CMCommon, MsgListener, Contingent {
 
         /**
          * Sets an internal state variable stored for this change event.
-         * @see com.planet_ink.game.Common.interfaces.Faction.FactionChangeEvent#stateVariable(int)
+         * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FactionChangeEvent#stateVariable(int)
          * @param x which internal state variable to set
          * @param newVal the state variable
          */
@@ -1219,7 +1219,7 @@ public interface Faction extends CMCommon, MsgListener, Contingent {
 
         /**
          * Returns a semicolon delimited list of all the settings in this change event
-         * @see com.planet_ink.game.Common.interfaces.Faction#createChangeEvent(String)
+         * @see com.syncleus.aethermud.game.Common.interfaces.Faction#createChangeEvent(String)
          * @return a semicolon delimited list of all the settings in this change event
          */
         @Override
@@ -1243,8 +1243,8 @@ public interface Faction extends CMCommon, MsgListener, Contingent {
      * The foundation of any Faction, the Faction Range represents a range of values that constitutes
      * a single named group of numeric values for the faction.  A factions total range is determined
      * by the high value of the highest range and the low value of the lowest range.
-     * @see com.planet_ink.game.Common.interfaces.Faction#addRange(String)
-     * @see com.planet_ink.game.Common.interfaces.Faction#ranges()
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#addRange(String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#ranges()
      *
      * @author Bo Zimmerman
      *
@@ -1258,28 +1258,28 @@ public interface Faction extends CMCommon, MsgListener, Contingent {
 
         /**
          * Returns the numerically low value of this faction range
-         * @see com.planet_ink.game.Common.interfaces.Faction.FRange#setLow(int)
+         * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FRange#setLow(int)
          * @return the numerically low value of this faction range
          */
         public int low();
 
         /**
          * Sets the numerically low value of this faction range
-         * @see com.planet_ink.game.Common.interfaces.Faction.FRange#low()
+         * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FRange#low()
          * @param newVal the numerically low value of this faction range
          */
         public void setLow(int newVal);
 
         /**
          * Returns the numerically high value of this faction range
-         * @see com.planet_ink.game.Common.interfaces.Faction.FRange#setHigh(int)
+         * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FRange#setHigh(int)
          * @return the numerically high value of this faction range
          */
         public int high();
 
         /**
          * Sets the numerically high value of this faction range
-         * @see com.planet_ink.game.Common.interfaces.Faction.FRange#high()
+         * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FRange#high()
          * @param newVal the numerically high value of this faction range
          */
         public void setHigh(int newVal);
@@ -1287,7 +1287,7 @@ public interface Faction extends CMCommon, MsgListener, Contingent {
         /**
          * Returns the nice friendly displayable name of this faction range,
          * which need not be unique.
-         * @see com.planet_ink.game.Common.interfaces.Faction.FRange#setName(String)
+         * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FRange#setName(String)
          * @return the name of this range of values
          */
         public String name();
@@ -1295,7 +1295,7 @@ public interface Faction extends CMCommon, MsgListener, Contingent {
         /**
          * Sets the nice friendly displayable name of this faction range,
          * which need not be unique.
-         * @see com.planet_ink.game.Common.interfaces.Faction.FRange#name()
+         * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FRange#name()
          * @param newVal the name of this range of values
          */
         public void setName(String newVal);
@@ -1303,7 +1303,7 @@ public interface Faction extends CMCommon, MsgListener, Contingent {
         /**
          * Returns a constant reflecting whether this range of faction value is
          * equivalent to one of the legacy alignment constant values.
-         * @see com.planet_ink.game.Common.interfaces.Faction.Align
+         * @see com.syncleus.aethermud.game.Common.interfaces.Faction.Align
          * @return an alignment constant
          */
         public Align alignEquiv();
@@ -1311,7 +1311,7 @@ public interface Faction extends CMCommon, MsgListener, Contingent {
         /**
          * Sets a constant reflecting whether this range of faction value is
          * equivalent to one of the legacy alignment constant values.
-         * @see com.planet_ink.game.Common.interfaces.Faction.Align
+         * @see com.syncleus.aethermud.game.Common.interfaces.Faction.Align
          * @param newVal a new alignment constant
          */
         public void setAlignEquiv(Align newVal);
@@ -1319,7 +1319,7 @@ public interface Faction extends CMCommon, MsgListener, Contingent {
         /**
          * Returns a semicolon-delimited representation of this faction range, which
          * can be used to create a new one later.
-         * @see com.planet_ink.game.Common.interfaces.Faction#addRange(String)
+         * @see com.syncleus.aethermud.game.Common.interfaces.Faction#addRange(String)
          * @return a semicolon-delimited range
          */
         @Override
@@ -1333,7 +1333,7 @@ public interface Faction extends CMCommon, MsgListener, Contingent {
 
         /**
          * Returns the faction of which this is a range
-         * @see com.planet_ink.game.Common.interfaces.Faction#addRange(String)
+         * @see com.syncleus.aethermud.game.Common.interfaces.Faction#addRange(String)
          * @return the faction of which this is a range
          */
         public Faction getFaction();
@@ -1343,7 +1343,7 @@ public interface Faction extends CMCommon, MsgListener, Contingent {
      * of their own faction.  The object stores the faction value, any
      * event listeners or tickers, and a method to determine when it is
      * time to refresh the object.
-     * @see com.planet_ink.game.Common.interfaces.Faction#makeFactionData(MOB)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#makeFactionData(MOB)
      * @author Bo Zimmermanimmerman
      */
     public static interface FData extends MsgListener, StatsAffecting {
@@ -1363,7 +1363,7 @@ public interface Faction extends CMCommon, MsgListener, Contingent {
 
         /**
          * A mirror implementation of Tickable
-         * @see com.planet_ink.game.core.interfaces.Tickable
+         * @see com.syncleus.aethermud.game.core.interfaces.Tickable
          * @param ticking the ticking object
          * @param tickID the id code of the tick being done
          * @return true to keep ticking, false to stop ticking
@@ -1400,8 +1400,8 @@ public interface Faction extends CMCommon, MsgListener, Contingent {
      * A Faction Ability Usage object represents a set of criterium that can be used
      * to determine whether this faction allows a mob or player to use a particular
      * ability, or class of abilities.
-     * @see com.planet_ink.game.Common.interfaces.Faction#addAbilityUsage(String)
-     * @see com.planet_ink.game.Common.interfaces.Faction#abilityUsages()
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#addAbilityUsage(String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#abilityUsages()
      * @author Bo Zimmerman
      *
      */
@@ -1409,7 +1409,7 @@ public interface Faction extends CMCommon, MsgListener, Contingent {
         /**
          * The unconverted ability mask, denoting ability ids, domains, flags, etc.
          * Is parsed for benefit of other methods below
-         * @see com.planet_ink.game.Common.interfaces.Faction.FAbilityUsage#setAbilityFlag(String)
+         * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FAbilityUsage#setAbilityFlag(String)
          * @return the unconverted ability mask
          */
         public String abilityFlags();
@@ -1417,12 +1417,12 @@ public interface Faction extends CMCommon, MsgListener, Contingent {
         /**
          * Sets the ability usage masks and methods from an ability id, domain, flags, etc.
          * Parses the string sent to set many of the methods below.
-         * @see com.planet_ink.game.Common.interfaces.Faction.FAbilityUsage#abilityFlags()
-         * @see com.planet_ink.game.Common.interfaces.Faction.FAbilityUsage#notflag()
-         * @see com.planet_ink.game.Common.interfaces.Faction.FAbilityUsage#possibleAbilityID()
-         * @see com.planet_ink.game.Common.interfaces.Faction.FAbilityUsage#type()
-         * @see com.planet_ink.game.Common.interfaces.Faction.FAbilityUsage#domain()
-         * @see com.planet_ink.game.Common.interfaces.Faction.FAbilityUsage#flag()
+         * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FAbilityUsage#abilityFlags()
+         * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FAbilityUsage#notflag()
+         * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FAbilityUsage#possibleAbilityID()
+         * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FAbilityUsage#type()
+         * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FAbilityUsage#domain()
+         * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FAbilityUsage#flag()
          * @param str the ability usage mask
          * @return A vector of words inside the given string that are not valid or were not understood.
          */
@@ -1430,42 +1430,42 @@ public interface Faction extends CMCommon, MsgListener, Contingent {
 
         /**
          * A bitmask of ability flags that must NOT be set for this usage to apply to an ability
-         * @see com.planet_ink.game.Common.interfaces.Faction.FAbilityUsage#abilityFlags()
-         * @see com.planet_ink.game.Common.interfaces.Faction.FAbilityUsage#flag()
-         * @see com.planet_ink.game.Abilities.interfaces.Ability#FLAG_DESCS
+         * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FAbilityUsage#abilityFlags()
+         * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FAbilityUsage#flag()
+         * @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#FLAG_DESCS
          * @return a bitmask of Ability flags that must not be set by the ability
          */
         public int notflag();
 
         /**
          * A bitmask of ability flags that MUST be set for this usage to apply to an ability
-         * @see com.planet_ink.game.Common.interfaces.Faction.FAbilityUsage#abilityFlags()
-         * @see com.planet_ink.game.Common.interfaces.Faction.FAbilityUsage#notflag()
-         * @see com.planet_ink.game.Abilities.interfaces.Ability#FLAG_DESCS
+         * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FAbilityUsage#abilityFlags()
+         * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FAbilityUsage#notflag()
+         * @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#FLAG_DESCS
          * @return a bitmask of Ability flags that must be set by the ability
          */
         public int flag();
 
         /**
          * Whether the abilityFlags() method is possibly a specific Ability ID
-         * @see com.planet_ink.game.Common.interfaces.Faction.FAbilityUsage#abilityFlags()
-         * @see com.planet_ink.game.Abilities.interfaces.Ability#ID()
+         * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FAbilityUsage#abilityFlags()
+         * @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#ID()
          * @return true if the abilityFlags() string is an Ability ID()
          */
         public boolean possibleAbilityID();
 
         /**
          * An ability code that an ability must be in order for this usage to apply, or -1
-         * @see com.planet_ink.game.Common.interfaces.Faction.FAbilityUsage#abilityFlags()
-         * @see com.planet_ink.game.Abilities.interfaces.Ability#ACODE_DESCS
+         * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FAbilityUsage#abilityFlags()
+         * @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#ACODE_DESCS
          * @return an ability code that an ability must be in order for this usage to apply, or -1
          */
         public int type();
 
         /**
          * An ability domain that an ability must be in order for this usage to apply, or -1
-         * @see com.planet_ink.game.Common.interfaces.Faction.FAbilityUsage#abilityFlags()
-         * @see com.planet_ink.game.Abilities.interfaces.Ability#DOMAIN_DESCS
+         * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FAbilityUsage#abilityFlags()
+         * @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#DOMAIN_DESCS
          * @return an ability domain that an ability must be in order for this usage to apply, or -1
          */
         public int domain();
@@ -1473,8 +1473,8 @@ public interface Faction extends CMCommon, MsgListener, Contingent {
         /**
          * The minimum value that a player must have in the faction to be able to use the selected
          * ability referred to by the ability flags of this usage criterium.
-         * @see com.planet_ink.game.Common.interfaces.Faction.FAbilityUsage#abilityFlags()
-         * @see com.planet_ink.game.Common.interfaces.Faction.FAbilityUsage#setLow(int)
+         * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FAbilityUsage#abilityFlags()
+         * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FAbilityUsage#setLow(int)
          * @return a minimum faction value
          */
         public int low();
@@ -1482,8 +1482,8 @@ public interface Faction extends CMCommon, MsgListener, Contingent {
         /**
          * Sets the minimum value that a player must have in the faction to be able to use the selected
          * ability referred to by the ability flags of this usage criterium.
-         * @see com.planet_ink.game.Common.interfaces.Faction.FAbilityUsage#abilityFlags()
-         * @see com.planet_ink.game.Common.interfaces.Faction.FAbilityUsage#low()
+         * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FAbilityUsage#abilityFlags()
+         * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FAbilityUsage#low()
          * @param newVal a new minimum faction value
          */
         public void setLow(int newVal);
@@ -1491,8 +1491,8 @@ public interface Faction extends CMCommon, MsgListener, Contingent {
         /**
          * Returns the maximum value that a player must have in the faction to be able to use the selected
          * ability referred to by the ability flags of this usage criterium.
-         * @see com.planet_ink.game.Common.interfaces.Faction.FAbilityUsage#abilityFlags()
-         * @see com.planet_ink.game.Common.interfaces.Faction.FAbilityUsage#setHigh(int)
+         * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FAbilityUsage#abilityFlags()
+         * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FAbilityUsage#setHigh(int)
          * @return a maximum faction value
          */
         public int high();
@@ -1500,8 +1500,8 @@ public interface Faction extends CMCommon, MsgListener, Contingent {
         /**
          * Sets the maximum value that a player must have in the faction to be able to use the selected
          * ability referred to by the ability flags of this usage criterium.
-         * @see com.planet_ink.game.Common.interfaces.Faction.FAbilityUsage#abilityFlags()
-         * @see com.planet_ink.game.Common.interfaces.Faction.FAbilityUsage#high()
+         * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FAbilityUsage#abilityFlags()
+         * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FAbilityUsage#high()
          * @param newVal a new maximum faction value
          */
         public void setHigh(int newVal);
@@ -1509,7 +1509,7 @@ public interface Faction extends CMCommon, MsgListener, Contingent {
         /**
          * Returns a semicolon-delimited string of the values of this ability usage, suitable for
          * using to create a new one later.
-         * @see com.planet_ink.game.Common.interfaces.Faction#addAbilityUsage(String)
+         * @see com.syncleus.aethermud.game.Common.interfaces.Faction#addAbilityUsage(String)
          * @return a semicolon-delimited string of the values of this ability usage
          */
         @Override
@@ -1518,58 +1518,58 @@ public interface Faction extends CMCommon, MsgListener, Contingent {
     /**
      * A factor defines how modifications of faction value, up or down, are modified on a
      * mob by mob basis.
-     * @see com.planet_ink.game.Common.interfaces.Faction#addFactor(double, double, String)
-     * @see com.planet_ink.game.Common.interfaces.Faction#factors()
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#addFactor(double, double, String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#factors()
      * @author Bo Zimmerman
      *
      */
     public static interface FZapFactor {
         /**
          * Get the gain factor (0-1)
-         * @see com.planet_ink.game.Common.interfaces.Faction.FZapFactor#setGainFactor(double)
+         * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FZapFactor#setGainFactor(double)
          * @return the gain factor (0-1)
          */
         public double gainFactor();
 
         /**
          * Set the gain factor (0-1)
-         * @see com.planet_ink.game.Common.interfaces.Faction.FZapFactor#gainFactor()
+         * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FZapFactor#gainFactor()
          * @param val the gain factor (0-1)
          */
         public void setGainFactor(double val);
 
         /**
          * Set the loss factor (0-1)
-         * @see com.planet_ink.game.Common.interfaces.Faction.FZapFactor#setGainFactor(double)
+         * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FZapFactor#setGainFactor(double)
          * @return the loss factor (0-1)
          */
         public double lossFactor();
 
         /**
          * Set the loss factor (0-1)
-         * @see com.planet_ink.game.Common.interfaces.Faction.FZapFactor#gainFactor()
+         * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FZapFactor#gainFactor()
          * @param val the loss factor (0-1)
          */
         public void setLossFactor(double val);
 
         /**
          * The mask to tell which mobs to apply this factor to
-         * @see com.planet_ink.game.Common.interfaces.Faction.FZapFactor#setMOBMask(String)
+         * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FZapFactor#setMOBMask(String)
          * @return mask to tell which mobs to apply this reaction to
          */
         public String MOBMask();
 
         /**
          * The compiled mask to tell which mobs to apply this factor to
-         * @see com.planet_ink.game.Common.interfaces.Faction.FZapFactor#setMOBMask(String)
+         * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FZapFactor#setMOBMask(String)
          * @return the compiled mask to tell which mobs to apply this reaction to
          */
         public MaskingLibrary.CompiledZMask compiledMOBMask();
 
         /**
          * Set the mask to determine which mobs in the players presence will be affected.  This is a zappermask.
-         * @see com.planet_ink.game.Libraries.interfaces.MaskingLibrary
-         * @see com.planet_ink.game.Common.interfaces.Faction.FZapFactor#MOBMask()
+         * @see com.syncleus.aethermud.game.Libraries.interfaces.MaskingLibrary
+         * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FZapFactor#MOBMask()
          * @param str the mask to determine which mobs in the players presence will be affected
          */
         public void setMOBMask(String str);
@@ -1577,7 +1577,7 @@ public interface Faction extends CMCommon, MsgListener, Contingent {
         /**
          * Returns a semicolon-delimited string of the values of this factpr, suitable for
          * using to create a new one later.
-         * @see com.planet_ink.game.Common.interfaces.Faction#addFactor(double, double, String)
+         * @see com.syncleus.aethermud.game.Common.interfaces.Faction#addFactor(double, double, String)
          * @return a string of the values of this factor
          */
         @Override
@@ -1586,65 +1586,65 @@ public interface Faction extends CMCommon, MsgListener, Contingent {
     /**
      * Adds very temporary affects and behaviors to mobs who match the reaction zapper
      * mask, and who are in the same room as someone with standing in this faction.
-     * @see com.planet_ink.game.Common.interfaces.Faction#addReaction(String, String, String, String)
-     * @see com.planet_ink.game.Common.interfaces.Faction#reactions()
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#addReaction(String, String, String, String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Faction#reactions()
      * @author Bo Zimmerman
      *
      */
     public static interface FReactionItem {
         /**
          * The ability/behavior/command id.
-         * @see com.planet_ink.game.Common.interfaces.Faction.FReactionItem#setReactionObjectID(String)
+         * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FReactionItem#setReactionObjectID(String)
          * @return the ability/behavior/command id
          */
         public String reactionObjectID();
 
         /**
          * Set the ability/behavior/command id.
-         * @see com.planet_ink.game.Common.interfaces.Faction.FReactionItem#reactionObjectID()
+         * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FReactionItem#reactionObjectID()
          * @param str the ability/behavior/command id
          */
         public void setReactionObjectID(String str);
 
         /**
          * The mask to tell which mobs to apply this reaction to
-         * @see com.planet_ink.game.Common.interfaces.Faction.FReactionItem#setPresentMOBMask(String)
+         * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FReactionItem#setPresentMOBMask(String)
          * @return mask to tell which mobs to apply this reaction to
          */
         public String presentMOBMask();
 
         /**
          * The compiled mask to tell which mobs to apply this reaction to
-         * @see com.planet_ink.game.Common.interfaces.Faction.FReactionItem#setPresentMOBMask(String)
+         * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FReactionItem#setPresentMOBMask(String)
          * @return the compiled mask to tell which mobs to apply this reaction to
          */
         public MaskingLibrary.CompiledZMask compiledPresentMOBMask();
 
         /**
          * Set the mask to determine which mobs in the players presence will be affected.  This is a zappermask.
-         * @see com.planet_ink.game.Libraries.interfaces.MaskingLibrary
-         * @see com.planet_ink.game.Common.interfaces.Faction.FReactionItem#presentMOBMask()
+         * @see com.syncleus.aethermud.game.Libraries.interfaces.MaskingLibrary
+         * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FReactionItem#presentMOBMask()
          * @param str the mask to determine which mobs in the players presence will be affected
          */
         public void setPresentMOBMask(String str);
 
         /**
          * The code name of the range which determines which folks with this faction get a reaction
-         * @see com.planet_ink.game.Common.interfaces.Faction.FReactionItem#setRangeName(String)
+         * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FReactionItem#setRangeName(String)
          * @return the range which determines which folks with this faction get a reaction
          */
         public String rangeCodeName();
 
         /**
          * Set the code name of the range which determines which folks with this faction get a reaction
-         * @see com.planet_ink.game.Common.interfaces.Faction.FReactionItem#rangeCodeName()
+         * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FReactionItem#rangeCodeName()
          * @param str the range which determines which folks with this faction get a reaction
          */
         public void setRangeName(String str);
 
         /**
          * The parameters for the ability/behavior/command above.
-         * @see com.planet_ink.game.Common.interfaces.Faction.FReactionItem#setRangeName(String)
+         * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FReactionItem#setRangeName(String)
          * @return the parameters for the ability/behavior/command above
          */
         public String parameters();
@@ -1652,7 +1652,7 @@ public interface Faction extends CMCommon, MsgListener, Contingent {
         /**
          * The parameters for the ability/behavior/command above returned in
          * runtime form so that parameters are adjusted with the given name
-         * @see com.planet_ink.game.Common.interfaces.Faction.FReactionItem#setRangeName(String)
+         * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FReactionItem#setRangeName(String)
          * @param Name the name to replace the &lt;TARGET&gt; moniker with
          * @return the parameters for the ability/behavior/command above
          */
@@ -1660,7 +1660,7 @@ public interface Faction extends CMCommon, MsgListener, Contingent {
 
         /**
          * Set the parameters for the ability/behavior/command above.
-         * @see com.planet_ink.game.Common.interfaces.Faction.FReactionItem#rangeCodeName()
+         * @see com.syncleus.aethermud.game.Common.interfaces.Faction.FReactionItem#rangeCodeName()
          * @param str the parameters for the ability/behavior/command above
          */
         public void setParameters(String str);
@@ -1668,7 +1668,7 @@ public interface Faction extends CMCommon, MsgListener, Contingent {
         /**
          * Returns a semicolon-delimited string of the values of this reaction, suitable for
          * using to create a new one later.
-         * @see com.planet_ink.game.Common.interfaces.Faction#addReaction(String, String, String, String)
+         * @see com.syncleus.aethermud.game.Common.interfaces.Faction#addReaction(String, String, String, String)
          * @return a semicolon-delimited string of the values of this reaction
          */
         @Override

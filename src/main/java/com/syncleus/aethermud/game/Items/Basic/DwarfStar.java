@@ -14,12 +14,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Items.Basic;
+package com.syncleus.aethermud.game.Items.Basic;
 
-import com.planet_ink.game.Common.interfaces.PhyStats;
-import com.planet_ink.game.Items.interfaces.RawMaterial;
-import com.planet_ink.game.core.CMath;
-import com.planet_ink.game.core.interfaces.SpaceObject;
+import com.syncleus.aethermud.game.Common.interfaces.PhyStats;
+import com.syncleus.aethermud.game.Items.interfaces.RawMaterial;
+import com.syncleus.aethermud.game.core.CMath;
+import com.syncleus.aethermud.game.core.interfaces.SpaceObject;
 
 import java.util.Random;
 

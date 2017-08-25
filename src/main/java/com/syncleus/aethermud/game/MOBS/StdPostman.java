@@ -14,24 +14,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.MOBS;
+package com.syncleus.aethermud.game.MOBS;
 
-import com.planet_ink.game.Areas.interfaces.Area;
-import com.planet_ink.game.Common.interfaces.*;
-import com.planet_ink.game.Common.interfaces.Session.InputCallback;
-import com.planet_ink.game.Items.interfaces.Coins;
-import com.planet_ink.game.Items.interfaces.Container;
-import com.planet_ink.game.Items.interfaces.Item;
-import com.planet_ink.game.Libraries.interfaces.DatabaseEngine;
-import com.planet_ink.game.Libraries.interfaces.DatabaseEngine.PlayerData;
-import com.planet_ink.game.MOBS.interfaces.MOB;
-import com.planet_ink.game.MOBS.interfaces.PostOffice;
-import com.planet_ink.game.core.*;
-import com.planet_ink.game.core.collections.Pair;
-import com.planet_ink.game.core.interfaces.Environmental;
-import com.planet_ink.game.core.interfaces.ItemPossessor;
-import com.planet_ink.game.core.interfaces.ShopKeeper;
-import com.planet_ink.game.core.interfaces.Tickable;
+import com.syncleus.aethermud.game.Areas.interfaces.Area;
+import com.syncleus.aethermud.game.Common.interfaces.*;
+import com.syncleus.aethermud.game.Common.interfaces.Session.InputCallback;
+import com.syncleus.aethermud.game.Items.interfaces.Coins;
+import com.syncleus.aethermud.game.Items.interfaces.Container;
+import com.syncleus.aethermud.game.Items.interfaces.Item;
+import com.syncleus.aethermud.game.Libraries.interfaces.DatabaseEngine;
+import com.syncleus.aethermud.game.Libraries.interfaces.DatabaseEngine.PlayerData;
+import com.syncleus.aethermud.game.MOBS.interfaces.MOB;
+import com.syncleus.aethermud.game.MOBS.interfaces.PostOffice;
+import com.syncleus.aethermud.game.core.*;
+import com.syncleus.aethermud.game.core.collections.Pair;
+import com.syncleus.aethermud.game.core.interfaces.Environmental;
+import com.syncleus.aethermud.game.core.interfaces.ItemPossessor;
+import com.syncleus.aethermud.game.core.interfaces.ShopKeeper;
+import com.syncleus.aethermud.game.core.interfaces.Tickable;
 
 import java.util.Hashtable;
 import java.util.List;

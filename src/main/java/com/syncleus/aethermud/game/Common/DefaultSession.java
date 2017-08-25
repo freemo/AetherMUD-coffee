@@ -14,27 +14,27 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Common;
+package com.syncleus.aethermud.game.Common;
 
 import com.jcraft.jzlib.JZlib;
 import com.jcraft.jzlib.ZOutputStream;
-import com.planet_ink.game.Abilities.interfaces.Ability;
-import com.planet_ink.game.Commands.interfaces.Command;
-import com.planet_ink.game.Common.interfaces.*;
-import com.planet_ink.game.Libraries.interfaces.ChannelsLibrary;
-import com.planet_ink.game.Libraries.interfaces.CharCreationLibrary;
-import com.planet_ink.game.Libraries.interfaces.CharCreationLibrary.LoginResult;
-import com.planet_ink.game.Libraries.interfaces.CharCreationLibrary.LoginSession;
-import com.planet_ink.game.Libraries.interfaces.ColorLibrary.ColorState;
-import com.planet_ink.game.Libraries.interfaces.PlayerLibrary;
-import com.planet_ink.game.Locales.interfaces.Room;
-import com.planet_ink.game.MOBS.interfaces.MOB;
-import com.planet_ink.game.core.*;
-import com.planet_ink.game.core.CMSecurity.DbgFlag;
-import com.planet_ink.game.core.CMSecurity.DisFlag;
-import com.planet_ink.game.core.collections.XVector;
-import com.planet_ink.game.core.interfaces.*;
-import com.planet_ink.game.core.threads.CMRunnable;
+import com.syncleus.aethermud.game.Abilities.interfaces.Ability;
+import com.syncleus.aethermud.game.Commands.interfaces.Command;
+import com.syncleus.aethermud.game.Common.interfaces.*;
+import com.syncleus.aethermud.game.Libraries.interfaces.ChannelsLibrary;
+import com.syncleus.aethermud.game.Libraries.interfaces.CharCreationLibrary;
+import com.syncleus.aethermud.game.Libraries.interfaces.CharCreationLibrary.LoginResult;
+import com.syncleus.aethermud.game.Libraries.interfaces.CharCreationLibrary.LoginSession;
+import com.syncleus.aethermud.game.Libraries.interfaces.ColorLibrary.ColorState;
+import com.syncleus.aethermud.game.Libraries.interfaces.PlayerLibrary;
+import com.syncleus.aethermud.game.Locales.interfaces.Room;
+import com.syncleus.aethermud.game.MOBS.interfaces.MOB;
+import com.syncleus.aethermud.game.core.*;
+import com.syncleus.aethermud.game.core.CMSecurity.DbgFlag;
+import com.syncleus.aethermud.game.core.CMSecurity.DisFlag;
+import com.syncleus.aethermud.game.core.collections.XVector;
+import com.syncleus.aethermud.game.core.interfaces.*;
+import com.syncleus.aethermud.game.core.threads.CMRunnable;
 
 import java.io.*;
 import java.net.Socket;

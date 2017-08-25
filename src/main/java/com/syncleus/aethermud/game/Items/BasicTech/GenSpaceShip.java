@@ -14,25 +14,25 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Items.BasicTech;
+package com.syncleus.aethermud.game.Items.BasicTech;
 
-import com.planet_ink.game.Areas.interfaces.Area;
-import com.planet_ink.game.Common.interfaces.CMMsg;
-import com.planet_ink.game.Common.interfaces.Manufacturer;
-import com.planet_ink.game.Items.Basic.StdBoardable;
-import com.planet_ink.game.Items.interfaces.*;
-import com.planet_ink.game.Libraries.interfaces.GenericBuilder;
-import com.planet_ink.game.Libraries.interfaces.TrackingLibrary;
-import com.planet_ink.game.Locales.interfaces.LocationRoom;
-import com.planet_ink.game.Locales.interfaces.Room;
-import com.planet_ink.game.MOBS.interfaces.MOB;
-import com.planet_ink.game.core.*;
-import com.planet_ink.game.core.CMSecurity.DbgFlag;
-import com.planet_ink.game.core.collections.SHashSet;
-import com.planet_ink.game.core.collections.XVector;
-import com.planet_ink.game.core.interfaces.BoundedObject;
-import com.planet_ink.game.core.interfaces.Environmental;
-import com.planet_ink.game.core.interfaces.SpaceObject;
+import com.syncleus.aethermud.game.Areas.interfaces.Area;
+import com.syncleus.aethermud.game.Common.interfaces.CMMsg;
+import com.syncleus.aethermud.game.Common.interfaces.Manufacturer;
+import com.syncleus.aethermud.game.Items.Basic.StdBoardable;
+import com.syncleus.aethermud.game.Items.interfaces.*;
+import com.syncleus.aethermud.game.Libraries.interfaces.GenericBuilder;
+import com.syncleus.aethermud.game.Libraries.interfaces.TrackingLibrary;
+import com.syncleus.aethermud.game.Locales.interfaces.LocationRoom;
+import com.syncleus.aethermud.game.Locales.interfaces.Room;
+import com.syncleus.aethermud.game.MOBS.interfaces.MOB;
+import com.syncleus.aethermud.game.core.*;
+import com.syncleus.aethermud.game.core.CMSecurity.DbgFlag;
+import com.syncleus.aethermud.game.core.collections.SHashSet;
+import com.syncleus.aethermud.game.core.collections.XVector;
+import com.syncleus.aethermud.game.core.interfaces.BoundedObject;
+import com.syncleus.aethermud.game.core.interfaces.Environmental;
+import com.syncleus.aethermud.game.core.interfaces.SpaceObject;
 
 import java.util.*;
 

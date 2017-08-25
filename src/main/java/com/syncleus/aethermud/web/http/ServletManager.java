@@ -14,12 +14,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.web.http;
+package com.syncleus.aethermud.web.http;
 
-import com.planet_ink.web.interfaces.SimpleServlet;
-import com.planet_ink.web.interfaces.SimpleServletManager;
-import com.planet_ink.web.util.CWConfig;
-import com.planet_ink.web.util.RequestStats;
+import com.syncleus.aethermud.web.interfaces.SimpleServlet;
+import com.syncleus.aethermud.web.interfaces.SimpleServletManager;
+import com.syncleus.aethermud.web.util.CWConfig;
+import com.syncleus.aethermud.web.util.RequestStats;
 
 import java.util.Collection;
 import java.util.Hashtable;
@@ -46,7 +46,7 @@ public class ServletManager implements SimpleServletManager {
         for (final String context : config.getServlets().keySet()) {
             String className = config.getServlets().get(context);
             if (className.indexOf('.') < 0)
-                className = "com.planet_ink.web.servlets." + className;
+                className = "com.syncleus.aethermud.web.servlets." + className;
             try {
                 @SuppressWarnings("unchecked")                final Class<? extends SimpleServlet> servletClass = (Class<? extends SimpleServlet>) Class.forName(className);
                 registerServlet(context, servletClass);

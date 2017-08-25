@@ -14,16 +14,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Items.Armor;
+package com.syncleus.aethermud.game.Items.Armor;
 
-import com.planet_ink.game.Common.interfaces.Tattoo;
-import com.planet_ink.game.Items.interfaces.Armor;
-import com.planet_ink.game.Items.interfaces.Item;
-import com.planet_ink.game.Items.interfaces.RawMaterial;
-import com.planet_ink.game.Items.interfaces.Wearable;
-import com.planet_ink.game.MOBS.interfaces.MOB;
-import com.planet_ink.game.core.CMLib;
-import com.planet_ink.game.core.CMath;
+import com.syncleus.aethermud.game.Common.interfaces.Tattoo;
+import com.syncleus.aethermud.game.Items.interfaces.Armor;
+import com.syncleus.aethermud.game.Items.interfaces.Item;
+import com.syncleus.aethermud.game.Items.interfaces.RawMaterial;
+import com.syncleus.aethermud.game.Items.interfaces.Wearable;
+import com.syncleus.aethermud.game.MOBS.interfaces.MOB;
+import com.syncleus.aethermud.game.core.CMLib;
+import com.syncleus.aethermud.game.core.CMath;
 
 import java.util.*;
 

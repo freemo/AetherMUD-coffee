@@ -14,19 +14,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Exits.interfaces;
+package com.syncleus.aethermud.game.Exits.interfaces;
 
-import com.planet_ink.game.Locales.interfaces.Room;
-import com.planet_ink.game.MOBS.interfaces.MOB;
-import com.planet_ink.game.core.interfaces.CloseableLockable;
-import com.planet_ink.game.core.interfaces.PhysicalAgent;
-import com.planet_ink.game.core.interfaces.Readable;
+import com.syncleus.aethermud.game.Locales.interfaces.Room;
+import com.syncleus.aethermud.game.MOBS.interfaces.MOB;
+import com.syncleus.aethermud.game.core.interfaces.CloseableLockable;
+import com.syncleus.aethermud.game.core.interfaces.PhysicalAgent;
+import com.syncleus.aethermud.game.core.interfaces.Readable;
 
 
 /**
  * An interface for all mechanisms or pathways through which a mob may
  * travel when trying to get from one Room to another.
- * @see com.planet_ink.game.Locales.interfaces.Room
+ * @see com.syncleus.aethermud.game.Locales.interfaces.Room
  */
 public interface Exit extends PhysicalAgent, Readable, CloseableLockable {
     /**
@@ -47,7 +47,7 @@ public interface Exit extends PhysicalAgent, Readable, CloseableLockable {
 
     /**
      * Returns the short name of this door, e.g. gate, door, portal, etc..
-     * @see com.planet_ink.game.Exits.interfaces.Exit#setExitParams(String, String, String, String)
+     * @see com.syncleus.aethermud.game.Exits.interfaces.Exit#setExitParams(String, String, String, String)
      * @return the short name of this door.
      */
     public String doorName();
@@ -55,10 +55,10 @@ public interface Exit extends PhysicalAgent, Readable, CloseableLockable {
     /**
      * Returns the verb used for describing closing this exit, e.g. close,
      * lower, drop, etc..
-     * @see com.planet_ink.game.Exits.interfaces.Exit#openWord()
-     * @see com.planet_ink.game.Exits.interfaces.Exit#hasADoor()
-     * @see com.planet_ink.game.Exits.interfaces.Exit#defaultsClosed()
-     * @see com.planet_ink.game.Exits.interfaces.Exit#setExitParams(String, String, String, String)
+     * @see com.syncleus.aethermud.game.Exits.interfaces.Exit#openWord()
+     * @see com.syncleus.aethermud.game.Exits.interfaces.Exit#hasADoor()
+     * @see com.syncleus.aethermud.game.Exits.interfaces.Exit#defaultsClosed()
+     * @see com.syncleus.aethermud.game.Exits.interfaces.Exit#setExitParams(String, String, String, String)
      * @return the short name of a verb used when closing this door.
      */
     public String closeWord();
@@ -66,18 +66,18 @@ public interface Exit extends PhysicalAgent, Readable, CloseableLockable {
     /**
      * Returns the verb used for describing opening this exit, e.g. open,
      * raise, lift, etc..
-     * @see com.planet_ink.game.Exits.interfaces.Exit#closeWord()
-     * @see com.planet_ink.game.Exits.interfaces.Exit#hasADoor()
-     * @see com.planet_ink.game.Exits.interfaces.Exit#defaultsClosed()
-     * @see com.planet_ink.game.Exits.interfaces.Exit#setExitParams(String, String, String, String)
+     * @see com.syncleus.aethermud.game.Exits.interfaces.Exit#closeWord()
+     * @see com.syncleus.aethermud.game.Exits.interfaces.Exit#hasADoor()
+     * @see com.syncleus.aethermud.game.Exits.interfaces.Exit#defaultsClosed()
+     * @see com.syncleus.aethermud.game.Exits.interfaces.Exit#setExitParams(String, String, String, String)
      * @return the short name of a verb used when opening this door.
      */
     public String openWord();
 
     /**
      * Returns a text description of what this exit looks like when closed.
-     * @see com.planet_ink.game.Exits.interfaces.Exit#hasADoor()
-     * @see com.planet_ink.game.Exits.interfaces.Exit#defaultsClosed()
+     * @see com.syncleus.aethermud.game.Exits.interfaces.Exit#hasADoor()
+     * @see com.syncleus.aethermud.game.Exits.interfaces.Exit#defaultsClosed()
      * @return A description of this exit when closed.
      */
     public String closedText();
@@ -85,10 +85,10 @@ public interface Exit extends PhysicalAgent, Readable, CloseableLockable {
     /**
      * Sets various word descriptions used when doing some dynamic manipulations
      * of this exit.
-     * @see com.planet_ink.game.Exits.interfaces.Exit#closeWord()
-     * @see com.planet_ink.game.Exits.interfaces.Exit#openWord()
-     * @see com.planet_ink.game.Exits.interfaces.Exit#doorName()
-     * @see com.planet_ink.game.Exits.interfaces.Exit#closedText()
+     * @see com.syncleus.aethermud.game.Exits.interfaces.Exit#closeWord()
+     * @see com.syncleus.aethermud.game.Exits.interfaces.Exit#openWord()
+     * @see com.syncleus.aethermud.game.Exits.interfaces.Exit#doorName()
+     * @see com.syncleus.aethermud.game.Exits.interfaces.Exit#closedText()
      * @param newDoorName short name of this door, e.g. door, gate
      * @param newCloseWord verb used to close this door, e.g. close, lower
      * @param newOpenWord verb used to open this door, e.g. open, raise
@@ -102,7 +102,7 @@ public interface Exit extends PhysicalAgent, Readable, CloseableLockable {
     /**
      * If this exit represents a route to a room not yet created, but whose room id
      * is already known, this will return that designated room id.
-     * @see com.planet_ink.game.Exits.interfaces.Exit#setTemporaryDoorLink(String)
+     * @see com.syncleus.aethermud.game.Exits.interfaces.Exit#setTemporaryDoorLink(String)
      * @return the room id of the room that will be linked in later
      */
     public String temporaryDoorLink();
@@ -110,7 +110,7 @@ public interface Exit extends PhysicalAgent, Readable, CloseableLockable {
     /**
      * If this exit represents a route to a room not yet created, but whose room id
      * is already known, this will set that designated room id.
-     * @see com.planet_ink.game.Exits.interfaces.Exit#temporaryDoorLink()
+     * @see com.syncleus.aethermud.game.Exits.interfaces.Exit#temporaryDoorLink()
      * @param link the room id of the room that will be linked in later
      */
     public void setTemporaryDoorLink(String link);

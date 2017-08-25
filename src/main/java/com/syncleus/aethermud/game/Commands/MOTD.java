@@ -14,22 +14,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Commands;
+package com.syncleus.aethermud.game.Commands;
 
-import com.planet_ink.game.Common.interfaces.Clan;
-import com.planet_ink.game.Common.interfaces.JournalEntry;
-import com.planet_ink.game.Common.interfaces.Quest;
-import com.planet_ink.game.Libraries.interfaces.DatabaseEngine;
-import com.planet_ink.game.Libraries.interfaces.DatabaseEngine.PlayerData;
-import com.planet_ink.game.Libraries.interfaces.JournalsLibrary;
-import com.planet_ink.game.MOBS.interfaces.MOB;
-import com.planet_ink.game.MOBS.interfaces.PostOffice;
-import com.planet_ink.game.core.*;
-import com.planet_ink.game.core.collections.MultiList;
-import com.planet_ink.game.core.collections.Pair;
-import com.planet_ink.game.core.collections.ReadOnlyVector;
-import com.planet_ink.game.core.collections.ReverseFakeIterator;
-import com.planet_ink.game.core.exceptions.HTTPRedirectException;
+import com.syncleus.aethermud.game.Common.interfaces.Clan;
+import com.syncleus.aethermud.game.Common.interfaces.JournalEntry;
+import com.syncleus.aethermud.game.Common.interfaces.Quest;
+import com.syncleus.aethermud.game.Libraries.interfaces.DatabaseEngine;
+import com.syncleus.aethermud.game.Libraries.interfaces.DatabaseEngine.PlayerData;
+import com.syncleus.aethermud.game.Libraries.interfaces.JournalsLibrary;
+import com.syncleus.aethermud.game.MOBS.interfaces.MOB;
+import com.syncleus.aethermud.game.MOBS.interfaces.PostOffice;
+import com.syncleus.aethermud.game.core.*;
+import com.syncleus.aethermud.game.core.collections.MultiList;
+import com.syncleus.aethermud.game.core.collections.Pair;
+import com.syncleus.aethermud.game.core.collections.ReadOnlyVector;
+import com.syncleus.aethermud.game.core.collections.ReverseFakeIterator;
+import com.syncleus.aethermud.game.core.exceptions.HTTPRedirectException;
 
 import java.util.*;
 

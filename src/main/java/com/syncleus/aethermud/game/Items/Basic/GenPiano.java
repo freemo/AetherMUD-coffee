@@ -14,13 +14,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Items.Basic;
+package com.syncleus.aethermud.game.Items.Basic;
 
-import com.planet_ink.game.Items.interfaces.MusicalInstrument;
-import com.planet_ink.game.Items.interfaces.RawMaterial;
-import com.planet_ink.game.core.CMLib;
-import com.planet_ink.game.core.CMath;
-import com.planet_ink.game.core.interfaces.Rideable;
+import com.syncleus.aethermud.game.Items.interfaces.MusicalInstrument;
+import com.syncleus.aethermud.game.Items.interfaces.RawMaterial;
+import com.syncleus.aethermud.game.core.CMLib;
+import com.syncleus.aethermud.game.core.CMath;
+import com.syncleus.aethermud.game.core.interfaces.Rideable;
 
 /*
    Copyright 2003-2017 Bo Zimmerman

@@ -14,11 +14,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.MOBS.interfaces;
+package com.syncleus.aethermud.game.MOBS.interfaces;
 
-import com.planet_ink.game.Common.interfaces.Clan;
-import com.planet_ink.game.Items.interfaces.Item;
-import com.planet_ink.game.core.interfaces.ShopKeeper;
+import com.syncleus.aethermud.game.Common.interfaces.Clan;
+import com.syncleus.aethermud.game.Items.interfaces.Item;
+import com.syncleus.aethermud.game.core.interfaces.ShopKeeper;
 
 import java.util.Map;
 
@@ -57,7 +57,7 @@ public interface PostOffice extends ShopKeeper {
      * or their clan, if they are (optionally) permitted by their rank.
      * If checked is true, and the mob does NOT have clan privileges, then an
      * error message is given to the mob and null is returned.
-     * @see com.planet_ink.game.Common.interfaces.Clan.Function
+     * @see com.syncleus.aethermud.game.Common.interfaces.Clan.Function
      * @param mob the mob who is trying to send the package
      * @param func either Clan.Function.WITHDRAW or Clan.FUNCTION.DEPOSIT
      * @param checked true if the mob must have clan privileges, false if not.

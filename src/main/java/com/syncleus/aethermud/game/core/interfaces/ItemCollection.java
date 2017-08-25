@@ -14,9 +14,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.core.interfaces;
+package com.syncleus.aethermud.game.core.interfaces;
 
-import com.planet_ink.game.Items.interfaces.Item;
+import com.syncleus.aethermud.game.Items.interfaces.Item;
 
 import java.util.Enumeration;
 import java.util.List;
@@ -31,7 +31,7 @@ public interface ItemCollection extends CMObject {
      * Adds a new item to its possessor. By default, the item is added
      * in a default resting state -- no containers, timeouts, or other
      * modifiers are set.  Duplicates will not be permitted.
-     * @see com.planet_ink.game.core.interfaces.ItemPossessor#delItem(Item)
+     * @see com.syncleus.aethermud.game.core.interfaces.ItemPossessor#delItem(Item)
      * @param item the item to add
      */
     public void addItem(Item item);

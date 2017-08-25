@@ -14,16 +14,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Libraries.interfaces;
+package com.syncleus.aethermud.game.Libraries.interfaces;
 
-import com.planet_ink.game.Abilities.interfaces.Ability;
-import com.planet_ink.game.Areas.interfaces.Area;
-import com.planet_ink.game.Behaviors.interfaces.Behavior;
-import com.planet_ink.game.Items.interfaces.Item;
-import com.planet_ink.game.Locales.interfaces.Room;
-import com.planet_ink.game.MOBS.interfaces.MOB;
-import com.planet_ink.game.Races.interfaces.Race;
-import com.planet_ink.game.core.interfaces.*;
+import com.syncleus.aethermud.game.Abilities.interfaces.Ability;
+import com.syncleus.aethermud.game.Areas.interfaces.Area;
+import com.syncleus.aethermud.game.Behaviors.interfaces.Behavior;
+import com.syncleus.aethermud.game.Items.interfaces.Item;
+import com.syncleus.aethermud.game.Locales.interfaces.Room;
+import com.syncleus.aethermud.game.MOBS.interfaces.MOB;
+import com.syncleus.aethermud.game.Races.interfaces.Race;
+import com.syncleus.aethermud.game.core.interfaces.*;
 
 import java.util.List;
 
@@ -211,7 +211,7 @@ public interface CMFlagLibrary extends CMLibrary {
     /**
      * Return whether the given mob is able to breathe the given
      * resource due to their race, usually.
-     * @see com.planet_ink.game.Items.interfaces.RawMaterial
+     * @see com.syncleus.aethermud.game.Items.interfaces.RawMaterial
      * @param M the mob to check
      * @param atmoResource the Resource to check for breathability
      * @return whether the given mob is able to breathe that
@@ -221,7 +221,7 @@ public interface CMFlagLibrary extends CMLibrary {
     /**
      * Return whether the given mob is able to breathe in the given
      * room due to their race and the atmosphere of the room.
-     * @see com.planet_ink.game.Items.interfaces.RawMaterial
+     * @see com.syncleus.aethermud.game.Items.interfaces.RawMaterial
      * @param M the mob to check
      * @param R the room the mob is trying to breathe in
      * @return whether the given mob is able to breathe here
@@ -759,7 +759,7 @@ public interface CMFlagLibrary extends CMLibrary {
     /**
      * Returns which direction, if any, the given object
      * is falling.
-     * @see com.planet_ink.game.core.Directions
+     * @see com.syncleus.aethermud.game.core.Directions
      * @param P the item, mob, whatever to check
      * @return direction it is falling
      */
@@ -1094,7 +1094,7 @@ public interface CMFlagLibrary extends CMLibrary {
     /**
      * Returns the list of behaviors that have the given behavior
      * flag(s) set.
-     * @see com.planet_ink.game.Behaviors.interfaces.Behavior#FLAG_LEGALBEHAVIOR
+     * @see com.syncleus.aethermud.game.Behaviors.interfaces.Behavior#FLAG_LEGALBEHAVIOR
      * @param P the mob, item, room, whatever
      * @param flag the behavior flags
      * @return the list of behaviors that have the given flag(s) set.
@@ -1104,7 +1104,7 @@ public interface CMFlagLibrary extends CMLibrary {
     /**
      * Returns the list of effects that have the given ability
      * flag(s) set.
-     * @see com.planet_ink.game.Abilities.interfaces.Ability#flags()
+     * @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#flags()
      * @param P the mob, item, room, whatever
      * @param flag the ability flags
      * @return the list of effects that have the given flag(s) set.
@@ -1114,7 +1114,7 @@ public interface CMFlagLibrary extends CMLibrary {
     /**
      * Returns the list of effects that have the given ability
      * flag(s) set.
-     * @see com.planet_ink.game.Abilities.interfaces.Ability#flags()
+     * @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#flags()
      * @param P the mob, item, room, whatever
      * @param flag the ability flags
      * @return the list of effects that have the given flag(s) set.
@@ -1124,7 +1124,7 @@ public interface CMFlagLibrary extends CMLibrary {
     /**
      * Returns the list of Abilities that have the given ability
      * flag(s) set.
-     * @see com.planet_ink.game.Abilities.interfaces.Ability#flags()
+     * @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#flags()
      * @param M the mob
      * @param flag the ability flags
      * @return the list of abilities that have the given flag(s) set.
@@ -1134,7 +1134,7 @@ public interface CMFlagLibrary extends CMLibrary {
     /**
      * Returns the list of effects that have are part of the
      * given ability domain.
-     * @see com.planet_ink.game.Abilities.interfaces.Ability#DOMAIN_ABJURATION
+     * @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#DOMAIN_ABJURATION
      * @param P the mob, item, room, whatever
      * @param domain the ability domain
      * @return the list of effects in the given domain.
@@ -1144,7 +1144,7 @@ public interface CMFlagLibrary extends CMLibrary {
     /**
      * Returns the list of effects that have are part of the
      * given ability domain.
-     * @see com.planet_ink.game.Abilities.interfaces.Ability#DOMAIN_ABJURATION
+     * @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#DOMAIN_ABJURATION
      * @param P the mob, item, room, whatever
      * @param domain the ability domain
      * @return the list of effects in the given domain.
@@ -1154,7 +1154,7 @@ public interface CMFlagLibrary extends CMLibrary {
     /**
      * Returns the list of abilities that have are part of the
      * given ability domain.
-     * @see com.planet_ink.game.Abilities.interfaces.Ability#DOMAIN_ABJURATION
+     * @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#DOMAIN_ABJURATION
      * @param M the mob to check
      * @param domain the ability domain
      * @return the list of abilities in the given domain.
@@ -1165,9 +1165,9 @@ public interface CMFlagLibrary extends CMLibrary {
      * Returns the list of effects that are on the given physical,
      * and were invoked by the given invoker.  The ability flag,
      * abilityCode, and domain are optional, and may be -1 to ignore.
-     * @see com.planet_ink.game.Abilities.interfaces.Ability#DOMAIN_ABJURATION
-     * @see com.planet_ink.game.Abilities.interfaces.Ability#flags()
-     * @see com.planet_ink.game.Abilities.interfaces.Ability#ACODE_CHANT
+     * @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#DOMAIN_ABJURATION
+     * @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#flags()
+     * @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#ACODE_CHANT
      * @param invoker the invoker to search for, or null
      * @param P the object to check for effects, REQUIRED
      * @param flag -1, or an Ability Flag
@@ -1179,7 +1179,7 @@ public interface CMFlagLibrary extends CMLibrary {
 
     /**
      * Returns the ability type/code name for the given Ability.
-     * @see com.planet_ink.game.Abilities.interfaces.Ability#ACODE_CHANT
+     * @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#ACODE_CHANT
      * @param A the Ability
      * @return "" or the Ability code of the given Ability
      */
@@ -1188,7 +1188,7 @@ public interface CMFlagLibrary extends CMLibrary {
     /**
      * Returns the ability type/code name for the given Ability.
      * This one has any spaces in the type replaced with _
-     * @see com.planet_ink.game.Abilities.interfaces.Ability#ACODE_CHANT
+     * @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#ACODE_CHANT
      * @param A the Ability
      * @return "" or the Ability code of the given Ability
      */
@@ -1196,7 +1196,7 @@ public interface CMFlagLibrary extends CMLibrary {
 
     /**
      * Returns the ability domain name for the given Ability.
-     * @see com.planet_ink.game.Abilities.interfaces.Ability#DOMAIN_DESCS
+     * @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#DOMAIN_DESCS
      * @param A the Ability
      * @return "" or the Ability domain name of the given Ability
      */
@@ -1204,7 +1204,7 @@ public interface CMFlagLibrary extends CMLibrary {
 
     /**
      * Returns the ability type code for the given ability type name.
-     * @see com.planet_ink.game.Abilities.interfaces.Ability#ACODE_CHANT
+     * @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#ACODE_CHANT
      * @param name the name of the given ability type
      * @return the Ability type code of the given name
      */
@@ -1213,7 +1213,7 @@ public interface CMFlagLibrary extends CMLibrary {
     /**
      * Returns the ability type code for the given ability type name.
      * This one has any spaces in the type replaced with _
-     * @see com.planet_ink.game.Abilities.interfaces.Ability#ACODE_CHANT
+     * @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#ACODE_CHANT
      * @param name the name of the given ability type
      * @return the Ability type code of the given name
      */
@@ -1221,7 +1221,7 @@ public interface CMFlagLibrary extends CMLibrary {
 
     /**
      * Returns the ability domain bitmask for the given ability domain name.
-     * @see com.planet_ink.game.Abilities.interfaces.Ability#DOMAIN_DESCS
+     * @see com.syncleus.aethermud.game.Abilities.interfaces.Ability#DOMAIN_DESCS
      * @param name the name of the given ability domain
      * @return "" or the Ability code of the given name
      */

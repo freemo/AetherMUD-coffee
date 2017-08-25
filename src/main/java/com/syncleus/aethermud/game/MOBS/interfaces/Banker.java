@@ -14,12 +14,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.MOBS.interfaces;
+package com.syncleus.aethermud.game.MOBS.interfaces;
 
-import com.planet_ink.game.Common.interfaces.Clan;
-import com.planet_ink.game.Items.interfaces.Item;
-import com.planet_ink.game.Libraries.interfaces.MoneyLibrary;
-import com.planet_ink.game.core.interfaces.ShopKeeper;
+import com.syncleus.aethermud.game.Common.interfaces.Clan;
+import com.syncleus.aethermud.game.Items.interfaces.Item;
+import com.syncleus.aethermud.game.Libraries.interfaces.MoneyLibrary;
+import com.syncleus.aethermud.game.core.interfaces.ShopKeeper;
 
 import java.util.List;
 
@@ -121,7 +121,7 @@ public interface Banker extends ShopKeeper {
      * or their clan, if they are (optionally) permitted by their rank.
      * If checked is true, and the mob does NOT have clan privileges, then an
      * error message is given to the mob and null is returned.
-     * @see com.planet_ink.game.Common.interfaces.Clan.Function
+     * @see com.syncleus.aethermud.game.Common.interfaces.Clan.Function
      * @param mob the mob who is trying to deposit or withdraw or list or something
      * @param func either Clan.Function.WITHDRAW or Clan.FUNCTION.DEPOSIT or LIST
      * @param checked true if the mob must have clan privileges, false if not.
@@ -131,7 +131,7 @@ public interface Banker extends ShopKeeper {
 
     /**
      * Returns debt information for the given depositor to this bank chain.
-     * @see com.planet_ink.game.Libraries.interfaces.MoneyLibrary.DebtItem
+     * @see com.syncleus.aethermud.game.Libraries.interfaces.MoneyLibrary.DebtItem
      * @param depositorName the player or clan name that owes the bank money
      * @return information about the debt
      */

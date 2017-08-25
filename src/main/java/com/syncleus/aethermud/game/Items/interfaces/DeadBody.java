@@ -14,11 +14,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Items.interfaces;
+package com.syncleus.aethermud.game.Items.interfaces;
 
-import com.planet_ink.game.Common.interfaces.CharStats;
-import com.planet_ink.game.MOBS.interfaces.MOB;
-import com.planet_ink.game.core.interfaces.Environmental;
+import com.syncleus.aethermud.game.Common.interfaces.CharStats;
+import com.syncleus.aethermud.game.MOBS.interfaces.MOB;
+import com.syncleus.aethermud.game.core.interfaces.Environmental;
 
 /**
  * Represents a player or monster corpse, dead body, a stiff.
@@ -32,7 +32,7 @@ public interface DeadBody extends Container {
     /**
      * Returns the collection of character stats about the
      * deceased mob.  This is stuff like strength and race.
-     * @see com.planet_ink.game.Common.interfaces.CharStats
+     * @see com.syncleus.aethermud.game.Common.interfaces.CharStats
      * @see DeadBody#setCharStats(CharStats)
      * @return the collection of character stats
      */
@@ -41,7 +41,7 @@ public interface DeadBody extends Container {
     /**
      * Sets the collection of character stats about the
      * deceased mob.  This is stuff like strength and race.
-     * @see com.planet_ink.game.Common.interfaces.CharStats
+     * @see com.syncleus.aethermud.game.Common.interfaces.CharStats
      * @see DeadBody#charStats()
      * @param newStats the collection of character stats
      */

@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Items.BasicTech;
+package com.syncleus.aethermud.game.Items.BasicTech;
 
 public class GenDisruptor extends GenElecWeapon {
     protected int state = 0;

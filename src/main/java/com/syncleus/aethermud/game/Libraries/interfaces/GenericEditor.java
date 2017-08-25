@@ -14,24 +14,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Libraries.interfaces;
+package com.syncleus.aethermud.game.Libraries.interfaces;
 
-import com.planet_ink.game.Abilities.interfaces.Ability;
-import com.planet_ink.game.Abilities.interfaces.Language;
-import com.planet_ink.game.Areas.interfaces.Area;
-import com.planet_ink.game.CharClasses.interfaces.CharClass;
-import com.planet_ink.game.Common.interfaces.Clan;
-import com.planet_ink.game.Common.interfaces.ClanGovernment;
-import com.planet_ink.game.Common.interfaces.Manufacturer;
-import com.planet_ink.game.Common.interfaces.PlayerAccount;
-import com.planet_ink.game.Exits.interfaces.Exit;
-import com.planet_ink.game.Items.interfaces.Item;
-import com.planet_ink.game.Locales.interfaces.Room;
-import com.planet_ink.game.MOBS.interfaces.MOB;
-import com.planet_ink.game.Races.interfaces.Race;
-import com.planet_ink.game.core.collections.PairList;
-import com.planet_ink.game.core.exceptions.CMException;
-import com.planet_ink.game.core.interfaces.*;
+import com.syncleus.aethermud.game.Abilities.interfaces.Ability;
+import com.syncleus.aethermud.game.Abilities.interfaces.Language;
+import com.syncleus.aethermud.game.Areas.interfaces.Area;
+import com.syncleus.aethermud.game.CharClasses.interfaces.CharClass;
+import com.syncleus.aethermud.game.Common.interfaces.Clan;
+import com.syncleus.aethermud.game.Common.interfaces.ClanGovernment;
+import com.syncleus.aethermud.game.Common.interfaces.Manufacturer;
+import com.syncleus.aethermud.game.Common.interfaces.PlayerAccount;
+import com.syncleus.aethermud.game.Exits.interfaces.Exit;
+import com.syncleus.aethermud.game.Items.interfaces.Item;
+import com.syncleus.aethermud.game.Locales.interfaces.Room;
+import com.syncleus.aethermud.game.MOBS.interfaces.MOB;
+import com.syncleus.aethermud.game.Races.interfaces.Race;
+import com.syncleus.aethermud.game.core.collections.PairList;
+import com.syncleus.aethermud.game.core.exceptions.CMException;
+import com.syncleus.aethermud.game.core.interfaces.*;
 
 import java.io.IOException;
 import java.util.List;

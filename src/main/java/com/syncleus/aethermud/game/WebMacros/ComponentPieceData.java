@@ -14,14 +14,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.WebMacros;
+package com.syncleus.aethermud.game.WebMacros;
 
-import com.planet_ink.game.Common.interfaces.AbilityComponent;
-import com.planet_ink.game.Items.interfaces.RawMaterial;
-import com.planet_ink.game.core.CMStrings;
-import com.planet_ink.game.core.CMath;
-import com.planet_ink.web.interfaces.HTTPRequest;
-import com.planet_ink.web.interfaces.HTTPResponse;
+import com.syncleus.aethermud.game.Common.interfaces.AbilityComponent;
+import com.syncleus.aethermud.game.Items.interfaces.RawMaterial;
+import com.syncleus.aethermud.game.core.CMStrings;
+import com.syncleus.aethermud.game.core.CMath;
+import com.syncleus.aethermud.web.interfaces.HTTPRequest;
+import com.syncleus.aethermud.web.interfaces.HTTPResponse;
 
 
 public class ComponentPieceData extends StdWebMacro {

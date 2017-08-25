@@ -14,13 +14,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Locales;
+package com.syncleus.aethermud.game.Locales;
 
-import com.planet_ink.game.Abilities.interfaces.Ability;
-import com.planet_ink.game.Common.interfaces.PhyStats;
-import com.planet_ink.game.Locales.interfaces.Room;
-import com.planet_ink.game.core.CMClass;
-import com.planet_ink.game.core.interfaces.Places;
+import com.syncleus.aethermud.game.Abilities.interfaces.Ability;
+import com.syncleus.aethermud.game.Common.interfaces.PhyStats;
+import com.syncleus.aethermud.game.Locales.interfaces.Room;
+import com.syncleus.aethermud.game.core.CMClass;
+import com.syncleus.aethermud.game.core.interfaces.Places;
 
 public class HideoutShelter extends MagicShelter {
     public HideoutShelter() {

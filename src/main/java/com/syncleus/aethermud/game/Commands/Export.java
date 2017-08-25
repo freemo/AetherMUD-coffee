@@ -14,25 +14,25 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Commands;
+package com.syncleus.aethermud.game.Commands;
 
-import com.planet_ink.game.Abilities.interfaces.Ability;
-import com.planet_ink.game.Areas.interfaces.Area;
-import com.planet_ink.game.CharClasses.interfaces.CharClass;
-import com.planet_ink.game.Common.interfaces.Manufacturer;
-import com.planet_ink.game.Common.interfaces.PlayerAccount;
-import com.planet_ink.game.Common.interfaces.Session;
-import com.planet_ink.game.Items.interfaces.Item;
-import com.planet_ink.game.Libraries.interfaces.CatalogLibrary;
-import com.planet_ink.game.Locales.interfaces.Room;
-import com.planet_ink.game.MOBS.interfaces.MOB;
-import com.planet_ink.game.Races.interfaces.Race;
-import com.planet_ink.game.core.CMClass.CMObjectType;
-import com.planet_ink.game.core.*;
-import com.planet_ink.game.core.collections.XVector;
-import com.planet_ink.game.core.interfaces.CMObject;
-import com.planet_ink.game.core.interfaces.LandTitle;
-import com.planet_ink.game.core.interfaces.Physical;
+import com.syncleus.aethermud.game.Abilities.interfaces.Ability;
+import com.syncleus.aethermud.game.Areas.interfaces.Area;
+import com.syncleus.aethermud.game.CharClasses.interfaces.CharClass;
+import com.syncleus.aethermud.game.Common.interfaces.Manufacturer;
+import com.syncleus.aethermud.game.Common.interfaces.PlayerAccount;
+import com.syncleus.aethermud.game.Common.interfaces.Session;
+import com.syncleus.aethermud.game.Items.interfaces.Item;
+import com.syncleus.aethermud.game.Libraries.interfaces.CatalogLibrary;
+import com.syncleus.aethermud.game.Locales.interfaces.Room;
+import com.syncleus.aethermud.game.MOBS.interfaces.MOB;
+import com.syncleus.aethermud.game.Races.interfaces.Race;
+import com.syncleus.aethermud.game.core.CMClass.CMObjectType;
+import com.syncleus.aethermud.game.core.*;
+import com.syncleus.aethermud.game.core.collections.XVector;
+import com.syncleus.aethermud.game.core.interfaces.CMObject;
+import com.syncleus.aethermud.game.core.interfaces.LandTitle;
+import com.syncleus.aethermud.game.core.interfaces.Physical;
 
 import java.util.*;
 
@@ -308,7 +308,7 @@ public class Export extends StdCommand {
     }
 
     /**
-     * @see com.planet_ink.game.Commands.interfaces.Command#executeInternal(MOB, int, Object...)
+     * @see com.syncleus.aethermud.game.Commands.interfaces.Command#executeInternal(MOB, int, Object...)
      * args[0] = commandType: AREA, PLAYER, ROOM
      * args[1] = subType: DATA, PLAYER, MOBS, ITEMS, WEAPONS, ARMOR
      * args[2] = fileName: MEMORY, SCREEN, EMAIL

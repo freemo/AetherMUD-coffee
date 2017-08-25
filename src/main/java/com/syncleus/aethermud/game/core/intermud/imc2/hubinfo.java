@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.core.intermud.imc2;
+package com.syncleus.aethermud.game.core.intermud.imc2;
 
 import java.util.Date;
 

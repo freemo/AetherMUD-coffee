@@ -14,28 +14,28 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Libraries;
+package com.syncleus.aethermud.game.Libraries;
 
-import com.planet_ink.game.Abilities.interfaces.Ability;
-import com.planet_ink.game.Areas.interfaces.Area;
-import com.planet_ink.game.CharClasses.interfaces.CharClass;
-import com.planet_ink.game.Common.interfaces.*;
-import com.planet_ink.game.Items.interfaces.*;
-import com.planet_ink.game.Libraries.interfaces.AchievementLibrary;
-import com.planet_ink.game.Libraries.interfaces.ExpertiseLibrary;
-import com.planet_ink.game.Libraries.interfaces.MaskingLibrary;
-import com.planet_ink.game.Libraries.interfaces.PlayerLibrary;
-import com.planet_ink.game.Locales.interfaces.Room;
-import com.planet_ink.game.MOBS.interfaces.MOB;
-import com.planet_ink.game.Races.interfaces.Race;
-import com.planet_ink.game.core.*;
-import com.planet_ink.game.core.collections.Pair;
-import com.planet_ink.game.core.collections.PrioritizingLimitedMap;
-import com.planet_ink.game.core.exceptions.ScriptParseException;
-import com.planet_ink.game.core.interfaces.CMObject;
-import com.planet_ink.game.core.interfaces.Environmental;
-import com.planet_ink.game.core.interfaces.Physical;
-import com.planet_ink.game.core.interfaces.PhysicalAgent;
+import com.syncleus.aethermud.game.Abilities.interfaces.Ability;
+import com.syncleus.aethermud.game.Areas.interfaces.Area;
+import com.syncleus.aethermud.game.CharClasses.interfaces.CharClass;
+import com.syncleus.aethermud.game.Common.interfaces.*;
+import com.syncleus.aethermud.game.Items.interfaces.*;
+import com.syncleus.aethermud.game.Libraries.interfaces.AchievementLibrary;
+import com.syncleus.aethermud.game.Libraries.interfaces.ExpertiseLibrary;
+import com.syncleus.aethermud.game.Libraries.interfaces.MaskingLibrary;
+import com.syncleus.aethermud.game.Libraries.interfaces.PlayerLibrary;
+import com.syncleus.aethermud.game.Locales.interfaces.Room;
+import com.syncleus.aethermud.game.MOBS.interfaces.MOB;
+import com.syncleus.aethermud.game.Races.interfaces.Race;
+import com.syncleus.aethermud.game.core.*;
+import com.syncleus.aethermud.game.core.collections.Pair;
+import com.syncleus.aethermud.game.core.collections.PrioritizingLimitedMap;
+import com.syncleus.aethermud.game.core.exceptions.ScriptParseException;
+import com.syncleus.aethermud.game.core.interfaces.CMObject;
+import com.syncleus.aethermud.game.core.interfaces.Environmental;
+import com.syncleus.aethermud.game.core.interfaces.Physical;
+import com.syncleus.aethermud.game.core.interfaces.PhysicalAgent;
 
 import java.util.*;
 
@@ -2467,30 +2467,30 @@ public class MUDZapper extends StdLibrary implements MaskingLibrary {
                                     if ((ancestorC == null) && (possClassName.indexOf('.') < 0)) {
                                         final String[] prefixes =
                                             {
-                                                "com.planet_ink.game.core.interfaces.",
-                                                "com.planet_ink.game.MOBS.interfaces.",
-                                                "com.planet_ink.game.MOBS.",
-                                                "com.planet_ink.game.Items.interfaces.",
-                                                "com.planet_ink.game.Items.",
-                                                "com.planet_ink.game.Items.Armor.",
-                                                "com.planet_ink.game.Items.Basic.",
-                                                "com.planet_ink.game.Items.BasicTech.",
-                                                "com.planet_ink.game.Items.CompTech.",
-                                                "com.planet_ink.game.Items.MiscMagic.",
-                                                "com.planet_ink.game.Items.Software.",
-                                                "com.planet_ink.game.Items.Weapons.",
-                                                "com.planet_ink.game.Locales.interfaces.",
-                                                "com.planet_ink.game.Locales.",
-                                                "com.planet_ink.game.Exits.interfaces.",
-                                                "com.planet_ink.game.Exits.",
-                                                "com.planet_ink.game.Areas.interfaces.",
-                                                "com.planet_ink.game.Areas.",
-                                                "com.planet_ink.game.Abilities.interfaces.",
-                                                "com.planet_ink.game.Behaviors.interfaces.",
-                                                "com.planet_ink.game.CharClasses.interfaces.",
-                                                "com.planet_ink.game.Races.interfaces.",
-                                                "com.planet_ink.game.Commands.interfaces.",
-                                                "com.planet_ink.game.Libraries.interfaces.",
+                                                "com.syncleus.aethermud.game.core.interfaces.",
+                                                "com.syncleus.aethermud.game.MOBS.interfaces.",
+                                                "com.syncleus.aethermud.game.MOBS.",
+                                                "com.syncleus.aethermud.game.Items.interfaces.",
+                                                "com.syncleus.aethermud.game.Items.",
+                                                "com.syncleus.aethermud.game.Items.Armor.",
+                                                "com.syncleus.aethermud.game.Items.Basic.",
+                                                "com.syncleus.aethermud.game.Items.BasicTech.",
+                                                "com.syncleus.aethermud.game.Items.CompTech.",
+                                                "com.syncleus.aethermud.game.Items.MiscMagic.",
+                                                "com.syncleus.aethermud.game.Items.Software.",
+                                                "com.syncleus.aethermud.game.Items.Weapons.",
+                                                "com.syncleus.aethermud.game.Locales.interfaces.",
+                                                "com.syncleus.aethermud.game.Locales.",
+                                                "com.syncleus.aethermud.game.Exits.interfaces.",
+                                                "com.syncleus.aethermud.game.Exits.",
+                                                "com.syncleus.aethermud.game.Areas.interfaces.",
+                                                "com.syncleus.aethermud.game.Areas.",
+                                                "com.syncleus.aethermud.game.Abilities.interfaces.",
+                                                "com.syncleus.aethermud.game.Behaviors.interfaces.",
+                                                "com.syncleus.aethermud.game.CharClasses.interfaces.",
+                                                "com.syncleus.aethermud.game.Races.interfaces.",
+                                                "com.syncleus.aethermud.game.Commands.interfaces.",
+                                                "com.syncleus.aethermud.game.Libraries.interfaces.",
                                             };
                                         for (String prefix : prefixes) {
                                             try {

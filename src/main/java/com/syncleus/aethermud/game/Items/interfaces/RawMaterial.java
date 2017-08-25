@@ -14,13 +14,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Items.interfaces;
+package com.syncleus.aethermud.game.Items.interfaces;
 
-import com.planet_ink.game.Abilities.interfaces.Ability;
-import com.planet_ink.game.core.*;
-import com.planet_ink.game.core.collections.Pair;
-import com.planet_ink.game.core.collections.PairList;
-import com.planet_ink.game.core.collections.PairSVector;
+import com.syncleus.aethermud.game.Abilities.interfaces.Ability;
+import com.syncleus.aethermud.game.core.*;
+import com.syncleus.aethermud.game.core.collections.Pair;
+import com.syncleus.aethermud.game.core.collections.PairList;
+import com.syncleus.aethermud.game.core.collections.PairSVector;
 
 import java.util.*;
 

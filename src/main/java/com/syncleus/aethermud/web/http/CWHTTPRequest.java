@@ -14,13 +14,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.web.http;
+package com.syncleus.aethermud.web.http;
 
-import com.planet_ink.web.interfaces.HTTPIOHandler;
-import com.planet_ink.web.interfaces.HTTPRequest;
-import com.planet_ink.web.util.CWConfig;
-import com.planet_ink.web.util.CWConfig.DisableFlag;
-import com.planet_ink.web.util.CWThread;
+import com.syncleus.aethermud.web.interfaces.HTTPIOHandler;
+import com.syncleus.aethermud.web.interfaces.HTTPRequest;
+import com.syncleus.aethermud.web.util.CWConfig;
+import com.syncleus.aethermud.web.util.CWConfig.DisableFlag;
+import com.syncleus.aethermud.web.util.CWThread;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;

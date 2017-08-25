@@ -14,14 +14,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Common.interfaces;
+package com.syncleus.aethermud.game.Common.interfaces;
 
-import com.planet_ink.game.Abilities.interfaces.Ability;
-import com.planet_ink.game.MOBS.interfaces.MOB;
-import com.planet_ink.game.core.CMath;
-import com.planet_ink.game.core.collections.ChameleonList;
-import com.planet_ink.game.core.collections.SearchIDList;
-import com.planet_ink.game.core.interfaces.Modifiable;
+import com.syncleus.aethermud.game.Abilities.interfaces.Ability;
+import com.syncleus.aethermud.game.MOBS.interfaces.MOB;
+import com.syncleus.aethermud.game.core.CMath;
+import com.syncleus.aethermud.game.core.collections.ChameleonList;
+import com.syncleus.aethermud.game.core.collections.SearchIDList;
+import com.syncleus.aethermud.game.core.interfaces.Modifiable;
 
 
 /**

@@ -14,32 +14,32 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Libraries;
+package com.syncleus.aethermud.game.Libraries;
 
-import com.planet_ink.game.Abilities.interfaces.Ability;
-import com.planet_ink.game.Areas.interfaces.Area;
-import com.planet_ink.game.Common.interfaces.CMMsg;
-import com.planet_ink.game.Common.interfaces.CMMsg.CheckedMsgResponse;
-import com.planet_ink.game.Common.interfaces.CharState;
-import com.planet_ink.game.Common.interfaces.Climate;
-import com.planet_ink.game.Common.interfaces.Session;
-import com.planet_ink.game.Exits.interfaces.Exit;
-import com.planet_ink.game.Exits.interfaces.PrepositionExit;
-import com.planet_ink.game.Items.interfaces.BoardableShip;
-import com.planet_ink.game.Items.interfaces.Item;
-import com.planet_ink.game.Items.interfaces.RawMaterial;
-import com.planet_ink.game.Libraries.interfaces.CMFlagLibrary;
-import com.planet_ink.game.Libraries.interfaces.TrackingLibrary;
-import com.planet_ink.game.Libraries.interfaces.WorldMap;
-import com.planet_ink.game.Locales.interfaces.GridLocale;
-import com.planet_ink.game.Locales.interfaces.Room;
-import com.planet_ink.game.MOBS.interfaces.MOB;
-import com.planet_ink.game.core.*;
-import com.planet_ink.game.core.collections.Pair;
-import com.planet_ink.game.core.collections.PairVector;
-import com.planet_ink.game.core.collections.ReadOnlyVector;
-import com.planet_ink.game.core.collections.XVector;
-import com.planet_ink.game.core.interfaces.*;
+import com.syncleus.aethermud.game.Abilities.interfaces.Ability;
+import com.syncleus.aethermud.game.Areas.interfaces.Area;
+import com.syncleus.aethermud.game.Common.interfaces.CMMsg;
+import com.syncleus.aethermud.game.Common.interfaces.CMMsg.CheckedMsgResponse;
+import com.syncleus.aethermud.game.Common.interfaces.CharState;
+import com.syncleus.aethermud.game.Common.interfaces.Climate;
+import com.syncleus.aethermud.game.Common.interfaces.Session;
+import com.syncleus.aethermud.game.Exits.interfaces.Exit;
+import com.syncleus.aethermud.game.Exits.interfaces.PrepositionExit;
+import com.syncleus.aethermud.game.Items.interfaces.BoardableShip;
+import com.syncleus.aethermud.game.Items.interfaces.Item;
+import com.syncleus.aethermud.game.Items.interfaces.RawMaterial;
+import com.syncleus.aethermud.game.Libraries.interfaces.CMFlagLibrary;
+import com.syncleus.aethermud.game.Libraries.interfaces.TrackingLibrary;
+import com.syncleus.aethermud.game.Libraries.interfaces.WorldMap;
+import com.syncleus.aethermud.game.Locales.interfaces.GridLocale;
+import com.syncleus.aethermud.game.Locales.interfaces.Room;
+import com.syncleus.aethermud.game.MOBS.interfaces.MOB;
+import com.syncleus.aethermud.game.core.*;
+import com.syncleus.aethermud.game.core.collections.Pair;
+import com.syncleus.aethermud.game.core.collections.PairVector;
+import com.syncleus.aethermud.game.core.collections.ReadOnlyVector;
+import com.syncleus.aethermud.game.core.collections.XVector;
+import com.syncleus.aethermud.game.core.interfaces.*;
 
 import java.util.*;
 

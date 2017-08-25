@@ -14,21 +14,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Libraries.interfaces;
+package com.syncleus.aethermud.game.Libraries.interfaces;
 
-import com.planet_ink.game.Abilities.interfaces.Ability;
-import com.planet_ink.game.Areas.interfaces.Area;
-import com.planet_ink.game.CharClasses.interfaces.CharClass;
-import com.planet_ink.game.Common.interfaces.CMMsg;
-import com.planet_ink.game.Common.interfaces.CMMsg.View;
-import com.planet_ink.game.Items.interfaces.BoardableShip;
-import com.planet_ink.game.Items.interfaces.Item;
-import com.planet_ink.game.Items.interfaces.Weapon;
-import com.planet_ink.game.Locales.interfaces.Room;
-import com.planet_ink.game.MOBS.interfaces.MOB;
-import com.planet_ink.game.core.interfaces.Environmental;
-import com.planet_ink.game.core.interfaces.Physical;
-import com.planet_ink.game.core.interfaces.PhysicalAgent;
+import com.syncleus.aethermud.game.Abilities.interfaces.Ability;
+import com.syncleus.aethermud.game.Areas.interfaces.Area;
+import com.syncleus.aethermud.game.CharClasses.interfaces.CharClass;
+import com.syncleus.aethermud.game.Common.interfaces.CMMsg;
+import com.syncleus.aethermud.game.Common.interfaces.CMMsg.View;
+import com.syncleus.aethermud.game.Items.interfaces.BoardableShip;
+import com.syncleus.aethermud.game.Items.interfaces.Item;
+import com.syncleus.aethermud.game.Items.interfaces.Weapon;
+import com.syncleus.aethermud.game.Locales.interfaces.Room;
+import com.syncleus.aethermud.game.MOBS.interfaces.MOB;
+import com.syncleus.aethermud.game.core.interfaces.Environmental;
+import com.syncleus.aethermud.game.core.interfaces.Physical;
+import com.syncleus.aethermud.game.core.interfaces.PhysicalAgent;
 
 import java.util.List;
 import java.util.Set;
@@ -95,7 +95,7 @@ public interface CombatLibrary extends CMLibrary {
     /**
      * Returns the given mobs armor, after adjusting for
      * hunger, thirst, fatigue, position, and dexterity.
-     * @see com.planet_ink.game.Common.interfaces.PhyStats#armor()
+     * @see com.syncleus.aethermud.game.Common.interfaces.PhyStats#armor()
      * @param mob the mob whose armor needs adjusting
      * @return the given mobs adjusted armor value
      */
@@ -105,7 +105,7 @@ public interface CombatLibrary extends CMLibrary {
      * Returns the given armor value, after adjusting for
      * hunger, thirst, fatigue, position, and dexterity.
      * Assumes an average random mob.
-     * @see com.planet_ink.game.Common.interfaces.PhyStats#armor()
+     * @see com.syncleus.aethermud.game.Common.interfaces.PhyStats#armor()
      * @param armorValue the base armor value to start from
      * @return the given adjusted armor value
      */
@@ -114,7 +114,7 @@ public interface CombatLibrary extends CMLibrary {
     /**
      * Returns the given mobs attack bonus, after adjusting for
      * hunger, thirst, fatigue, position, and strength.
-     * @see com.planet_ink.game.Common.interfaces.PhyStats#armor()
+     * @see com.syncleus.aethermud.game.Common.interfaces.PhyStats#armor()
      * @param mob the mob whose attack bonus needs adjusting
      * @param target i guess this is who they are fighting
      * @return the given mobs adjusted attack bonus
@@ -125,7 +125,7 @@ public interface CombatLibrary extends CMLibrary {
      * Returns the given attack bonus, after adjusting for
      * hunger, thirst, fatigue, position, and strength.
      * Assumes an average mob otherwise.
-     * @see com.planet_ink.game.Common.interfaces.PhyStats#armor()
+     * @see com.syncleus.aethermud.game.Common.interfaces.PhyStats#armor()
      * @param baseAttack the base attack bonus to work from.
      * @return the given adjusted attack bonus
      */
@@ -275,11 +275,11 @@ public interface CombatLibrary extends CMLibrary {
      * the string &lt;DAMAGE&gt; or &lt;DAMAGES&gt; is put as a placeholder, and then this method
      * is called to replace those tags with actual damage words based on the given final amount
      * and the given weapon type, and a clue as to who would see the message
-     * @see com.planet_ink.game.Common.interfaces.CMMsg.View
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg.View
      * @see CombatLibrary#postDamage(MOB, MOB, Environmental, int, int, int, String)
      * @param str the original string with the appropriate tag
      * @param damage the final amount of damage
-     * @param damageType the weapon type code {@link com.planet_ink.game.Items.interfaces.Weapon#TYPE_BASHING}
+     * @param damageType the weapon type code {@link com.syncleus.aethermud.game.Items.interfaces.Weapon#TYPE_BASHING}
      * @param sourceTargetSTO the view of the message
      * @return the final modified string
      */
@@ -297,7 +297,7 @@ public interface CombatLibrary extends CMLibrary {
      * @param weapon the item weapon, ability skill, or null tool used to damage
      * @param damage the initial amount of damage
      * @param messageCode msg code for the source and others code
-     * @param damageType the weapon type code {@link com.planet_ink.game.Items.interfaces.Weapon#TYPE_BASHING}
+     * @param damageType the weapon type code {@link com.syncleus.aethermud.game.Items.interfaces.Weapon#TYPE_BASHING}
      * @param allDisplayMessage the message to send
      */
     public void postDamage(MOB attacker, MOB target, Environmental weapon, int damage, int messageCode, int damageType, String allDisplayMessage);
@@ -474,7 +474,7 @@ public interface CombatLibrary extends CMLibrary {
      * Given the weapon type and amount of damage,
      * this method returns the hit/damage string from
      * the lists.ini file that matches.
-     * @see com.planet_ink.game.Items.interfaces.Weapon#TYPE_BASHING
+     * @see com.syncleus.aethermud.game.Items.interfaces.Weapon#TYPE_BASHING
      * @param type the weapon type
      * @param damage the amount of damage
      * @return the hit/damage word
@@ -485,7 +485,7 @@ public interface CombatLibrary extends CMLibrary {
      * Given the weapon type and percent of damage 0 to 1,
      * this method returns the hit/damage string from
      * the lists.ini file that matches.
-     * @see com.planet_ink.game.Items.interfaces.Weapon#TYPE_BASHING
+     * @see com.syncleus.aethermud.game.Items.interfaces.Weapon#TYPE_BASHING
      * @param type the weapon type
      * @param pct the percent of damage from 0.0 to 1.0
      * @return the hit/damage word
@@ -497,8 +497,8 @@ public interface CombatLibrary extends CMLibrary {
      * this method returns either the fullly filled out weapon
      * miss string, or generic non-extended non-weapon miss string
      * from the lists.ini file that matches.
-     * @see com.planet_ink.game.Items.interfaces.Weapon#TYPE_DESCS
-     * @see com.planet_ink.game.Items.interfaces.Weapon#CLASS_DESCS
+     * @see com.syncleus.aethermud.game.Items.interfaces.Weapon#TYPE_DESCS
+     * @see com.syncleus.aethermud.game.Items.interfaces.Weapon#CLASS_DESCS
      * @param weaponDamageType the weapon type
      * @param weaponClassification the weapon classification
      * @param weaponName the name of the weapon
@@ -511,8 +511,8 @@ public interface CombatLibrary extends CMLibrary {
      * Given the weapon type and classification and name,
      * this method returns either the fullly filled out weapon
      * hit/damage string from the the lists.ini file that matches.
-     * @see com.planet_ink.game.Items.interfaces.Weapon#TYPE_DESCS
-     * @see com.planet_ink.game.Items.interfaces.Weapon#CLASS_DESCS
+     * @see com.syncleus.aethermud.game.Items.interfaces.Weapon#TYPE_DESCS
+     * @see com.syncleus.aethermud.game.Items.interfaces.Weapon#CLASS_DESCS
      * @param weaponDamageType the weapon type
      * @param weaponClass the weapon classification
      * @param damageAmount the amount of damage done
@@ -539,7 +539,7 @@ public interface CombatLibrary extends CMLibrary {
      * this message will generate and tack on a new message
      * with the resistance of the target, and flag the given
      * message as having been resisted.
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#addTrailerMsg(CMMsg)
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#addTrailerMsg(CMMsg)
      * @param source the attacker
      * @param target the defender who is resisting
      * @param msg the message to flag as being resisted and tack on resistance msg
@@ -550,7 +550,7 @@ public interface CombatLibrary extends CMLibrary {
      * Given an attacking source and a defending target and the sources weapon
      * or skill, this method will set the distance between the source and target
      * from each other.
-     * @see com.planet_ink.game.MOBS.interfaces.MOB#setRangeToTarget(int)
+     * @see com.syncleus.aethermud.game.MOBS.interfaces.MOB#setRangeToTarget(int)
      * @param source the attacker
      * @param target the target
      * @param tool the sources weapon

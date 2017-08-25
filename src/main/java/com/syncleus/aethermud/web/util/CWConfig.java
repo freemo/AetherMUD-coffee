@@ -14,15 +14,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.web.util;
+package com.syncleus.aethermud.web.util;
 
-import com.planet_ink.game.core.collections.KeyPairSearchTree;
-import com.planet_ink.game.core.collections.KeyPairWildSearchTree;
-import com.planet_ink.game.core.collections.Pair;
-import com.planet_ink.game.core.collections.Triad;
-import com.planet_ink.web.http.MIMEType;
-import com.planet_ink.web.interfaces.*;
-import com.planet_ink.web.server.WebServer;
+import com.syncleus.aethermud.game.core.collections.KeyPairSearchTree;
+import com.syncleus.aethermud.game.core.collections.KeyPairWildSearchTree;
+import com.syncleus.aethermud.game.core.collections.Pair;
+import com.syncleus.aethermud.game.core.collections.Triad;
+import com.syncleus.aethermud.web.http.MIMEType;
+import com.syncleus.aethermud.web.interfaces.*;
+import com.syncleus.aethermud.web.server.WebServer;
 
 import java.net.UnknownHostException;
 import java.util.*;

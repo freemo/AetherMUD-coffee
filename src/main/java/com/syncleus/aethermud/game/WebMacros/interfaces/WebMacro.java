@@ -14,12 +14,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.WebMacros.interfaces;
+package com.syncleus.aethermud.game.WebMacros.interfaces;
 
-import com.planet_ink.game.core.exceptions.HTTPServerException;
-import com.planet_ink.game.core.interfaces.CMObject;
-import com.planet_ink.web.interfaces.HTTPRequest;
-import com.planet_ink.web.interfaces.HTTPResponse;
+import com.syncleus.aethermud.game.core.exceptions.HTTPServerException;
+import com.syncleus.aethermud.game.core.interfaces.CMObject;
+import com.syncleus.aethermud.web.interfaces.HTTPRequest;
+import com.syncleus.aethermud.web.interfaces.HTTPResponse;
 
 /*
    Copyright 2002-2017 Bo Zimmerman
@@ -90,7 +90,7 @@ public interface WebMacro extends CMObject {
      * and is only important when isAWebPath return true.
      *
      * @see WebMacro#preferBinary()
-     * @see com.planet_ink.web.interfaces.HTTPRequest
+     * @see com.syncleus.aethermud.web.interfaces.HTTPRequest
      * @param httpReq the external requests object
      * @param parm any parameter strings given to the macro
      * @param httpResp the response, with headers
@@ -111,7 +111,7 @@ public interface WebMacro extends CMObject {
      * and is only important when isAWebPath return true.
      *
      * @see WebMacro#preferBinary()
-     * @see com.planet_ink.web.interfaces.HTTPRequest
+     * @see com.syncleus.aethermud.web.interfaces.HTTPRequest
      * @param httpReq the external requests object
      * @param parm any parameter strings given to the macro
      * @param httpResp the response, with headers

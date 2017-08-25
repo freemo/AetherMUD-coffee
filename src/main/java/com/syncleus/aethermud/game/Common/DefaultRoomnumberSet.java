@@ -14,17 +14,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Common;
+package com.syncleus.aethermud.game.Common;
 
-import com.planet_ink.game.Common.interfaces.RoomnumberSet;
-import com.planet_ink.game.Libraries.interfaces.XMLLibrary;
-import com.planet_ink.game.Libraries.interfaces.XMLLibrary.XMLTag;
-import com.planet_ink.game.core.CMClass;
-import com.planet_ink.game.core.CMLib;
-import com.planet_ink.game.core.CMath;
-import com.planet_ink.game.core.collections.LongSet;
-import com.planet_ink.game.core.collections.STreeMap;
-import com.planet_ink.game.core.interfaces.CMObject;
+import com.syncleus.aethermud.game.Common.interfaces.RoomnumberSet;
+import com.syncleus.aethermud.game.Libraries.interfaces.XMLLibrary;
+import com.syncleus.aethermud.game.Libraries.interfaces.XMLLibrary.XMLTag;
+import com.syncleus.aethermud.game.core.CMClass;
+import com.syncleus.aethermud.game.core.CMLib;
+import com.syncleus.aethermud.game.core.CMath;
+import com.syncleus.aethermud.game.core.collections.LongSet;
+import com.syncleus.aethermud.game.core.collections.STreeMap;
+import com.syncleus.aethermud.game.core.interfaces.CMObject;
 
 import java.util.Enumeration;
 import java.util.Iterator;

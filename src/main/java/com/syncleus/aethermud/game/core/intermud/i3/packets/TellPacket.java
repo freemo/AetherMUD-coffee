@@ -14,15 +14,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.core.intermud.i3.packets;
+package com.syncleus.aethermud.game.core.intermud.i3.packets;
 
-import com.planet_ink.game.core.intermud.i3.net.Interactive;
-import com.planet_ink.game.core.intermud.i3.server.I3Server;
+import com.syncleus.aethermud.game.core.intermud.i3.net.Interactive;
+import com.syncleus.aethermud.game.core.intermud.i3.server.I3Server;
 
 import java.util.Vector;
 
 /**
- * com.planet_ink.game.core.intermud.i3.packets.TellPacket
+ * com.syncleus.aethermud.game.core.intermud.i3.packets.TellPacket
  * Copyright (c) 1996 George Reese
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -69,7 +69,7 @@ public class TellPacket extends Packet {
 
     /**
      * Constructs a tell package based on an I3 mud mode vector.
-     * @exception com.planet_ink.game.core.intermud.i3.packets.InvalidPacketException thrown if the incoming packet is bad
+     * @exception com.syncleus.aethermud.game.core.intermud.i3.packets.InvalidPacketException thrown if the incoming packet is bad
      * @param v the I3 mud mode vector containing the incoming tell
      */
     public TellPacket(Vector v) throws InvalidPacketException {
@@ -102,8 +102,8 @@ public class TellPacket extends Packet {
 
     /**
      * Sends a properly constructed outgoing tell to its target.
-     * @exception com.planet_ink.game.core.intermud.i3.packets.InvalidPacketException thrown if this packet was not properly constructed
-     * @see com.planet_ink.game.core.intermud.i3.packets.Packet#send
+     * @exception com.syncleus.aethermud.game.core.intermud.i3.packets.InvalidPacketException thrown if this packet was not properly constructed
+     * @see com.syncleus.aethermud.game.core.intermud.i3.packets.Packet#send
      */
     @Override
     public void send() throws InvalidPacketException {

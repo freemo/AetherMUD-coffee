@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.core.interfaces;
+package com.syncleus.aethermud.game.core.interfaces;
 
 import java.util.Enumeration;
 import java.util.List;
@@ -24,7 +24,7 @@ import java.util.List;
  *
  * Something that can belong to one or more factions, and have rank
  * (also called "faction") with it.
- * @see com.planet_ink.game.Common.interfaces.Faction
+ * @see com.syncleus.aethermud.game.Common.interfaces.Faction
  * @author Bo Zimmerman
  *
  */

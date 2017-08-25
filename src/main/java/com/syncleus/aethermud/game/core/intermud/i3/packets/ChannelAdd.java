@@ -14,9 +14,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.core.intermud.i3.packets;
+package com.syncleus.aethermud.game.core.intermud.i3.packets;
 
-import com.planet_ink.game.core.intermud.i3.server.I3Server;
+import com.syncleus.aethermud.game.core.intermud.i3.server.I3Server;
 
 import java.util.Vector;
 

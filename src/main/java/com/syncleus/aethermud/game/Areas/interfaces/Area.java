@@ -14,20 +14,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Areas.interfaces;
+package com.syncleus.aethermud.game.Areas.interfaces;
 
-import com.planet_ink.game.Common.interfaces.Climate;
-import com.planet_ink.game.Common.interfaces.RoomnumberSet;
-import com.planet_ink.game.Common.interfaces.TimeClock;
-import com.planet_ink.game.Locales.interfaces.GridLocale;
-import com.planet_ink.game.Locales.interfaces.Room;
-import com.planet_ink.game.MOBS.interfaces.MOB;
-import com.planet_ink.game.core.CMLib;
-import com.planet_ink.game.core.collections.IteratorEnumeration;
-import com.planet_ink.game.core.collections.MultiEnumeration;
-import com.planet_ink.game.core.interfaces.Economics;
-import com.planet_ink.game.core.interfaces.PhysicalAgent;
-import com.planet_ink.game.core.interfaces.Places;
+import com.syncleus.aethermud.game.Common.interfaces.Climate;
+import com.syncleus.aethermud.game.Common.interfaces.RoomnumberSet;
+import com.syncleus.aethermud.game.Common.interfaces.TimeClock;
+import com.syncleus.aethermud.game.Locales.interfaces.GridLocale;
+import com.syncleus.aethermud.game.Locales.interfaces.Room;
+import com.syncleus.aethermud.game.MOBS.interfaces.MOB;
+import com.syncleus.aethermud.game.core.CMLib;
+import com.syncleus.aethermud.game.core.collections.IteratorEnumeration;
+import com.syncleus.aethermud.game.core.collections.MultiEnumeration;
+import com.syncleus.aethermud.game.core.interfaces.Economics;
+import com.syncleus.aethermud.game.core.interfaces.PhysicalAgent;
+import com.syncleus.aethermud.game.core.interfaces.Places;
 
 import java.lang.ref.WeakReference;
 import java.util.Comparator;
@@ -45,22 +45,22 @@ import java.util.List;
  */
 public interface Area extends Economics, PhysicalAgent, Places {
     public final static String[] THEME_BIT_NAMES = {"FANTASY", "TECH", "HEROIC", "SKILLONLY"};
-    /**    Bitmap flag meaning that the object supports magic.  @see com.planet_ink.game.Areas.interfaces.Area#getTheme() */
+    /**    Bitmap flag meaning that the object supports magic.  @see com.syncleus.aethermud.game.Areas.interfaces.Area#getTheme() */
     public final static int THEME_INHERIT = 0;
-    /**    Bitmap flag meaning that the object supports magic.  @see com.planet_ink.game.Areas.interfaces.Area#getTheme() */
+    /**    Bitmap flag meaning that the object supports magic.  @see com.syncleus.aethermud.game.Areas.interfaces.Area#getTheme() */
     public final static int THEME_FANTASY = 1;
-    /**    Bitmap flag meaning that the object supports technology.  @see com.planet_ink.game.Areas.interfaces.Area#getTheme() */
+    /**    Bitmap flag meaning that the object supports technology.  @see com.syncleus.aethermud.game.Areas.interfaces.Area#getTheme() */
     public final static int THEME_TECHNOLOGY = 2;
-    /**    Bitmap flag meaning that the object supports super powers.  @see com.planet_ink.game.Areas.interfaces.Area#getTheme() */
+    /**    Bitmap flag meaning that the object supports super powers.  @see com.syncleus.aethermud.game.Areas.interfaces.Area#getTheme() */
     public final static int THEME_HEROIC = 4;
-    /**    Bitmap flag meaning that the object supports ALL themes.  @see com.planet_ink.game.Areas.interfaces.Area#getTheme() */
+    /**    Bitmap flag meaning that the object supports ALL themes.  @see com.syncleus.aethermud.game.Areas.interfaces.Area#getTheme() */
     public final static int THEME_ALLTHEMES = THEME_FANTASY | THEME_TECHNOLOGY | THEME_HEROIC;
-    /**    Bitmap flag meaning that the object only supports usage of above in Skills.  @see com.planet_ink.game.Areas.interfaces.Area#getTheme() */
+    /**    Bitmap flag meaning that the object only supports usage of above in Skills.  @see com.syncleus.aethermud.game.Areas.interfaces.Area#getTheme() */
     public final static int THEME_SKILLONLYMASK = 8;
     /** Indexed description of the THEME_ bitmap constants in all possible combinations -- in upper/single word format */
     public final static String[] THEME_NAMES = {"INHERITED", "FANTASY", "TECH", "FANTAST+TECH", "HEROIC", "HEROIC+FANTASY", "HEROIC+TECH", "ALL", "SKILLONLY"};
     /**    Indexed description of the THEME_ bitmap constants in all possible combinations.  In readable format.
-     * @see com.planet_ink.game.Areas.interfaces.Area#THEME_FANTASY
+     * @see com.syncleus.aethermud.game.Areas.interfaces.Area#THEME_FANTASY
      */
     public final static String[] THEME_PHRASE = {"Inherited",          // 0
         "Fantasy",          // 1
@@ -72,7 +72,7 @@ public interface Area extends Economics, PhysicalAgent, Places {
         "All Allowed"          // 7
     };
     /**    Indexed extended description of the THEME_ bitmap constants in all possible combinations.
-     * @see com.planet_ink.game.Areas.interfaces.Area#THEME_FANTASY
+     * @see com.syncleus.aethermud.game.Areas.interfaces.Area#THEME_FANTASY
      */
     public final static String[] THEME_PHRASE_EXT = {"Unavailable",      // 0
         "Fantasy",          // 1
@@ -92,18 +92,18 @@ public interface Area extends Economics, PhysicalAgent, Places {
         "Any skill only"      // 15
 
     };
-    /**    State flag meaning this area is a THIN type area.  @see com.planet_ink.game.Areas.interfaces.Area#flags() */
+    /**    State flag meaning this area is a THIN type area.  @see com.syncleus.aethermud.game.Areas.interfaces.Area#flags() */
     public final static int FLAG_THIN = 1;
-    /**    State flag meaning this area is a INSTANCE parent type area.  @see com.planet_ink.game.Areas.interfaces.Area#flags() */
+    /**    State flag meaning this area is a INSTANCE parent type area.  @see com.syncleus.aethermud.game.Areas.interfaces.Area#flags() */
     public final static int FLAG_INSTANCE_PARENT = 2;
-    /**    State flag meaning this area is a INSTANCE child type area.  @see com.planet_ink.game.Areas.interfaces.Area#flags() */
+    /**    State flag meaning this area is a INSTANCE child type area.  @see com.syncleus.aethermud.game.Areas.interfaces.Area#flags() */
     public final static int FLAG_INSTANCE_CHILD = 4;
     /**    Amount of time of player absence before an area automatically goes from Active to passive */
     public final static long TIME_PASSIVE_LAPSE = 60 * 1000 * 30; // 30 mins
 
     /**
      * Return basic attributed flag about the area.
-     * @see com.planet_ink.game.Areas.interfaces.Area#FLAG_THIN
+     * @see com.syncleus.aethermud.game.Areas.interfaces.Area#FLAG_THIN
      * @return either 0, or a bitmap of FLAG_ constants
      */
     public long flags();
@@ -112,7 +112,7 @@ public interface Area extends Economics, PhysicalAgent, Places {
      * Returns the technology level supported by this area.  Activities within
      * rooms within this area will be affected by the results of this flag.
      * May return THEME_INHERIT if the area inherits a theme from above.
-     * @see com.planet_ink.game.Areas.interfaces.Area#THEME_FANTASY
+     * @see com.syncleus.aethermud.game.Areas.interfaces.Area#THEME_FANTASY
      * @return a bitmap of the themes supported by this area.
      */
     public int getThemeCode();
@@ -121,7 +121,7 @@ public interface Area extends Economics, PhysicalAgent, Places {
      * Returns the technology level supported by this area.  Activities within
      * rooms within this area will be affected by the results of this flag.
      * May result in consulting parent areas to determine a theme
-     * @see com.planet_ink.game.Areas.interfaces.Area#THEME_FANTASY
+     * @see com.syncleus.aethermud.game.Areas.interfaces.Area#THEME_FANTASY
      * @return a bitmap of the themes supported by this area.
      */
     public int getTheme();
@@ -129,7 +129,7 @@ public interface Area extends Economics, PhysicalAgent, Places {
     /**
      * Sets the technology level supported by this area.  Activities within
      * rooms within this area will be affected by the results of this flag.
-     * @see com.planet_ink.game.Areas.interfaces.Area#THEME_FANTASY
+     * @see com.syncleus.aethermud.game.Areas.interfaces.Area#THEME_FANTASY
      * @param level the bitmap representing the tech level
      */
     public void setTheme(int level);
@@ -151,16 +151,16 @@ public interface Area extends Economics, PhysicalAgent, Places {
     /**
      * Returns a reference to the Climate object that represents the
      * current and future weather for this area.
-     * @see com.planet_ink.game.Common.interfaces.Climate
-     * @return a com.planet_ink.game.Common.interfaces.Climate object
+     * @see com.syncleus.aethermud.game.Common.interfaces.Climate
+     * @return a com.syncleus.aethermud.game.Common.interfaces.Climate object
      */
     public Climate getClimateObj();
 
     /**
      * Sets a reference to the Climate object that represents the
      * current and future weather for this area.
-     * @see com.planet_ink.game.Common.interfaces.Climate
-     * @param obj a com.planet_ink.game.Common.interfaces.Climate object
+     * @see com.syncleus.aethermud.game.Common.interfaces.Climate
+     * @param obj a com.syncleus.aethermud.game.Common.interfaces.Climate object
      */
     public void setClimateObj(Climate obj);
 
@@ -168,8 +168,8 @@ public interface Area extends Economics, PhysicalAgent, Places {
      * Returns a reference to the TimeClock object that represents the
      * calendar and date/time for this area.  May be shared by numerous
      * areas.
-     * @see com.planet_ink.game.Common.interfaces.TimeClock
-     * @return a com.planet_ink.game.Common.interfaces.TimeClock object
+     * @see com.syncleus.aethermud.game.Common.interfaces.TimeClock
+     * @return a com.syncleus.aethermud.game.Common.interfaces.TimeClock object
      */
     public TimeClock getTimeObj();
 
@@ -177,8 +177,8 @@ public interface Area extends Economics, PhysicalAgent, Places {
      * Sets a reference to the TimeClock object that represents the
      * calendar and date/time for this area.  May be shared by numerous
      * areas.
-     * @see com.planet_ink.game.Common.interfaces.TimeClock
-     * @param obj a com.planet_ink.game.Common.interfaces.TimeClock object
+     * @see com.syncleus.aethermud.game.Common.interfaces.TimeClock
+     * @param obj a com.syncleus.aethermud.game.Common.interfaces.TimeClock object
      */
     public void setTimeObj(TimeClock obj);
 
@@ -239,7 +239,7 @@ public interface Area extends Economics, PhysicalAgent, Places {
      * A blurb flag is a run-time modifiable set of strings that can be added
      * to an area in order to display them in the HELP entry for an area.
      * This method returns the name of an enumerated flag.
-     * @see com.planet_ink.game.Areas.interfaces.Area#getBlurbFlag(String)
+     * @see com.syncleus.aethermud.game.Areas.interfaces.Area#getBlurbFlag(String)
      * @return enumeration of blurb flag keys, call getBlurbFlag(String) for the value
      */
     public Enumeration<String> areaBlurbFlags();
@@ -270,7 +270,7 @@ public interface Area extends Economics, PhysicalAgent, Places {
     /**
      * This method causes a given room to have its run-time generated Skys to
      * be re-generated.
-     * @see com.planet_ink.game.Locales.interfaces.Room
+     * @see com.syncleus.aethermud.game.Locales.interfaces.Room
      * @param R the Room object to "fill-in"
      */
     public void fillInAreaRoom(Room R);
@@ -279,8 +279,8 @@ public interface Area extends Economics, PhysicalAgent, Places {
      * This method adds a new Room to this area.  It is called by the Room.setArea(
      * method, and should rarely if ever be called directly.  It calls addMetroRoom
      * on all parent areas to make them aware of it as well.
-     * @see com.planet_ink.game.Areas.interfaces.Area#addMetroRoom(Room)
-     * @see com.planet_ink.game.Locales.interfaces.Room
+     * @see com.syncleus.aethermud.game.Areas.interfaces.Area#addMetroRoom(Room)
+     * @see com.syncleus.aethermud.game.Locales.interfaces.Room
      * @param R the Room to add.
      */
     public void addProperRoom(Room R);
@@ -288,8 +288,8 @@ public interface Area extends Economics, PhysicalAgent, Places {
     /**
      * This method removes an existing Room from this area.  It also removes it
      * from parent areas.
-     * @see com.planet_ink.game.Areas.interfaces.Area#delMetroRoom(Room)
-     * @see com.planet_ink.game.Locales.interfaces.Room
+     * @see com.syncleus.aethermud.game.Areas.interfaces.Area#delMetroRoom(Room)
+     * @see com.syncleus.aethermud.game.Locales.interfaces.Room
      * @param R the Room to delete.
      */
     public void delProperRoom(Room R);
@@ -297,7 +297,7 @@ public interface Area extends Economics, PhysicalAgent, Places {
     /**
      * Returns a room of the given roomID, if it has already been added by calling
      * addProperRoom.
-     * @see com.planet_ink.game.Locales.interfaces.Room
+     * @see com.syncleus.aethermud.game.Locales.interfaces.Room
      * @param roomID the roomID of the room to return.
      * @return a reference to the room that the id refers to, IF the room belongs here.
      */
@@ -306,7 +306,7 @@ public interface Area extends Economics, PhysicalAgent, Places {
     /**
      * Returns whether the given Room object belongs to this Area, even if the
      * Room object properly has not been loaded yet (due to the area being thin).
-     * @see com.planet_ink.game.Locales.interfaces.Room
+     * @see com.syncleus.aethermud.game.Locales.interfaces.Room
      * @param R the Room object to check for
      * @return whether it belongs to this Area or no.
      */
@@ -314,7 +314,7 @@ public interface Area extends Economics, PhysicalAgent, Places {
 
     /**
      * Returns a random room from this area, loading it if necessary.
-     * @see com.planet_ink.game.Locales.interfaces.Room
+     * @see com.syncleus.aethermud.game.Locales.interfaces.Room
      * @return a reference to a random room from this area.
      */
     public Room getRandomProperRoom();
@@ -322,8 +322,8 @@ public interface Area extends Economics, PhysicalAgent, Places {
     /**
      * Returns an enumerator for all previously loaded rooms that
      * properly belongs to this area.
-     * @see com.planet_ink.game.Areas.interfaces.Area#getCompleteMap()
-     * @see com.planet_ink.game.Locales.interfaces.Room
+     * @see com.syncleus.aethermud.game.Areas.interfaces.Area#getCompleteMap()
+     * @see com.syncleus.aethermud.game.Locales.interfaces.Room
      * @return an enumerator of Room objects
      */
     public Enumeration<Room> getProperMap();
@@ -332,8 +332,8 @@ public interface Area extends Economics, PhysicalAgent, Places {
      * Returns an enumerator for all previously loaded rooms that
      * properly belongs to this area, along with their skys or underwater
      * add-ons.
-     * @see com.planet_ink.game.Areas.interfaces.Area#getProperMap()
-     * @see com.planet_ink.game.Locales.interfaces.Room
+     * @see com.syncleus.aethermud.game.Areas.interfaces.Area#getProperMap()
+     * @see com.syncleus.aethermud.game.Locales.interfaces.Room
      * @return an enumerator of Room objects
      */
     public Enumeration<Room> getFilledProperMap();
@@ -354,8 +354,8 @@ public interface Area extends Economics, PhysicalAgent, Places {
      * This method is the same as getProperMap, except that it will load any
      * Rooms that belong to the area but have not yet been loaded.  The
      * Enumerator returned is thus a more complete set than returned by getProperMap
-     * @see com.planet_ink.game.Areas.interfaces.Area#getProperMap()
-     * @see com.planet_ink.game.Locales.interfaces.Room
+     * @see com.syncleus.aethermud.game.Areas.interfaces.Area#getProperMap()
+     * @see com.syncleus.aethermud.game.Locales.interfaces.Room
      * @return an enumerator of Room objects
      */
     public Enumeration<Room> getCompleteMap();
@@ -364,8 +364,8 @@ public interface Area extends Economics, PhysicalAgent, Places {
      * This method is the same as getFilledProperMap, except that it will load any
      * Rooms that belong to the area but have not yet been loaded.  The
      * Enumerator returned is thus a more complete set than returned by getFilledProperMap
-     * @see com.planet_ink.game.Areas.interfaces.Area#getFilledProperMap()
-     * @see com.planet_ink.game.Locales.interfaces.Room
+     * @see com.syncleus.aethermud.game.Areas.interfaces.Area#getFilledProperMap()
+     * @see com.syncleus.aethermud.game.Locales.interfaces.Room
      * @return an enumerator of Room objects
      */
     public Enumeration<Room> getFilledCompleteMap();
@@ -379,23 +379,23 @@ public interface Area extends Economics, PhysicalAgent, Places {
     /**
      * Returns a RoomnumberSet for all rooms that properly belong to this area, including
      * those not yet loaded.
-     * @see com.planet_ink.game.Common.interfaces.RoomnumberSet
-     * @return a com.planet_ink.game.Common.interfaces.RoomnumberSet object
+     * @see com.syncleus.aethermud.game.Common.interfaces.RoomnumberSet
+     * @return a com.syncleus.aethermud.game.Common.interfaces.RoomnumberSet object
      */
     public RoomnumberSet getProperRoomnumbers();
 
     /**
      * Sets the RoomnumberSet for all rooms that properly belong to this area, including
      * those not yet loaded.
-     * @see com.planet_ink.game.Common.interfaces.RoomnumberSet
-     * @param set a com.planet_ink.game.Common.interfaces.RoomnumberSet object
+     * @see com.syncleus.aethermud.game.Common.interfaces.RoomnumberSet
+     * @param set a com.syncleus.aethermud.game.Common.interfaces.RoomnumberSet object
      */
     public void setProperRoomnumbers(RoomnumberSet set);
 
     /**
      * Returns a RoomnumberSet for all rooms that properly belong to this area,
      * excluding those not yet loaded.
-     * @return a com.planet_ink.game.Common.interfaces.RoomnumberSet object
+     * @return a com.syncleus.aethermud.game.Common.interfaces.RoomnumberSet object
      */
     public RoomnumberSet getCachedRoomnumbers();
 
@@ -416,7 +416,7 @@ public interface Area extends Economics, PhysicalAgent, Places {
     /**
      * Returns an enumerator for all previously loaded rooms that
      * properly belongs to this area AND to any child areas.
-     * @see com.planet_ink.game.Locales.interfaces.Room
+     * @see com.syncleus.aethermud.game.Locales.interfaces.Room
      * @return an enumerator of Room objects
      */
     public Enumeration<Room> getMetroMap();
@@ -424,7 +424,7 @@ public interface Area extends Economics, PhysicalAgent, Places {
     /**
      * Designates that a given Room object belongs to one of this areas
      * children.
-     * @see com.planet_ink.game.Locales.interfaces.Room
+     * @see com.syncleus.aethermud.game.Locales.interfaces.Room
      * @param R a Room object from one of this areas child areas.
      */
     public void addMetroRoom(Room R);
@@ -432,7 +432,7 @@ public interface Area extends Economics, PhysicalAgent, Places {
     /**
      * Designates that a given Room object no longer belongs to one of this areas
      * children.
-     * @see com.planet_ink.game.Locales.interfaces.Room
+     * @see com.syncleus.aethermud.game.Locales.interfaces.Room
      * @param R a Room object formerly from one of this areas child areas.
      */
     public void delMetroRoom(Room R);
@@ -468,14 +468,14 @@ public interface Area extends Economics, PhysicalAgent, Places {
 
     /**
      * Returns a random room from this area, or one of its children, loading it if necessary.
-     * @see com.planet_ink.game.Locales.interfaces.Room
+     * @see com.syncleus.aethermud.game.Locales.interfaces.Room
      * @return a random Room object from this or a child area
      */
     public Room getRandomMetroRoom();
 
     /**
      * Generates a new RoomID for a new Room in this area.
-     * @see com.planet_ink.game.Locales.interfaces.Room
+     * @see com.syncleus.aethermud.game.Locales.interfaces.Room
      * @param startRoom the room connected to the upcoming new one (or null)
      * @param direction the direction from the startRoom the new one will go
      * @return a generated new RoomID for the new Room
@@ -486,7 +486,7 @@ public interface Area extends Economics, PhysicalAgent, Places {
      * Area Flags, unlike flags, is a PURELY run-time set that changes depending
      * upon how the engine is operating on this area or its content.
      * This method returns the state.
-     * @see com.planet_ink.game.Areas.interfaces.Area.State
+     * @see com.syncleus.aethermud.game.Areas.interfaces.Area.State
      * @return a numeric state for this area
      */
     public State getAreaState();
@@ -495,7 +495,7 @@ public interface Area extends Economics, PhysicalAgent, Places {
      * Area Flags, unlike flags, is a PURELY run-time set that changes depending
      * upon how the engine is operating on this area or its content.
      * This method changes the state.
-     * @see com.planet_ink.game.Areas.interfaces.Area.State
+     * @see com.syncleus.aethermud.game.Areas.interfaces.Area.State
      * @param newState the new state to put this entire area into
      */
     public void setAreaState(State newState);
@@ -503,14 +503,14 @@ public interface Area extends Economics, PhysicalAgent, Places {
     /**
      * Adds a SubOp to this area.  This must be a valid Player Name.  A Player with
      * this designation will have their AREA security flags activated when in this area.
-     * @see com.planet_ink.game.Areas.interfaces.Area#delSubOp(String)
+     * @see com.syncleus.aethermud.game.Areas.interfaces.Area#delSubOp(String)
      * @param username a players Name
      */
     public void addSubOp(String username);
 
     /**
      * Removes a SubOp to this area.
-     * @see com.planet_ink.game.Areas.interfaces.Area#addSubOp(String)
+     * @see com.syncleus.aethermud.game.Areas.interfaces.Area#addSubOp(String)
      * @param username a players Name
      */
     public void delSubOp(String username);
@@ -519,7 +519,7 @@ public interface Area extends Economics, PhysicalAgent, Places {
      * Returns whether the given player name is a SubOp to this area.  This must be
      * a valid Player Name.  A Player with this designation will have their
      * AREA_ security flags activated when in this area.
-     * @see com.planet_ink.game.Areas.interfaces.Area#addSubOp(String)
+     * @see com.syncleus.aethermud.game.Areas.interfaces.Area#addSubOp(String)
      * @param username a players Name
      * @return whether the players name is on the subop list for this area
      */
@@ -529,7 +529,7 @@ public interface Area extends Economics, PhysicalAgent, Places {
      * Returns a semicolon delimited list of player Names that represent the SubOp
      * list for this area.   A Player with this designation will have their
      * AREA_ security flags activated when in this area.
-     * @see com.planet_ink.game.Areas.interfaces.Area#addSubOp(String)
+     * @see com.syncleus.aethermud.game.Areas.interfaces.Area#addSubOp(String)
      * @return a semicolon delimited list of player Names.
      */
     public String getSubOpList();
@@ -538,7 +538,7 @@ public interface Area extends Economics, PhysicalAgent, Places {
      * Sets the semicolon delimited list of player Names that represent the SubOp
      * list for this area.   A Player with this designation will have their
      * AREA_ security flags activated when in this area.
-     * @see com.planet_ink.game.Areas.interfaces.Area#addSubOp(String)
+     * @see com.syncleus.aethermud.game.Areas.interfaces.Area#addSubOp(String)
      * @param list  a semicolon delimited list of player Names.
      */
     public void setSubOpList(String list);
@@ -555,7 +555,7 @@ public interface Area extends Economics, PhysicalAgent, Places {
      * Returns a descriptive list of statistics about this area based on a
      * snapshot from getAreaIStats(), which is cached after being generated.
      * This stringbuffer returned is user-readable.
-     * @see com.planet_ink.game.Areas.interfaces.Area#getAreaIStats()
+     * @see com.syncleus.aethermud.game.Areas.interfaces.Area#getAreaIStats()
      * @return a user readable string describing stats about the area.
      */
     public StringBuffer getAreaStats();
@@ -566,7 +566,7 @@ public interface Area extends Economics, PhysicalAgent, Places {
      * the cached for future calls, but can be unloaded from resources
      * using the UNLOAD command, to force a re-generation.
      * The array is dereferenced using AREASTAT_ constants.
-     * @see com.planet_ink.game.Areas.interfaces.Area.Stats
+     * @see com.syncleus.aethermud.game.Areas.interfaces.Area.Stats
      * @return an array of integer statistics
      */
     public int[] getAreaIStats();
@@ -686,7 +686,7 @@ public interface Area extends Economics, PhysicalAgent, Places {
      */
     public boolean canParent(Area newParent);
 
-    /** Various area IStat constants.. see @see com.planet_ink.game.Areas.interfaces.Area#getAreaIStats() */
+    /** Various area IStat constants.. see @see com.syncleus.aethermud.game.Areas.interfaces.Area#getAreaIStats() */
     public static enum Stats {
         POPULATION,
         MIN_LEVEL,
@@ -703,7 +703,7 @@ public interface Area extends Economics, PhysicalAgent, Places {
 
     /**
      * State flag for areas.
-     * @see com.planet_ink.game.Areas.interfaces.Area#getAreaState()
+     * @see com.syncleus.aethermud.game.Areas.interfaces.Area#getAreaState()
      */
     public static enum State {
         ACTIVE, /** Area is mobile, threaded, and running */

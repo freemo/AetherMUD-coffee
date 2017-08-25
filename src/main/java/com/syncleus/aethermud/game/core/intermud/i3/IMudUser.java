@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.core.intermud.i3;
+package com.syncleus.aethermud.game.core.intermud.i3;
 
 /**
  * Copyright (c) 1996 George Reese
@@ -31,5 +31,5 @@ package com.planet_ink.game.core.intermud.i3;
  * limitations under the License.
  *
  */
-public class IMudUser extends com.planet_ink.game.core.intermud.i3.net.Interactive {
+public class IMudUser extends com.syncleus.aethermud.game.core.intermud.i3.net.Interactive {
 }

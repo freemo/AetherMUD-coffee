@@ -14,27 +14,27 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.WebMacros;
+package com.syncleus.aethermud.game.WebMacros;
 
-import com.planet_ink.game.Abilities.interfaces.Ability;
-import com.planet_ink.game.Areas.interfaces.Area;
-import com.planet_ink.game.Areas.interfaces.GridZones;
-import com.planet_ink.game.CharClasses.interfaces.CharClass;
-import com.planet_ink.game.Commands.interfaces.Command;
-import com.planet_ink.game.Common.interfaces.*;
-import com.planet_ink.game.Items.interfaces.BoardableShip;
-import com.planet_ink.game.Items.interfaces.Item;
-import com.planet_ink.game.Libraries.interfaces.AbilityMapper;
-import com.planet_ink.game.Locales.interfaces.Room;
-import com.planet_ink.game.MOBS.interfaces.MOB;
-import com.planet_ink.game.Races.interfaces.Race;
-import com.planet_ink.game.WebMacros.grinder.*;
-import com.planet_ink.game.core.*;
-import com.planet_ink.game.core.CMClass.CMObjectType;
-import com.planet_ink.game.core.collections.Pair;
-import com.planet_ink.web.http.MultiPartData;
-import com.planet_ink.web.interfaces.HTTPRequest;
-import com.planet_ink.web.interfaces.HTTPResponse;
+import com.syncleus.aethermud.game.Abilities.interfaces.Ability;
+import com.syncleus.aethermud.game.Areas.interfaces.Area;
+import com.syncleus.aethermud.game.Areas.interfaces.GridZones;
+import com.syncleus.aethermud.game.CharClasses.interfaces.CharClass;
+import com.syncleus.aethermud.game.Commands.interfaces.Command;
+import com.syncleus.aethermud.game.Common.interfaces.*;
+import com.syncleus.aethermud.game.Items.interfaces.BoardableShip;
+import com.syncleus.aethermud.game.Items.interfaces.Item;
+import com.syncleus.aethermud.game.Libraries.interfaces.AbilityMapper;
+import com.syncleus.aethermud.game.Locales.interfaces.Room;
+import com.syncleus.aethermud.game.MOBS.interfaces.MOB;
+import com.syncleus.aethermud.game.Races.interfaces.Race;
+import com.syncleus.aethermud.game.WebMacros.grinder.*;
+import com.syncleus.aethermud.game.core.*;
+import com.syncleus.aethermud.game.core.CMClass.CMObjectType;
+import com.syncleus.aethermud.game.core.collections.Pair;
+import com.syncleus.aethermud.web.http.MultiPartData;
+import com.syncleus.aethermud.web.interfaces.HTTPRequest;
+import com.syncleus.aethermud.web.interfaces.HTTPResponse;
 
 import java.util.*;
 
@@ -731,7 +731,7 @@ public class MUDGrinder extends StdWebMacro {
                 final String oldRID = R.ID();
                 CMClass.delRace(R);
                 CMLib.database().DBDeleteRace(R.ID());
-                CMClass.loadClass(CMObjectType.RACE, "target/classes/com/planet_ink/game/Races/" + oldRID + ".class", true);
+                CMClass.loadClass(CMObjectType.RACE, "target/classes/com/syncleus/aethermud/game/Races/" + oldRID + ".class", true);
                 Race oldR = CMClass.getRace(oldRID);
                 if (oldR == null)
                     oldR = CMClass.getRace("StdRace");
@@ -791,7 +791,7 @@ public class MUDGrinder extends StdWebMacro {
                 final String oldCID = C.ID();
                 CMClass.delCharClass(C);
                 CMLib.database().DBDeleteClass(C.ID());
-                CMClass.loadClass(CMObjectType.CHARCLASS, "target/classes/com/planet_ink/game/CharClasses/" + oldCID + ".class", true);
+                CMClass.loadClass(CMObjectType.CHARCLASS, "target/classes/com/syncleus/aethermud/game/CharClasses/" + oldCID + ".class", true);
                 CharClass oldC = CMClass.getCharClass(oldCID);
                 if (oldC == null)
                     oldC = CMClass.getCharClass("StdCharClass");

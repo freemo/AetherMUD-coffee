@@ -14,14 +14,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-//extends com.planet_ink.game.Items.Software.GenSoftware
-//implements com.planet_ink.game.Items.interfaces.ArchonOnly
+//extends com.syncleus.aethermud.game.Items.Software.GenSoftware
+//implements com.syncleus.aethermud.game.Items.interfaces.ArchonOnly
 
 function ID() {
     return "ShipDiagProgram";
 }
 
-var lib = Packages.com.planet_ink.game.core.CMLib;
+var lib = Packages.com.syncleus.aethermud.game.core.CMLib;
 
 function newInstance() {
     var newOne = this.super$newInstance();

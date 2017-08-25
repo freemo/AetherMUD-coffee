@@ -14,9 +14,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.core.interfaces;
+package com.syncleus.aethermud.game.core.interfaces;
 
-import com.planet_ink.game.Common.interfaces.Session;
+import com.syncleus.aethermud.game.Common.interfaces.Session;
 
 import java.io.IOException;
 import java.net.Socket;
@@ -100,7 +100,7 @@ public interface MudHost {
 
     /**
      * Sets whether this mud is accepting connections
-     * @see com.planet_ink.game.core.interfaces.MudHost#isAcceptingConnections()
+     * @see com.syncleus.aethermud.game.core.interfaces.MudHost#isAcceptingConnections()
      * @param truefalse whether it is accepting connections
      */
     public void setAcceptConnections(boolean truefalse);
@@ -115,7 +115,7 @@ public interface MudHost {
 
     /**
      * Sets whether this mud is accepting connections
-     * @see com.planet_ink.game.core.interfaces.MudHost#setAcceptConnections(boolean)
+     * @see com.syncleus.aethermud.game.core.interfaces.MudHost#setAcceptConnections(boolean)
      * @return true/false whether it is accepting connections
      */
     public boolean isAcceptingConnections();

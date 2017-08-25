@@ -14,11 +14,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Common.interfaces;
+package com.syncleus.aethermud.game.Common.interfaces;
 
-import com.planet_ink.game.Libraries.interfaces.AchievementLibrary.Achievement;
-import com.planet_ink.game.Libraries.interfaces.AchievementLibrary.Tracker;
-import com.planet_ink.game.MOBS.interfaces.MOB;
+import com.syncleus.aethermud.game.Libraries.interfaces.AchievementLibrary.Achievement;
+import com.syncleus.aethermud.game.Libraries.interfaces.AchievementLibrary.Tracker;
+import com.syncleus.aethermud.game.MOBS.interfaces.MOB;
 
 import java.util.Set;
 
@@ -31,7 +31,7 @@ public interface AccountStats extends CMCommon {
     /**
      * Returns the players email address, if available.
      *
-     * @see com.planet_ink.game.Common.interfaces.AccountStats#setEmail(String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.AccountStats#setEmail(String)
      *
      * @return the players email address, if available.
      */
@@ -40,7 +40,7 @@ public interface AccountStats extends CMCommon {
     /**
      * Sets the players email address, if available.
      *
-     * @see com.planet_ink.game.Common.interfaces.AccountStats#getEmail()
+     * @see com.syncleus.aethermud.game.Common.interfaces.AccountStats#getEmail()
      *
      * @param newAdd the players email address, if available.
      */
@@ -49,7 +49,7 @@ public interface AccountStats extends CMCommon {
     /**
      * The time, in milis since 1970, that the player last logged off.
      *
-     * @see com.planet_ink.game.Common.interfaces.AccountStats#setLastDateTime(long)
+     * @see com.syncleus.aethermud.game.Common.interfaces.AccountStats#setLastDateTime(long)
      *
      * @return time, in milis since 1970, that the player last logged off.
      */
@@ -58,7 +58,7 @@ public interface AccountStats extends CMCommon {
     /**
      * Sets the time, in milis since 1970, that the player last logged off.
      *
-     * @see com.planet_ink.game.Common.interfaces.AccountStats#getLastDateTime()
+     * @see com.syncleus.aethermud.game.Common.interfaces.AccountStats#getLastDateTime()
      *
      * @param C the time, in milis since 1970, that the player last logged off.
      */
@@ -67,7 +67,7 @@ public interface AccountStats extends CMCommon {
     /**
      * The time, in milis since 1970, that the player was last saved.
      *
-     * @see com.planet_ink.game.Common.interfaces.AccountStats#setLastUpdated(long)
+     * @see com.syncleus.aethermud.game.Common.interfaces.AccountStats#setLastUpdated(long)
      *
      * @return the time, in milis since 1970, that the player was last saved.
      */
@@ -76,7 +76,7 @@ public interface AccountStats extends CMCommon {
     /**
      * Sets the time, in milis since 1970, that the player was last saved.
      *
-     * @see com.planet_ink.game.Common.interfaces.AccountStats#getLastUpdated()
+     * @see com.syncleus.aethermud.game.Common.interfaces.AccountStats#getLastUpdated()
      *
      * @param time the time, in milis since 1970, that the player was last saved.
      */
@@ -86,8 +86,8 @@ public interface AccountStats extends CMCommon {
      * Returns the players password, perhaps encoded, perhaps plain text.
      * Use matchesPassword(String) to do actual checks.
      *
-     * @see com.planet_ink.game.Common.interfaces.AccountStats#setPassword(String)
-     * @see com.planet_ink.game.Common.interfaces.AccountStats#matchesPassword(String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.AccountStats#setPassword(String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.AccountStats#matchesPassword(String)
      *
      * @return the players password.
      */
@@ -97,8 +97,8 @@ public interface AccountStats extends CMCommon {
      * Returns the players password, perhaps encoded, perhaps plain text.
      * Use matchesPassword(String) to do actual checks.
      *
-     * @see com.planet_ink.game.Common.interfaces.AccountStats#setPassword(String)
-     * @see com.planet_ink.game.Common.interfaces.AccountStats#getPasswordStr()
+     * @see com.syncleus.aethermud.game.Common.interfaces.AccountStats#setPassword(String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.AccountStats#getPasswordStr()
      * @param str the password to compare reality to
      * @return the players password.
      */
@@ -107,8 +107,8 @@ public interface AccountStats extends CMCommon {
     /**
      * Sets the players password.
      *
-     * @see com.planet_ink.game.Common.interfaces.AccountStats#getPasswordStr()
-     * @see com.planet_ink.game.Common.interfaces.AccountStats#matchesPassword(String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.AccountStats#getPasswordStr()
+     * @see com.syncleus.aethermud.game.Common.interfaces.AccountStats#matchesPassword(String)
      *
      * @param newPassword the players password.
      */
@@ -117,7 +117,7 @@ public interface AccountStats extends CMCommon {
     /**
      * The last IP address this player logged in from.
      *
-     * @see com.planet_ink.game.Common.interfaces.AccountStats#setLastIP(String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.AccountStats#setLastIP(String)
      *
      * @return the last IP address this player logged in from.
      */
@@ -126,7 +126,7 @@ public interface AccountStats extends CMCommon {
     /**
      * Sets the last IP address this player logged in from.
      *
-     * @see com.planet_ink.game.Common.interfaces.AccountStats#getLastIP()
+     * @see com.syncleus.aethermud.game.Common.interfaces.AccountStats#getLastIP()
      *
      * @param ip the last IP address this player logged in from.
      */
@@ -137,7 +137,7 @@ public interface AccountStats extends CMCommon {
      * 1970, that this account will expire (meaning the player will no longer
      * be able to log in)
      *
-     * @see com.planet_ink.game.Common.interfaces.AccountStats#setAccountExpiration(long)
+     * @see com.syncleus.aethermud.game.Common.interfaces.AccountStats#setAccountExpiration(long)
      *
      * @return the time, in milis, that this player expires.
      */
@@ -148,7 +148,7 @@ public interface AccountStats extends CMCommon {
      * 1970, that this account will expire (meaning the player will no longer
      * be able to log in)
      *
-     * @see com.planet_ink.game.Common.interfaces.AccountStats#getAccountExpiration()
+     * @see com.syncleus.aethermud.game.Common.interfaces.AccountStats#getAccountExpiration()
      *
      * @param newVal the time, in milis, that this player expires.
      */
@@ -157,7 +157,7 @@ public interface AccountStats extends CMCommon {
     /**
      * Returns the administrative notes entered about this player.
      *
-     * @see com.planet_ink.game.Common.interfaces.AccountStats#setNotes(String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.AccountStats#setNotes(String)
      *
      * @return the administrative notes entered about this player.
      */
@@ -166,7 +166,7 @@ public interface AccountStats extends CMCommon {
     /**
      * Sets the administrative notes entered about this player.
      *
-     * @see com.planet_ink.game.Common.interfaces.AccountStats#getNotes()
+     * @see com.syncleus.aethermud.game.Common.interfaces.AccountStats#getNotes()
      *
      * @param newnotes the administrative notes entered about this player.
      */
@@ -318,8 +318,8 @@ public interface AccountStats extends CMCommon {
      * creates it if it does not exist.
      * @see AccountStats#rebuildAchievementTracker(MOB, String)
      * see #killAchievementTracker(Achievement, MOB)
-     * @see com.planet_ink.game.Libraries.interfaces.AchievementLibrary.Tracker
-     * @see com.planet_ink.game.Libraries.interfaces.AchievementLibrary.Achievement
+     * @see com.syncleus.aethermud.game.Libraries.interfaces.AchievementLibrary.Tracker
+     * @see com.syncleus.aethermud.game.Libraries.interfaces.AchievementLibrary.Achievement
      * @param A the achievement to get the tracker for
      * @param mob the mob to create a tracker for
      * @return the Tracker object that handles this achievement/mob
@@ -329,8 +329,8 @@ public interface AccountStats extends CMCommon {
     /**
      * Deletes the tracker for the given achievement, for the given mob.
      * @see AccountStats#rebuildAchievementTracker(MOB, String)
-     * @see com.planet_ink.game.Libraries.interfaces.AchievementLibrary.Tracker
-     * @see com.planet_ink.game.Libraries.interfaces.AchievementLibrary.Achievement
+     * @see com.syncleus.aethermud.game.Libraries.interfaces.AchievementLibrary.Tracker
+     * @see com.syncleus.aethermud.game.Libraries.interfaces.AchievementLibrary.Achievement
      * @param A the achievement to kill the tracker for
      * @param mob the mob to delete a tracker for
      */
@@ -340,7 +340,7 @@ public interface AccountStats extends CMCommon {
      * If an Achievement is modified or removed, this method will update the
      * internal player tracker for that achievement.  It does not delete old
      * achievements per se, just their trackers!
-     * @see AccountStats#getAchievementTracker(com.planet_ink.game.Libraries.interfaces.AchievementLibrary.Achievement, MOB)
+     * @see AccountStats#getAchievementTracker(com.syncleus.aethermud.game.Libraries.interfaces.AchievementLibrary.Achievement, MOB)
      * @param mob the mob to modify the tracker for.
      * @param achievementTattoo the tattoo/id of the achievement
      */
@@ -350,7 +350,7 @@ public interface AccountStats extends CMCommon {
      * Returns an XML representation of all the data in this object, for
      * persistant storage.
      *
-     * @see com.planet_ink.game.Common.interfaces.AccountStats#setXML(String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.AccountStats#setXML(String)
      *
      * @return an XML representation of all the data in this object
      */
@@ -359,7 +359,7 @@ public interface AccountStats extends CMCommon {
     /**
      * Restores the data in this object from an XML document.
      *
-     * @see com.planet_ink.game.Common.interfaces.AccountStats#getXML()
+     * @see com.syncleus.aethermud.game.Common.interfaces.AccountStats#getXML()
      *
      * @param str an XML representation of all the data in this object
      */

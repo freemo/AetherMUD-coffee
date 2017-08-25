@@ -14,20 +14,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Libraries;
+package com.syncleus.aethermud.game.Libraries;
 
-import com.planet_ink.game.Areas.interfaces.Area;
-import com.planet_ink.game.Common.interfaces.Session;
-import com.planet_ink.game.Libraries.interfaces.SessionsList;
-import com.planet_ink.game.MOBS.interfaces.MOB;
-import com.planet_ink.game.core.*;
-import com.planet_ink.game.core.CMSecurity.DbgFlag;
-import com.planet_ink.game.core.collections.FilteredIterable;
-import com.planet_ink.game.core.collections.FilteredIterator;
-import com.planet_ink.game.core.collections.Filterer;
-import com.planet_ink.game.core.collections.SLinkedList;
-import com.planet_ink.game.core.interfaces.MudHost;
-import com.planet_ink.game.core.interfaces.Tickable;
+import com.syncleus.aethermud.game.Areas.interfaces.Area;
+import com.syncleus.aethermud.game.Common.interfaces.Session;
+import com.syncleus.aethermud.game.Libraries.interfaces.SessionsList;
+import com.syncleus.aethermud.game.MOBS.interfaces.MOB;
+import com.syncleus.aethermud.game.core.*;
+import com.syncleus.aethermud.game.core.CMSecurity.DbgFlag;
+import com.syncleus.aethermud.game.core.collections.FilteredIterable;
+import com.syncleus.aethermud.game.core.collections.FilteredIterator;
+import com.syncleus.aethermud.game.core.collections.Filterer;
+import com.syncleus.aethermud.game.core.collections.SLinkedList;
+import com.syncleus.aethermud.game.core.interfaces.MudHost;
+import com.syncleus.aethermud.game.core.interfaces.Tickable;
 
 import java.util.Iterator;
 import java.util.concurrent.TimeUnit;

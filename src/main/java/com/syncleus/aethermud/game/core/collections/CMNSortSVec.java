@@ -14,9 +14,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.core.collections;
+package com.syncleus.aethermud.game.core.collections;
 
-import com.planet_ink.game.core.interfaces.CMObject;
+import com.syncleus.aethermud.game.core.interfaces.CMObject;
 
 public class CMNSortSVec<T extends CMObject> extends SortedStrSVector<T> implements SearchIDList<T> {
     private static final long serialVersionUID = 6687178785122361992L;

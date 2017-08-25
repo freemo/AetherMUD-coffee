@@ -14,9 +14,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.core.threads;
+package com.syncleus.aethermud.game.core.threads;
 
-import com.planet_ink.game.core.collections.SLinkedList;
+import com.syncleus.aethermud.game.core.collections.SLinkedList;
 
 import java.util.Collection;
 import java.util.concurrent.ThreadFactory;

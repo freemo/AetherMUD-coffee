@@ -14,32 +14,32 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Libraries;
+package com.syncleus.aethermud.game.Libraries;
 
-import com.planet_ink.game.Abilities.interfaces.Ability;
-import com.planet_ink.game.Areas.interfaces.Area;
-import com.planet_ink.game.CharClasses.interfaces.CharClass;
-import com.planet_ink.game.Common.interfaces.AccountStats.Agent;
-import com.planet_ink.game.Common.interfaces.*;
-import com.planet_ink.game.Items.interfaces.Item;
-import com.planet_ink.game.Libraries.interfaces.AbilityMapper;
-import com.planet_ink.game.Libraries.interfaces.AbilityMapper.AbilityMapping;
-import com.planet_ink.game.Libraries.interfaces.AchievementLibrary;
-import com.planet_ink.game.Libraries.interfaces.ChannelsLibrary;
-import com.planet_ink.game.Libraries.interfaces.ExpertiseLibrary.CostType;
-import com.planet_ink.game.Libraries.interfaces.ExpertiseLibrary.ExpertiseDefinition;
-import com.planet_ink.game.Libraries.interfaces.GenericEditor.CMEval;
-import com.planet_ink.game.Libraries.interfaces.MaskingLibrary;
-import com.planet_ink.game.Libraries.interfaces.MaskingLibrary.CompiledZMask;
-import com.planet_ink.game.Locales.interfaces.Room;
-import com.planet_ink.game.MOBS.interfaces.MOB;
-import com.planet_ink.game.core.*;
-import com.planet_ink.game.core.collections.IteratorEnumeration;
-import com.planet_ink.game.core.collections.MultiEnumeration;
-import com.planet_ink.game.core.collections.SLinkedList;
-import com.planet_ink.game.core.exceptions.CMException;
-import com.planet_ink.game.core.interfaces.CMObject;
-import com.planet_ink.game.core.interfaces.Tattooable;
+import com.syncleus.aethermud.game.Abilities.interfaces.Ability;
+import com.syncleus.aethermud.game.Areas.interfaces.Area;
+import com.syncleus.aethermud.game.CharClasses.interfaces.CharClass;
+import com.syncleus.aethermud.game.Common.interfaces.AccountStats.Agent;
+import com.syncleus.aethermud.game.Common.interfaces.*;
+import com.syncleus.aethermud.game.Items.interfaces.Item;
+import com.syncleus.aethermud.game.Libraries.interfaces.AbilityMapper;
+import com.syncleus.aethermud.game.Libraries.interfaces.AbilityMapper.AbilityMapping;
+import com.syncleus.aethermud.game.Libraries.interfaces.AchievementLibrary;
+import com.syncleus.aethermud.game.Libraries.interfaces.ChannelsLibrary;
+import com.syncleus.aethermud.game.Libraries.interfaces.ExpertiseLibrary.CostType;
+import com.syncleus.aethermud.game.Libraries.interfaces.ExpertiseLibrary.ExpertiseDefinition;
+import com.syncleus.aethermud.game.Libraries.interfaces.GenericEditor.CMEval;
+import com.syncleus.aethermud.game.Libraries.interfaces.MaskingLibrary;
+import com.syncleus.aethermud.game.Libraries.interfaces.MaskingLibrary.CompiledZMask;
+import com.syncleus.aethermud.game.Locales.interfaces.Room;
+import com.syncleus.aethermud.game.MOBS.interfaces.MOB;
+import com.syncleus.aethermud.game.core.*;
+import com.syncleus.aethermud.game.core.collections.IteratorEnumeration;
+import com.syncleus.aethermud.game.core.collections.MultiEnumeration;
+import com.syncleus.aethermud.game.core.collections.SLinkedList;
+import com.syncleus.aethermud.game.core.exceptions.CMException;
+import com.syncleus.aethermud.game.core.interfaces.CMObject;
+import com.syncleus.aethermud.game.core.interfaces.Tattooable;
 
 import java.io.IOException;
 import java.lang.ref.WeakReference;

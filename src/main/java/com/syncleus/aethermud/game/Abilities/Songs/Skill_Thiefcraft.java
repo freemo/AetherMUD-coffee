@@ -14,10 +14,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Abilities.Songs;
+package com.syncleus.aethermud.game.Abilities.Songs;
 
-import com.planet_ink.game.Abilities.interfaces.Ability;
-import com.planet_ink.game.core.CMLib;
+import com.syncleus.aethermud.game.Abilities.interfaces.Ability;
+import com.syncleus.aethermud.game.core.CMLib;
 
 
 public class Skill_Thiefcraft extends Skill_Songcraft {

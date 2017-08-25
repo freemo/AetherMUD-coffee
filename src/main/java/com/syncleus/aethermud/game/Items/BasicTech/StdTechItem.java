@@ -14,11 +14,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Items.BasicTech;
+package com.syncleus.aethermud.game.Items.BasicTech;
 
-import com.planet_ink.game.Items.Basic.StdItem;
-import com.planet_ink.game.Items.interfaces.RawMaterial;
-import com.planet_ink.game.Items.interfaces.Technical;
+import com.syncleus.aethermud.game.Items.Basic.StdItem;
+import com.syncleus.aethermud.game.Items.interfaces.RawMaterial;
+import com.syncleus.aethermud.game.Items.interfaces.Technical;
 
 /*
    Copyright 2016-2017 Bo Zimmerman

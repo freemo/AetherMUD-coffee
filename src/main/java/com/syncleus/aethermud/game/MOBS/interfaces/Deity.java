@@ -14,10 +14,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.MOBS.interfaces;
+package com.syncleus.aethermud.game.MOBS.interfaces;
 
-import com.planet_ink.game.Abilities.interfaces.Ability;
-import com.planet_ink.game.Common.interfaces.CMMsg;
+import com.syncleus.aethermud.game.Abilities.interfaces.Ability;
+import com.syncleus.aethermud.game.Common.interfaces.CMMsg;
 
 
 /**
@@ -36,7 +36,7 @@ public interface Deity extends MOB {
     /**
      * Gets the Zapper Mask string that defines the requirements
      * to be a Cleric of this Deity.  See help on ZAPPERMASK
-     * @see com.planet_ink.game.Libraries.interfaces.MaskingLibrary
+     * @see com.syncleus.aethermud.game.Libraries.interfaces.MaskingLibrary
      * @see Deity#setClericRequirements(String)
      * @see Deity#getClericRequirementsDesc()
      * @return the Zapper Mask string that defines the requirements
@@ -46,7 +46,7 @@ public interface Deity extends MOB {
     /**
      * Sets the Zapper Mask string that defines the requirements
      * to be a Cleric of this Deity.  See help on ZAPPERMASK
-     * @see com.planet_ink.game.Libraries.interfaces.MaskingLibrary
+     * @see com.syncleus.aethermud.game.Libraries.interfaces.MaskingLibrary
      * @see Deity#getClericRequirements()
      * @see Deity#getClericRequirementsDesc()
      * @param reqs the Zapper Mask string that defines the requirements
@@ -65,7 +65,7 @@ public interface Deity extends MOB {
     /**
      * Gets the Zapper Mask string that defines the requirements
      * to be a Worshipper of this Deity.  See help on ZAPPERMASK
-     * @see com.planet_ink.game.Libraries.interfaces.MaskingLibrary
+     * @see com.syncleus.aethermud.game.Libraries.interfaces.MaskingLibrary
      * @see Deity#setWorshipRequirements(String)
      * @see Deity#getWorshipRequirementsDesc()
      * @return the Zapper Mask string that defines the requirements
@@ -75,7 +75,7 @@ public interface Deity extends MOB {
     /**
      * Sets the Zapper Mask string that defines the requirements
      * to be a Worshipper of this Deity.  See help on ZAPPERMASK
-     * @see com.planet_ink.game.Libraries.interfaces.MaskingLibrary
+     * @see com.syncleus.aethermud.game.Libraries.interfaces.MaskingLibrary
      * @see Deity#getWorshipRequirements()
      * @see Deity#getWorshipRequirementsDesc()
      * @param reqs the Zapper Mask string that defines the requirements

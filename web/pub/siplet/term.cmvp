@@ -328,7 +328,7 @@ function connect(url,port,tries)
 <!--
 	if(appletVersion===true)
 	{
-		document.write('<applet code="com.planet_ink.siplet.applet.Siplet" archive="/siplet/siplet.jar" codebase="siplet.jar" width="0" height="0" name="Siplet" id="Siplet" mayscript="TRUE"> </applet><BR>');
+		document.write('<applet code="com.syncleus.aethermud.siplet.applet.Siplet" archive="/siplet/siplet.jar" codebase="siplet.jar" width="0" height="0" name="Siplet" id="Siplet" mayscript="TRUE"> </applet><BR>');
 		theSiplet=document.getElementById("Siplet").create();
 		top.term.allapplets[top.term.currentWindow] = theSiplet;
 	}

@@ -14,11 +14,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Exits;
+package com.syncleus.aethermud.game.Exits;
 
-import com.planet_ink.game.Abilities.interfaces.Trap;
-import com.planet_ink.game.core.CMClass;
-import com.planet_ink.game.core.CMLib;
+import com.syncleus.aethermud.game.Abilities.interfaces.Trap;
+import com.syncleus.aethermud.game.core.CMClass;
+import com.syncleus.aethermud.game.core.CMLib;
 
 
 public class PitOpen extends StdOpenDoorway {

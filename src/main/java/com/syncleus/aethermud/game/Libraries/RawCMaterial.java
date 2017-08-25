@@ -14,17 +14,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Libraries;
+package com.syncleus.aethermud.game.Libraries;
 
-import com.planet_ink.game.Abilities.interfaces.Ability;
-import com.planet_ink.game.Items.interfaces.*;
-import com.planet_ink.game.Libraries.interfaces.MaterialLibrary;
-import com.planet_ink.game.Locales.interfaces.Room;
-import com.planet_ink.game.MOBS.interfaces.MOB;
-import com.planet_ink.game.core.*;
-import com.planet_ink.game.core.CMSecurity.DisFlag;
-import com.planet_ink.game.core.collections.XVector;
-import com.planet_ink.game.core.interfaces.*;
+import com.syncleus.aethermud.game.Abilities.interfaces.Ability;
+import com.syncleus.aethermud.game.Items.interfaces.*;
+import com.syncleus.aethermud.game.Libraries.interfaces.MaterialLibrary;
+import com.syncleus.aethermud.game.Locales.interfaces.Room;
+import com.syncleus.aethermud.game.MOBS.interfaces.MOB;
+import com.syncleus.aethermud.game.core.*;
+import com.syncleus.aethermud.game.core.CMSecurity.DisFlag;
+import com.syncleus.aethermud.game.core.collections.XVector;
+import com.syncleus.aethermud.game.core.interfaces.*;
 
 import java.util.Enumeration;
 import java.util.Hashtable;
@@ -615,7 +615,7 @@ public class RawCMaterial extends StdLibrary implements MaterialLibrary {
             return "pills";
         if (I instanceof Light)
             return "light sources";
-        if (I instanceof com.planet_ink.game.Items.interfaces.RoomMap)
+        if (I instanceof com.syncleus.aethermud.game.Items.interfaces.RoomMap)
             return "papers";
         if (I instanceof Scroll)
             return "papers";

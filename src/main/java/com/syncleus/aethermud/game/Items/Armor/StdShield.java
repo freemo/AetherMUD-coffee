@@ -14,12 +14,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Items.Armor;
+package com.syncleus.aethermud.game.Items.Armor;
 
-import com.planet_ink.game.Items.interfaces.Armor;
-import com.planet_ink.game.Items.interfaces.RawMaterial;
-import com.planet_ink.game.Items.interfaces.Shield;
-import com.planet_ink.game.Items.interfaces.Wearable;
+import com.syncleus.aethermud.game.Items.interfaces.Armor;
+import com.syncleus.aethermud.game.Items.interfaces.RawMaterial;
+import com.syncleus.aethermud.game.Items.interfaces.Shield;
+import com.syncleus.aethermud.game.Items.interfaces.Wearable;
 
 
 public class StdShield extends StdArmor implements Armor, Shield {

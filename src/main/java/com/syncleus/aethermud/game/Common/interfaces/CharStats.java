@@ -14,24 +14,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Common.interfaces;
+package com.syncleus.aethermud.game.Common.interfaces;
 
-import com.planet_ink.game.CharClasses.interfaces.CharClass;
-import com.planet_ink.game.Items.interfaces.Item;
-import com.planet_ink.game.MOBS.interfaces.MOB;
-import com.planet_ink.game.Races.interfaces.Race;
-import com.planet_ink.game.core.CMParms;
-import com.planet_ink.game.core.CMProps;
-import com.planet_ink.game.core.CMStrings;
-import com.planet_ink.game.core.Log;
-import com.planet_ink.game.core.collections.DoubleFilterer;
-import com.planet_ink.game.core.interfaces.Modifiable;
+import com.syncleus.aethermud.game.CharClasses.interfaces.CharClass;
+import com.syncleus.aethermud.game.Items.interfaces.Item;
+import com.syncleus.aethermud.game.MOBS.interfaces.MOB;
+import com.syncleus.aethermud.game.Races.interfaces.Race;
+import com.syncleus.aethermud.game.core.CMParms;
+import com.syncleus.aethermud.game.core.CMProps;
+import com.syncleus.aethermud.game.core.CMStrings;
+import com.syncleus.aethermud.game.core.Log;
+import com.syncleus.aethermud.game.core.collections.DoubleFilterer;
+import com.syncleus.aethermud.game.core.interfaces.Modifiable;
 
 import java.util.*;
 
 /**
  * An object to access and change fields representing the varias aspects of a MOB
- * @see com.planet_ink.game.MOBS.interfaces.MOB
+ * @see com.syncleus.aethermud.game.MOBS.interfaces.MOB
  * @author Bo Zimmerman
  *
  */
@@ -468,7 +468,7 @@ public interface CharStats extends CMCommon, Modifiable {
     /**
      * Return the number of a given body part which this mob has.  The
      * racial part number comes from the Race interface BODY_ constants.
-     * @see com.planet_ink.game.Races.interfaces.Race
+     * @see com.syncleus.aethermud.game.Races.interfaces.Race
      * @param racialPartNumber the BODY_ constant from Race interface
      * @return the number of the given body part this mob has
      */
@@ -478,7 +478,7 @@ public interface CharStats extends CMCommon, Modifiable {
      * Alter the number of a given body part which this mob has.  The
      * racial part number comes from the Race interface BODY_ constants.
      * The number is positive or negative reflecting the change.
-     * @see com.planet_ink.game.Races.interfaces.Race
+     * @see com.syncleus.aethermud.game.Races.interfaces.Race
      * @param racialPartNumber the BODY_ constant from Race interface
      * @param number the amount to change by, positive or negative
      */
@@ -489,7 +489,7 @@ public interface CharStats extends CMCommon, Modifiable {
      * this mob has and the number he or she should have.  The
      * racial part number comes from the Race interface BODY_ constants.
      * The return value is positive or negative reflecting the change.
-     * @see com.planet_ink.game.Races.interfaces.Race
+     * @see com.syncleus.aethermud.game.Races.interfaces.Race
      * @param racialPartNumber the BODY_ constant from Race interface
      * @return the difference between parts he has and should have
      */
@@ -519,7 +519,7 @@ public interface CharStats extends CMCommon, Modifiable {
      * Returns the CharClass object for this mob which corresponds to the
      * the given index.  The oldest class is always indexed at 0, with next
      * newest at 1, and the current one last.
-     * @see com.planet_ink.game.CharClasses.interfaces.CharClass
+     * @see com.syncleus.aethermud.game.CharClasses.interfaces.CharClass
      * @param i the index into the charclass list.
      * @return the CharClass object
      */
@@ -531,7 +531,7 @@ public interface CharStats extends CMCommon, Modifiable {
      * newest at 1, and the current one last.
      * @see #numClasses()
      * @see #getCharClasses()
-     * @see com.planet_ink.game.CharClasses.interfaces.CharClass
+     * @see com.syncleus.aethermud.game.CharClasses.interfaces.CharClass
      * @return the 0 index CharClass object
      */
     public CharClass getCurrentClass();
@@ -540,7 +540,7 @@ public interface CharStats extends CMCommon, Modifiable {
      * Adds the character class to the mob to the given class, automatically
      * making the class level 0, and making the class current.
      * @see #getCurrentClass()
-     * @see com.planet_ink.game.CharClasses.interfaces.CharClass
+     * @see com.syncleus.aethermud.game.CharClasses.interfaces.CharClass
      * @param aClass The charclass object to set the current class to
      */
     public void setCurrentClass(CharClass aClass);
@@ -550,7 +550,7 @@ public interface CharStats extends CMCommon, Modifiable {
      * The oldest class is always indexed at 0, with next
      * newest at 1, and the current one last.
      * @see #numClasses()
-     * @see com.planet_ink.game.CharClasses.interfaces.CharClass
+     * @see com.syncleus.aethermud.game.CharClasses.interfaces.CharClass
      * @return the Collection of CharClass objects
      */
     public Collection<CharClass> getCharClasses();
@@ -602,7 +602,7 @@ public interface CharStats extends CMCommon, Modifiable {
     /**
      * Returns the number of levels this mob has in the given character class.
      * -1 means the mob has NO levels in that class.
-     * @see com.planet_ink.game.CharClasses.interfaces.CharClass
+     * @see com.syncleus.aethermud.game.CharClasses.interfaces.CharClass
      * @param aClass the CharClass object to check
      * @return the number of levels the mob has in the class, or -1
      */
@@ -611,7 +611,7 @@ public interface CharStats extends CMCommon, Modifiable {
     /**
      * Returns the number of levels this mob has in the given character class by name.
      * -1 means the mob has NO levels in that class.
-     * @see com.planet_ink.game.CharClasses.interfaces.CharClass
+     * @see com.syncleus.aethermud.game.CharClasses.interfaces.CharClass
      * @param aClass the name of the Character Class to check
      * @return the number of levels the mob has in the class, or -1
      */
@@ -627,7 +627,7 @@ public interface CharStats extends CMCommon, Modifiable {
     /**
      * Returns true if this user is capped by the given
      * classes level cap (if one exists)
-     * @see com.planet_ink.game.CharClasses.interfaces.CharClass#getLevelCap()
+     * @see com.syncleus.aethermud.game.CharClasses.interfaces.CharClass#getLevelCap()
      * @param C the class to check
      * @return true if the player is level capped, false otherwise
      */
@@ -638,7 +638,7 @@ public interface CharStats extends CMCommon, Modifiable {
      * to the given level.  If the mob does not have any levels in the given
      * class, then setCurrentClass will be called first.
      * @see #setCurrentClass(CharClass)
-     * @see com.planet_ink.game.CharClasses.interfaces.CharClass
+     * @see com.syncleus.aethermud.game.CharClasses.interfaces.CharClass
      * @param aClass the character class to set a level for
      * @param level the level to set for the given character class
      */
@@ -646,7 +646,7 @@ public interface CharStats extends CMCommon, Modifiable {
 
     /**
      * Returns the race of the mob.
-     * @see com.planet_ink.game.Races.interfaces.Race
+     * @see com.syncleus.aethermud.game.Races.interfaces.Race
      * @return the Race of the mob
      */
     public Race getMyRace();
@@ -654,8 +654,8 @@ public interface CharStats extends CMCommon, Modifiable {
     /**
      * Sets the race of the mob.  Race.startRacing should
      * be called after this method is.
-     * @see com.planet_ink.game.Races.interfaces.Race#startRacing(MOB, boolean)
-     * @see com.planet_ink.game.Races.interfaces.Race
+     * @see com.syncleus.aethermud.game.Races.interfaces.Race#startRacing(MOB, boolean)
+     * @see com.syncleus.aethermud.game.Races.interfaces.Race
      * @param newVal the Race of the mob
      */
     public void setMyRace(Race newVal);
@@ -666,7 +666,7 @@ public interface CharStats extends CMCommon, Modifiable {
      * may return something different than charStats().getMyRace().name().  For this
      * reason, you should ONLY use this method when you want to display the mobs
      * current race.
-     * @see com.planet_ink.game.Races.interfaces.Race
+     * @see com.syncleus.aethermud.game.Races.interfaces.Race
      * @see #setRaceName(String)
      * @return the name of this mobs current race.
      */
@@ -676,7 +676,7 @@ public interface CharStats extends CMCommon, Modifiable {
      * Returns the term seen when a character arrives into a room
      * By default, these come from the current
      * actual race, unless set to something new.
-     * @see com.planet_ink.game.Races.interfaces.Race
+     * @see com.syncleus.aethermud.game.Races.interfaces.Race
      * @see #setArriveLeaveStr(String, String)
      * @return the arrive string
      */
@@ -686,7 +686,7 @@ public interface CharStats extends CMCommon, Modifiable {
      * Returns the term seen when a character leaves a room
      * By default, these come from the current
      * actual race, unless set to something new.
-     * @see com.planet_ink.game.Races.interfaces.Race
+     * @see com.syncleus.aethermud.game.Races.interfaces.Race
      * @see #setArriveLeaveStr(String, String)
      * @return the leave string
      */
@@ -696,7 +696,7 @@ public interface CharStats extends CMCommon, Modifiable {
      * Returns resource codes of what this race can breathe as
      * an atmosphere.  The list is guarenteed sorted.  If the list
      * is empty, the race can breathe anything at all.
-     * @see com.planet_ink.game.Items.interfaces.RawMaterial
+     * @see com.syncleus.aethermud.game.Items.interfaces.RawMaterial
      * @see #setBreathables(int[])
      * @return a list of resource codes that this race can breathe
      */
@@ -706,7 +706,7 @@ public interface CharStats extends CMCommon, Modifiable {
      * Sets resource codes of what this race can breathe as
      * an atmosphere.  The list MUST BE sorted.  If the list
      * is empty, the race can breathe anything at all.
-     * @see com.planet_ink.game.Items.interfaces.RawMaterial
+     * @see com.syncleus.aethermud.game.Items.interfaces.RawMaterial
      * @see #getBreathables()
      * @param newArray a list of resource codes that this race can breathe
      */
@@ -716,7 +716,7 @@ public interface CharStats extends CMCommon, Modifiable {
      * Changes the apparent race of ths mob by setting a new name.  A value of null will
      * reset this setting, allowing the mobs TRUE race to be displayed through the
      * raceName method instead of the string set through this one.
-     * @see com.planet_ink.game.Races.interfaces.Race
+     * @see com.syncleus.aethermud.game.Races.interfaces.Race
      * @see #raceName()
      * @param newRaceName the name of the mobs apparent race
      */
@@ -726,7 +726,7 @@ public interface CharStats extends CMCommon, Modifiable {
      * Changes the terms seen when a character arrives into a room
      * and leaves it.  By default, these come from the current
      * actual race.
-     * @see com.planet_ink.game.Races.interfaces.Race
+     * @see com.syncleus.aethermud.game.Races.interfaces.Race
      * @see #getArriveStr()
      * @see #getLeaveStr()
      * @param arriveStr the arrive string
@@ -738,7 +738,7 @@ public interface CharStats extends CMCommon, Modifiable {
      * Changes the apparent char class of ths mob by setting a new name.  A value of null will
      * reset this setting, allowing the mobs TRUE current class to be displayed through the
      * displayClassName method instead of the string set through this one.
-     * @see com.planet_ink.game.CharClasses.interfaces.CharClass
+     * @see com.syncleus.aethermud.game.CharClasses.interfaces.CharClass
      * @see #displayClassName()
      * @see #displayClassLevel(MOB, boolean)
      * @see #displayClassLevelOnly(MOB)
@@ -750,7 +750,7 @@ public interface CharStats extends CMCommon, Modifiable {
      * Changes the apparent level of ths mob by setting a new name.  A value of null will
      * reset this setting, allowing the mobs TRUE level to be displayed through the
      * displayClassLevel method instead of the string set through this one.
-     * @see com.planet_ink.game.CharClasses.interfaces.CharClass
+     * @see com.syncleus.aethermud.game.CharClasses.interfaces.CharClass
      * @see #displayClassName()
      * @see #displayClassLevel(MOB, boolean)
      * @see #displayClassLevelOnly(MOB)
@@ -765,7 +765,7 @@ public interface CharStats extends CMCommon, Modifiable {
      * may return something different than charStats().getCurrentClass().name().  For this
      * reason, you should ONLY use this method when you want to display the mobs
      * current class.
-     * @see com.planet_ink.game.CharClasses.interfaces.CharClass
+     * @see com.syncleus.aethermud.game.CharClasses.interfaces.CharClass
      * @see #setDisplayClassName(String)
      * @see #displayClassLevel(MOB, boolean)
      * @see #displayClassLevelOnly(MOB)
@@ -776,7 +776,7 @@ public interface CharStats extends CMCommon, Modifiable {
     /**
      * Returns a combination of the displayClassName and displayClassLevel for
      * the given mob.  If either are null, authentic values will be used.
-     * @see com.planet_ink.game.CharClasses.interfaces.CharClass
+     * @see com.syncleus.aethermud.game.CharClasses.interfaces.CharClass
      * @see #displayClassName()
      * @see #setDisplayClassName(String)
      * @see #displayClassLevelOnly(MOB)
@@ -789,8 +789,8 @@ public interface CharStats extends CMCommon, Modifiable {
     /**
      * Returns either the given mobs authentic classlevel/total level,
      * or the value set through setDisplayClassLevel method.
-     * @see com.planet_ink.game.CharClasses.interfaces.CharClass
-     * @see com.planet_ink.game.Common.interfaces.CharStats#displayClassName()
+     * @see com.syncleus.aethermud.game.CharClasses.interfaces.CharClass
+     * @see com.syncleus.aethermud.game.Common.interfaces.CharStats#displayClassName()
      * @see #setDisplayClassName(String)
      * @see #displayClassLevel(MOB, boolean)
      * @param mob the mob whose class and overall level to display
@@ -818,14 +818,14 @@ public interface CharStats extends CMCommon, Modifiable {
 
     /**
      * Returns the sum of local and race-based unwearability codes.
-     * @see com.planet_ink.game.Items.interfaces.Item
+     * @see com.syncleus.aethermud.game.Items.interfaces.Item
      * @return a bitmap of unwearable locations
      */
     public long getWearableRestrictionsBitmap();
 
     /**
      * Sets the sum of local and race-based unwearability codes.
-     * @see com.planet_ink.game.Items.interfaces.Item
+     * @see com.syncleus.aethermud.game.Items.interfaces.Item
      * @param bitmap a bitmap of unwearable locations
      */
     public void setWearableRestrictionsBitmap(long bitmap);
@@ -889,7 +889,7 @@ public interface CharStats extends CMCommon, Modifiable {
     /**
      * Returns the age category for this mob, based on the age stat constant stored here.  The age
      * categories are defined in the Race interface as AGE_ constants.
-     * @see com.planet_ink.game.Races.interfaces.Race
+     * @see com.syncleus.aethermud.game.Races.interfaces.Race
      * @return the numeric age category of this mob
      */
     public int ageCategory();
@@ -898,7 +898,7 @@ public interface CharStats extends CMCommon, Modifiable {
      * Returns the string name of the age category for this mob, based on the age
      * stat constant stored here.  The age category names are defined in the Race
      * interface in the AGE_DESCS_ constant.
-     * @see com.planet_ink.game.Races.interfaces.Race#AGE_DESCS
+     * @see com.syncleus.aethermud.game.Races.interfaces.Race#AGE_DESCS
      * @return the name of the age category for this mob
      */
     public String ageName();
@@ -961,7 +961,7 @@ public interface CharStats extends CMCommon, Modifiable {
      * @see #getItemProficiencies()
      * @see #addItemDeficiency(String)
      *
-     * @see com.planet_ink.game.Libraries.interfaces.MaskingLibrary
+     * @see com.syncleus.aethermud.game.Libraries.interfaces.MaskingLibrary
      * @param zapperMask the zapper mask
      */
     public void addItemProficiency(String zapperMask);
@@ -974,7 +974,7 @@ public interface CharStats extends CMCommon, Modifiable {
      * @see #getItemProficiencies()
      * @see #addItemProficiency(String)
      *
-     * @see com.planet_ink.game.Libraries.interfaces.MaskingLibrary
+     * @see com.syncleus.aethermud.game.Libraries.interfaces.MaskingLibrary
      * @param zapperMask the zapper mask
      */
     public void addItemDeficiency(String zapperMask);

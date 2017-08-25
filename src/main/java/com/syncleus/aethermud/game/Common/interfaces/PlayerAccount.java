@@ -14,13 +14,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Common.interfaces;
+package com.syncleus.aethermud.game.Common.interfaces;
 
-import com.planet_ink.game.Libraries.interfaces.PlayerLibrary;
-import com.planet_ink.game.MOBS.interfaces.MOB;
-import com.planet_ink.game.core.CMParms;
-import com.planet_ink.game.core.interfaces.Modifiable;
-import com.planet_ink.game.core.interfaces.Tattooable;
+import com.syncleus.aethermud.game.Libraries.interfaces.PlayerLibrary;
+import com.syncleus.aethermud.game.MOBS.interfaces.MOB;
+import com.syncleus.aethermud.game.core.CMParms;
+import com.syncleus.aethermud.game.core.interfaces.Modifiable;
+import com.syncleus.aethermud.game.core.interfaces.Tattooable;
 
 import java.util.Enumeration;
 import java.util.Vector;
@@ -112,7 +112,7 @@ public interface PlayerAccount extends CMCommon, AccountStats, Modifiable, Tatto
 
     /**
      * Checks whether the given string flag is set for this account.
-     * @see com.planet_ink.game.Common.interfaces.PlayerAccount#setFlag(AccountFlag, boolean)
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerAccount#setFlag(AccountFlag, boolean)
      * @param flag the flag name
      * @return true if it is set, false if not
      */
@@ -120,7 +120,7 @@ public interface PlayerAccount extends CMCommon, AccountStats, Modifiable, Tatto
 
     /**
      * Sets or unsets an account-wide flag.
-     * @see com.planet_ink.game.Common.interfaces.PlayerAccount#isSet(AccountFlag)
+     * @see com.syncleus.aethermud.game.Common.interfaces.PlayerAccount#isSet(AccountFlag)
      * @param flag the flag name
      * @param setOrUnset true to set it, false to unset
      */

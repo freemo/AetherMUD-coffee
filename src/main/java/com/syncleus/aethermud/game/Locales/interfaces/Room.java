@@ -14,19 +14,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Locales.interfaces;
+package com.syncleus.aethermud.game.Locales.interfaces;
 
-import com.planet_ink.game.Areas.interfaces.Area;
-import com.planet_ink.game.Common.interfaces.CMMsg;
-import com.planet_ink.game.Common.interfaces.Climate;
-import com.planet_ink.game.Common.interfaces.PhyStats;
-import com.planet_ink.game.Common.interfaces.TimeClock;
-import com.planet_ink.game.Exits.interfaces.Exit;
-import com.planet_ink.game.Items.interfaces.Item;
-import com.planet_ink.game.MOBS.interfaces.MOB;
-import com.planet_ink.game.core.Directions;
-import com.planet_ink.game.core.collections.Filterer;
-import com.planet_ink.game.core.interfaces.*;
+import com.syncleus.aethermud.game.Areas.interfaces.Area;
+import com.syncleus.aethermud.game.Common.interfaces.CMMsg;
+import com.syncleus.aethermud.game.Common.interfaces.Climate;
+import com.syncleus.aethermud.game.Common.interfaces.PhyStats;
+import com.syncleus.aethermud.game.Common.interfaces.TimeClock;
+import com.syncleus.aethermud.game.Exits.interfaces.Exit;
+import com.syncleus.aethermud.game.Items.interfaces.Item;
+import com.syncleus.aethermud.game.MOBS.interfaces.MOB;
+import com.syncleus.aethermud.game.core.Directions;
+import com.syncleus.aethermud.game.core.collections.Filterer;
+import com.syncleus.aethermud.game.core.interfaces.*;
 
 import java.util.Enumeration;
 import java.util.List;
@@ -173,8 +173,8 @@ public interface Room extends PhysicalAgent, ItemPossessor, Places {
     /**
      * Returns the full resource code for the current gatherable resource in this room.
      * The value of this method may change from time to time.
-     * @see com.planet_ink.game.Items.interfaces.RawMaterial
-     * @see com.planet_ink.game.Items.interfaces.RawMaterial.CODES
+     * @see com.syncleus.aethermud.game.Items.interfaces.RawMaterial
+     * @see com.syncleus.aethermud.game.Items.interfaces.RawMaterial.CODES
      * @see Room#setResource(int)
      * @see Room#resourceChoices()
      * @return the full resource code for the current gatherable resource in this room
@@ -184,8 +184,8 @@ public interface Room extends PhysicalAgent, ItemPossessor, Places {
     /**
      * Sets the full resource code for the current gatherable resource in this room.
      * The value set by this method may be changed automatically later on.
-     * @see com.planet_ink.game.Items.interfaces.RawMaterial
-     * @see com.planet_ink.game.Items.interfaces.RawMaterial.CODES
+     * @see com.syncleus.aethermud.game.Items.interfaces.RawMaterial
+     * @see com.syncleus.aethermud.game.Items.interfaces.RawMaterial.CODES
      * @see Room#myResource()
      * @see Room#resourceChoices()
      * @param resourceCode the full resource code for the current gatherable resource in this room
@@ -196,8 +196,8 @@ public interface Room extends PhysicalAgent, ItemPossessor, Places {
      * Returns a list of all resource codes for potentially gatherable resources in this room.
      * This list is alterable for a given Room/Locale java class.  Changes to any instance will
      * affect the entire class.
-     * @see com.planet_ink.game.Items.interfaces.RawMaterial
-     * @see com.planet_ink.game.Items.interfaces.RawMaterial.CODES
+     * @see com.syncleus.aethermud.game.Items.interfaces.RawMaterial
+     * @see com.syncleus.aethermud.game.Items.interfaces.RawMaterial.CODES
      * @see Room#myResource()
      * @see Room#setResource(int)
      * @return the list of all possible resource codes for the current gatherable resources in this room
@@ -356,7 +356,7 @@ public interface Room extends PhysicalAgent, ItemPossessor, Places {
      * @see Room#getPairedExit(int)
      * @see Room#fetchExit(String)
      * @see Directions
-     * @see com.planet_ink.game.Exits.interfaces.Exit
+     * @see com.syncleus.aethermud.game.Exits.interfaces.Exit
      * @param direction the direction in this room to look for an exit in
      * @return the raw Exit object in that direction, or null
      */
@@ -370,7 +370,7 @@ public interface Room extends PhysicalAgent, ItemPossessor, Places {
      * @see Room#getPairedExit(int)
      * @see Room#fetchExit(String)
      * @see Directions
-     * @see com.planet_ink.game.Exits.interfaces.Exit
+     * @see com.syncleus.aethermud.game.Exits.interfaces.Exit
      * @param direction the direction in this room to look for an exit in
      * @param E the raw Exit object in that direction, or null
      */
@@ -386,7 +386,7 @@ public interface Room extends PhysicalAgent, ItemPossessor, Places {
      * @see Room#getPairedExit(int)
      * @see Room#fetchExit(String)
      * @see Directions
-     * @see com.planet_ink.game.Exits.interfaces.Exit
+     * @see com.syncleus.aethermud.game.Exits.interfaces.Exit
      * @param direction the direction from this room to get the reverse exit for
      * @return the reverse exit, or null if there is no room (or no reverse exit)
      */
@@ -403,7 +403,7 @@ public interface Room extends PhysicalAgent, ItemPossessor, Places {
      * @see Room#getReverseExit(int)
      * @see Room#fetchExit(String)
      * @see Directions
-     * @see com.planet_ink.game.Exits.interfaces.Exit
+     * @see com.syncleus.aethermud.game.Exits.interfaces.Exit
      * @param direction the direction from this room to get the reverse exit for
      * @return the reverse exit, or null if there is no room (or no reverse exit)
      */
@@ -416,7 +416,7 @@ public interface Room extends PhysicalAgent, ItemPossessor, Places {
      * @see Room#setRawExit(int, Exit)
      * @see Room#getReverseExit(int)
      * @see Room#fetchExit(String)
-     * @see com.planet_ink.game.Exits.interfaces.Exit
+     * @see com.syncleus.aethermud.game.Exits.interfaces.Exit
      * @param direction the direction from this room to get the exit for
      * @return the Exit in this room, in the given direction
      */
@@ -432,7 +432,7 @@ public interface Room extends PhysicalAgent, ItemPossessor, Places {
      * @see Room#setRawExit(int, Exit)
      * @see Room#getReverseExit(int)
      * @see Room#getExitInDir(int)
-     * @see com.planet_ink.game.Exits.interfaces.Exit
+     * @see com.syncleus.aethermud.game.Exits.interfaces.Exit
      * @param itemID the name or substring of the exit to return
      * @return the first Exit object that matches the search string
      */
@@ -475,7 +475,7 @@ public interface Room extends PhysicalAgent, ItemPossessor, Places {
      * for you.
      * @see Room#sendOthers(MOB, CMMsg)
      * @see Room#show(MOB, Environmental, Environmental, int, String, int, String, int, String)
-     * @see com.planet_ink.game.Common.interfaces.CMMsg
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg
      * @param source the first receiver of the message, typically the agent/source.
      * @param msg the message to send
      */
@@ -487,7 +487,7 @@ public interface Room extends PhysicalAgent, ItemPossessor, Places {
      * message is substantially different, or handled outside this method.
      * @see Room#send(MOB, CMMsg)
      * @see Room#show(MOB, Environmental, Environmental, int, String, int, String, int, String)
-     * @see com.planet_ink.game.Common.interfaces.CMMsg
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg
      * @param source the NON-receiver of the message, typically the agent/source.
      * @param msg the message to send
      */
@@ -498,7 +498,7 @@ public interface Room extends PhysicalAgent, ItemPossessor, Places {
      * code, and the given allMessage as the source, target, and others message, and using
      * a temporary fake agent/source for the message, immediately sends the message without
      * previewing it.  This should be used very sparingly for acts-of-God.
-     * @see com.planet_ink.game.Common.interfaces.CMMsg
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg
      * @see Room#show(MOB, Environmental, Environmental, int, String)
      * @see Room#showHappens(int, Environmental, String)
      * @see Room#send(MOB, CMMsg)
@@ -514,7 +514,7 @@ public interface Room extends PhysicalAgent, ItemPossessor, Places {
      * a temporary fake agent/source for the message whose name is the same as the given
      * "like" Environmental, immediately sends the message without previewing it.
      * This should be used very sparingly for acts-of-objects.
-     * @see com.planet_ink.game.Common.interfaces.CMMsg
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg
      * @see Room#show(MOB, Environmental, Environmental, int, String)
      * @see Room#showHappens(int, Environmental, String)
      * @see Room#send(MOB, CMMsg)
@@ -531,11 +531,11 @@ public interface Room extends PhysicalAgent, ItemPossessor, Places {
      * it for approval by calling okMessage on the room, and if it is approved,
      * calls send to send the message.
      * @see Room#send(MOB, CMMsg)
-     * @see com.planet_ink.game.core.interfaces.Environmental#okMessage(Environmental, CMMsg)
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#source()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#target()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#sourceCode()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#sourceMessage()
+     * @see com.syncleus.aethermud.game.core.interfaces.Environmental#okMessage(Environmental, CMMsg)
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#source()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#target()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#sourceCode()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#sourceMessage()
      * @param source the agent source of the action
      * @param target the target of the action
      * @param allCode the source, target, and others code to use
@@ -550,12 +550,12 @@ public interface Room extends PhysicalAgent, ItemPossessor, Places {
      * it for approval by calling okMessage on the room, and if it is approved,
      * calls send to send the message.
      * @see Room#send(MOB, CMMsg)
-     * @see com.planet_ink.game.core.interfaces.Environmental#okMessage(Environmental, CMMsg)
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#source()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#target()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#tool()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#sourceCode()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#sourceMessage()
+     * @see com.syncleus.aethermud.game.core.interfaces.Environmental#okMessage(Environmental, CMMsg)
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#source()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#target()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#tool()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#sourceCode()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#sourceMessage()
      * @param source the agent source of the action
      * @param target the target of the action
      * @param tool the tool used by the source to do the action
@@ -571,14 +571,14 @@ public interface Room extends PhysicalAgent, ItemPossessor, Places {
      * it for approval by calling okMessage on the room, and if it is approved,
      * calls send to send the message.
      * @see Room#send(MOB, CMMsg)
-     * @see com.planet_ink.game.core.interfaces.Environmental#okMessage(Environmental, CMMsg)
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#source()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#target()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#tool()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#sourceCode()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#targetCode()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#othersCode()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#sourceMessage()
+     * @see com.syncleus.aethermud.game.core.interfaces.Environmental#okMessage(Environmental, CMMsg)
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#source()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#target()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#tool()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#sourceCode()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#targetCode()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#othersCode()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#sourceMessage()
      * @param source the agent source of the action
      * @param target the target of the action
      * @param tool the tool used by the source to do the action
@@ -596,16 +596,16 @@ public interface Room extends PhysicalAgent, ItemPossessor, Places {
      * it for approval by calling okMessage on the room, and if it is approved,
      * calls send to send the message.
      * @see Room#send(MOB, CMMsg)
-     * @see com.planet_ink.game.core.interfaces.Environmental#okMessage(Environmental, CMMsg)
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#source()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#target()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#tool()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#sourceCode()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#targetCode()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#othersCode()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#sourceMessage()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#targetMessage()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#othersMessage()
+     * @see com.syncleus.aethermud.game.core.interfaces.Environmental#okMessage(Environmental, CMMsg)
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#source()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#target()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#tool()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#sourceCode()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#targetCode()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#othersCode()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#sourceMessage()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#targetMessage()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#othersMessage()
      * @param source the agent source of the action
      * @param target the target of the action
      * @param tool the tool used by the source to do the action
@@ -625,14 +625,14 @@ public interface Room extends PhysicalAgent, ItemPossessor, Places {
      * it for approval by calling okMessage on the room, and if it is approved,
      * calls send to send the message.
      * @see Room#send(MOB, CMMsg)
-     * @see com.planet_ink.game.core.interfaces.Environmental#okMessage(Environmental, CMMsg)
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#source()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#target()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#tool()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#sourceCode()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#sourceMessage()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#targetMessage()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#othersMessage()
+     * @see com.syncleus.aethermud.game.core.interfaces.Environmental#okMessage(Environmental, CMMsg)
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#source()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#target()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#tool()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#sourceCode()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#sourceMessage()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#targetMessage()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#othersMessage()
      * @param source the agent source of the action
      * @param target the target of the action
      * @param tool the tool used by the source to do the action
@@ -650,11 +650,11 @@ public interface Room extends PhysicalAgent, ItemPossessor, Places {
      * it for approval by calling okMessage on the room, and if it is approved,
      * calls sendOthers to send the message.
      * @see Room#sendOthers(MOB, CMMsg)
-     * @see com.planet_ink.game.core.interfaces.Environmental#okMessage(Environmental, CMMsg)
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#source()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#target()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#sourceCode()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#sourceMessage()
+     * @see com.syncleus.aethermud.game.core.interfaces.Environmental#okMessage(Environmental, CMMsg)
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#source()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#target()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#sourceCode()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#sourceMessage()
      * @param source the agent source of the action
      * @param target the target of the action
      * @param allCode the source, target, and others code to use
@@ -668,12 +668,12 @@ public interface Room extends PhysicalAgent, ItemPossessor, Places {
      * message is not flagged for ALWAYS approval, this method submits
      * it for approval by calling okMessage on the room, and if it is approved,
      * calls executeMsg on the given source mob.
-     * @see com.planet_ink.game.core.interfaces.Environmental#executeMsg(Environmental, CMMsg)
-     * @see com.planet_ink.game.core.interfaces.Environmental#okMessage(Environmental, CMMsg)
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#source()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#target()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#sourceCode()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#sourceMessage()
+     * @see com.syncleus.aethermud.game.core.interfaces.Environmental#executeMsg(Environmental, CMMsg)
+     * @see com.syncleus.aethermud.game.core.interfaces.Environmental#okMessage(Environmental, CMMsg)
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#source()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#target()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#sourceCode()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#sourceMessage()
      * @param source the agent source of the action
      * @param target the target of the action
      * @param allCode the source, target, and others code to use
@@ -688,12 +688,12 @@ public interface Room extends PhysicalAgent, ItemPossessor, Places {
      * it for approval by calling okMessage on the room, and if it is approved,
      * calls sendOthers to send the message.
      * @see Room#sendOthers(MOB, CMMsg)
-     * @see com.planet_ink.game.core.interfaces.Environmental#okMessage(Environmental, CMMsg)
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#source()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#target()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#tool()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#sourceCode()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#sourceMessage()
+     * @see com.syncleus.aethermud.game.core.interfaces.Environmental#okMessage(Environmental, CMMsg)
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#source()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#target()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#tool()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#sourceCode()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#sourceMessage()
      * @param source the agent source of the action
      * @param target the target of the action
      * @param tool the tool used by the source to do the action
@@ -708,12 +708,12 @@ public interface Room extends PhysicalAgent, ItemPossessor, Places {
      * message is not flagged for ALWAYS approval, this method submits
      * it for approval by calling okMessage on the room, and if it is approved,
      * calls executeMsg on the given source mob.
-     * @see com.planet_ink.game.core.interfaces.Environmental#executeMsg(Environmental, CMMsg)
-     * @see com.planet_ink.game.core.interfaces.Environmental#okMessage(Environmental, CMMsg)
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#source()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#target()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#sourceCode()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#sourceMessage()
+     * @see com.syncleus.aethermud.game.core.interfaces.Environmental#executeMsg(Environmental, CMMsg)
+     * @see com.syncleus.aethermud.game.core.interfaces.Environmental#okMessage(Environmental, CMMsg)
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#source()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#target()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#sourceCode()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#sourceMessage()
      * @param source the agent source of the action
      * @param target the target of the action
      * @param tool the tool used by the source to do the action
@@ -837,7 +837,7 @@ public interface Room extends PhysicalAgent, ItemPossessor, Places {
      * Adds the given mob to this room as an inhabitant.
      * Does *not* register the new location with the mob,
      * so you would need to also call setLocation
-     * @see com.planet_ink.game.MOBS.interfaces.MOB#setLocation(Room)
+     * @see com.syncleus.aethermud.game.MOBS.interfaces.MOB#setLocation(Room)
      * @see Room#fetchInhabitant(String)
      * @see Room#fetchInhabitant(int)
      * @see Room#fetchInhabitants(String)
@@ -858,7 +858,7 @@ public interface Room extends PhysicalAgent, ItemPossessor, Places {
      * Removes the given mob from this room as an inhabitant.
      * Does *not* un-register the new location with the mob,
      * so you would need to also call setLocation
-     * @see com.planet_ink.game.MOBS.interfaces.MOB#setLocation(Room)
+     * @see com.syncleus.aethermud.game.MOBS.interfaces.MOB#setLocation(Room)
      * @see Room#fetchInhabitant(String)
      * @see Room#fetchInhabitant(int)
      * @see Room#fetchInhabitants(String)
@@ -881,7 +881,7 @@ public interface Room extends PhysicalAgent, ItemPossessor, Places {
      * Does *not* un-register the new location with the mob,
      * so you would need to also call setLocation if you don't
      * destroy them.
-     * @see com.planet_ink.game.MOBS.interfaces.MOB#setLocation(Room)
+     * @see com.syncleus.aethermud.game.MOBS.interfaces.MOB#setLocation(Room)
      * @see Room#fetchInhabitant(String)
      * @see Room#fetchInhabitant(int)
      * @see Room#fetchInhabitants(String)

@@ -14,15 +14,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Libraries.interfaces;
+package com.syncleus.aethermud.game.Libraries.interfaces;
 
-import com.planet_ink.game.Common.interfaces.Clan;
-import com.planet_ink.game.Common.interfaces.Clan.MemberRecord;
-import com.planet_ink.game.Common.interfaces.Clan.Trophy;
-import com.planet_ink.game.Common.interfaces.ClanGovernment;
-import com.planet_ink.game.MOBS.interfaces.MOB;
-import com.planet_ink.game.core.collections.Pair;
-import com.planet_ink.game.core.collections.Triad;
+import com.syncleus.aethermud.game.Common.interfaces.Clan;
+import com.syncleus.aethermud.game.Common.interfaces.Clan.MemberRecord;
+import com.syncleus.aethermud.game.Common.interfaces.Clan.Trophy;
+import com.syncleus.aethermud.game.Common.interfaces.ClanGovernment;
+import com.syncleus.aethermud.game.MOBS.interfaces.MOB;
+import com.syncleus.aethermud.game.core.collections.Pair;
+import com.syncleus.aethermud.game.core.collections.Triad;
 
 import java.util.Enumeration;
 import java.util.List;
@@ -30,13 +30,13 @@ import java.util.List;
 /**
  * This library manages the list of Clans in the game, and helps
  * administer their most basic functions.
- * @see com.planet_ink.game.Common.interfaces.Clan
+ * @see com.syncleus.aethermud.game.Common.interfaces.Clan
  */
 public interface ClanManager extends CMLibrary {
     /**
      * Returns a list of all available clans names in the game,
      * as Clan objects.
-     * @see com.planet_ink.game.Common.interfaces.Clan
+     * @see com.syncleus.aethermud.game.Common.interfaces.Clan
      * @return a list of all available clans names in the game,
      */
     public Enumeration<String> clansNames();
@@ -52,7 +52,7 @@ public interface ClanManager extends CMLibrary {
      * two clans are evaluated, based on their declared relationship to each other, and
      * the relations they inherit from allys.  It is then compared with the passed in
      * relationship constant.  If they match, true is returned, and false otherwise.
-     * @see com.planet_ink.game.Common.interfaces.Clan#REL_DESCS
+     * @see com.syncleus.aethermud.game.Common.interfaces.Clan#REL_DESCS
      * @param clanName1 the first clan to evaluate
      * @param clanName2 the second clan to evaluate
      * @param relation the clan relation to compare to
@@ -65,7 +65,7 @@ public interface ClanManager extends CMLibrary {
      * two mobs first rivalrous clans are evaluated, based on their declared relationship to
      * each other, and the relations they inherit from allys.  It is then compared with the
      * passed the War status.  If they match, true is returned, and false otherwise.
-     * @see com.planet_ink.game.Common.interfaces.Clan#REL_DESCS
+     * @see com.syncleus.aethermud.game.Common.interfaces.Clan#REL_DESCS
      * @param M1 the first mobs first rivalrous clan to evaluate
      * @param M2 the second mobs first rivalrous clan to evaluate
      * @return true if the common relationship matches war, and false otherwise
@@ -86,7 +86,7 @@ public interface ClanManager extends CMLibrary {
      * two sets of clans are evaluated, based on their declared relationship to each other, and
      * the relations they inherit from allys.  This relationship is then checked against the given
      * relation.  If any pairing matches the relation, true is returned.
-     * @see com.planet_ink.game.Common.interfaces.Clan#REL_DESCS
+     * @see com.syncleus.aethermud.game.Common.interfaces.Clan#REL_DESCS
      * @param M1 the first mob whose clans to evaluate
      * @param M2 the second mob whose clans to evaluate
      * @param relation the relation to look for
@@ -99,7 +99,7 @@ public interface ClanManager extends CMLibrary {
      * two clans are evaluated, based on their declared relationship to each other, and
      * the relations they inherit from allys.  This relationship is then returned as
      * a relation constant number.
-     * @see com.planet_ink.game.Common.interfaces.Clan#REL_DESCS
+     * @see com.syncleus.aethermud.game.Common.interfaces.Clan#REL_DESCS
      * @param clanID1 the first clan to evaluate
      * @param clanID2 the second clan to evaluate
      * @return the relation code integer
@@ -201,7 +201,7 @@ public interface ClanManager extends CMLibrary {
 
     /**
      * Returns the Clan object associated with the given clan name
-     * @see com.planet_ink.game.Common.interfaces.Clan
+     * @see com.syncleus.aethermud.game.Common.interfaces.Clan
      * @param id the clan name
      * @return the Clan object associated with the given clan name
      */
@@ -210,7 +210,7 @@ public interface ClanManager extends CMLibrary {
     /**
      * Returns the Clan object associated with the given clan name, or
      * if the name is not found, the name that most closely matches it.
-     * @see com.planet_ink.game.Common.interfaces.Clan
+     * @see com.syncleus.aethermud.game.Common.interfaces.Clan
      * @param id the clan name
      * @return the Clan object associated with the given clan name
      */
@@ -274,7 +274,7 @@ public interface ClanManager extends CMLibrary {
 
     /**
      * Returns a descriptive name for the given trophy code number.
-     * @see com.planet_ink.game.Common.interfaces.Clan.Trophy
+     * @see com.syncleus.aethermud.game.Common.interfaces.Clan.Trophy
      * @param trophy the trophy code number
      * @return the descriptive name
      */
@@ -316,7 +316,7 @@ public interface ClanManager extends CMLibrary {
      * Returns a government definition object of the given internal
      * stock clangovernments.xml id.  See /resources/clangovernments.xml
      * Also:
-     * @see com.planet_ink.game.Common.interfaces.ClanGovernment
+     * @see com.syncleus.aethermud.game.Common.interfaces.ClanGovernment
      * @param typeid the internal typeid
      * @return the clan government object
      */
@@ -326,7 +326,7 @@ public interface ClanManager extends CMLibrary {
      * Returns the default government definition object.
      * See /resources/clangovernments.xml
      * Also:
-     * @see com.planet_ink.game.Common.interfaces.ClanGovernment
+     * @see com.syncleus.aethermud.game.Common.interfaces.ClanGovernment
      * @return the clan government object
      */
     public ClanGovernment getDefaultGovernment();
@@ -341,16 +341,16 @@ public interface ClanManager extends CMLibrary {
      * Returns all government definition objects from internal
      * stock clangovernments.xml file.  See /resources/clangovernments.xml
      * Also:
-     * @see com.planet_ink.game.Common.interfaces.ClanGovernment
+     * @see com.syncleus.aethermud.game.Common.interfaces.ClanGovernment
      * @return the clan government object
      */
     public ClanGovernment[] getStockGovernments();
 
     /**
      * Converts a given clan government object into xml.
-     * @see com.planet_ink.game.Common.interfaces.ClanGovernment
-     * @see com.planet_ink.game.Libraries.interfaces.ClanManager#makeGovernmentXML(com.planet_ink.game.Common.interfaces.ClanGovernment[])
-     * @see com.planet_ink.game.Libraries.interfaces.ClanManager#parseGovernmentXML(StringBuffer)
+     * @see com.syncleus.aethermud.game.Common.interfaces.ClanGovernment
+     * @see com.syncleus.aethermud.game.Libraries.interfaces.ClanManager#makeGovernmentXML(com.syncleus.aethermud.game.Common.interfaces.ClanGovernment[])
+     * @see com.syncleus.aethermud.game.Libraries.interfaces.ClanManager#parseGovernmentXML(StringBuffer)
      * @param gvt the clan government object
      * @return the xml
      */
@@ -358,9 +358,9 @@ public interface ClanManager extends CMLibrary {
 
     /**
      * Converts a given clan government objects into xml.
-     * @see com.planet_ink.game.Common.interfaces.ClanGovernment
-     * @see com.planet_ink.game.Libraries.interfaces.ClanManager#makeGovernmentXML(com.planet_ink.game.Common.interfaces.ClanGovernment)
-     * @see com.planet_ink.game.Libraries.interfaces.ClanManager#parseGovernmentXML(StringBuffer)
+     * @see com.syncleus.aethermud.game.Common.interfaces.ClanGovernment
+     * @see com.syncleus.aethermud.game.Libraries.interfaces.ClanManager#makeGovernmentXML(com.syncleus.aethermud.game.Common.interfaces.ClanGovernment)
+     * @see com.syncleus.aethermud.game.Libraries.interfaces.ClanManager#parseGovernmentXML(StringBuffer)
      * @param gvts the clan government objects
      * @return the xml
      */
@@ -368,9 +368,9 @@ public interface ClanManager extends CMLibrary {
 
     /**
      * Converts xml into clan government objects.
-     * @see com.planet_ink.game.Common.interfaces.ClanGovernment
-     * @see com.planet_ink.game.Libraries.interfaces.ClanManager#makeGovernmentXML(com.planet_ink.game.Common.interfaces.ClanGovernment)
-     * @see com.planet_ink.game.Libraries.interfaces.ClanManager#makeGovernmentXML(com.planet_ink.game.Common.interfaces.ClanGovernment[])
+     * @see com.syncleus.aethermud.game.Common.interfaces.ClanGovernment
+     * @see com.syncleus.aethermud.game.Libraries.interfaces.ClanManager#makeGovernmentXML(com.syncleus.aethermud.game.Common.interfaces.ClanGovernment)
+     * @see com.syncleus.aethermud.game.Libraries.interfaces.ClanManager#makeGovernmentXML(com.syncleus.aethermud.game.Common.interfaces.ClanGovernment[])
      * @param xml the xml
      * @return the clan government objects
      */
@@ -412,7 +412,7 @@ public interface ClanManager extends CMLibrary {
      * the given clan forbids the given mob from performing the given function, or from
      * even starting a vote on it, the method will return false. If the mob is allowed
      * to perform
-     * @see com.planet_ink.game.Common.interfaces.Clan.Function#ACCEPT
+     * @see com.syncleus.aethermud.game.Common.interfaces.Clan.Function#ACCEPT
      * @param mob the player who wants to perform the function
      * @param C the clan that the player belongs to
      * @param commands the command list describing the function that wants to be executed

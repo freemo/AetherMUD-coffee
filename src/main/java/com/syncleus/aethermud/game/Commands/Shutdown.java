@@ -14,12 +14,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Commands;
+package com.syncleus.aethermud.game.Commands;
 
-import com.planet_ink.game.Common.interfaces.Session;
-import com.planet_ink.game.MOBS.interfaces.MOB;
-import com.planet_ink.game.core.*;
-import com.planet_ink.game.core.interfaces.Tickable;
+import com.syncleus.aethermud.game.Common.interfaces.Session;
+import com.syncleus.aethermud.game.MOBS.interfaces.MOB;
+import com.syncleus.aethermud.game.core.*;
+import com.syncleus.aethermud.game.core.interfaces.Tickable;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -137,7 +137,7 @@ public class Shutdown extends StdCommand implements Tickable {
                 else
                     Log.errOut("CommandProcessor", mob.Name() + " starts system restart...");
                 mob.tell(L("Starting @x1...", (keepItDown ? "shutdown" : "restart")));
-                com.planet_ink.game.application.MUD.globalShutdown(mob.session(), keepItDown, externalCommand);
+                com.syncleus.aethermud.game.application.MUD.globalShutdown(mob.session(), keepItDown, externalCommand);
             }
         }.start();
     }

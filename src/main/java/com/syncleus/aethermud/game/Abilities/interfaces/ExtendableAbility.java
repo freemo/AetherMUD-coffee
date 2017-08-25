@@ -14,11 +14,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Abilities.interfaces;
+package com.syncleus.aethermud.game.Abilities.interfaces;
 
-import com.planet_ink.game.core.interfaces.MsgListener;
-import com.planet_ink.game.core.interfaces.StatsAffecting;
-import com.planet_ink.game.core.interfaces.Tickable;
+import com.syncleus.aethermud.game.core.interfaces.MsgListener;
+import com.syncleus.aethermud.game.core.interfaces.StatsAffecting;
+import com.syncleus.aethermud.game.core.interfaces.Tickable;
 
 
 /**
@@ -37,7 +37,7 @@ public interface ExtendableAbility extends Ability {
 
     /**
      * Set the stats affector for this ability.
-     * @see com.planet_ink.game.core.interfaces.StatsAffecting
+     * @see com.syncleus.aethermud.game.core.interfaces.StatsAffecting
      * @param code the stats affector code
      * @return this
      */
@@ -45,7 +45,7 @@ public interface ExtendableAbility extends Ability {
 
     /**
      * Set the msg listener for this ability.
-     * @see com.planet_ink.game.core.interfaces.MsgListener
+     * @see com.syncleus.aethermud.game.core.interfaces.MsgListener
      * @param code the msg listener code
      * @return this
      */
@@ -53,7 +53,7 @@ public interface ExtendableAbility extends Ability {
 
     /**
      * Set the ticker for this ability.
-     * @see com.planet_ink.game.core.interfaces.Tickable
+     * @see com.syncleus.aethermud.game.core.interfaces.Tickable
      * @param code the ticker code
      * @return this
      */

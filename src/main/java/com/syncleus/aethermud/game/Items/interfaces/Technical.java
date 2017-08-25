@@ -14,10 +14,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Items.interfaces;
+package com.syncleus.aethermud.game.Items.interfaces;
 
-import com.planet_ink.game.Items.interfaces.TechComponent.ShipDir;
-import com.planet_ink.game.core.CMath;
+import com.syncleus.aethermud.game.Items.interfaces.TechComponent.ShipDir;
+import com.syncleus.aethermud.game.core.CMath;
 
 /*
    Copyright 2011-2017 Bo Zimmerman
@@ -47,7 +47,7 @@ public interface Technical extends Item {
      * become outdated, and be outperformed by items with higher tech
      * level.  For that reason, they must constantly be looking to keeping
      * their gear updates.
-     * @see com.planet_ink.game.Libraries.interfaces.TechLibrary#getGlobalTechLevel()
+     * @see com.syncleus.aethermud.game.Libraries.interfaces.TechLibrary#getGlobalTechLevel()
      * @see Technical#setTechLevel(int)
      * @return the absolute tech level of this item
      */
@@ -60,7 +60,7 @@ public interface Technical extends Item {
      * become outdated, and be outperformed by items with higher tech
      * level.  For that reason, they must constantly be looking to keeping
      * their gear updates.
-     * @see com.planet_ink.game.Libraries.interfaces.TechLibrary#getGlobalTechLevel()
+     * @see com.syncleus.aethermud.game.Libraries.interfaces.TechLibrary#getGlobalTechLevel()
      * @see Technical#techLevel()
      * @param level the absolute tech level of this item
      */

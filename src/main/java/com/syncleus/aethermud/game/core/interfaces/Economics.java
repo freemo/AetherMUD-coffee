@@ -14,10 +14,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.core.interfaces;
+package com.syncleus.aethermud.game.core.interfaces;
 
-import com.planet_ink.game.Common.interfaces.TimeClock.TimePeriod;
-import com.planet_ink.game.core.collections.Pair;
+import com.syncleus.aethermud.game.Common.interfaces.TimeClock.TimePeriod;
+import com.syncleus.aethermud.game.core.collections.Pair;
 
 
 /**
@@ -72,21 +72,21 @@ public interface Economics extends Environmental {
 
     /**
      * Returns the mask used to determine if a customer is ignored by the ShopKeeper.
-     * @see com.planet_ink.game.Libraries.interfaces.MaskingLibrary
+     * @see com.syncleus.aethermud.game.Libraries.interfaces.MaskingLibrary
      * @return the mask used
      */
     public String finalIgnoreMask();
 
     /**
      * Returns the mask used to determine if a customer is ignored by the ShopKeeper.
-     * @see com.planet_ink.game.Libraries.interfaces.MaskingLibrary
+     * @see com.syncleus.aethermud.game.Libraries.interfaces.MaskingLibrary
      * @return the mask used
      */
     public String ignoreMask();
 
     /**
      * Sets the mask used to determine if a customer is ignored by the ShopKeeper.
-     * @see com.planet_ink.game.Libraries.interfaces.MaskingLibrary
+     * @see com.syncleus.aethermud.game.Libraries.interfaces.MaskingLibrary
      * @param factors the mask to use
      */
     public void setIgnoreMask(String factors);

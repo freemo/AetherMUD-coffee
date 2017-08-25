@@ -14,9 +14,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Common.interfaces;
+package com.syncleus.aethermud.game.Common.interfaces;
 
-import com.planet_ink.game.core.interfaces.Tickable;
+import com.syncleus.aethermud.game.core.interfaces.Tickable;
 
 import java.io.IOException;
 import java.io.InputStream;

@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.core.intermud.imc2;
+package com.syncleus.aethermud.game.core.intermud.imc2;
 
 /**
  * IMC2 version 0.10 - an inter-mud communications protocol

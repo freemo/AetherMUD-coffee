@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.core.interfaces;
+package com.syncleus.aethermud.game.core.interfaces;
 
 
 /**
@@ -27,8 +27,8 @@ package com.planet_ink.game.core.interfaces;
 public interface DBIdentifiable {
     /**
      * Retrieve the unique contextual database ID for this object.
-     * @see com.planet_ink.game.core.interfaces.DBIdentifiable#canSaveDatabaseID()
-     * @see com.planet_ink.game.core.interfaces.DBIdentifiable#setDatabaseID(String)
+     * @see com.syncleus.aethermud.game.core.interfaces.DBIdentifiable#canSaveDatabaseID()
+     * @see com.syncleus.aethermud.game.core.interfaces.DBIdentifiable#setDatabaseID(String)
      * @return the unique contextual database ID for this object.
      */
     public String databaseID();
@@ -36,8 +36,8 @@ public interface DBIdentifiable {
     /**
      * Set the unique contextual database ID for this object.
      * @param ID the unique contextual database ID for this object.
-     * @see com.planet_ink.game.core.interfaces.DBIdentifiable#canSaveDatabaseID()
-     * @see com.planet_ink.game.core.interfaces.DBIdentifiable#databaseID()
+     * @see com.syncleus.aethermud.game.core.interfaces.DBIdentifiable#canSaveDatabaseID()
+     * @see com.syncleus.aethermud.game.core.interfaces.DBIdentifiable#databaseID()
      */
     public void setDatabaseID(String ID);
 
@@ -45,8 +45,8 @@ public interface DBIdentifiable {
      * Returns true if this object can safely store and retrieve
      * a database ID, and false if the TYPE of object can, but
      * this particular instance can not.
-     * @see com.planet_ink.game.core.interfaces.DBIdentifiable#databaseID()
-     * @see com.planet_ink.game.core.interfaces.DBIdentifiable#setDatabaseID(String)
+     * @see com.syncleus.aethermud.game.core.interfaces.DBIdentifiable#databaseID()
+     * @see com.syncleus.aethermud.game.core.interfaces.DBIdentifiable#setDatabaseID(String)
      * @return true if setDatabaseID can be called, false otherwise
      */
     public boolean canSaveDatabaseID();

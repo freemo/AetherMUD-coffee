@@ -14,20 +14,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Libraries;
+package com.syncleus.aethermud.game.Libraries;
 
-import com.planet_ink.game.Common.interfaces.*;
-import com.planet_ink.game.Common.interfaces.Clan.*;
-import com.planet_ink.game.Libraries.interfaces.AbilityMapper.AbilityMapping;
-import com.planet_ink.game.Libraries.interfaces.ChannelsLibrary;
-import com.planet_ink.game.Libraries.interfaces.ClanManager;
-import com.planet_ink.game.Libraries.interfaces.XMLLibrary;
-import com.planet_ink.game.Libraries.interfaces.XMLLibrary.XMLTag;
-import com.planet_ink.game.MOBS.interfaces.MOB;
-import com.planet_ink.game.core.*;
-import com.planet_ink.game.core.CMSecurity.DbgFlag;
-import com.planet_ink.game.core.collections.*;
-import com.planet_ink.game.core.interfaces.Tickable;
+import com.syncleus.aethermud.game.Common.interfaces.*;
+import com.syncleus.aethermud.game.Common.interfaces.Clan.*;
+import com.syncleus.aethermud.game.Libraries.interfaces.AbilityMapper.AbilityMapping;
+import com.syncleus.aethermud.game.Libraries.interfaces.ChannelsLibrary;
+import com.syncleus.aethermud.game.Libraries.interfaces.ClanManager;
+import com.syncleus.aethermud.game.Libraries.interfaces.XMLLibrary;
+import com.syncleus.aethermud.game.Libraries.interfaces.XMLLibrary.XMLTag;
+import com.syncleus.aethermud.game.MOBS.interfaces.MOB;
+import com.syncleus.aethermud.game.core.*;
+import com.syncleus.aethermud.game.core.CMSecurity.DbgFlag;
+import com.syncleus.aethermud.game.core.collections.*;
+import com.syncleus.aethermud.game.core.interfaces.Tickable;
 
 import java.util.*;
 

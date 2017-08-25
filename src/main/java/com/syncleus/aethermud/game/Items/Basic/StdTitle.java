@@ -14,24 +14,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Items.Basic;
+package com.syncleus.aethermud.game.Items.Basic;
 
-import com.planet_ink.game.Areas.interfaces.Area;
-import com.planet_ink.game.Behaviors.interfaces.LegalBehavior;
-import com.planet_ink.game.Common.interfaces.*;
-import com.planet_ink.game.Items.interfaces.BoardableShip;
-import com.planet_ink.game.Items.interfaces.Item;
-import com.planet_ink.game.Items.interfaces.RawMaterial;
-import com.planet_ink.game.Locales.interfaces.Room;
-import com.planet_ink.game.MOBS.interfaces.Auctioneer;
-import com.planet_ink.game.MOBS.interfaces.Banker;
-import com.planet_ink.game.MOBS.interfaces.MOB;
-import com.planet_ink.game.MOBS.interfaces.PostOffice;
-import com.planet_ink.game.core.CMLib;
-import com.planet_ink.game.core.CMath;
-import com.planet_ink.game.core.Log;
-import com.planet_ink.game.core.collections.Pair;
-import com.planet_ink.game.core.interfaces.*;
+import com.syncleus.aethermud.game.Areas.interfaces.Area;
+import com.syncleus.aethermud.game.Behaviors.interfaces.LegalBehavior;
+import com.syncleus.aethermud.game.Common.interfaces.*;
+import com.syncleus.aethermud.game.Items.interfaces.BoardableShip;
+import com.syncleus.aethermud.game.Items.interfaces.Item;
+import com.syncleus.aethermud.game.Items.interfaces.RawMaterial;
+import com.syncleus.aethermud.game.Locales.interfaces.Room;
+import com.syncleus.aethermud.game.MOBS.interfaces.Auctioneer;
+import com.syncleus.aethermud.game.MOBS.interfaces.Banker;
+import com.syncleus.aethermud.game.MOBS.interfaces.MOB;
+import com.syncleus.aethermud.game.MOBS.interfaces.PostOffice;
+import com.syncleus.aethermud.game.core.CMLib;
+import com.syncleus.aethermud.game.core.CMath;
+import com.syncleus.aethermud.game.core.Log;
+import com.syncleus.aethermud.game.core.collections.Pair;
+import com.syncleus.aethermud.game.core.interfaces.*;
 
 import java.util.List;
 import java.util.Vector;

@@ -14,13 +14,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Libraries.mcppkgs;
+package com.syncleus.aethermud.game.Libraries.mcppkgs;
 
-import com.planet_ink.game.Common.interfaces.Session;
-import com.planet_ink.game.Libraries.interfaces.ProtocolLibrary.MCPPackage;
-import com.planet_ink.game.core.CMParms;
-import com.planet_ink.game.core.Log;
-import com.planet_ink.game.core.Resources;
+import com.syncleus.aethermud.game.Common.interfaces.Session;
+import com.syncleus.aethermud.game.Libraries.interfaces.ProtocolLibrary.MCPPackage;
+import com.syncleus.aethermud.game.core.CMParms;
+import com.syncleus.aethermud.game.core.Log;
+import com.syncleus.aethermud.game.core.Resources;
 
 import java.util.List;
 import java.util.Map;

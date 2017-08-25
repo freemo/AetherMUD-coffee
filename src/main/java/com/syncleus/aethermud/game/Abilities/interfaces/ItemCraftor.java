@@ -14,10 +14,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Abilities.interfaces;
+package com.syncleus.aethermud.game.Abilities.interfaces;
 
-import com.planet_ink.game.Items.interfaces.DoorKey;
-import com.planet_ink.game.Items.interfaces.Item;
+import com.syncleus.aethermud.game.Items.interfaces.DoorKey;
+import com.syncleus.aethermud.game.Items.interfaces.Item;
 
 import java.util.LinkedList;
 import java.util.List;

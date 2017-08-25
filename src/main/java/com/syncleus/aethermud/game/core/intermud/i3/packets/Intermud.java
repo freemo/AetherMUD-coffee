@@ -14,17 +14,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.core.intermud.i3.packets;
+package com.syncleus.aethermud.game.core.intermud.i3.packets;
 
-import com.planet_ink.game.Libraries.interfaces.ChannelsLibrary.CMChannel;
-import com.planet_ink.game.Libraries.interfaces.ChannelsLibrary.ChannelFlag;
-import com.planet_ink.game.core.*;
-import com.planet_ink.game.core.interfaces.CMObject;
-import com.planet_ink.game.core.interfaces.Tickable;
-import com.planet_ink.game.core.intermud.i3.persist.PersistenceException;
-import com.planet_ink.game.core.intermud.i3.persist.Persistent;
-import com.planet_ink.game.core.intermud.i3.persist.PersistentPeer;
-import com.planet_ink.game.core.intermud.i3.server.I3Server;
+import com.syncleus.aethermud.game.Libraries.interfaces.ChannelsLibrary.CMChannel;
+import com.syncleus.aethermud.game.Libraries.interfaces.ChannelsLibrary.ChannelFlag;
+import com.syncleus.aethermud.game.core.*;
+import com.syncleus.aethermud.game.core.interfaces.CMObject;
+import com.syncleus.aethermud.game.core.interfaces.Tickable;
+import com.syncleus.aethermud.game.core.intermud.i3.persist.PersistenceException;
+import com.syncleus.aethermud.game.core.intermud.i3.persist.Persistent;
+import com.syncleus.aethermud.game.core.intermud.i3.persist.PersistentPeer;
+import com.syncleus.aethermud.game.core.intermud.i3.server.I3Server;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -40,8 +40,8 @@ import java.util.concurrent.TimeUnit;
  * of packets to the mudlib.  The mudlib is responsible
  * for providing two specific objects to interface with
  * this object:
- * an implementation of com.planet_ink.game.core.intermud.i3.packets.ImudServices
- * an implementation of com.planet_ink.game.core.intermud.i3.persist.PersistentPeer
+ * an implementation of com.syncleus.aethermud.game.core.intermud.i3.packets.ImudServices
+ * an implementation of com.syncleus.aethermud.game.core.intermud.i3.persist.PersistentPeer
  * To start up the Intermud connection, call the class
  * method setup().
  * The class itself creates an instance of itself and
@@ -51,8 +51,8 @@ import java.util.concurrent.TimeUnit;
  * proper instance of Intermud.
  * @author George Reese
  * @version 1.0
- * @see com.planet_ink.game.core.intermud.i3.packets.ImudServices
- * @see com.planet_ink.game.core.intermud.i3.persist.PersistentPeer
+ * @see com.syncleus.aethermud.game.core.intermud.i3.packets.ImudServices
+ * @see com.syncleus.aethermud.game.core.intermud.i3.persist.PersistentPeer
  */
 
 @SuppressWarnings({"unchecked", "rawtypes"})
@@ -182,11 +182,11 @@ public class Intermud implements Runnable, Persistent, Serializable {
 
     /**
      * Sends a packet to the router.  The packet must
-     * be a valid subclass of com.planet_ink.game.core.intermud.i3.packets.Packet.
+     * be a valid subclass of com.syncleus.aethermud.game.core.intermud.i3.packets.Packet.
      * This method will then route the packet to the
      * currently running Intermud instance.
-     * @param p an instance of a subclass of com.planet_ink.game.core.intermud.i3.packets.Packet
-     * @see com.planet_ink.game.core.intermud.i3.packets.Packet
+     * @param p an instance of a subclass of com.syncleus.aethermud.game.core.intermud.i3.packets.Packet
+     * @see com.syncleus.aethermud.game.core.intermud.i3.packets.Packet
      */
     static public void sendPacket(Packet p) {
         if (!isConnected())
@@ -198,10 +198,10 @@ public class Intermud implements Runnable, Persistent, Serializable {
      * Creates the initial link to an I3 router.
      * It will handle subsequent reconnections as needed
      * for as long as the mud process is running.
-     * @param imud an instance of the mudlib implementation of com.planet_ink.game.core.intermud.i3.packets.ImudServices
-     * @param peer and instance of the mudlib implementation of com.planet_ink.game.core.intermud.i3.packets.IntermudPeer
-     * @see com.planet_ink.game.core.intermud.i3.packets.ImudServices
-     * @see com.planet_ink.game.core.intermud.i3.persist.PersistentPeer
+     * @param imud an instance of the mudlib implementation of com.syncleus.aethermud.game.core.intermud.i3.packets.ImudServices
+     * @param peer and instance of the mudlib implementation of com.syncleus.aethermud.game.core.intermud.i3.packets.IntermudPeer
+     * @see com.syncleus.aethermud.game.core.intermud.i3.packets.ImudServices
+     * @see com.syncleus.aethermud.game.core.intermud.i3.persist.PersistentPeer
      */
     static public void setup(ImudServices imud, PersistentPeer peer) {
         if (thread != null) {
@@ -242,7 +242,7 @@ public class Intermud implements Runnable, Persistent, Serializable {
      * Register a fake channel
      * @param c the remote channel name
      * @return the local channel name for the specified new local channel name
-     * @see com.planet_ink.game.core.intermud.i3.packets.ImudServices#getLocalChannel
+     * @see com.syncleus.aethermud.game.core.intermud.i3.packets.ImudServices#getLocalChannel
      */
     static public String registerFakeChannel(String c) {
         if ((!isConnected()) || (thread.intermud.getLocalChannel(c).length() > 0))
@@ -261,7 +261,7 @@ public class Intermud implements Runnable, Persistent, Serializable {
      * Register a fake channel
      * @param c the remote channel name
      * @return the local channel name for the specified new local channel name
-     * @see com.planet_ink.game.core.intermud.i3.packets.ImudServices#getLocalChannel
+     * @see com.syncleus.aethermud.game.core.intermud.i3.packets.ImudServices#getLocalChannel
      */
     static public String removeFakeChannel(String c) {
         if ((!isConnected()) || (thread.intermud.getLocalChannel(c).length() == 0))
@@ -281,7 +281,7 @@ public class Intermud implements Runnable, Persistent, Serializable {
      * getLocalChannel().
      * @param c the remote channel name
      * @return the local channel name for the specified remote channel name
-     * @see com.planet_ink.game.core.intermud.i3.packets.ImudServices#getLocalChannel
+     * @see com.syncleus.aethermud.game.core.intermud.i3.packets.ImudServices#getLocalChannel
      */
     static public String getLocalChannel(String c) {
         if (!isConnected())
@@ -296,7 +296,7 @@ public class Intermud implements Runnable, Persistent, Serializable {
      * getRemoteChannel().
      * @param c the local channel name
      * @return the remote channel name for the specified local channel name
-     * @see com.planet_ink.game.core.intermud.i3.packets.ImudServices#getRemoteChannel
+     * @see com.syncleus.aethermud.game.core.intermud.i3.packets.ImudServices#getRemoteChannel
      */
     static public String getRemoteChannel(String c) {
         if (!isConnected())
@@ -898,7 +898,7 @@ public class Intermud implements Runnable, Persistent, Serializable {
      * added to the ImudServices implementation's getChannels()
      * method.
      * @param c the channel to add to the list of known channels
-     * @see com.planet_ink.game.core.intermud.i3.packets.ImudServices#getChannels
+     * @see com.syncleus.aethermud.game.core.intermud.i3.packets.ImudServices#getChannels
      */
     public void addChannel(Channel c) {
         channels.addChannel(c);

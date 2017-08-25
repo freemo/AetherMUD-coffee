@@ -14,18 +14,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Abilities.Spells;
+package com.syncleus.aethermud.game.Abilities.Spells;
 
-import com.planet_ink.game.Abilities.interfaces.Ability;
-import com.planet_ink.game.Commands.interfaces.Command;
-import com.planet_ink.game.Common.interfaces.CMMsg;
-import com.planet_ink.game.Items.interfaces.*;
-import com.planet_ink.game.MOBS.interfaces.MOB;
-import com.planet_ink.game.core.CMClass;
-import com.planet_ink.game.core.CMLib;
-import com.planet_ink.game.core.interfaces.Drink;
-import com.planet_ink.game.core.interfaces.LandTitle;
-import com.planet_ink.game.core.interfaces.Physical;
+import com.syncleus.aethermud.game.Abilities.interfaces.Ability;
+import com.syncleus.aethermud.game.Commands.interfaces.Command;
+import com.syncleus.aethermud.game.Common.interfaces.CMMsg;
+import com.syncleus.aethermud.game.Items.interfaces.*;
+import com.syncleus.aethermud.game.MOBS.interfaces.MOB;
+import com.syncleus.aethermud.game.core.CMClass;
+import com.syncleus.aethermud.game.core.CMLib;
+import com.syncleus.aethermud.game.core.interfaces.Drink;
+import com.syncleus.aethermud.game.core.interfaces.LandTitle;
+import com.syncleus.aethermud.game.core.interfaces.Physical;
 
 import java.util.List;
 
@@ -105,7 +105,7 @@ public class Spell_AnalyzeDweomer extends Spell {
                     str.append(L("It is a magic potion.  "));
                 if (target instanceof Light)
                     str.append(L("It is a light source.  "));
-                if (target instanceof com.planet_ink.game.Items.interfaces.RoomMap)
+                if (target instanceof com.syncleus.aethermud.game.Items.interfaces.RoomMap)
                     str.append(L("It is a map.  "));
                 if (target instanceof MiscMagic)
                     str.append(L("It has a magical aura.  "));

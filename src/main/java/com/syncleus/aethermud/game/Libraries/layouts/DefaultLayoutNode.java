@@ -14,13 +14,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Libraries.layouts;
+package com.syncleus.aethermud.game.Libraries.layouts;
 
-import com.planet_ink.game.Libraries.interfaces.AreaGenerationLibrary.*;
-import com.planet_ink.game.Locales.interfaces.Room;
-import com.planet_ink.game.core.CMLib;
-import com.planet_ink.game.core.Directions;
-import com.planet_ink.game.core.collections.SHashtable;
+import com.syncleus.aethermud.game.Libraries.interfaces.AreaGenerationLibrary.*;
+import com.syncleus.aethermud.game.Locales.interfaces.Room;
+import com.syncleus.aethermud.game.core.CMLib;
+import com.syncleus.aethermud.game.core.Directions;
+import com.syncleus.aethermud.game.core.collections.SHashtable;
 
 import java.util.HashSet;
 import java.util.Iterator;

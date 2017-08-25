@@ -14,16 +14,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.WebMacros.grinder;
+package com.syncleus.aethermud.game.WebMacros.grinder;
 
-import com.planet_ink.game.Areas.interfaces.Area;
-import com.planet_ink.game.Areas.interfaces.GridZones;
-import com.planet_ink.game.Areas.interfaces.GridZones.XYVector;
-import com.planet_ink.game.Common.interfaces.RoomnumberSet;
-import com.planet_ink.game.Exits.interfaces.Exit;
-import com.planet_ink.game.Locales.interfaces.Room;
-import com.planet_ink.game.core.*;
-import com.planet_ink.web.interfaces.HTTPRequest;
+import com.syncleus.aethermud.game.Areas.interfaces.Area;
+import com.syncleus.aethermud.game.Areas.interfaces.GridZones;
+import com.syncleus.aethermud.game.Areas.interfaces.GridZones.XYVector;
+import com.syncleus.aethermud.game.Common.interfaces.RoomnumberSet;
+import com.syncleus.aethermud.game.Exits.interfaces.Exit;
+import com.syncleus.aethermud.game.Locales.interfaces.Room;
+import com.syncleus.aethermud.game.core.*;
+import com.syncleus.aethermud.web.interfaces.HTTPRequest;
 
 import java.net.URLEncoder;
 import java.util.*;

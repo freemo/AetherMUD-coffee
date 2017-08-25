@@ -14,11 +14,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Common.interfaces;
+package com.syncleus.aethermud.game.Common.interfaces;
 
-import com.planet_ink.game.Areas.interfaces.Area;
-import com.planet_ink.game.Locales.interfaces.Room;
-import com.planet_ink.game.MOBS.interfaces.MOB;
+import com.syncleus.aethermud.game.Areas.interfaces.Area;
+import com.syncleus.aethermud.game.Locales.interfaces.Room;
+import com.syncleus.aethermud.game.MOBS.interfaces.MOB;
 
 
 /**
@@ -31,15 +31,15 @@ import com.planet_ink.game.MOBS.interfaces.MOB;
  * object is transferred into an Old Warrants cue under the Law to use as
  * a reference for repeat offenders.
  *
- * @see com.planet_ink.game.Behaviors.interfaces.LegalBehavior
- * @see com.planet_ink.game.Common.interfaces.Law
+ * @see com.syncleus.aethermud.game.Behaviors.interfaces.LegalBehavior
+ * @see com.syncleus.aethermud.game.Common.interfaces.Law
  */
 public interface LegalWarrant extends CMCommon {
     /**
      * If the criminal has been identified by an otherwise unoccupied
      * officer, this will be that officer.
      *
-     * @see com.planet_ink.game.Common.interfaces.LegalWarrant#setArrestingOfficer(Area, MOB)
+     * @see com.syncleus.aethermud.game.Common.interfaces.LegalWarrant#setArrestingOfficer(Area, MOB)
      *
      * @return the actual living mob officer who will enforce the warrant
      */
@@ -49,7 +49,7 @@ public interface LegalWarrant extends CMCommon {
      * If the criminal has been identified by an otherwise unoccupied
      * officer, this will set that officer.
      *
-     * @see com.planet_ink.game.Common.interfaces.LegalWarrant#arrestingOfficer()
+     * @see com.syncleus.aethermud.game.Common.interfaces.LegalWarrant#arrestingOfficer()
      *
      * @param legalArea the Area governing the law
      * @param mob the actual living mob officer who will enforce the warrant
@@ -59,7 +59,7 @@ public interface LegalWarrant extends CMCommon {
     /**
      * The actual player/mob criminal accused of the crime.
      *
-     * @see com.planet_ink.game.Common.interfaces.LegalWarrant#setCriminal(MOB)
+     * @see com.syncleus.aethermud.game.Common.interfaces.LegalWarrant#setCriminal(MOB)
      *
      * @return the actual player/mob criminal accused of the crime.
      */
@@ -68,7 +68,7 @@ public interface LegalWarrant extends CMCommon {
     /**
      * Sets the actual player/mob criminal accused of the crime.
      *
-     * @see com.planet_ink.game.Common.interfaces.LegalWarrant#criminal()
+     * @see com.syncleus.aethermud.game.Common.interfaces.LegalWarrant#criminal()
      *
      * @param mob the actual player/mob criminal accused of the crime.
      */
@@ -77,7 +77,7 @@ public interface LegalWarrant extends CMCommon {
     /**
      * If applicable, the victim of the crime (or null)
      *
-     * @see com.planet_ink.game.Common.interfaces.LegalWarrant#setVictim(MOB)
+     * @see com.syncleus.aethermud.game.Common.interfaces.LegalWarrant#setVictim(MOB)
      *
      * @return the victim of the crime, or null
      */
@@ -86,7 +86,7 @@ public interface LegalWarrant extends CMCommon {
     /**
      * If applicable, sets the victim of the crime (or null)
      *
-     * @see com.planet_ink.game.Common.interfaces.LegalWarrant#victim()
+     * @see com.syncleus.aethermud.game.Common.interfaces.LegalWarrant#victim()
      *
      * @param mob the victim of the crime, or null
      */
@@ -95,7 +95,7 @@ public interface LegalWarrant extends CMCommon {
     /**
      * If applicable, gets the witness of the crime (or null)
      *
-     * @see com.planet_ink.game.Common.interfaces.LegalWarrant#setWitness(MOB)
+     * @see com.syncleus.aethermud.game.Common.interfaces.LegalWarrant#setWitness(MOB)
      *
      * @return the witness of the crime or null
      */
@@ -104,7 +104,7 @@ public interface LegalWarrant extends CMCommon {
     /**
      * If applicable, sets the witness of the crime (or null)
      *
-     * @see com.planet_ink.game.Common.interfaces.LegalWarrant#witness()
+     * @see com.syncleus.aethermud.game.Common.interfaces.LegalWarrant#witness()
      *
      * @param mob the witness of the crime (or null)
      */
@@ -113,8 +113,8 @@ public interface LegalWarrant extends CMCommon {
     /**
      * The crime name
      *
-     * @see com.planet_ink.game.Common.interfaces.LegalWarrant#setCrime(String)
-     * @see com.planet_ink.game.Common.interfaces.Law#BIT_CRIMENAME
+     * @see com.syncleus.aethermud.game.Common.interfaces.LegalWarrant#setCrime(String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Law#BIT_CRIMENAME
      *
      * @return the crime name
      */
@@ -123,8 +123,8 @@ public interface LegalWarrant extends CMCommon {
     /**
      * Sets the crime name
      *
-     * @see com.planet_ink.game.Common.interfaces.LegalWarrant#crime()
-     * @see com.planet_ink.game.Common.interfaces.Law#BIT_CRIMENAME
+     * @see com.syncleus.aethermud.game.Common.interfaces.LegalWarrant#crime()
+     * @see com.syncleus.aethermud.game.Common.interfaces.Law#BIT_CRIMENAME
      *
      * @param crime the crime name
      */
@@ -133,11 +133,11 @@ public interface LegalWarrant extends CMCommon {
     /**
      * Gets the full punishment code for the crime
      *
-     * @see com.planet_ink.game.Common.interfaces.LegalWarrant#setPunishment(int)
-     * @see com.planet_ink.game.Common.interfaces.LegalWarrant#getPunishmentParm(int)
-     * @see com.planet_ink.game.Common.interfaces.LegalWarrant#addPunishmentParm(int, String)
-     * @see com.planet_ink.game.Common.interfaces.Law#PUNISHMENT_DESCS
-     * @see com.planet_ink.game.Common.interfaces.Law#PUNISHMENTMASK_DESCS
+     * @see com.syncleus.aethermud.game.Common.interfaces.LegalWarrant#setPunishment(int)
+     * @see com.syncleus.aethermud.game.Common.interfaces.LegalWarrant#getPunishmentParm(int)
+     * @see com.syncleus.aethermud.game.Common.interfaces.LegalWarrant#addPunishmentParm(int, String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Law#PUNISHMENT_DESCS
+     * @see com.syncleus.aethermud.game.Common.interfaces.Law#PUNISHMENTMASK_DESCS
      *
      * @return the full punishment code for the crime
      */
@@ -146,11 +146,11 @@ public interface LegalWarrant extends CMCommon {
     /**
      * Sets the full punishment code for the crime
      *
-     * @see com.planet_ink.game.Common.interfaces.LegalWarrant#punishment()
-     * @see com.planet_ink.game.Common.interfaces.LegalWarrant#getPunishmentParm(int)
-     * @see com.planet_ink.game.Common.interfaces.LegalWarrant#addPunishmentParm(int, String)
-     * @see com.planet_ink.game.Common.interfaces.Law#PUNISHMENT_DESCS
-     * @see com.planet_ink.game.Common.interfaces.Law#PUNISHMENTMASK_DESCS
+     * @see com.syncleus.aethermud.game.Common.interfaces.LegalWarrant#punishment()
+     * @see com.syncleus.aethermud.game.Common.interfaces.LegalWarrant#getPunishmentParm(int)
+     * @see com.syncleus.aethermud.game.Common.interfaces.LegalWarrant#addPunishmentParm(int, String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Law#PUNISHMENT_DESCS
+     * @see com.syncleus.aethermud.game.Common.interfaces.Law#PUNISHMENTMASK_DESCS
      *
      * @param code the full punishment code for the crime
      */
@@ -160,10 +160,10 @@ public interface LegalWarrant extends CMCommon {
      * If applicable, returns any parameters associated with a particular
      * bitmask on the punishment.
      *
-     * @see com.planet_ink.game.Common.interfaces.LegalWarrant#addPunishmentParm(int, String)
-     * @see com.planet_ink.game.Common.interfaces.LegalWarrant#punishment()
-     * @see com.planet_ink.game.Common.interfaces.LegalWarrant#setPunishment(int)
-     * @see com.planet_ink.game.Common.interfaces.Law#PUNISHMENTMASK_DESCS
+     * @see com.syncleus.aethermud.game.Common.interfaces.LegalWarrant#addPunishmentParm(int, String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.LegalWarrant#punishment()
+     * @see com.syncleus.aethermud.game.Common.interfaces.LegalWarrant#setPunishment(int)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Law#PUNISHMENTMASK_DESCS
      *
      * @param code the punishment mask bitmap code
      * @return any parameters needed, or null
@@ -174,10 +174,10 @@ public interface LegalWarrant extends CMCommon {
      * If applicable, sets any parameters associated with a particular
      * bitmask on the punishment.
      *
-     * @see com.planet_ink.game.Common.interfaces.LegalWarrant#getPunishmentParm(int)
-     * @see com.planet_ink.game.Common.interfaces.LegalWarrant#punishment()
-     * @see com.planet_ink.game.Common.interfaces.LegalWarrant#setPunishment(int)
-     * @see com.planet_ink.game.Common.interfaces.Law#PUNISHMENTMASK_DESCS
+     * @see com.syncleus.aethermud.game.Common.interfaces.LegalWarrant#getPunishmentParm(int)
+     * @see com.syncleus.aethermud.game.Common.interfaces.LegalWarrant#punishment()
+     * @see com.syncleus.aethermud.game.Common.interfaces.LegalWarrant#setPunishment(int)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Law#PUNISHMENTMASK_DESCS
      *
      * @param code the punishment mask bitmap code
      * @param parm the parameter to set
@@ -188,7 +188,7 @@ public interface LegalWarrant extends CMCommon {
      * If applicable, returns the number of ticks the punishment calls
      * for the criminal to remain in jail.
      *
-     * @see com.planet_ink.game.Common.interfaces.LegalWarrant#setJailTime(int)
+     * @see com.syncleus.aethermud.game.Common.interfaces.LegalWarrant#setJailTime(int)
      *
      * @return the number of ticks to be jailed for
      */
@@ -198,7 +198,7 @@ public interface LegalWarrant extends CMCommon {
      * If applicable, sets the number of ticks the punishment calls
      * for the criminal to remain in jail.
      *
-     * @see com.planet_ink.game.Common.interfaces.LegalWarrant#jailTime()
+     * @see com.syncleus.aethermud.game.Common.interfaces.LegalWarrant#jailTime()
      *
      * @param time the number of ticks to be jailed for
      */
@@ -207,9 +207,9 @@ public interface LegalWarrant extends CMCommon {
     /**
      * Returns the current state of adjudication.
      *
-     * @see com.planet_ink.game.Common.interfaces.LegalWarrant#setState(int)
-     * @see com.planet_ink.game.Common.interfaces.Law#STATE_ARRESTING
-     * @see com.planet_ink.game.Common.interfaces.Law#STATE_SEEKING
+     * @see com.syncleus.aethermud.game.Common.interfaces.LegalWarrant#setState(int)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Law#STATE_ARRESTING
+     * @see com.syncleus.aethermud.game.Common.interfaces.Law#STATE_SEEKING
      *
      * @return the current state of adjudication
      */
@@ -218,10 +218,10 @@ public interface LegalWarrant extends CMCommon {
     /**
      * Sets the current state of adjudication.
      *
-     * @see com.planet_ink.game.Common.interfaces.LegalWarrant#state()
-     * @see com.planet_ink.game.Common.interfaces.LegalWarrant#getLastStateChangeTime()
-     * @see com.planet_ink.game.Common.interfaces.Law#STATE_DETAINING
-     * @see com.planet_ink.game.Common.interfaces.Law#STATE_EXECUTING
+     * @see com.syncleus.aethermud.game.Common.interfaces.LegalWarrant#state()
+     * @see com.syncleus.aethermud.game.Common.interfaces.LegalWarrant#getLastStateChangeTime()
+     * @see com.syncleus.aethermud.game.Common.interfaces.Law#STATE_DETAINING
+     * @see com.syncleus.aethermud.game.Common.interfaces.Law#STATE_EXECUTING
      *
      * @param state the current state of adjudication.
      */
@@ -231,8 +231,8 @@ public interface LegalWarrant extends CMCommon {
      * Returns the number of times this criminal has done this crime.  This
      * is usually 0 unless it also exists in the old warrants list.
      *
-     * @see com.planet_ink.game.Common.interfaces.LegalWarrant#setOffenses(int)
-     * @see com.planet_ink.game.Common.interfaces.Law#oldWarrants()
+     * @see com.syncleus.aethermud.game.Common.interfaces.LegalWarrant#setOffenses(int)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Law#oldWarrants()
      *
      * @return the number of times this criminal has committed this crime.
      */
@@ -242,8 +242,8 @@ public interface LegalWarrant extends CMCommon {
      * Sets the number of times this criminal has done this crime.  This
      * is usually 0 unless it also exists in the old warrants list.
      *
-     * @see com.planet_ink.game.Common.interfaces.LegalWarrant#offenses()
-     * @see com.planet_ink.game.Common.interfaces.Law#oldWarrants()
+     * @see com.syncleus.aethermud.game.Common.interfaces.LegalWarrant#offenses()
+     * @see com.syncleus.aethermud.game.Common.interfaces.Law#oldWarrants()
      *
      * @param num the number of times this criminal has committed this crime.
      */
@@ -253,8 +253,8 @@ public interface LegalWarrant extends CMCommon {
      * Returns the last time, in miliseconds since 1970, the criminal has
      * committed this crime.  Very useful in oldWarrants
      *
-     * @see com.planet_ink.game.Common.interfaces.LegalWarrant#setLastOffense(long)
-     * @see com.planet_ink.game.Common.interfaces.Law#oldWarrants()
+     * @see com.syncleus.aethermud.game.Common.interfaces.LegalWarrant#setLastOffense(long)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Law#oldWarrants()
      *
      * @return the last time this crime was done, in milis
      */
@@ -264,8 +264,8 @@ public interface LegalWarrant extends CMCommon {
      * Sets the last time, in miliseconds since 1970, the criminal has
      * committed this crime.  Very useful in oldWarrants
      *
-     * @see com.planet_ink.game.Common.interfaces.LegalWarrant#lastOffense()
-     * @see com.planet_ink.game.Common.interfaces.Law#oldWarrants()
+     * @see com.syncleus.aethermud.game.Common.interfaces.LegalWarrant#lastOffense()
+     * @see com.syncleus.aethermud.game.Common.interfaces.Law#oldWarrants()
      *
      * @param last the last time this crime was done, in milis
      */
@@ -275,7 +275,7 @@ public interface LegalWarrant extends CMCommon {
      * Returns the time, in milis since 1970, that a trip to the judge
      * or to the jail was started.  For housekeeping purposes.
      *
-     * @see com.planet_ink.game.Common.interfaces.LegalWarrant#setTravelAttemptTime(long)
+     * @see com.syncleus.aethermud.game.Common.interfaces.LegalWarrant#setTravelAttemptTime(long)
      *
      * @return the milis time since the trip began
      */
@@ -285,7 +285,7 @@ public interface LegalWarrant extends CMCommon {
      * Sets the time, in milis since 1970, that a trip to the judge
      * or to the jail was started.  For housekeeping purposes.
      *
-     * @see com.planet_ink.game.Common.interfaces.LegalWarrant#travelAttemptTime()
+     * @see com.syncleus.aethermud.game.Common.interfaces.LegalWarrant#travelAttemptTime()
      *
      * @param time the milis time since the trip began
      */
@@ -294,7 +294,7 @@ public interface LegalWarrant extends CMCommon {
     /**
      * Returns the warning message given to the criminal by the officer.
      *
-     * @see com.planet_ink.game.Common.interfaces.LegalWarrant#setWarnMsg(String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.LegalWarrant#setWarnMsg(String)
      *
      * @return the warning msg given
      */
@@ -303,7 +303,7 @@ public interface LegalWarrant extends CMCommon {
     /**
      * Sets the warning message given to the criminal by the officer.
      *
-     * @see com.planet_ink.game.Common.interfaces.LegalWarrant#warnMsg()
+     * @see com.syncleus.aethermud.game.Common.interfaces.LegalWarrant#warnMsg()
      *
      * @param msg the warning msg given
      */
@@ -312,7 +312,7 @@ public interface LegalWarrant extends CMCommon {
     /**
      * Sets the room into which this criminal will be jailed.
      *
-     * @see com.planet_ink.game.Common.interfaces.LegalWarrant#jail()
+     * @see com.syncleus.aethermud.game.Common.interfaces.LegalWarrant#jail()
      *
      * @param R the room into which this criminal will be jailed.
      */
@@ -321,7 +321,7 @@ public interface LegalWarrant extends CMCommon {
     /**
      * Returns the room into which this criminal will be jailed.
      *
-     * @see com.planet_ink.game.Common.interfaces.LegalWarrant#setJail(Room)
+     * @see com.syncleus.aethermud.game.Common.interfaces.LegalWarrant#setJail(Room)
      *
      * @return the room into which this criminal will be jailed.
      */
@@ -330,7 +330,7 @@ public interface LegalWarrant extends CMCommon {
     /**
      * Returns the room into which this criminal will be released after jail.
      *
-     * @see com.planet_ink.game.Common.interfaces.LegalWarrant#setReleaseRoom(Room)
+     * @see com.syncleus.aethermud.game.Common.interfaces.LegalWarrant#setReleaseRoom(Room)
      *
      * @return the room into which this criminal will be released after jail.
      */
@@ -339,7 +339,7 @@ public interface LegalWarrant extends CMCommon {
     /**
      * Sets the room into which this criminal will be released after jail.
      *
-     * @see com.planet_ink.game.Common.interfaces.LegalWarrant#releaseRoom()
+     * @see com.syncleus.aethermud.game.Common.interfaces.LegalWarrant#releaseRoom()
      *
      * @param R the room into which this criminal will be released after jail.
      */
@@ -348,7 +348,7 @@ public interface LegalWarrant extends CMCommon {
     /**
      * Returns the real time in ms when the state last changed.
      *
-     * @see com.planet_ink.game.Common.interfaces.LegalWarrant#setState(int)
+     * @see com.syncleus.aethermud.game.Common.interfaces.LegalWarrant#setState(int)
      *
      * @return the real time in ms when the state last changed.
      */
@@ -357,7 +357,7 @@ public interface LegalWarrant extends CMCommon {
     /**
      * Returns the real time in ms when the warrant can no longer be ignored
      *
-     * @see com.planet_ink.game.Common.interfaces.LegalWarrant#setIgnoreUntilTime(long)
+     * @see com.syncleus.aethermud.game.Common.interfaces.LegalWarrant#setIgnoreUntilTime(long)
      *
      * @return the real time in ms when the warrant can no longer be ignored
      */
@@ -366,7 +366,7 @@ public interface LegalWarrant extends CMCommon {
     /**
      * Sets the real time in ms when the warrant can no longer be ignored
      *
-     * @see com.planet_ink.game.Common.interfaces.LegalWarrant#getIgnoreUntilTime()
+     * @see com.syncleus.aethermud.game.Common.interfaces.LegalWarrant#getIgnoreUntilTime()
      *
      * @param time the real time in ms when the warrant can no longer be ignored
      */

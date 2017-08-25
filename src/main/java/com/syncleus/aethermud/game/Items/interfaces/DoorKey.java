@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Items.interfaces;
+package com.syncleus.aethermud.game.Items.interfaces;
 
 /**
  * Represents a key-like thing that opens a door, or a chest,
@@ -25,7 +25,7 @@ public interface DoorKey extends Item {
     /**
      * Gets the "key name", which is a unique string that specifies
      * what this key opens.  The lock must have a matching key
-     * @see com.planet_ink.game.Exits.interfaces.Exit#keyName()
+     * @see com.syncleus.aethermud.game.Exits.interfaces.Exit#keyName()
      * @see DoorKey#setKey(String)
      * @return the unique key string that identifies the lock
      */
@@ -34,7 +34,7 @@ public interface DoorKey extends Item {
     /**
      * Sets the "key name", which is a unique string that specifies
      * what this key opens.  The lock must have a matching key
-     * @see com.planet_ink.game.Exits.interfaces.Exit#keyName()
+     * @see com.syncleus.aethermud.game.Exits.interfaces.Exit#keyName()
      * @see DoorKey#getKey()
      * @param keyName the unique key string that identifies the lock
      */

@@ -14,10 +14,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.MOBS.interfaces;
+package com.syncleus.aethermud.game.MOBS.interfaces;
 
-import com.planet_ink.game.Common.interfaces.AuctionPolicy;
-import com.planet_ink.game.core.interfaces.ShopKeeper;
+import com.syncleus.aethermud.game.Common.interfaces.AuctionPolicy;
+import com.syncleus.aethermud.game.core.interfaces.ShopKeeper;
 
 
 /**
@@ -32,7 +32,7 @@ import com.planet_ink.game.core.interfaces.ShopKeeper;
  * players need only visit the auctioneer nearest them to see all the
  * items that are up for auction in a particular auction house.
  *
- * @see com.planet_ink.game.Common.interfaces.AuctionPolicy
+ * @see com.syncleus.aethermud.game.Common.interfaces.AuctionPolicy
  *
  * @author Bo Zimmerman
  *

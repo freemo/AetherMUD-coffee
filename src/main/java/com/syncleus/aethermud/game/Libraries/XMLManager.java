@@ -14,13 +14,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Libraries;
+package com.syncleus.aethermud.game.Libraries;
 
-import com.planet_ink.game.Libraries.interfaces.XMLLibrary;
-import com.planet_ink.game.core.CMLib;
-import com.planet_ink.game.core.Log;
-import com.planet_ink.game.core.collections.XHashtable;
-import com.planet_ink.game.core.collections.XVector;
+import com.syncleus.aethermud.game.Libraries.interfaces.XMLLibrary;
+import com.syncleus.aethermud.game.core.CMLib;
+import com.syncleus.aethermud.game.core.Log;
+import com.syncleus.aethermud.game.core.collections.XHashtable;
+import com.syncleus.aethermud.game.core.collections.XVector;
 
 import java.util.*;
 
@@ -1082,10 +1082,10 @@ public class XMLManager extends StdLibrary implements XMLLibrary {
         }
 
         /* (non-Javadoc)
-         * @see com.planet_ink.game.Libraries.interfaces.XMLTag#copyOf()
+         * @see com.syncleus.aethermud.game.Libraries.interfaces.XMLTag#copyOf()
          */
         /* (non-Javadoc)
-		 * @see com.planet_ink.game.Libraries.interfaces.XMLTag#copyOf()
+		 * @see com.syncleus.aethermud.game.Libraries.interfaces.XMLTag#copyOf()
 		 */
         @Override
         public XMLTag copyOf() {
@@ -1100,10 +1100,10 @@ public class XMLManager extends StdLibrary implements XMLLibrary {
         }
 
         /* (non-Javadoc)
-         * @see com.planet_ink.game.Libraries.interfaces.XMLTag#addContent(com.planet_ink.game.Libraries.interfaces.XMLLibrary.XMLTag)
+         * @see com.syncleus.aethermud.game.Libraries.interfaces.XMLTag#addContent(com.syncleus.aethermud.game.Libraries.interfaces.XMLLibrary.XMLTag)
          */
 		/* (non-Javadoc)
-		 * @see com.planet_ink.game.Libraries.interfaces.XMLTag#addContent(com.planet_ink.game.Libraries.interfaces.XMLLibrary.XMLTag)
+		 * @see com.syncleus.aethermud.game.Libraries.interfaces.XMLTag#addContent(com.syncleus.aethermud.game.Libraries.interfaces.XMLLibrary.XMLTag)
 		 */
         @Override
         public void addContent(XMLTag x) {
@@ -1116,7 +1116,7 @@ public class XMLManager extends StdLibrary implements XMLLibrary {
         }
 
         /* (non-Javadoc)
-         * @see com.planet_ink.game.Libraries.interfaces.XMLTag#toString()
+         * @see com.syncleus.aethermud.game.Libraries.interfaces.XMLTag#toString()
          */
         @Override
         public String toString() {
@@ -1129,7 +1129,7 @@ public class XMLManager extends StdLibrary implements XMLLibrary {
         }
 
         /* (non-Javadoc)
-         * @see com.planet_ink.game.Libraries.interfaces.XMLTag#tag()
+         * @see com.syncleus.aethermud.game.Libraries.interfaces.XMLTag#tag()
          */
         @Override
         public String tag() {
@@ -1137,7 +1137,7 @@ public class XMLManager extends StdLibrary implements XMLLibrary {
         }
 
         /* (non-Javadoc)
-         * @see com.planet_ink.game.Libraries.interfaces.XMLTag#value()
+         * @see com.syncleus.aethermud.game.Libraries.interfaces.XMLTag#value()
          */
         @Override
         public String value() {
@@ -1145,7 +1145,7 @@ public class XMLManager extends StdLibrary implements XMLLibrary {
         }
 
         /* (non-Javadoc)
-         * @see com.planet_ink.game.Libraries.interfaces.XMLTag#contents()
+         * @see com.syncleus.aethermud.game.Libraries.interfaces.XMLTag#contents()
          */
         @Override
         public List<XMLTag> contents() {
@@ -1153,7 +1153,7 @@ public class XMLManager extends StdLibrary implements XMLLibrary {
         }
 
         /* (non-Javadoc)
-         * @see com.planet_ink.game.Libraries.interfaces.XMLTag#parms()
+         * @see com.syncleus.aethermud.game.Libraries.interfaces.XMLTag#parms()
          */
         @Override
         public Map<String, String> parms() {
@@ -1161,7 +1161,7 @@ public class XMLManager extends StdLibrary implements XMLLibrary {
         }
 
         /* (non-Javadoc)
-         * @see com.planet_ink.game.Libraries.interfaces.XMLTag#parent()
+         * @see com.syncleus.aethermud.game.Libraries.interfaces.XMLTag#parent()
          */
         @Override
         public XMLpiece parent() {
@@ -1169,7 +1169,7 @@ public class XMLManager extends StdLibrary implements XMLLibrary {
         }
 
         /* (non-Javadoc)
-         * @see com.planet_ink.game.Libraries.interfaces.XMLTag#outerStartIndex()
+         * @see com.syncleus.aethermud.game.Libraries.interfaces.XMLTag#outerStartIndex()
          */
         @Override
         public int outerStartIndex() {
@@ -1177,7 +1177,7 @@ public class XMLManager extends StdLibrary implements XMLLibrary {
         }
 
         /* (non-Javadoc)
-         * @see com.planet_ink.game.Libraries.interfaces.XMLTag#innerStartIndex()
+         * @see com.syncleus.aethermud.game.Libraries.interfaces.XMLTag#innerStartIndex()
          */
         @Override
         public int innerStartIndex() {
@@ -1185,7 +1185,7 @@ public class XMLManager extends StdLibrary implements XMLLibrary {
         }
 
         /* (non-Javadoc)
-         * @see com.planet_ink.game.Libraries.interfaces.XMLTag#innerEndIndex()
+         * @see com.syncleus.aethermud.game.Libraries.interfaces.XMLTag#innerEndIndex()
          */
         @Override
         public int innerEndIndex() {
@@ -1193,7 +1193,7 @@ public class XMLManager extends StdLibrary implements XMLLibrary {
         }
 
         /* (non-Javadoc)
-         * @see com.planet_ink.game.Libraries.interfaces.XMLTag#outerEndIndex()
+         * @see com.syncleus.aethermud.game.Libraries.interfaces.XMLTag#outerEndIndex()
          */
         @Override
         public int outerEndIndex() {

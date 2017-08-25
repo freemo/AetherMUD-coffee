@@ -14,13 +14,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Libraries.layouts;
+package com.syncleus.aethermud.game.Libraries.layouts;
 
-import com.planet_ink.game.Libraries.interfaces.AreaGenerationLibrary.LayoutFlags;
-import com.planet_ink.game.Libraries.interfaces.AreaGenerationLibrary.LayoutNode;
-import com.planet_ink.game.Libraries.interfaces.AreaGenerationLibrary.LayoutRuns;
-import com.planet_ink.game.Libraries.interfaces.AreaGenerationLibrary.LayoutTypes;
-import com.planet_ink.game.core.Directions;
+import com.syncleus.aethermud.game.Libraries.interfaces.AreaGenerationLibrary.LayoutFlags;
+import com.syncleus.aethermud.game.Libraries.interfaces.AreaGenerationLibrary.LayoutNode;
+import com.syncleus.aethermud.game.Libraries.interfaces.AreaGenerationLibrary.LayoutRuns;
+import com.syncleus.aethermud.game.Libraries.interfaces.AreaGenerationLibrary.LayoutTypes;
+import com.syncleus.aethermud.game.core.Directions;
 
 import java.util.*;
 

@@ -14,27 +14,27 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Commands;
+package com.syncleus.aethermud.game.Commands;
 
-import com.planet_ink.game.Abilities.interfaces.Ability;
-import com.planet_ink.game.Areas.interfaces.Area;
-import com.planet_ink.game.Behaviors.interfaces.Behavior;
-import com.planet_ink.game.CharClasses.interfaces.CharClass;
-import com.planet_ink.game.Common.interfaces.*;
-import com.planet_ink.game.Exits.interfaces.Exit;
-import com.planet_ink.game.Items.interfaces.*;
-import com.planet_ink.game.Libraries.interfaces.AchievementLibrary.AchievementLoadFlag;
-import com.planet_ink.game.Libraries.interfaces.CatalogLibrary.CataData;
-import com.planet_ink.game.Libraries.interfaces.ChannelsLibrary;
-import com.planet_ink.game.Libraries.interfaces.XMLLibrary;
-import com.planet_ink.game.Locales.interfaces.Room;
-import com.planet_ink.game.MOBS.interfaces.MOB;
-import com.planet_ink.game.Races.interfaces.Race;
-import com.planet_ink.game.core.*;
-import com.planet_ink.game.core.CMClass.CMObjectType;
-import com.planet_ink.game.core.collections.Pair;
-import com.planet_ink.game.core.collections.XVector;
-import com.planet_ink.game.core.interfaces.*;
+import com.syncleus.aethermud.game.Abilities.interfaces.Ability;
+import com.syncleus.aethermud.game.Areas.interfaces.Area;
+import com.syncleus.aethermud.game.Behaviors.interfaces.Behavior;
+import com.syncleus.aethermud.game.CharClasses.interfaces.CharClass;
+import com.syncleus.aethermud.game.Common.interfaces.*;
+import com.syncleus.aethermud.game.Exits.interfaces.Exit;
+import com.syncleus.aethermud.game.Items.interfaces.*;
+import com.syncleus.aethermud.game.Libraries.interfaces.AchievementLibrary.AchievementLoadFlag;
+import com.syncleus.aethermud.game.Libraries.interfaces.CatalogLibrary.CataData;
+import com.syncleus.aethermud.game.Libraries.interfaces.ChannelsLibrary;
+import com.syncleus.aethermud.game.Libraries.interfaces.XMLLibrary;
+import com.syncleus.aethermud.game.Locales.interfaces.Room;
+import com.syncleus.aethermud.game.MOBS.interfaces.MOB;
+import com.syncleus.aethermud.game.Races.interfaces.Race;
+import com.syncleus.aethermud.game.core.*;
+import com.syncleus.aethermud.game.core.CMClass.CMObjectType;
+import com.syncleus.aethermud.game.core.collections.Pair;
+import com.syncleus.aethermud.game.core.collections.XVector;
+import com.syncleus.aethermud.game.core.interfaces.*;
 
 import java.io.IOException;
 import java.util.*;
@@ -5864,7 +5864,7 @@ public class Import extends StdCommand {
                                     if ((I instanceof Light) && (!((ShopKeeper) M).getShop().doIHaveThisInStock("OilFlask", null)))
                                         ((ShopKeeper) M).getShop().addStoreInventory(CMClass.getBasicItem("OilFlask"), num * 2, -1);
                                     else if (((I.ID().equals("GenReadable"))
-                                        || (I instanceof com.planet_ink.game.Items.interfaces.RoomMap))
+                                        || (I instanceof com.syncleus.aethermud.game.Items.interfaces.RoomMap))
                                         && (!((ShopKeeper) M).getShop().doIHaveThisInStock("Parchment", null))) {
                                         ((ShopKeeper) M).setWhatIsSoldMask(0);
                                         ((ShopKeeper) M).addSoldType(ShopKeeper.DEAL_INVENTORYONLY);

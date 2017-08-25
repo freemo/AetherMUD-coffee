@@ -14,18 +14,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Common.interfaces;
+package com.syncleus.aethermud.game.Common.interfaces;
 
-import com.planet_ink.game.Abilities.interfaces.Ability;
-import com.planet_ink.game.Areas.interfaces.Area;
-import com.planet_ink.game.MOBS.interfaces.MOB;
-import com.planet_ink.game.core.CMLib;
-import com.planet_ink.game.core.collections.ChameleonList;
-import com.planet_ink.game.core.collections.PairVector;
-import com.planet_ink.game.core.collections.SearchIDList;
-import com.planet_ink.game.core.interfaces.ItemCollection;
-import com.planet_ink.game.core.interfaces.Modifiable;
-import com.planet_ink.game.core.interfaces.Tickable;
+import com.syncleus.aethermud.game.Abilities.interfaces.Ability;
+import com.syncleus.aethermud.game.Areas.interfaces.Area;
+import com.syncleus.aethermud.game.MOBS.interfaces.MOB;
+import com.syncleus.aethermud.game.core.CMLib;
+import com.syncleus.aethermud.game.core.collections.ChameleonList;
+import com.syncleus.aethermud.game.core.collections.PairVector;
+import com.syncleus.aethermud.game.core.collections.SearchIDList;
+import com.syncleus.aethermud.game.core.interfaces.ItemCollection;
+import com.syncleus.aethermud.game.core.interfaces.Modifiable;
+import com.syncleus.aethermud.game.core.interfaces.Tickable;
 
 import java.util.Enumeration;
 import java.util.List;
@@ -152,8 +152,8 @@ public interface Clan extends Cloneable, Tickable, CMCommon, Modifiable {
      * it requires a vote, and -1 means they can never do it. The
      * functions are defined in the Clan interface as FUNC_*
      * constants.
-     * @see com.planet_ink.game.Common.interfaces.Clan
-     * @see com.planet_ink.game.Common.interfaces.Clan.Authority
+     * @see com.syncleus.aethermud.game.Common.interfaces.Clan
+     * @see com.syncleus.aethermud.game.Common.interfaces.Clan.Authority
      * @param roleID the roleID whose priviledges to check.
      * @param function the ClanFunction function constant to use
      * @return the ClanPositionPower enum
@@ -169,7 +169,7 @@ public interface Clan extends Cloneable, Tickable, CMCommon, Modifiable {
     /**
      * If the clan type allows voting, this returns a
      * series of ClanVote objects
-     * @see com.planet_ink.game.Common.interfaces.Clan.ClanVote
+     * @see com.syncleus.aethermud.game.Common.interfaces.Clan.ClanVote
      * @return the set of clan votes
      */
     public Enumeration<ClanVote> votes();
@@ -183,7 +183,7 @@ public interface Clan extends Cloneable, Tickable, CMCommon, Modifiable {
     /**
      * Adds a new ClanVote object to the list of ongoing
      * votes for this
-     * @see com.planet_ink.game.Common.interfaces.Clan.ClanVote
+     * @see com.syncleus.aethermud.game.Common.interfaces.Clan.ClanVote
      * @param CV the clanvote object to add
      */
     public void addVote(ClanVote CV);
@@ -191,7 +191,7 @@ public interface Clan extends Cloneable, Tickable, CMCommon, Modifiable {
     /**
      * Removes a new ClanVote object from the list of ongoing
      * votes for this
-     * @see com.planet_ink.game.Common.interfaces.Clan.ClanVote
+     * @see com.syncleus.aethermud.game.Common.interfaces.Clan.ClanVote
      * @param CV the clanvote object to remove
      */
     public void delVote(ClanVote CV);
@@ -200,7 +200,7 @@ public interface Clan extends Cloneable, Tickable, CMCommon, Modifiable {
      * Returns the number of members allowed to vote on the
      * given function.  The function is one of the FUNC_*
      * constants.
-     * @see com.planet_ink.game.Common.interfaces.Clan
+     * @see com.syncleus.aethermud.game.Common.interfaces.Clan
      * @param function the FUNC_* constant
      * @return the number of members of this clan who can vote on it
      */
@@ -215,15 +215,15 @@ public interface Clan extends Cloneable, Tickable, CMCommon, Modifiable {
     /**
      * Returns the name of the clan, which is almost always the
      * same as the ID, which is why clans can't change their names.
-     * @see com.planet_ink.game.Common.interfaces.Clan#setName(String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Clan#setName(String)
      * @return the name of the
      */
     public String getName();
 
     /**
      * Sets a new name for this
-     * @see com.planet_ink.game.Common.interfaces.Clan#getName()
-     * @see com.planet_ink.game.Common.interfaces.Clan#clanID()
+     * @see com.syncleus.aethermud.game.Common.interfaces.Clan#getName()
+     * @see com.syncleus.aethermud.game.Common.interfaces.Clan#clanID()
      * @param newName the new name of this clan
      */
     public void setName(String newName);
@@ -231,7 +231,7 @@ public interface Clan extends Cloneable, Tickable, CMCommon, Modifiable {
     /**
      * Returns the unique identifying ID of the clan for reference
      * elsewhere.
-     * @see com.planet_ink.game.Common.interfaces.Clan#getName()
+     * @see com.syncleus.aethermud.game.Common.interfaces.Clan#getName()
      * @return the unique identifier of the
      */
     public String clanID();
@@ -241,7 +241,7 @@ public interface Clan extends Cloneable, Tickable, CMCommon, Modifiable {
      * same as the government category.  This is significant since a player
      * can only belong to N clans of a given category.  See also MAXCLANS
      * in coffeemud.ini.
-     * @see com.planet_ink.game.Common.interfaces.Clan#setCategory(String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Clan#setCategory(String)
      * @return the name of the
      */
     public String getCategory();
@@ -251,7 +251,7 @@ public interface Clan extends Cloneable, Tickable, CMCommon, Modifiable {
      * same as the government category.  This is significant since a player
      * can only belong to N clans of a given category.  See also MAXCLANS
      * in coffeemud.ini.
-     * @see com.planet_ink.game.Common.interfaces.Clan#getCategory()
+     * @see com.syncleus.aethermud.game.Common.interfaces.Clan#getCategory()
      * @param newCategory the new cata of this clan
      */
     public void setCategory(String newCategory);
@@ -259,7 +259,7 @@ public interface Clan extends Cloneable, Tickable, CMCommon, Modifiable {
     /**
      * Returns Clan, Republic, or another one of the
      * clan government types.
-     * @see com.planet_ink.game.Common.interfaces.Clan
+     * @see com.syncleus.aethermud.game.Common.interfaces.Clan
      * @return the clans government types
      */
     public String getGovernmentName();
@@ -276,7 +276,7 @@ public interface Clan extends Cloneable, Tickable, CMCommon, Modifiable {
     /**
      * Return a vector of skills, spells, and other abilities granted to the given
      * mob of the given mobs level.
-     * @see com.planet_ink.game.Abilities.interfaces.Ability
+     * @see com.syncleus.aethermud.game.Abilities.interfaces.Ability
      * @param mob the mob to grant the abilities to
      * @return a vector of the Ability objects
      */
@@ -285,7 +285,7 @@ public interface Clan extends Cloneable, Tickable, CMCommon, Modifiable {
     /**
      * Return a vector of skills, spells, and other effects granted to the given
      * mob of the given mobs level.
-     * @see com.planet_ink.game.Abilities.interfaces.Ability
+     * @see com.syncleus.aethermud.game.Abilities.interfaces.Ability
      * @param mob the mob to grant the abilities to
      * @return a vector of the Ability objects
      */
@@ -295,7 +295,7 @@ public interface Clan extends Cloneable, Tickable, CMCommon, Modifiable {
      * Return size of a vector of skills, spells, and other effects granted to the given
      * mob of the given mobs level. Much more efficient than getting the whole list
      * and checking its size.
-     * @see com.planet_ink.game.Abilities.interfaces.Ability
+     * @see com.syncleus.aethermud.game.Abilities.interfaces.Ability
      * @param mob the mob to grant the abilities to
      * @return a size of a vector of the Ability objects
      */
@@ -305,7 +305,7 @@ public interface Clan extends Cloneable, Tickable, CMCommon, Modifiable {
      * Retrieves this Clan's basic story.
      * This is to make the Clan's more RP based and so we can
      * provide up-to-date information on Clans on the web server.
-     * @see com.planet_ink.game.Common.interfaces.Clan#setPremise(String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Clan#setPremise(String)
      * @return the story of this clan
      */
     public String getPremise();
@@ -313,7 +313,7 @@ public interface Clan extends Cloneable, Tickable, CMCommon, Modifiable {
     /**
      * Sets this Clan's basic story.
      * @param newPremise the new premise text
-     * @see com.planet_ink.game.Common.interfaces.Clan#getPremise()
+     * @see com.syncleus.aethermud.game.Common.interfaces.Clan#getPremise()
      */
     public void setPremise(String newPremise);
 
@@ -328,7 +328,7 @@ public interface Clan extends Cloneable, Tickable, CMCommon, Modifiable {
     /**
      * Retrieves this Clan's enforced character class.
      * All players who join this clan become this class.
-     * @see com.planet_ink.game.Common.interfaces.Clan#setClanClass(String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Clan#setClanClass(String)
      * @return the class of this clan
      */
     public String getClanClass();
@@ -336,7 +336,7 @@ public interface Clan extends Cloneable, Tickable, CMCommon, Modifiable {
     /**
      * Sets this Clan's enforced character class.
      * @param newClass the new enforced character class
-     * @see com.planet_ink.game.Common.interfaces.Clan#getClanClass()
+     * @see com.syncleus.aethermud.game.Common.interfaces.Clan#getClanClass()
      */
     public void setClanClass(String newClass);
 
@@ -351,8 +351,8 @@ public interface Clan extends Cloneable, Tickable, CMCommon, Modifiable {
     /**
      * Returns a mask used to identify whether a player is allowed
      * to join a particular
-     * @see com.planet_ink.game.Libraries.interfaces.MaskingLibrary
-     * @see com.planet_ink.game.Common.interfaces.Clan#setAcceptanceSettings(String)
+     * @see com.syncleus.aethermud.game.Libraries.interfaces.MaskingLibrary
+     * @see com.syncleus.aethermud.game.Common.interfaces.Clan#setAcceptanceSettings(String)
      * @return the mask used to identify prospects
      */
     public String getAcceptanceSettings();
@@ -360,8 +360,8 @@ public interface Clan extends Cloneable, Tickable, CMCommon, Modifiable {
     /**
      * Sets a mask used to identify whether a player is allowed
      * to join a particular
-     * @see com.planet_ink.game.Libraries.interfaces.MaskingLibrary
-     * @see com.planet_ink.game.Common.interfaces.Clan#getAcceptanceSettings()
+     * @see com.syncleus.aethermud.game.Libraries.interfaces.MaskingLibrary
+     * @see com.syncleus.aethermud.game.Common.interfaces.Clan#getAcceptanceSettings()
      * @param newSettings the mask used to identify prospects
      */
     public void setAcceptanceSettings(String newSettings);
@@ -369,7 +369,7 @@ public interface Clan extends Cloneable, Tickable, CMCommon, Modifiable {
     /**
      * Returns an XML string used to identify the political relations
      * between this clan and others.
-     * @see com.planet_ink.game.Common.interfaces.Clan#setPolitics(String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Clan#setPolitics(String)
      * @return xml document describing the politics of this clan
      */
     public String getPolitics();
@@ -377,7 +377,7 @@ public interface Clan extends Cloneable, Tickable, CMCommon, Modifiable {
     /**
      * Sets an XML string used to identify the political relations
      * between this clan and others.
-     * @see com.planet_ink.game.Common.interfaces.Clan#getPolitics()
+     * @see com.syncleus.aethermud.game.Common.interfaces.Clan#getPolitics()
      * @param politics xml document describing the politics of this clan
      */
     public void setPolitics(String politics);
@@ -385,7 +385,7 @@ public interface Clan extends Cloneable, Tickable, CMCommon, Modifiable {
     /**
      * Returns whether membership is automatically approved to this
      * And if so, what the default position for members are.
-     * @see com.planet_ink.game.Common.interfaces.Clan#setAutoPosition(int)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Clan#setAutoPosition(int)
      * @return xml document describing the politics of this clan
      */
     public int getAutoPosition();
@@ -393,7 +393,7 @@ public interface Clan extends Cloneable, Tickable, CMCommon, Modifiable {
     /**
      * Sets whether membership is automatically approved to this
      * And if so, what the default position for members are.
-     * @see com.planet_ink.game.Common.interfaces.Clan#getAutoPosition()
+     * @see com.syncleus.aethermud.game.Common.interfaces.Clan#getAutoPosition()
      * @param pos the positition to give to applicants
      */
     public void setAutoPosition(int pos);
@@ -401,8 +401,8 @@ public interface Clan extends Cloneable, Tickable, CMCommon, Modifiable {
     /**
      * Returns one of the CLANSTAT_* constants describing the pending
      * status of this clan for acceptable, or whether its one its way out.
-     * @see com.planet_ink.game.Common.interfaces.Clan
-     * @see com.planet_ink.game.Common.interfaces.Clan#setStatus(int)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Clan
+     * @see com.syncleus.aethermud.game.Common.interfaces.Clan#setStatus(int)
      * @return a CLANSTAT_* constant
      */
     public int getStatus();
@@ -410,8 +410,8 @@ public interface Clan extends Cloneable, Tickable, CMCommon, Modifiable {
     /**
      * Sets one of the CLANSTAT_* constants describing the pending
      * status of this clan for acceptable, or whether its one its way out.
-     * @see com.planet_ink.game.Common.interfaces.Clan
-     * @see com.planet_ink.game.Common.interfaces.Clan#getStatus()
+     * @see com.syncleus.aethermud.game.Common.interfaces.Clan
+     * @see com.syncleus.aethermud.game.Common.interfaces.Clan#getStatus()
      * @param newStatus a CLANSTAT_* constant
      */
     public void setStatus(int newStatus);
@@ -420,8 +420,8 @@ public interface Clan extends Cloneable, Tickable, CMCommon, Modifiable {
      * Returns true if this clan is rivalrous with other rivalrous clans,
      * meaning that pvp is enabled between them, and war can be declared
      * between them.
-     * @see com.planet_ink.game.Common.interfaces.Clan
-     * @see com.planet_ink.game.Common.interfaces.Clan#setRivalrous(boolean)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Clan
+     * @see com.syncleus.aethermud.game.Common.interfaces.Clan#setRivalrous(boolean)
      * @return true or false
      */
     public boolean isRivalrous();
@@ -429,50 +429,50 @@ public interface Clan extends Cloneable, Tickable, CMCommon, Modifiable {
     /**
      * Set to true if this clan is rivalrous with other rivalrous clans,
      * meaning that pvp is enabled between them, and war can be declared
-     * @see com.planet_ink.game.Common.interfaces.Clan
-     * @see com.planet_ink.game.Common.interfaces.Clan#isRivalrous()
+     * @see com.syncleus.aethermud.game.Common.interfaces.Clan
+     * @see com.syncleus.aethermud.game.Common.interfaces.Clan#isRivalrous()
      * @param isRivalrous true or false
      */
     public void setRivalrous(boolean isRivalrous);
 
     /**
      * Returns the current clan level
-     * @see com.planet_ink.game.Common.interfaces.Clan#setClanLevel(int)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Clan#setClanLevel(int)
      * @return the current clan level
      */
     public int getClanLevel();
 
     /**
      * Sets the new clan level
-     * @see com.planet_ink.game.Common.interfaces.Clan#getClanLevel()
+     * @see com.syncleus.aethermud.game.Common.interfaces.Clan#getClanLevel()
      * @param newClanLevel the new clan level
      */
     public void setClanLevel(int newClanLevel);
 
     /**
      * Returns the roomID of this clans recall room (their clan home)
-     * @see com.planet_ink.game.Common.interfaces.Clan#setRecall(String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Clan#setRecall(String)
      * @return the roomid of this clans clan home
      */
     public String getRecall();
 
     /**
      * Sets the roomID of this clans recall room (their clan home)
-     * @see com.planet_ink.game.Common.interfaces.Clan#getRecall()
+     * @see com.syncleus.aethermud.game.Common.interfaces.Clan#getRecall()
      * @param newRecall the roomid of this clans clan home
      */
     public void setRecall(String newRecall);
 
     /**
      * Returns the roomID of this clans morgue room
-     * @see com.planet_ink.game.Common.interfaces.Clan#setMorgue(String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Clan#setMorgue(String)
      * @return the roomID of this clans morgue room
      */
     public String getMorgue();
 
     /**
      * Sets the roomID of this clans morgue room
-     * @see com.planet_ink.game.Common.interfaces.Clan#getMorgue()
+     * @see com.syncleus.aethermud.game.Common.interfaces.Clan#getMorgue()
      * @param newRecall the roomID of this clans morgue room
      */
     public void setMorgue(String newRecall);
@@ -480,8 +480,8 @@ public interface Clan extends Cloneable, Tickable, CMCommon, Modifiable {
     /**
      * Returns a bitmap representing the trophies won by this
      * The bitmap is made up of TROPHY_* constants.
-     * @see com.planet_ink.game.Common.interfaces.Clan
-     * @see com.planet_ink.game.Common.interfaces.Clan#setTrophies(int)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Clan
+     * @see com.syncleus.aethermud.game.Common.interfaces.Clan#setTrophies(int)
      * @return a bitmap of the trophies
      */
     public int getTrophies();
@@ -489,22 +489,22 @@ public interface Clan extends Cloneable, Tickable, CMCommon, Modifiable {
     /**
      * Sets a bitmap representing the trophies won by this
      * The bitmap is made up of TROPHY_* constants.
-     * @see com.planet_ink.game.Common.interfaces.Clan
-     * @see com.planet_ink.game.Common.interfaces.Clan#getTrophies()
+     * @see com.syncleus.aethermud.game.Common.interfaces.Clan
+     * @see com.syncleus.aethermud.game.Common.interfaces.Clan#getTrophies()
      * @param trophyFlag a bitmap of the trophies
      */
     public void setTrophies(int trophyFlag);
 
     /**
      * Returns the roomID of this clans donation room
-     * @see com.planet_ink.game.Common.interfaces.Clan#setDonation(String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Clan#setDonation(String)
      * @return the roomID of this clans donation room
      */
     public String getDonation();
 
     /**
      * Sets the roomID of this clans donation room
-     * @see com.planet_ink.game.Common.interfaces.Clan#getDonation()
+     * @see com.syncleus.aethermud.game.Common.interfaces.Clan#getDonation()
      * @param newDonation the roomID of this clans donation room
      */
     public void setDonation(String newDonation);
@@ -563,7 +563,7 @@ public interface Clan extends Cloneable, Tickable, CMCommon, Modifiable {
      * controlled areas given.
      * @see Clan#calculateMapPoints()
      * @see Clan#getControlledAreas()
-     * @see com.planet_ink.game.Behaviors.Conquerable
+     * @see com.syncleus.aethermud.game.Behaviors.Conquerable
      * @param controlledAreas the areas controlled
      * @return the number of control points represented
      */
@@ -573,15 +573,15 @@ public interface Clan extends Cloneable, Tickable, CMCommon, Modifiable {
      * Returns the total control points earned by this clan
      * @see Clan#calculateMapPoints(List)
      * @see Clan#getControlledAreas()
-     * @see com.planet_ink.game.Behaviors.Conquerable
+     * @see com.syncleus.aethermud.game.Behaviors.Conquerable
      * @return the number of control points represented
      */
     public long calculateMapPoints();
 
     /**
      * Returns all the areas on the map controlled by this
-     * @see com.planet_ink.game.Behaviors.Conquerable
-     * @see com.planet_ink.game.Areas.interfaces.Area
+     * @see com.syncleus.aethermud.game.Behaviors.Conquerable
+     * @see com.syncleus.aethermud.game.Areas.interfaces.Area
      * @return a vector of area objects
      */
     public List<Area> getControlledAreas();
@@ -836,8 +836,8 @@ public interface Clan extends Cloneable, Tickable, CMCommon, Modifiable {
      * clan, but can still be transient.  These are items like artifacts, or ships,
      * vehicles, etc.
      *
-     * @see com.planet_ink.game.core.interfaces.ItemCollection
-     * @see com.planet_ink.game.Items.interfaces.Item
+     * @see com.syncleus.aethermud.game.core.interfaces.ItemCollection
+     * @see com.syncleus.aethermud.game.Items.interfaces.Item
      *
      * @return an item collection
      */

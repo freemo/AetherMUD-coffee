@@ -14,18 +14,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Common.interfaces;
+package com.syncleus.aethermud.game.Common.interfaces;
 
-import com.planet_ink.game.Libraries.interfaces.MaskingLibrary;
+import com.syncleus.aethermud.game.Libraries.interfaces.MaskingLibrary;
 
 import java.util.List;
 
 /**
  * Descriptor class for ability components.
  * These are managed by by the Ability library.
- * @see com.planet_ink.game.Libraries.interfaces.AbilityComponents#addAbilityComponent(String, java.util.Map)
- * @see com.planet_ink.game.Libraries.interfaces.AbilityComponents#componentCheck(com.planet_ink.game.MOBS.interfaces.MOB, List, boolean)
- * @see com.planet_ink.game.Libraries.interfaces.AbilityComponents#getAbilityComponentMap()
+ * @see com.syncleus.aethermud.game.Libraries.interfaces.AbilityComponents#addAbilityComponent(String, java.util.Map)
+ * @see com.syncleus.aethermud.game.Libraries.interfaces.AbilityComponents#componentCheck(com.syncleus.aethermud.game.MOBS.interfaces.MOB, List, boolean)
+ * @see com.syncleus.aethermud.game.Libraries.interfaces.AbilityComponents#getAbilityComponentMap()
  * @author Bo Zimmerman
  */
 public interface AbilityComponent extends CMCommon {
@@ -33,8 +33,8 @@ public interface AbilityComponent extends CMCommon {
      * Returns an enum describing how this component "connects" with the
      * following component logically.  As in, is it required
      * WITH the following component, or instead of?
-     * @see com.planet_ink.game.Common.interfaces.AbilityComponent.CompConnector
-     * @see com.planet_ink.game.Common.interfaces.AbilityComponent#setConnector(CompConnector)
+     * @see com.syncleus.aethermud.game.Common.interfaces.AbilityComponent.CompConnector
+     * @see com.syncleus.aethermud.game.Common.interfaces.AbilityComponent#setConnector(CompConnector)
      * @return a connector enum
      */
     public CompConnector getConnector();
@@ -43,8 +43,8 @@ public interface AbilityComponent extends CMCommon {
      * Sets an enum describing how this component "connects" with the
      * following component logically.  As in, is it required
      * WITH the following component, or instead of?
-     * @see com.planet_ink.game.Common.interfaces.AbilityComponent.CompConnector
-     * @see com.planet_ink.game.Common.interfaces.AbilityComponent#getConnector()
+     * @see com.syncleus.aethermud.game.Common.interfaces.AbilityComponent.CompConnector
+     * @see com.syncleus.aethermud.game.Common.interfaces.AbilityComponent#getConnector()
      * @param connector a connector enum
      */
     public void setConnector(CompConnector connector);
@@ -52,8 +52,8 @@ public interface AbilityComponent extends CMCommon {
     /**
      * Returns an enum value describing where an item must be to
      * be considered a valid component.
-     * @see com.planet_ink.game.Common.interfaces.AbilityComponent.CompLocation
-     * @see com.planet_ink.game.Common.interfaces.AbilityComponent#setLocation(CompLocation)
+     * @see com.syncleus.aethermud.game.Common.interfaces.AbilityComponent.CompLocation
+     * @see com.syncleus.aethermud.game.Common.interfaces.AbilityComponent#setLocation(CompLocation)
      * @return where an item must be to be a component
      */
     public CompLocation getLocation();
@@ -61,36 +61,36 @@ public interface AbilityComponent extends CMCommon {
     /**
      * Sets an enum value describing where an item must be to
      * be considered a valid component.
-     * @see com.planet_ink.game.Common.interfaces.AbilityComponent.CompLocation
-     * @see com.planet_ink.game.Common.interfaces.AbilityComponent#getLocation()
+     * @see com.syncleus.aethermud.game.Common.interfaces.AbilityComponent.CompLocation
+     * @see com.syncleus.aethermud.game.Common.interfaces.AbilityComponent#getLocation()
      * @param location where an item must be to be a component
      */
     public void setLocation(CompLocation location);
 
     /**
      * Gets whether or not this component is consumed upon use
-     * @see com.planet_ink.game.Common.interfaces.AbilityComponent#setConsumed(boolean)
+     * @see com.syncleus.aethermud.game.Common.interfaces.AbilityComponent#setConsumed(boolean)
      * @return true if consumed, false otherwise
      */
     public boolean isConsumed();
 
     /**
      * Sets whether or not this component is consumed upon use
-     * @see com.planet_ink.game.Common.interfaces.AbilityComponent#isConsumed()
+     * @see com.syncleus.aethermud.game.Common.interfaces.AbilityComponent#isConsumed()
      * @param isConsumed true if consumed, false otherwise
      */
     public void setConsumed(boolean isConsumed);
 
     /**
      * Returns the number of items matching this component which must be present.
-     * @see com.planet_ink.game.Common.interfaces.AbilityComponent#setAmount(int)
+     * @see com.syncleus.aethermud.game.Common.interfaces.AbilityComponent#setAmount(int)
      * @return the number of items matching this component which must be present.
      */
     public int getAmount();
 
     /**
      * Sets the number of items matching this component which must be present.
-     * @see com.planet_ink.game.Common.interfaces.AbilityComponent#getAmount()
+     * @see com.syncleus.aethermud.game.Common.interfaces.AbilityComponent#getAmount()
      * @param amount the number of items matching this component which must be present
      */
     public void setAmount(int amount);
@@ -99,8 +99,8 @@ public interface AbilityComponent extends CMCommon {
      * Returns the item filter type for determining whether an item is
      * a component.  This type can designate a resource, material, or
      * an item name string.
-     * @see com.planet_ink.game.Common.interfaces.AbilityComponent.CompType
-     * @see com.planet_ink.game.Common.interfaces.AbilityComponent#setType(CompType, Object)
+     * @see com.syncleus.aethermud.game.Common.interfaces.AbilityComponent.CompType
+     * @see com.syncleus.aethermud.game.Common.interfaces.AbilityComponent#setType(CompType, Object)
      * @return a CompType enum
      */
     public CompType getType();
@@ -111,10 +111,10 @@ public interface AbilityComponent extends CMCommon {
      * an item name string.  Also sent is either the resource mask,
      * material mask, a string for a name filter, or a string with a
      * long number in it.
-     * @see com.planet_ink.game.Common.interfaces.AbilityComponent.CompType
-     * @see com.planet_ink.game.Common.interfaces.AbilityComponent#getType()
-     * @see com.planet_ink.game.Common.interfaces.AbilityComponent#getLongType()
-     * @see com.planet_ink.game.Common.interfaces.AbilityComponent#getStringType()
+     * @see com.syncleus.aethermud.game.Common.interfaces.AbilityComponent.CompType
+     * @see com.syncleus.aethermud.game.Common.interfaces.AbilityComponent#getType()
+     * @see com.syncleus.aethermud.game.Common.interfaces.AbilityComponent#getLongType()
+     * @see com.syncleus.aethermud.game.Common.interfaces.AbilityComponent#getStringType()
      * @param type the CompType enum
      * @param typeObj either a Integer object or a String
      */
@@ -124,7 +124,7 @@ public interface AbilityComponent extends CMCommon {
      * For resource and material type item component filters, this will
      * return the type comparison object as a long value.  This is typically
      * a resource or material mask value.
-     * @see com.planet_ink.game.Common.interfaces.AbilityComponent#setType(CompType, Object)
+     * @see com.syncleus.aethermud.game.Common.interfaces.AbilityComponent#setType(CompType, Object)
      * @return a resource or material mask value
      */
     public long getLongType();
@@ -133,7 +133,7 @@ public interface AbilityComponent extends CMCommon {
      * For resource and material type item component filters, this will
      * return the type comparison object as a String value.  This is typically
      * a item name filter.
-     * @see com.planet_ink.game.Common.interfaces.AbilityComponent#setType(CompType, Object)
+     * @see com.syncleus.aethermud.game.Common.interfaces.AbilityComponent#setType(CompType, Object)
      * @return a item name filter
      */
     public String getStringType();
@@ -141,9 +141,9 @@ public interface AbilityComponent extends CMCommon {
     /**
      * Returns the compiled zapper mask to determine whether a given agent
      * qualifies this item as a component.
-     * @see com.planet_ink.game.Common.interfaces.AbilityComponent#getMaskStr()
-     * @see com.planet_ink.game.Common.interfaces.AbilityComponent#setMask(String)
-     * @see com.planet_ink.game.Libraries.interfaces.MaskingLibrary
+     * @see com.syncleus.aethermud.game.Common.interfaces.AbilityComponent#getMaskStr()
+     * @see com.syncleus.aethermud.game.Common.interfaces.AbilityComponent#setMask(String)
+     * @see com.syncleus.aethermud.game.Libraries.interfaces.MaskingLibrary
      * @return the compiled zapper mask
      */
     public MaskingLibrary.CompiledZMask getCompiledMask();
@@ -151,9 +151,9 @@ public interface AbilityComponent extends CMCommon {
     /**
      * Returns the raw zapper mask to determine whether a given agent
      * qualifies this item as a component.
-     * @see com.planet_ink.game.Common.interfaces.AbilityComponent#getCompiledMask()
-     * @see com.planet_ink.game.Common.interfaces.AbilityComponent#setMask(String)
-     * @see com.planet_ink.game.Libraries.interfaces.MaskingLibrary
+     * @see com.syncleus.aethermud.game.Common.interfaces.AbilityComponent#getCompiledMask()
+     * @see com.syncleus.aethermud.game.Common.interfaces.AbilityComponent#setMask(String)
+     * @see com.syncleus.aethermud.game.Libraries.interfaces.MaskingLibrary
      * @return the raw zapper mask
      */
     public String getMaskStr();
@@ -161,9 +161,9 @@ public interface AbilityComponent extends CMCommon {
     /**
      * Sets the raw zapper mask to determine whether a given agent
      * qualifies this item as a component.
-     * @see com.planet_ink.game.Common.interfaces.AbilityComponent#getCompiledMask()
-     * @see com.planet_ink.game.Common.interfaces.AbilityComponent#getMaskStr()
-     * @see com.planet_ink.game.Libraries.interfaces.MaskingLibrary
+     * @see com.syncleus.aethermud.game.Common.interfaces.AbilityComponent#getCompiledMask()
+     * @see com.syncleus.aethermud.game.Common.interfaces.AbilityComponent#getMaskStr()
+     * @see com.syncleus.aethermud.game.Libraries.interfaces.MaskingLibrary
      * @param maskStr the raw zapper mask
      */
     public void setMask(String maskStr);

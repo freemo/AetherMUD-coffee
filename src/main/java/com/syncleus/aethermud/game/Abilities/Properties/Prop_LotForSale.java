@@ -14,11 +14,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Abilities.Properties;
+package com.syncleus.aethermud.game.Abilities.Properties;
 
-import com.planet_ink.game.Libraries.interfaces.LegalLibrary;
-import com.planet_ink.game.Locales.interfaces.Room;
-import com.planet_ink.game.core.interfaces.LandTitle;
+import com.syncleus.aethermud.game.Libraries.interfaces.LegalLibrary;
+import com.syncleus.aethermud.game.Locales.interfaces.Room;
+import com.syncleus.aethermud.game.core.interfaces.LandTitle;
 
 
 public class Prop_LotForSale extends Prop_LotsForSale {

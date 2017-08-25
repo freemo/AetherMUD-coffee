@@ -14,19 +14,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Abilities.Specializations;
+package com.syncleus.aethermud.game.Abilities.Specializations;
 
-import com.planet_ink.game.Abilities.StdAbility;
-import com.planet_ink.game.Abilities.interfaces.Ability;
-import com.planet_ink.game.Common.interfaces.CMMsg;
-import com.planet_ink.game.Common.interfaces.CharStats;
-import com.planet_ink.game.Items.interfaces.Item;
-import com.planet_ink.game.Items.interfaces.Weapon;
-import com.planet_ink.game.Libraries.interfaces.MaskingLibrary;
-import com.planet_ink.game.MOBS.interfaces.MOB;
-import com.planet_ink.game.core.CMLib;
-import com.planet_ink.game.core.collections.DoubleFilterer;
-import com.planet_ink.game.core.interfaces.Environmental;
+import com.syncleus.aethermud.game.Abilities.StdAbility;
+import com.syncleus.aethermud.game.Abilities.interfaces.Ability;
+import com.syncleus.aethermud.game.Common.interfaces.CMMsg;
+import com.syncleus.aethermud.game.Common.interfaces.CharStats;
+import com.syncleus.aethermud.game.Items.interfaces.Item;
+import com.syncleus.aethermud.game.Items.interfaces.Weapon;
+import com.syncleus.aethermud.game.Libraries.interfaces.MaskingLibrary;
+import com.syncleus.aethermud.game.MOBS.interfaces.MOB;
+import com.syncleus.aethermud.game.core.CMLib;
+import com.syncleus.aethermud.game.core.collections.DoubleFilterer;
+import com.syncleus.aethermud.game.core.interfaces.Environmental;
 
 import java.util.Arrays;
 
@@ -107,11 +107,11 @@ public class Proficiency_Weapon extends StdAbility {
         super.affectCharStats(affected, affectableStats);
         if (myFilter == null) {
             final String zapMask = getWeaponMask();
-            myFilter = new com.planet_ink.game.core.collections.DoubleFilterer<Item>() {
+            myFilter = new com.syncleus.aethermud.game.core.collections.DoubleFilterer<Item>() {
                 final MaskingLibrary.CompiledZMask mask = CMLib.masking().maskCompile(zapMask);
 
                 @Override
-                public com.planet_ink.game.core.collections.DoubleFilterer.Result getFilterResult(Item obj) {
+                public com.syncleus.aethermud.game.core.collections.DoubleFilterer.Result getFilterResult(Item obj) {
                     return CMLib.masking().maskCheck(mask, obj, true) ? DoubleFilterer.Result.ALLOWED : DoubleFilterer.Result.NOTAPPLICABLE;
                 }
             };

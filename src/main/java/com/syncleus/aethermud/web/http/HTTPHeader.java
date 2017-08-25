@@ -14,9 +14,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.web.http;
+package com.syncleus.aethermud.web.http;
 
-import com.planet_ink.web.interfaces.HTTPIOHandler;
+import com.syncleus.aethermud.web.interfaces.HTTPIOHandler;
 
 
 /**

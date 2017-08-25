@@ -14,10 +14,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.web.interfaces;
+package com.syncleus.aethermud.web.interfaces;
 
-import com.planet_ink.web.http.HTTPMethod;
-import com.planet_ink.web.http.MultiPartData;
+import com.syncleus.aethermud.web.http.HTTPMethod;
+import com.syncleus.aethermud.web.http.MultiPartData;
 
 import java.io.InputStream;
 import java.util.List;

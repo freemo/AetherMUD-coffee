@@ -14,10 +14,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Items.interfaces;
+package com.syncleus.aethermud.game.Items.interfaces;
 
-import com.planet_ink.game.core.collections.ReadOnlyList;
-import com.planet_ink.game.core.interfaces.CloseableLockable;
+import com.syncleus.aethermud.game.core.collections.ReadOnlyList;
+import com.syncleus.aethermud.game.core.interfaces.CloseableLockable;
 
 /**
  * A container is an item that contains other items, including other containers.

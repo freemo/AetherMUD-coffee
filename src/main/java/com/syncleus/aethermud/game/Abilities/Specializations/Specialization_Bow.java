@@ -14,11 +14,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Abilities.Specializations;
+package com.syncleus.aethermud.game.Abilities.Specializations;
 
-import com.planet_ink.game.Items.interfaces.AmmunitionWeapon;
-import com.planet_ink.game.Items.interfaces.Weapon;
-import com.planet_ink.game.core.CMLib;
+import com.syncleus.aethermud.game.Items.interfaces.AmmunitionWeapon;
+import com.syncleus.aethermud.game.Items.interfaces.Weapon;
+import com.syncleus.aethermud.game.core.CMLib;
 
 
 public class Specialization_Bow extends Specialization_Weapon {

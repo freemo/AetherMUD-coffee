@@ -14,12 +14,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.core.interfaces;
+package com.syncleus.aethermud.game.core.interfaces;
 
 /**
  * One step above a basic CMObject is an object that is contingent on its
  * environment.  It can be created and destroyed, savable, or not.
- * @see com.planet_ink.game.core.CMClass
+ * @see com.syncleus.aethermud.game.core.CMClass
  * @author Bo Zimmerman
  *
  */

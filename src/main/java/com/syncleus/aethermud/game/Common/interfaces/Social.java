@@ -14,11 +14,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Common.interfaces;
+package com.syncleus.aethermud.game.Common.interfaces;
 
-import com.planet_ink.game.MOBS.interfaces.MOB;
-import com.planet_ink.game.core.interfaces.Environmental;
-import com.planet_ink.game.core.interfaces.Physical;
+import com.syncleus.aethermud.game.MOBS.interfaces.MOB;
+import com.syncleus.aethermud.game.core.interfaces.Environmental;
+import com.syncleus.aethermud.game.core.interfaces.Physical;
 
 import java.util.List;
 
@@ -33,13 +33,13 @@ import java.util.List;
  * for each social variation (smile, smile self, smile bob).  The Name() field holds the
  * full unique name of each social object, with ID only having "DefaultSocial".
  *
- * @see com.planet_ink.game.core.interfaces.Environmental#Name()
- * @see com.planet_ink.game.core.interfaces.Environmental#setName(String)
+ * @see com.syncleus.aethermud.game.core.interfaces.Environmental#Name()
+ * @see com.syncleus.aethermud.game.core.interfaces.Environmental#setName(String)
  *
  * Managed by the SocialsList library.
  *
- * @see com.planet_ink.game.Common.interfaces.Social
- * @see com.planet_ink.game.Libraries.interfaces.SocialsList
+ * @see com.syncleus.aethermud.game.Common.interfaces.Social
+ * @see com.syncleus.aethermud.game.Libraries.interfaces.SocialsList
  */
 
 public interface Social extends Environmental, CMCommon {
@@ -55,7 +55,7 @@ public interface Social extends Environmental, CMCommon {
     /**
      * You_see: what the player themself sees when they use this social.
      *
-     * @see com.planet_ink.game.Common.interfaces.Social#setYou_see(String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Social#setYou_see(String)
      * @return what the player themself sees when they use this social.
      */
     public String You_see();
@@ -63,7 +63,7 @@ public interface Social extends Environmental, CMCommon {
     /**
      * You_see: what the player themself sees when they use this social.
      *
-     * @see com.planet_ink.game.Common.interfaces.Social#You_see()
+     * @see com.syncleus.aethermud.game.Common.interfaces.Social#You_see()
      * @param str  what the player themself sees when they use this social.
      */
     public void setYou_see(String str);
@@ -72,7 +72,7 @@ public interface Social extends Environmental, CMCommon {
      * Third_party_sees:  what everyone but the player and their target
      * sees when a player uses this social.
      *
-     * @see com.planet_ink.game.Common.interfaces.Social#setThird_party_sees(String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Social#setThird_party_sees(String)
      * @return the string everyone else sees
      */
     public String Third_party_sees();
@@ -81,7 +81,7 @@ public interface Social extends Environmental, CMCommon {
      * Third_party_sees:  what everyone but the player and their target
      * sees when a player uses this social.
      *
-     * @see com.planet_ink.game.Common.interfaces.Social#Third_party_sees()
+     * @see com.syncleus.aethermud.game.Common.interfaces.Social#Third_party_sees()
      * @param str the string everyone else sees
      */
     public void setThird_party_sees(String str);
@@ -89,7 +89,7 @@ public interface Social extends Environmental, CMCommon {
     /**
      * Target_sees: what the target of this social sees when social is used on them.
      *
-     * @see com.planet_ink.game.Common.interfaces.Social#setTarget_sees(String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Social#setTarget_sees(String)
      * @return what the target of this social sees when social is used on them
      */
     public String Target_sees();
@@ -97,7 +97,7 @@ public interface Social extends Environmental, CMCommon {
     /**
      * Target_sees: what the target of this social sees when social is used on them.
      *
-     * @see com.planet_ink.game.Common.interfaces.Social#Target_sees()
+     * @see com.syncleus.aethermud.game.Common.interfaces.Social#Target_sees()
      * @param str what the target of this social sees when social is used on them
      */
     public void setTarget_sees(String str);
@@ -106,7 +106,7 @@ public interface Social extends Environmental, CMCommon {
      * See_when_no_target: what the player sees when this social is used targeted, but
      * the target is not available.
      *
-     * @see com.planet_ink.game.Common.interfaces.Social#setSee_when_no_target(String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Social#setSee_when_no_target(String)
      * @return the string seen by the player when the target has left
      */
     public String See_when_no_target();
@@ -115,7 +115,7 @@ public interface Social extends Environmental, CMCommon {
      * See_when_no_target: what the player sees when this social is used targeted, but
      * the target is not available.
      *
-     * @see com.planet_ink.game.Common.interfaces.Social#See_when_no_target()
+     * @see com.syncleus.aethermud.game.Common.interfaces.Social#See_when_no_target()
      * @param str the string seen by the player when the target has left
      */
     public void setSee_when_no_target(String str);
@@ -124,11 +124,11 @@ public interface Social extends Environmental, CMCommon {
      * The official CoffeeMud message code used as the source code for this social,
      * which reflects what the player is doing.  Only certain codes allowed.
      *
-     * @see com.planet_ink.game.Common.interfaces.Social#setSourceCode(int)
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#MSG_SPEAK
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#MSG_HANDS
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#MSG_NOISE
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#MSG_NOISYMOVEMENT
+     * @see com.syncleus.aethermud.game.Common.interfaces.Social#setSourceCode(int)
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#MSG_SPEAK
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#MSG_HANDS
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#MSG_NOISE
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#MSG_NOISYMOVEMENT
      * @return the CMMsg social code, fully formed
      */
     public int sourceCode();
@@ -137,11 +137,11 @@ public interface Social extends Environmental, CMCommon {
      * Sets the official CoffeeMud message code used as the source code for this social,
      * which reflects what the player is doing.  Only certain codes allowed.
      *
-     * @see com.planet_ink.game.Common.interfaces.Social#sourceCode()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#MSG_SPEAK
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#MSG_HANDS
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#MSG_NOISE
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#MSG_NOISYMOVEMENT
+     * @see com.syncleus.aethermud.game.Common.interfaces.Social#sourceCode()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#MSG_SPEAK
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#MSG_HANDS
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#MSG_NOISE
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#MSG_NOISYMOVEMENT
      * @param code the CMMsg social code, fully formed
      */
     public void setSourceCode(int code);
@@ -150,12 +150,12 @@ public interface Social extends Environmental, CMCommon {
      * The official CoffeeMud message code used as the others code for this social,
      * which reflects what the player appears to be doing.  Only certain codes allowed.
      *
-     * @see com.planet_ink.game.Common.interfaces.Social#setOthersCode(int)
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#MSG_SPEAK
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#MSG_HANDS
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#MSG_NOISE
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#MSG_NOISYMOVEMENT
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#MSG_OK_VISUAL
+     * @see com.syncleus.aethermud.game.Common.interfaces.Social#setOthersCode(int)
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#MSG_SPEAK
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#MSG_HANDS
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#MSG_NOISE
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#MSG_NOISYMOVEMENT
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#MSG_OK_VISUAL
      * @return the CMMsg social code, fully formed
      */
     public int othersCode();
@@ -164,12 +164,12 @@ public interface Social extends Environmental, CMCommon {
      * Sets the official CoffeeMud message code used as the others code for this social,
      * which reflects what the player appears to be doing.  Only certain codes allowed.
      *
-     * @see com.planet_ink.game.Common.interfaces.Social#othersCode()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#MSG_SPEAK
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#MSG_HANDS
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#MSG_NOISE
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#MSG_NOISYMOVEMENT
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#MSG_OK_VISUAL
+     * @see com.syncleus.aethermud.game.Common.interfaces.Social#othersCode()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#MSG_SPEAK
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#MSG_HANDS
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#MSG_NOISE
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#MSG_NOISYMOVEMENT
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#MSG_OK_VISUAL
      *
      * @param code the CMMsg social code, fully formed
      */
@@ -179,12 +179,12 @@ public interface Social extends Environmental, CMCommon {
      * The official CoffeeMud message code used as the target code for this social,
      * which reflects what is being done to the target.  Only certain codes allowed.
      *
-     * @see com.planet_ink.game.Common.interfaces.Social#setTargetCode(int)
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#MSG_SPEAK
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#MSG_HANDS
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#MSG_NOISE
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#MSG_NOISYMOVEMENT
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#MSG_OK_VISUAL
+     * @see com.syncleus.aethermud.game.Common.interfaces.Social#setTargetCode(int)
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#MSG_SPEAK
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#MSG_HANDS
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#MSG_NOISE
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#MSG_NOISYMOVEMENT
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#MSG_OK_VISUAL
      * @return the CMMsg social code, fully formed
      */
     public int targetCode();
@@ -193,12 +193,12 @@ public interface Social extends Environmental, CMCommon {
      * Sets the official CoffeeMud message code used as the target code for this social,
      * which reflects what is being done to the target.  Only certain codes allowed.
      *
-     * @see com.planet_ink.game.Common.interfaces.Social#targetCode()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#MSG_SPEAK
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#MSG_HANDS
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#MSG_NOISE
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#MSG_NOISYMOVEMENT
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#MSG_OK_VISUAL
+     * @see com.syncleus.aethermud.game.Common.interfaces.Social#targetCode()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#MSG_SPEAK
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#MSG_HANDS
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#MSG_NOISE
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#MSG_NOISYMOVEMENT
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#MSG_OK_VISUAL
      * @param code the CMMsg social code, fully formed
      */
     public void setTargetCode(int code);
@@ -207,7 +207,7 @@ public interface Social extends Environmental, CMCommon {
      * Whether this social variation can be targeted.  Is determined by whether
      * there is a target parameter in the name.
      *
-     * @see com.planet_ink.game.core.interfaces.Environmental#Name()
+     * @see com.syncleus.aethermud.game.core.interfaces.Environmental#Name()
      * @param E The object to check to see if this is targetable against.
      * @return true, if it can be targeted
      */
@@ -216,7 +216,7 @@ public interface Social extends Environmental, CMCommon {
     /**
      * Returns the name of the MSP sound file associated with this social.
      *
-     * @see com.planet_ink.game.Common.interfaces.Social#setMSPfile(String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Social#setMSPfile(String)
      * @return the msp sound file name
      */
     public String MSPfile();
@@ -224,7 +224,7 @@ public interface Social extends Environmental, CMCommon {
     /**
      * Sets the name of the MSP sound file associated with this social.
      *
-     * @see com.planet_ink.game.Common.interfaces.Social#MSPfile()
+     * @see com.syncleus.aethermud.game.Common.interfaces.Social#MSPfile()
      * @param newFile the msp sound file name
      */
     public void setMSPfile(String newFile);
@@ -251,8 +251,8 @@ public interface Social extends Environmental, CMCommon {
      * Manufactures a proper channel message that represents executing this
      * social over a public chat channel.
      *
-     * @see com.planet_ink.game.Common.interfaces.CMMsg
-     * @see com.planet_ink.game.Common.interfaces.Social#makeMessage(MOB, String, String, int, int, List, String, boolean)
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg
+     * @see com.syncleus.aethermud.game.Common.interfaces.Social#makeMessage(MOB, String, String, int, int, List, String, boolean)
      *
      * @param mob the mob doing the social
      * @param channelInt the channel int representing which chat channel
@@ -271,8 +271,8 @@ public interface Social extends Environmental, CMCommon {
     /**
      * Manufactures a proper message that represents executing this social as an action
      *
-     * @see com.planet_ink.game.Common.interfaces.CMMsg
-     * @see com.planet_ink.game.Common.interfaces.Social#makeChannelMsg(MOB, int, String, List, boolean)
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg
+     * @see com.syncleus.aethermud.game.Common.interfaces.Social#makeChannelMsg(MOB, int, String, List, boolean)
      *
      * @param mob the mob doing the social
      * @param str the str an optional "header" string for the msg, usually mxp related

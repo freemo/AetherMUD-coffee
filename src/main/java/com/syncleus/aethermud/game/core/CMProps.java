@@ -14,17 +14,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.core;
+package com.syncleus.aethermud.game.core;
 
-import com.planet_ink.game.Common.interfaces.Session;
-import com.planet_ink.game.Libraries.interfaces.CombatLibrary;
-import com.planet_ink.game.Libraries.interfaces.ExpertiseLibrary;
-import com.planet_ink.game.Libraries.interfaces.ExpertiseLibrary.CostType;
-import com.planet_ink.game.Libraries.interfaces.LanguageLibrary;
-import com.planet_ink.game.Libraries.interfaces.TimeManager;
-import com.planet_ink.game.core.collections.PairVector;
-import com.planet_ink.game.core.interfaces.CMObject;
-import com.planet_ink.game.core.interfaces.MudHost;
+import com.syncleus.aethermud.game.Common.interfaces.Session;
+import com.syncleus.aethermud.game.Libraries.interfaces.CombatLibrary;
+import com.syncleus.aethermud.game.Libraries.interfaces.ExpertiseLibrary;
+import com.syncleus.aethermud.game.Libraries.interfaces.ExpertiseLibrary.CostType;
+import com.syncleus.aethermud.game.Libraries.interfaces.LanguageLibrary;
+import com.syncleus.aethermud.game.Libraries.interfaces.TimeManager;
+import com.syncleus.aethermud.game.core.collections.PairVector;
+import com.syncleus.aethermud.game.core.interfaces.CMObject;
+import com.syncleus.aethermud.game.core.interfaces.MudHost;
 
 import java.io.*;
 import java.util.*;

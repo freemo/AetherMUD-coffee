@@ -14,25 +14,25 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Commands;
+package com.syncleus.aethermud.game.Commands;
 
-import com.planet_ink.game.Abilities.interfaces.Ability;
-import com.planet_ink.game.Areas.interfaces.Area;
-import com.planet_ink.game.CharClasses.interfaces.CharClass;
-import com.planet_ink.game.Commands.interfaces.Command;
-import com.planet_ink.game.Common.interfaces.*;
-import com.planet_ink.game.Common.interfaces.Session.InputCallback;
-import com.planet_ink.game.Items.interfaces.*;
-import com.planet_ink.game.Libraries.interfaces.AbilityMapper;
-import com.planet_ink.game.Libraries.interfaces.AchievementLibrary.Achievement;
-import com.planet_ink.game.Libraries.interfaces.JournalsLibrary;
-import com.planet_ink.game.Locales.interfaces.GridLocale;
-import com.planet_ink.game.Locales.interfaces.Room;
-import com.planet_ink.game.MOBS.interfaces.MOB;
-import com.planet_ink.game.Races.interfaces.Race;
-import com.planet_ink.game.core.*;
-import com.planet_ink.game.core.CMClass.CMObjectType;
-import com.planet_ink.game.core.interfaces.*;
+import com.syncleus.aethermud.game.Abilities.interfaces.Ability;
+import com.syncleus.aethermud.game.Areas.interfaces.Area;
+import com.syncleus.aethermud.game.CharClasses.interfaces.CharClass;
+import com.syncleus.aethermud.game.Commands.interfaces.Command;
+import com.syncleus.aethermud.game.Common.interfaces.*;
+import com.syncleus.aethermud.game.Common.interfaces.Session.InputCallback;
+import com.syncleus.aethermud.game.Items.interfaces.*;
+import com.syncleus.aethermud.game.Libraries.interfaces.AbilityMapper;
+import com.syncleus.aethermud.game.Libraries.interfaces.AchievementLibrary.Achievement;
+import com.syncleus.aethermud.game.Libraries.interfaces.JournalsLibrary;
+import com.syncleus.aethermud.game.Locales.interfaces.GridLocale;
+import com.syncleus.aethermud.game.Locales.interfaces.Room;
+import com.syncleus.aethermud.game.MOBS.interfaces.MOB;
+import com.syncleus.aethermud.game.Races.interfaces.Race;
+import com.syncleus.aethermud.game.core.*;
+import com.syncleus.aethermud.game.core.CMClass.CMObjectType;
+import com.syncleus.aethermud.game.core.interfaces.*;
 
 import java.io.IOException;
 import java.util.*;
@@ -581,7 +581,7 @@ public class Destroy extends StdCommand {
         final String oldRID = R.ID();
         CMClass.delRace(R);
         CMLib.database().DBDeleteRace(R.ID());
-        CMClass.loadClass(CMObjectType.RACE, "target/classes/com/planet_ink/game/Races/" + oldRID + ".class", true);
+        CMClass.loadClass(CMObjectType.RACE, "target/classes/com/syncleus/aethermud/game/Races/" + oldRID + ".class", true);
         Race oldR = CMClass.getRace(oldRID);
         if (oldR == null)
             oldR = CMClass.getRace("StdRace");
@@ -681,7 +681,7 @@ public class Destroy extends StdCommand {
         CMClass.delCharClass(C);
         CMLib.database().DBDeleteClass(C.ID());
         final String oldCID = C.ID();
-        CMClass.loadClass(CMObjectType.CHARCLASS, "target/classes/com/planet_ink/game/CharClasses/" + oldCID + ".class", true);
+        CMClass.loadClass(CMObjectType.CHARCLASS, "target/classes/com/syncleus/aethermud/game/CharClasses/" + oldCID + ".class", true);
         CharClass oldC = CMClass.getCharClass(oldCID);
         if (oldC == null)
             oldC = CMClass.getCharClass("StdCharClass");

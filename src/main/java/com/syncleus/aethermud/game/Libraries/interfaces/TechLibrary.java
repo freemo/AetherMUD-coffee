@@ -14,14 +14,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Libraries.interfaces;
+package com.syncleus.aethermud.game.Libraries.interfaces;
 
-import com.planet_ink.game.Common.interfaces.Manufacturer;
-import com.planet_ink.game.Items.interfaces.Computer;
-import com.planet_ink.game.Items.interfaces.ElecPanel;
-import com.planet_ink.game.Items.interfaces.Electronics;
-import com.planet_ink.game.Locales.interfaces.Room;
-import com.planet_ink.game.core.interfaces.CMObject;
+import com.syncleus.aethermud.game.Common.interfaces.Manufacturer;
+import com.syncleus.aethermud.game.Items.interfaces.Computer;
+import com.syncleus.aethermud.game.Items.interfaces.ElecPanel;
+import com.syncleus.aethermud.game.Items.interfaces.Electronics;
+import com.syncleus.aethermud.game.Locales.interfaces.Room;
+import com.syncleus.aethermud.game.core.interfaces.CMObject;
 
 import java.util.Iterator;
 import java.util.List;

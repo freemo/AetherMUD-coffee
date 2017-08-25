@@ -14,14 +14,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Common.interfaces;
+package com.syncleus.aethermud.game.Common.interfaces;
 
-import com.planet_ink.game.Areas.interfaces.Area;
-import com.planet_ink.game.Behaviors.interfaces.LegalBehavior;
-import com.planet_ink.game.Items.interfaces.Container;
-import com.planet_ink.game.Locales.interfaces.Room;
-import com.planet_ink.game.MOBS.interfaces.MOB;
-import com.planet_ink.game.core.CMLib;
+import com.syncleus.aethermud.game.Areas.interfaces.Area;
+import com.syncleus.aethermud.game.Behaviors.interfaces.LegalBehavior;
+import com.syncleus.aethermud.game.Items.interfaces.Container;
+import com.syncleus.aethermud.game.Locales.interfaces.Room;
+import com.syncleus.aethermud.game.MOBS.interfaces.MOB;
+import com.syncleus.aethermud.game.core.CMLib;
 
 import java.util.List;
 import java.util.Map;
@@ -34,8 +34,8 @@ import java.util.Properties;
  * officials that enforce the infractions, some guidelines on
  * their behavior, and information their processes of enforcement.
  *
- * @see com.planet_ink.game.Behaviors.interfaces.LegalBehavior
- * @see com.planet_ink.game.Common.interfaces.LegalWarrant
+ * @see com.syncleus.aethermud.game.Behaviors.interfaces.LegalBehavior
+ * @see com.syncleus.aethermud.game.Common.interfaces.LegalWarrant
  */
 public interface Law extends CMCommon {
     /** A base punishment code meaning the officer warns the criminal */
@@ -248,10 +248,10 @@ public interface Law extends CMCommon {
      * enforce the laws, and flags denoting how maleable these
      * laws are.  Principally calls resetLaw.
      *
-     * @see com.planet_ink.game.Behaviors.interfaces.LegalBehavior
-     * @see com.planet_ink.game.Common.interfaces.Law#resetLaw()
-     * @see com.planet_ink.game.Common.interfaces.Law#hasModifiableNames()
-     * @see com.planet_ink.game.Common.interfaces.Law#hasModifiableLaws()
+     * @see com.syncleus.aethermud.game.Behaviors.interfaces.LegalBehavior
+     * @see com.syncleus.aethermud.game.Common.interfaces.Law#resetLaw()
+     * @see com.syncleus.aethermud.game.Common.interfaces.Law#hasModifiableNames()
+     * @see com.syncleus.aethermud.game.Common.interfaces.Law#hasModifiableLaws()
      *
      * @param details the behavior governing this law
      * @param laws the properties file containing all the legal definitions
@@ -267,8 +267,8 @@ public interface Law extends CMCommon {
      * Changes the action state of the given warrant
      * (and all dependent warrants)
      *
-     * @see com.planet_ink.game.Common.interfaces.LegalWarrant
-     * @see com.planet_ink.game.Common.interfaces.Law#PUNISHMENT_DESCS
+     * @see com.syncleus.aethermud.game.Common.interfaces.LegalWarrant
+     * @see com.syncleus.aethermud.game.Common.interfaces.Law#PUNISHMENT_DESCS
      *
      * @param W the warrant to change the state of
      * @param state the new action state
@@ -280,7 +280,7 @@ public interface Law extends CMCommon {
      * storage, usually an INI file, or the database, depending on
      * how the legalbehavior is defined.
      *
-     * @see com.planet_ink.game.Common.interfaces.Law#initialize(LegalBehavior, Properties, boolean, boolean)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Law#initialize(LegalBehavior, Properties, boolean, boolean)
      */
     public void resetLaw();
 
@@ -294,7 +294,7 @@ public interface Law extends CMCommon {
 
     /**
      * Whether the officials can be changed (officers judges)
-     * @see com.planet_ink.game.Common.interfaces.Law#initialize(LegalBehavior, Properties, boolean, boolean)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Law#initialize(LegalBehavior, Properties, boolean, boolean)
      *
      * @return true if the officials can be changed, false otherwise
      */
@@ -302,7 +302,7 @@ public interface Law extends CMCommon {
 
     /**
      * Whether the legal definitions can be changed
-     * @see com.planet_ink.game.Common.interfaces.Law#initialize(LegalBehavior, Properties, boolean, boolean)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Law#initialize(LegalBehavior, Properties, boolean, boolean)
      *
      * @return true if the legal definitions can be changed, false otherwise
      */
@@ -312,7 +312,7 @@ public interface Law extends CMCommon {
      * Returns one of the raw property entries used to construct
      * the legal definitions.
      *
-     * @see com.planet_ink.game.Common.interfaces.Law#initialize(LegalBehavior, Properties, boolean, boolean)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Law#initialize(LegalBehavior, Properties, boolean, boolean)
      *
      * @param msg the name of the raw property to return
      * @return the value of the raw legal property
@@ -323,7 +323,7 @@ public interface Law extends CMCommon {
      * Returns whether or not the given property name is one of the
      * raw property entries used to construct the legal definitions.
      *
-     * @see com.planet_ink.game.Common.interfaces.Law#initialize(LegalBehavior, Properties, boolean, boolean)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Law#initialize(LegalBehavior, Properties, boolean, boolean)
      *
      * @param msg the name of the raw property to look for
      * @return true if the property is found, false otherwise
@@ -334,7 +334,7 @@ public interface Law extends CMCommon {
      * Sets one of the raw property entries used to construct
      * the legal definitions.
      *
-     * @see com.planet_ink.game.Common.interfaces.Law#initialize(LegalBehavior, Properties, boolean, boolean)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Law#initialize(LegalBehavior, Properties, boolean, boolean)
      *
      * @param tag the name of the raw property to set
      * @param value the new value of the property
@@ -357,7 +357,7 @@ public interface Law extends CMCommon {
      * Returns a warrant if the given mob or player mob object
      * represents someone accused of killing an officer.
      *
-     * @see com.planet_ink.game.Behaviors.interfaces.LegalBehavior
+     * @see com.syncleus.aethermud.game.Behaviors.interfaces.LegalBehavior
      *
      * @param A the Legal Area governed by the Legal Behavior
      * @param behav the legal behavior governing the law
@@ -370,7 +370,7 @@ public interface Law extends CMCommon {
      * Returns a warrant if the given mob or player mob object
      * represents someone accused of resisting arrest.
      *
-     * @see com.planet_ink.game.Behaviors.interfaces.LegalBehavior
+     * @see com.syncleus.aethermud.game.Behaviors.interfaces.LegalBehavior
      *
      * @param A the Legal Area governed by the Legal Behavior
      * @param behav the legal behavior governing the law
@@ -411,7 +411,7 @@ public interface Law extends CMCommon {
      * "other" crime.  This Vectors entries match one for one with
      * the list returned by otherBits()
      *
-     * @see com.planet_ink.game.Common.interfaces.Law#otherBits()
+     * @see com.syncleus.aethermud.game.Common.interfaces.Law#otherBits()
      *
      * @return a list of words and phrases
      */
@@ -429,8 +429,8 @@ public interface Law extends CMCommon {
      * The entries in each String[] array are indexed by the
      * constants BIT_*
      *
-     * @see com.planet_ink.game.Common.interfaces.Law#BIT_CRIMENAME
-     * @see com.planet_ink.game.Common.interfaces.Law#otherBits()
+     * @see com.syncleus.aethermud.game.Common.interfaces.Law#BIT_CRIMENAME
+     * @see com.syncleus.aethermud.game.Common.interfaces.Law#otherBits()
      *
      * @return a list of String[] array bits of other crime info
      */
@@ -445,8 +445,8 @@ public interface Law extends CMCommon {
      * "substance" crime.  This Vectors entries match one for one with
      * the list returned by bannedBits()
      *
-     * @see com.planet_ink.game.Items.interfaces.RawMaterial
-     * @see com.planet_ink.game.Common.interfaces.Law#bannedBits()
+     * @see com.syncleus.aethermud.game.Items.interfaces.RawMaterial
+     * @see com.syncleus.aethermud.game.Common.interfaces.Law#bannedBits()
      *
      * @return a list of item or resource names
      */
@@ -464,8 +464,8 @@ public interface Law extends CMCommon {
      * The entries in each String[] array are indexed by the
      * constants BIT_*
      *
-     * @see com.planet_ink.game.Common.interfaces.Law#BIT_CRIMENAME
-     * @see com.planet_ink.game.Common.interfaces.Law#bannedSubstances()
+     * @see com.syncleus.aethermud.game.Common.interfaces.Law#BIT_CRIMENAME
+     * @see com.syncleus.aethermud.game.Common.interfaces.Law#bannedSubstances()
      *
      * @return a list of String[] array bits of substance crime info
      */
@@ -482,8 +482,8 @@ public interface Law extends CMCommon {
      * The entries in each String[] array are indexed by the
      * constants BIT_*
      *
-     * @see com.planet_ink.game.Abilities.interfaces.Ability
-     * @see com.planet_ink.game.Common.interfaces.Law#BIT_CRIMENAME
+     * @see com.syncleus.aethermud.game.Abilities.interfaces.Ability
+     * @see com.syncleus.aethermud.game.Common.interfaces.Law#BIT_CRIMENAME
      *
      * @return a map of String[] array bits of ability crime info
      */
@@ -500,7 +500,7 @@ public interface Law extends CMCommon {
      * The entries in each String[] array are indexed by the
      * constants BIT_*
      *
-     * @see com.planet_ink.game.Common.interfaces.Law#BIT_CRIMENAME
+     * @see com.syncleus.aethermud.game.Common.interfaces.Law#BIT_CRIMENAME
      *
      * @return a map of String[] array bits of basic crime info
      */
@@ -517,7 +517,7 @@ public interface Law extends CMCommon {
      * SALESTAX - a String representing the sales tax rate
      * TREASURY - a String of semicolon delimited info about treasury room/
      *  		- safe room.
-     * @see com.planet_ink.game.Common.interfaces.Law#BIT_CRIMENAME
+     * @see com.syncleus.aethermud.game.Common.interfaces.Law#BIT_CRIMENAME
      *
      * @return a map of tax law related property information
      */
@@ -584,8 +584,8 @@ public interface Law extends CMCommon {
      * criminals and crimes since the last MUD reboot.  These are
      * kept track of so the punishments can be escalated properly.
      *
-     * @see com.planet_ink.game.Common.interfaces.LegalWarrant
-     * @see com.planet_ink.game.Common.interfaces.Law#getOldWarrant(MOB, String, boolean)
+     * @see com.syncleus.aethermud.game.Common.interfaces.LegalWarrant
+     * @see com.syncleus.aethermud.game.Common.interfaces.Law#getOldWarrant(MOB, String, boolean)
      *
      * @return a list of old warrant objects
      */
@@ -596,8 +596,8 @@ public interface Law extends CMCommon {
      * Old warrants are kept track of so the punishments can be
      * escalated.
      *
-     * @see com.planet_ink.game.Common.interfaces.LegalWarrant
-     * @see com.planet_ink.game.Common.interfaces.Law#oldWarrants()
+     * @see com.syncleus.aethermud.game.Common.interfaces.LegalWarrant
+     * @see com.syncleus.aethermud.game.Common.interfaces.Law#oldWarrants()
      *
      * @param criminal the old criminal
      * @param crime the old crime ID (from taxlaw, basiclaw, or other)
@@ -610,8 +610,8 @@ public interface Law extends CMCommon {
      * Returns a list of all current LegalWarrant objects still considered
      * to be active and relevant.  Officers can act on these.
      *
-     * @see com.planet_ink.game.Common.interfaces.LegalWarrant
-     * @see com.planet_ink.game.Common.interfaces.Law#getWarrant(MOB, int)
+     * @see com.syncleus.aethermud.game.Common.interfaces.LegalWarrant
+     * @see com.syncleus.aethermud.game.Common.interfaces.Law#getWarrant(MOB, int)
      *
      * @return a list of legal warrants
      */
@@ -620,8 +620,8 @@ public interface Law extends CMCommon {
     /**
      * Returns a iterated LegalWarrant object for the given mob.
      *
-     * @see com.planet_ink.game.Common.interfaces.LegalWarrant
-     * @see com.planet_ink.game.Common.interfaces.Law#warrants()
+     * @see com.syncleus.aethermud.game.Common.interfaces.LegalWarrant
+     * @see com.syncleus.aethermud.game.Common.interfaces.Law#warrants()
      *
      * @param mob the mob to get a warrant for
      * @param which the iteration number (from 0)
@@ -634,10 +634,10 @@ public interface Law extends CMCommon {
      * judges during various stages of the legal adjudication
      * process.  These are indexed by the MSG_* constants.
      *
-     * @see com.planet_ink.game.Common.interfaces.Law#getMessage(int)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Law#getMessage(int)
      *
-     * @see com.planet_ink.game.Common.interfaces.Law#MSG_COPKILLER
-     * @see com.planet_ink.game.Common.interfaces.Law#MSG_TOTAL
+     * @see com.syncleus.aethermud.game.Common.interfaces.Law#MSG_COPKILLER
+     * @see com.syncleus.aethermud.game.Common.interfaces.Law#MSG_TOTAL
      *
      * @return a string array of important things said by the officers
      */
@@ -648,10 +648,10 @@ public interface Law extends CMCommon {
      * judges during various stages of the legal adjudication
      * process.  These are indexed by the MSG_* constants.
      *
-     * @see com.planet_ink.game.Common.interfaces.Law#messages()
+     * @see com.syncleus.aethermud.game.Common.interfaces.Law#messages()
      *
-     * @see com.planet_ink.game.Common.interfaces.Law#MSG_COPKILLER
-     * @see com.planet_ink.game.Common.interfaces.Law#MSG_TOTAL
+     * @see com.syncleus.aethermud.game.Common.interfaces.Law#MSG_COPKILLER
+     * @see com.syncleus.aethermud.game.Common.interfaces.Law#MSG_TOTAL
      *
      * @param which a number, as indexed by the MSG_* constants
      * @return a string of an important thing said by the officers
@@ -663,11 +663,11 @@ public interface Law extends CMCommon {
      * 4 levels of Parole.  Each string is a message given by
      * the judge detailing the punishment.
      *
-     * @see com.planet_ink.game.Common.interfaces.Law#PUNISHMENT_PAROLE1
-     * @see com.planet_ink.game.Common.interfaces.Law#PUNISHMENT_PAROLE2
-     * @see com.planet_ink.game.Common.interfaces.Law#PUNISHMENT_PAROLE3
-     * @see com.planet_ink.game.Common.interfaces.Law#PUNISHMENT_PAROLE4
-     * @see com.planet_ink.game.Common.interfaces.Law#paroleMessages(int)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Law#PUNISHMENT_PAROLE1
+     * @see com.syncleus.aethermud.game.Common.interfaces.Law#PUNISHMENT_PAROLE2
+     * @see com.syncleus.aethermud.game.Common.interfaces.Law#PUNISHMENT_PAROLE3
+     * @see com.syncleus.aethermud.game.Common.interfaces.Law#PUNISHMENT_PAROLE4
+     * @see com.syncleus.aethermud.game.Common.interfaces.Law#paroleMessages(int)
      *
      * @return a 4-dimensional String[] array for each of the 4 levels of Parole
      */
@@ -677,7 +677,7 @@ public interface Law extends CMCommon {
      * Returns one of the 4 messages given by the judge for each
      * of the four parole punishments.
      *
-     * @see com.planet_ink.game.Common.interfaces.Law#paroleMessages()
+     * @see com.syncleus.aethermud.game.Common.interfaces.Law#paroleMessages()
      *
      * @param which which of the 4 messages to return (0-3)
      * @return the message given by the judge
@@ -689,11 +689,11 @@ public interface Law extends CMCommon {
      * of parole punishments.
      * This method returns an Integer array of all four times.
      *
-     * @see com.planet_ink.game.Common.interfaces.Law#PUNISHMENT_PAROLE1
-     * @see com.planet_ink.game.Common.interfaces.Law#PUNISHMENT_PAROLE2
-     * @see com.planet_ink.game.Common.interfaces.Law#PUNISHMENT_PAROLE3
-     * @see com.planet_ink.game.Common.interfaces.Law#PUNISHMENT_PAROLE4
-     * @see com.planet_ink.game.Common.interfaces.Law#paroleTimes(int)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Law#PUNISHMENT_PAROLE1
+     * @see com.syncleus.aethermud.game.Common.interfaces.Law#PUNISHMENT_PAROLE2
+     * @see com.syncleus.aethermud.game.Common.interfaces.Law#PUNISHMENT_PAROLE3
+     * @see com.syncleus.aethermud.game.Common.interfaces.Law#PUNISHMENT_PAROLE4
+     * @see com.syncleus.aethermud.game.Common.interfaces.Law#paroleTimes(int)
      *
      * @return the Integer array of the four parole punishment times.
      */
@@ -705,7 +705,7 @@ public interface Law extends CMCommon {
      * This method returns the appropriate parol time for the given
      * number.
      *
-     * @see com.planet_ink.game.Common.interfaces.Law#paroleTimes()
+     * @see com.syncleus.aethermud.game.Common.interfaces.Law#paroleTimes()
      *
      * @param which which of the four to return (0-3)
      * @return the number of ticks the punishment perscribes
@@ -717,11 +717,11 @@ public interface Law extends CMCommon {
      * 4 levels of jail.  Each string is a message given by
      * the judge detailing the punishment.
      *
-     * @see com.planet_ink.game.Common.interfaces.Law#PUNISHMENT_JAIL1
-     * @see com.planet_ink.game.Common.interfaces.Law#PUNISHMENT_JAIL2
-     * @see com.planet_ink.game.Common.interfaces.Law#PUNISHMENT_JAIL3
-     * @see com.planet_ink.game.Common.interfaces.Law#PUNISHMENT_JAIL4
-     * @see com.planet_ink.game.Common.interfaces.Law#jailMessages(int)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Law#PUNISHMENT_JAIL1
+     * @see com.syncleus.aethermud.game.Common.interfaces.Law#PUNISHMENT_JAIL2
+     * @see com.syncleus.aethermud.game.Common.interfaces.Law#PUNISHMENT_JAIL3
+     * @see com.syncleus.aethermud.game.Common.interfaces.Law#PUNISHMENT_JAIL4
+     * @see com.syncleus.aethermud.game.Common.interfaces.Law#jailMessages(int)
      *
      * @return a 4-dimensional String[] array for each of the 4 levels of jail
      */
@@ -731,7 +731,7 @@ public interface Law extends CMCommon {
      * Returns one of the 4 messages given by the judge for each
      * of the four jail punishments.
      *
-     * @see com.planet_ink.game.Common.interfaces.Law#jailMessages()
+     * @see com.syncleus.aethermud.game.Common.interfaces.Law#jailMessages()
      *
      * @param which which of the 4 messages to return (0-3)
      * @return the message given by the judge
@@ -743,11 +743,11 @@ public interface Law extends CMCommon {
      * of jail punishments.
      * This method returns an Integer array of all four times.
      *
-     * @see com.planet_ink.game.Common.interfaces.Law#PUNISHMENT_JAIL1
-     * @see com.planet_ink.game.Common.interfaces.Law#PUNISHMENT_JAIL2
-     * @see com.planet_ink.game.Common.interfaces.Law#PUNISHMENT_JAIL3
-     * @see com.planet_ink.game.Common.interfaces.Law#PUNISHMENT_JAIL4
-     * @see com.planet_ink.game.Common.interfaces.Law#jailTimes(int)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Law#PUNISHMENT_JAIL1
+     * @see com.syncleus.aethermud.game.Common.interfaces.Law#PUNISHMENT_JAIL2
+     * @see com.syncleus.aethermud.game.Common.interfaces.Law#PUNISHMENT_JAIL3
+     * @see com.syncleus.aethermud.game.Common.interfaces.Law#PUNISHMENT_JAIL4
+     * @see com.syncleus.aethermud.game.Common.interfaces.Law#jailTimes(int)
      *
      * @return the Integer array of the four parole punishment times.
      */
@@ -759,7 +759,7 @@ public interface Law extends CMCommon {
      * This method returns the appropriate jail time for the given
      * number.
      *
-     * @see com.planet_ink.game.Common.interfaces.Law#jailTimes()
+     * @see com.syncleus.aethermud.game.Common.interfaces.Law#jailTimes()
      *
      * @param which which of the four to return (0-3)
      * @return the number of ticks the punishment perscribes

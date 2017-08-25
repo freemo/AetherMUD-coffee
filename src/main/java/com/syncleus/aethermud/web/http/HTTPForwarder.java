@@ -14,13 +14,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.web.http;
+package com.syncleus.aethermud.web.http;
 
-import com.planet_ink.web.interfaces.DataBuffers;
-import com.planet_ink.web.interfaces.HTTPIOHandler;
-import com.planet_ink.web.server.WebServer;
-import com.planet_ink.web.util.CWConfig;
-import com.planet_ink.web.util.CWDataBuffers;
+import com.syncleus.aethermud.web.interfaces.DataBuffers;
+import com.syncleus.aethermud.web.interfaces.HTTPIOHandler;
+import com.syncleus.aethermud.web.server.WebServer;
+import com.syncleus.aethermud.web.util.CWConfig;
+import com.syncleus.aethermud.web.util.CWDataBuffers;
 
 import java.io.IOException;
 import java.nio.ByteBuffer;

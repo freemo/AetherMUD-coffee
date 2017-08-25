@@ -14,12 +14,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Races;
+package com.syncleus.aethermud.game.Races;
 
-import com.planet_ink.game.Common.interfaces.PhyStats;
-import com.planet_ink.game.Races.interfaces.Race;
-import com.planet_ink.game.core.CMLib;
-import com.planet_ink.game.core.interfaces.Physical;
+import com.syncleus.aethermud.game.Common.interfaces.PhyStats;
+import com.syncleus.aethermud.game.Races.interfaces.Race;
+import com.syncleus.aethermud.game.core.CMLib;
+import com.syncleus.aethermud.game.core.interfaces.Physical;
 
 
 public class Crocodile extends GreatLizard {

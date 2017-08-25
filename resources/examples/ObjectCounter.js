@@ -1,5 +1,5 @@
-var CMLib = Packages.com.planet_ink.game.core.CMLib;
-var CMParms = Packages.com.planet_ink.game.core.CMParms;
+var CMLib = Packages.com.syncleus.aethermud.game.core.CMLib;
+var CMParms = Packages.com.syncleus.aethermud.game.core.CMParms;
 
 var e, e2;
 var R, M;

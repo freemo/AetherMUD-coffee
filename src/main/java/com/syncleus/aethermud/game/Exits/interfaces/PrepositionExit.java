@@ -14,11 +14,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Exits.interfaces;
+package com.syncleus.aethermud.game.Exits.interfaces;
 
 /**
  * An interface for an exit that modifies the enter and leave messages.
- * @see com.planet_ink.game.Locales.interfaces.Room
+ * @see com.syncleus.aethermud.game.Locales.interfaces.Room
  */
 public interface PrepositionExit extends Exit {
     /**

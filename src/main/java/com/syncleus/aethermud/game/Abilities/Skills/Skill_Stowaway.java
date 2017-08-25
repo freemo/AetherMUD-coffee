@@ -14,20 +14,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Abilities.Skills;
+package com.syncleus.aethermud.game.Abilities.Skills;
 
-import com.planet_ink.game.Abilities.interfaces.Ability;
-import com.planet_ink.game.Common.interfaces.CMMsg;
-import com.planet_ink.game.Libraries.interfaces.TrackingLibrary.RFilter;
-import com.planet_ink.game.Libraries.interfaces.TrackingLibrary.TrackingFlag;
-import com.planet_ink.game.Libraries.interfaces.TrackingLibrary.TrackingFlags;
-import com.planet_ink.game.Locales.interfaces.Room;
-import com.planet_ink.game.MOBS.interfaces.MOB;
-import com.planet_ink.game.core.*;
-import com.planet_ink.game.core.collections.XVector;
-import com.planet_ink.game.core.interfaces.Environmental;
-import com.planet_ink.game.core.interfaces.Physical;
-import com.planet_ink.game.core.interfaces.Tickable;
+import com.syncleus.aethermud.game.Abilities.interfaces.Ability;
+import com.syncleus.aethermud.game.Common.interfaces.CMMsg;
+import com.syncleus.aethermud.game.Libraries.interfaces.TrackingLibrary.RFilter;
+import com.syncleus.aethermud.game.Libraries.interfaces.TrackingLibrary.TrackingFlag;
+import com.syncleus.aethermud.game.Libraries.interfaces.TrackingLibrary.TrackingFlags;
+import com.syncleus.aethermud.game.Locales.interfaces.Room;
+import com.syncleus.aethermud.game.MOBS.interfaces.MOB;
+import com.syncleus.aethermud.game.core.*;
+import com.syncleus.aethermud.game.core.collections.XVector;
+import com.syncleus.aethermud.game.core.interfaces.Environmental;
+import com.syncleus.aethermud.game.core.interfaces.Physical;
+import com.syncleus.aethermud.game.core.interfaces.Tickable;
 
 import java.util.Iterator;
 import java.util.List;

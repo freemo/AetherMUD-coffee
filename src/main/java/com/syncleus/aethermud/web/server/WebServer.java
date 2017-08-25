@@ -14,16 +14,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.web.server;
+package com.syncleus.aethermud.web.server;
 
-import com.planet_ink.game.core.Log;
-import com.planet_ink.web.http.*;
-import com.planet_ink.web.interfaces.HTTPIOHandler;
-import com.planet_ink.web.interfaces.MimeConverterManager;
-import com.planet_ink.web.util.CWConfig;
-import com.planet_ink.web.util.CWThread;
-import com.planet_ink.web.util.CWThreadExecutor;
-import com.planet_ink.web.util.RunWrap;
+import com.syncleus.aethermud.game.core.Log;
+import com.syncleus.aethermud.web.http.*;
+import com.syncleus.aethermud.web.interfaces.HTTPIOHandler;
+import com.syncleus.aethermud.web.interfaces.MimeConverterManager;
+import com.syncleus.aethermud.web.util.CWConfig;
+import com.syncleus.aethermud.web.util.CWThread;
+import com.syncleus.aethermud.web.util.CWThreadExecutor;
+import com.syncleus.aethermud.web.util.RunWrap;
 
 import javax.net.ssl.SSLContext;
 import java.io.FileInputStream;

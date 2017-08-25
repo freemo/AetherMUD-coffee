@@ -14,15 +14,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Common;
+package com.syncleus.aethermud.game.Common;
 
-import com.planet_ink.game.Common.interfaces.Clan;
-import com.planet_ink.game.Common.interfaces.ClanPosition;
-import com.planet_ink.game.core.CMClass;
-import com.planet_ink.game.core.CMParms;
-import com.planet_ink.game.core.CMath;
-import com.planet_ink.game.core.Log;
-import com.planet_ink.game.core.interfaces.CMObject;
+import com.syncleus.aethermud.game.Common.interfaces.Clan;
+import com.syncleus.aethermud.game.Common.interfaces.ClanPosition;
+import com.syncleus.aethermud.game.core.CMClass;
+import com.syncleus.aethermud.game.core.CMParms;
+import com.syncleus.aethermud.game.core.CMath;
+import com.syncleus.aethermud.game.core.Log;
+import com.syncleus.aethermud.game.core.interfaces.CMObject;
 
 import java.util.List;
 

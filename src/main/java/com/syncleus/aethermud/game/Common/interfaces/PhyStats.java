@@ -14,9 +14,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Common.interfaces;
+package com.syncleus.aethermud.game.Common.interfaces;
 
-import com.planet_ink.game.core.interfaces.Modifiable;
+import com.syncleus.aethermud.game.core.interfaces.Modifiable;
 
 
 /**
@@ -27,9 +27,9 @@ import com.planet_ink.game.core.interfaces.Modifiable;
  * Physicals always keep two instances of this object, a base one, representing
  * his base unmodified state, and current one, representing his state after spells
  * and other affects have had their say.
- * @see com.planet_ink.game.core.interfaces.Modifiable
- * @see com.planet_ink.game.core.interfaces.Affectable#basePhyStats()
- * @see com.planet_ink.game.core.interfaces.Affectable#phyStats()
+ * @see com.syncleus.aethermud.game.core.interfaces.Modifiable
+ * @see com.syncleus.aethermud.game.core.interfaces.Affectable#basePhyStats()
+ * @see com.syncleus.aethermud.game.core.interfaces.Affectable#phyStats()
  */
 public interface PhyStats extends CMCommon, Modifiable {
     /** Constant shortcut for setting the rejuvenation rate on a mob so that it will NOT rejuv. */
@@ -387,9 +387,9 @@ public interface PhyStats extends CMCommon, Modifiable {
     /**
      * Returns a bitmask for sense related flags of mobs (CAN_ constants), or
      * miscellaneous runtime flags for items and other Physicals (SENSE_ constants).
-     * @see com.planet_ink.game.Common.interfaces.PhyStats#SENSE_ITEMNOREMOVE
-     * @see com.planet_ink.game.Common.interfaces.PhyStats#CAN_NOT_SEE
-     * @see com.planet_ink.game.Common.interfaces.PhyStats#setSensesMask(int)
+     * @see com.syncleus.aethermud.game.Common.interfaces.PhyStats#SENSE_ITEMNOREMOVE
+     * @see com.syncleus.aethermud.game.Common.interfaces.PhyStats#CAN_NOT_SEE
+     * @see com.syncleus.aethermud.game.Common.interfaces.PhyStats#setSensesMask(int)
      * @return a bitmask made up of SENSE_ constants or CAN_ constants
      */
     public int sensesMask(); // mobs, run-time items
@@ -397,39 +397,39 @@ public interface PhyStats extends CMCommon, Modifiable {
     /**
      * Sets a bitmask for sense related flags of mobs (CAN_ constants), or
      * miscellaneous runtime flags for items and other Physicals (SENSE_ constants).
-     * @see com.planet_ink.game.Common.interfaces.PhyStats#SENSE_ITEMNOREMOVE
-     * @see com.planet_ink.game.Common.interfaces.PhyStats#CAN_NOT_SEE
-     * @see com.planet_ink.game.Common.interfaces.PhyStats#setSensesMask(int)
+     * @see com.syncleus.aethermud.game.Common.interfaces.PhyStats#SENSE_ITEMNOREMOVE
+     * @see com.syncleus.aethermud.game.Common.interfaces.PhyStats#CAN_NOT_SEE
+     * @see com.syncleus.aethermud.game.Common.interfaces.PhyStats#setSensesMask(int)
      * @param newMask a bitmask made up of SENSE_ constants or CAN_ constants
      */
     public void setSensesMask(int newMask);
 
     /**
      * Returns a bitmask for disposition related flags of Physicals (IS_ constants).
-     * @see com.planet_ink.game.Common.interfaces.PhyStats#IS_BONUS
-     * @see com.planet_ink.game.Common.interfaces.PhyStats#setDisposition(int)
+     * @see com.syncleus.aethermud.game.Common.interfaces.PhyStats#IS_BONUS
+     * @see com.syncleus.aethermud.game.Common.interfaces.PhyStats#setDisposition(int)
      * @return a bitmask of disposition related flags
      */
     public int disposition(); // items, mobs
 
     /**
      * Sets a bitmask for disposition related flags of Physicals (IS_ constants).
-     * @see com.planet_ink.game.Common.interfaces.PhyStats#IS_BONUS
-     * @see com.planet_ink.game.Common.interfaces.PhyStats#disposition()
+     * @see com.syncleus.aethermud.game.Common.interfaces.PhyStats#IS_BONUS
+     * @see com.syncleus.aethermud.game.Common.interfaces.PhyStats#disposition()
      * @param newDisposition a bitmask of disposition flags
      */
     public void setDisposition(int newDisposition);
 
     /**
      * Returns the experience level of the mob, item, exit, Physical.
-     * @see com.planet_ink.game.Common.interfaces.PhyStats#setLevel(int)
+     * @see com.syncleus.aethermud.game.Common.interfaces.PhyStats#setLevel(int)
      * @return the experience level
      */
     public int level(); // items, exits, mobs
 
     /**
      * Sets the experience level of the mob, item, exit, Physical.
-     * @see com.planet_ink.game.Common.interfaces.PhyStats#level()
+     * @see com.syncleus.aethermud.game.Common.interfaces.PhyStats#level()
      * @param newLevel the new experience level
      */
     public void setLevel(int newLevel);
@@ -442,7 +442,7 @@ public interface PhyStats extends CMCommon, Modifiable {
      * Returns the ability level (a secondary level, e.g. if magical, how much?)
      * Also acts as a random flag for various purposes.  For instance, on mobs,
      * it designates a hit point multiplier.
-     * @see com.planet_ink.game.Common.interfaces.PhyStats#setAbility(int)
+     * @see com.syncleus.aethermud.game.Common.interfaces.PhyStats#setAbility(int)
      * @return the ability level (or misc integer)
      */
     public int ability(); // items, mobs
@@ -451,7 +451,7 @@ public interface PhyStats extends CMCommon, Modifiable {
      * Sets the ability level (a secondary level, e.g. if magical, how much?)
      * Also acts as a random flag for various purposes. For instance, on mobs,
      * it designates a hit point multiplier.
-     * @see com.planet_ink.game.Common.interfaces.PhyStats#ability()
+     * @see com.syncleus.aethermud.game.Common.interfaces.PhyStats#ability()
      * @param newAdjustment the new ability level (or misc integer)
      */
     public void setAbility(int newAdjustment);
@@ -459,7 +459,7 @@ public interface PhyStats extends CMCommon, Modifiable {
     /**
      * Returns the number of ticks before a Physical removed from the game
      * (due to death, destruction, or just removal from home) is restored.
-     * @see com.planet_ink.game.Common.interfaces.PhyStats#setRejuv(int)
+     * @see com.syncleus.aethermud.game.Common.interfaces.PhyStats#setRejuv(int)
      * @return the number of ticks before rejuv (0==never)
      */
     public int rejuv(); // items, mobs
@@ -469,21 +469,21 @@ public interface PhyStats extends CMCommon, Modifiable {
     /**
      * Sets the number of ticks before a Physical removed from the game
      * (due to death, destruction, or just removal from home) is restored.
-     * @see com.planet_ink.game.Common.interfaces.PhyStats#rejuv()
+     * @see com.syncleus.aethermud.game.Common.interfaces.PhyStats#rejuv()
      * @param newRejuv the new number of ticks before rejuv (0==never)
      */
     public void setRejuv(int newRejuv);
 
     /**
      * Returns the weight of this Physical, in pounds.
-     * @see com.planet_ink.game.Common.interfaces.PhyStats#setWeight(int)
+     * @see com.syncleus.aethermud.game.Common.interfaces.PhyStats#setWeight(int)
      * @return the weight of this Physical
      */
     public int weight(); // items, mobs
 
     /**
      * Sets the weight of this Physical, in pounds.
-     * @see com.planet_ink.game.Common.interfaces.PhyStats#weight()
+     * @see com.syncleus.aethermud.game.Common.interfaces.PhyStats#weight()
      * @param newWeight the new weight of this Physical
      */
     public void setWeight(int newWeight);
@@ -504,56 +504,56 @@ public interface PhyStats extends CMCommon, Modifiable {
 
     /**
      * Returns the height of this Physical, in inches
-     * @see com.planet_ink.game.Common.interfaces.PhyStats#setHeight(int)
+     * @see com.syncleus.aethermud.game.Common.interfaces.PhyStats#setHeight(int)
      * @return the height of this Physical, in inches (0=indeterminate)
      */
     public int height(); // items, mobs
 
     /**
      * Sets the height of this Physical, in inches
-     * @see com.planet_ink.game.Common.interfaces.PhyStats#height()
+     * @see com.syncleus.aethermud.game.Common.interfaces.PhyStats#height()
      * @param newHeight the new height of this Physical, in inches (0=indeterminate)
      */
     public void setHeight(int newHeight);
 
     /**
      * Returns the defensive capability number of this Physical.
-     * @see com.planet_ink.game.Common.interfaces.PhyStats#setArmor(int)
+     * @see com.syncleus.aethermud.game.Common.interfaces.PhyStats#setArmor(int)
      * @return the raw defensive capability of this Physical
      */
     public int armor(); // armor items, mobs
 
     /**
      * Sets the defensive capability number of this Physical.
-     * @see com.planet_ink.game.Common.interfaces.PhyStats#armor()
+     * @see com.syncleus.aethermud.game.Common.interfaces.PhyStats#armor()
      * @param newArmor the defensive capability number of this Physical
      */
     public void setArmor(int newArmor);
 
     /**
      * Returns the maximum damaging ability of this Physical
-     * @see com.planet_ink.game.Common.interfaces.PhyStats#setDamage(int)
+     * @see com.syncleus.aethermud.game.Common.interfaces.PhyStats#setDamage(int)
      * @return the maxiumu damaging ability of this Physical
      */
     public int damage(); // weapon items, mobs
 
     /**
      * Sets the maximum damaging ability of this Physical
-     * @see com.planet_ink.game.Common.interfaces.PhyStats#damage()
+     * @see com.syncleus.aethermud.game.Common.interfaces.PhyStats#damage()
      * @param newDamage the new maximum damaging ability of this Physical
      */
     public void setDamage(int newDamage);
 
     /**
      * Returns the number of actions this mob can do per tick.
-     * @see com.planet_ink.game.Common.interfaces.PhyStats#setSpeed(double)
+     * @see com.syncleus.aethermud.game.Common.interfaces.PhyStats#setSpeed(double)
      * @return the number of actions per tick.
      */
     public double speed(); // mobs
 
     /**
      * Sets the number of actions this mob can do per tick
-     * @see com.planet_ink.game.Common.interfaces.PhyStats#speed()
+     * @see com.syncleus.aethermud.game.Common.interfaces.PhyStats#speed()
      * @param newSpeed the new number of actions this mob can do per tick
      */
     public void setSpeed(double newSpeed);
@@ -561,7 +561,7 @@ public interface PhyStats extends CMCommon, Modifiable {
     /**
      * Returns the rawcombat attack prowess of this Physical
      * Usually mobs or weapons
-     * @see com.planet_ink.game.Common.interfaces.PhyStats#setAttackAdjustment(int)
+     * @see com.syncleus.aethermud.game.Common.interfaces.PhyStats#setAttackAdjustment(int)
      * @return the raw combat attack prowess of this Physical
      */
     public int attackAdjustment(); // weapon items, mobs
@@ -569,21 +569,21 @@ public interface PhyStats extends CMCommon, Modifiable {
     /**
      * Sets the rawcombat attack prowess of this Physical
      * Usually mobs or weapons
-     * @see com.planet_ink.game.Common.interfaces.PhyStats#attackAdjustment()
+     * @see com.syncleus.aethermud.game.Common.interfaces.PhyStats#attackAdjustment()
      * @param newAdjustment the new raw combat attack prowess of this Physical
      */
     public void setAttackAdjustment(int newAdjustment);
 
     /**
      * Returns a modified name for this Physical, usually null for no change.
-     * @see com.planet_ink.game.Common.interfaces.PhyStats#setName(String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.PhyStats#setName(String)
      * @return the modified name, or null
      */
     public String newName(); // items, mobs
 
     /**
      * Sets a modified name for this Physical, usually null for no change.
-     * @see com.planet_ink.game.Common.interfaces.PhyStats#newName()
+     * @see com.syncleus.aethermud.game.Common.interfaces.PhyStats#newName()
      * @param newName the modified name, or null
      */
     public void setName(String newName);
@@ -591,18 +591,18 @@ public interface PhyStats extends CMCommon, Modifiable {
     /**
      * Returns a list of ambiances (extra words, visible fields) that are tacked
      * onto the display text of this Physical.
-     * @see com.planet_ink.game.Common.interfaces.PhyStats#addAmbiance(String)
-     * @see com.planet_ink.game.Common.interfaces.PhyStats#delAmbiance(String)
-     * @see com.planet_ink.game.Common.interfaces.PhyStats#isAmbiance(String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.PhyStats#addAmbiance(String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.PhyStats#delAmbiance(String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.PhyStats#isAmbiance(String)
      * @return a list of ambiances
      */
     public String[] ambiances(); // everything
 
     /**
      * Check to see if the given ambiance exists in the list.
-     * @see com.planet_ink.game.Common.interfaces.PhyStats#addAmbiance(String)
-     * @see com.planet_ink.game.Common.interfaces.PhyStats#delAmbiance(String)
-     * @see com.planet_ink.game.Common.interfaces.PhyStats#ambiances()
+     * @see com.syncleus.aethermud.game.Common.interfaces.PhyStats#addAmbiance(String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.PhyStats#delAmbiance(String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.PhyStats#ambiances()
      * @param ambiance the ambiance to look for
      * @return true if its in there, false otherwise
      */
@@ -611,9 +611,9 @@ public interface PhyStats extends CMCommon, Modifiable {
     /**
      * Adds an ambiance (extra word, visible field) to the list that are tacked
      * onto the display text of this Physical.
-     * @see com.planet_ink.game.Common.interfaces.PhyStats#ambiances()
-     * @see com.planet_ink.game.Common.interfaces.PhyStats#delAmbiance(String)
-     * @see com.planet_ink.game.Common.interfaces.PhyStats#isAmbiance(String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.PhyStats#ambiances()
+     * @see com.syncleus.aethermud.game.Common.interfaces.PhyStats#delAmbiance(String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.PhyStats#isAmbiance(String)
      * @param ambiance a new ambiance string
      */
     public void addAmbiance(String ambiance);
@@ -621,9 +621,9 @@ public interface PhyStats extends CMCommon, Modifiable {
     /**
      * Removes an ambiance (extra word, visible field) from the list that are tacked
      * onto the display text of this Physical.
-     * @see com.planet_ink.game.Common.interfaces.PhyStats#ambiances()
-     * @see com.planet_ink.game.Common.interfaces.PhyStats#addAmbiance(String)
-     * @see com.planet_ink.game.Common.interfaces.PhyStats#isAmbiance(String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.PhyStats#ambiances()
+     * @see com.syncleus.aethermud.game.Common.interfaces.PhyStats#addAmbiance(String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.PhyStats#isAmbiance(String)
      * @param ambiance the old ambiance string
      */
     public void delAmbiance(String ambiance);

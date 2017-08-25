@@ -14,9 +14,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.core.interfaces;
+package com.syncleus.aethermud.game.core.interfaces;
 
-import com.planet_ink.game.Items.interfaces.Item;
+import com.syncleus.aethermud.game.Items.interfaces.Item;
 
 
 /**
@@ -29,7 +29,7 @@ public interface ItemPossessor extends PhysicalAgent, ItemCollection {
     /**
      * Adds a new item to its possessor, with an expiration code.
      * Duplicates will not be permitted.
-     * @see com.planet_ink.game.core.interfaces.ItemPossessor.Expire
+     * @see com.syncleus.aethermud.game.core.interfaces.ItemPossessor.Expire
      * @param item the item to add
      * @param expire the expiration argument to decide when it will get cleaned up
      */
@@ -41,7 +41,7 @@ public interface ItemPossessor extends PhysicalAgent, ItemCollection {
      * and possibly followers/riders if the item is a cart.  An
      * expiration can be set on the move to have the items expire.
      * Duplicates will not be permitted.
-     * @see com.planet_ink.game.core.interfaces.ItemPossessor.Expire
+     * @see com.syncleus.aethermud.game.core.interfaces.ItemPossessor.Expire
      * @param container the item to add
      * @param expire the expiration code
      * @param moveFlags any flags related to the move
@@ -54,7 +54,7 @@ public interface ItemPossessor extends PhysicalAgent, ItemCollection {
      * Is the same as calling the longer moveItemTo with a Never
      * expiration, and NO movement flags.
      * Duplicates will not be permitted.
-     * @see com.planet_ink.game.core.interfaces.ItemPossessor.Expire
+     * @see com.syncleus.aethermud.game.core.interfaces.ItemPossessor.Expire
      * @param container the item to add
      */
     public void moveItemTo(Item container);

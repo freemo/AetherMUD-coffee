@@ -1,4 +1,4 @@
-var CMLib = Packages.com.planet_ink.game.core.CMLib;
+var CMLib = Packages.com.syncleus.aethermud.game.core.CMLib;
 var e;
 var R;
 var i;

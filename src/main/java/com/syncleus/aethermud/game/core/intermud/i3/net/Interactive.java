@@ -14,13 +14,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.core.intermud.i3.net;
+package com.syncleus.aethermud.game.core.intermud.i3.net;
 
-import com.planet_ink.game.core.CMLib;
-import com.planet_ink.game.core.CMProps;
-import com.planet_ink.game.core.Log;
-import com.planet_ink.game.core.intermud.i3.server.I3Server;
-import com.planet_ink.game.core.intermud.i3.server.ServerUser;
+import com.syncleus.aethermud.game.core.CMLib;
+import com.syncleus.aethermud.game.core.CMProps;
+import com.syncleus.aethermud.game.core.Log;
+import com.syncleus.aethermud.game.core.intermud.i3.server.I3Server;
+import com.syncleus.aethermud.game.core.intermud.i3.server.ServerUser;
 
 import java.io.BufferedReader;
 import java.io.PrintStream;
@@ -147,7 +147,7 @@ public abstract class Interactive implements ServerUser {
      * Stops any running I/O threads for this interactive, closes the
      * user socket, and marks the object for destruction according to
      * the requirements of the ServerObject interface.
-     * @see com.planet_ink.game.core.intermud.i3.server.ServerObject#getDestructed
+     * @see com.syncleus.aethermud.game.core.intermud.i3.server.ServerObject#getDestructed
      */
     @Override
     public synchronized void destruct() {
@@ -211,7 +211,7 @@ public abstract class Interactive implements ServerUser {
      * the user has periodic events which occur to it,
      * the event processor will flag that the event() method
      * should be called.
-     * @see com.planet_ink.game.core.intermud.i3.server.ServerObject#processEvent
+     * @see com.syncleus.aethermud.game.core.intermud.i3.server.ServerObject#processEvent
      */
     @Override
     public void processEvent() {
@@ -224,8 +224,8 @@ public abstract class Interactive implements ServerUser {
      * the last command time and calls the input() method with the
      * waiting command.  Otherwise it simply returns.
      * @see #input
-     * @see com.planet_ink.game.core.intermud.i3.server.ServerUser#processInput
-     * @see com.planet_ink.game.core.intermud.i3.server.ServerThread#tick(com.planet_ink.game.core.interfaces.Tickable, int)
+     * @see com.syncleus.aethermud.game.core.intermud.i3.server.ServerUser#processInput
+     * @see com.syncleus.aethermud.game.core.intermud.i3.server.ServerThread#tick(com.syncleus.aethermud.game.core.interfaces.Tickable, int)
      */
     @Override
     public synchronized final void processInput() {
@@ -248,8 +248,8 @@ public abstract class Interactive implements ServerUser {
      * prompt.  If I enter something at that point with no further
      * input redirection, my next input will then go back to the
      * editor.
-     * @param ob the instance of com.planet_ink.game.core.intermud.i3.net.Input to which input will be redirected
-     * @see com.planet_ink.game.core.intermud.i3.net.Input
+     * @param ob the instance of com.syncleus.aethermud.game.core.intermud.i3.net.Input to which input will be redirected
+     * @see com.syncleus.aethermud.game.core.intermud.i3.net.Input
      * @see #input
      */
     public synchronized final void redirectInput(Input ob) {
@@ -315,7 +315,7 @@ public abstract class Interactive implements ServerUser {
      * interactive management must implement the InteractiveBody
      * interface for any body to be used by a user.
      * @param ob the body to which this interactive is being connected
-     * @see com.planet_ink.game.core.intermud.i3.net.InteractiveBody
+     * @see com.syncleus.aethermud.game.core.intermud.i3.net.InteractiveBody
      */
     public void setBody(InteractiveBody ob) {
         body = ob;
@@ -465,7 +465,7 @@ public abstract class Interactive implements ServerUser {
     /**
      * Gives the user object's object id.
      * @return the object id
-     * @see com.planet_ink.game.core.intermud.i3.server.ServerObject#getObjectId
+     * @see com.syncleus.aethermud.game.core.intermud.i3.server.ServerObject#getObjectId
      */
     @Override
     public final String getObjectId() {
@@ -475,7 +475,7 @@ public abstract class Interactive implements ServerUser {
     /**
      * Allows the server to set the object id.
      * @param id the object id assigned to this object
-     * @see com.planet_ink.game.core.intermud.i3.server.ServerObject#setObjectId
+     * @see com.syncleus.aethermud.game.core.intermud.i3.server.ServerObject#setObjectId
      */
     @Override
     public final void setObjectId(String id) {
@@ -530,7 +530,7 @@ public abstract class Interactive implements ServerUser {
      * Called by the server before connect() is called to assign
      * the socket for this Interactive to it.
      * @param s the socket for this connection
-     * @see com.planet_ink.game.core.intermud.i3.server.ServerUser#setSocket
+     * @see com.syncleus.aethermud.game.core.intermud.i3.server.ServerUser#setSocket
      */
     @Override
     public final void setSocket(Socket s) throws java.io.IOException {
@@ -552,7 +552,7 @@ public abstract class Interactive implements ServerUser {
  * Last modified 27 September 1996
  * @author George Reese (borg@imaginary.com)
  * @version 1.0
- * @see com.planet_ink.game.core.intermud.i3.net.Interactive
+ * @see com.syncleus.aethermud.game.core.intermud.i3.net.Interactive
  */
 @SuppressWarnings({"unchecked", "rawtypes"})
 class InputThread implements Runnable {
@@ -587,7 +587,7 @@ class InputThread implements Runnable {
      * As long as the user is connected, this thread accepts
      * input from the user machine.  If the user drops link,
      * this will call loseLink() in the interactive object.
-     * @see com.planet_ink.game.core.intermud.i3.net.Interactive#loseLink
+     * @see com.syncleus.aethermud.game.core.intermud.i3.net.Interactive#loseLink
      */
     @Override
     public void run() {

@@ -14,27 +14,27 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Common;
+package com.syncleus.aethermud.game.Common;
 
-import com.planet_ink.game.Areas.interfaces.Area;
-import com.planet_ink.game.Areas.interfaces.AutoGenArea;
-import com.planet_ink.game.Common.interfaces.*;
-import com.planet_ink.game.Common.interfaces.TimeClock.TimePeriod;
-import com.planet_ink.game.Libraries.interfaces.AbilityMapper.AbilityMapping;
-import com.planet_ink.game.Libraries.interfaces.AchievementLibrary.Achievement;
-import com.planet_ink.game.Libraries.interfaces.AchievementLibrary.Tracker;
-import com.planet_ink.game.Libraries.interfaces.ExpertiseLibrary.ExpertiseDefinition;
-import com.planet_ink.game.Libraries.interfaces.TimeManager;
-import com.planet_ink.game.Libraries.interfaces.XMLLibrary;
-import com.planet_ink.game.Libraries.interfaces.XMLLibrary.XMLTag;
-import com.planet_ink.game.Locales.interfaces.Room;
-import com.planet_ink.game.MOBS.interfaces.MOB;
-import com.planet_ink.game.Races.interfaces.Race;
-import com.planet_ink.game.core.*;
-import com.planet_ink.game.core.CMSecurity.SecGroup;
-import com.planet_ink.game.core.collections.*;
-import com.planet_ink.game.core.interfaces.CMObject;
-import com.planet_ink.game.core.interfaces.ItemCollection;
+import com.syncleus.aethermud.game.Areas.interfaces.Area;
+import com.syncleus.aethermud.game.Areas.interfaces.AutoGenArea;
+import com.syncleus.aethermud.game.Common.interfaces.*;
+import com.syncleus.aethermud.game.Common.interfaces.TimeClock.TimePeriod;
+import com.syncleus.aethermud.game.Libraries.interfaces.AbilityMapper.AbilityMapping;
+import com.syncleus.aethermud.game.Libraries.interfaces.AchievementLibrary.Achievement;
+import com.syncleus.aethermud.game.Libraries.interfaces.AchievementLibrary.Tracker;
+import com.syncleus.aethermud.game.Libraries.interfaces.ExpertiseLibrary.ExpertiseDefinition;
+import com.syncleus.aethermud.game.Libraries.interfaces.TimeManager;
+import com.syncleus.aethermud.game.Libraries.interfaces.XMLLibrary;
+import com.syncleus.aethermud.game.Libraries.interfaces.XMLLibrary.XMLTag;
+import com.syncleus.aethermud.game.Locales.interfaces.Room;
+import com.syncleus.aethermud.game.MOBS.interfaces.MOB;
+import com.syncleus.aethermud.game.Races.interfaces.Race;
+import com.syncleus.aethermud.game.core.*;
+import com.syncleus.aethermud.game.core.CMSecurity.SecGroup;
+import com.syncleus.aethermud.game.core.collections.*;
+import com.syncleus.aethermud.game.core.interfaces.CMObject;
+import com.syncleus.aethermud.game.core.interfaces.ItemCollection;
 
 import java.util.*;
 

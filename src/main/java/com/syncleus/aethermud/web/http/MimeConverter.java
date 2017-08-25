@@ -14,12 +14,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.web.http;
+package com.syncleus.aethermud.web.http;
 
-import com.planet_ink.web.interfaces.HTTPOutputConverter;
-import com.planet_ink.web.interfaces.MimeConverterManager;
-import com.planet_ink.web.util.CWConfig;
-import com.planet_ink.web.util.RequestStats;
+import com.syncleus.aethermud.web.interfaces.HTTPOutputConverter;
+import com.syncleus.aethermud.web.interfaces.MimeConverterManager;
+import com.syncleus.aethermud.web.util.CWConfig;
+import com.syncleus.aethermud.web.util.RequestStats;
 
 import java.util.Collection;
 import java.util.Hashtable;
@@ -48,7 +48,7 @@ public class MimeConverter implements MimeConverterManager {
             final MIMEType mimeType = MIMEType.All.getValueOf(mimeTypeName);
             String className = config.getFileConverts().get(mimeTypeName);
             if (className.indexOf('.') < 0)
-                className = "com.planet_ink.web.converters." + className;
+                className = "com.syncleus.aethermud.web.converters." + className;
             try {
                 @SuppressWarnings("unchecked")                final Class<? extends HTTPOutputConverter> converterClass = (Class<? extends HTTPOutputConverter>) Class.forName(className);
                 registerConverter(mimeType, converterClass);

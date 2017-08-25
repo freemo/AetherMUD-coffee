@@ -14,14 +14,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.core.intermud.i3.packets;
+package com.syncleus.aethermud.game.core.intermud.i3.packets;
 
-import com.planet_ink.game.core.intermud.i3.persist.Persistent;
+import com.syncleus.aethermud.game.core.intermud.i3.persist.Persistent;
 
 import java.io.Serializable;
 
 /**
- * com.planet_ink.game.core.intermud.i3.packets.Channel
+ * com.syncleus.aethermud.game.core.intermud.i3.packets.Channel
  * An I3 channel.
  */
 
@@ -46,7 +46,7 @@ public class Channel implements Serializable {
     public String channel;
     /**
      * The modification status of this channel
-     * @see com.planet_ink.game.core.intermud.i3.persist.Persistent
+     * @see com.syncleus.aethermud.game.core.intermud.i3.persist.Persistent
      */
     public int modified;
     /**

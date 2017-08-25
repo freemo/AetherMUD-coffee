@@ -14,16 +14,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Libraries.interfaces;
+package com.syncleus.aethermud.game.Libraries.interfaces;
 
-import com.planet_ink.game.Abilities.interfaces.Ability;
-import com.planet_ink.game.Common.interfaces.AccountStats;
-import com.planet_ink.game.Common.interfaces.PlayerStats;
-import com.planet_ink.game.Libraries.interfaces.AbilityMapper.AbilityMapping;
-import com.planet_ink.game.Libraries.interfaces.ExpertiseLibrary.ExpertiseDefinition;
-import com.planet_ink.game.MOBS.interfaces.MOB;
-import com.planet_ink.game.core.CMParms;
-import com.planet_ink.game.core.interfaces.Tattooable;
+import com.syncleus.aethermud.game.Abilities.interfaces.Ability;
+import com.syncleus.aethermud.game.Common.interfaces.AccountStats;
+import com.syncleus.aethermud.game.Common.interfaces.PlayerStats;
+import com.syncleus.aethermud.game.Libraries.interfaces.AbilityMapper.AbilityMapping;
+import com.syncleus.aethermud.game.Libraries.interfaces.ExpertiseLibrary.ExpertiseDefinition;
+import com.syncleus.aethermud.game.MOBS.interfaces.MOB;
+import com.syncleus.aethermud.game.core.CMParms;
+import com.syncleus.aethermud.game.core.interfaces.Tattooable;
 
 import java.util.ArrayList;
 import java.util.Enumeration;
@@ -168,7 +168,7 @@ public interface AchievementLibrary extends CMLibrary {
      * Typically called when a mob gains a level, to allow the achievements on the mob to
      * assign any new skills or expertises.  Can also be called just to populate a mob
      * with achievement skills, so it should also confirm any lower level skills also.
-     * @see com.planet_ink.game.MOBS.interfaces.MOB#addAbility(Ability)
+     * @see com.syncleus.aethermud.game.MOBS.interfaces.MOB#addAbility(Ability)
      * @param mob the mob to give abilities to.
      */
     public void grantAbilitiesAndExpertises(MOB mob);
@@ -332,7 +332,7 @@ public interface AchievementLibrary extends CMLibrary {
     public interface Achievement {
         /**
          * Returns whether this is a player or account achievement.
-         * @see com.planet_ink.game.Common.interfaces.AccountStats.Agent
+         * @see com.syncleus.aethermud.game.Common.interfaces.AccountStats.Agent
          * @return the agent type
          */
         public AccountStats.Agent getAgent();

@@ -14,10 +14,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Libraries.interfaces;
+package com.syncleus.aethermud.game.Libraries.interfaces;
 
-import com.planet_ink.game.core.interfaces.CMObject;
-import com.planet_ink.game.core.interfaces.TickClient;
+import com.syncleus.aethermud.game.core.interfaces.CMObject;
+import com.syncleus.aethermud.game.core.interfaces.TickClient;
 
 
 /**
@@ -51,14 +51,14 @@ public interface CMLibrary extends CMObject {
      * If this library has a service thread, this method returns the TickClient
      * object associated with that service.  Normally returns null, since most
      * libraries don't set themselves up to receive thread time.
-     * @see com.planet_ink.game.core.interfaces.TickClient
+     * @see com.syncleus.aethermud.game.core.interfaces.TickClient
      * @return null, or the TickClient for the service
      */
     public TickClient getServiceClient();
 
     /**
      * Localize an internal string -- shortcut. Same as calling:
-     * @see com.planet_ink.game.Libraries.interfaces.LanguageLibrary#fullSessionTranslation(String, String...)
+     * @see com.syncleus.aethermud.game.Libraries.interfaces.LanguageLibrary#fullSessionTranslation(String, String...)
      * Call with the string to translate, which may contain variables of the form @x1, @x2, etc. The array in xs
      * is then used to replace the variables AFTER the string is translated.
      * @param str the string to translate

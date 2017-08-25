@@ -14,14 +14,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Common.interfaces;
+package com.syncleus.aethermud.game.Common.interfaces;
 
-import com.planet_ink.game.Libraries.interfaces.ColorLibrary.ColorState;
-import com.planet_ink.game.MOBS.interfaces.MOB;
-import com.planet_ink.game.core.interfaces.Environmental;
-import com.planet_ink.game.core.interfaces.Modifiable;
-import com.planet_ink.game.core.interfaces.Physical;
-import com.planet_ink.game.core.threads.CMRunnable;
+import com.syncleus.aethermud.game.Libraries.interfaces.ColorLibrary.ColorState;
+import com.syncleus.aethermud.game.MOBS.interfaces.MOB;
+import com.syncleus.aethermud.game.core.interfaces.Environmental;
+import com.syncleus.aethermud.game.core.interfaces.Modifiable;
+import com.syncleus.aethermud.game.core.interfaces.Physical;
+import com.syncleus.aethermud.game.core.threads.CMRunnable;
 
 import java.io.IOException;
 import java.net.Socket;
@@ -218,7 +218,7 @@ public interface Session extends CMCommon, Modifiable, CMRunnable {
      * Low level text output method.
      * Implements such features as snoops, spam-stacking, page
      * breaks, and line caching
-     * @see com.planet_ink.game.Common.interfaces.Session#rawCharsOut(char[])
+     * @see com.syncleus.aethermud.game.Common.interfaces.Session#rawCharsOut(char[])
      * @param msg the string to send to the user
      * @param noCache true to disable line caching, false otherwise
      */
@@ -228,7 +228,7 @@ public interface Session extends CMCommon, Modifiable, CMRunnable {
      * Low level text output method.
      * Implements such features as snoops, spam-stacking.
      * No page breaking, and Always line caching
-     * @see com.planet_ink.game.Common.interfaces.Session#onlyPrint(String, boolean)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Session#onlyPrint(String, boolean)
      * @param msg the string to send to the user
      */
     public void onlyPrint(String msg);
@@ -236,7 +236,7 @@ public interface Session extends CMCommon, Modifiable, CMRunnable {
     /**
      * Lowest level user-output method.  Does nothing
      * but send the string to the user, period.
-     * @see com.planet_ink.game.Common.interfaces.Session#rawCharsOut(char[])
+     * @see com.syncleus.aethermud.game.Common.interfaces.Session#rawCharsOut(char[])
      * @param msg the string to send to the user
      */
 
@@ -248,7 +248,7 @@ public interface Session extends CMCommon, Modifiable, CMRunnable {
      * additional pre-linefeed if currently at
      * the prompt.  Adds post linefeed of course.
      * Does not do a page break.
-     * @see com.planet_ink.game.Common.interfaces.Session#rawPrintln(String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Session#rawPrintln(String)
      * @param msg the string to send to the user
      */
     public void rawPrintln(String msg);
@@ -258,7 +258,7 @@ public interface Session extends CMCommon, Modifiable, CMRunnable {
      * prompt flag after write, and inserts
      * additional pre-linefeed if currently at
      * the prompt.
-     * @see com.planet_ink.game.Common.interfaces.Session#rawPrint(String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Session#rawPrint(String)
      * @param msg the string to send to the user
      */
     public void rawPrint(String msg);
@@ -270,7 +270,7 @@ public interface Session extends CMCommon, Modifiable, CMRunnable {
      * the prompt.  Adds post linefeed of course.
      * Does not do a page break, or color, but does
      * protect mxp clients.
-     * @see com.planet_ink.game.Common.interfaces.Session#safeRawPrint(String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Session#safeRawPrint(String)
      * @param msg the string to send to the user
      */
     public void safeRawPrintln(String msg);
@@ -281,7 +281,7 @@ public interface Session extends CMCommon, Modifiable, CMRunnable {
      * additional pre-linefeed if currently at
      * the prompt.  Does not do color, but does
      * protect mxp clients.
-     * @see com.planet_ink.game.Common.interfaces.Session#safeRawPrintln(String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Session#safeRawPrintln(String)
      * @param msg the string to send to the user
      */
     public void safeRawPrint(String msg);
@@ -289,7 +289,7 @@ public interface Session extends CMCommon, Modifiable, CMRunnable {
     /**
      * Higher-level line output method.  Does full
      * filtering of special characters and codes.
-     * @see com.planet_ink.game.Common.interfaces.Session#rawPrint(String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Session#rawPrint(String)
      * @param msg the string to send to the user
      */
     public void stdPrint(String msg);
@@ -298,7 +298,7 @@ public interface Session extends CMCommon, Modifiable, CMRunnable {
      * Higher-level line output method.  Does full
      * filtering of special characters and codes
      * using given variable values.
-     * @see com.planet_ink.game.Common.interfaces.Session#rawPrint(String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Session#rawPrint(String)
      * @param Source variable for special code parsing: Source
      * @param Target variable for special code parsing: Target
      * @param Tool variable for special code parsing: Tool
@@ -312,7 +312,7 @@ public interface Session extends CMCommon, Modifiable, CMRunnable {
     /**
      * Higher-level line output method.  Does full
      * filtering of special characters and codes.
-     * @see com.planet_ink.game.Common.interfaces.Session#rawPrintln(String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Session#rawPrintln(String)
      * @param msg the string to send to the user
      */
     public void stdPrintln(String msg);
@@ -321,7 +321,7 @@ public interface Session extends CMCommon, Modifiable, CMRunnable {
      * Higher-level line output method.  Does full
      * filtering of special characters and codes
      * using given variable values.
-     * @see com.planet_ink.game.Common.interfaces.Session#rawPrintln(String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Session#rawPrintln(String)
      * @param Source variable for special code parsing: Source
      * @param Target variable for special code parsing: Target
      * @param Tool variable for special code parsing: Tool
@@ -382,8 +382,8 @@ public interface Session extends CMCommon, Modifiable, CMRunnable {
      * Medium-level text output method.  Does full
      * filtering of special characters and codes.
      * Does not manage the prompt, and should NOT be used for prompts.
-     * @see com.planet_ink.game.Common.interfaces.Session#onlyPrint(String, boolean)
-     * @see com.planet_ink.game.Common.interfaces.Session#promptPrint(String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Session#onlyPrint(String, boolean)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Session#promptPrint(String)
      * @param msg the string to send to the user
      */
     public void print(String msg);
@@ -392,7 +392,7 @@ public interface Session extends CMCommon, Modifiable, CMRunnable {
      * Medium-level text output method.  Does full
      * filtering of special characters and codes.
      * Does not manage the prompt. Should be used for prompts!
-     * @see com.planet_ink.game.Common.interfaces.Session#onlyPrint(String, boolean)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Session#onlyPrint(String, boolean)
      * @param msg the string to send to the user
      */
     public void promptPrint(String msg);
@@ -402,7 +402,7 @@ public interface Session extends CMCommon, Modifiable, CMRunnable {
      * filtering of special characters and codes
      * using given variable values.
      * Does not manage the prompt.
-     * @see com.planet_ink.game.Common.interfaces.Session#onlyPrint(String, boolean)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Session#onlyPrint(String, boolean)
      * @param Source variable for special code parsing: Source
      * @param Target variable for special code parsing: Target
      * @param Tool variable for special code parsing: Tool
@@ -418,7 +418,7 @@ public interface Session extends CMCommon, Modifiable, CMRunnable {
      * filtering of special characters and codes.
      * Does not manage the prompt.
      * Adds a linefeed at the end though.
-     * @see com.planet_ink.game.Common.interfaces.Session#onlyPrint(String, boolean)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Session#onlyPrint(String, boolean)
      * @param msg the string to send to the user
      */
     public void println(String msg);
@@ -429,7 +429,7 @@ public interface Session extends CMCommon, Modifiable, CMRunnable {
      * using given variable values.
      * Does not manage the prompt.
      * Adds a linefeed at the end though.
-     * @see com.planet_ink.game.Common.interfaces.Session#onlyPrint(String, boolean)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Session#onlyPrint(String, boolean)
      * @param Source variable for special code parsing: Source
      * @param Target variable for special code parsing: Target
      * @param Tool variable for special code parsing: Tool
@@ -453,7 +453,7 @@ public interface Session extends CMCommon, Modifiable, CMRunnable {
      * filtering of special characters and codes.
      * DOES manage the prompt, but turns OFF word wrap!
      * Adds a linefeed at the end.
-     * @see com.planet_ink.game.Common.interfaces.Session#onlyPrint(String, boolean)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Session#onlyPrint(String, boolean)
      * @param msg the string to send to the user
      */
     public void wraplessPrintln(String msg);
@@ -462,7 +462,7 @@ public interface Session extends CMCommon, Modifiable, CMRunnable {
      * Medium-level text output method.  Does full
      * filtering of special characters and codes.
      * DOES manage the prompt, but turns OFF word wrap!
-     * @see com.planet_ink.game.Common.interfaces.Session#onlyPrint(String, boolean)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Session#onlyPrint(String, boolean)
      * @param msg the string to send to the user
      */
     public void wraplessPrint(String msg);
@@ -471,7 +471,7 @@ public interface Session extends CMCommon, Modifiable, CMRunnable {
      * Lower-Medium-level text output method.  Does only the
      * parsing of color codes, no word wrapping, no codes.
      * Adds a linefeed at the end.
-     * @see com.planet_ink.game.Common.interfaces.Session#onlyPrint(String, boolean)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Session#onlyPrint(String, boolean)
      * @param msg the string to send to the user
      * @param noCache true to disable line caching, false otherwise
      */
@@ -480,7 +480,7 @@ public interface Session extends CMCommon, Modifiable, CMRunnable {
     /**
      * Lower-Medium-level text output method.  Does only the
      * parsing of color codes, no word wrapping, no codes.
-     * @see com.planet_ink.game.Common.interfaces.Session#onlyPrint(String, boolean)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Session#onlyPrint(String, boolean)
      * @param msg the string to send to the user
      * @param noCache true to disable line caching, false otherwise
      */
@@ -490,7 +490,7 @@ public interface Session extends CMCommon, Modifiable, CMRunnable {
      * Lower-Medium-level text output method.  Does only the
      * parsing of color codes, no word wrapping, no codes.
      * Adds a linefeed at the end.
-     * @see com.planet_ink.game.Common.interfaces.Session#onlyPrint(String, boolean)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Session#onlyPrint(String, boolean)
      * @param msg the string to send to the user
      */
     public void colorOnlyPrintln(String msg);
@@ -498,7 +498,7 @@ public interface Session extends CMCommon, Modifiable, CMRunnable {
     /**
      * Lower-Medium-level text output method.  Does only the
      * parsing of color codes, no word wrapping, no codes.
-     * @see com.planet_ink.game.Common.interfaces.Session#onlyPrint(String, boolean)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Session#onlyPrint(String, boolean)
      * @param msg the string to send to the user
      */
     public void colorOnlyPrint(String msg);
@@ -515,9 +515,9 @@ public interface Session extends CMCommon, Modifiable, CMRunnable {
      * Prompts the user to enter a string, and then returns what
      * the enter.  Does not time out, but may throw an exception
      * on disconnnect.
-     * @see com.planet_ink.game.Common.interfaces.Session#prompt(String)
-     * @see com.planet_ink.game.Common.interfaces.Session#prompt(String, long)
-     * @see com.planet_ink.game.Common.interfaces.Session#prompt(String, String, long)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Session#prompt(String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Session#prompt(String, long)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Session#prompt(String, String, long)
      * @param Message the prompt message to display to the user
      * @param Default the default response if the user just hits enter
      * @return the string entered by the user, or the Default
@@ -540,9 +540,9 @@ public interface Session extends CMCommon, Modifiable, CMRunnable {
      * Prompts the user to enter a string, and then returns what
      * the enter.  Possibly times out, and may throw an exception
      * on disconnnect or time out.
-     * @see com.planet_ink.game.Common.interfaces.Session#prompt(String)
-     * @see com.planet_ink.game.Common.interfaces.Session#prompt(String, String)
-     * @see com.planet_ink.game.Common.interfaces.Session#prompt(String, long)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Session#prompt(String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Session#prompt(String, String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Session#prompt(String, long)
      * @param Message the prompt message to display to the user
      * @param Default the default response if the user just hits enter
      * @param maxTime max number of milliseconds to wait before timing out
@@ -556,9 +556,9 @@ public interface Session extends CMCommon, Modifiable, CMRunnable {
      * Prompts the user to enter a string, and then returns what
      * the enter.  Does not time out, but may throw an exception
      * on disconnnect.
-     * @see com.planet_ink.game.Common.interfaces.Session#prompt(String, String)
-     * @see com.planet_ink.game.Common.interfaces.Session#prompt(String, long)
-     * @see com.planet_ink.game.Common.interfaces.Session#prompt(String, String, long)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Session#prompt(String, String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Session#prompt(String, long)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Session#prompt(String, String, long)
      * @param Message the prompt message to display to the user
      * @return the string entered by the user
      * @throws IOException a disconnect
@@ -570,9 +570,9 @@ public interface Session extends CMCommon, Modifiable, CMRunnable {
      * Prompts the user to enter a string, and then returns what
      * the enter.  Possibly times out, and may throw an exception
      * on disconnnect or time out.
-     * @see com.planet_ink.game.Common.interfaces.Session#prompt(String)
-     * @see com.planet_ink.game.Common.interfaces.Session#prompt(String, String)
-     * @see com.planet_ink.game.Common.interfaces.Session#prompt(String, String, long)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Session#prompt(String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Session#prompt(String, String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Session#prompt(String, String, long)
      * @param Message the prompt message to display to the user
      * @param maxTime max number of milliseconds to wait before timing out
      * @return the string entered by the user
@@ -585,7 +585,7 @@ public interface Session extends CMCommon, Modifiable, CMRunnable {
      * Prompts the user to enter Y or N, and returns what they
      * enter.  Will not time out, but may throw an exception on
      * disconnect.
-     * @see com.planet_ink.game.Common.interfaces.Session#confirm(String, String, long)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Session#confirm(String, String, long)
      * @param Message the prompt message to display to the user
      * @param Default the default response if the user just hits enter
      * @return true if they entered Y, false otherwise
@@ -598,7 +598,7 @@ public interface Session extends CMCommon, Modifiable, CMRunnable {
      * Prompts the user to enter Y or N, and returns what they
      * enter. Possibly times out, and may throw an exception
      * on disconnnect or time out.
-     * @see com.planet_ink.game.Common.interfaces.Session#confirm(String, String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Session#confirm(String, String)
      * @param Message the prompt message to display to the user
      * @param Default the default response if the user just hits enter
      * @param maxTime max number of milliseconds to wait before timing out
@@ -613,7 +613,7 @@ public interface Session extends CMCommon, Modifiable, CMRunnable {
      * valid choices.  Repeats the prompt if the user does not enter
      * a valid choice.  ENTER is a valid choice for Default. Does not time out,
      * but may throw an exception on disconnnect.
-     * @see com.planet_ink.game.Common.interfaces.Session#choose(String, String, String, long)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Session#choose(String, String, String, long)
      * @param Message the prompt message to display to the user
      * @param Choices a list of uppercase characters that may be entered
      * @param Default the default response if the user just hits enter
@@ -628,7 +628,7 @@ public interface Session extends CMCommon, Modifiable, CMRunnable {
      * valid choices.  Repeats the prompt if the user does not enter
      * a valid choice.  ENTER is a valid choice for Default. Does not time out,
      * but may throw an exception on disconnnect.
-     * @see com.planet_ink.game.Common.interfaces.Session#choose(String, String, String, long)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Session#choose(String, String, String, long)
      * @param Message the prompt message to display to the user
      * @param Choices a list of uppercase characters that may be entered
      * @param Default the default response if the user just hits enter
@@ -645,7 +645,7 @@ public interface Session extends CMCommon, Modifiable, CMRunnable {
      * valid choices.  Repeats the prompt if the user does not enter
      * a valid choice.  ENTER is a valid choice for Default.   May time out,
      * and may throw an exception on disconnnect.
-     * @see com.planet_ink.game.Common.interfaces.Session#choose(String, String, String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Session#choose(String, String, String)
      * @param Message the prompt message to display to the user
      * @param Choices a list of uppercase characters that may be entered
      * @param Default the default response if the user just hits enter
@@ -659,9 +659,9 @@ public interface Session extends CMCommon, Modifiable, CMRunnable {
     /**
      * Notifies this session that the given session is snooping it.
      * This session will manage said snooping.
-     * @see com.planet_ink.game.Common.interfaces.Session#setBeingSnoopedBy(Session, boolean)
-     * @see com.planet_ink.game.Common.interfaces.Session#isBeingSnoopedBy(Session)
-     * @see com.planet_ink.game.Common.interfaces.Session#snoopSuspension(int)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Session#setBeingSnoopedBy(Session, boolean)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Session#isBeingSnoopedBy(Session)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Session#snoopSuspension(int)
      * @param session the session to snoop on me.
      * @param onOff true to turn on snooping, false otherwise
      */
@@ -669,9 +669,9 @@ public interface Session extends CMCommon, Modifiable, CMRunnable {
 
     /**
      * Checks to see if the given session is snooping on this one.
-     * @see com.planet_ink.game.Common.interfaces.Session#setBeingSnoopedBy(Session, boolean)
-     * @see com.planet_ink.game.Common.interfaces.Session#isBeingSnoopedBy(Session)
-     * @see com.planet_ink.game.Common.interfaces.Session#snoopSuspension(int)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Session#setBeingSnoopedBy(Session, boolean)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Session#isBeingSnoopedBy(Session)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Session#snoopSuspension(int)
      * @param S the session to check for a snoop on me.
      * @return true if the given session is snooping on me, false otherwise
      */
@@ -681,9 +681,9 @@ public interface Session extends CMCommon, Modifiable, CMRunnable {
      * Increments or decrements the snoop suspension counter
      * by the given amount.  Only when the counter is 0 does
      * snooping of this session actually occur.
-     * @see com.planet_ink.game.Common.interfaces.Session#setBeingSnoopedBy(Session, boolean)
-     * @see com.planet_ink.game.Common.interfaces.Session#isBeingSnoopedBy(Session)
-     * @see com.planet_ink.game.Common.interfaces.Session#snoopSuspension(int)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Session#setBeingSnoopedBy(Session, boolean)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Session#isBeingSnoopedBy(Session)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Session#snoopSuspension(int)
      * @param change the amount to change the snoop suspension counter by
      * @return the current value of the snoop suspension counter after the change
      */
@@ -694,14 +694,14 @@ public interface Session extends CMCommon, Modifiable, CMRunnable {
      * @param removeMOB true to remove the mob from the game
      * @param dropSession true to force closed sockets, and removed session
      * @param killThread true to force a thread death, and false to be more lenient
-     * @see com.planet_ink.game.Common.interfaces.Session#isStopped()
+     * @see com.syncleus.aethermud.game.Common.interfaces.Session#isStopped()
      */
     public void stopSession(boolean removeMOB, boolean dropSession, boolean killThread);
 
     /**
      * Returns whether this session is done, or slated to be done.
-     * @see com.planet_ink.game.Common.interfaces.Session#logout(boolean)
-     * @see com.planet_ink.game.Common.interfaces.Session#isStopped()
+     * @see com.syncleus.aethermud.game.Common.interfaces.Session#logout(boolean)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Session#isStopped()
      * @return true if this session needs to go, false otherwise
      */
     public boolean isStopped();
@@ -715,32 +715,32 @@ public interface Session extends CMCommon, Modifiable, CMRunnable {
 
     /**
      * Returns whether this mob/session is currently Away From Keyboard
-     * @see com.planet_ink.game.Common.interfaces.Session#setAfkFlag(boolean)
-     * @see com.planet_ink.game.Common.interfaces.Session#setAFKMessage(String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Session#setAfkFlag(boolean)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Session#setAFKMessage(String)
      * @return true if they are AFK, false otherwise
      */
     public boolean isAfk();
 
     /**
      * Sets whether this mob/session is currently Away From Keyboard
-     * @see com.planet_ink.game.Common.interfaces.Session#isAfk()
-     * @see com.planet_ink.game.Common.interfaces.Session#getAfkMessage()
+     * @see com.syncleus.aethermud.game.Common.interfaces.Session#isAfk()
+     * @see com.syncleus.aethermud.game.Common.interfaces.Session#getAfkMessage()
      * @param truefalse true if they are AFK, false otherwise
      */
     public void setAfkFlag(boolean truefalse);
 
     /**
      * Returns the reason given by the user that they are AFK.
-     * @see com.planet_ink.game.Common.interfaces.Session#setAfkFlag(boolean)
-     * @see com.planet_ink.game.Common.interfaces.Session#setAFKMessage(String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Session#setAfkFlag(boolean)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Session#setAFKMessage(String)
      * @return the reason given by the user that they are AFK.
      */
     public String getAfkMessage();
 
     /**
      * Returns the reason given by the user that they are AFK.
-     * @see com.planet_ink.game.Common.interfaces.Session#setAfkFlag(boolean)
-     * @see com.planet_ink.game.Common.interfaces.Session#getAfkMessage()
+     * @see com.syncleus.aethermud.game.Common.interfaces.Session#setAfkFlag(boolean)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Session#getAfkMessage()
      * @param str the reason given by the user that they are AFK.
      */
     public void setAFKMessage(String str);
@@ -776,21 +776,21 @@ public interface Session extends CMCommon, Modifiable, CMRunnable {
 
     /**
      * Returns the player MOB attached to this session object.
-     * @see com.planet_ink.game.Common.interfaces.Session#setMob(MOB)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Session#setMob(MOB)
      * @return the player MOB attached to this session object.
      */
     public MOB mob();
 
     /**
      * Sets the player MOB attached to this session object.
-     * @see com.planet_ink.game.Common.interfaces.Session#mob()
+     * @see com.syncleus.aethermud.game.Common.interfaces.Session#mob()
      * @param newmob the player MOB attached to this session object.
      */
     public void setMob(MOB newmob);
 
     /**
      * Sets the player acount attached to this session object.
-     * @see com.planet_ink.game.Common.interfaces.Session#mob()
+     * @see com.syncleus.aethermud.game.Common.interfaces.Session#mob()
      * @param account the player account attached to this session object.
      */
     public void setAccount(PlayerAccount account);
@@ -837,7 +837,7 @@ public interface Session extends CMCommon, Modifiable, CMRunnable {
     /**
      * Gets the tick/thread status of this session object.
      *
-     * @see com.planet_ink.game.Common.interfaces.Session.SessionStatus
+     * @see com.syncleus.aethermud.game.Common.interfaces.Session.SessionStatus
      * @return the tick status
      */
     public SessionStatus getStatus();
@@ -845,7 +845,7 @@ public interface Session extends CMCommon, Modifiable, CMRunnable {
     /**
      * Sets the tick/thread status of this session object.
      *
-     * @see com.planet_ink.game.Common.interfaces.Session.SessionStatus
+     * @see com.syncleus.aethermud.game.Common.interfaces.Session.SessionStatus
      * @param newStatus the tick status
      */
     public void setStatus(SessionStatus newStatus);
@@ -895,8 +895,8 @@ public interface Session extends CMCommon, Modifiable, CMRunnable {
     /**
      * Gets the milliseconds timestamp since this user last registered a pk fight.
      *
-     * @see com.planet_ink.game.Common.interfaces.Session#setLastPKFight()
-     * @see com.planet_ink.game.Common.interfaces.Session#setLastNPCFight()
+     * @see com.syncleus.aethermud.game.Common.interfaces.Session#setLastPKFight()
+     * @see com.syncleus.aethermud.game.Common.interfaces.Session#setLastNPCFight()
      * @return the last pk fight timestamp
      */
     public long getLastPKFight();
@@ -904,16 +904,16 @@ public interface Session extends CMCommon, Modifiable, CMRunnable {
     /**
      * Sets now as the milliseconds timestamp since this user last registered a pk fight.
      *
-     * @see com.planet_ink.game.Common.interfaces.Session#getLastPKFight()
-     * @see com.planet_ink.game.Common.interfaces.Session#getLastNPCFight()
+     * @see com.syncleus.aethermud.game.Common.interfaces.Session#getLastPKFight()
+     * @see com.syncleus.aethermud.game.Common.interfaces.Session#getLastNPCFight()
      */
     public void setLastPKFight();
 
     /**
      * Gets the milliseconds timestamp since this user last registered a npc fight.
      *
-     * @see com.planet_ink.game.Common.interfaces.Session#setLastPKFight()
-     * @see com.planet_ink.game.Common.interfaces.Session#setLastNPCFight()
+     * @see com.syncleus.aethermud.game.Common.interfaces.Session#setLastPKFight()
+     * @see com.syncleus.aethermud.game.Common.interfaces.Session#setLastNPCFight()
      * @return the last npc fight timestamp
      */
     public long getLastNPCFight();
@@ -921,8 +921,8 @@ public interface Session extends CMCommon, Modifiable, CMRunnable {
     /**
      * Sets now as the milliseconds timestamp since this user last registered a npc fight.
      *
-     * @see com.planet_ink.game.Common.interfaces.Session#getLastPKFight()
-     * @see com.planet_ink.game.Common.interfaces.Session#getLastNPCFight()
+     * @see com.syncleus.aethermud.game.Common.interfaces.Session#getLastPKFight()
+     * @see com.syncleus.aethermud.game.Common.interfaces.Session#getLastNPCFight()
      */
     public void setLastNPCFight();
 
@@ -930,7 +930,7 @@ public interface Session extends CMCommon, Modifiable, CMRunnable {
      * Returns the last time in milliseconds that this session began its input loop.
      * Is typically only held up by executing a user command, so it is an accurate
      * gauge of a locked up user command.
-     * @see com.planet_ink.game.Common.interfaces.Session#setInputLoopTime()
+     * @see com.syncleus.aethermud.game.Common.interfaces.Session#setInputLoopTime()
      *
      * @return the last time in milliseconds that this session began its input loop
      */
@@ -940,7 +940,7 @@ public interface Session extends CMCommon, Modifiable, CMRunnable {
      * Sets the last time in milliseconds that this session began its input loop.
      * Is typically only held up by executing a user command, so it is an accurate
      * gauge of a locked up user command.
-     * @see com.planet_ink.game.Common.interfaces.Session#getInputLoopTime()
+     * @see com.syncleus.aethermud.game.Common.interfaces.Session#getInputLoopTime()
      */
     public void setInputLoopTime();
 
@@ -968,8 +968,8 @@ public interface Session extends CMCommon, Modifiable, CMRunnable {
     /**
      * Sets a server telnet mode flag.
      *
-     * @see com.planet_ink.game.Common.interfaces.Session#TELNET_ANSI
-     * @see com.planet_ink.game.Common.interfaces.Session#getServerTelnetMode(int)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Session#TELNET_ANSI
+     * @see com.syncleus.aethermud.game.Common.interfaces.Session#getServerTelnetMode(int)
      * @param telnetCode the telnet code
      * @param onOff true to turn on, false to turn off the flag
      */
@@ -978,8 +978,8 @@ public interface Session extends CMCommon, Modifiable, CMRunnable {
     /**
      * Gets a server telnet mode flag.
      *
-     * @see com.planet_ink.game.Common.interfaces.Session#TELNET_ANSI
-     * @see com.planet_ink.game.Common.interfaces.Session#setServerTelnetMode(int, boolean)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Session#TELNET_ANSI
+     * @see com.syncleus.aethermud.game.Common.interfaces.Session#setServerTelnetMode(int, boolean)
      * @param telnetCode the telnet code
      *
      * @return true, if server telnet mode is on, false otherwise
@@ -989,8 +989,8 @@ public interface Session extends CMCommon, Modifiable, CMRunnable {
     /**
      * Sets a client telnet mode flag.
      *
-     * @see com.planet_ink.game.Common.interfaces.Session#TELNET_ANSI
-     * @see com.planet_ink.game.Common.interfaces.Session#getClientTelnetMode(int)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Session#TELNET_ANSI
+     * @see com.syncleus.aethermud.game.Common.interfaces.Session#getClientTelnetMode(int)
      *
      * @param telnetCode the telnet code
      * @param onOff true to turn on, false to turn off the flag
@@ -1000,8 +1000,8 @@ public interface Session extends CMCommon, Modifiable, CMRunnable {
     /**
      * Gets a client telnet mode flag.
      *
-     * @see com.planet_ink.game.Common.interfaces.Session#TELNET_ANSI
-     * @see com.planet_ink.game.Common.interfaces.Session#setClientTelnetMode(int, boolean)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Session#TELNET_ANSI
+     * @see com.syncleus.aethermud.game.Common.interfaces.Session#setClientTelnetMode(int, boolean)
      *
      * @param telnetCode the telnet code
      *
@@ -1013,9 +1013,9 @@ public interface Session extends CMCommon, Modifiable, CMRunnable {
      * Change telnet mode by sending the appropriate command to the clients client.
      * A response received later will trigger mode changed.
      *
-     * @see com.planet_ink.game.Common.interfaces.Session#TELNET_ANSI
-     * @see com.planet_ink.game.Common.interfaces.Session#setClientTelnetMode(int, boolean)
-     * @see com.planet_ink.game.Common.interfaces.Session#setServerTelnetMode(int, boolean)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Session#TELNET_ANSI
+     * @see com.syncleus.aethermud.game.Common.interfaces.Session#setClientTelnetMode(int, boolean)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Session#setServerTelnetMode(int, boolean)
      * @param telnetCode the telnet code
      * @param onOff true to turn on, false to turn off the flag
      */
@@ -1024,9 +1024,9 @@ public interface Session extends CMCommon, Modifiable, CMRunnable {
     /**
      * Change telnet mode by negotiating the command to the clients client.
      *
-     * @see com.planet_ink.game.Common.interfaces.Session#TELNET_ANSI
-     * @see com.planet_ink.game.Common.interfaces.Session#setClientTelnetMode(int, boolean)
-     * @see com.planet_ink.game.Common.interfaces.Session#setServerTelnetMode(int, boolean)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Session#TELNET_ANSI
+     * @see com.syncleus.aethermud.game.Common.interfaces.Session#setClientTelnetMode(int, boolean)
+     * @see com.syncleus.aethermud.game.Common.interfaces.Session#setServerTelnetMode(int, boolean)
      * @param telnetCode the telnet code
      */
     public void negotiateTelnetMode(int telnetCode);
@@ -1036,9 +1036,9 @@ public interface Session extends CMCommon, Modifiable, CMRunnable {
      * certain fundamental flags, like ANSI, MXP, and MSP.  It will use a bitmap of MOB flags
      * passed in as a guide.
      *
-     * @see com.planet_ink.game.MOBS.interfaces.MOB#getAttributesBitmap()
-     * @see com.planet_ink.game.MOBS.interfaces.MOB.Attrib
-     * @see com.planet_ink.game.Common.interfaces.Session#changeTelnetMode(int, boolean)
+     * @see com.syncleus.aethermud.game.MOBS.interfaces.MOB#getAttributesBitmap()
+     * @see com.syncleus.aethermud.game.MOBS.interfaces.MOB.Attrib
+     * @see com.syncleus.aethermud.game.Common.interfaces.Session#changeTelnetMode(int, boolean)
      * @param mobbitmap the mobbitmap the bitmap of mob flags to use as a guide in negotiation
      */
     public void initTelnetMode(int mobbitmap);

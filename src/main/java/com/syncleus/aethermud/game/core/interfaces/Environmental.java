@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.core.interfaces;
+package com.syncleus.aethermud.game.core.interfaces;
 
 /*
    Copyright 2001-2017 Bo Zimmerman
@@ -116,7 +116,7 @@ public interface Environmental extends Tickable, StatsAffecting, MsgListener, Co
      * Whether the fields of this item are set in code, or set by builders.  Generic means that
      * they are set by builders, in which case XML is returned by the text() method containing
      * all of the values for all the fields.
-     * @see com.planet_ink.game.core.interfaces.Environmental#text()
+     * @see com.syncleus.aethermud.game.core.interfaces.Environmental#text()
      * @return whether this item is modifiable by builders
      */
     public boolean isGeneric();
@@ -145,9 +145,9 @@ public interface Environmental extends Tickable, StatsAffecting, MsgListener, Co
      * Unimplemented as of yet, but will hold a string telling the system what
      * the proper format of any miscText data.  Will use the CMParms.MTFORMAT_*
      * constants for definition.
-     * @see com.planet_ink.game.core.CMParms
-     * @see com.planet_ink.game.core.interfaces.Environmental#text()
-     * @see com.planet_ink.game.core.interfaces.Environmental#setMiscText(String)
+     * @see com.syncleus.aethermud.game.core.CMParms
+     * @see com.syncleus.aethermud.game.core.interfaces.Environmental#text()
+     * @see com.syncleus.aethermud.game.core.interfaces.Environmental#setMiscText(String)
      * @return the format expected for the miscText field
      */
     public String miscTextFormat();
@@ -155,8 +155,8 @@ public interface Environmental extends Tickable, StatsAffecting, MsgListener, Co
     /**
      * Whether this object instance is functionally identical to the object passed in.  Works by repeatedly
      * calling getStat on both objects and comparing the values.
-     * @see com.planet_ink.game.core.interfaces.Modifiable#getStatCodes()
-     * @see com.planet_ink.game.core.interfaces.Modifiable#getStat(String)
+     * @see com.syncleus.aethermud.game.core.interfaces.Modifiable#getStatCodes()
+     * @see com.syncleus.aethermud.game.core.interfaces.Modifiable#getStat(String)
      * @param E the object to compare this one to
      * @return whether this object is the same as the one passed in
      */
@@ -165,7 +165,7 @@ public interface Environmental extends Tickable, StatsAffecting, MsgListener, Co
     /**
      * If this object expires, it should have a timestamp saying when it expires, in real time.
      * When it expires, a MSG_EXPIRE message will be sent to it.
-     * @see com.planet_ink.game.core.interfaces.Environmental#setExpirationDate(long)
+     * @see com.syncleus.aethermud.game.core.interfaces.Environmental#setExpirationDate(long)
      * @return the time stamp when this thing expires
      */
     public long expirationDate();
@@ -173,7 +173,7 @@ public interface Environmental extends Tickable, StatsAffecting, MsgListener, Co
     /**
      * If this object expires, it should have a timestamp saying when it expires, in real time.
      * When it expires, a MSG_EXPIRE message will be sent to it.
-     * @see com.planet_ink.game.core.interfaces.Environmental#expirationDate()
+     * @see com.syncleus.aethermud.game.core.interfaces.Environmental#expirationDate()
      * @param dateTime the time stamp when this thing expires
      */
     public void setExpirationDate(long dateTime);
@@ -194,7 +194,7 @@ public interface Environmental extends Tickable, StatsAffecting, MsgListener, Co
 
     /**
      * Localize an internal string -- shortcut. Same as calling:
-     * @see com.planet_ink.game.Libraries.interfaces.LanguageLibrary#fullSessionTranslation(String, String...)
+     * @see com.syncleus.aethermud.game.Libraries.interfaces.LanguageLibrary#fullSessionTranslation(String, String...)
      * Call with the string to translate, which may contain variables of the form @x1, @x2, etc. The array in xs
      * is then used to replace the variables AFTER the string is translated.
      * @param str the string to translate

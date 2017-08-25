@@ -14,16 +14,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.core;
+package com.syncleus.aethermud.game.core;
 
-import com.planet_ink.game.Common.interfaces.CharStats;
-import com.planet_ink.game.Items.interfaces.RawMaterial;
-import com.planet_ink.game.Items.interfaces.Wearable;
-import com.planet_ink.game.Libraries.interfaces.*;
-import com.planet_ink.game.core.CMSecurity.DbgFlag;
-import com.planet_ink.game.core.collections.SVector;
-import com.planet_ink.game.core.interfaces.MudHost;
-import com.planet_ink.game.core.threads.CMFactoryThread;
+import com.syncleus.aethermud.game.Common.interfaces.CharStats;
+import com.syncleus.aethermud.game.Items.interfaces.RawMaterial;
+import com.syncleus.aethermud.game.Items.interfaces.Wearable;
+import com.syncleus.aethermud.game.Libraries.interfaces.*;
+import com.syncleus.aethermud.game.core.CMSecurity.DbgFlag;
+import com.syncleus.aethermud.game.core.collections.SVector;
+import com.syncleus.aethermud.game.core.interfaces.MudHost;
+import com.syncleus.aethermud.game.core.threads.CMFactoryThread;
 
 import java.util.Enumeration;
 import java.util.List;
@@ -33,13 +33,13 @@ import java.util.Vector;
 /**
  * CMLib is a semi-singleton central repository for all the various code libraries
  * implemented in CoffeeMud.  Generally it provides accessor methods for all the
- * java classes in com.planet_ink.game.Libraries.  Like many other CoffeeMud
+ * java classes in com.syncleus.aethermud.game.Libraries.  Like many other CoffeeMud
  * classes, it also supports the thread-group-code-character accessor method, so
  * that it can provide unique instances of some of the libraries based on the 
  * first character of the name of the current thread group.  For completeness, you'll
  * also find accessors for other core singletons.  Lastly, CMLib is a container
  * class for all MudHost objects running in this process.
- * @see com.planet_ink.game.core.interfaces.MudHost
+ * @see com.syncleus.aethermud.game.core.interfaces.MudHost
  * @author Bo Zimmerman
  *
  */
@@ -81,7 +81,7 @@ public class CMLib {
 
     /**
      * Returns reference to the math utility class.
-     * @see com.planet_ink.game.core.CMath
+     * @see com.syncleus.aethermud.game.core.CMath
      * @return reference to the math utility class.
      */
     public static final CMath math() {
@@ -90,7 +90,7 @@ public class CMLib {
 
     /**
      * Returns reference to the string parameter utility class.
-     * @see com.planet_ink.game.core.CMParms
+     * @see com.syncleus.aethermud.game.core.CMParms
      * @return reference to the string parameter utility class.
      */
     public static final CMParms parms() {
@@ -99,7 +99,7 @@ public class CMLib {
 
     /**
      * Returns reference to the string utility class.
-     * @see com.planet_ink.game.core.CMStrings
+     * @see com.syncleus.aethermud.game.core.CMStrings
      * @return reference to the string utility class.
      */
     public static final CMStrings strings() {
@@ -108,7 +108,7 @@ public class CMLib {
 
     /**
      * Returns reference to the class loader.
-     * @see com.planet_ink.game.core.CMClass
+     * @see com.syncleus.aethermud.game.core.CMClass
      * @return reference to the class loader.
      */
     public static final CMClass classes() {
@@ -117,7 +117,7 @@ public class CMLib {
 
     /**
      * Returns reference to the security class.
-     * @see com.planet_ink.game.core.CMSecurity
+     * @see com.syncleus.aethermud.game.core.CMSecurity
      * @return reference to the security class.
      */
     public static final CMSecurity security() {
@@ -126,7 +126,7 @@ public class CMLib {
 
     /**
      * Returns reference to the directions class.
-     * @see com.planet_ink.game.core.Directions
+     * @see com.syncleus.aethermud.game.core.Directions
      * @return reference to the directions class.
      */
     public static final Directions directions() {
@@ -135,7 +135,7 @@ public class CMLib {
 
     /**
      * Returns reference to the logger.
-     * @see com.planet_ink.game.core.Log
+     * @see com.syncleus.aethermud.game.core.Log
      * @return reference to the logger.
      */
     public static final Log log() {
@@ -144,7 +144,7 @@ public class CMLib {
 
     /**
      * Returns reference to the resources storage class.
-     * @see com.planet_ink.game.core.Resources
+     * @see com.syncleus.aethermud.game.core.Resources
      * @return reference to the resources storage class.
      */
     public static final Resources resources() {
@@ -153,7 +153,7 @@ public class CMLib {
 
     /**
      * Returns reference to the properties ini file class.
-     * @see com.planet_ink.game.core.CMProps
+     * @see com.syncleus.aethermud.game.core.CMProps
      * @return reference to the properties ini file class.
      */
     public static final CMProps props() {
@@ -162,7 +162,7 @@ public class CMLib {
 
     /**
      * Returns a list of all the registered mud hosts running.
-     * @see com.planet_ink.game.application.MUD
+     * @see com.syncleus.aethermud.game.application.MUD
      * @return list of the registered mud hosts running.
      */
     public static final List<MudHost> hosts() {
@@ -172,7 +172,7 @@ public class CMLib {
     /**
      * Returns the mud running on the given port, or null
      * if none is found.
-     * @see com.planet_ink.game.core.interfaces.MudHost
+     * @see com.syncleus.aethermud.game.core.interfaces.MudHost
      * @param port port to search for
      * @return the mudhost running on that port
      */
@@ -192,7 +192,7 @@ public class CMLib {
     /**
      * Returns an enumeration of basic code libraries registered
      * with the system thus far.
-     * @see com.planet_ink.game.Libraries.interfaces.CMLibrary
+     * @see com.syncleus.aethermud.game.Libraries.interfaces.CMLibrary
      * @return an enumeration of basic code libraries registered
      */
     public static final Enumeration<CMLibrary> libraries() {
@@ -206,7 +206,7 @@ public class CMLib {
 
     /**
      * Returns a reference to this threads database engine library.
-     * @see com.planet_ink.game.Libraries.interfaces.DatabaseEngine
+     * @see com.syncleus.aethermud.game.Libraries.interfaces.DatabaseEngine
      * @return a reference to this threads database engine library.
      */
     public static final DatabaseEngine database() {
@@ -215,7 +215,7 @@ public class CMLib {
 
     /**
      * Returns a reference to this threads Thread access library.
-     * @see com.planet_ink.game.Libraries.interfaces.ThreadEngine
+     * @see com.syncleus.aethermud.game.Libraries.interfaces.ThreadEngine
      * @return a reference to this threads Thread access library.
      */
     public static final ThreadEngine threads() {
@@ -224,7 +224,7 @@ public class CMLib {
 
     /**
      * Returns a reference to this threads Intermud3 access library.
-     * @see com.planet_ink.game.Libraries.interfaces.I3Interface
+     * @see com.syncleus.aethermud.game.Libraries.interfaces.I3Interface
      * @return a reference to this threads Intermud3 access library.
      */
     public static final I3Interface intermud() {
@@ -233,7 +233,7 @@ public class CMLib {
 
     /**
      * Returns a reference to this threads item balancing library.
-     * @see com.planet_ink.game.Libraries.interfaces.ItemBalanceLibrary
+     * @see com.syncleus.aethermud.game.Libraries.interfaces.ItemBalanceLibrary
      * @return a reference to this threads item balancing library.
      */
     public static final ItemBalanceLibrary itemBuilder() {
@@ -242,7 +242,7 @@ public class CMLib {
 
     /**
      * Returns a reference to this threads web macro filtering library.
-     * @see com.planet_ink.game.Libraries.interfaces.WebMacroLibrary
+     * @see com.syncleus.aethermud.game.Libraries.interfaces.WebMacroLibrary
      * @return a reference to this threads web macro filtering library.
      */
     public static final WebMacroLibrary webMacroFilter() {
@@ -251,7 +251,7 @@ public class CMLib {
 
     /**
      * Returns a reference to this threads string/item/object listing library.
-     * @see com.planet_ink.game.Libraries.interfaces.ListingLibrary
+     * @see com.syncleus.aethermud.game.Libraries.interfaces.ListingLibrary
      * @return a reference to this threads string/item/object listing library.
      */
     public static final ListingLibrary lister() {
@@ -260,7 +260,7 @@ public class CMLib {
 
     /**
      * Returns a reference to this threads money handling library.
-     * @see com.planet_ink.game.Libraries.interfaces.MoneyLibrary
+     * @see com.syncleus.aethermud.game.Libraries.interfaces.MoneyLibrary
      * @return a reference to this threads money handling library.
      */
     public static final MoneyLibrary beanCounter() {
@@ -269,7 +269,7 @@ public class CMLib {
 
     /**
      * Returns a reference to this threads store front/shopping library.
-     * @see com.planet_ink.game.Libraries.interfaces.ShoppingLibrary
+     * @see com.syncleus.aethermud.game.Libraries.interfaces.ShoppingLibrary
      * @return a reference to this threads store front/shopping library.
      */
     public static final ShoppingLibrary coffeeShops() {
@@ -278,7 +278,7 @@ public class CMLib {
 
     /**
      * Returns a reference to this threads raw resource/material item library.
-     * @see com.planet_ink.game.Libraries.interfaces.MaterialLibrary
+     * @see com.syncleus.aethermud.game.Libraries.interfaces.MaterialLibrary
      * @return a reference to this threads raw resource/material item library.
      */
     public static final MaterialLibrary materials() {
@@ -287,7 +287,7 @@ public class CMLib {
 
     /**
      * Returns a reference to this threads combat library.
-     * @see com.planet_ink.game.Libraries.interfaces.CombatLibrary
+     * @see com.syncleus.aethermud.game.Libraries.interfaces.CombatLibrary
      * @return a reference to this threads combat library.
      */
     public static final CombatLibrary combat() {
@@ -296,7 +296,7 @@ public class CMLib {
 
     /**
      * Returns a reference to this threads help file library.
-     * @see com.planet_ink.game.Libraries.interfaces.HelpLibrary
+     * @see com.syncleus.aethermud.game.Libraries.interfaces.HelpLibrary
      * @return a reference to this threads help file library.
      */
     public static final HelpLibrary help() {
@@ -305,7 +305,7 @@ public class CMLib {
 
     /**
      * Returns a reference to this threads mob tracking/movement library.
-     * @see com.planet_ink.game.Libraries.interfaces.TrackingLibrary
+     * @see com.syncleus.aethermud.game.Libraries.interfaces.TrackingLibrary
      * @return a reference to this threads mob tracking/movement library.
      */
     public static final TrackingLibrary tracking() {
@@ -314,7 +314,7 @@ public class CMLib {
 
     /**
      * Returns a reference to this threads legal and property library.
-     * @see com.planet_ink.game.Libraries.interfaces.LegalLibrary
+     * @see com.syncleus.aethermud.game.Libraries.interfaces.LegalLibrary
      * @return a reference to this threads legal and property library.
      */
     public static final LegalLibrary law() {
@@ -323,7 +323,7 @@ public class CMLib {
 
     /**
      * Returns a reference to this threads object masking/filtering library.
-     * @see com.planet_ink.game.Libraries.interfaces.MaskingLibrary
+     * @see com.syncleus.aethermud.game.Libraries.interfaces.MaskingLibrary
      * @return a reference to this threads object masking/filtering library.
      */
     public static final MaskingLibrary masking() {
@@ -332,7 +332,7 @@ public class CMLib {
 
     /**
      * Returns a reference to this threads chat channel library.
-     * @see com.planet_ink.game.Libraries.interfaces.ChannelsLibrary
+     * @see com.syncleus.aethermud.game.Libraries.interfaces.ChannelsLibrary
      * @return a reference to this threads chat channel library.
      */
     public static final ChannelsLibrary channels() {
@@ -341,7 +341,7 @@ public class CMLib {
 
     /**
      * Returns a reference to this threads command shortcut and common event handler library.
-     * @see com.planet_ink.game.Libraries.interfaces.CommonCommands
+     * @see com.syncleus.aethermud.game.Libraries.interfaces.CommonCommands
      * @return a reference to this threads command shortcut and common event handler library.
      */
     public static final CommonCommands commands() {
@@ -350,7 +350,7 @@ public class CMLib {
 
     /**
      * Returns a reference to this threads achievement system library.
-     * @see com.planet_ink.game.Libraries.interfaces.AchievementLibrary
+     * @see com.syncleus.aethermud.game.Libraries.interfaces.AchievementLibrary
      * @return a reference to this threads achievement library.
      */
     public static final AchievementLibrary achievements() {
@@ -359,7 +359,7 @@ public class CMLib {
 
     /**
      * Returns a reference to this threads english grammar and input utility library.
-     * @see com.planet_ink.game.Libraries.interfaces.EnglishParsing
+     * @see com.syncleus.aethermud.game.Libraries.interfaces.EnglishParsing
      * @return a reference to this threads english grammar and input utility library.
      */
     public static final EnglishParsing english() {
@@ -368,7 +368,7 @@ public class CMLib {
 
     /**
      * Returns a reference to this threads slavery and geas library.
-     * @see com.planet_ink.game.Libraries.interfaces.SlaveryLibrary
+     * @see com.syncleus.aethermud.game.Libraries.interfaces.SlaveryLibrary
      * @return a reference to this threads slavery and geas library.
      */
     public static final SlaveryLibrary slavery() {
@@ -377,7 +377,7 @@ public class CMLib {
 
     /**
      * Returns a reference to this threads message board and journal library.
-     * @see com.planet_ink.game.Libraries.interfaces.JournalsLibrary
+     * @see com.syncleus.aethermud.game.Libraries.interfaces.JournalsLibrary
      * @return a reference to this threads message board and journal library.
      */
     public static final JournalsLibrary journals() {
@@ -386,7 +386,7 @@ public class CMLib {
 
     /**
      * Returns a reference to this threads telnet input/output filtering library.
-     * @see com.planet_ink.game.Libraries.interfaces.TelnetFilter
+     * @see com.syncleus.aethermud.game.Libraries.interfaces.TelnetFilter
      * @return a reference to this threads telnet input/output filtering library.
      */
     public static final TelnetFilter coffeeFilter() {
@@ -395,7 +395,7 @@ public class CMLib {
 
     /**
      * Returns a reference to this threads GenObject low level construction library.
-     * @see com.planet_ink.game.Libraries.interfaces.GenericBuilder
+     * @see com.syncleus.aethermud.game.Libraries.interfaces.GenericBuilder
      * @return a reference to this threads GenObject low level construction library.
      */
     public static final GenericBuilder coffeeMaker() {
@@ -404,7 +404,7 @@ public class CMLib {
 
     /**
      * Returns a reference to this threads telnet session management library.
-     * @see com.planet_ink.game.Libraries.interfaces.SessionsList
+     * @see com.syncleus.aethermud.game.Libraries.interfaces.SessionsList
      * @return a reference to this threads telnet session management library.
      */
     public static final SessionsList sessions() {
@@ -413,7 +413,7 @@ public class CMLib {
 
     /**
      * Returns a reference to this threads flag checking shortcut library.
-     * @see com.planet_ink.game.Libraries.interfaces.CMFlagLibrary
+     * @see com.syncleus.aethermud.game.Libraries.interfaces.CMFlagLibrary
      * @return a reference to this threads flag checking shortcut library.
      */
     public static final CMFlagLibrary flags() {
@@ -422,7 +422,7 @@ public class CMLib {
 
     /**
      * Returns a reference to this threads xml parsing library.
-     * @see com.planet_ink.game.Libraries.interfaces.XMLLibrary
+     * @see com.syncleus.aethermud.game.Libraries.interfaces.XMLLibrary
      * @return a reference to this threads xml parsing library.
      */
     public static final XMLLibrary xml() {
@@ -431,7 +431,7 @@ public class CMLib {
 
     /**
      * Returns a reference to this threads social command collection/management library.
-     * @see com.planet_ink.game.Libraries.interfaces.SocialsList
+     * @see com.syncleus.aethermud.game.Libraries.interfaces.SocialsList
      * @return a reference to this threads social command collection/management library.
      */
     public static final SocialsList socials() {
@@ -440,7 +440,7 @@ public class CMLib {
 
     /**
      * Returns a reference to this threads random world utilities library.
-     * @see com.planet_ink.game.Libraries.interfaces.CMMiscUtils
+     * @see com.syncleus.aethermud.game.Libraries.interfaces.CMMiscUtils
      * @return a reference to this threads random world utilities library.
      */
     public static final CMMiscUtils utensils() {
@@ -449,7 +449,7 @@ public class CMLib {
 
     /**
      * Returns a reference to this threads statistics library.
-     * @see com.planet_ink.game.Libraries.interfaces.StatisticsLibrary
+     * @see com.syncleus.aethermud.game.Libraries.interfaces.StatisticsLibrary
      * @return a reference to this threads statistics library.
      */
     public static final StatisticsLibrary coffeeTables() {
@@ -458,7 +458,7 @@ public class CMLib {
 
     /**
      * Returns a reference to this threads leveling and experience gaining library.
-     * @see com.planet_ink.game.Libraries.interfaces.ExpLevelLibrary
+     * @see com.syncleus.aethermud.game.Libraries.interfaces.ExpLevelLibrary
      * @return a reference to this threads leveling and experience gaining library.
      */
     public static final ExpLevelLibrary leveler() {
@@ -467,7 +467,7 @@ public class CMLib {
 
     /**
      * Returns a reference to this threads areas and rooms access/management library.
-     * @see com.planet_ink.game.Libraries.interfaces.WorldMap
+     * @see com.syncleus.aethermud.game.Libraries.interfaces.WorldMap
      * @return a reference to this threads areas and rooms access/management library.
      */
     public static final WorldMap map() {
@@ -476,7 +476,7 @@ public class CMLib {
 
     /**
      * Returns a reference to this threads quest collection/management library.
-     * @see com.planet_ink.game.Libraries.interfaces.QuestManager
+     * @see com.syncleus.aethermud.game.Libraries.interfaces.QuestManager
      * @return a reference to this threads quest collection/management library.
      */
     public static final QuestManager quests() {
@@ -485,7 +485,7 @@ public class CMLib {
 
     /**
      * Returns a reference to this threads random map/object generation library.
-     * @see com.planet_ink.game.Libraries.interfaces.AreaGenerationLibrary
+     * @see com.syncleus.aethermud.game.Libraries.interfaces.AreaGenerationLibrary
      * @return a reference to this threads random map/object generation library.
      */
     public static final AreaGenerationLibrary percolator() {
@@ -494,7 +494,7 @@ public class CMLib {
 
     /**
      * Returns a reference to this threads abilities collection/management library.
-     * @see com.planet_ink.game.Libraries.interfaces.AbilityMapper
+     * @see com.syncleus.aethermud.game.Libraries.interfaces.AbilityMapper
      * @return a reference to this threads abilities collection/management library.
      */
     public static final AbilityMapper ableMapper() {
@@ -503,7 +503,7 @@ public class CMLib {
 
     /**
      * Returns a reference to this threads abilities components management library.
-     * @see com.planet_ink.game.Libraries.interfaces.AbilityComponents
+     * @see com.syncleus.aethermud.game.Libraries.interfaces.AbilityComponents
      * @return a reference to this threads abilities components management library.
      */
     public static final AbilityComponents ableComponents() {
@@ -512,7 +512,7 @@ public class CMLib {
 
     /**
      * Returns a reference to this threads string hashing and compression library.
-     * @see com.planet_ink.game.Libraries.interfaces.TextEncoders
+     * @see com.syncleus.aethermud.game.Libraries.interfaces.TextEncoders
      * @return a reference to this threads string hashing and compression library.
      */
     public static final TextEncoders encoder() {
@@ -521,7 +521,7 @@ public class CMLib {
 
     /**
      * Returns a reference to this threads email sending library.
-     * @see com.planet_ink.game.Libraries.interfaces.SMTPLibrary
+     * @see com.syncleus.aethermud.game.Libraries.interfaces.SMTPLibrary
      * @return a reference to this threads email sending library.
      */
     public static final SMTPLibrary smtp() {
@@ -530,7 +530,7 @@ public class CMLib {
 
     /**
      * Returns a reference to this threads localization library.
-     * @see com.planet_ink.game.Libraries.interfaces.LanguageLibrary
+     * @see com.syncleus.aethermud.game.Libraries.interfaces.LanguageLibrary
      * @return a reference to this threads localization library.
      */
     public static final LanguageLibrary lang() {
@@ -539,7 +539,7 @@ public class CMLib {
 
     /**
      * Returns a reference to this threads random dice roll library.
-     * @see com.planet_ink.game.Libraries.interfaces.DiceLibrary
+     * @see com.syncleus.aethermud.game.Libraries.interfaces.DiceLibrary
      * @return a reference to this threads random dice roll library.
      */
     public static final DiceLibrary dice() {
@@ -548,7 +548,7 @@ public class CMLib {
 
     /**
      * Returns a reference to this threads faction collection/management library.
-     * @see com.planet_ink.game.Libraries.interfaces.FactionManager
+     * @see com.syncleus.aethermud.game.Libraries.interfaces.FactionManager
      * @return a reference to this threads faction collection/management library.
      */
     public static final FactionManager factions() {
@@ -557,7 +557,7 @@ public class CMLib {
 
     /**
      * Returns a reference to this threads clan collection/management library.
-     * @see com.planet_ink.game.Libraries.interfaces.ClanManager
+     * @see com.syncleus.aethermud.game.Libraries.interfaces.ClanManager
      * @return a reference to this threads clan collection/management library.
      */
     public static final ClanManager clans() {
@@ -566,7 +566,7 @@ public class CMLib {
 
     /**
      * Returns a reference to this threads player poll collection/management library.
-     * @see com.planet_ink.game.Libraries.interfaces.PollManager
+     * @see com.syncleus.aethermud.game.Libraries.interfaces.PollManager
      * @return a reference to this threads player poll collection/management library.
      */
     public static final PollManager polls() {
@@ -575,7 +575,7 @@ public class CMLib {
 
     /**
      * Returns a reference to this threads real time utility library.
-     * @see com.planet_ink.game.Libraries.interfaces.TimeManager
+     * @see com.syncleus.aethermud.game.Libraries.interfaces.TimeManager
      * @return a reference to this threads real time utility library.
      */
     public static final TimeManager time() {
@@ -584,7 +584,7 @@ public class CMLib {
 
     /**
      * Returns a reference to this threads ansi color library.
-     * @see com.planet_ink.game.Libraries.interfaces.ColorLibrary
+     * @see com.syncleus.aethermud.game.Libraries.interfaces.ColorLibrary
      * @return a reference to this threads ansi color library.
      */
     public static final ColorLibrary color() {
@@ -593,7 +593,7 @@ public class CMLib {
 
     /**
      * Returns a reference to this threads login and char creation library.
-     * @see com.planet_ink.game.Libraries.interfaces.CharCreationLibrary
+     * @see com.syncleus.aethermud.game.Libraries.interfaces.CharCreationLibrary
      * @return a reference to this threads login and char creation library.
      */
     public static final CharCreationLibrary login() {
@@ -602,7 +602,7 @@ public class CMLib {
 
     /**
      * Returns a reference to this threads expertise collection/management library.
-     * @see com.planet_ink.game.Libraries.interfaces.ExpertiseLibrary
+     * @see com.syncleus.aethermud.game.Libraries.interfaces.ExpertiseLibrary
      * @return a reference to this threads expertise collection/management library.
      */
     public static final ExpertiseLibrary expertises() {
@@ -611,7 +611,7 @@ public class CMLib {
 
     /**
      * Returns a reference to this threads player and account collection/management library.
-     * @see com.planet_ink.game.Libraries.interfaces.PlayerLibrary
+     * @see com.syncleus.aethermud.game.Libraries.interfaces.PlayerLibrary
      * @return a reference to this threads player and account collection/management library.
      */
     public static final PlayerLibrary players() {
@@ -620,7 +620,7 @@ public class CMLib {
 
     /**
      * Returns a reference to this threads cataloged mob/item collection/management library.
-     * @see com.planet_ink.game.Libraries.interfaces.CatalogLibrary
+     * @see com.syncleus.aethermud.game.Libraries.interfaces.CatalogLibrary
      * @return a reference to this threads cataloged mob/item collection/management library.
      */
     public static final CatalogLibrary catalog() {
@@ -629,7 +629,7 @@ public class CMLib {
 
     /**
      * Returns a reference to this threads player titles collection/management library.
-     * @see com.planet_ink.game.Libraries.interfaces.AutoTitlesLibrary
+     * @see com.syncleus.aethermud.game.Libraries.interfaces.AutoTitlesLibrary
      * @return a reference to this threads player titles collection/management library.
      */
     public static final AutoTitlesLibrary titles() {
@@ -638,7 +638,7 @@ public class CMLib {
 
     /**
      * Returns a reference to this threads recipe maker and skill parameter library.
-     * @see com.planet_ink.game.Libraries.interfaces.AbilityParameters
+     * @see com.syncleus.aethermud.game.Libraries.interfaces.AbilityParameters
      * @return a reference to this threads recipe maker and skill parameter library.
      */
     public static final AbilityParameters ableParms() {
@@ -647,7 +647,7 @@ public class CMLib {
 
     /**
      * Returns a reference to this threads generic object builder/editor and prompting library.
-     * @see com.planet_ink.game.Libraries.interfaces.GenericEditor
+     * @see com.syncleus.aethermud.game.Libraries.interfaces.GenericEditor
      * @return a reference to this threads generic object builder/editor and prompting library.
      */
     public static final GenericEditor genEd() {
@@ -656,7 +656,7 @@ public class CMLib {
 
     /**
      * Returns a reference to this threads tech and electricity library.
-     * @see com.planet_ink.game.Libraries.interfaces.TechLibrary
+     * @see com.syncleus.aethermud.game.Libraries.interfaces.TechLibrary
      * @return a reference to this threads tech and electricity library.
      */
     public static final TechLibrary tech() {
@@ -665,7 +665,7 @@ public class CMLib {
 
     /**
      * Returns a reference to this threads mud protocol mxp/msdp/etc library.
-     * @see com.planet_ink.game.Libraries.interfaces.ProtocolLibrary
+     * @see com.syncleus.aethermud.game.Libraries.interfaces.ProtocolLibrary
      * @return a reference to this threads mud protocol mxp/msdp/etc library.
      */
     public static final ProtocolLibrary protocol() {
@@ -692,7 +692,7 @@ public class CMLib {
     /**
      * Register the given library object as belonging to the thread
      * group that called this method.
-     * @see com.planet_ink.game.Libraries.interfaces.CMLibrary
+     * @see com.syncleus.aethermud.game.Libraries.interfaces.CMLibrary
      * @param O the library to register
      */
     public static final void registerLibrary(final CMLibrary O) {
@@ -822,7 +822,7 @@ public class CMLib {
      * Return the library belonging to the given thread group code, and the given
      * Library Enum
      * @see CMLib.Library
-     * @see com.planet_ink.game.Libraries.interfaces.CMLibrary
+     * @see com.syncleus.aethermud.game.Libraries.interfaces.CMLibrary
      * @param tcode the thread group code
      * @param lcode the Library Enum
      * @return the appropriate library belonging to the thread group and code
@@ -852,7 +852,7 @@ public class CMLib {
 
     /**
      * Calls registerLibrary on all the given CMLibrary objects
-     * @see com.planet_ink.game.Libraries.interfaces.CMLibrary
+     * @see com.syncleus.aethermud.game.Libraries.interfaces.CMLibrary
      * @see CMLib#registerLibrary(CMLibrary)
      * @param e an enumeration of CMLibrary objects
      */

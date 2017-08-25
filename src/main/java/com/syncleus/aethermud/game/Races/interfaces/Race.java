@@ -14,18 +14,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Races.interfaces;
+package com.syncleus.aethermud.game.Races.interfaces;
 
-import com.planet_ink.game.Abilities.interfaces.Ability;
-import com.planet_ink.game.Common.interfaces.CharStats;
-import com.planet_ink.game.Common.interfaces.PhyStats;
-import com.planet_ink.game.Items.interfaces.*;
-import com.planet_ink.game.Locales.interfaces.Room;
-import com.planet_ink.game.MOBS.interfaces.MOB;
-import com.planet_ink.game.core.CMLib;
-import com.planet_ink.game.core.CMStrings;
-import com.planet_ink.game.core.collections.*;
-import com.planet_ink.game.core.interfaces.*;
+import com.syncleus.aethermud.game.Abilities.interfaces.Ability;
+import com.syncleus.aethermud.game.Common.interfaces.CharStats;
+import com.syncleus.aethermud.game.Common.interfaces.PhyStats;
+import com.syncleus.aethermud.game.Items.interfaces.*;
+import com.syncleus.aethermud.game.Locales.interfaces.Room;
+import com.syncleus.aethermud.game.MOBS.interfaces.MOB;
+import com.syncleus.aethermud.game.core.CMLib;
+import com.syncleus.aethermud.game.core.CMStrings;
+import com.syncleus.aethermud.game.core.collections.*;
+import com.syncleus.aethermud.game.core.interfaces.*;
 
 import java.util.*;
 
@@ -206,7 +206,7 @@ public interface Race extends Tickable, StatsAffecting, MsgListener, CMObject, M
      * at char creation time, whether they can
      * change to this race via spells, or whether
      * the race is utterly unavailable to them.
-     * @see com.planet_ink.game.Areas.interfaces.Area
+     * @see com.syncleus.aethermud.game.Areas.interfaces.Area
      * @return the availability/theme of this race
      */
     public int availabilityCode();
@@ -226,7 +226,7 @@ public interface Race extends Tickable, StatsAffecting, MsgListener, CMObject, M
      * Typically called when a mob gains a level with this base-race, to allow the race to
      * assign any new skills.  Can also be called just to populate a mob with race skills,
      * so it should also confirm any lower level skills also.
-     * @see com.planet_ink.game.MOBS.interfaces.MOB#addAbility(Ability)
+     * @see com.syncleus.aethermud.game.MOBS.interfaces.MOB#addAbility(Ability)
      * @param mob the mob to give abilities to.
      * @param isBorrowedRace whether the skills are savable (false) or temporary (true)
      */
@@ -235,7 +235,7 @@ public interface Race extends Tickable, StatsAffecting, MsgListener, CMObject, M
     /**
      * Will initialize a player or mobs height and weight based
      * on this races parameters.
-     * @see com.planet_ink.game.Common.interfaces.PhyStats
+     * @see com.syncleus.aethermud.game.Common.interfaces.PhyStats
      * @param stats the PhyStats object to change
      * @param gender the mobs gender 'M' or 'F'
      */
@@ -288,7 +288,7 @@ public interface Race extends Tickable, StatsAffecting, MsgListener, CMObject, M
      * race can not wear clothing, even if the members have one
      * or more of the required limbs.  The bitmap is made from
      * Wearable.WORN_* constant values.
-     * @see com.planet_ink.game.Items.interfaces.Item
+     * @see com.syncleus.aethermud.game.Items.interfaces.Item
      * @return the illegal wear location bitmap
      */
     public long forbiddenWornBits();
@@ -333,8 +333,8 @@ public interface Race extends Tickable, StatsAffecting, MsgListener, CMObject, M
     /**
      * Returns a description of the given mobs description, by
      * consulting the mobs curState().getHitPoints method.
-     * @see com.planet_ink.game.MOBS.interfaces.MOB#curState()
-     * @see com.planet_ink.game.Common.interfaces.CharState#getHitPoints()
+     * @see com.syncleus.aethermud.game.MOBS.interfaces.MOB#curState()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CharState#getHitPoints()
      * @param viewer the mob observing the health of this one
      * @param mob the mob whose health to check
      * @return a string describing his health
@@ -363,7 +363,7 @@ public interface Race extends Tickable, StatsAffecting, MsgListener, CMObject, M
      * Returns a Weapon object representing what a member of this
      * race fights with when unarmed.  This method may change what it
      * returns on every call to mix things up a bit.
-     * @see com.planet_ink.game.Items.interfaces.Weapon
+     * @see com.syncleus.aethermud.game.Items.interfaces.Weapon
      * @return a Weapon object representing claws or teeth, etc..
      */
     public Weapon myNaturalWeapon();
@@ -372,7 +372,7 @@ public interface Race extends Tickable, StatsAffecting, MsgListener, CMObject, M
      * Returns resource codes of what this race can breathe as
      * an atmosphere.  The list is guarenteed sorted.  If the list
      * is empty, the race can breathe anything at all.
-     * @see com.planet_ink.game.Items.interfaces.RawMaterial
+     * @see com.syncleus.aethermud.game.Items.interfaces.RawMaterial
      * @return a list of resource codes that this race can breathe
      */
     public int[] getBreathables();
@@ -381,7 +381,7 @@ public interface Race extends Tickable, StatsAffecting, MsgListener, CMObject, M
      * Returns a list of RawMaterial objects (usually GenFoodResource, GenLiquidResource,
      * or GenResource items) representing what is left over of a member of this race
      * after they've been butchered and cut up.
-     * @see com.planet_ink.game.Items.interfaces.RawMaterial
+     * @see com.syncleus.aethermud.game.Items.interfaces.RawMaterial
      * @return a list of rawmaterial objects
      */
     public List<RawMaterial> myResources();
@@ -474,7 +474,7 @@ public interface Race extends Tickable, StatsAffecting, MsgListener, CMObject, M
 
     /**
      * Whether this race can be associated with a character class.
-     * @see com.planet_ink.game.CharClasses.interfaces.CharClass
+     * @see com.syncleus.aethermud.game.CharClasses.interfaces.CharClass
      * @return whether this race can have a class
      */
     public boolean classless();
@@ -495,7 +495,7 @@ public interface Race extends Tickable, StatsAffecting, MsgListener, CMObject, M
      * Return a vector of skills, spells, and other ability ids granted to the given
      * mob when they are created as this race.  The entries are the ability id,
      * the default proficiency, the level, and whether it is auto-gained.
-     * @see com.planet_ink.game.Abilities.interfaces.Ability
+     * @see com.syncleus.aethermud.game.Abilities.interfaces.Ability
      * @return a quadvector of the Ability IDs, profs, levels, auto-gained
      */
     public QuadVector<String, Integer, Integer, Boolean> culturalAbilities();
@@ -503,7 +503,7 @@ public interface Race extends Tickable, StatsAffecting, MsgListener, CMObject, M
     /**
      * Return a vector of skills, spells, and other abilities granted to the given
      * mob of the given mobs level.
-     * @see com.planet_ink.game.Abilities.interfaces.Ability
+     * @see com.syncleus.aethermud.game.Abilities.interfaces.Ability
      * @param mob the mob to grant the abilities to
      * @return a vector of the Ability objects
      */
@@ -513,8 +513,8 @@ public interface Race extends Tickable, StatsAffecting, MsgListener, CMObject, M
      * Return a vector of skills, spells, and other abilities granted to the given
      * mob of the given mobs level.  This method is not functionally used because
      * it doesn't quite work correctly yet.
-     * @see com.planet_ink.game.Abilities.interfaces.Ability
-     * @see com.planet_ink.game.Races.interfaces.Race#numRacialEffects(MOB)
+     * @see com.syncleus.aethermud.game.Abilities.interfaces.Ability
+     * @see com.syncleus.aethermud.game.Races.interfaces.Race#numRacialEffects(MOB)
      * @param mob the mob to grant the abilities to
      * @return a vector of the Ability objects
      */
@@ -532,7 +532,7 @@ public interface Race extends Tickable, StatsAffecting, MsgListener, CMObject, M
     /**
      * Apply any affects of the given mob at the given age to the given base and/or
      * current char stats.
-     * @see com.planet_ink.game.Common.interfaces.CharState
+     * @see com.syncleus.aethermud.game.Common.interfaces.CharState
      * @param mob the mob to apply changes to
      * @param baseStats permanent charstats changes
      * @param charStats temporary charstats changes

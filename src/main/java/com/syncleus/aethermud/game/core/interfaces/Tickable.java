@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.core.interfaces;
+package com.syncleus.aethermud.game.core.interfaces;
 
 /**
  * This interface is implemented by any object which wishes to get periodic thread time from
@@ -149,7 +149,7 @@ public interface Tickable extends CMObject {
      * for thread access.  Typically the period is once per TIME_TICK period, but that is
      * determined when the object is submitted to the thread engine.
      * @see Tickable
-     * @see com.planet_ink.game.core.threads.ServiceEngine
+     * @see com.syncleus.aethermud.game.core.threads.ServiceEngine
      * @see TickableGroup
      * @param ticking a reference to this Tickable object
      * @param tickID the TICKID_ constant describing this periodic call, as defined in Tickable

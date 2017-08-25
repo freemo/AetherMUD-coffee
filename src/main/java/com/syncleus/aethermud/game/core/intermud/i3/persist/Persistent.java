@@ -14,10 +14,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.core.intermud.i3.persist;
+package com.syncleus.aethermud.game.core.intermud.i3.persist;
 
 /**
- * com.planet_ink.game.core.intermud.i3.persist.Persistent
+ * com.syncleus.aethermud.game.core.intermud.i3.persist.Persistent
  * Copyright (c) 1996 George Reese
  * This source code may not be modified, copied,
  * redistributed, or used in any fashion without the
@@ -59,7 +59,7 @@ public interface Persistent {
      * object's PersistentPeer method to perform the
      * actual save.
      * @throws PersistenceException thrown when an error occurs in restoring
-     * @see com.planet_ink.game.core.intermud.i3.persist.PersistentPeer
+     * @see com.syncleus.aethermud.game.core.intermud.i3.persist.PersistentPeer
      */
     public abstract void restore() throws PersistenceException;
 
@@ -70,7 +70,7 @@ public interface Persistent {
      * trigger the actual saving mechanism in its
      * PersistentPeer implementation.
      * @throws PersistenceException thrown when an error occurs in saving
-     * @see com.planet_ink.game.core.intermud.i3.persist.PersistentPeer
+     * @see com.syncleus.aethermud.game.core.intermud.i3.persist.PersistentPeer
      */
     public abstract void save() throws PersistenceException;
 }

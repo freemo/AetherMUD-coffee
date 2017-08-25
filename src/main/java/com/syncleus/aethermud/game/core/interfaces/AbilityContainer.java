@@ -14,9 +14,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.core.interfaces;
+package com.syncleus.aethermud.game.core.interfaces;
 
-import com.planet_ink.game.Abilities.interfaces.Ability;
+import com.syncleus.aethermud.game.Abilities.interfaces.Ability;
 
 import java.util.Enumeration;
 
@@ -31,14 +31,14 @@ public interface AbilityContainer {
     /**
      * Adds a new ability to this for use.
      * No ability with the same ID can be contained twice.
-     * @see com.planet_ink.game.Abilities.interfaces.Ability
+     * @see com.syncleus.aethermud.game.Abilities.interfaces.Ability
      * @param to the Ability to add.
      */
     public void addAbility(Ability to);
 
     /**
      * Removes the exact given ability object from here.
-     * @see com.planet_ink.game.Abilities.interfaces.Ability
+     * @see com.syncleus.aethermud.game.Abilities.interfaces.Ability
      * @param to the exact Ability to remove
      */
     public void delAbility(Ability to);
@@ -47,7 +47,7 @@ public interface AbilityContainer {
      * Returns the number of abilities contained herein this object.
      * Any extraneous abilities bestowed from other sources will NOT
      * be returned -- only the exact abilities owned herein.
-     * @see com.planet_ink.game.Abilities.interfaces.Ability
+     * @see com.syncleus.aethermud.game.Abilities.interfaces.Ability
      * @return the number of owned abilities
      */
     public int numAbilities();
@@ -56,7 +56,7 @@ public interface AbilityContainer {
      * Returns the Ability object at that index in this container.
      * Any extraneous abilities bestowed from other sources MAY
      * be returned, so long as index &gt; numAbilities.
-     * @see com.planet_ink.game.Abilities.interfaces.Ability
+     * @see com.syncleus.aethermud.game.Abilities.interfaces.Ability
      * @param index the index of the Ability object to return
      * @return the Ability object
      */
@@ -67,7 +67,7 @@ public interface AbilityContainer {
      * container of the given ID.
      * Any extraneous abilities bestowed from other sources MAY
      * be returned by this method.
-     * @see com.planet_ink.game.Abilities.interfaces.Ability
+     * @see com.syncleus.aethermud.game.Abilities.interfaces.Ability
      * @param ID the ID of the ability to return.
      * @return the Ability object
      */
@@ -77,7 +77,7 @@ public interface AbilityContainer {
      * Returns a random ability from this container.
      * Any extraneous abilities bestowed from other sources MAY
      * be returned by this method.
-     * @see com.planet_ink.game.Abilities.interfaces.Ability
+     * @see com.syncleus.aethermud.game.Abilities.interfaces.Ability
      * @return a random Ability
      */
     public Ability fetchRandomAbility();

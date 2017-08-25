@@ -14,12 +14,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.core;
+package com.syncleus.aethermud.game.core;
 
-import com.planet_ink.game.core.collections.Pair;
-import com.planet_ink.game.core.collections.PairVector;
-import com.planet_ink.game.core.interfaces.CMObject;
-import com.planet_ink.game.core.interfaces.Environmental;
+import com.syncleus.aethermud.game.core.collections.Pair;
+import com.syncleus.aethermud.game.core.collections.PairVector;
+import com.syncleus.aethermud.game.core.interfaces.CMObject;
+import com.syncleus.aethermud.game.core.interfaces.Environmental;
 
 import java.nio.ByteBuffer;
 import java.util.*;

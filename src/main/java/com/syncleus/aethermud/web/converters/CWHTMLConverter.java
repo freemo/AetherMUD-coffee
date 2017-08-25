@@ -14,14 +14,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.web.converters;
+package com.syncleus.aethermud.web.converters;
 
-import com.planet_ink.web.http.HTTPException;
-import com.planet_ink.web.http.HTTPStatus;
-import com.planet_ink.web.interfaces.HTTPOutputConverter;
-import com.planet_ink.web.interfaces.HTTPRequest;
-import com.planet_ink.web.server.WebServer;
-import com.planet_ink.web.util.CWConfig;
+import com.syncleus.aethermud.web.http.HTTPException;
+import com.syncleus.aethermud.web.http.HTTPStatus;
+import com.syncleus.aethermud.web.interfaces.HTTPOutputConverter;
+import com.syncleus.aethermud.web.interfaces.HTTPRequest;
+import com.syncleus.aethermud.web.server.WebServer;
+import com.syncleus.aethermud.web.util.CWConfig;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;

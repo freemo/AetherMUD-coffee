@@ -14,11 +14,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Common.interfaces;
+package com.syncleus.aethermud.game.Common.interfaces;
 
-import com.planet_ink.game.MOBS.interfaces.MOB;
-import com.planet_ink.game.core.CMath;
-import com.planet_ink.game.core.interfaces.Environmental;
+import com.syncleus.aethermud.game.MOBS.interfaces.MOB;
+import com.syncleus.aethermud.game.core.CMath;
+import com.syncleus.aethermud.game.core.interfaces.Environmental;
 
 import java.util.Hashtable;
 import java.util.List;
@@ -29,7 +29,7 @@ import java.util.Map;
  * The core of event handling in CoffeeMud, a CMMsg represents an event that
  * occurs.  All events are caused by MOBs (even natural events).   CMMsg objects
  * are usually created by calling the CMClass classloader:
- * @see com.planet_ink.game.core.CMClass#getMsg(MOB, int, String)
+ * @see com.syncleus.aethermud.game.core.CMClass#getMsg(MOB, int, String)
  *
  * Source
  * The source of any message must always be a valid reference to an instance of the
@@ -89,11 +89,11 @@ import java.util.Map;
  * ** * ** * ** * ** * ** * ** * ** * ** * ** * ** * ** * ** * ** * ** * ** * ** * ** * ** * **
  * You should also familiarize yourself with the interface that handles these
  * events
- * @see com.planet_ink.game.core.interfaces.MsgListener#okMessage(Environmental, CMMsg)
- * @see com.planet_ink.game.core.interfaces.MsgListener#executeMsg(Environmental, CMMsg)
- * @see com.planet_ink.game.core.interfaces.MsgListener
- * @see com.planet_ink.game.Locales.interfaces.Room#send(MOB, CMMsg)
- * @see com.planet_ink.game.Locales.interfaces.Room#sendOthers(MOB, CMMsg)
+ * @see com.syncleus.aethermud.game.core.interfaces.MsgListener#okMessage(Environmental, CMMsg)
+ * @see com.syncleus.aethermud.game.core.interfaces.MsgListener#executeMsg(Environmental, CMMsg)
+ * @see com.syncleus.aethermud.game.core.interfaces.MsgListener
+ * @see com.syncleus.aethermud.game.Locales.interfaces.Room#send(MOB, CMMsg)
+ * @see com.syncleus.aethermud.game.Locales.interfaces.Room#sendOthers(MOB, CMMsg)
  */
 public interface CMMsg extends CMCommon {
     /** Mask to remove the MAJOR_MASK from the source, target, or others code, leaving only TYPE */
@@ -669,18 +669,18 @@ public interface CMMsg extends CMCommon {
 
     /**
      * Returns high order bitmask for the target code
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#targetCode()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#targetMinor()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#MASK_MAGIC
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#targetCode()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#targetMinor()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#MASK_MAGIC
      * @return high order bitmask for the target code
      */
     public int targetMajor();
 
     /**
      * Returns whether high order bitmask for the target code is set
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#targetCode()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#targetMinor()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#MASK_MAGIC
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#targetCode()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#targetMinor()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#MASK_MAGIC
      * @param bitMask the bitmask to check for
      * @return true if high order bitmask for the target code is set
      */
@@ -688,9 +688,9 @@ public interface CMMsg extends CMCommon {
 
     /**
      * Returns low order action type integer for the target code
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#targetCode()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#targetMajor(int)
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#TYP_CAST_SPELL
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#targetCode()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#targetMajor(int)
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#TYP_CAST_SPELL
      * @return low order action type integer for the target code
      */
     public int targetMinor();
@@ -699,13 +699,13 @@ public interface CMMsg extends CMCommon {
      * A combination bitmask, action type integer that describes information
      * about how this event affects or is perceived by the target of the
      * action.
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#target()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#targetMessage()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#targetMajor(int)
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#targetMinor()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#MASK_MAGIC
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#TYP_CAST_SPELL
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#setTargetCode(int)
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#target()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#targetMessage()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#targetMajor(int)
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#targetMinor()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#MASK_MAGIC
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#TYP_CAST_SPELL
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#setTargetCode(int)
      * @return the combination bitmask/action type integer for target of event
      */
     public int targetCode();
@@ -714,13 +714,13 @@ public interface CMMsg extends CMCommon {
      * A combination bitmask, action type integer that describes information
      * about how this event affects or is perceived by the target of the
      * action.
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#target()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#targetMessage()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#targetCode()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#targetMajor(int)
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#targetMinor()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#MASK_MAGIC
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#TYP_CAST_SPELL
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#target()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#targetMessage()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#targetCode()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#targetMajor(int)
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#targetMinor()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#MASK_MAGIC
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#TYP_CAST_SPELL
      * @param code the new full bitmask/action type target event code
      * @return this
      */
@@ -729,9 +729,9 @@ public interface CMMsg extends CMCommon {
     /**
      * Returns the string seen by the target of the event, and only by
      * the target of the event.
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#target()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#setTargetMessage(String)
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#targetCode()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#target()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#setTargetMessage(String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#targetCode()
      * @return a string to show to the target
      */
     public String targetMessage();
@@ -739,9 +739,9 @@ public interface CMMsg extends CMCommon {
     /**
      * Sets the string seen by the target of the event, and only by
      * the target of the event.
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#target()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#targetMessage()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#targetCode()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#target()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#targetMessage()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#targetCode()
      * @param str the string to show to the target, or NULL
      * @return this
      */
@@ -750,7 +750,7 @@ public interface CMMsg extends CMCommon {
     /**
      * Returns whether the given code or mask is either the minor code
      * or a part of the major code of the targetCode
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#targetCode()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#targetCode()
      * @param codeOrMask the target action code or target major mask to check
      * @return whether there is a match
      */
@@ -759,9 +759,9 @@ public interface CMMsg extends CMCommon {
     /**
      * Returns whether the given code or mask string matches the minor code
      * or a part of the major code of the targetCode.
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#TYPE_DESCS
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#MASK_DESCS
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#targetCode()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#TYPE_DESCS
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#MASK_DESCS
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#targetCode()
      * @param codeOrMaskDesc the target action code string, or mask string
      * @return whether there is a match
      */
@@ -770,9 +770,9 @@ public interface CMMsg extends CMCommon {
     /**
      * Returns whether the given code or mask string matches
      * a part of the major code of the targetCode.
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#TYPE_DESCS
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#MASK_DESCS
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#targetCode()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#TYPE_DESCS
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#MASK_DESCS
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#targetCode()
      * @param codeOrMaskDesc the target action code string, or mask string
      * @return whether there is a match
      */
@@ -780,9 +780,9 @@ public interface CMMsg extends CMCommon {
 
     /**
      * Returns whether the given code or mask string matches the minor sourceCode
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#TYPE_DESCS
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#MASK_DESCS
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#targetCode()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#TYPE_DESCS
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#MASK_DESCS
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#targetCode()
      * @param codeOrMaskDesc the target action code string, or mask string
      * @return whether there is a match
      */
@@ -791,8 +791,8 @@ public interface CMMsg extends CMCommon {
     /**
      * Returns whether the given Environmental object is, in fact, the target
      * of this message.
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#target()
-     * @see com.planet_ink.game.core.interfaces.Environmental
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#target()
+     * @see com.syncleus.aethermud.game.core.interfaces.Environmental
      * @param E the Environmental to inspect, may not be null
      * @return whether the given E is the target of this message
      */
@@ -801,8 +801,8 @@ public interface CMMsg extends CMCommon {
     /**
      * Returns whether the given Environmental object is, in fact, the target
      * of this message.
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#target()
-     * @see com.planet_ink.game.core.interfaces.Environmental
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#target()
+     * @see com.syncleus.aethermud.game.core.interfaces.Environmental
      * @param thisOne the Environmental to inspect, may not be null
      * @return whether the given thisOne is the target of this message
      */
@@ -810,18 +810,18 @@ public interface CMMsg extends CMCommon {
 
     /**
      * Returns high order bitmask for the source code
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#sourceCode()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#sourceMinor()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#MASK_MAGIC
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#sourceCode()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#sourceMinor()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#MASK_MAGIC
      * @return high order bitmask for the source code
      */
     public int sourceMajor();
 
     /**
      * Returns whether high order bitmask for the source code is set
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#sourceCode()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#sourceMinor()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#MASK_MAGIC
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#sourceCode()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#sourceMinor()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#MASK_MAGIC
      * @param bitMask the bitmask to check for
      * @return true if high order bitmask for the source code is set
      */
@@ -829,9 +829,9 @@ public interface CMMsg extends CMCommon {
 
     /**
      * Returns low order action type integer for the target code
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#targetCode()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#targetMajor(int)
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#TYP_CAST_SPELL
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#targetCode()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#targetMajor(int)
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#TYP_CAST_SPELL
      * @return low order action type integer for the target code
      */
     public int sourceMinor();
@@ -840,13 +840,13 @@ public interface CMMsg extends CMCommon {
      * A combination bitmask, action type integer that describes information
      * about how this event affects or is perceived by the source of the
      * action.
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#source()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#sourceMessage()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#sourceMajor(int)
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#sourceMinor()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#MASK_MAGIC
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#TYP_CAST_SPELL
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#setSourceCode(int)
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#source()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#sourceMessage()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#sourceMajor(int)
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#sourceMinor()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#MASK_MAGIC
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#TYP_CAST_SPELL
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#setSourceCode(int)
      * @return the combination bitmask/action type integer for source of event
      */
     public int sourceCode();
@@ -854,7 +854,7 @@ public interface CMMsg extends CMCommon {
     /**
      * Returns whether the given code or mask is either the minor code
      * or a part of the major code of the sourceCode
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#sourceCode()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#sourceCode()
      * @param codeOrMask the source action code or source major mask to check
      * @return whether there is a match
      */
@@ -863,9 +863,9 @@ public interface CMMsg extends CMCommon {
     /**
      * Returns whether the given code or mask string matches the minor code
      * or a part of the major code of the sourceCode.
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#TYPE_DESCS
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#MASK_DESCS
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#sourceCode()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#TYPE_DESCS
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#MASK_DESCS
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#sourceCode()
      * @param codeOrMaskDesc the source action code string, or mask string
      * @return whether there is a match
      */
@@ -874,9 +874,9 @@ public interface CMMsg extends CMCommon {
     /**
      * Returns whether the given code or mask string matches
      * a part of the major code of the sourceCode.
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#TYPE_DESCS
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#MASK_DESCS
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#sourceCode()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#TYPE_DESCS
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#MASK_DESCS
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#sourceCode()
      * @param codeOrMaskDesc the source action code string, or mask string
      * @return whether there is a match
      */
@@ -884,9 +884,9 @@ public interface CMMsg extends CMCommon {
 
     /**
      * Returns whether the given code or mask string matches the minor sourceCode
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#TYPE_DESCS
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#MASK_DESCS
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#sourceCode()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#TYPE_DESCS
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#MASK_DESCS
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#sourceCode()
      * @param codeOrMaskDesc the source action code string, or mask string
      * @return whether there is a match
      */
@@ -895,8 +895,8 @@ public interface CMMsg extends CMCommon {
     /**
      * Returns whether the given Environmental object is, in fact, the source
      * of this message.
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#source()
-     * @see com.planet_ink.game.core.interfaces.Environmental
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#source()
+     * @see com.syncleus.aethermud.game.core.interfaces.Environmental
      * @param E the Environmental to inspect, may not be null
      * @return whether the given E is the source of this message
      */
@@ -905,8 +905,8 @@ public interface CMMsg extends CMCommon {
     /**
      * Returns whether the given Environmental object is, in fact, the source
      * of this message.
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#source()
-     * @see com.planet_ink.game.core.interfaces.Environmental
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#source()
+     * @see com.syncleus.aethermud.game.core.interfaces.Environmental
      * @param thisOne the Environmental to inspect, may not be null
      * @return whether the given thisOne is the source of this message
      */
@@ -916,13 +916,13 @@ public interface CMMsg extends CMCommon {
      * A combination bitmask, action type integer that describes information
      * about how this event affects or is perceived by the source of the
      * action.
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#source()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#sourceMessage()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#sourceCode()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#sourceMajor(int)
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#sourceMinor()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#MASK_MAGIC
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#TYP_CAST_SPELL
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#source()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#sourceMessage()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#sourceCode()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#sourceMajor(int)
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#sourceMinor()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#MASK_MAGIC
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#TYP_CAST_SPELL
      * @param code the new full bitmask/action type source event code
      * @return this
      */
@@ -931,9 +931,9 @@ public interface CMMsg extends CMCommon {
     /**
      * Returns the string seen by the source of the event, and only by
      * the source of the event.
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#source()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#setSourceMessage(String)
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#sourceCode()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#source()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#setSourceMessage(String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#sourceCode()
      * @return a string to show to the source
      */
     public String sourceMessage();
@@ -941,9 +941,9 @@ public interface CMMsg extends CMCommon {
     /**
      * Sets the string seen by the source of the event, and only by
      * the source of the event.
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#source()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#sourceMessage()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#sourceCode()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#source()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#sourceMessage()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#sourceCode()
      * @param str the string to show to the source, or NULL
      * @return this
      */
@@ -952,9 +952,9 @@ public interface CMMsg extends CMCommon {
     /**
      * Returns high order bitmask for the others code
      * (Others are everyone not source, not target)
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#othersCode()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#othersMinor()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#MASK_MAGIC
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#othersCode()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#othersMinor()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#MASK_MAGIC
      * @return high order bitmask for the others code
      */
     public int othersMajor();
@@ -962,9 +962,9 @@ public interface CMMsg extends CMCommon {
     /**
      * Returns whether high order bitmask for the others code is set
      * (Others are everyone not source, not target)
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#othersCode()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#othersMinor()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#MASK_MAGIC
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#othersCode()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#othersMinor()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#MASK_MAGIC
      * @param bitMask the bitmask to check for
      * @return true if high order bitmask for the others code is set
      */
@@ -973,9 +973,9 @@ public interface CMMsg extends CMCommon {
     /**
      * Returns low order action type integer for the others code
      * (Others are everyone not source, not target)
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#othersCode()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#othersMajor(int)
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#TYP_CAST_SPELL
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#othersCode()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#othersMajor(int)
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#TYP_CAST_SPELL
      * @return low order action type integer for the others code
      */
     public int othersMinor();
@@ -984,12 +984,12 @@ public interface CMMsg extends CMCommon {
      * A combination bitmask, action type integer that describes information
      * about how this event affects or is perceived by the others of the
      * action.  (Others are everyone not source, not target)
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#othersMessage()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#othersMajor(int)
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#othersMinor()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#MASK_MAGIC
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#TYP_CAST_SPELL
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#setOthersCode(int)
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#othersMessage()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#othersMajor(int)
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#othersMinor()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#MASK_MAGIC
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#TYP_CAST_SPELL
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#setOthersCode(int)
      * @return the combination bitmask/action type integer for others of event
      */
     public int othersCode();
@@ -997,7 +997,7 @@ public interface CMMsg extends CMCommon {
     /**
      * Returns whether the given code or mask is either the minor code
      * or a part of the major code of the othersCode
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#othersCode()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#othersCode()
      * @param codeOrMask the others action code or others major mask to check
      * @return whether there is a match
      */
@@ -1007,9 +1007,9 @@ public interface CMMsg extends CMCommon {
      * Returns whether the given code or mask string matches the minor code
      * or a part of the major code of the othersCode.  (Others are everyone
      * not source, not target)
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#TYPE_DESCS
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#MASK_DESCS
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#othersCode()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#TYPE_DESCS
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#MASK_DESCS
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#othersCode()
      * @param codeOrMaskDesc the others action code string, or mask string
      * @return whether there is a match
      */
@@ -1019,9 +1019,9 @@ public interface CMMsg extends CMCommon {
      * Returns whether the given code or mask string matches
      * a part of the major code of the othersCode.  (Others are everyone
      * not source, not target)
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#TYPE_DESCS
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#MASK_DESCS
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#othersCode()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#TYPE_DESCS
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#MASK_DESCS
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#othersCode()
      * @param codeOrMaskDesc the others action code string, or mask string
      * @return whether there is a match
      */
@@ -1030,9 +1030,9 @@ public interface CMMsg extends CMCommon {
     /**
      * Returns whether the given code or mask string matches the minor sourceCode
      * (Others are everyone not source, not target)
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#TYPE_DESCS
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#MASK_DESCS
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#othersCode()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#TYPE_DESCS
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#MASK_DESCS
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#othersCode()
      * @param codeOrMaskDesc the others action code string, or mask string
      * @return whether there is a match
      */
@@ -1042,12 +1042,12 @@ public interface CMMsg extends CMCommon {
      * A combination bitmask, action type integer that describes information
      * about how this event affects or is perceived by the others of the
      * action.  (Others are everyone not source, not target)
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#othersMessage()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#othersCode()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#othersMajor(int)
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#othersMinor()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#MASK_MAGIC
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#TYP_CAST_SPELL
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#othersMessage()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#othersCode()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#othersMajor(int)
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#othersMinor()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#MASK_MAGIC
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#TYP_CAST_SPELL
      * @param code the new full bitmask/action type others event code
      * @return this
      */
@@ -1056,8 +1056,8 @@ public interface CMMsg extends CMCommon {
     /**
      * Returns the string seen by the others of the event, and only by
      * the others of the event.  (Others are everyone not source, not target)
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#setOthersMessage(String)
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#othersCode()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#setOthersMessage(String)
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#othersCode()
      * @return a string to show to the others
      */
     public String othersMessage();
@@ -1065,8 +1065,8 @@ public interface CMMsg extends CMCommon {
     /**
      * Sets the string seen by the others of the event, and only by
      * the others of the event. (Others are everyone not source, not target)
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#othersMessage()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#othersCode()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#othersMessage()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#othersCode()
      * @param str the string to show to the others, or NULL
      * @return this
      */
@@ -1075,9 +1075,9 @@ public interface CMMsg extends CMCommon {
     /**
      * Returns whether the given Environmental object is neither the source
      * nor the target of this message.
-     * @see com.planet_ink.game.core.interfaces.Environmental
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#source()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#target()
+     * @see com.syncleus.aethermud.game.core.interfaces.Environmental
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#source()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#target()
      * @param E the Environmental to inspect, may not be null
      * @return whether the given E is neither the source nor target of this message
      */
@@ -1085,16 +1085,16 @@ public interface CMMsg extends CMCommon {
 
     /**
      * Returns the target of this event, an Environmental object
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#setTarget(Environmental)
-     * @see com.planet_ink.game.core.interfaces.Environmental
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#setTarget(Environmental)
+     * @see com.syncleus.aethermud.game.core.interfaces.Environmental
      * @return the target of this event
      */
     public Environmental target();
 
     /**
      * Sets the target of this event, an Environmental object
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#target()
-     * @see com.planet_ink.game.core.interfaces.Environmental
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#target()
+     * @see com.syncleus.aethermud.game.core.interfaces.Environmental
      * @param E the new target of this event
      * @return this
      */
@@ -1103,8 +1103,8 @@ public interface CMMsg extends CMCommon {
     /**
      * Returns the means, item, portal, or otherwise tool that helps the source
      * affect the event upon the target.
-     * @see com.planet_ink.game.core.interfaces.Environmental
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#setTool(Environmental)
+     * @see com.syncleus.aethermud.game.core.interfaces.Environmental
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#setTool(Environmental)
      * @return the tool of this event
      */
     public Environmental tool();
@@ -1112,8 +1112,8 @@ public interface CMMsg extends CMCommon {
     /**
      * Sets the means, item, portal, or otherwise tool that helps the source
      * affect the event upon the target.
-     * @see com.planet_ink.game.core.interfaces.Environmental
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#tool()
+     * @see com.syncleus.aethermud.game.core.interfaces.Environmental
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#tool()
      * @param E the new tool of this event
      * @return this
      */
@@ -1121,16 +1121,16 @@ public interface CMMsg extends CMCommon {
 
     /**
      * Returns the source of this event, a MOB object
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#setSource(MOB)
-     * @see com.planet_ink.game.MOBS.interfaces.MOB
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#setSource(MOB)
+     * @see com.syncleus.aethermud.game.MOBS.interfaces.MOB
      * @return the source of this event
      */
     public MOB source();
 
     /**
      * Sets the source of this event, a MOB object
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#source()
-     * @see com.planet_ink.game.MOBS.interfaces.MOB
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#source()
+     * @see com.syncleus.aethermud.game.MOBS.interfaces.MOB
      * @param mob the new source of this event
      * @return this
      */
@@ -1161,14 +1161,14 @@ public interface CMMsg extends CMCommon {
 
     /**
      * Modifies one of more fields in this event.
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#source()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#target()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#sourceCode()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#targetCode()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#othersCode()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#sourceMessage()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#targetMessage()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#othersMessage()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#source()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#target()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#sourceCode()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#targetCode()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#othersCode()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#sourceMessage()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#targetMessage()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#othersMessage()
      * @param source the source of the event
      * @param target the target of the event
      * @param newAllCode the source, target, and others code
@@ -1179,14 +1179,14 @@ public interface CMMsg extends CMCommon {
 
     /**
      * Modifies one of more fields in this event. Sets target and tool to NULL.
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#source()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#target()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#sourceCode()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#targetCode()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#othersCode()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#sourceMessage()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#targetMessage()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#othersMessage()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#source()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#target()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#sourceCode()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#targetCode()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#othersCode()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#sourceMessage()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#targetMessage()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#othersMessage()
      * @param source the new source of this event
      * @param newAllCode the new source, target, and others code of this event
      * @param allMessage the new source, target, and others message of this event
@@ -1196,14 +1196,14 @@ public interface CMMsg extends CMCommon {
 
     /**
      * Modifies one of more fields in this event. Sets target and tool to NULL.
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#source()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#target()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#sourceCode()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#targetCode()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#othersCode()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#sourceMessage()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#targetMessage()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#othersMessage()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#source()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#target()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#sourceCode()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#targetCode()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#othersCode()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#sourceMessage()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#targetMessage()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#othersMessage()
      * @param newAllCode the new source, target, and others code of this event
      * @param allMessage the new source, target, and others message of this event
      * @return this
@@ -1212,14 +1212,14 @@ public interface CMMsg extends CMCommon {
 
     /**
      * Modifies one of more fields in this event. Sets target and tool to NULL.
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#source()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#target()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#sourceCode()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#targetCode()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#othersCode()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#sourceMessage()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#targetMessage()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#othersMessage()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#source()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#target()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#sourceCode()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#targetCode()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#othersCode()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#sourceMessage()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#targetMessage()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#othersMessage()
      * @param allMessage the new source, target, and others message of this event
      * @return this
      */
@@ -1227,15 +1227,15 @@ public interface CMMsg extends CMCommon {
 
     /**
      * Modifies one of more fields in this event. Sets target and tool to NULL.
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#source()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#target()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#sourceCode()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#targetCode()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#othersCode()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#sourceMessage()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#targetMessage()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#othersMessage()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#value()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#source()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#target()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#sourceCode()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#targetCode()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#othersCode()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#sourceMessage()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#targetMessage()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#othersMessage()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#value()
      * @param source the new source of this event
      * @param newAllCode the new source, target, and others code of this event
      * @param allMessage the new source, target, and others message of this event
@@ -1246,14 +1246,14 @@ public interface CMMsg extends CMCommon {
 
     /**
      * Modifies one of more fields in this event.
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#source()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#target()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#sourceCode()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#targetCode()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#othersCode()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#sourceMessage()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#targetMessage()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#othersMessage()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#source()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#target()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#sourceCode()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#targetCode()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#othersCode()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#sourceMessage()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#targetMessage()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#othersMessage()
      * @param source the new source of this event
      * @param target the new target of this event
      * @param tool the new tool for this event
@@ -1265,14 +1265,14 @@ public interface CMMsg extends CMCommon {
 
     /**
      * Modifies one of more fields in this event.
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#source()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#target()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#sourceCode()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#targetCode()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#othersCode()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#sourceMessage()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#targetMessage()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#othersMessage()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#source()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#target()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#sourceCode()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#targetCode()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#othersCode()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#sourceMessage()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#targetMessage()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#othersMessage()
      * @param source the new source of this event
      * @param target the new target of this event
      * @param tool the new tool for this event
@@ -1292,14 +1292,14 @@ public interface CMMsg extends CMCommon {
 
     /**
      * Modifies one of more fields in this event.
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#source()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#target()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#sourceCode()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#targetCode()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#othersCode()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#sourceMessage()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#targetMessage()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#othersMessage()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#source()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#target()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#sourceCode()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#targetCode()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#othersCode()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#sourceMessage()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#targetMessage()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#othersMessage()
      * @param source the new source of this event
      * @param target the new target of this event
      * @param tool the new tool for this event
@@ -1323,14 +1323,14 @@ public interface CMMsg extends CMCommon {
 
     /**
      * Modifies one of more fields in this event.
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#source()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#target()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#sourceCode()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#targetCode()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#othersCode()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#sourceMessage()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#targetMessage()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#othersMessage()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#source()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#target()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#sourceCode()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#targetCode()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#othersCode()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#sourceMessage()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#targetMessage()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#othersMessage()
      * @param newSourceCode the new source code for this event
      * @param sourceMessage the new source message for this event
      * @param newTargetCode the new target code for this event
@@ -1348,14 +1348,14 @@ public interface CMMsg extends CMCommon {
 
     /**
      * Modifies one of more fields in this event.
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#source()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#target()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#sourceCode()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#targetCode()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#othersCode()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#sourceMessage()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#targetMessage()
-     * @see com.planet_ink.game.Common.interfaces.CMMsg#othersMessage()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#source()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#target()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#sourceCode()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#targetCode()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#othersCode()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#sourceMessage()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#targetMessage()
+     * @see com.syncleus.aethermud.game.Common.interfaces.CMMsg#othersMessage()
      * @param source the new source of this event
      * @param target the new target of this event
      * @param tool the new tool for this event
@@ -1377,7 +1377,7 @@ public interface CMMsg extends CMCommon {
      * Returns a List of other CMMsg events which are slated to be confirmed
      * and executed AFTER this current message is handled.  This is implemented
      * by the Room object
-     * @see com.planet_ink.game.Locales.interfaces.Room#send(MOB, CMMsg)
+     * @see com.syncleus.aethermud.game.Locales.interfaces.Room#send(MOB, CMMsg)
      * @return a List of CMMsg objects
      */
     public List<CMMsg> trailerMsgs();
@@ -1386,7 +1386,7 @@ public interface CMMsg extends CMCommon {
      * Appends to the list of other CMMsg events which are slated to be confirmed
      * and executed AFTER this current message is handled.  This is implemented
      * by the Room object
-     * @see com.planet_ink.game.Locales.interfaces.Room#send(MOB, CMMsg)
+     * @see com.syncleus.aethermud.game.Locales.interfaces.Room#send(MOB, CMMsg)
      * @param msg the CMMsg to append to this message.
      * @return this
      */
@@ -1396,7 +1396,7 @@ public interface CMMsg extends CMCommon {
      * Returns a List of other Runnables which are slated to be
      * and executed AFTER this current message is handled.  This is implemented
      * by the Room object
-     * @see com.planet_ink.game.Locales.interfaces.Room#send(MOB, CMMsg)
+     * @see com.syncleus.aethermud.game.Locales.interfaces.Room#send(MOB, CMMsg)
      * @return a List of Runnable objects
      */
     public List<Runnable> trailerRunnables();
@@ -1405,7 +1405,7 @@ public interface CMMsg extends CMCommon {
      * Appends to the list of Runnable objects which are slated to be confirmed
      * and executed AFTER this current message is handled.  This is implemented
      * by the Room object
-     * @see com.planet_ink.game.Locales.interfaces.Room#send(MOB, CMMsg)
+     * @see com.syncleus.aethermud.game.Locales.interfaces.Room#send(MOB, CMMsg)
      * @param runner the Runnable to append to this message.
      * @return this
      */

@@ -14,13 +14,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Areas;
+package com.syncleus.aethermud.game.Areas;
 
-import com.planet_ink.game.Areas.interfaces.Area;
-import com.planet_ink.game.Areas.interfaces.GridZones;
-import com.planet_ink.game.Locales.interfaces.Room;
-import com.planet_ink.game.core.*;
-import com.planet_ink.game.core.interfaces.CMObject;
+import com.syncleus.aethermud.game.Areas.interfaces.Area;
+import com.syncleus.aethermud.game.Areas.interfaces.GridZones;
+import com.syncleus.aethermud.game.Locales.interfaces.Room;
+import com.syncleus.aethermud.game.core.*;
+import com.syncleus.aethermud.game.core.interfaces.CMObject;
 
 
 public class StdGridArea extends StdArea implements Area, GridZones {

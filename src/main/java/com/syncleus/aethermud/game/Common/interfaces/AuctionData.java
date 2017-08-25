@@ -14,10 +14,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Common.interfaces;
+package com.syncleus.aethermud.game.Common.interfaces;
 
-import com.planet_ink.game.Items.interfaces.Item;
-import com.planet_ink.game.MOBS.interfaces.MOB;
+import com.syncleus.aethermud.game.Items.interfaces.Item;
+import com.syncleus.aethermud.game.MOBS.interfaces.MOB;
 
 /*
    Copyright 2015-2017 Bo Zimmerman

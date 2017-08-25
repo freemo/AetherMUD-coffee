@@ -14,9 +14,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.application;
+package com.syncleus.aethermud.game.application;
 
-import com.planet_ink.game.core.CMStrings;
+import com.syncleus.aethermud.game.core.CMStrings;
 import org.mozilla.javascript.Context;
 import org.mozilla.javascript.ScriptableObject;
 

@@ -14,9 +14,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Items.MiscMagic;
+package com.syncleus.aethermud.game.Items.MiscMagic;
 
-import com.planet_ink.game.Items.interfaces.RawMaterial;
+import com.syncleus.aethermud.game.Items.interfaces.RawMaterial;
 
 
 public class ScrollSpell extends StdScroll {

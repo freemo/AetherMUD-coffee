@@ -14,16 +14,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.WebMacros.grinder;
+package com.syncleus.aethermud.game.WebMacros.grinder;
 
-import com.planet_ink.game.Areas.interfaces.Area;
-import com.planet_ink.game.Libraries.interfaces.QuestManager;
-import com.planet_ink.game.core.CMLib;
-import com.planet_ink.game.core.CMParms;
-import com.planet_ink.game.core.CMStrings;
-import com.planet_ink.game.core.CMath;
-import com.planet_ink.game.core.collections.TriadList;
-import com.planet_ink.web.interfaces.HTTPRequest;
+import com.syncleus.aethermud.game.Areas.interfaces.Area;
+import com.syncleus.aethermud.game.Libraries.interfaces.QuestManager;
+import com.syncleus.aethermud.game.core.CMLib;
+import com.syncleus.aethermud.game.core.CMParms;
+import com.syncleus.aethermud.game.core.CMStrings;
+import com.syncleus.aethermud.game.core.CMath;
+import com.syncleus.aethermud.game.core.collections.TriadList;
+import com.syncleus.aethermud.web.interfaces.HTTPRequest;
 
 import java.util.Enumeration;
 import java.util.HashSet;

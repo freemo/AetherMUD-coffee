@@ -14,17 +14,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Libraries.interfaces;
+package com.syncleus.aethermud.game.Libraries.interfaces;
 
-import com.planet_ink.game.CharClasses.interfaces.CharClass;
-import com.planet_ink.game.Common.interfaces.CharStats;
-import com.planet_ink.game.Common.interfaces.PlayerAccount;
-import com.planet_ink.game.Common.interfaces.PlayerStats;
-import com.planet_ink.game.Common.interfaces.Session;
-import com.planet_ink.game.Locales.interfaces.Room;
-import com.planet_ink.game.MOBS.interfaces.MOB;
-import com.planet_ink.game.Races.interfaces.Race;
-import com.planet_ink.game.core.CMProps;
+import com.syncleus.aethermud.game.CharClasses.interfaces.CharClass;
+import com.syncleus.aethermud.game.Common.interfaces.CharStats;
+import com.syncleus.aethermud.game.Common.interfaces.PlayerAccount;
+import com.syncleus.aethermud.game.Common.interfaces.PlayerStats;
+import com.syncleus.aethermud.game.Common.interfaces.Session;
+import com.syncleus.aethermud.game.Locales.interfaces.Room;
+import com.syncleus.aethermud.game.MOBS.interfaces.MOB;
+import com.syncleus.aethermud.game.Races.interfaces.Race;
+import com.syncleus.aethermud.game.core.CMProps;
 
 import java.io.IOException;
 import java.net.SocketException;
@@ -47,7 +47,7 @@ public interface CharCreationLibrary extends CMLibrary {
      * object by resetting the values to minimum, and then
      * adding as many of the given points to random stats
      * until they are all gone.
-     * @see com.planet_ink.game.Common.interfaces.CharStats
+     * @see com.syncleus.aethermud.game.Common.interfaces.CharStats
      * @param baseCharStats the charstats object to populate
      * @param pointsLeft the number of points above minimum to allocate
      */
@@ -59,8 +59,8 @@ public interface CharCreationLibrary extends CMLibrary {
      * might return instantly, or it might send the given session
      * through the stat selection process.  The bonusPoints are any
      * over and above the standard allocation points.
-     * @see com.planet_ink.game.Common.interfaces.CharStats
-     * @see com.planet_ink.game.Areas.interfaces.Area#THEME_FANTASY
+     * @see com.syncleus.aethermud.game.Common.interfaces.CharStats
+     * @see com.syncleus.aethermud.game.Areas.interfaces.Area#THEME_FANTASY
      * @see CharCreationLibrary#reRollStats(CharStats, int)
      * @see CharCreationLibrary#promptCharClass(int, MOB, Session)
      * @see CharCreationLibrary#promptRace(int, MOB, Session)
@@ -79,12 +79,12 @@ public interface CharCreationLibrary extends CMLibrary {
      * according to character creation rules.  This method
      * might return instantly, or it might send the given session
      * through the class selection process.
-     * @see com.planet_ink.game.Common.interfaces.CharStats
+     * @see com.syncleus.aethermud.game.Common.interfaces.CharStats
      * @see CharCreationLibrary#reRollStats(CharStats, int)
      * @see CharCreationLibrary#promptBaseCharStats(int, MOB, int, Session, int)
      * @see CharCreationLibrary#promptRace(int, MOB, Session)
      * @see CharCreationLibrary#promptGender(int, MOB, Session)
-     * @see com.planet_ink.game.Areas.interfaces.Area#THEME_FANTASY
+     * @see com.syncleus.aethermud.game.Areas.interfaces.Area#THEME_FANTASY
      * @param theme the theme code to use for class selection
      * @param mob the mob who is getting the new char class
      * @param session the session which might help allocate the points
@@ -98,12 +98,12 @@ public interface CharCreationLibrary extends CMLibrary {
      * according to character creation rules.  This method
      * might return instantly, or it might send the given session
      * through the race selection process.
-     * @see com.planet_ink.game.Common.interfaces.CharStats
+     * @see com.syncleus.aethermud.game.Common.interfaces.CharStats
      * @see CharCreationLibrary#reRollStats(CharStats, int)
      * @see CharCreationLibrary#promptBaseCharStats(int, MOB, int, Session, int)
      * @see CharCreationLibrary#promptCharClass(int, MOB, Session)
      * @see CharCreationLibrary#promptGender(int, MOB, Session)
-     * @see com.planet_ink.game.Areas.interfaces.Area#THEME_FANTASY
+     * @see com.syncleus.aethermud.game.Areas.interfaces.Area#THEME_FANTASY
      * @param theme the theme code to use for race selection
      * @param mob the mob who is getting the new race
      * @param session the session which might help get the race
@@ -116,12 +116,12 @@ public interface CharCreationLibrary extends CMLibrary {
      * A blocking call that populates the given mob with a particular gender
      * according to character creation rules.  This method goes
      * through the gender selection process.
-     * @see com.planet_ink.game.Common.interfaces.CharStats
+     * @see com.syncleus.aethermud.game.Common.interfaces.CharStats
      * @see CharCreationLibrary#reRollStats(CharStats, int)
      * @see CharCreationLibrary#promptBaseCharStats(int, MOB, int, Session, int)
      * @see CharCreationLibrary#promptCharClass(int, MOB, Session)
      * @see CharCreationLibrary#promptRace(int, MOB, Session)
-     * @see com.planet_ink.game.Areas.interfaces.Area#THEME_FANTASY
+     * @see com.syncleus.aethermud.game.Areas.interfaces.Area#THEME_FANTASY
      * @param theme the theme code to use for gender selection
      * @param mob the mob who is getting the new gender
      * @param session the session which might help get the gender
@@ -133,7 +133,7 @@ public interface CharCreationLibrary extends CMLibrary {
     /**
      * Returns the cost, in trains, for the given mob to gain a point in the
      * given ability code stat number.
-     * @see com.planet_ink.game.Common.interfaces.CharStats
+     * @see com.syncleus.aethermud.game.Common.interfaces.CharStats
      * @param mob the mob who is trying to train
      * @param abilityCode the ability code the mob wants to train
      * @param quiet true to not give verbal errors
@@ -145,7 +145,7 @@ public interface CharCreationLibrary extends CMLibrary {
      * Returns whether the given mob can change to the given class (that is,
      * to become level 0 in that class) in the given theme.  The mob is
      * optional, at which point it is only checking base rules and theme.
-     * @see com.planet_ink.game.Areas.interfaces.Area#THEME_FANTASY
+     * @see com.syncleus.aethermud.game.Areas.interfaces.Area#THEME_FANTASY
      * @see CharCreationLibrary#classQualifies(MOB, int)
      * @param mob null or the mob who wants to learn a new class
      * @param thisClass the class that the mob wants to learn

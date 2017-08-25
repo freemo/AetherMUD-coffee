@@ -14,12 +14,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Items.Armor;
+package com.syncleus.aethermud.game.Items.Armor;
 
-import com.planet_ink.game.Items.Basic.StdItem;
-import com.planet_ink.game.Items.interfaces.Armor;
-import com.planet_ink.game.Items.interfaces.Wearable;
-import com.planet_ink.game.MOBS.interfaces.MOB;
+import com.syncleus.aethermud.game.Items.Basic.StdItem;
+import com.syncleus.aethermud.game.Items.interfaces.Armor;
+import com.syncleus.aethermud.game.Items.interfaces.Wearable;
+import com.syncleus.aethermud.game.MOBS.interfaces.MOB;
 
 
 public class StdThinArmor extends StdItem implements Armor {

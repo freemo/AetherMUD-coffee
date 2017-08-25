@@ -14,18 +14,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.core.intermud.i3.server;
+package com.syncleus.aethermud.game.core.intermud.i3.server;
 
-import com.planet_ink.game.core.CMLib;
-import com.planet_ink.game.core.CMSecurity;
-import com.planet_ink.game.core.CMSecurity.DisFlag;
-import com.planet_ink.game.core.Log;
-import com.planet_ink.game.core.interfaces.CMObject;
-import com.planet_ink.game.core.interfaces.Tickable;
-import com.planet_ink.game.core.intermud.i3.net.ListenThread;
-import com.planet_ink.game.core.intermud.i3.packets.ImudServices;
-import com.planet_ink.game.core.intermud.i3.packets.Intermud;
-import com.planet_ink.game.core.intermud.i3.persist.PersistentPeer;
+import com.syncleus.aethermud.game.core.CMLib;
+import com.syncleus.aethermud.game.core.CMSecurity;
+import com.syncleus.aethermud.game.core.CMSecurity.DisFlag;
+import com.syncleus.aethermud.game.core.Log;
+import com.syncleus.aethermud.game.core.interfaces.CMObject;
+import com.syncleus.aethermud.game.core.interfaces.Tickable;
+import com.syncleus.aethermud.game.core.intermud.i3.net.ListenThread;
+import com.syncleus.aethermud.game.core.intermud.i3.packets.ImudServices;
+import com.syncleus.aethermud.game.core.intermud.i3.packets.Intermud;
+import com.syncleus.aethermud.game.core.intermud.i3.persist.PersistentPeer;
 
 import java.util.Date;
 import java.util.Hashtable;
@@ -38,7 +38,7 @@ import java.util.Map;
  * executed in the thread's run() method.
  * @author George Reese (borg@imaginary.com), Bo Zimmerman
  * @version 1.1
- * @see com.planet_ink.game.core.intermud.i3.server.I3Server
+ * @see com.syncleus.aethermud.game.core.intermud.i3.server.I3Server
  *
  * Modified in 2013 to cut down on thread use
  */
@@ -172,7 +172,7 @@ public class ServerThread implements Tickable {
 
         try {
             Intermud.setup(intermuds,
-                (PersistentPeer) Class.forName("com.planet_ink.game.core.intermud.i3.IMudPeer").newInstance());
+                (PersistentPeer) Class.forName("com.syncleus.aethermud.game.core.intermud.i3.IMudPeer").newInstance());
         } catch (final Exception e) {
             Log.errOut("I3Server", e);
             return;
@@ -249,7 +249,7 @@ public class ServerThread implements Tickable {
                     break;
                 }
                 try {
-                    new_user = (ServerUser) copyObject("com.planet_ink.game.core.intermud.i3.IMudUser");
+                    new_user = (ServerUser) copyObject("com.syncleus.aethermud.game.core.intermud.i3.IMudUser");
                 } catch (final ObjectLoadException e) {
                     continue;
                 }

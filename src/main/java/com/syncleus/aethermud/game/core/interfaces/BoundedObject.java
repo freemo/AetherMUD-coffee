@@ -14,9 +14,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.core.interfaces;
+package com.syncleus.aethermud.game.core.interfaces;
 
-import com.planet_ink.game.core.CMath;
+import com.syncleus.aethermud.game.core.CMath;
 
 /**
  * The interface represents a 3d cubed thing.

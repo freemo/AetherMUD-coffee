@@ -14,17 +14,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.core.smtp;
+package com.syncleus.aethermud.game.core.smtp;
 
-import com.planet_ink.game.Common.interfaces.JournalEntry;
-import com.planet_ink.game.Common.interfaces.PlayerAccount;
-import com.planet_ink.game.Libraries.interfaces.SMTPLibrary;
-import com.planet_ink.game.MOBS.interfaces.MOB;
-import com.planet_ink.game.core.CMLib;
-import com.planet_ink.game.core.CMProps;
-import com.planet_ink.game.core.CMath;
-import com.planet_ink.game.core.Log;
-import com.planet_ink.game.core.exceptions.BadEmailAddressException;
+import com.syncleus.aethermud.game.Common.interfaces.JournalEntry;
+import com.syncleus.aethermud.game.Common.interfaces.PlayerAccount;
+import com.syncleus.aethermud.game.Libraries.interfaces.SMTPLibrary;
+import com.syncleus.aethermud.game.MOBS.interfaces.MOB;
+import com.syncleus.aethermud.game.core.CMLib;
+import com.syncleus.aethermud.game.core.CMProps;
+import com.syncleus.aethermud.game.core.CMath;
+import com.syncleus.aethermud.game.core.Log;
+import com.syncleus.aethermud.game.core.exceptions.BadEmailAddressException;
 
 import java.util.Calendar;
 import java.util.HashSet;

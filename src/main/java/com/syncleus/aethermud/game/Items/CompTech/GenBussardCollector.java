@@ -14,13 +14,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Items.CompTech;
+package com.syncleus.aethermud.game.Items.CompTech;
 
-import com.planet_ink.game.Areas.interfaces.Area;
-import com.planet_ink.game.Items.interfaces.SpaceShip;
-import com.planet_ink.game.core.CMLib;
-import com.planet_ink.game.core.interfaces.Environmental;
-import com.planet_ink.game.core.interfaces.SpaceObject;
+import com.syncleus.aethermud.game.Areas.interfaces.Area;
+import com.syncleus.aethermud.game.Items.interfaces.SpaceShip;
+import com.syncleus.aethermud.game.core.CMLib;
+import com.syncleus.aethermud.game.core.interfaces.Environmental;
+import com.syncleus.aethermud.game.core.interfaces.SpaceObject;
 
 
 public class GenBussardCollector extends GenFuellessGenerator {

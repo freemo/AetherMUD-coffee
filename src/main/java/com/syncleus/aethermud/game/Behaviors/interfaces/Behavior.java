@@ -14,10 +14,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Behaviors.interfaces;
+package com.syncleus.aethermud.game.Behaviors.interfaces;
 
-import com.planet_ink.game.MOBS.interfaces.MOB;
-import com.planet_ink.game.core.interfaces.*;
+import com.syncleus.aethermud.game.MOBS.interfaces.MOB;
+import com.syncleus.aethermud.game.core.interfaces.*;
 
 /*
    Copyright 2001-2017 Bo Zimmerman
@@ -43,8 +43,8 @@ import com.planet_ink.game.core.interfaces.*;
  * is called periodically by either the host object, or the serviceengine.
  * Behaviors are also message listeners however, and can overlap Ability/properties
  * in that way.
- * @see com.planet_ink.game.core.interfaces.Environmental
- * @see com.planet_ink.game.core.interfaces.Tickable
+ * @see com.syncleus.aethermud.game.core.interfaces.Environmental
+ * @see com.syncleus.aethermud.game.core.interfaces.Tickable
  */
 public interface Behavior extends Tickable, MsgListener, Contingent, Modifiable {
     /** constant mask for the canImprove() and canImproveCode() methods.  Means it can improve mobs @see Behavior#canImprove(Behavable) */
@@ -72,7 +72,7 @@ public interface Behavior extends Tickable, MsgListener, Contingent, Modifiable 
      * Called after a behavior is added to a Behavable object.
      * The point is to do any initializing.  This method assumes
      * setParms() has already been called as well.
-     * @see com.planet_ink.game.core.interfaces.PhysicalAgent#addBehavior(Behavior)
+     * @see com.syncleus.aethermud.game.core.interfaces.PhysicalAgent#addBehavior(Behavior)
      * @see Behavior#setParms(String)
      * @param forMe the object to which this behavior has been added
      */
@@ -82,7 +82,7 @@ public interface Behavior extends Tickable, MsgListener, Contingent, Modifiable 
      * Called after a behavior is added to an Environmental object.
      * The point is to register a quest objet, should it be needed or
      * be useful to the quest.
-     * @see com.planet_ink.game.Common.interfaces.Quest
+     * @see com.syncleus.aethermud.game.Common.interfaces.Quest
      * @param questName the Quest name
      */
     public void registerDefaultQuest(String questName);
@@ -109,7 +109,7 @@ public interface Behavior extends Tickable, MsgListener, Contingent, Modifiable 
      * Unimplemented as of yet, but will hold a string telling the system what
      * the proper format of any parms data.  Will use the CMParms.MTFORMAT_*
      * constants for definition.
-     * @see com.planet_ink.game.core.CMParms
+     * @see com.syncleus.aethermud.game.core.CMParms
      * @see Behavior#getParms()
      * @see Behavior#setParms(String)
      * @return the format expected for the parms field
@@ -140,7 +140,7 @@ public interface Behavior extends Tickable, MsgListener, Contingent, Modifiable 
      * Returns whether this behavior is capable of enhancing the given type
      * of object designated by E.  It derives from the protected
      * Behavior.canImproveCode() method.
-     * @see com.planet_ink.game.Behaviors.StdBehavior#canImproveCode()
+     * @see com.syncleus.aethermud.game.Behaviors.StdBehavior#canImproveCode()
      * @param E the object to evaluate for this behavior
      * @return whether the given object can be enhanced by this behavior
      */
@@ -150,7 +150,7 @@ public interface Behavior extends Tickable, MsgListener, Contingent, Modifiable 
      * Returns whether this behavior is capable of enhancing the given type
      * of object designated by the can_code.  It derives from the protected
      * Behavior.canImproveCode() method and uses the Behavior.CAN_* constants.
-     * @see com.planet_ink.game.Behaviors.StdBehavior#canImproveCode()
+     * @see com.syncleus.aethermud.game.Behaviors.StdBehavior#canImproveCode()
      * @see Behavior
      * @param can_code the Behavior.CAN_* mask to evaluate for this behavior
      * @return whether the given type can be enhanced by this behavior

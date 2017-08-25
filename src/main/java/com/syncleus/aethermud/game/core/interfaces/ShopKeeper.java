@@ -14,9 +14,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.core.interfaces;
+package com.syncleus.aethermud.game.core.interfaces;
 
-import com.planet_ink.game.Common.interfaces.CoffeeShop;
+import com.syncleus.aethermud.game.Common.interfaces.CoffeeShop;
 
 
 /**
@@ -111,23 +111,23 @@ public interface ShopKeeper extends Environmental, Economics {
 
     /**
      * the CoffeeShop method to access the shopkeepers store of goods
-     * @see com.planet_ink.game.Common.interfaces.CoffeeShop
+     * @see com.syncleus.aethermud.game.Common.interfaces.CoffeeShop
      * @return the CoffeeShop object
      */
     public CoffeeShop getShop();
 
     /**
      * Returns the ShopKeeper DEAL_* mask describing what is sold or bought by this ShopKeeper
-     * @see com.planet_ink.game.core.interfaces.ShopKeeper#DEAL_DESCS
-     * @see com.planet_ink.game.core.interfaces.ShopKeeper#setWhatIsSoldMask(long)
+     * @see com.syncleus.aethermud.game.core.interfaces.ShopKeeper#DEAL_DESCS
+     * @see com.syncleus.aethermud.game.core.interfaces.ShopKeeper#setWhatIsSoldMask(long)
      * @return the dealer type constants to the 2nd power, shifted 8 bits left
      */
     public long getWhatIsSoldMask();
 
     /**
      * Sets the encoded ShopKeeper DEAL_* constants describing what is sold or bought by this ShopKeeper
-     * @see com.planet_ink.game.core.interfaces.ShopKeeper#DEAL_DESCS
-     * @see com.planet_ink.game.core.interfaces.ShopKeeper#addSoldType(int)
+     * @see com.syncleus.aethermud.game.core.interfaces.ShopKeeper#DEAL_DESCS
+     * @see com.syncleus.aethermud.game.core.interfaces.ShopKeeper#addSoldType(int)
      * @param newSellCode the dealer type constants to the 2nd power, shifted 8 bits left
      */
     public void setWhatIsSoldMask(long newSellCode);
@@ -135,8 +135,8 @@ public interface ShopKeeper extends Environmental, Economics {
     /**
      * Returns whether the given type of good is sold by this shopkeeper.
      * @param deal  the ShopKeeper DEAL_* constant describing what is sold or bought by this ShopKeeper
-     * @see com.planet_ink.game.core.interfaces.ShopKeeper#DEAL_DESCS
-     * @see com.planet_ink.game.core.interfaces.ShopKeeper#getWhatIsSoldMask()
+     * @see com.syncleus.aethermud.game.core.interfaces.ShopKeeper#DEAL_DESCS
+     * @see com.syncleus.aethermud.game.core.interfaces.ShopKeeper#getWhatIsSoldMask()
      * @return true if the shopkeeper will make such a deal
      */
     public boolean isSold(int deal);
@@ -144,8 +144,8 @@ public interface ShopKeeper extends Environmental, Economics {
     /**
      * Adds the ShopKeeper DEAL_* constants describing what is sold or bought by this ShopKeeper
      * to the existing shopkeeper mask.  A value of 0 will clear the whole mask.
-     * @see com.planet_ink.game.core.interfaces.ShopKeeper#DEAL_DESCS
-     * @see com.planet_ink.game.core.interfaces.ShopKeeper#isSold(int)
+     * @see com.syncleus.aethermud.game.core.interfaces.ShopKeeper#DEAL_DESCS
+     * @see com.syncleus.aethermud.game.core.interfaces.ShopKeeper#isSold(int)
      * @param dealType the ShopKeeper DEAL_* constants describing what is sold or bought by this ShopKeeper
      */
     public void addSoldType(int dealType);

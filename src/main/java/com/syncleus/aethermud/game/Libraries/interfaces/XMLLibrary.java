@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Libraries.interfaces;
+package com.syncleus.aethermud.game.Libraries.interfaces;
 
 import java.util.List;
 import java.util.Map;
@@ -359,12 +359,12 @@ public interface XMLLibrary extends CMLibrary {
 
     public interface XMLTag {
         /* (non-Javadoc)
-         * @see com.planet_ink.game.Libraries.interfaces.XMLTag#copyOf()
+         * @see com.syncleus.aethermud.game.Libraries.interfaces.XMLTag#copyOf()
          */
         public XMLTag copyOf();
 
         /* (non-Javadoc)
-         * @see com.planet_ink.game.Libraries.interfaces.XMLTag#addContent(com.planet_ink.game.Libraries.interfaces.XMLLibrary.XMLTag)
+         * @see com.syncleus.aethermud.game.Libraries.interfaces.XMLTag#addContent(com.syncleus.aethermud.game.Libraries.interfaces.XMLLibrary.XMLTag)
          */
         public void addContent(XMLTag x);
 

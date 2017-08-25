@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Items.interfaces;
+package com.syncleus.aethermud.game.Items.interfaces;
 
 /**
  * A ShipEngine is a special TechComponent that is often a fuel consumer, 
@@ -26,7 +26,7 @@ package com.planet_ink.game.Items.interfaces;
 public interface ShipEngine extends TechComponent {
     /**
      * Gets set of available thrust ports on this engine.
-     * @see ShipEngine#setAvailPorts(com.planet_ink.game.Items.interfaces.TechComponent.ShipDir[])
+     * @see ShipEngine#setAvailPorts(com.syncleus.aethermud.game.Items.interfaces.TechComponent.ShipDir[])
      * @return the set of available thrust ports.
      */
     public TechComponent.ShipDir[] getAvailPorts();

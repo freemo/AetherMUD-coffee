@@ -14,9 +14,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.game.Common.interfaces;
+package com.syncleus.aethermud.game.Common.interfaces;
 
-import com.planet_ink.game.core.interfaces.CMObject;
+import com.syncleus.aethermud.game.core.interfaces.CMObject;
 
 /**
  * A common interface for common classes.  Unfortunately, they have

@@ -14,9 +14,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.siplet.support;
+package com.syncleus.aethermud.siplet.support;
 
-import com.planet_ink.siplet.applet.Siplet;
+import com.syncleus.aethermud.siplet.applet.Siplet;
 
 import java.util.Hashtable;
 import java.util.Vector;

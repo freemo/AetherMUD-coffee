@@ -14,12 +14,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.planet_ink.fakedb;
+package com.syncleus.aethermud.fakedb;
 
-import com.planet_ink.fakedb.Backend.ComparableValue;
-import com.planet_ink.fakedb.Backend.FakeColumn;
-import com.planet_ink.fakedb.Backend.FakeCondition;
-import com.planet_ink.fakedb.Backend.RecordInfo;
+import com.syncleus.aethermud.fakedb.Backend.ComparableValue;
+import com.syncleus.aethermud.fakedb.Backend.FakeColumn;
+import com.syncleus.aethermud.fakedb.Backend.FakeCondition;
+import com.syncleus.aethermud.fakedb.Backend.RecordInfo;
 
 import java.io.InputStream;
 import java.io.Reader;
