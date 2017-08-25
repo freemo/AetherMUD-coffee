@@ -2,7 +2,7 @@
 <HEAD>
 <TITLE>Siplet</TITLE>
 <LINK REL=StyleSheet HREF="/siplet/term.css" TYPE="text/css">
-	<link rel="coffeemud icon" href="../images/coffeemud.ico" >
+	<link rel="aethermud icon" href="../images/aethermud.ico" >
 <SCRIPT LANGUAGE=JavaScript src="/siplet/floater.js"></SCRIPT>
 <script language=JavaScript>
 var allwindows=new Array(10);

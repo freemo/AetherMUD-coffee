@@ -16,7 +16,7 @@
  */
 package com.syncleus.aethermud.game.core.exceptions;
 
-public class CMException extends CoffeeMudException {
+public class CMException extends AetherMudException {
     static final long serialVersionUID = 0;
 
     public CMException(String s) {

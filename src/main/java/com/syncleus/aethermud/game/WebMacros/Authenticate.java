@@ -36,7 +36,7 @@ public class Authenticate extends StdWebMacro {
 
     public static byte[] getFilter() {
         if (FILTER == null) {
-            // this is coffeemud's unsophisticated xor(mac address) encryption system.
+            // this is aethermud's unsophisticated xor(mac address) encryption system.
             final byte[] filterc = new String("wrinkletellmetrueisthereanythingasnastyasyouwellmaybesothenumber7470issprettybad").getBytes();
             FILTER = new byte[256];
             try {

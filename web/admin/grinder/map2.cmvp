@@ -8,7 +8,7 @@
 	<!-- tell spiders to sod off -->
 	<meta name="ROBOTS" content="NOINDEX, NOFOLLOW">
  	<link rel="grinder icon" href="/images/grinder.ico" >
-	<title>CoffeeMud MUDGrinder</title>
+	<title>AetherMud MUDGrinder</title>
 	<SCRIPT LANGUAGE="JavaScript">
 	<!--
 		var shiftDown=true;

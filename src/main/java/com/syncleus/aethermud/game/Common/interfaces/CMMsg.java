@@ -26,7 +26,7 @@ import java.util.Map;
 
 
 /**
- * The core of event handling in CoffeeMud, a CMMsg represents an event that
+ * The core of event handling in AetherMud, a CMMsg represents an event that
  * occurs.  All events are caused by MOBs (even natural events).   CMMsg objects
  * are usually created by calling the CMClass classloader:
  * @see com.syncleus.aethermud.game.core.CMClass#getMsg(MOB, int, String)

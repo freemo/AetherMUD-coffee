@@ -368,7 +368,7 @@ public class CMProps extends Properties {
     }
 
     /**
-     * Retrieve one of the pre-processed coffeemud.ini entries for
+     * Retrieve one of the pre-processed aethermud.ini entries for
      * the callers thread group.
      * @param varNum the Str enum of the entry to get
      * @return the value of the property.
@@ -471,7 +471,7 @@ public class CMProps extends Properties {
     }
 
     /**
-     * Retrieve one of the pre-processed coffeemud.ini entries for
+     * Retrieve one of the pre-processed aethermud.ini entries for
      * the callers thread group.
      * @param varNum the Int enum of the entry to get
      * @return the value of the property.
@@ -498,7 +498,7 @@ public class CMProps extends Properties {
     }
 
     /**
-     * Retrieve one of the pre-processed coffeemud.ini entries for
+     * Retrieve one of the pre-processed aethermud.ini entries for
      * the callers thread group. These are in variables permanently
      * translated to floats for easy access
      * @param varNum the Int enum of the entry to get
@@ -518,7 +518,7 @@ public class CMProps extends Properties {
     }
 
     /**
-     * Retrieve one of the pre-processed coffeemud.ini entries for
+     * Retrieve one of the pre-processed aethermud.ini entries for
      * the callers thread group. These are in variables permanently
      * translated from 0-100 to pct (0-1) for easy access
      * @param varNum the Int enum of the entry to get
@@ -538,7 +538,7 @@ public class CMProps extends Properties {
     }
 
     /**
-     * Retrieve one of the pre-processed coffeemud.ini lists for
+     * Retrieve one of the pre-processed aethermud.ini lists for
      * the callers thread group.
      * @param varType the StrList enum of the list to get
      * @return the list from the properties.
@@ -552,7 +552,7 @@ public class CMProps extends Properties {
     }
 
     /**
-     * Retrieve one of the pre-processed coffeemud.ini lists for
+     * Retrieve one of the pre-processed aethermud.ini lists for
      * the callers thread group, as a hashed set of values.
      * @param varType the StrList enum of the set list to get
      * @return the list set from the properties.
@@ -575,7 +575,7 @@ public class CMProps extends Properties {
     }
 
     /**
-     * Retrieve one of the pre-processed coffeemud.ini entries for
+     * Retrieve one of the pre-processed aethermud.ini entries for
      * the callers thread group.
      * @param varNum the Bool enum of the entry to get
      * @return the value of the property.
@@ -589,7 +589,7 @@ public class CMProps extends Properties {
     }
 
     /**
-     * Sets one of the pre-processed coffeemud.ini entries for
+     * Sets one of the pre-processed aethermud.ini entries for
      * the callers thread group.
      * @param varNum the Bool enum of the entry to set
      * @param val the new value of the entry
@@ -601,7 +601,7 @@ public class CMProps extends Properties {
     }
 
     /**
-     * Sets one of the pre-processed coffeemud.ini entries for
+     * Sets one of the pre-processed aethermud.ini entries for
      * all thread groups.
      * @param varNum the Bool enum of the entries to set
      * @param val the new value of the entries
@@ -616,7 +616,7 @@ public class CMProps extends Properties {
     }
 
     /**
-     * Sets one of the pre-processed coffeemud.ini entries for
+     * Sets one of the pre-processed aethermud.ini entries for
      * the callers thread group.
      * @param varNum the Int enum of the entry to set
      * @param val the new value of the entry
@@ -629,7 +629,7 @@ public class CMProps extends Properties {
     }
 
     /**
-     * Sets one of the pre-processed coffeemud.ini entries for
+     * Sets one of the pre-processed aethermud.ini entries for
      * the callers thread group, only in this case, the entry
      * needs to be converted to an int first.
      * @param varNum the Int enum of the entry to set
@@ -645,7 +645,7 @@ public class CMProps extends Properties {
     }
 
     /**
-     * Sets one of the pre-processed coffeemud.ini entries for
+     * Sets one of the pre-processed aethermud.ini entries for
      * the callers thread group, only in this case, the entry
      * needs to be converted to an int first, if it can.  If it
      * cannot, the defaultValue is used.
@@ -663,7 +663,7 @@ public class CMProps extends Properties {
     }
 
     /**
-     * Sets one of the pre-processed coffeemud.ini list entries for
+     * Sets one of the pre-processed aethermud.ini list entries for
      * the callers thread group.
      * @param varType the StrList enum of the entry to set
      * @param var the new value of the entry list
@@ -677,7 +677,7 @@ public class CMProps extends Properties {
     }
 
     /**
-     * Add to the end of one of the pre-processed coffeemud.ini list entries for
+     * Add to the end of one of the pre-processed aethermud.ini list entries for
      * the callers thread group.
      * @param varType the StrList enum of the entry to add to
      * @param var the value to add to the entry list
@@ -696,7 +696,7 @@ public class CMProps extends Properties {
     }
 
     /**
-     * Sets one of the pre-processed coffeemud.ini entries for
+     * Sets one of the pre-processed aethermud.ini entries for
      * the callers thread group.
      * @param varNum the Str enum of the entry to set
      * @param val the new value of the entry
@@ -709,7 +709,7 @@ public class CMProps extends Properties {
     }
 
     /**
-     * Sets one of the pre-processed coffeemud.ini entries for
+     * Sets one of the pre-processed aethermud.ini entries for
      * the callers thread group, forcing the value to uppercase.
      * @param varNum the Str enum of the entry to set
      * @param val the new value of the entry
@@ -721,7 +721,7 @@ public class CMProps extends Properties {
     }
 
     /**
-     * Sets one of the pre-processed coffeemud.ini entries for
+     * Sets one of the pre-processed aethermud.ini entries for
      * the given properties object.
      * @param props the properties object to set the value on
      * @param varNum the Str enum of the entry to set
@@ -741,7 +741,7 @@ public class CMProps extends Properties {
     }
 
     /**
-     * Sets one of the pre-processed coffeemud.ini entries for
+     * Sets one of the pre-processed aethermud.ini entries for
      * the callers thread group, without making the value uppercase.
      * @param varNum the Str enum of the entry to set
      * @param val the new value of the entry
@@ -751,7 +751,7 @@ public class CMProps extends Properties {
     }
 
     /**
-     * Sets one of the pre-processed coffeemud.ini entries for
+     * Sets one of the pre-processed aethermud.ini entries for
      * all thread groups.
      * @param varNum the Str enum of the entries to set
      * @param val the new value of the entries
@@ -847,14 +847,14 @@ public class CMProps extends Properties {
                 continue;
             final int typeIndex = field.lastIndexOf(' ');
             if (typeIndex < 0) {
-                Log.errOut("CMProps", "Error parsing coffeemud.ini field " + fieldName + ", value: " + field);
+                Log.errOut("CMProps", "Error parsing aethermud.ini field " + fieldName + ", value: " + field);
                 continue;
             }
             final String type = field.substring(typeIndex + 1).toUpperCase().trim();
             String formula = field.substring(0, typeIndex).trim();
             final ExpertiseLibrary.CostType costType = (ExpertiseLibrary.CostType) CMath.s_valueOf(ExpertiseLibrary.CostType.values(), type);
             if (costType == null) {
-                Log.errOut("CMProps", "Error parsing coffeemud.ini field '" + fieldName + "', invalid type: " + type);
+                Log.errOut("CMProps", "Error parsing aethermud.ini field '" + fieldName + "', invalid type: " + type);
                 Log.errOut("CMProps", "Valid values include " + CMParms.toListString(ExpertiseLibrary.CostType.values()));
                 continue;
             }
@@ -862,18 +862,18 @@ public class CMProps extends Properties {
             if (!CMath.isMathExpression(formula, doubleChecker)) {
                 final int skillIndex = formula.indexOf(' ');
                 if (skillIndex < 0) {
-                    Log.errOut("CMProps", "Error parsing coffeemud.ini field " + fieldName + ", invalid formula: " + formula);
+                    Log.errOut("CMProps", "Error parsing aethermud.ini field " + fieldName + ", invalid formula: " + formula);
                     continue;
                 }
                 keyField = formula.substring(0, skillIndex).toUpperCase().trim();
                 formula = formula.substring(skillIndex + 1).trim();
                 if (!CMath.isMathExpression(formula, doubleChecker)) {
-                    Log.errOut("CMProps", "Error parsing coffeemud.ini field " + fieldName + ", invalid formula: " + formula);
+                    Log.errOut("CMProps", "Error parsing aethermud.ini field " + fieldName + ", invalid formula: " + formula);
                     continue;
                 }
             }
             if (map.containsKey(keyField)) {
-                Log.errOut("CMProps", "Error parsing coffeemud.ini '" + fieldName + "' has duplicate key:" + ((keyField.length() == 0) ? "<EMPTY>" : keyField));
+                Log.errOut("CMProps", "Error parsing aethermud.ini '" + fieldName + "' has duplicate key:" + ((keyField.length() == 0) ? "<EMPTY>" : keyField));
                 continue;
             }
             map.put(keyField.toUpperCase(), makeCostDefinition(costType, formula));
@@ -1209,7 +1209,7 @@ public class CMProps extends Properties {
      * Returns true if the given property name is private to the callers thread group,
      * and false if it is shared with the base thread group.  If the caller is the base
      * thread group, it always returns false.
-     * @param s the name of the coffeemud.ini file property
+     * @param s the name of the aethermud.ini file property
      * @return true of false
      */
     public static boolean isPrivateToMe(final String s) {
@@ -1248,7 +1248,7 @@ public class CMProps extends Properties {
 
     /**
      * Returns the array of bytes that must be sent after every prompt.
-     * Defined, in part, by PROMPTBEHAVIOR in coffeemud.ini file
+     * Defined, in part, by PROMPTBEHAVIOR in aethermud.ini file
      * @return the array of bytes that must be sent after every prompt.
      */
     public static byte[] getPromptSuffix() {
@@ -1781,7 +1781,7 @@ public class CMProps extends Properties {
     }
 
     /**
-     * Retrieve one of the pre-processed coffeemud.ini entries for
+     * Retrieve one of the pre-processed aethermud.ini entries for
      * this prop object
      * @param varNum the Str enum of the entry to get
      * @return the value of the property.
@@ -1795,7 +1795,7 @@ public class CMProps extends Properties {
     }
 
     /**
-     * Retrieve one of the pre-processed coffeemud.ini entries for
+     * Retrieve one of the pre-processed aethermud.ini entries for
      * theis props object.
      * @param varNum the Int enum of the entry to get
      * @return the value of the property.
@@ -1809,7 +1809,7 @@ public class CMProps extends Properties {
     }
 
     /**
-     * Retrieve one of the pre-processed coffeemud.ini entries for
+     * Retrieve one of the pre-processed aethermud.ini entries for
      * this prop object.
      * @param varNum the Bool enum of the entry to get
      * @return the value of the property.
@@ -2236,7 +2236,7 @@ public class CMProps extends Properties {
     }
 
     /**
-     * Enums for String entries in the coffeemud.ini file
+     * Enums for String entries in the aethermud.ini file
      * @author Bo Zimmerman
      */
     public static enum Str {
@@ -2352,7 +2352,7 @@ public class CMProps extends Properties {
     }
 
     /**
-     * Enums for Integer entries in the coffeemud.ini file
+     * Enums for Integer entries in the aethermud.ini file
      * @author Bo Zimmerman
      *
      */
@@ -2500,7 +2500,7 @@ public class CMProps extends Properties {
     }
 
     /**
-     * Enums for Boolean entries in the coffeemud.ini file
+     * Enums for Boolean entries in the aethermud.ini file
      * @author Bo Zimmerman
      *
      */

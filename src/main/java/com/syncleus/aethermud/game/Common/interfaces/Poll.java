@@ -24,7 +24,7 @@ import java.util.List;
 
 /**
  * A Poll object manages the data and processes for all of the public
- * and private voting polls available through the CoffeeMud POLL
+ * and private voting polls available through the AetherMud POLL
  * CREATE POLL, LIST POLLS, etc.. commands.
  *
  * These objects are managed by the PollManager Library

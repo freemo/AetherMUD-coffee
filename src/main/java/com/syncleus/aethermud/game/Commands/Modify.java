@@ -1509,7 +1509,7 @@ public class Modify extends StdCommand {
             if (!CMSecurity.isAllowed(mob, mob.location(), CMSecurity.SecFlag.JSCRIPTS))
                 return errorOut(mob);
             if (CMProps.getIntVar(CMProps.Int.JSCRIPTS) != CMSecurity.JSCRIPT_REQ_APPROVAL) {
-                mob.tell(L("This command is only used when your Scriptable Javascripts require approval as specified in your coffeemud.ini file."));
+                mob.tell(L("This command is only used when your Scriptable Javascripts require approval as specified in your aethermud.ini file."));
                 return true;
             }
             Object O = null;

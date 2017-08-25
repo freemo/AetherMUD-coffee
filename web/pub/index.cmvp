@@ -2,8 +2,8 @@
 
 <html>
 <head>
-	<link rel="coffeemud icon" href="images/coffeemud.ico" >
-	<link rel="STYLESHEET" TYPE="TEXT/CSS" HREF="coffeemud.css">
+	<link rel="aethermud icon" href="images/aethermud.ico" >
+	<link rel="STYLESHEET" TYPE="TEXT/CSS" HREF="aethermud.css">
 	<title>@MUDSERVERVERSION@, @WEBSERVERVERSION@ '@WEBSERVERNAME@'</title>
 </head>
 
@@ -37,12 +37,12 @@ Players currently online: <FONT COLOR=RED><b>@NUMPLAYERS@</B></FONT>
 <LI><a href="areas.cmvp"><FONT COLOR=GREEN><B>Installed Areas Information</B></FONT></a>
 <LI><a href="clans.cmvp"><FONT COLOR=GREEN><B>Current Clans Information</B></FONT></a>
 <LI><a href="deities.cmvp"><FONT COLOR=GREEN><B>Installed Deities</B></FONT></a>
-<P>&nbsp;&nbsp;&nbsp;&nbsp;<B>CoffeeMud Info</B><BR>
-<LI><a href="cmintro.html"><FONT COLOR=GREEN><B>What is CoffeeMUD?</B></FONT></a>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;<B>AetherMud Info</B><BR>
+<LI><a href="cmintro.html"><FONT COLOR=GREEN><B>What is AetherMUD?</B></FONT></a>
 <LI><a href="mudintro.html"><FONT COLOR=GREEN><B>What are MUDs?</B></FONT></a>
-<LI><a href="guides/Features.html"><FONT COLOR=GREEN><B>CoffeeMud features</B></FONT></a>
+<LI><a href="guides/Features.html"><FONT COLOR=GREEN><B>AetherMud features</B></FONT></a>
 <LI><a href="sounds.zip"><FONT COLOR=GREEN><B>Download Sounds for MSP support</B></FONT></a>
-<LI><a href="http://www.coffeemud.org"><FONT COLOR=GREEN><B>Codebase Web Site</B></FONT></a>
+<LI><a href="http://www.aethermud.org"><FONT COLOR=GREEN><B>Codebase Web Site</B></FONT></a>
 <P>
 <LI><B>Player Races: </B>
 	@loop@

@@ -2,7 +2,7 @@
 # character classes, and each character class.  A skill available to ALL classes 
 # does not belong to any particular class, but falls into a pool of skills that is
 # subject to certain pooling rules, such as MAXCOMMONSKILLS and MAXLANGUAGES from 
-# the coffeemud.ini file.  A skill available to EACH class belongs specifically to 
+# the aethermud.ini file.  A skill available to EACH class belongs specifically to
 # each and every class individually, and is not subject to pool-related rules.
 #
 # The entries under the [EACH] and [ALL] sections are formatted as follows:

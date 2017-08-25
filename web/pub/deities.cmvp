@@ -2,9 +2,9 @@
 
 <html>
 <head>
-	<link rel="coffeemud icon" href="images/coffeemud.ico" >
-	<link rel="STYLESHEET" TYPE="TEXT/CSS" HREF="coffeemud.css">
-	<title>CoffeeMud Web Server</title>
+	<link rel="aethermud icon" href="images/aethermud.ico" >
+	<link rel="STYLESHEET" TYPE="TEXT/CSS" HREF="aethermud.css">
+	<title>AetherMud Web Server</title>
 	<script language=JavaScript>
 	<!--
 		function openUp2(named)

@@ -574,7 +574,7 @@ public class Resources {
 
     /**
      * The "Resource Properties" is a special VFS file containing normal properties divided into
-     * sections headed by a bracketed [BLOCK].  The filename is ::/coffeemud_properties.ini.  These
+     * sections headed by a bracketed [BLOCK].  The filename is ::/aethermud_properties.ini.  These
      * properties tend to be internal data maintained by the system for internal use, and resaved
      * as necessary.
      *
@@ -588,7 +588,7 @@ public class Resources {
         if (propResources == null) {
             synchronized (propResourceSync) {
                 if (propResources == null) {
-                    final CMFile file = new CMFile("::/coffeemud_properties.ini", null, CMFile.FLAG_FORCEALLOW);
+                    final CMFile file = new CMFile("::/aethermud_properties.ini", null, CMFile.FLAG_FORCEALLOW);
                     propResources = new TreeMap<String, Map<String, String>>();
                     if (file.exists()) {
                         Map<String, String> currSecMap = new TreeMap<String, String>();
@@ -633,7 +633,7 @@ public class Resources {
 
     /**
      * The "Resource Properties" is a special VFS file containing normal properties divided into
-     * sections headed by a bracketed [BLOCK].  The filename is ::/coffeemud_properties.ini.  These
+     * sections headed by a bracketed [BLOCK].  The filename is ::/aethermud_properties.ini.  These
      * properties tend to be internal data maintained by the system for internal use, and resaved
      * as necessary.
      *
@@ -654,7 +654,7 @@ public class Resources {
 
     /**
      * The "Resource Properties" is a special VFS file containing normal properties divided into
-     * sections headed by a bracketed [BLOCK].  The filename is ::/coffeemud_properties.ini.  These
+     * sections headed by a bracketed [BLOCK].  The filename is ::/aethermud_properties.ini.  These
      * properties tend to be internal data maintained by the system for internal use, and resaved
      * as necessary.
      *
@@ -677,7 +677,7 @@ public class Resources {
 
     /**
      * The "Resource Properties" is a special VFS file containing normal properties divided into
-     * sections headed by a bracketed [BLOCK].  The filename is ::/coffeemud_properties.ini.  These
+     * sections headed by a bracketed [BLOCK].  The filename is ::/aethermud_properties.ini.  These
      * properties tend to be internal data maintained by the system for internal use, and resaved
      * as necessary.
      *
@@ -701,7 +701,7 @@ public class Resources {
 
     /**
      * The "Resource Properties" is a special VFS file containing normal properties divided into
-     * sections headed by a bracketed [BLOCK].  The filename is ::/coffeemud_properties.ini.  These
+     * sections headed by a bracketed [BLOCK].  The filename is ::/aethermud_properties.ini.  These
      * properties tend to be internal data maintained by the system for internal use, and resaved
      * as necessary.
      *
@@ -727,7 +727,7 @@ public class Resources {
                             }
                         }
                     }
-                    final CMFile file = new CMFile("::/coffeemud_properties.ini", null, CMFile.FLAG_FORCEALLOW);
+                    final CMFile file = new CMFile("::/aethermud_properties.ini", null, CMFile.FLAG_FORCEALLOW);
                     file.saveText(str);
                 }
             }

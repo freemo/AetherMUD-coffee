@@ -188,7 +188,7 @@ public interface Faction extends CMCommon, MsgListener, Contingent {
     public int asPercent(int faction);
 
     /**
-     * Returns true if this faction is presently specified in the coffeemud ini
+     * Returns true if this faction is presently specified in the aethermud ini
      * file entry "FACTIONS", thereby designating that this faction is loaded at
      * boot-time, as opposed to run-time.
      * @return true if its pre-loaded, false otherwise.
@@ -196,7 +196,7 @@ public interface Faction extends CMCommon, MsgListener, Contingent {
     public boolean isPreLoaded();
 
     /**
-     * Returns true if this faction is presently specified in the coffeemud ini
+     * Returns true if this faction is presently specified in the aethermud ini
      * file entry "DISABLE", thereby designating that this faction is currently
      * disabled.  See also {@link #disable(boolean)}
      * @return true if its disabled, false otherwise.
@@ -205,7 +205,7 @@ public interface Faction extends CMCommon, MsgListener, Contingent {
 
     /**
      * Disables this faction, as if it had been added to the DISABLE= entry in the
-     * coffeemud.ini file.  See also {@link #isDisabled()}
+     * aethermud.ini file.  See also {@link #isDisabled()}
      * @param truefalse disable true to disable, false otherwise
      */
     public void disable(boolean truefalse);
@@ -226,7 +226,7 @@ public interface Faction extends CMCommon, MsgListener, Contingent {
 
     /**
      * The official, unique faction id of this faction.  FactionIDs are usually
-     * the CoffeeMud VFS path from the resources directory, of the properties ini
+     * the AetherMud VFS path from the resources directory, of the properties ini
      * file that defines the faction.  The ID (and therefore the properties file location)
      * should not be changed once a faction is "deployed".
      * @see com.syncleus.aethermud.game.Common.interfaces.Faction#setFactionID(String)
@@ -236,7 +236,7 @@ public interface Faction extends CMCommon, MsgListener, Contingent {
 
     /**
      * Sets the official, unique faction id of this faction.  FactionIDs are usually
-     * the CoffeeMud VFS path from the resources directory, of the properties ini
+     * the AetherMud VFS path from the resources directory, of the properties ini
      * file that defines the faction.  The ID (and therefore the properties file location)
      * should not be changed once a faction is "deployed".
      * @see com.syncleus.aethermud.game.Common.interfaces.Faction#factionID()

@@ -2,16 +2,16 @@
 
 <html>
 <head>
-	<link rel="coffeemud icon" href="images/coffeemud.ico" >
+	<link rel="aethermud icon" href="images/aethermud.ico" >
 	<!-- tell spiders to sod off -->
 	<meta name="ROBOTS" content="NOINDEX, NOFOLLOW">
-	<link rel="STYLESHEET" TYPE="TEXT/CSS" HREF="coffeemud.css">
-	<title>CoffeeMud Channel Backlogs</title>
+	<link rel="STYLESHEET" TYPE="TEXT/CSS" HREF="aethermud.css">
+	<title>AetherMud Channel Backlogs</title>
 </head>
 
 <body>
 <CENTER>
-	<h2>CoffeeMud Channel Backlogs</H2>
+	<h2>AetherMud Channel Backlogs</H2>
 	<br>
 	<a href="/access.cmvp?@RequestParametersEncoded@"><FONT COLOR=BLUE>Back to the access menu</FONT></A><br>
 	<br>

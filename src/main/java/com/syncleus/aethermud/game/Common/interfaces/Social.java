@@ -121,7 +121,7 @@ public interface Social extends Environmental, CMCommon {
     public void setSee_when_no_target(String str);
 
     /**
-     * The official CoffeeMud message code used as the source code for this social,
+     * The official AetherMud message code used as the source code for this social,
      * which reflects what the player is doing.  Only certain codes allowed.
      *
      * @see com.syncleus.aethermud.game.Common.interfaces.Social#setSourceCode(int)
@@ -134,7 +134,7 @@ public interface Social extends Environmental, CMCommon {
     public int sourceCode();
 
     /**
-     * Sets the official CoffeeMud message code used as the source code for this social,
+     * Sets the official AetherMud message code used as the source code for this social,
      * which reflects what the player is doing.  Only certain codes allowed.
      *
      * @see com.syncleus.aethermud.game.Common.interfaces.Social#sourceCode()
@@ -147,7 +147,7 @@ public interface Social extends Environmental, CMCommon {
     public void setSourceCode(int code);
 
     /**
-     * The official CoffeeMud message code used as the others code for this social,
+     * The official AetherMud message code used as the others code for this social,
      * which reflects what the player appears to be doing.  Only certain codes allowed.
      *
      * @see com.syncleus.aethermud.game.Common.interfaces.Social#setOthersCode(int)
@@ -161,7 +161,7 @@ public interface Social extends Environmental, CMCommon {
     public int othersCode();
 
     /**
-     * Sets the official CoffeeMud message code used as the others code for this social,
+     * Sets the official AetherMud message code used as the others code for this social,
      * which reflects what the player appears to be doing.  Only certain codes allowed.
      *
      * @see com.syncleus.aethermud.game.Common.interfaces.Social#othersCode()
@@ -176,7 +176,7 @@ public interface Social extends Environmental, CMCommon {
     public void setOthersCode(int code);
 
     /**
-     * The official CoffeeMud message code used as the target code for this social,
+     * The official AetherMud message code used as the target code for this social,
      * which reflects what is being done to the target.  Only certain codes allowed.
      *
      * @see com.syncleus.aethermud.game.Common.interfaces.Social#setTargetCode(int)
@@ -190,7 +190,7 @@ public interface Social extends Environmental, CMCommon {
     public int targetCode();
 
     /**
-     * Sets the official CoffeeMud message code used as the target code for this social,
+     * Sets the official AetherMud message code used as the target code for this social,
      * which reflects what is being done to the target.  Only certain codes allowed.
      *
      * @see com.syncleus.aethermud.game.Common.interfaces.Social#targetCode()

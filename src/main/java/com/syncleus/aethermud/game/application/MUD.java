@@ -511,9 +511,9 @@ public class MUD extends Thread implements MudHost {
         CMProps.setUpAllLowVar(CMProps.Str.MUDSTATUS, "Shutting down" + (keepItDown ? "..." : " and restarting..."));
 
         checkedSleep(500);
-        Log.sysOut(Thread.currentThread().getName(), "CoffeeMud shutdown complete.");
+        Log.sysOut(Thread.currentThread().getName(), "AetherMud shutdown complete.");
         if (S != null)
-            S.println(CMLib.lang().L("CoffeeMud shutdown complete."));
+            S.println(CMLib.lang().L("AetherMud shutdown complete."));
         bringDown = keepItDown;
         serviceEngine.resumeAll();
         if (!keepItDown) {
@@ -623,7 +623,7 @@ public class MUD extends Thread implements MudHost {
                             break;
                     }
                 final IMudInterface imud = new IMudInterface(CMProps.getVar(CMProps.Str.MUDNAME),
-                    "CoffeeMud v" + CMProps.getVar(CMProps.Str.MUDVER),
+                    "AetherMud v" + CMProps.getVar(CMProps.Str.MUDVER),
                     CMLib.mud(0).getPort(),
                     playstate,
                     CMLib.channels().getI3ChannelsList());
@@ -775,9 +775,9 @@ public class MUD extends Thread implements MudHost {
         CMLib.initialize(); // initialize this threads libs
 
         if (iniFiles.size() == 0)
-            iniFiles.addElement("coffeemud.ini");
-        if ((nameID.length() == 0) || (nameID.equalsIgnoreCase("CoffeeMud")) || nameID.equalsIgnoreCase("Your Muds Name")) {
-            nameID = "Unnamed_CoffeeMUD#";
+            iniFiles.addElement("aethermud.ini");
+        if ((nameID.length() == 0) || (nameID.equalsIgnoreCase("AetherMud")) || nameID.equalsIgnoreCase("Your Muds Name")) {
+            nameID = "Unnamed_AetherMUD#";
             long idNumber = new Random(System.currentTimeMillis()).nextLong();
             try {
                 idNumber = 0;
@@ -800,8 +800,8 @@ public class MUD extends Thread implements MudHost {
                 idNumber = idNumber * -1;
             nameID = nameID + idNumber;
             System.err.println("*** Please give your mud a unique name in mud.bat or mudUNIX.sh!! ***");
-        } else if (nameID.equalsIgnoreCase("TheRealCoffeeMudCopyright2000-2017ByBoZimmerman"))
-            nameID = "CoffeeMud";
+        } else if (nameID.equalsIgnoreCase("TheRealAetherMudCopyright2000-2017ByBoZimmerman"))
+            nameID = "AetherMud";
         String iniFile = iniFiles.firstElement();
         final CMProps page = CMProps.loadPropPage("//" + iniFile);
         if ((page == null) || (!page.isLoaded())) {
@@ -842,9 +842,9 @@ public class MUD extends Thread implements MudHost {
         while (!bringDown) {
             System.out.println();
             grpid = 0;
-            Log.sysOut(Thread.currentThread().getName(), "CoffeeMud v" + HOST_VERSION_MAJOR + "." + HOST_VERSION_MINOR);
+            Log.sysOut(Thread.currentThread().getName(), "AetherMud v" + HOST_VERSION_MAJOR + "." + HOST_VERSION_MINOR);
             Log.sysOut(Thread.currentThread().getName(), "(C) 2000-2017 Bo Zimmerman");
-            Log.sysOut(Thread.currentThread().getName(), "http://www.coffeemud.org");
+            Log.sysOut(Thread.currentThread().getName(), "http://www.aethermud.org");
             CMLib.hosts().clear();
             final LinkedList<HostGroup> myGroups = new LinkedList<HostGroup>();
             HostGroup mainGroup = null;
@@ -858,7 +858,7 @@ public class MUD extends Thread implements MudHost {
                 H.start();
             }
             if (mainGroup == null) {
-                Log.errOut("CoffeeMud failed to start.");
+                Log.errOut("AetherMud failed to start.");
                 MUD.bringDown = true;
                 CMProps.setBoolAllVar(CMProps.Bool.MUDSHUTTINGDOWN, true);
             } else {
@@ -875,7 +875,7 @@ public class MUD extends Thread implements MudHost {
                     checkedSleep(100);
                 }
                 if (mainGroup.failedToStart()) {
-                    Log.errOut("CoffeeMud failed to start.");
+                    Log.errOut("AetherMud failed to start.");
                     MUD.bringDown = true;
                     CMProps.setBoolAllVar(CMProps.Bool.MUDSHUTTINGDOWN, true);
                 } else {
@@ -1189,7 +1189,7 @@ public class MUD extends Thread implements MudHost {
                     errorInternal = "MUD Server did not start. Exiting.";
                     break;
                 default:
-                    errorInternal = "Fatal error loading classes.  Make sure you start up coffeemud from the directory containing the class files.";
+                    errorInternal = "Fatal error loading classes.  Make sure you start up aethermud from the directory containing the class files.";
                     break;
             }
             Log.errOut(Thread.currentThread().getName(), errorInternal);
@@ -1308,7 +1308,7 @@ public class MUD extends Thread implements MudHost {
             }
 
             CMProps.setUpLowVar(CMProps.Str.MUDSTATUS, "Booting: loading base classes");
-            if (!CMClass.loadAllCoffeeMudClasses(page)) {
+            if (!CMClass.loadAllAetherMudClasses(page)) {
                 fatalStartupError(t, 0);
                 return false;
             }
@@ -1453,7 +1453,7 @@ public class MUD extends Thread implements MudHost {
                 CMLib.activateLibraries();
                 Log.sysOut(Thread.currentThread().getName(), "Services and utilities started");
             } catch (final Throwable th) {
-                Log.errOut(Thread.currentThread().getName(), "CoffeeMud Server initHost() failed");
+                Log.errOut(Thread.currentThread().getName(), "AetherMud Server initHost() failed");
                 Log.errOut(Thread.currentThread().getName(), th);
                 fatalStartupError(t, 4);
                 return false;

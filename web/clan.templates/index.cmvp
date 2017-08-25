@@ -14,8 +14,8 @@
 <head>
 	<!-- tell spiders to sod off -->
 	<meta name="ROBOTS" content="NOINDEX, NOFOLLOW">
-	<link rel="coffeemud icon" href="images/coffeemud.ico" >
-	<link rel="STYLESHEET" TYPE="TEXT/CSS" HREF="coffeemud.css">
+	<link rel="aethermud icon" href="images/aethermud.ico" >
+	<link rel="STYLESHEET" TYPE="TEXT/CSS" HREF="aethermud.css">
 	<title>Home Page of @ClanID@</title>
 	<script language=JavaScript>
 	<!--

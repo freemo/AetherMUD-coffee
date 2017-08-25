@@ -16,7 +16,7 @@
  */
 package com.syncleus.aethermud.game.core.exceptions;
 
-public class BadEmailAddressException extends CoffeeMudException {
+public class BadEmailAddressException extends AetherMudException {
     public static final long serialVersionUID = 0;
 
     public BadEmailAddressException(String s) {

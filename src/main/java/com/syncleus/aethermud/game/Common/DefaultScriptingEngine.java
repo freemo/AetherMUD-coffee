@@ -1533,7 +1533,7 @@ public class DefaultScriptingEngine implements ScriptingEngine {
                         break;
                     // case 'a':
                     case 'A':
-                        // unnecessary, since, in coffeemud, this is part of the
+                        // unnecessary, since, in aethermud, this is part of the
                         // name
                         break;
                     case 'b':

@@ -23,7 +23,7 @@ import com.syncleus.aethermud.game.MOBS.interfaces.MOB;
 
 /**
  * A LegalWarrant is an important object in the triad of LegalBehavior
- * and Law objects, as a part of the CoffeeMud legal system.  A LegalWarrant
+ * and Law objects, as a part of the AetherMud legal system.  A LegalWarrant
  * is created by the LegalBehavior in response to the Law definitions, when
  * it has determined that a mob or player has broken one of the Laws.  The
  * Warrant is then used as a state object following the specific circumstances

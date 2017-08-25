@@ -11,7 +11,7 @@
         <tbody>
         <tr>
             <td colspan="2" align="left" bgcolor="#dfdfdf" width="100%">
-                <h1>CoffeeMud 5.9 Game
+                <h1>AetherMud 5.9 Game
                     Builders Guide</h1>
             </td>
         </tr>
@@ -19,7 +19,7 @@
             <td align="left" valign="top" width="20%">
                 <ul>
                     <li>Introduction</li>
-                    <li><a href="#cmfs">CoffeeMud File System</a></li>
+                    <li><a href="#cmfs">AetherMud File System</a></li>
                     <li><a href="#ables">Abilities</a></li>
                     <li><a href="#lang">Languages</a></li>
                     <li><a href="#craftskills">CraftSkills</a></li>
@@ -46,19 +46,19 @@
                     src="images/mug.jpg"></strong></p>
                 <strong style="color: rgb(255, 0, 0);"><font size="5">Introduction</font></strong><br>
                 <br>
-                The purpose of this document is to cover aspects of CoffeeMud game
+                The purpose of this document is to cover aspects of AetherMud game
                 creation that are not directly related to Area/Map and Mob/Item
                 creation, which is
                 already covered in detail in the <a href="ArchonGuide.html">Archons
                 Guide.</a><br>
                 <br>
                 <p><a name="cmfs"><strong><font color="#008000" size="5">The
-                    CoffeeMud File System (CMFS)</font></strong></a></p>
+                    AetherMud File System (CMFS)</font></strong></a></p>
                 <p>This is a complicated
                     topic, but one that all builders and
-                    Archons should understand. Sooner or later, every CoffeeMud
+                    Archons should understand. Sooner or later, every AetherMud
                     adminstrator is going to want to modify some of the local files in the
-                    CoffeeMud folder. This may include the quests, or skill lists, or
+                    AetherMud folder. This may include the quests, or skill lists, or
                     hopefully the intro.txt file located in resources/text directory!
                     Builders will also want to add files, including MOBPROG script files
                     that run in the Scriptable behavior, item and mob xml (*.cmare) files
@@ -72,12 +72,12 @@
                     have to backup all those files that have been modified and added, since
                     they play as integral a role in your world as the rooms and areas do.
                     All those files can also create upgrade issues, as modified files can
-                    get accidently overwritten when a new version of CoffeeMud is overlayed
+                    get accidently overwritten when a new version of AetherMud is overlayed
                     in your installation directory. Lastly, this can create security
                     issues, as the builders might accidently delete the wrong file, or make
                     a mistake, creating problems for the admins as they try to recover.</p>
                 <p>To help solve these
-                    problems, the CoffeeMud engine uses a kind
+                    problems, the AetherMud engine uses a kind
                     of mirrored file system called <strong>CMFS</strong>
                     to store some files in your local directory (your hard drive), some
                     files in your database, and some files in both at the same time. When
@@ -88,16 +88,16 @@
                     will remain safe. Furthermore, since files in the database (VFS files)
                     are always accessed before the same file in the local file system, you
                     can overwrite the files in the local file system with upgrades without
-                    worrying about losing your changed files. And lastly, CoffeeMud
+                    worrying about losing your changed files. And lastly, AetherMud
                     provides a security system that allows you to grant access to users on
                     a folder level, and also to specify whether the user can access the
                     local file system, or only the database VFS files and folders.</p>
                 <p>The CMFS includes
-                    everything in your CoffeeMud installation
-                    directory/folder, and all the other folders therein. In fact, CoffeeMud
-                    is utterly unable to access any files OUTSIDE of your CoffeeMud
+                    everything in your AetherMud installation
+                    directory/folder, and all the other folders therein. In fact, AetherMud
+                    is utterly unable to access any files OUTSIDE of your AetherMud
                     installation folder, giving the server administrator an added level of
-                    comfort. The CMFS is also able to access the VFS files in the CoffeeMud
+                    comfort. The CMFS is also able to access the VFS files in the AetherMud
                     database, and to give them preference over identically named files in
                     your local file system.</p>
                 <p>CMFS employs the UNIX
@@ -106,20 +106,20 @@
                     separating one folder from another when naming a file. The CMFS path <strong>/resources/text/intro.txt</strong>
                     would, for example, refer to the file called intro.txt inside the text
                     directory, which is inside the resources directory, which is in your
-                    CoffeeMud installation folder.</p>
+                    AetherMud installation folder.</p>
                 <p>If that file had been
                     previously copied into the same
                     directory in the VFS database, then the CMFS would prefer that version
                     over the one that remains in the local file system. You may modify the
                     file <strong>resources/text/intro.txt,</strong>
                     update it, and save it without needing to remember that you are really
-                    changing a file in the database. CoffeeMud will always remember to
+                    changing a file in the database. AetherMud will always remember to
                     prefer to the one in the VFS to the one on your local hard drive, if it
                     has been copied or saved there.</p>
                 <p>If for some reason you
                     absolutely need to ensure that ONLY the
                     local file system version of a file or ONLY the VFS version of a file
-                    is referenced by CoffeeMud, you may do so by prepending a special
+                    is referenced by AetherMud, you may do so by prepending a special
                     string to your file paths. The string is double-colon :: to force
                     access of a VFS file, and double-forward-slash // to force access of a
                     local file system file. For instance, if the Scriptable prog
@@ -137,7 +137,7 @@
                     circumstances.</p>
                 <p>Files can be copied into
                     the VFS from the local file system
-                    using the Archon SHELL command. If you were to go into the coffeemud
+                    using the Archon SHELL command. If you were to go into the aethermud
                     resources folder using this command:</p>
                 <p><strong><font face="Courier New">shell cd /resources</font></strong></p>
                 <p>if you now view the
@@ -145,7 +145,7 @@
                 <p><strong><font face="Courier New">shell dir</font></strong></p>
                 <p>you'll see all the files
                     in your local filesystem in the
-                    resources folder in your coffeemud installation directory. Now, you may
+                    resources folder in your aethermud installation directory. Now, you may
                     copy all of the files in this directory into the *same* directory in
                     the VFS database by entering:</p>
                 <p><strong><font face="Courier New">shell copy * ::/resources</font></strong></p>
@@ -240,7 +240,7 @@
                         [ABSOLUTE_PATH]</strong>
                     and <strong>VFS: [ABSOLUTE_PATH].</strong>
                     In cmfs security codes, the [absolute path] is a path name starting
-                    from inside your coffeemud directory, with no path-separating slashes
+                    from inside your aethermud directory, with no path-separating slashes
                     except to separate directories or to designate that the last file is
                     really a directory by using a trailing forward slash.</p>
                 <p>For example, to give a
@@ -264,7 +264,7 @@
                     instead of VFS gives the user access to both local and database
                     versions of those files.</p>
                 Of course, by default, an Archon has access to both versions of the
-                entire coffeemud installation folder. It would be as if the Archon had
+                entire aethermud installation folder. It would be as if the Archon had
                 the security code <strong>FS:</strong>
                 With
                 no directory specified, the Archon has local file system (and implied
@@ -299,25 +299,25 @@
                     interaction ends, that same Ability may either end (as a kick), leave
                     itself behind on its target to remain as an Affect as described above
                     (as catching on fire would).</p>
-                <p>CoffeeMud contains over a
+                <p>AetherMud contains over a
                     thousand different java-coded
                     Abilities which fall into numerous other categories and genera of
                     various descriptions. The most important of those categories, however,
-                    are their Ability Type. CoffeeMud has numerous different ability types,
+                    are their Ability Type. AetherMud has numerous different ability types,
                     which include Properties (which always act only as Affects), or Skills,
                     Spells, Prayers, Chants, Diseases, Poisons, etc. (all of which can act
                     purely as Skills, act purely as an Affects, or act as Both depending on
                     the context in which it is used). Whenever you place the name of an
                     ability in the Affects list of a mob, item, room, or exit, you are
-                    telling CoffeeMud to use only the Affect/property aspect of that skill.
+                    telling AetherMud to use only the Affect/property aspect of that skill.
                     When you place the same ability name in the same mob's Abilities list,
-                    you are telling CoffeeMud to reserve the ability for use as a Skill.
+                    you are telling AetherMud to reserve the ability for use as a Skill.
                     For example, when you add Spell_GiantStrength to a GenMob's affects
                     list, you are saying that this mob is permanently stronger than normal,
                     but when you place it on the GenMob's list, you are saying
                     that you want the mob to be able to invoke the skill at a later date
                     (by casting the spell).</p>
-                <p>CoffeeMud also allows you
+                <p>AetherMud also allows you
                     to define abilities outside of the
                     java-realm. This can be done from the command line using the CREATE
                     command. If you want to create a new skill called Poke, for instance,
@@ -438,7 +438,7 @@
                         <td>designate the cost
                             of using this skill in
                             mana/movement/etc. A value of -1 means to use the default system as
-                            defined in your coffeemud.ini file. A value of 0 means its free. A
+                            defined in your aethermud.ini file. A value of 0 means its free. A
                             value from 0-99999 means to always use that amount. A value of
                             2147483647 means to always use all of the mobs mana/move points. A
                             value of 2147483647-100 to 2147483647 means to use that percentage of
@@ -510,7 +510,7 @@
                         <td>a mask to
                             determine if the invoker is allowed, under
                             the circumstances, to use this skill. Enter ? or help on ZAPPERMASKS
-                            for more information on the syntax for CoffeeMud "Zapper" masks.
+                            for more information on the syntax for AetherMud "Zapper" masks.
                         </td>
                     </tr>
                     <tr>
@@ -536,7 +536,7 @@
                         <td>a mask to
                             determine if the target is allowed, under the
                             circumstances, to be targeted by this skill. Enter ? or help on
-                            ZAPPERMASKS for more information on the syntax for CoffeeMud "Zapper"
+                            ZAPPERMASKS for more information on the syntax for AetherMud "Zapper"
                             masks.
                         </td>
                     </tr>
@@ -654,10 +654,10 @@
                     Spells
                     above, Languages can be created by the Archons, and then assigned to
                     races, or allow them to be trained by players.</p>
-                <p>By default, CoffeeMud
+                <p>By default, AetherMud
                     comes with several interesting languages
                     that players can speak using the SPEAK command. &nbsp;However,
-                    CoffeeMud also allows you to define languages outside of the
+                    AetherMud also allows you to define languages outside of the
                     java-realm. This can be done from the command line using the CREATE
                     command. If you want to create a new language called Boopsia, for
                     instance,
@@ -732,11 +732,11 @@
                     bowls, and so forth. &nbsp;These are skills like Cobbling,
                     Carpentry,
                     Weaponsmithing, etc.&nbsp;</p>
-                <p>Although CoffeeMud
+                <p>Although AetherMud
                     includes a wide variety of configurable crafting
                     skills, it is not beyond the realm of possibility that you may want to
                     add onto them. &nbsp;Therefore,
-                    CoffeeMud also allows you to define crafting skills outside of the
+                    AetherMud also allows you to define crafting skills outside of the
                     java-realm. This can be done from the command line using the CREATE
                     command. If you want to create a new craft skill called Mixologist, for
                     instance,
@@ -1424,9 +1424,9 @@
                     designation chosen by players that
                     limits the scope of skills and abilities they will have available to
                     them as they advance in level.</p>
-                <p>CoffeeMud supports
+                <p>AetherMud supports
                     several different class-systems through its
-                    coffeemud.ini file (the CLASSSYSTEM entry). One such option is the
+                    aethermud.ini file (the CLASSSYSTEM entry). One such option is the
                     Single-class system, whereby the player can select a single class to
                     play throughout their characters gaming career. Another is the
                     Sub-classing system, whereby the player selects a parent-class to play,
@@ -1438,11 +1438,11 @@
                     disable the class system altogether, which essentially only means that
                     the player is not allowed to choose which class they play, but are
                     secretly forced into a single class that determines their skill
-                    selection. See your coffeemud.ini file for more information on this
+                    selection. See your aethermud.ini file for more information on this
                     feature.</p>
-                <p>CoffeeMud includes
+                <p>AetherMud includes
                     numerous character classes by default that
-                    give players access to the hundreds of skills in the CoffeeMud
+                    give players access to the hundreds of skills in the AetherMud
                     codebase. However, they doesn't mean there isn't room for change,
                     improvement, or addition.</p>
                 <p>Customized player or mob
@@ -1838,7 +1838,7 @@
                         <td>If this class is
                             intended to administrators or
                             builders, you may specify one or more sets of security codes or
-                            security groups (see above section on CoffeeMud Security). Each set
+                            security groups (see above section on AetherMud Security). Each set
                             begins to apply at a given class level for that set. All previous sets
                             at lower levels continue to apply as well.
                         </td>
@@ -1869,7 +1869,7 @@
                     of flag a mob or player can have that has a special a numeric value
                     assigned to it. Another way to view a faction is as a relationship
                     between a mob or player and some idea, such as Goodness, Evilness, Orc
-                    Affinity, Reputation, or some other idea. For example, in CoffeeMud, a
+                    Affinity, Reputation, or some other idea. For example, in AetherMud, a
                     mob or players Alignment is implemented as a Faction. The Alignment can
                     be thought of as having a tattoo called alignment along with a numeric
                     value assigned to it. Alignment can also be thought of as the
@@ -1877,10 +1877,10 @@
                     neutrality. &nbsp;</p>
                 <p>Before discussing the
                     nuts of bolts of the faction system, it
-                    should be mentioned that CoffeeMud includes some automatic and built-in
+                    should be mentioned that AetherMud includes some automatic and built-in
                     factioning systems for you to use. &nbsp;In addition to the default
                     alignment system, there is also a mob reaction system controlled in the
-                    coffeemud.ini file under the AUTOREACTION entry. &nbsp;This will
+                    aethermud.ini file under the AUTOREACTION entry. &nbsp;This will
                     cause
                     mobs to react to players based on how their area, race, or other mobs
                     of the same name have been treated in the past. &nbsp;While killing
@@ -1902,7 +1902,7 @@
                     mentioned
                     previously will be used for all areas, races, or mobs.</p>
                 <p>The general faction
-                    system in CoffeeMud is a powerful engine
+                    system in AetherMud is a powerful engine
                     for
                     defining what factions exist, how the factions are assigned, how the
                     value of factions rise or fall in value, how value changes are
@@ -1924,7 +1924,7 @@
                     you have defined. A Range has a displayable name, a special unique code
                     name
                     for use in Zapper Masks, and of course a low and high value. A Range
-                    can also be tied back to CoffeeMud's built in "virtue meter", which
+                    can also be tied back to AetherMud's built in "virtue meter", which
                     allows you to define a Range as always granting the mob or player whose
                     faction value falls into that range goodness, evilness, or neutrality.
                     The lowest value of the lowest Range, and the highest value of the
@@ -1936,7 +1936,7 @@
                 <p>Another important aspect
                     are the range <strong>Change
                         Triggers</strong>.
-                    One of the ways factions differ from simple tattoos is that CoffeeMud
+                    One of the ways factions differ from simple tattoos is that AetherMud
                     can manage the rise and fall in the values of the faction on a given
                     mob or player automatically. The way these changes are triggered and
                     managed is first through Change Triggers, which are applied when both
@@ -1981,19 +1981,19 @@
                     FACTIONS</strong></p>
                 <p>The list that is shown
                     with this command reflects the list of
-                    those factions which have been loaded into CoffeeMuds memory. Factions
+                    those factions which have been loaded into AetherMuds memory. Factions
                     are loaded into memory when their identifiers/filenames are added to
-                    the FACTIONS entry in your "coffeemud.ini" file. Factions may also be
+                    the FACTIONS entry in your "aethermud.ini" file. Factions may also be
                     loaded if a mob or player is loaded who has a faction which has already
                     been defined. Creating new factions, as you can now guess, is a two
                     part step. One step is to add its identifier/filename to the FACTIONS
-                    entry of your "coffeemud.ini" file, after the file has been created. To
+                    entry of your "aethermud.ini" file, after the file has been created. To
                     create the new faction identifier/filename, you must do the following:</p>
                 <p><strong>CREATE
                     FACTION orc_affinity.ini</strong></p>
                 <p>This command will create
                     a new file in your
-                    CoffeeMud/resources directory or folder for the new faction. This file
+                    AetherMud/resources directory or folder for the new faction. This file
                     will contain the default setting for your brand new faction, whose ID
                     (identifier) will be ORC_AFFINITY.CMVars. You will now be automatically
                     taken into the Faction Editor. If you had wanted simply to modify an
@@ -2095,7 +2095,7 @@
                         <td>if the previous
                             field contained entries, then this
                             field will become available. It is the optional filename of a text file
-                            in your Coffeemud/resources directory or folder which describes the
+                            in your AetherMUD/resources directory or folder which describes the
                             choices available to the player.
                         </td>
                     </tr>
@@ -2223,9 +2223,9 @@
                     can be completed by players for prizes,
                     typically quest points, experience, money, or all three. Quest tasks,
                     the monitoring of their completion and status, as well as their
-                    availability, can all be automated by CoffeeMud.</p>
+                    availability, can all be automated by AetherMud.</p>
                 <p>The built-in Quest system
-                    in CoffeeMud allows you to automatic
+                    in AetherMud allows you to automatic
                     all of the following processes:</p>
                 <ul>
                     <li>scheduling of quests
@@ -2310,10 +2310,10 @@ QUEST</span> &lt;quest
                     LOAD=quests/murdermystery/murdermystery.quest</p>
                 <p>All LOAD commands use the
                     resources directory inside your
-                    coffeemud install directory as the default path. Therefore, if you
-                    installed coffeemud in C:\CoffeeMud, the above LOAD command will look
+                    aethermud install directory as the default path. Therefore, if you
+                    installed aethermud in C:\AetherMud, the above LOAD command will look
                     for the file in
-                    C:\CoffeeMud\resources\quests\murdermystery\murdermystery.quest.</p>
+                    C:\AetherMud\resources\quests\murdermystery\murdermystery.quest.</p>
                 <p>Quests may be started
                     automatically (autoquests) from inside
                     the quest script by including the SET WAIT and SET INTERVAL commands,
@@ -2329,7 +2329,7 @@ QUEST</span> &lt;quest
                 <p>Quests can be saved using
                     the <strong>SAVE QUESTS</strong>
                     command. Quests saved this way will be restored during the next
-                    CoffeeMud reboot. Any time the CREATE QUEST command is used, you will
+                    AetherMud reboot. Any time the CREATE QUEST command is used, you will
                     need to follow it with a SAVE QUESTS if you want your quest to remain.</p>
                 <p><font style="background-color: aquamarine;" color="#4169e1"
                          size="4"><strong>Quest
@@ -3381,7 +3381,7 @@ NAME] ...
                 <p><font style="background-color: aquamarine;" color="#4169e1"
                          size="4"><strong>JavaScripting
                     in Quest scripts:</strong></font></p>
-                <p>The CoffeeMud quest
+                <p>The AetherMud quest
                     manager engine will allow you embed
                     Javascript into your quest scripts for the purpose of assisting in
                     setting up your quests. The Javascript must be located between the
@@ -3392,7 +3392,7 @@ NAME] ...
                     color="#000000"><font size="3">Javascript
 is a wholly different language than the standard Scriptable/MOBPROG
 language OR the quest script language described in this document. You
-should read the JavaScripting section of the CoffeeMud</font> <a
+should read the JavaScripting section of the AetherMud</font> <a
                     href="Programming.html"><font size="3">Programming Guide</font></a> <font
                     size="3">for
 more information, as well as the following web sites
@@ -3404,7 +3404,7 @@ which discuss the usage and syntax of the Javascript language itself:</font>
                     color="#000000" size="3"><span style="font-size: 14pt; color: blue;"><font
                     color="#000000" size="3">Aside from the above
 information about
-JavaScripting in CoffeeMud, there are still a few more details to learn
+JavaScripting in AetherMud, there are still a few more details to learn
 about JavaScripting in your quest scripts. Although</font></span><span
                     style="font-size: 14pt; color: blue;"><font color="#000000" size="3">Javascript
 does not require semicolon line delimeters and it will not likely cause
@@ -3465,7 +3465,7 @@ delimeter, it must first be escaped: \;</font></span></font></span></p>
                     Quest Notes:</strong></font></p>
                 <p>This stuff may seem
                     complicated, but just make sure you
-                    carefully examine the sample quests found in the CoffeeMud resources
+                    carefully examine the sample quests found in the AetherMud resources
                     directory! Also, remember that quest script errors are always sent out
                     to your mud.log, so check their often when starting up a new quest!</p>
                 <p class="MsoNormal"><a name="holidays"><strong><font
@@ -3965,7 +3965,7 @@ delimeter, it must first be escaped: \;</font></span></font></span></p>
                                                                    size="5">Polls</font></strong></a></p>
                 <p>Polls can be an
                     entertaining and sometimes amusing way to
-                    measure the thoughts of players. CoffeeMud supports single-selection
+                    measure the thoughts of players. AetherMud supports single-selection
                     voting among options which you can designate. Polls are created with
                     the CREATE command, reviewed with the LIST command, modified with the
                     MODIFY command, removed with the DELETE command, and participated
@@ -4087,7 +4087,7 @@ delimeter, it must first be escaped: \;</font></span></font></span></p>
                 <p class="MsoNormal"><a name="clans"><strong><font color="#008000"
                                                                    size="5">Clans</font></strong></a></p>
                 <p>Clans serve many purposes
-                    in the CoffeeMud engine. They
+                    in the AetherMud engine. They
                     provide a way for multiple players to own property, conquer areas, and
                     exert control. They also provide a means of expressing politics between
                     themselves and other groups, or even with each other. Clans can allow
@@ -4108,7 +4108,7 @@ delimeter, it must first be escaped: \;</font></span></font></span></p>
                 <p>By default, clans can be
                     created and managed entirely by
                     players. This ability can be removed by disabling the several clan
-                    creation and management commands from the coffeemud.ini file using the
+                    creation and management commands from the aethermud.ini file using the
                     DISABLE= field. Regardless, there is also an Archon mechanism for
                     creating and managing clans.</p>
                 <p><strong>CREATE
@@ -4220,7 +4220,7 @@ delimeter, it must first be escaped: \;</font></span></font></span></p>
                         </td>
                         <td>this is a mask
                             describing what sort of people are allowed to apply and join the clan
-                            using the CLANAPPLY command. The mask is a standard CoffeeMud
+                            using the CLANAPPLY command. The mask is a standard AetherMud
                             ZapperMask. You can use ? for a description at the prompt.<br>
                         </td>
                     </tr>
@@ -4250,11 +4250,11 @@ delimeter, it must first be escaped: \;</font></span></font></span></p>
                             Status</em><br>
                         </td>
                         <td>depending upon
-                            your coffeemud.ini settings, clans can be in a state of pending
+                            your aethermud.ini settings, clans can be in a state of pending
                             (awaiting a sufficient number of players to become active), a state of
                             Active, or a state of Fading (because an insufficient number of members
-                            has logged in lately, again settable in the coffeemud.ini file). This
-                            state is changed automatically by CoffeeMud, but can be altered here.<br>
+                            has logged in lately, again settable in the aethermud.ini file). This
+                            state is changed automatically by AetherMud, but can be altered here.<br>
                         </td>
                     </tr>
                     <tr>
@@ -4372,7 +4372,7 @@ delimeter, it must first be escaped: \;</font></span></font></span></p>
                         <td><em>Minimum
                             Members</em></td>
                         <td>if set, overrides
-                            the minimum members in coffeemud.ini. Setting to 0 will also make the
+                            the minimum members in aethermud.ini. Setting to 0 will also make the
                             clan immortal.<br>
                         </td>
                     </tr>

@@ -659,11 +659,11 @@ public class CharCreation extends StdLibrary implements CharCreationLibrary {
             rpt.append("\t").append("IMC2");
         }
         rpt.append("\r\n").append("FAMILY");
-        rpt.append("\t").append("CoffeeMUD");
+        rpt.append("\t").append("AetherMUD");
         rpt.append("\r\n").append("EMAIL");
         rpt.append("\t").append(CMProps.getVar(CMProps.Str.ADMINEMAIL));
         rpt.append("\r\n").append("CODEBASE");
-        rpt.append("\t").append(("CoffeeMud v" + CMProps.getVar(CMProps.Str.MUDVER)));
+        rpt.append("\t").append(("AetherMud v" + CMProps.getVar(CMProps.Str.MUDVER)));
         rpt.append("\r\n").append("AREAS");
         rpt.append("\t").append(Integer.toString(CMLib.map().numAreas()));
         rpt.append("\r\n").append("HELPFILES");

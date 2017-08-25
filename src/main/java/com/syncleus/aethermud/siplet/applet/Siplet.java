@@ -33,7 +33,7 @@ public class Siplet {
     public static final long VERSION_MINOR = 0;
 
     protected StringBuffer buf = new StringBuffer("");
-    protected String lastURL = "coffeemud.net";
+    protected String lastURL = "aethermud.net";
     protected int lastPort = 23;
     protected Socket sock = null;
     protected InputStream rawin = null;

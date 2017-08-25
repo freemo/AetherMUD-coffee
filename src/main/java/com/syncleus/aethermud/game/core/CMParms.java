@@ -30,7 +30,7 @@ import java.util.regex.Pattern;
  * This singleton contains methods for parsing user input and arguments to
  * behaviors and properties.  This library also has methods for reconstructing
  * parseable user input from previously parsed input.  It is: the Parameter
- * Parsing Library for CoffeeMud.
+ * Parsing Library for AetherMud.
  *
  * @author Bo Zimmerman
  */

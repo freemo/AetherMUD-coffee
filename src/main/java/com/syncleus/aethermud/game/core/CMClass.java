@@ -1281,7 +1281,7 @@ public class CMClass extends ClassLoader {
     }
 
     /**
-     * Loads the class with the given coffeemud or java path to your classloader.
+     * Loads the class with the given aethermud or java path to your classloader.
      * @param classType the type of object to load
      * @param path the file or java path of the class to load
      * @param quiet true to not report errors to the log, false otherwise
@@ -1407,7 +1407,7 @@ public class CMClass extends ClassLoader {
 
     /**
      * Returns either a new instance of the class of the given full java name,
-     * or the coffeemud prototype of the class with the given id.  Checks all
+     * or the aethermud prototype of the class with the given id.  Checks all
      * cmobjecttypes.
      * @param calledThis the ID or the given full java name.
      * @return a new instance of the class, or the prototype
@@ -1839,9 +1839,9 @@ public class CMClass extends ClassLoader {
     }
 
     /**
-     * Given the "stock" default path to a set of coffeemud classes, and a potential set of requested paths, this
+     * Given the "stock" default path to a set of aethermud classes, and a potential set of requested paths, this
      * method will follow requested paths (observing the default if default is listed in the request paths), and
-     * load all the coffeemud classes therein, making sure they respect the given interface/ancestor name.
+     * load all the aethermud classes therein, making sure they respect the given interface/ancestor name.
      * @param defaultPath the path to use when default is a requested path
      * @param requestedPathList the ; separated list of paths to look for classes in
      * @param ancestor the full class name of an acester/interface
@@ -1862,9 +1862,9 @@ public class CMClass extends ClassLoader {
     }
 
     /**
-     * Given the "stock" default path to a set of coffeemud classes, and a potential set of requested paths, this
+     * Given the "stock" default path to a set of aethermud classes, and a potential set of requested paths, this
      * method will follow requested paths (observing the default if default is listed in the request paths), and
-     * load all the coffeemud classes therein, making sure they respect the given interface/ancestor name.
+     * load all the aethermud classes therein, making sure they respect the given interface/ancestor name.
      * @param defaultPath the path to use when default is a requested path
      * @param requestedPathList the ; separated list of paths to look for classes in
      * @param ancestor the full class name of an acester/interface
@@ -1885,9 +1885,9 @@ public class CMClass extends ClassLoader {
     }
 
     /**
-     * Given the "stock" default path to a set of coffeemud classes, and a potential set of requested paths, this
+     * Given the "stock" default path to a set of aethermud classes, and a potential set of requested paths, this
      * method will follow requested paths (observing the default if default is listed in the request paths), and
-     * load all the coffeemud classes therein, making sure they respect the given interface/ancestor class.
+     * load all the aethermud classes therein, making sure they respect the given interface/ancestor class.
      * @param defaultPath the path to use when default is a requested path
      * @param requestedPathList the ; separated list of paths to look for classes in
      * @param ancestorC1 the full class of an acester/interface
@@ -2208,12 +2208,12 @@ public class CMClass extends ClassLoader {
 
     /**
      * Making good use of the class path directories from the INI file, this will load
-     * all the damn classes in coffeemud, being nice enough to report them to the log
+     * all the damn classes in aethermud, being nice enough to report them to the log
      * as it does so
-     * @param page the coffeemud.ini file
+     * @param page the aethermud.ini file
      * @return true if success happened, and false otherwise
      */
-    public static final boolean loadAllCoffeeMudClasses(final CMProps page) {
+    public static final boolean loadAllAetherMudClasses(final CMProps page) {
         CMClass c = c();
         if (c == null)
             c = new CMClass();

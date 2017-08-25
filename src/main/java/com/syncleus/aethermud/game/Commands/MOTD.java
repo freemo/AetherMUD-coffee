@@ -85,7 +85,7 @@ public class MOTD extends StdCommand {
                 final MultiList<JournalEntry> multiJournal = new MultiList<JournalEntry>();
                 multiJournal.addAll(CMLib.database().DBReadJournalMsgsByUpdateDate("SYSTEM_NEWS", false, max));
                 if (max > multiJournal.size())
-                    multiJournal.addAll(CMLib.database().DBReadJournalMsgsByUpdateDate("CoffeeMud News", false, max - multiJournal.size())); // deprecated
+                    multiJournal.addAll(CMLib.database().DBReadJournalMsgsByUpdateDate("AetherMud News", false, max - multiJournal.size())); // deprecated
                 final ReverseFakeIterator<JournalEntry> entries = new ReverseFakeIterator<JournalEntry>(multiJournal);
 
                 //should read these descending, trim to the max, then iterate.

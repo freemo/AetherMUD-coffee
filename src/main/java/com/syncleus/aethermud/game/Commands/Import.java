@@ -2630,11 +2630,11 @@ public class Import extends StdCommand {
                         M.basePhyStats().setWeight(2000);
                         break;
                 }
-                // ignore the above, coffeemud does it better!
+                // ignore the above, aethermud does it better!
                 final int numAbiles = M.numAbilities();
                 M.baseCharStats().getMyRace().startRacing(M, false);
-                //if(CMath.isSet(off,0)) // no area killers in coffeemud
-                //if(CMath.isSet(off,1)) // no circling in coffeemud
+                //if(CMath.isSet(off,0)) // no area killers in aethermud
+                //if(CMath.isSet(off,1)) // no circling in aethermud
 
                 if (CMath.isSet(off, 2)) // bash them off their feet?
                     M.addAbility(CMClass.getAbility("Skill_Trip"));
@@ -2997,7 +2997,7 @@ public class Import extends StdCommand {
                         M.addBehavior(CMClass.getBehavior("RandomTeleporter"));
                         M.addBehavior(CMClass.getBehavior("Healer"));
                     } else if (special.equals("SPEC_CAST_BIGTIME")) {
-                        // In CoffeeMud, they all cast bigtime
+                        // In AetherMud, they all cast bigtime
                     } else if (special.equals("SPEC_BREATH_ACID")) {
                         M.addBehavior(CMClass.getBehavior("CombatAbilities"));
                         M.addAbility(CMClass.getAbility("Acidbreath"));
@@ -3092,7 +3092,7 @@ public class Import extends StdCommand {
                 adjuster.setMiscText(adjuster.text() + " con" + ((val >= 0) ? ("+" + val) : ("" + val)));
                 break;
             case 6:
-                // coffeemud don't play with sex
+                // aethermud don't play with sex
                 break;
             case 7:
                 adjuster.setMiscText(adjuster.text() + " cha" + ((val >= 0) ? ("+" + val) : ("" + val)));
@@ -3696,7 +3696,7 @@ public class Import extends StdCommand {
             if (CMath.isSet(extraFlag, 0))
                 I.basePhyStats().setDisposition(I.basePhyStats().disposition() | PhyStats.IS_GLOWING);
 
-            //if((extraFlag&2)==2) coffeemud has no hummers
+            //if((extraFlag&2)==2) aethermud has no hummers
             if (CMath.isSet(extraFlag, 2))
                 I.basePhyStats().setDisposition(I.basePhyStats().disposition() | PhyStats.IS_DARK);
 
@@ -3732,12 +3732,12 @@ public class Import extends StdCommand {
             if (CMath.isSet(extraFlag, 12))
                 CMLib.flags().setRemovable(I, false);
 
-            //if(extraFlag&4096)==4096) coffeemud doesn't support rotting cargo
+            //if(extraFlag&4096)==4096) aethermud doesn't support rotting cargo
 
             if (CMath.isSet(extraFlag, 14))
                 CMLib.flags().setGettable(I, false);
 
-            //if(extraFlag&16384)==16384) coffeemud doesn't support rotting cargo
+            //if(extraFlag&16384)==16384) aethermud doesn't support rotting cargo
 
             if (CMath.isSet(extraFlag, 16))
                 I.basePhyStats().setDisposition(I.basePhyStats().disposition() | PhyStats.IS_INVISIBLE);
@@ -4174,7 +4174,7 @@ public class Import extends StdCommand {
             if (CMath.isSet(codeBits, 20))
                 R.addNonUninvokableEffect(CMClass.getAbility("Prop_NoTeleportOut"));
 
-            // if(CMath.isSet(codeBits,23)) No "dirt" in CoffeeMud, so this doesn't matter
+            // if(CMath.isSet(codeBits,23)) No "dirt" in AetherMud, so this doesn't matter
 
             if (CMath.isSet(codeBits, 24))
                 R.addNonUninvokableEffect(CMClass.getAbility("Prop_NoChannel"));

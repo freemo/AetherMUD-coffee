@@ -4,7 +4,7 @@
 #If you have a problem...e-mail the ghostbusters...I mean...e-mail wrichter@att.net...yeah :)
 #VERSION: TEST5
 
-echo "Hello, and welcome to the UNIX CoffeeMud automated installer."
+echo "Hello, and welcome to the UNIX AetherMud automated installer."
 sleep 1
 echo "I am going to ask you a few questions, and as you answer them I will create your MUD."
 sleep 1
@@ -161,5 +161,5 @@ sh mudUNIX.sh
 
 else
 echo "Alright, MUD not starting now, if you wish to start it later just do sh mudUNIX.sh"
-echo "Hope you enjoy CoffeeMud!"
+echo "Hope you enjoy AetherMud!"
 fi

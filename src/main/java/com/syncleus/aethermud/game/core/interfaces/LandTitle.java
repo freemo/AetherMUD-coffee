@@ -93,14 +93,14 @@ public interface LandTitle extends PrivateProperty {
 
     /**
      * If back taxes is owned on this property, this is how the value is set.  The
-     * value should be in base coffeemud currency
+     * value should be in base aethermud currency
      * @param amount the back  taxes owed
      */
     public void setBackTaxes(int amount);
 
     /**
      * If back taxes is owned on this property, this is how the value is retrieved.  The
-     * value should be in base coffeemud currency
+     * value should be in base aethermud currency
      * @return amount the back  taxes owed
      */
     public int backTaxes();

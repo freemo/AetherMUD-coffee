@@ -16,18 +16,18 @@
  */
 package com.syncleus.aethermud.game.core.exceptions;
 
-public abstract class CoffeeMudException extends Exception {
+public abstract class AetherMudException extends Exception {
     private static final long serialVersionUID = 8932995125810826091L;
 
-    public CoffeeMudException(String s) {
+    public AetherMudException(String s) {
         super(s, new Exception());
     }
 
-    public CoffeeMudException(String s, Exception e) {
+    public AetherMudException(String s, Exception e) {
         super(s, e);
     }
 
-    public CoffeeMudException(Exception e) {
+    public AetherMudException(Exception e) {
         super(e);
     }
 }

@@ -89,7 +89,7 @@
 	@RequestParameter?ABILITY@
 	@if?CheckReqParm?ABILITY=@ @else@
 		<TABLE WIDTH=100% BORDER=1>
-			<TR><TD WIDTH=100% BGCOLOR=WHITE ALIGN=CENTER><FONT COLOR=BLACK><H2>CoffeeMud @MudServerVersion@ Recipe Manager</H2></FONT></TD></TR>
+			<TR><TD WIDTH=100% BGCOLOR=WHITE ALIGN=CENTER><FONT COLOR=BLACK><H2>AetherMud @MudServerVersion@ Recipe Manager</H2></FONT></TD></TR>
 			<TR>
 			<TD WIDTH=100%>@AbilityRecipeData?TABLE&HFONT=COLOR=YELLOW><B&FONT=COLOR=WHITE SIZE=-1@</TD>
 			</TR>

@@ -135,14 +135,14 @@ public interface Area extends Economics, PhysicalAgent, Places {
     public void setTheme(int level);
 
     /**
-     * Returns the coffeemud .cmare filename that will be used when the EXPORT command
+     * Returns the aethermud .cmare filename that will be used when the EXPORT command
      * is used in such a way as to auto-generate filenames.
      * @return the name of the .cmare filename to use
      */
     public String getArchivePath();
 
     /**
-     * Sets the coffeemud .cmare filename that will be used when the EXPORT command
+     * Sets the aethermud .cmare filename that will be used when the EXPORT command
      * is used in such a way as to auto-generate filenames.
      * @param pathFile  the name of the .cmare filename to use
      */

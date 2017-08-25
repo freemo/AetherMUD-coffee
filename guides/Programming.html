@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta content="HTML Tidy, see www.w3.org" name="generator"/>
-    <title>Programming for CoffeeMud 5.9</title>
+    <title>Programming for AetherMud 5.9</title>
     <link media="screen" type="text/css" href="style.css" rel="StyleSheet"/>
     <!-- Modified by Josh Mueller, 2006-5-6, fix validation problems, reformat, fix spelling errors -->
 </head>
@@ -16,7 +16,7 @@
             <td colspan="2" align="left" bgcolor="#dfdfdf" width="100%">
                 <h1>Programming
                     for
-                    CoffeeMud 5.9</h1>
+                    AetherMud 5.9</h1>
             </td>
         </tr>
         <tr>
@@ -118,16 +118,16 @@
                 </ul>
             </td>
             <td align="left" valign="top"><img src="images/mug.jpg"
-                                               alt="CoffeeMud logo"/>
+                                               alt="AetherMud logo"/>
                 <h2><a name="overview" id="overview">Overview</a></h2>
                 <p>The purpose of this
                     document is to assist those who wish to
                     add custom Items, MOBs, Behaviors, Properties, or other objects to
-                    CoffeeMud. The reader should be familiar with Java programming, and
+                    AetherMud. The reader should be familiar with Java programming, and
                     should be experienced with writing and compiling Java classes. The
                     object oriented notions of class inheritance and polymorphism, as well
                     as the Java constructs of interfaces should be at least vaguely
-                    familiar to you before attempting to build classes for CoffeeMud. Also,
+                    familiar to you before attempting to build classes for AetherMud. Also,
                     it is expected that all of the ideas presented in the <a
                         href="ArchonGuide.html">Archons Guide</a>
                     and <a href="GameBuildersGuide.html">Game
@@ -137,23 +137,23 @@
                     document.</p>
                 <p>It is not expected that
                     someone would wish to dive in and make
-                    wholesale changes to the CoffeeMud system right away, but is more
+                    wholesale changes to the AetherMud system right away, but is more
                     likely wanting to fill in a functional gap in the system for their own
                     needs. For this reason, this document is not organized as a
-                    comprehensive guide to programming CoffeeMud. Instead, it is designed
+                    comprehensive guide to programming AetherMud. Instead, it is designed
                     to be a quick reference for those who wish to create the spot MOB,
                     Behavior, Item, or Property for use on their maps.</p>
                 <p>With this in mind then,
                     let's start out with some brief
                     development instructions, and then and in no particular order, discuss
-                    the several essential object types in CoffeeMud are presented.</p>
+                    the several essential object types in AetherMud are presented.</p>
                 <img src="images/sprockets.jpg" alt="Recompiling"/>
-                <h2><a name="BUILD" id="BUILD">Rebuilding CoffeeMud</a></h2>
+                <h2><a name="BUILD" id="BUILD">Rebuilding AetherMud</a></h2>
                 <h3><a name="buildwin" id="buildwin">In Microsoft
                     Windows</a></h3>
                 <ul>
                     <li>
-                        <p>Go to your coffeemud
+                        <p>Go to your aethermud
                             directory and edit the make.bat, the
                             first line will be something like: <code>SET
                                 JAVACPATH=
@@ -175,7 +175,7 @@
                 <h3><a name="buildunix" id="buildunix">In Unix</a></h3>
                 <ul>
                     <li>
-                        <p>Go to your coffeemud
+                        <p>Go to your aethermud
                             directory and edit the makeUNIX.sh,
                             the first line will be something like: <code>Java_Home=/home/knoppix/jdk1.6.0_22</code>
                             This might be different for you depending on what version of the Java
@@ -199,39 +199,39 @@
                     External
                     Components</a></h3>
                 <p>If you perused the
-                    coffeemud.ini file as mentioned in the
+                    aethermud.ini file as mentioned in the
                     Installation Guide, you may have noticed and wondered about the section
                     near the bottom which lists the default load paths for the several
-                    CoffeeMud
+                    AetherMud
                     objects.</p>
-                <p>By default, the CoffeeMud
+                <p>By default, the AetherMud
                     engine dynamically loads the vast
                     majority of its object code at boot time by referring to the paths
-                    specified in the coffeemud.ini file. The value <code>%DEFAULT%</code>
-                    is always used as a substitute for the default CoffeeMud object path.
-                    For instance, if you installed CoffeeMud at "<code>C:\CoffeeMud\</code>",
+                    specified in the aethermud.ini file. The value <code>%DEFAULT%</code>
+                    is always used as a substitute for the default AetherMud object path.
+                    For instance, if you installed AetherMud at "<code>C:\AetherMud\</code>",
                     then "<code>BEHAVIORS=%DEFAULT%</code>"
-                    in the ini file would load "<code>C:\CoffeeMud\com\syncleus\aethermud\game\Behaviors\*.class</code>"
+                    in the ini file would load "<code>C:\AetherMud\com\syncleus\aethermud\game\Behaviors\*.class</code>"
                     into its behavior set.</p>
                 <p>This default object boot
                     paths may be removed or added-to
                     using semicolon delimited paths, or even replaced with your own object
-                    boot directories. In fact, when adding objects to your CoffeeMud boot
+                    boot directories. In fact, when adding objects to your AetherMud boot
                     sequence, it is recommended that you place your objects in a separate
-                    directory path inside your CoffeeMud folder and add its path to the
-                    coffeemud.ini file under the proper setting. The order in which you
+                    directory path inside your AetherMud folder and add its path to the
+                    aethermud.ini file under the proper setting. The order in which you
                     place multiple paths in a single entry is also significant, as the
-                    CoffeeMud ClassLoader will load the files in the order in which they
+                    AetherMud ClassLoader will load the files in the order in which they
                     appear listed. For instance:</p>
                 <pre>MOBS=%DEFAULT%;/resources/examples/MyClass.class;/resources/otherclasses<br/></pre>
                 <p>Will cause the default
-                    CoffeeMud versions of the mob classes
+                    AetherMud versions of the mob classes
                     to be loaded first, followed by MyClass.class, followed by all the
-                    class files in the resources/otherclasses folder in your CoffeeMud
+                    class files in the resources/otherclasses folder in your AetherMud
                     package. Also notice that the ClassLoader follows the rules of the CMFS
                     described in the Archons Guide, meaning that the forward slash is
                     always the proper path separator, and that no folder outside of your
-                    CoffeeMud package may be referenced. Also bear in mind that case is
+                    AetherMud package may be referenced. Also bear in mind that case is
                     sensitive when naming Java class files, even in these boot paths.</p>
                 <p>When writing these custom
                     classes for your special object boot
@@ -241,7 +241,7 @@
                         <p>Do not mix your
                             object types in the same directory! Never
                             try to boot custom items from the same directory from which you boot
-                            your custom mobs. It will only confuse you and CoffeeMud.</p>
+                            your custom mobs. It will only confuse you and AetherMud.</p>
                     </li>
                     <li>
                         <p>Java Packaging is
@@ -274,7 +274,7 @@
                     </li>
                     <li>
                         <p>Class files loaded
-                            directly in the CoffeeMud classpath can
+                            directly in the AetherMud classpath can
                             not be reloaded at run-time using the <code>UNLOAD</code>
                             and <code>LOAD</code>
                             commands. If you plan on making changes to your classes during
@@ -283,11 +283,11 @@
                     <li>
                         <p>As a general rule,
                             you may import any "<code>interfaces.*</code>"
-                            packages in the base CoffeeMud structure, any core Java packages, the
-                            CoffeeMud "<code>core.*</code>"
-                            package, and any single base CoffeeMud class you may be extending. Do
+                            packages in the base AetherMud structure, any core Java packages, the
+                            AetherMud "<code>core.*</code>"
+                            package, and any single base AetherMud class you may be extending. Do
                             not import more than that. Use the CMClass getter methods if you need
-                            to create new instances of CoffeeMud classes, and use the CMLib methods
+                            to create new instances of AetherMud classes, and use the CMLib methods
                             to access her code libraries.</p>
                     </li>
                 </ul>
@@ -309,7 +309,7 @@
                     special tags are used to designate a player name, or the name of the
                     target of a spell. You will also notice that (s) and (es) is used to
                     modify the proper form of a verb. These are key features of the
-                    CoffeeMud text engine. Here is a more complete list of available tags:</p>
+                    AetherMud text engine. Here is a more complete list of available tags:</p>
                 <a name="nametag" id="nametag"> </a>
                 <table bgcolor="#ffffcc" border="1">
                     <tbody>
@@ -748,7 +748,7 @@
                 <h2><a name="javascript" id="javascript">JavaScripting:</a></h2>
                 <p>JavaScript is an
                     interpreted scripting language which is used
-                    in various parts of CoffeeMud. The CoffeeMud engine integrates the
+                    in various parts of AetherMud. The AetherMud engine integrates the
                     Rhino Javascript interpretor package from Mozilla in such places as the
                     Scriptable behavior, the JRun command, the ClassLoader, the Quest
                     engine, and the web server.</p>
@@ -760,12 +760,12 @@
                 <p>If you are familiar with
                     writing Javascript for web browsers,
                     there are several differences you will need to adjust to when using
-                    Javascript in CoffeeMud. A minor difference is that the Rhino
+                    Javascript in AetherMud. A minor difference is that the Rhino
                     interpretor requires that all variables be declared before use. A more
                     important difference is that Javascript Strings are not the same as
                     Java String objects, and that confusing them can lead to errors. To get
                     around this problem, all of the implementations of Javascript in
-                    CoffeeMud, with the exception of the ClassLoader,&nbsp;provide a
+                    AetherMud, with the exception of the ClassLoader,&nbsp;provide a
                     special
                     method to convert Javascript strings into Java Strings before passing
                     them to Java methods or objects which will require them. An example is
@@ -780,19 +780,19 @@
                 <pre>var javascriptstring=' this is a javascript string ';<br/>var javastring=Packages.com.syncleus.aethermud.game.core.CMLib.toJavaString(javascriptstring);<br/>// and now javastring is a real-live Java-compliant and Java-friendly string<br/></pre>
                 <p>The most important
                     difference between coding Javascript for
-                    CoffeeMud and for browsers is that there is no HTML DOM (Document
+                    AetherMud and for browsers is that there is no HTML DOM (Document
                     Object Model), and therefore several of the libraries you are used to
                     are probably missing, such as Math. For this reason, it is necessary
-                    for you to learn the CoffeeMud object packages in order to get access
+                    for you to learn the AetherMud object packages in order to get access
                     to useful data and useful libraries. And now you understand why the
                     JavaScripting notes are kept in the Programming guide. :)</p>
-                <p>To access the CoffeeMud
+                <p>To access the AetherMud
                     object packages, you will need to make
                     use of the Packages object to reference external packages. So long as
-                    the imported objects are in your CoffeeMud classpath, they can be
-                    accessed and used. For instance, to use the CoffeeMud <code>pow(x,y)</code>
+                    the imported objects are in your AetherMud classpath, they can be
+                    accessed and used. For instance, to use the AetherMud <code>pow(x,y)</code>
                     function in CMath.java:</p>
-                <pre>var lib=Packages.com.syncleus.aethermud.game.core.CMLib;<br/>// the above creates a reference to the CoffeeMud Library as a shortcut<br/>var value=lib.math().pow(4,2);<br/>// now we can access the math() library from our shortcut.<br/></pre>
+                <pre>var lib=Packages.com.syncleus.aethermud.game.core.CMLib;<br/>// the above creates a reference to the AetherMud Library as a shortcut<br/>var value=lib.math().pow(4,2);<br/>// now we can access the math() library from our shortcut.<br/></pre>
                 <p>Depending upon the
                     context from which your script runs (the
                     Scriptable behavior, JRun command, the Quest engine, or the http/web
@@ -825,15 +825,15 @@
                         setupState()</code></p>
                 <p>The last piece of general
                     information about JavaScript in
-                    CoffeeMud concerns writing Java classes for the CoffeeMud ClassLoader.
+                    AetherMud concerns writing Java classes for the AetherMud ClassLoader.
                     Any JavaScript file *.js included in the ClassLoader boot paths (see
                     the previous section) will be loaded and treated just like any Java
                     compiled *.class file. The JavaScript file would be parsed, compiled,
                     and loaded at boot time. For the most part, writing Java Classes in
                     JavaScript is extremely similar to writing Java Classes in Java. Base
-                    classes may be extended (using the special CoffeeMud <code>//extends</code>
+                    classes may be extended (using the special AetherMud <code>//extends</code>
                     command in your JavaScript), interfaces may be implemented (using the
-                    special CoffeeMud <code>//implements</code>
+                    special AetherMud <code>//implements</code>
                     command in your
                     JavaScript), super class variables and methods may be accessed (using
                     the <code>this.variableName</code>
@@ -847,7 +847,7 @@
                     your first JavaScript</a></h3>
                 <p>Below is an example of a
                     Java Class written in JavaScript.
-                    Examples of Embedded JavaScript in CoffeeMud Virtual Pages (cmvp) web
+                    Examples of Embedded JavaScript in AetherMud Virtual Pages (cmvp) web
                     files can be found in the Web Server Guide. Examples of Embedded
                     JavaScript in a Scriptable MOBPROG script can be found in the Scripting
                     Guide.</p>
@@ -856,29 +856,29 @@
                     MOB class to demonstrate extending the GenMob class to create a type of
                     modifiable mob for your maps. In this example, we add functionality to
                     make all mobs in the world created from the GenLemming base suicidal.
-                    To use this class, save the code somewhere in our CoffeeMud folder
+                    To use this class, save the code somewhere in our AetherMud folder
                     under the name "GenLemming.js", and add an object path reference to it
-                    in the MOBS entry in your coffeemud.ini file, as described in section
+                    in the MOBS entry in your aethermud.ini file, as described in section
                     one.</p>
                 <pre>//extends com.syncleus.aethermud.game.MOBS.GenMob<br/><br/>function ID(){return "GenLemming";}<br/><br/>var lib=Packages.com.syncleus.aethermud.game.core.CMLib;<br/></pre>
                 <p>The first lines of our
                     class include the special //extends
-                    command which informs the CoffeeMud ClassLoader that this JavaScript
+                    command which informs the AetherMud ClassLoader that this JavaScript
                     class will extend GenMob, thereby inhereting all functionality of the
                     maleable GenMob.</p>
                 <p>The <code>ID()</code>
-                    method is required in all CoffeeMud
+                    method is required in all AetherMud
                     classes. It must be the simple name of the class, and must match the
                     name of the JavaScript file containing it. For example, GenLemming.js
                     contains class GenLemming and returns an ID of "GenLemming". They all
                     match exactly.</p>
                 <p>Lastly, we define the
                     variable "lib" to act as a shortcut to
-                    the CoffeeMud core Libraries.</p>
+                    the AetherMud core Libraries.</p>
                 <p>Now, moving on; since we
                     don't have the ability to write
                     constructors in JavaScript, any initial fields we need to set whenever
-                    a new instance of our class is created must be done in the CoffeeMud <code>newInstance()</code>
+                    a new instance of our class is created must be done in the AetherMud <code>newInstance()</code>
                     method as shown here:</p>
                 <pre>function newInstance()<br/>{<br/> var lemm=this.super$newInstance();<br/> lemm.setName("a generic lemming");<br/> lemm.setDisplayText("a generic lemming is waiting to commit suicide");<br/> return lemm;<br/>}<br/></pre>
                 <p>There are several
@@ -895,7 +895,7 @@
                 <p>The <code>public
                     boolean tick(Tickable host, int tickID)</code>
                     method from the standard MOB interface is designed to be called every
-                    CoffeeMud tick (about 4 seconds). Now, the tick method in StdMOB, which
+                    AetherMud tick (about 4 seconds). Now, the tick method in StdMOB, which
                     is extended by GenMob, handles things like recovering hit points,
                     automatic combat rounds, and other important periodic activities. It is
                     explained further in Core Topic 3.</p>
@@ -929,20 +929,20 @@
                 <img src="images/kiss.jpg" alt="Getting the Message"/>
                 <h2><a name="DIG1" id="DIG1">Core Topic 1: Getting
                     the Message:</a></h2>
-                <p>CoffeeMud is essentially
+                <p>AetherMud is essentially
                     a distributed message passing and
                     handling system, where the actions and events that occur in the system
                     are represented as messages (Common.interfaces.CMMsg) which are then
                     previewed, modified, cancelled, and/or reacted to by handlers.
-                    Understanding this idea is key to fully understanding how CoffeeMud
+                    Understanding this idea is key to fully understanding how AetherMud
                     really works, so let's take a second and peruse this concept in more
                     detail.</p>
-                <p>Messages in CoffeeMud, at
+                <p>Messages in AetherMud, at
                     least as we are talking about them
                     here, always represent Events. Events such as a mob picking up an item,
                     swinging a sword at an opponent, taking damage from a fireball, or
                     getting pricked by a poisonous needle. These events can never actually
-                    occur in CoffeeMud unless a proper message is generated for them first.
+                    occur in AetherMud unless a proper message is generated for them first.
                     These messages, in the code, implement the interface <code>Common.interfaces.CMMsg</code>,
                     and are typically an instance of the class <code>Common.DefaultMessage</code>.</p>
                 <p>Messages are created at
@@ -1176,7 +1176,7 @@
                     performed, and is a simple integer ranging from 0 (NO EFFECT) to 2047.
                     The officially recognized Minor codes are exhaustively listed in the
                     CMMsg interface, and all begin with the prefix TYP_. These types cover
-                    every sort of major event which occurs in the CoffeeMud engine,
+                    every sort of major event which occurs in the AetherMud engine,
                     including getting items, casting spells, entering or leaving rooms,
                     etc, etc..</p>
                 <pre>CMMsg msg = CMClass.getMsg(attacker,target,weapon,CMMsg.MSG_WEAPONATTACK,<br/> "&lt;S-NAME&gt;attack(s) &lt;T-NAME&gt;!");<br/></pre>
@@ -1403,7 +1403,7 @@
                 <p>In most systems, it is
                     typical for all of the data variables
                     which describe a particular object to be coded directly inside that
-                    object. While this is also true in CoffeeMud, many important data
+                    object. While this is also true in AetherMud, many important data
                     fields, along with the appropriate "getter" and "setter" methods, are
                     stored in separate special data-storage, or state objects. These
                     data-storage objects provide access to numerous important properties
@@ -1775,9 +1775,9 @@
                 <p>Now, the above version of <code>startTickDown()</code>
                     can be
                     used to create timed events of any duration. However, all objects in
-                    the base distribution of CoffeeMud operate on a single default time
+                    the base distribution of AetherMud operate on a single default time
                     interval, usually of 4000 milliseconds, as defined by
-                    CMProps.getTickMillis() and ultimately from the coffeemud.ini file. For
+                    CMProps.getTickMillis() and ultimately from the aethermud.ini file. For
                     this reason, a different version of the <code>startTickDown()</code>
                     method is called which does not include the time parameter,
                     utilizing the standard delay instead:</p>
@@ -1794,7 +1794,7 @@
                 <img src="images/books.jpg" alt="Core Libraries"/>
                 <h2><a name="DIG4" id="DIG4">Core Topic 4: Core
                     Libraries</a></h2>
-                <p>The CoffeeMud engine
+                <p>The AetherMud engine
                     contains numerous Java classes whose
                     purpose is to perform much of the underlying game functionality. Some
                     of these Java classes are Core classes, some are Library classes, and
@@ -1858,7 +1858,7 @@
                         <td>CMProps</td>
                         <td>Properties
                             manager, for reading INI file values from
-                            coffeemud.ini and other places.
+                            aethermud.ini and other places.
                         </td>
                     </tr>
                     <tr>
@@ -2340,10 +2340,10 @@
                     write new ones, unless you are doing the most serious additions and
                     enhancements to your system. However, they are designed especially so
                     they they can be extended and overridden. They have their own entry in
-                    the coffeemud.ini file called LIBRARY. By writing classes that extend
-                    the base CoffeeMud library classes, and overriding their methods, you
-                    can make changes to the most basic CoffeeMud algorithms, even at
-                    run-time! Libraries also have an entry in the coffeemud.ini file,
+                    the aethermud.ini file called LIBRARY. By writing classes that extend
+                    the base AetherMud library classes, and overriding their methods, you
+                    can make changes to the most basic AetherMud algorithms, even at
+                    run-time! Libraries also have an entry in the aethermud.ini file,
                     LIBRARY, so that you can specify your custom extended versions of them
                     after the %DEFAULT% string, thus allowing your changes to be loaded at
                     boot-time.</p>
@@ -2487,7 +2487,7 @@
                     </tr>
                     <tr>
                         <td>DefaultMessage</td>
-                        <td>A CoffeeMud event
+                        <td>A AetherMud event
                             message (CMMsg).
                         </td>
                     </tr>
@@ -2581,7 +2581,7 @@
                 <img src="images/mic.jpg" alt="Input"/>
                 <h3><a name="DIG5" id="DIG5">Core Topic 5: Input</a></h3>
                 <p>Almost
-                    all user interaction with CoffeeMud begins and ends with the standard
+                    all user interaction with AetherMud begins and ends with the standard
                     command line parser. &nbsp;However, from time to time, it may be
                     important to prompt the player for further information, whether it be a
                     name for their new frog, a confirmation that they really want a frog as
@@ -2620,28 +2620,28 @@
                     the last parameter is the default should the user just hit ENTER.</p>
                 <p>The
                     above example represents the way all prompting has been done in
-                    CoffeeMud since 1.0. &nbsp;And it still works! However, it is a bad
+                    AetherMud since 1.0. &nbsp;And it still works! However, it is a bad
                     idea to call those methods, and it's important to know why.
                     &nbsp;The
                     reason has to do with threads. A thread represents your computer's
                     opportunity to execute code in the computer; the more threads a program
                     has, the more things it can do at once. &nbsp;Everything in
-                    CoffeeMud
+                    AetherMud
                     runs in&nbsp;threads. &nbsp;However, threads are expensive to
                     have
                     around, and fewer of them is better than more. &nbsp;For this
                     reason,
-                    almost everything in CoffeeMud shares threads with everything else,
+                    almost everything in AetherMud shares threads with everything else,
                     which helps prevent the system from using too many or from running out
-                    of them. &nbsp;Sharing is good; once a piece of CoffeeMud is
+                    of them. &nbsp;Sharing is good; once a piece of AetherMud is
                     finished
-                    running, it hands its thread off to other parts of CoffeeMud.
+                    running, it hands its thread off to other parts of AetherMud.
                     &nbsp;However, the three methods shown above ( <span
                         style="font-family: monospace;">prompt(String,String)</span>, <span
                         style="font-family: monospace;">confirm(String,String)</span>,
                     and <span style="font-family: monospace;">choose(String,
 String, String)</span>
-                    ) do not share their thread with the rest of CoffeeMud. &nbsp;In
+                    ) do not share their thread with the rest of AetherMud. &nbsp;In
                     fact,
                     what happens when they execute is that the precious thread that is
                     running that piece of code just sits around doing nothing until the
@@ -2700,16 +2700,16 @@ String, String)</span>
                 <h3><a name="DIG6" id="DIG5">Core Topic 6: Database
                     Tables</a></h3>
                 If all goes well, you will never ever have to care about this topic.
-                &nbsp;CoffeeMud includes numerous ways to expand the data storage
+                &nbsp;AetherMud includes numerous ways to expand the data storage
                 of its numerous objects without careing how or where it is being
                 persisted. &nbsp;However, for the curious or those who enjoy
-                danger, here is a description of the CoffeeMud Database Tables.<br/>
+                danger, here is a description of the AetherMud Database Tables.<br/>
                 <br/>
                 By way of <big><span style="font-weight: bold;">overview</span>,</big>
-                the CoffeeMud database schema reflects the sharp turns in design that
-                CoffeeMud has taken over the years. &nbsp;<br/>
+                the AetherMud database schema reflects the sharp turns in design that
+                AetherMud has taken over the years. &nbsp;<br/>
                 <br/>
-                Originally, CoffeeMud games were meant to be built by coders writing
+                Originally, AetherMud games were meant to be built by coders writing
                 Java objects. &nbsp;Since all the little details would be "stored"
                 in java class files, that left very little for the actual database to
                 persist. &nbsp;Mobs and Items in rooms would only have needed to
@@ -2721,7 +2721,7 @@ String, String)</span>
                 this would be the players themselves, which would have lots and lots of
                 database fields, since they would vary much more than mobs and items.<br/>
                 <br/>
-                Later, CoffeeMud was changed to be built online at runtime.
+                Later, AetherMud was changed to be built online at runtime.
                 &nbsp;Suddenly all the little details that were stored in Java had
                 to be persisted to the database. &nbsp;This was
                 accomplished&nbsp; by storing all of those details as an XML
@@ -2729,7 +2729,7 @@ String, String)</span>
                 was.&nbsp;Still, this left the system with relatively few tables
                 with relatively few fields. &nbsp;The fact that all that XML data
                 could not be queried was fairly unimportant.
-                &nbsp;&nbsp;CoffeeMud loaded all of its data at boot-time, so
+                &nbsp;&nbsp;AetherMud loaded all of its data at boot-time, so
                 that even the tables and relations, such as they were, were mostly
                 unused after the boot completed.<br/>
                 <br/>
@@ -2742,7 +2742,7 @@ String, String)</span>
                 features whose data fit nowhere else caused the numer of tables to
                 balloon to the current list.<br/>
                 <br/>
-                All the while, CoffeeMud tried to maintain compatibility, not only with
+                All the while, AetherMud tried to maintain compatibility, not only with
                 fakedb, but with every other database, commercial or open source.
                 &nbsp;Every database engine has its own standard table names,
                 special column names, and so forth. &nbsp;Predicting when one
@@ -2751,7 +2751,7 @@ String, String)</span>
                 names were given almost cryptic names in order to help eliminate the
                 possibility of conflict. &nbsp;<br/>
                 <br/>
-                And that, my friends, is why the CoffeeMud database is the way it is.
+                And that, my friends, is why the AetherMud database is the way it is.
                 &nbsp;So, how is it? &nbsp;Let's look:<br/>
                 <br/>
                 <table
@@ -3647,7 +3647,7 @@ String, String)</span>
                 <p>Commands are exactly what
                     they sound like: LOOK, QUIT, KILL,
                     GET, and all the other things you type into the mud are handled by
-                    CoffeeMud Commands.</p>
+                    AetherMud Commands.</p>
                 <p>A Custom Command may or
                     may not belong to any particular
                     package, though it is important that the <code>ID()</code>
@@ -3737,7 +3737,7 @@ String, String)</span>
                 <h2><a name="MOBS" id="MOBS">MOBs</a></h2>
                 <p>MOBs, or "Moveable
                     OBjects", are the creatures and characters
-                    which the players fight. In CoffeeMud, they are among the simpler
+                    which the players fight. In AetherMud, they are among the simpler
                     objects to code. This is not because they are uncomplex. In fact, they
                     are MOST complex. However, this complexity comes due to the myriad of
                     Items, Behaviors, Properties, and Abilities that are added to them.
@@ -3761,8 +3761,8 @@ String, String)</span>
                 <p>So, if you are sure this
                     is what you want to do, carry on! The
                     directory for your custom coded MOB objects should be specified using
-                    the "MOBS" entry in the coffeemud.ini file. See the section above on
-                    Rebuilding CoffeeMud for more information on this feature.</p>
+                    the "MOBS" entry in the aethermud.ini file. See the section above on
+                    Rebuilding AetherMud for more information on this feature.</p>
                 <h3><a name="mobcoding" id="mobcoding">Coding a new
                     MOB</a></h3>
                 <p>A Custom MOB may or may
@@ -3786,7 +3786,7 @@ String, String)</span>
                     class an <code>ID()</code>
                     of "StdMOB". If you do this, however, make
                     sure your class is loaded after the %DEFAULT% list in your
-                    coffeemud.ini file.</p>
+                    aethermud.ini file.</p>
                 <p>As was stated, each
                     unique MOB must also have a custom <code>ID()</code>
                     method as shown below. Notice that the <code>ID()</code>
@@ -3856,8 +3856,8 @@ String, String)</span>
                     advanced topic of extending the capabilities
                     of the existing MOB classes. As mentioned previously, this consists in
                     creating your own java classes with the same class name and <code>ID()</code>
-                    string methods as the base CoffeeMud MOB classes, and the adding the
-                    reference to your custom class to the coffeemud.ini file's MOBS enter
+                    string methods as the base AetherMud MOB classes, and the adding the
+                    reference to your custom class to the aethermud.ini file's MOBS enter
                     after the %DEFAULT% entry. Now, adding or extending the capabilities of
                     these classes typically means both adding your own methods, and
                     extending the importing existing methods in those classes. The most
@@ -3867,14 +3867,14 @@ String, String)</span>
                     enhancing basic aspects of the mud. Those are numerated both in the
                     classes you are extending, and in
                     com.syncleus.aethermud.game.MOBS.interfaces.MOB.java. Consult the
-                    CoffeeMud java docs for more information.</p>
+                    AetherMud java docs for more information.</p>
                 <h3><a name="moblife" id="moblife">Bringing MOBs to
                     Life, and
                     Taking That Life Away</a></h3>
                 <p>The following
                     instructions are supplemental, and unnecessary.
                     Once you have created your new MOB, modified your INI file, and
-                    rebooted your CoffeeMud server, you need only use the CREATE and other
+                    rebooted your AetherMud server, you need only use the CREATE and other
                     Archon commands to make use of him. If, for some reason, you want to
                     know HOW these commands do their work, however, here it is.</p>
                 <p>To bring a MOB into
@@ -3897,7 +3897,7 @@ String, String)</span>
                     of the internal structures of the Generic MOB are properly set. Of
                     course, you may want to save this room to the database to make the
                     situation permanent, but all of this is usually done from inside
-                    CoffeeMud using the CREATE, MODIFY, and DESTROY commands anyway.
+                    AetherMud using the CREATE, MODIFY, and DESTROY commands anyway.
                     Speaking of destroy, destroying a mob for good is even easier than
                     creating one:</p>
                 <pre>Room room = CMLib.map().getRoom( "Midgaard#3504" );<br/>for( int i = 0; i &lt; room.numInhabitants(); i++ )<br/>{<br/>  MOB mob = room.fetchInhabitant( i );<br/>  mob.destroy();<br/>}<br/></pre>
@@ -3927,8 +3927,8 @@ String, String)</span>
                     same <code>ID()</code>
                     string of that class. The directory for your custom coded Item objects
                     should be specified using the "ITEMS", "WEAPONS", "ARMOR", "CLANITEMS",
-                    or "MISCMAGIC" entries in the coffeemud.ini file. See the section above
-                    on Rebuilding CoffeeMud for more information on this feature.</p>
+                    or "MISCMAGIC" entries in the aethermud.ini file. See the section above
+                    on Rebuilding AetherMud for more information on this feature.</p>
                 <p>Each Item must also have
                     a custom <code>ID()</code>
                     method as
@@ -4041,8 +4041,8 @@ String, String)</span>
                     advanced topic of extending the capabilities
                     of the existing Item classes. As mentioned previously, this consists in
                     creating your own java classes with the same class name and ID() string
-                    methods as the base CoffeeMud Item classes, and the adding the
-                    reference to your custom class to the relevant coffeemud.ini file's
+                    methods as the base AetherMud Item classes, and the adding the
+                    reference to your custom class to the relevant aethermud.ini file's
                     entries after the %DEFAULT% string. Now, adding or extending the
                     capabilities of these classes typically means both adding your own
                     methods, and extending the importing existing methods in those classes.
@@ -4052,14 +4052,14 @@ String, String)</span>
                     enhancing basic aspects of the mud. Those are numerated both in the
                     classes you are extending, in
                     com.syncleus.aethermud.game.Items.interfaces.Item.java, and in other
-                    interface files in that directory. Consult the CoffeeMud java docs for
+                    interface files in that directory. Consult the AetherMud java docs for
                     more information.</p>
                 <h3><a name="itemlife" id="itemlife">Creating and
                     Destroying Items</a></h3>
                 <p>As with mobs, the
                     following instructions are supplemental, and
                     unnecessary. Once you have created your new Item, modified your INI
-                    file, and rebooted your CoffeeMud server, you need only use the CREATE
+                    file, and rebooted your AetherMud server, you need only use the CREATE
                     and other Archon commands to make use of it. If, for some reason, you
                     want to know HOW these commands do their work, however, here it is.</p>
                 <p>To bring an Item into
@@ -4113,20 +4113,20 @@ String, String)</span>
                     Import List as well as (in this case)
                     com.syncleus.aethermud.game.Behaviors.StdBehavior because our sample
                     behavior extends it. Custom behaviors are loaded at boot-time by adding
-                    references to them to the BEHAVIORS entry in your coffeemud.ini file.
+                    references to them to the BEHAVIORS entry in your aethermud.ini file.
                     Let's take a look at a sample Behavior and see how they are put
                     together:</p>
                 <pre>public class Ravenous extends com.syncleus.aethermud.game.Behaviors.StdBehavior<br/>{<br/>  public String ID(){ return "Ravenous"; }<br/>  public String name(){ return "Ravenous Eater"; }<br/></pre>
                 <p>Our first step, as seen
                     above, is to make sure we define an <code>ID()</code>
-                    method with the classes name, just as we do in other CoffeeMud objects.
+                    method with the classes name, just as we do in other AetherMud objects.
                     Notice that the <code>ID()</code>
                     is the same as the name of the class. This is no accident -- this is
                     required! The next step is to give the Behavior a name, which is
                     entirely unimportant to players, but helpful for Archons.</p>
                 <pre>  protected int canImproveCode(){ return Behavior.CAN_MOBS; }<br/>  public long flags(){ return 0; }<br/>  public boolean grantsAggressivenessTo( MOB M ){ return false; }<br/></pre>
                 <p>Next are some important
-                    flags that tell the CoffeeMud system
+                    flags that tell the AetherMud system
                     some important things about your behavior. The first method (<code>canImproveCode()</code>)
                     tells the behavior whether it is properly used on Mobs, or Items,
                     Rooms, Exits, or all of these. In this case, our behavior only affects
@@ -4220,7 +4220,7 @@ String, String)</span>
                 <img src="images/cloak.jpg" alt="Character Classes"/>
                 <h2><a name="CLASSES" id="CLASSES">Character Classes</a></h2>
                 <p>A Character Class, in
-                    CoffeeMud, is the carreer being followed
+                    AetherMud, is the carreer being followed
                     by the player. Armor and weapon choices, skill and spell access, as
                     well as score advancements all depend on the Character Class chosen by
                     the player. Thankfully, despite all this weighty responsibility,
@@ -4229,11 +4229,11 @@ String, String)</span>
                     Complete Default Import List as well as (in this case)
                     com.syncleus.aethermud.game.CharClasses.StdCharClass because our sample
                     class extends it. Your custom classes need to be listed in your
-                    coffeemud.ini file under the CHARCLASSES entry. Aside from making
+                    aethermud.ini file under the CHARCLASSES entry. Aside from making
                     custom classes, you can also extend an existing class, return an
                     identical <code>ID()</code>
                     string, and then list it at the end of the
-                    aforementioned entry in the coffeemud.ini file. Now, let's take a look
+                    aforementioned entry in the aethermud.ini file. Now, let's take a look
                     at a simple one here:</p>
                 <pre>public class NormalGuy extends com.syncleus.aethermud.game.CharClasses.StdCharClass<br/>{<br/></pre>
                 <p>Our Normal Guy character
@@ -4244,7 +4244,7 @@ String, String)</span>
                     are the unique Character Class ID and
                     the Base Class ID of the class. The Class ID must be a unique
                     identifier. The <code>baseClass()</code>
-                    method takes a bit of explaining. If your CoffeeMud system is using the
+                    method takes a bit of explaining. If your AetherMud system is using the
                     default SubClassing system, the baseClass will define which classes may
                     be switched between by a player, as well as which classes are available
                     to choose from when a new player is created. Fighter, Monk, Paladin,
@@ -4254,7 +4254,7 @@ String, String)</span>
                     and <code>baseClass()</code>
                     are the
                     same), and that any of the baseClass() "Fighter" classes may switch
-                    amongst each other. If your CoffeeMud system is using the multi-class
+                    amongst each other. If your AetherMud system is using the multi-class
                     or single classing system, this method is irrelevant.</p>
                 <pre>  public String name()<br/>  {<br/>    return "Normal Guy";<br/>  }<br/><br/>  public String name( int classLevel )<br/>  {<br/>    return name();<br/>  }<br/></pre>
                 <p>Our next method, <code>name()</code>,
@@ -4433,17 +4433,17 @@ String, String)</span>
                     must be passed by the person who wants to gain this skill.</p>
                 <pre>  public CMSecurity.SecGroup getSecurityFlags( int classLevel )<br/>  {<br/>    if( classLevel &gt; 1000 )<br/>    {<br/>      CMSecurity.SecFlag[] flags = new CMSecurity.SecFlag[] {<br/>      CMSecurity.SecFlag.ABOVELAW,<br/>      CMSecurity.SecFlag.LISTADMIN<br/>      }<br/>      return new CMSecurity.SecGroup(flags);<br/>    }<br/>    else<br/>    {<br/>      return new CMSecurity.SecGroup(new CMSecurity.SecFlag[0]);<br/>    }<br/>  }<br/></pre>
                 <p>The purpose of this
-                    method is to allow you to assign CoffeeMud
-                    Security Flags or CoffeeMud Security Groups to your players based on
+                    method is to allow you to assign AetherMud
+                    Security Flags or AetherMud Security Groups to your players based on
                     their Character Class and Character Class Level. This is a rather
                     obscure feature that is really only meant for special Character Classes
                     you may design for your admins and builders. Your player <code>getSecurityGroups()</code>
                     methods will normally just return an empty List regardless of
                     classLevel. In this case, however, we are demonstrating how a player
                     who gains 1001 levels in our NormalGuy Class will become immune to the
-                    CoffeeMud legal system (ABOVELAW flag) and gain access to the Archon
+                    AetherMud legal system (ABOVELAW flag) and gain access to the Archon
                     LIST command (LISTADMIN flag). See the Archon's Guide for more
-                    information on the CoffeeMud security system.</p>
+                    information on the AetherMud security system.</p>
                 <pre>  public boolean qualifiesForThisClass( MOB mob, boolean quiet )<br/>  {<br/>    if( !CMLib.flags().canBreathe( mob ) )<br/>    {<br/>      if( !quiet )<br/>      {<br/>        mob.tell( "You need to be breathing to be a normal guy." );<br/>      }<br/>      return false;<br/>    }<br/>    return super.qualifiesForThisClass( mob, quiet );<br/> }<br/></pre>
                 <p>The <code>qualifiesForThisClass()</code>
                     method would actually check and enforce the qualifications described by
@@ -4522,7 +4522,7 @@ String, String)</span>
                     Mage and Cleric classes for more information.</p>
                 <img src="images/dragon.jpg" alt="Races"/>
                 <h2><a name="RACES" id="RACES">Races</a></h2>
-                <p>A Race, in CoffeeMud,
+                <p>A Race, in AetherMud,
                     contributes very little to
                     functionality, but quite a bit to the role playing and other "soft"
                     aspects of the game.. For this reason, everyone is encouraged to code
@@ -4530,11 +4530,11 @@ String, String)</span>
                     the same packages mentioned in the first section of this document under
                     Complete Default Import List as well as (in this case)
                     com.syncleus.aethermud.game.Races.StdRace because our sample class
-                    extends it. Your custom races need to be listed in your coffeemud.ini
+                    extends it. Your custom races need to be listed in your aethermud.ini
                     file under the RACES entry. Aside from making custom race classes, you
                     can also extend an existing race class, return an identical ID()
                     string, and then list it at the end of the aforementioned entry in the
-                    coffeemud.ini file. Now, let's take a look at a simple one here:</p>
+                    aethermud.ini file. Now, let's take a look at a simple one here:</p>
                 <pre>public class Grumbler extends com.syncleus.aethermud.game.Races.StdRace<br/>{<br/></pre>
                 <p>Our Grumbler race will
                     define all of the basic elements of a
@@ -4886,7 +4886,7 @@ getBreathables() { return new int[]{ RawMaterial.RESOURCE_AIR }; }</span><br/>
                     run-time to a GenMob, GenItem, Room, or similar type object.</p>
                 <p>Properties and Behaviors
                     are often the basic building blocks
-                    of the customized GenMob and GenItem in CoffeeMud, and differ from each
+                    of the customized GenMob and GenItem in AetherMud, and differ from each
                     other in this basic respect: Properties tend to have a smaller memory
                     footprint and tend to react to events affecting their hosts rather than
                     cause their hosts to take proactive actions. Properties make heavy use
@@ -4955,7 +4955,7 @@ getBreathables() { return new int[]{ RawMaterial.RESOURCE_AIR }; }</span><br/>
                     Skill Abilities</a></h2>
                 <p>Abilities are easily the
                     most complicated and varied of all
-                    the objects in CoffeeMud. They encompass everything from invoked skills
+                    the objects in AetherMud. They encompass everything from invoked skills
                     and spell, like TRIP or MAGIC MISSILE, to natural abilities, like
                     NONDETECTION. A Skill Ability then is an object which implements the
                     Ability interface fully, unlike the Property above, which implements
@@ -4973,7 +4973,7 @@ getBreathables() { return new int[]{ RawMaterial.RESOURCE_AIR }; }</span><br/>
                     found in the Abilities package, and sometimes they will further extend
                     a class more specific to their type, such as Spell, StdSkill, Song,
                     BardSkill, Prayer, FighterSkill, ThiefSkill, Chant, or some other basic
-                    types found in the standard CoffeeMud distribution packages.</p>
+                    types found in the standard AetherMud distribution packages.</p>
                 <p>Abilities are added to
                     mob objects using the addAbility method
                     on MOBs. From there, through casting or by autoInvocation (discussed
@@ -5709,7 +5709,7 @@ getBreathables() { return new int[]{ RawMaterial.RESOURCE_AIR }; }</span><br/>
                 <pre>    int duration = 35 - mob.phyStats().level();<br/>    if( duration &lt; 10 )<br/>    {<br/>      duration=10;<br/>    }<br/><br/>    CMMsg msg = CMClass.getMsg( mob, found, this, CMMsg.MSG_NOISYMOVEMENT, "&lt;S-NAME&gt; start(s) fishing." );<br/><br/>    if( mob.location().okMessage( mob, msg ) )<br/>    {<br/>      mob.location().send( mob, msg );<br/>      found = (Item)msg.target();<br/>      beneficialAffect( mob, mob, asLevel, duration );<br/>    }<br/>    return true;<br/>  }<br/>}<br/> <br/></pre>
                 <p>Our last step is to
                     calculate the amount of time (duration)
-                    that it will take to catch the fish, create a coffeemud message to
+                    that it will take to catch the fish, create a aethermud message to
                     declare the start of our finishing adventure, and send the message out.
                     After doing so, notice that we re-set the found variable to <code>msg.target()</code>.
                     This may seem strange,
@@ -5728,7 +5728,7 @@ getBreathables() { return new int[]{ RawMaterial.RESOURCE_AIR }; }</span><br/>
                     extend com.syncleus.aethermud.game.Abilities.Common.CraftingSkill. Many
                     of them also implement the
                     com.syncleus.aethermud.game.Abilities.interfaces.ItemCrafter interface,
-                    which allows them to provide items to other parts of coffeemud
+                    which allows them to provide items to other parts of aethermud
                     instantly!</a></p>
                 <pre>public class GlassBlowing extends CraftingSkill implements ItemCraftor<br/>{<br/>  public String ID()<br/>  {<br/>    return "GlassBlowing";<br/>  }<br/><br/>  public String name()<br/>  {<br/>    return "Glass Blowing";<br/>  }<br/> <br/></pre>
                 <p>If you've read the Skill
@@ -5807,7 +5807,7 @@ SMOKE_FLAG, STONE_FLAG</span></p>
                     recipes list is a comma-delimited file where each row is linefeed
                     delimited. Each columns meaning is defined by the constants above. The
                     loadRecipes(String) method will automaticallyy look in
-                    $coffeemud-install-path/resources/skills for the file specified.</p>
+                    $aethermud-install-path/resources/skills for the file specified.</p>
                 <pre>  public void unInvoke()<br/>  {<br/>    if( canBeUninvoked() )<br/>    {<br/>      if( ( affected != null ) &amp;&amp; ( affected instanceof MOB ) )<br/>      {<br/>        MOB mob = (MOB)affected;<br/><br/>        if( ( building != null ) &amp;&amp; ( !aborted ) )<br/>        {<br/>          if( messedUp )<br/>          {<br/>            commonTell( mob, CMStrings.capitalizeAndLower( building.name()) + " explodes!" );<br/>          }<br/>          else<br/>          {<br/>            mob.location().addItem( building, ItemPossessor.ItemExpiration.Player_Drop );<br/>          }<br/>        }<br/>        building = null;<br/>      }<br/>    }<br/>    super.unInvoke();<br/>  }<br/> <br/></pre>
                 <p>Just like in the
                     gathering skill, the <code>unInvoke()</code>
@@ -6041,7 +6041,7 @@ SMOKE_FLAG, STONE_FLAG</span></p>
                 <pre>public class Disease_Cold extends com.syncleus.aethermud.game.Abilities.Diseases.Disease<br/>{<br/>  public String ID()<br/>  {<br/>    return "Disease_Cold";<br/>  }<br/><br/>  public String name()<br/>  {<br/>    return "Cold";<br/>  }<br/><br/>  public String displayText()<br/>  {<br/>    return "(Cold Virus)";<br/>  }<br/><br/>  protected int canAffectCode()<br/>  {<br/>    return CAN_MOBS;<br/>  }<br/><br/>  protected int canTargetCode()<br/>  {<br/>    return CAN_MOBS;<br/>  }<br/><br/>  public int abstractQuality()<br/>  {<br/>    return Ability.QUALITY_MALICIOUS;<br/>  }<br/><br/>  public boolean putInCommandlist()<br/>  {<br/>    return false;<br/>  }<br/></pre>
                 <p>The Disease base class
                     provides many important base services
-                    that allows CoffeeMud to interact properly with your disease. For this
+                    that allows AetherMud to interact properly with your disease. For this
                     reason, making a disease that extends the Disease base class is highly
                     recommended. In the first half dozen methods, we see the important
                     values of a standard skill being defined. See the introduction to Skill
@@ -6067,7 +6067,7 @@ SMOKE_FLAG, STONE_FLAG</span></p>
                     spread. Some aspects of disease catching must be coded by the
                     programmer of the disease. Some aspects are handled by the engine,
                     while most are handled by the Disease base class. This method is used
-                    to coordinate the efforts on behalf of the disease by the CoffeeMud
+                    to coordinate the efforts on behalf of the disease by the AetherMud
                     engine as a whole. Different bit values are defined by the
                     DiseaseAffect interface.</p>
                 <pre>  public boolean tick( Tickable ticking, int tickID )<br/>  {<br/>    if( !super.tick( ticking,tickID ) )<br/>    {<br/>      return false;<br/>    }<br/><br/>    if( affected == null )<br/>    {<br/>      return false;<br/>    }<br/><br/>    if( !( affected instanceof MOB ) )<br/>    {<br/>      return true;<br/>    }<br/><br/>    MOB mob = (MOB)affected;<br/>    MOB diseaser = invoker;<br/>    if( diseaser == null )<br/>    {<br/>      diseaser = mob;<br/>    }<br/></pre>

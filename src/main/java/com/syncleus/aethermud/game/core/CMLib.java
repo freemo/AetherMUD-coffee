@@ -32,8 +32,8 @@ import java.util.Vector;
 
 /**
  * CMLib is a semi-singleton central repository for all the various code libraries
- * implemented in CoffeeMud.  Generally it provides accessor methods for all the
- * java classes in com.syncleus.aethermud.game.Libraries.  Like many other CoffeeMud
+ * implemented in AetherMud.  Generally it provides accessor methods for all the
+ * java classes in com.syncleus.aethermud.game.Libraries.  Like many other AetherMud
  * classes, it also supports the thread-group-code-character accessor method, so
  * that it can provide unique instances of some of the libraries based on the 
  * first character of the name of the current thread group.  For completeness, you'll
@@ -890,7 +890,7 @@ public class CMLib {
     }
 
     /**
-     * Collection of all the different official CoffeeMud libraries
+     * Collection of all the different official AetherMud libraries
      * @author Bo Zimmerman
      */
     public static enum Library {

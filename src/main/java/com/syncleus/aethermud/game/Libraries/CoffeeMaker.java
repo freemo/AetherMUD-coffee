@@ -1075,7 +1075,7 @@ public class CoffeeMaker extends StdLibrary implements GenericBuilder {
             if ((defaultParentAreaName != null) && (defaultParentAreaName.trim().length() > 0)) {
                 defaultParentArea = CMLib.map().getArea(defaultParentAreaName.trim());
                 if (defaultParentArea == null)
-                    Log.errOut("RoomLoader", "Default parent area from coffeemud.ini '" + defaultParentAreaName.trim() + "' is unknown.");
+                    Log.errOut("RoomLoader", "Default parent area from aethermud.ini '" + defaultParentAreaName.trim() + "' is unknown.");
             }
             if (defaultParentArea != null) {
                 if ((newArea != defaultParentArea) && (newArea.getTimeObj() == CMLib.time().globalClock())) {

@@ -29,7 +29,7 @@ public class MUDServerVersion extends StdWebMacro {
 
     @Override
     public String runMacro(HTTPRequest httpReq, String parm, HTTPResponse httpResp) {
-        return "CoffeeMud-MainServer/" + CMProps.getVar(CMProps.Str.MUDVER);
+        return "AetherMud-MainServer/" + CMProps.getVar(CMProps.Str.MUDVER);
     }
 
 }

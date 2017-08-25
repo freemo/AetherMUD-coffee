@@ -30,8 +30,8 @@ import com.syncleus.aethermud.game.core.interfaces.Tickable;
 import java.util.Vector;
 
 /**
- * Title: False Realities Flavored CoffeeMUD
- * Description: The False Realities Version of CoffeeMUD
+ * Title: False Realities Flavored AetherMUD
+ * Description: The False Realities Version of AetherMUD
  * Copyright: Copyright (c) 2003 Jeremy Vyska
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.

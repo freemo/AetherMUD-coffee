@@ -1154,14 +1154,14 @@ public class Clans extends StdLibrary implements ClanManager {
                         final String siteFilesPath = new CMFile(siteFilesPathStr.trim(), null).getAbsolutePath();
                         final String siteTemplatePath = new CMFile(s.substring(x + 1).trim(), null).getAbsolutePath();
                         if (webPathClanMappings.containsKey(siteFilesPath.toLowerCase())) {
-                            Log.errOut("Clans", "Multiple clans at same webclansites path: in coffeemud.ini: " + originalS);
+                            Log.errOut("Clans", "Multiple clans at same webclansites path: in aethermud.ini: " + originalS);
                         } else {
                             webPathClanMappings.put(siteFilesPath.toLowerCase(), clan);
                             clanWebPathMappings.put(siteFilesPath.toLowerCase(), siteTemplatePath);
                         }
                         return;
                     } else {
-                        Log.errOut("Clans", "Unparseable webclansites bit in coffeemud.ini: " + originalS);
+                        Log.errOut("Clans", "Unparseable webclansites bit in aethermud.ini: " + originalS);
                     }
                 }
             }

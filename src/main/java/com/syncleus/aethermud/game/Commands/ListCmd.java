@@ -1089,7 +1089,7 @@ public class ListCmd extends StdCommand {
     }
 
     public StringBuilder listReports(Session viewerS, MOB mob) {
-        mob.tell(L("\n\r^xCoffeeMud System Report:^.^N"));
+        mob.tell(L("\n\r^xAetherMud System Report:^.^N"));
         try {
             System.gc();
             Thread.sleep(1500);

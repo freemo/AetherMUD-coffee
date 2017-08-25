@@ -30,7 +30,7 @@ import java.util.concurrent.atomic.AtomicLong;
 
 
 /**
- * An object to abstractly access the CoffeeMud File System (CMFS), which
+ * An object to abstractly access the AetherMud File System (CMFS), which
  * is a layer of database-based files (VFS) on top of the normal systems
  * file system.  It uses the unix path system.
  *

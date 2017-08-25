@@ -79,7 +79,7 @@
 	@if?!CheckAuthCode?AUTH_TITLES=true@ @AddRequestParameter?MODE=@ @endif@
 	@if?!CheckAuthCode?AUTH_ACHIEVEMENTS=true@ @AddRequestParameter?MODE=TITLE@ @endif@
     <TABLE WIDTH=100% BORDER=1>
-    <TR><TD WIDTH=100% COLSPAN=2 BGCOLOR=WHITE ALIGN=CENTER><FONT COLOR=BLACK><H2>CoffeeMud @MudServerVersion@ Achievements/Titles Manager</H2></FONT></TD></TR>
+    <TR><TD WIDTH=100% COLSPAN=2 BGCOLOR=WHITE ALIGN=CENTER><FONT COLOR=BLACK><H2>AetherMud @MudServerVersion@ Achievements/Titles Manager</H2></FONT></TD></TR>
     @if?CheckReqParm?MODE=@
         <TR>
         <TD WIDTH=50% BGCOLOR=WHITE ALIGN=CENTER><FONT COLOR=BLACK>Achievements</FONT></TD>
@@ -91,7 +91,7 @@
             <INPUT TYPE=HIDDEN NAME=AUTH VALUE="@Authenticate?AUTH@">
             <INPUT TYPE=HIDDEN NAME=MODE VALUE="@RequestParameter?MODE@">
             <TABLE WIDTH=100% BORDER=1>
-            <TR><TD WIDTH=100% COLSPAN=7 BGCOLOR=WHITE ALIGN=CENTER><FONT COLOR=BLACK><H2>CoffeeMud @MudServerVersion@ Player Achievements Manager</H2></FONT></TD></TR>
+            <TR><TD WIDTH=100% COLSPAN=7 BGCOLOR=WHITE ALIGN=CENTER><FONT COLOR=BLACK><H2>AetherMud @MudServerVersion@ Player Achievements Manager</H2></FONT></TD></TR>
             <TR>
             <TD WIDTH=20%><B><FONT COLOR=YELLOW>Tattoo/ID</FONT></b></TD>
             <TD WIDTH=10%><B><FONT COLOR=YELLOW>Type</FONT></b></TD>
@@ -117,7 +117,7 @@
 	            <TD COLSPAN=4><a href="javascript:NewAchievement('PLAYER')"><FONT COLOR=WHITE><B>Create New Player Achievement</a></B></FONT></TD>
 	            </TR>
             @if?IsAccountSystem@
-	            <TR><TD WIDTH=100% COLSPAN=7 BGCOLOR=WHITE ALIGN=CENTER><FONT COLOR=BLACK><H2>CoffeeMud @MudServerVersion@ Account Achievements Manager</H2></FONT></TD></TR>
+	            <TR><TD WIDTH=100% COLSPAN=7 BGCOLOR=WHITE ALIGN=CENTER><FONT COLOR=BLACK><H2>AetherMud @MudServerVersion@ Account Achievements Manager</H2></FONT></TD></TR>
 	            <TR>
 	            <TD WIDTH=20%><B><FONT COLOR=YELLOW>Tattoo/ID</FONT></b></TD>
 	            <TD WIDTH=10%><B><FONT COLOR=YELLOW>Type</FONT></b></TD>
@@ -158,7 +158,7 @@
             <INPUT TYPE=HIDDEN NAME=AUTH VALUE="@Authenticate?AUTH@">
             <INPUT TYPE=HIDDEN NAME=MODE VALUE="@RequestParameter?MODE@">
             <TABLE WIDTH=100% BORDER=1>
-            <TR><TD WIDTH=100% COLSPAN=6 BGCOLOR=WHITE ALIGN=CENTER><FONT COLOR=BLACK><H2>CoffeeMud @MudServerVersion@ Title Manager</H2></FONT></TD></TR>
+            <TR><TD WIDTH=100% COLSPAN=6 BGCOLOR=WHITE ALIGN=CENTER><FONT COLOR=BLACK><H2>AetherMud @MudServerVersion@ Title Manager</H2></FONT></TD></TR>
             <TR>
             <TD WIDTH=50%><B><FONT COLOR=YELLOW>ID</FONT></b></TD>
             <TD WIDTH=50%><B><FONT COLOR=YELLOW>Mask</FONT></b></TD>

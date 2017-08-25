@@ -455,7 +455,7 @@ public interface Wearable extends Environmental {
                     final String p = array[1];
                     final List<String> V = CMParms.parseCommas(p, false);
                     if (V.size() != 6) {
-                        Log.errOut("Wearable", "Bad coffeemud.ini wear loc row (requires 6 elements, separated by ,): " + p);
+                        Log.errOut("Wearable", "Bad aethermud.ini wear loc row (requires 6 elements, separated by ,): " + p);
                         continue;
                     }
                     String type = "ADD";
@@ -466,7 +466,7 @@ public interface Wearable extends Environmental {
                             oldLocationCodeIndex = idx;
                             type = "REPLACE";
                         } else {
-                            Log.errOut("Wearable", "Bad replace worn loc in coffeemud.ini file: " + stat);
+                            Log.errOut("Wearable", "Bad replace worn loc in aethermud.ini file: " + stat);
                             continue;
                         }
                     }
@@ -478,7 +478,7 @@ public interface Wearable extends Environmental {
                         if (idx >= 0)
                             dependencyMask |= DEFAULT_WORN_CODES[idx];
                         else
-                            Log.errOut("Wearable", "Bad dependency mask in coffeemud.ini file: " + subLocs.get(s).toLowerCase());
+                            Log.errOut("Wearable", "Bad dependency mask in aethermud.ini file: " + subLocs.get(s).toLowerCase());
                     }
                     final double armorStrength = CMath.s_double(V.get(1));
                     final int wornOrder = CMath.s_int(V.get(2));

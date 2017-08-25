@@ -356,7 +356,7 @@ public interface TimeManager extends CMLibrary {
 
     /**
      * Returns the mud wide global time clock
-     * object as defined by the coffeemud.ini
+     * object as defined by the aethermud.ini
      * file.
      * @see com.syncleus.aethermud.game.Common.interfaces.TimeClock
      * @return the global clock

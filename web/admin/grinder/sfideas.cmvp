@@ -57,7 +57,7 @@
 <INPUT TYPE=HIDDEN NAME=FUNCTION VALUE="">
 </FORM>
 <TABLE WIDTH=100% BORDER=1>
-	<TR><TD WIDTH=100% COLSPAN=2 BGCOLOR=WHITE ALIGN=CENTER><FONT COLOR=BLACK><H2>CoffeeMud @MudServerVersion@ SourceForge RFE Submitter</H2></FONT></TD></TR>
+	<TR><TD WIDTH=100% COLSPAN=2 BGCOLOR=WHITE ALIGN=CENTER><FONT COLOR=BLACK><H2>AetherMud @MudServerVersion@ SourceForge RFE Submitter</H2></FONT></TD></TR>
 		@AddRequestParameter?OLDJOURNAL=@@RequestParameter?JOURNAL@@ @
 		@AddRequestParameter?OLDMESSAGE=@@RequestParameter?JOURNALMESSAGE@@ @
 		@JournalNext?RESET@
@@ -100,7 +100,7 @@
 				
 				@if?!CheckReqParm?JOURNAL=@
 					@if?!CheckReqParm?JOURNALMESSAGE=@
-						<FONT COLOR=YELLOW>Message: #@RequestParameter?JOURNALMESSAGE@ <b>For Project:</b> CoffeeMud<BR>
+						<FONT COLOR=YELLOW>Message: #@RequestParameter?JOURNALMESSAGE@ <b>For Project:</b> AetherMud<BR>
 						<form ACCEPT-CHARSET="UTF-8" NAME="SOURCEFORGE" ID="SOURCEFORGE" method="POST" enctype="multipart/form-data" ACTION="http://sourceforge.net/tracker/">
 						<input type="hidden" name="group_id" value="110299">
 						<input type="hidden" name="atid" value="655944">

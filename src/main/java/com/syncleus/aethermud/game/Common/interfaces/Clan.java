@@ -240,7 +240,7 @@ public interface Clan extends Cloneable, Tickable, CMCommon, Modifiable {
      * Returns the category of the clan, which is almost always the
      * same as the government category.  This is significant since a player
      * can only belong to N clans of a given category.  See also MAXCLANS
-     * in coffeemud.ini.
+     * in aethermud.ini.
      * @see com.syncleus.aethermud.game.Common.interfaces.Clan#setCategory(String)
      * @return the name of the
      */
@@ -250,7 +250,7 @@ public interface Clan extends Cloneable, Tickable, CMCommon, Modifiable {
      * Sets a new category for this, which is almost always the
      * same as the government category.  This is significant since a player
      * can only belong to N clans of a given category.  See also MAXCLANS
-     * in coffeemud.ini.
+     * in aethermud.ini.
      * @see com.syncleus.aethermud.game.Common.interfaces.Clan#getCategory()
      * @param newCategory the new cata of this clan
      */

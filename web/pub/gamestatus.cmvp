@@ -2,12 +2,12 @@
 
 <html>
 <head>
-	<link rel="coffeemud icon" href="images/coffeemud.ico" >
+	<link rel="aethermud icon" href="images/aethermud.ico" >
 	<!-- tell spiders to sod off -->
 	<meta name="ROBOTS" content="NOINDEX, NOFOLLOW">
 	<meta HTTP-EQUIV="Refresh" CONTENT="180">
-	<link rel="STYLESHEET" TYPE="TEXT/CSS" HREF="coffeemud.css">
-	<title>CoffeeMud Status</title>
+	<link rel="STYLESHEET" TYPE="TEXT/CSS" HREF="aethermud.css">
+	<title>AetherMud Status</title>
 </head>
 
 <body>

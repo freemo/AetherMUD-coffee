@@ -114,7 +114,7 @@ public class OffLine extends Thread implements MudHost {
         CMLib.initialize(); // forces this thread to HAVE a library
 
         String nameID = "";
-        String iniFile = "coffeemud.ini";
+        String iniFile = "aethermud.ini";
         if (a.length > 0) {
             for (final String element : a)
                 nameID += " " + element;
@@ -131,7 +131,7 @@ public class OffLine extends Thread implements MudHost {
             nameID = CMParms.combine(V, 0);
         }
         if (nameID.length() == 0)
-            nameID = "Unnamed CoffeeMud";
+            nameID = "Unnamed AetherMud";
         try {
             while (true) {
                 page = CMProps.loadPropPage(iniFile);
@@ -145,9 +145,9 @@ public class OffLine extends Thread implements MudHost {
                 bind = page.getStr("BIND");
 
                 System.out.println();
-                System.out.println("CoffeeMud Off-Line");
+                System.out.println("AetherMud Off-Line");
                 System.out.println("(C) 2000-2017 Bo Zimmerman");
-                System.out.println("http://www.coffeemud.org");
+                System.out.println("http://www.aethermud.org");
 
                 if (OffLine.isOK) {
                     mudThreads = new Vector<OffLine>();

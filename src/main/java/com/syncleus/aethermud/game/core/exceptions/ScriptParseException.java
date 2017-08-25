@@ -17,7 +17,7 @@
 package com.syncleus.aethermud.game.core.exceptions;
 
 
-public class ScriptParseException extends CoffeeMudException {
+public class ScriptParseException extends AetherMudException {
     static final long serialVersionUID = 0;
 
     public ScriptParseException(String s) {

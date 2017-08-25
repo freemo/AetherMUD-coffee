@@ -21,7 +21,7 @@ import com.syncleus.aethermud.game.core.interfaces.CMObject;
 
 /**
  * A CoffeeTableRow object represents a period of sustained statistics gathering.
- * The CoffeeMud engine keeps counters on all manner of different game events,
+ * The AetherMud engine keeps counters on all manner of different game events,
  * such as logins, new players, levels, deaths, and others.  CoffeeTableRows
  * are managed by the CoffeeTables library.
  * @see com.syncleus.aethermud.game.Libraries.interfaces.StatisticsLibrary

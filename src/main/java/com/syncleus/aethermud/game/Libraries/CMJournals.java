@@ -668,7 +668,7 @@ public class CMJournals extends StdLibrary implements JournalsLibrary {
             return MsgMkrResolution.CANCELFILE;
         final boolean canExtEdit = ((mob.session() != null) && (mob.session().getClientTelnetMode(Session.TELNET_GMCP)));
         final String help =
-            L("^HCoffeeMud Message Maker Options:^N\n\r" +
+            L("^HAetherMud Message Maker Options:^N\n\r" +
                 "^XA)^.^Wdd new lines (go into ADD mode)\n\r" +
                 "^XD)^.^Welete one or more lines\n\r" +
                 "^XL)^.^Wist the entire text file\n\r" +
@@ -680,7 +680,7 @@ public class CMJournals extends StdLibrary implements JournalsLibrary {
                 "^XQ)^.^Wuit without saving");
 
         final String addModeMessage = L("^ZYou are now in Add Text mode.\n\r^ZEnter . on a blank line to exit.^.^N");
-        mob.tell(L("^HCoffeeMud Message Maker^N"));
+        mob.tell(L("^HAetherMud Message Maker^N"));
         boolean menuMode = !autoAdd;
         if (autoAdd)
             sess.println(addModeMessage);

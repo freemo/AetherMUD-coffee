@@ -824,7 +824,7 @@ public interface RawMaterial extends Item {
                     final String p = array[1];
                     final List<String> V = CMParms.parseCommas(p, false);
                     if (V.size() != 8) {
-                        Log.errOut("RawMaterial", "Bad coffeemud.ini material row (requires 8 elements, separated by ,): " + p);
+                        Log.errOut("RawMaterial", "Bad aethermud.ini material row (requires 8 elements, separated by ,): " + p);
                         continue;
                     }
                     String type = "ADD";
@@ -835,7 +835,7 @@ public interface RawMaterial extends Item {
                             oldResourceCode = r.code;
                             type = "REPLACE";
                         } else {
-                            Log.errOut("RawMaterial", "Unknown replaceable resource in coffeemud.ini: " + stat);
+                            Log.errOut("RawMaterial", "Unknown replaceable resource in aethermud.ini: " + stat);
                             continue;
                         }
                     }
@@ -850,7 +850,7 @@ public interface RawMaterial extends Item {
                     final String abilityID = V.get(7);
                     final Material material = Material.findIgnoreCase(matStr);
                     if (material == null) {
-                        Log.errOut("RawMaterial", "Unknown material code in coffeemud.ini: " + matStr);
+                        Log.errOut("RawMaterial", "Unknown material code in aethermud.ini: " + matStr);
                         continue;
                     }
                     if (type.equalsIgnoreCase("ADD"))

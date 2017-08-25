@@ -339,7 +339,7 @@ public class DBUpgrade {
             if ((answer.equals("N")) || (secondTime)) {
                 pl("Enter the driver class for your *OLD* database.");
                 pl("If you've forgotten what it is, you'll find it ");
-                pl("as the DBCLASS entry in your old coffeemud.ini file.");
+                pl("as the DBCLASS entry in your old aethermud.ini file.");
                 p(":");
                 sclass = in.readLine();
                 if (sclass.trim().length() == 0) {
@@ -399,10 +399,10 @@ public class DBUpgrade {
             if (sservice.length() == 0) {
                 pl("Enter the database service for your *OLD* database.");
                 pl("If you've forgotten what it is, you'll find it ");
-                pl("as the DBSERVICE entry in your old coffeemud.ini file, ");
+                pl("as the DBSERVICE entry in your old aethermud.ini file, ");
                 pl("minus all the extraneous backslashes (\\).  For instance, if");
-                pl("your INI file says the service is: jdbc\\:mysql\\://localhost\\:3306/coffeemud");
-                pl("you would enter it here as: jdbc:mysql://localhost:3306/coffeemud");
+                pl("your INI file says the service is: jdbc\\:mysql\\://localhost\\:3306/aethermud");
+                pl("you would enter it here as: jdbc:mysql://localhost:3306/aethermud");
                 p(":");
                 sservice = in.readLine();
                 if (sservice.trim().length() == 0) {
@@ -457,7 +457,7 @@ public class DBUpgrade {
             if ((answer.equals("N")) || (secondTime)) {
                 pl("Enter the driver class for your *NEW* database.");
                 pl("If you've forgotten what it is, you'll find it ");
-                pl("as the DBCLASS entry in your new coffeemud.ini file.");
+                pl("as the DBCLASS entry in your new aethermud.ini file.");
                 p(":");
                 dclass = in.readLine();
                 if (dclass.trim().length() == 0) {
@@ -514,10 +514,10 @@ public class DBUpgrade {
             if (dservice.length() == 0) {
                 pl("Enter the database service for your *NEW* database.");
                 pl("If you've forgotten what it is, you'll find it ");
-                pl("as the DBSERVICE entry for your new coffeemud.ini file, ");
+                pl("as the DBSERVICE entry for your new aethermud.ini file, ");
                 pl("minus all the extraneous backslashes (\\).  For instance, if");
-                pl("your INI file will say the service is: jdbc\\:mysql\\://localhost\\:3306/coffeemud");
-                pl("you would enter it here as: jdbc:mysql://localhost:3306/coffeemud");
+                pl("your INI file will say the service is: jdbc\\:mysql\\://localhost\\:3306/aethermud");
+                pl("you would enter it here as: jdbc:mysql://localhost:3306/aethermud");
                 p(":");
                 dservice = in.readLine().trim();
                 if (dservice.trim().length() == 0) {

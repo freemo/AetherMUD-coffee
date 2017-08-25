@@ -2,7 +2,7 @@
 
 <html>
 <head>
-	<link rel="STYLESHEET" TYPE="TEXT/CSS" HREF="coffeemud.css">
+	<link rel="STYLESHEET" TYPE="TEXT/CSS" HREF="aethermud.css">
 	<title>Skills/Songs/Prayers/Spells/Chants</title>
 	<SCRIPT LANGUAGE=JavaScript>
 	<!--
@@ -14,11 +14,11 @@
 	}
 	//-->
 	</SCRIPT>
-	<link rel="coffeemud icon" href="images/coffeemud.ico" >
+	<link rel="aethermud icon" href="images/aethermud.ico" >
 </head>
 
 <body BGCOLOR=#00FF99>
-<h3>CoffeeMud @MudServerVersion@ Player Ability Information</h3><P>
+<h3>AetherMud @MudServerVersion@ Player Ability Information</h3><P>
 (<a href="ables2.cmvp?ABILITYTYPE=@RequestParameterEncoded?ABILITYTYPE@">View the abilities by school/domain</a>)&nbsp;&nbsp;&nbsp;&nbsp;
 (<a href="ables3.cmvp?ABILITYTYPE=@RequestParameterEncoded?ABILITYTYPE@">View the abilities alphabetically</a>)<P>
 

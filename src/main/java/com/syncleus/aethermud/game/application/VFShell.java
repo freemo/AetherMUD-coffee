@@ -59,7 +59,7 @@ public class VFShell {
                 Log.instance().configureLog(Log.Type.combat, "ON");
                 Log.instance().configureLog(Log.Type.access, "ON");
                 String nameID = "";
-                String iniFile = "coffeemud.ini";
+                String iniFile = "aethermud.ini";
                 if (args.length > 0) {
                     for (final String element : args)
                         nameID += " " + element;
@@ -729,7 +729,7 @@ public class VFShell {
                 Shell shell = new Shell();
                 String command = "";
                 String pwd = "";
-                System.out.println("CoffeeMud VFShell started. Use 'exit' to quit.");
+                System.out.println("AetherMud VFShell started. Use 'exit' to quit.");
                 System.out.println("");
                 while ((command != null) && (!command.equalsIgnoreCase("exit"))) {
                     try {

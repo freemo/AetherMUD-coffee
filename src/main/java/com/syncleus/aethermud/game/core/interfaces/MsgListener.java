@@ -20,7 +20,7 @@ import com.syncleus.aethermud.game.Common.interfaces.CMMsg;
 
 
 /**
- * An object which is permitted to handle game events in CoffeeMud.  Almost all objects implement this interface.
+ * An object which is permitted to handle game events in AetherMud.  Almost all objects implement this interface.
  * @author Bo Zimmerman
  *
  */

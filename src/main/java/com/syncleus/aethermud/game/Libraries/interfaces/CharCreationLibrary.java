@@ -200,7 +200,7 @@ public interface CharCreationLibrary extends CMLibrary {
 
     /**
      * Returns whether the given name is a valid,  legitimate,
-     * unused, unbanned, non-bad name to use in coffeemud, for accounts
+     * unused, unbanned, non-bad name to use in aethermud, for accounts
      * or players.
      * @see CharCreationLibrary#isBadName(String)
      * @see CharCreationLibrary#isOkName(String, boolean)

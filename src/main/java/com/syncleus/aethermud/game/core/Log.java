@@ -26,7 +26,7 @@ import java.util.logging.*;
 
 
 /**
- * One of the oldest classes in CoffeeMud -- ye olde logger.
+ * One of the oldest classes in AetherMud -- ye olde logger.
  * Features include date formatting, the standard set of log channels,
  * plus optional numeric levels within those in case some kinds of info
  * are more important than others.  Also manages multiple log files if

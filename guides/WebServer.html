@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta name="generator" content="HTML Tidy, see www.w3.org"/>
-    <title>The CoffeeMud Web Server</title>
+    <title>The AetherMud Web Server</title>
     <link rel="StyleSheet" href="style.css" type="text/css" media="screen"/>
     <!-- Modified by Josh Mueller, 2006-05-05, fix validation errors, fix format of code sections, add index, and fix spelling errors -->
 </head>
@@ -13,7 +13,7 @@
         <tbody>
         <tr>
             <td colspan="2" align="left" bgcolor="#dfdfdf" width="100%">
-                <h1>CoffeeMud Web Server</h1>
+                <h1>AetherMud Web Server</h1>
             </td>
         </tr>
         <tr>
@@ -25,7 +25,7 @@
                     <li><a href="#security">Security</a></li>
                     <li><a href="#configuration">Configuration</a></li>
                     <li><a href="#virtualdir">Virtual Directories</a></li>
-                    <li><a href="#virtualpages">CoffeeMud Virtual Pages</a></li>
+                    <li><a href="#virtualpages">AetherMud Virtual Pages</a></li>
                     <li><a href="#customize">Customizing the error pages</a></li>
                     <li><a href="#add">Adding new macros to CMVP</a></li>
                     <li><a href="#javascript">Using Javascript in your pages</a></li>
@@ -33,8 +33,8 @@
             </td>
             <td align="left" valign="top">
                 <p><a name="introduction" id="introduction">&nbsp;</a> The
-                    CoffeeMud Web Server is a simple, extensible web server that runs as
-                    part of CoffeeMud; it uses HTTP 1.1 to communicate with a web browser.
+                    AetherMud Web Server is a simple, extensible web server that runs as
+                    part of AetherMud; it uses HTTP 1.1 to communicate with a web browser.
                     In addition to being able to serve standard HTML web pages, it also
                     supports a simple server-processed form of HTML called <i>CMVP</i>
                     (Coffee MUD Virtual Pages) - this allows the server to insert
@@ -58,14 +58,14 @@
                     converter and filter classes, file caching, and more. &nbsp;It supports
                     numerous coded web macros, as well as inline server-side Javascripts to
                     create custom pages. &nbsp;It does not make coffee, but it does make
-                    CoffeeMud better. :)</p>
+                    AetherMud better. :)</p>
                 <h2><a name="security">Security</a></h2>
                 <p>The web server uses explicitly mounted directories to control
-                    access to your CoffeeMud filesystem (CMFS). &nbsp;You can mount more
+                    access to your AetherMud filesystem (CMFS). &nbsp;You can mount more
                     directories or remove existing ones by changing the MOUNT list in the
                     configuration files (see below).&nbsp; &nbsp;The default installation
                     runs one of the two web servers with an "ADMIN=true" flag in its
-                    configuration, allowing it to access the more powerful CoffeeMud
+                    configuration, allowing it to access the more powerful AetherMud
                     macros. &nbsp;The web server also supports SSL (https). &nbsp;However,
                     this is not turned on by default, since it requires access to a special
                     (and pricey!) SSL web certificate from a respected certification
@@ -76,12 +76,12 @@
                     your administration server, but is not set by default.<br/>
                 </p>
                 <h2><a name="configuration">Configuration</a></h2>
-                <p>The default installation of CoffeeMud has two inbuilt web
+                <p>The default installation of AetherMud has two inbuilt web
                     servers, named 'pub' and 'admin'. The web servers are enabled with the
-                    line 'RUNWEBSERVERS=pub,admin' in 'coffeemud.ini'; absence of this line
+                    line 'RUNWEBSERVERS=pub,admin' in 'aethermud.ini'; absence of this line
                     will cause the web servers not to be loaded.</p>
                 <p>INI files for the web servers live in the 'web/' directory off
-                    the CoffeeMud root; by default, all pages to be served go in <i>web/(servername)/</i>,
+                    the AetherMud root; by default, all pages to be served go in <i>web/(servername)/</i>,
                     though this can be overridden. Options are placed in either
                     'web/common.ini' or 'web/(servername).ini'; an option in the latter
                     will override one in common. &nbsp;This means that some configuration
@@ -101,7 +101,7 @@
                     <li><b>DEBUGFLAG</b>=xx : <i>(e.g. DEBUGFLAG=false)</i>
                         <p>An alternative way to turn on debugging messages in the
                             web server. &nbsp;The more appropriate way is the DEBUG entry in
-                            coffeemud.ini.</p>
+                            aethermud.ini.</p>
                     </li>
                     <li><b>BIND</b>=addr : <i>(e.g. BIND=127.0.0.1)</i>
                         <p>Causes the server to be bound to a specific address; this
@@ -228,7 +228,7 @@ ERRORPAGE=/web/pub.templates/errorpage.mwhtml)</span>
                     </li>
                 </ul>
                 <h2><a name="virtualdir">Virtual Directories</a></h2>
-                <p>To permit web access to the files in particular CoffeeMud
+                <p>To permit web access to the files in particular AetherMud
                     directories, you can specify <b>MOUNT/virtualdir=physicaldir</b> in
                     the pub.ini or admin.ini files; for example, <b>MOUNT/guides=guides</b>
                     creates a virtual directory with access to the player guides. &nbsp;If
@@ -237,7 +237,7 @@ ERRORPAGE=/web/pub.templates/errorpage.mwhtml)</span>
                         style="font-weight: bold;">MOUNT/mydomain.com:8080/files=/web/pub</span>
                     would allow browser urls such as http://www.mydomain.com:8080/files to
                     access the /web/pub folder.</p>
-                <h2><a name="virtualpages">CoffeeMud Virtual Pages</a></h2>
+                <h2><a name="virtualpages">AetherMud Virtual Pages</a></h2>
                 <p>Kind of misnamed (these pages in their original, very
                     different incarnation didn't exist at all), this is typically a HTML or
                     plaintext file that is preprocessed by the server before being
@@ -367,7 +367,7 @@ ERRORPAGE=/web/pub.templates/errorpage.mwhtml)</span>
                         <td>The parameters for this macro are a list of file names.
                             Inserts the contents of the files into the current document. If the
                             MacParm "WEBIFY" precedes a file name in the list, then the macro will
-                            reformat the text file for the web, translating any CoffeeMud color
+                            reformat the text file for the web, translating any AetherMud color
                             codes, spaces, line breaks, and other special characters not normally
                             displayable on the web.
                         </td>
@@ -772,7 +772,7 @@ ERRORPAGE=/web/pub.templates/errorpage.mwhtml)</span>
                     </tr>
                     <tr>
                         <td>LogViewer</td>
-                        <td>Returns the CoffeeMud log file.</td>
+                        <td>Returns the AetherMud log file.</td>
                     </tr>
                     <tr>
                         <td>loop</td>
@@ -1024,7 +1024,7 @@ ERRORPAGE=/web/pub.templates/errorpage.mwhtml)</span>
                     </tr>
                     <tr>
                         <td>SystemInfo</td>
-                        <td>Returns information about the CoffeeMud system. Too
+                        <td>Returns information about the AetherMud system. Too
                             many valid MacParms to mention. See the sample MUDGrinder pages which
                             use this macro.
                         </td>
@@ -1083,7 +1083,7 @@ ERRORPAGE=/web/pub.templates/errorpage.mwhtml)</span>
                 <p>If your macro is intended to be for the admin server only, you
                     can override the <code>.isAdminMacro()</code> member to return <code>true.</code></p>
                 <h2><a name="javascript">Using Javascript in your pages</a></h2>
-                <p>The CoffeeMud web server allows you to use the Javascript
+                <p>The AetherMud web server allows you to use the Javascript
                     language to generate the tags and data which make up your <strong>cmvp</strong>
                     web pages. The Javascript to do this is inserted directly into your web
                     page at the point where you want the script-generated content to appear
@@ -1098,7 +1098,7 @@ ERRORPAGE=/web/pub.templates/errorpage.mwhtml)</span>
                 <p>Notice how we used the <code>write()</code> method to insert
                     our HTML into the page. We also used the <code>request()</code> object
                     to fetch the client ip address. Now here is a more involved example:</p>
-                <pre>&lt;HTML&gt;<br/>&lt;HEAD&gt;<br/>&lt;TITLE&gt;My JavaScript Enabled Web Page&lt;/TITLE&gt;<br/>&lt;/HEAD&gt;<br/>&lt;BODY&gt;<br/>&lt;H1&gt;An Example of using JavaScript in a CMVP Web Page to fetch MUD Server data.&lt;/H1&gt;<br/><br/>@jscript@<br/>var lib=Packages.com.syncleus.aethermud.game.core.CMLib;<br/>// define a shortcut to the CoffeeMud libraries.<br/><br/>var randomRoom=lib.map().getRandomRoom();<br/>var randomArea=lib.map().getRandomArea();<br/>// finding random rooms and areas is easy<br/><br/>var randomMob=null;<br/>var randomItem=null;<br/>// assign our random mobs and items to null until they are found<br/><br/>var attempts=1000;<br/>// finding random items and mobs is more difficult.  We will<br/>// select a random room, and attempt to pick out a random mob<br/>// and/or item from the room.  We will do this a maximum of 1000<br/>// times before giving up, until we find one of each.<br/>while(((--attempts)&gt;0)&amp;&amp;((randomMob==null)||(randomItem==null)))<br/>{<br/>  var room=lib.map().getRandomRoom();<br/>  if((randomMob==null)&amp;&amp;(room.numInhabitants()&gt;0))<br/>  {<br/>    randomMob=room.fetchRandomInhabitant();<br/>  }<br/>  if((randomItem==null)&amp;&amp;(room.numItems()&gt;0))<br/>  {<br/>    randomItem = room.getRandomItem();<br/>  }<br/>} //now we have all our random things. We could easily insert our HTML using<br/>  // the write() method as we did in example 1.  To be fancy, however, we'll use the<br/>  // the request() object to assign the names of our selections to HTTP Request<br/>  // strings.<br/><br/>request().addFakeUrlParameter("RANDOMROOM",randomRoom.displayText());<br/>request().addFakeUrlParameter("RANDOMAREA",randomArea.name());<br/>if(randomMob!=null)<br/> request().addFakeUrlParameter("RANDOMMOB",randomMob.name());<br/>if(randomItem!=null)<br/> request().addFakeUrlParameter("RANDOMITEM",randomItem.name());<br/>// now we exit back and continue with our HTML, using standard CMVP web macros<br/>// to fetch the random names we saved.<br/>@/jscript@<br/><br/>&lt;FONT FACE="Courier New"&gt;<br/>&lt;B&gt;A random area: &lt;B&gt;@RequestParameter?RANDOMAREA@&lt;BR&gt;<br/>&lt;B&gt;A random room: &lt;B&gt;@RequestParameter?RANDOMROOM@&lt;BR&gt;<br/>&lt;B&gt;A random mob : &lt;B&gt;@RequestParameter?RANDOMMOB@&lt;BR&gt;<br/>&lt;B&gt;A random item: &lt;B&gt;@RequestParameter?RANDOMITEM@&lt;BR&gt;<br/><br/>&lt;/FONT&gt;<br/>&lt;P&gt;<br/>&lt;/BODY&gt;<br/>&lt;/HTML&gt;<br/></pre>
+                <pre>&lt;HTML&gt;<br/>&lt;HEAD&gt;<br/>&lt;TITLE&gt;My JavaScript Enabled Web Page&lt;/TITLE&gt;<br/>&lt;/HEAD&gt;<br/>&lt;BODY&gt;<br/>&lt;H1&gt;An Example of using JavaScript in a CMVP Web Page to fetch MUD Server data.&lt;/H1&gt;<br/><br/>@jscript@<br/>var lib=Packages.com.syncleus.aethermud.game.core.CMLib;<br/>// define a shortcut to the AetherMud libraries.<br/><br/>var randomRoom=lib.map().getRandomRoom();<br/>var randomArea=lib.map().getRandomArea();<br/>// finding random rooms and areas is easy<br/><br/>var randomMob=null;<br/>var randomItem=null;<br/>// assign our random mobs and items to null until they are found<br/><br/>var attempts=1000;<br/>// finding random items and mobs is more difficult.  We will<br/>// select a random room, and attempt to pick out a random mob<br/>// and/or item from the room.  We will do this a maximum of 1000<br/>// times before giving up, until we find one of each.<br/>while(((--attempts)&gt;0)&amp;&amp;((randomMob==null)||(randomItem==null)))<br/>{<br/>  var room=lib.map().getRandomRoom();<br/>  if((randomMob==null)&amp;&amp;(room.numInhabitants()&gt;0))<br/>  {<br/>    randomMob=room.fetchRandomInhabitant();<br/>  }<br/>  if((randomItem==null)&amp;&amp;(room.numItems()&gt;0))<br/>  {<br/>    randomItem = room.getRandomItem();<br/>  }<br/>} //now we have all our random things. We could easily insert our HTML using<br/>  // the write() method as we did in example 1.  To be fancy, however, we'll use the<br/>  // the request() object to assign the names of our selections to HTTP Request<br/>  // strings.<br/><br/>request().addFakeUrlParameter("RANDOMROOM",randomRoom.displayText());<br/>request().addFakeUrlParameter("RANDOMAREA",randomArea.name());<br/>if(randomMob!=null)<br/> request().addFakeUrlParameter("RANDOMMOB",randomMob.name());<br/>if(randomItem!=null)<br/> request().addFakeUrlParameter("RANDOMITEM",randomItem.name());<br/>// now we exit back and continue with our HTML, using standard CMVP web macros<br/>// to fetch the random names we saved.<br/>@/jscript@<br/><br/>&lt;FONT FACE="Courier New"&gt;<br/>&lt;B&gt;A random area: &lt;B&gt;@RequestParameter?RANDOMAREA@&lt;BR&gt;<br/>&lt;B&gt;A random room: &lt;B&gt;@RequestParameter?RANDOMROOM@&lt;BR&gt;<br/>&lt;B&gt;A random mob : &lt;B&gt;@RequestParameter?RANDOMMOB@&lt;BR&gt;<br/>&lt;B&gt;A random item: &lt;B&gt;@RequestParameter?RANDOMITEM@&lt;BR&gt;<br/><br/>&lt;/FONT&gt;<br/>&lt;P&gt;<br/>&lt;/BODY&gt;<br/>&lt;/HTML&gt;<br/></pre>
             </td>
         </tr>
         </tbody>

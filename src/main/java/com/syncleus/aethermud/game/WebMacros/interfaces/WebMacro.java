@@ -38,7 +38,7 @@ import com.syncleus.aethermud.web.interfaces.HTTPResponse;
  */
 
 /**
- * Web Macros are special commands which can be inserted into coffeemud web page
+ * Web Macros are special commands which can be inserted into aethermud web page
  * (cmvp) files, and can have those command strings substituted with calculated
  * results. They can include parameters, and can access the other URL
  * parameters.

@@ -203,7 +203,7 @@ public class Smelting extends CraftingSkill implements CraftorAbility {
         final int resourceCode2 = RawMaterial.CODES.FIND_IgnoreCase(resourceDesc2);
         final int doneResourceCode = RawMaterial.CODES.FIND_IgnoreCase(doneResourceDesc);
         if ((resourceCode1 < 0) || (resourceCode2 < 0) || (doneResourceCode < 0)) {
-            commonTell(mob, L("CoffeeMud error in this alloy.  Please let your local Archon know."));
+            commonTell(mob, L("AetherMud error in this alloy.  Please let your local Archon know."));
             return false;
         }
         final int amountResource1 = CMLib.materials().findNumberOfResource(mob.location(), RawMaterial.CODES.GET(resourceCode1));

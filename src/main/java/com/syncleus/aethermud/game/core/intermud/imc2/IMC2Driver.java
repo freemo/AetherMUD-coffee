@@ -97,7 +97,7 @@ public final class IMC2Driver extends Thread {
     final static int IMC_WAIT1 = 2; /* Waiting for hub verification */
     final static int IMC_CONNECTED = 3; /* Fully connected */
     final static int IMC_VERSION = 2;
-    final static String IMC_VERSIONID = "IMC2 4.00 for CoffeeMud";
+    final static String IMC_VERSIONID = "IMC2 4.00 for AetherMud";
     //
     // list of all active call_out's in the game
     //
@@ -416,7 +416,7 @@ public final class IMC2Driver extends Thread {
         imc_siteinfo.host = host;
         imc_siteinfo.port = CMath.s_int(CMParms.parse(CMProps.getVar(CMProps.Str.MUDPORTS)).elementAt(0));
         imc_siteinfo.email = email;
-        imc_siteinfo.base = "CoffeeMud v" + CMProps.getVar(CMProps.Str.MUDVER);
+        imc_siteinfo.base = "AetherMud v" + CMProps.getVar(CMProps.Str.MUDVER);
         imc_siteinfo.details = "Custom Java-based Mud";
         imc_siteinfo.www = web;
         this_imcmud.hubname = hub;

@@ -42,8 +42,8 @@ import java.util.*;
  * SUPERSKILL (never fails skills),
  * IMMORT (never dies),
  * KILL* for deleting journal entries
- * FS:relative path from /coffeemud/ -- read/write access to regular file sys
- * VFS:relative path from /coffeemud/ -- read/write access to virtual file sys
+ * FS:relative path from /aethermud/ -- read/write access to regular file sys
+ * VFS:relative path from /aethermud/ -- read/write access to virtual file sys
  * LIST: (affected by killx, cmdplayers, loadunload, cmdclans, ban, nopurge,
  *   cmditems, cmdmobs, cmdrooms, sessions, cmdareas, listadmin, stat)
  *
@@ -675,7 +675,7 @@ public class CMSecurity {
     }
 
     /**
-     * For muds using the JavaScript approval system, as specified in the coffeemud.ini
+     * For muds using the JavaScript approval system, as specified in the aethermud.ini
      * file, this method approves a JavaScript as being permitted to run, and saves
      * the record of the approval.
      * @param approver the name of the player approving the script

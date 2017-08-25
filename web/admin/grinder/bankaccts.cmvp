@@ -55,7 +55,7 @@
 <INPUT TYPE=HIDDEN NAME=BANKCHAIN VALUE="@RequestParameter?BANKCHAIN@">
 <INPUT TYPE=HIDDEN NAME=PLAYER VALUE="@RequestParameter?PLAYER@">
 <TABLE WIDTH=100% BORDER=1>
-	<TR><TD WIDTH=100% COLSPAN=2 BGCOLOR=WHITE ALIGN=CENTER><FONT COLOR=BLACK><H2>CoffeeMud @MudServerVersion@ Bank Account Browser<a href="javascript:sfideas();"><FONT COLOR=WHITE>.</FONT></a></H2></FONT></TD></TR>
+	<TR><TD WIDTH=100% COLSPAN=2 BGCOLOR=WHITE ALIGN=CENTER><FONT COLOR=BLACK><H2>AetherMud @MudServerVersion@ Bank Account Browser<a href="javascript:sfideas();"><FONT COLOR=WHITE>.</FONT></a></H2></FONT></TD></TR>
 		@AddRequestParameter?OLDCHAIN=@@RequestParameter?BANKCHAIN@@ @
 		@AddRequestParameter?OLDPLAYER=@@RequestParameter?PLAYER@@ @
 		@AddRequestParameter?PLAYER=@

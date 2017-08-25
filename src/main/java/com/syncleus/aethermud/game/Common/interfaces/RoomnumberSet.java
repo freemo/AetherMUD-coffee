@@ -23,7 +23,7 @@ import java.util.Iterator;
 
 
 /**
- * A class for holding CoffeeMud-style room IDs of the
+ * A class for holding AetherMud-style room IDs of the
  * form AreaName#[NUMBER], for instance, Midgaard#3001
  * This class is totally awesome because it stores them
  * in an efficient way (holding room ids 5-10 not as

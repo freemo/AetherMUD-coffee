@@ -653,7 +653,7 @@ public interface CombatLibrary extends CMLibrary {
     public boolean isKnockedOutUponDeath(MOB deadM, MOB killerM);
 
     /**
-     * When a player dies or flees, the system coffeemud.ini file
+     * When a player dies or flees, the system aethermud.ini file
      * defines the consequences of losing the fight.
      * @param deadM the mob who died or is fleeing
      * @param killerM the killer or attacker of the given mob
@@ -765,7 +765,7 @@ public interface CombatLibrary extends CMLibrary {
 
     /**
      * An enumeration of the several combat systems.
-     * These are specified in the coffeemud.ini file.
+     * These are specified in the aethermud.ini file.
      *
      * @author Bo Zimmerman
      *

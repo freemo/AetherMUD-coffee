@@ -132,7 +132,7 @@ public interface Item extends Rider, DBIdentifiable, Wearable, PhysicalAgent, Re
     public void stopTicking();
 
     /**
-     * The default value of the item, represented in the base CoffeeMud currency.  This
+     * The default value of the item, represented in the base AetherMud currency.  This
      * method starts with baseGoldValue, which is a user-entered value, and adjusts
      * according to magical enhancements and the condition of the  item.
      * @return the adjusted value of the item in the base currency.
@@ -140,14 +140,14 @@ public interface Item extends Rider, DBIdentifiable, Wearable, PhysicalAgent, Re
     public int value();
 
     /**
-     * The user/builder-entered value of the item, represented in base CoffeeMud currency.
+     * The user/builder-entered value of the item, represented in base AetherMud currency.
      * It is used as a basis for the value returned by the value() method.
      * @return the raw user-entered value of item.
      */
     public int baseGoldValue();
 
     /**
-     * Changes the base value of the item, represented in base CoffeeMud currency.
+     * Changes the base value of the item, represented in base AetherMud currency.
      * The value is saved to the database, and is used by the value() method as a basis.
      * @param newValue the new raw value of the item
      */

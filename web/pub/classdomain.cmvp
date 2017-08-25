@@ -2,8 +2,8 @@
 
 <html>
 <head>
-	<link rel="coffeemud icon" href="images/coffeemud.ico" >
-	<link rel="STYLESHEET" TYPE="TEXT/CSS" HREF="coffeemud.css">
+	<link rel="aethermud icon" href="images/aethermud.ico" >
+	<link rel="STYLESHEET" TYPE="TEXT/CSS" HREF="aethermud.css">
 	<title>Class-Domain Information</title>
 	<SCRIPT LANGUAGE=JavaScript>
 	<!--
@@ -18,7 +18,7 @@
 </head>
 
 <body BGCOLOR=#CCFFFF>
-<h3>CoffeeMud @MudServerVersion@ Class-Domain Information</h3><P>
+<h3>AetherMud @MudServerVersion@ Class-Domain Information</h3><P>
 @BaseCharClassNext?RESET@
 <UL>
 @loop@

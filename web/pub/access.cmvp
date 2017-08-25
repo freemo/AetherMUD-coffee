@@ -2,10 +2,10 @@
 
 <html>
 <head>
-	<link rel="coffeemud icon" href="images/coffeemud.ico" >
+	<link rel="aethermud icon" href="images/aethermud.ico" >
 	<!-- tell spiders to sod off -->
 	<meta name="ROBOTS" content="NOINDEX, NOFOLLOW">
-	<link rel="STYLESHEET" TYPE="TEXT/CSS" HREF="coffeemud.css">
+	<link rel="STYLESHEET" TYPE="TEXT/CSS" HREF="aethermud.css">
 	<title>Player Access Login</title>
 	<script language=JavaScript>
 	<!--
@@ -38,10 +38,10 @@
 		<br><INPUT TYPE=HIDDEN NAME=LASTPAGE VALUE="">
 		<FORM  ACCEPT-CHARSET="UTF-8" NAME=ACCESS METHOD=POST ACTION=access.cmvp TARGET=_top>
 		@if?IsAccountSystem@
-			Please enter one of your CoffeeMud characters and your Account password to gain access.<BR>
+			Please enter one of your AetherMud characters and your Account password to gain access.<BR>
 			If you do not have an account or any characters, click the Back link above and select Play NOW!<P>
 	    @else@
-			Please login as your CoffeeMud player to gain access.<BR>
+			Please login as your AetherMud player to gain access.<BR>
 			If you do not have a player account, click the Back link above and select Play NOW!<P>
 	    @endif@
 		<TABLE WIDTH=200 BORDER=1>

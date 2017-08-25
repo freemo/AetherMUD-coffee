@@ -21,7 +21,7 @@ import com.syncleus.aethermud.game.core.interfaces.TickClient;
 
 
 /**
- * This is the base interface for all CoffeeMud libraries.
+ * This is the base interface for all AetherMud libraries.
  * @author Bo Zimmerman
  */
 public interface CMLibrary extends CMObject {

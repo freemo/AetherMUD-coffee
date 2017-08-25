@@ -2,8 +2,8 @@
 
 <html>
 <head>
-	<link rel="coffeemud icon" href="images/coffeemud.ico" >
-	<link rel="STYLESHEET" TYPE="TEXT/CSS" HREF="coffeemud.css">
+	<link rel="aethermud icon" href="images/aethermud.ico" >
+	<link rel="STYLESHEET" TYPE="TEXT/CSS" HREF="aethermud.css">
 	<title>Skills</title>
 	<SCRIPT LANGUAGE=JavaScript>
 	<!--
@@ -18,7 +18,7 @@
 </head>
 
 <body BGCOLOR=#00FF99>
-<h3>CoffeeMud @MudServerVersion@ Player Skill Information</h3><P>
+<h3>AetherMud @MudServerVersion@ Player Skill Information</h3><P>
 (<a href="skills2.cmvp">View the skills by school/domain</a>)&nbsp;&nbsp;&nbsp;&nbsp;
 (<a href="skills.cmvp">View the skills by level</a>)<P>
 <BR>

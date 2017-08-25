@@ -36,7 +36,7 @@ public interface I3Interface extends CMLibrary {
 
     public void giveI3MudList(MOB mob);
 
-    public List<String> getI3MudList(boolean coffeemudOnly);
+    public List<String> getI3MudList(boolean aethermudOnly);
 
     public void giveIMC2MudList(MOB mob);
 

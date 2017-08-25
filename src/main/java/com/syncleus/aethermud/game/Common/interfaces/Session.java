@@ -208,7 +208,7 @@ public interface Session extends CMCommon, Modifiable, CMRunnable {
 
     /**
      * Returns a list of standard/foreground telnet coded strings
-     * indexed by coffeemud color code.  May be from the standard list,
+     * indexed by aethermud color code.  May be from the standard list,
      * or read from player records for a customized list.
      * @return telnet coded color strings.
      */
@@ -749,7 +749,7 @@ public interface Session extends CMCommon, Modifiable, CMRunnable {
      * Blocks the current thread until the user attached to this session
      * hits ENTER, returning the characters they enter.  Completely filtered input.
      * @param timeoutMillis milliseconds before InterruptedIOException thrown
-     * @param filter true to allow normal coffeemud input filtering
+     * @param filter true to allow normal aethermud input filtering
      * @return the string entered by the user
      * @throws IOException any exception generated during input
      */

@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta name="generator" content="HTML Tidy, see www.w3.org"/>
-    <title>The CoffeeMud SMTP Server</title>
+    <title>The AetherMud SMTP Server</title>
     <link rel="StyleSheet" href="style.css" type="text/css" media="screen"/>
     <!-- Modified by Josh Mueller, 2006-5-5, fix validation errors, add index, and fix spelling errors -->
 </head>
@@ -13,7 +13,7 @@
         <tbody>
         <tr>
             <td colspan="2" align="left" bgcolor="#dfdfdf" width="100%">
-                <h1>The CoffeeMud SMTP Server</h1>
+                <h1>The AetherMud SMTP Server</h1>
             </td>
         </tr>
         <tr>
@@ -26,8 +26,8 @@
                 </ul>
             </td>
             <td align="left" valign="top">
-                <p>The CoffeeMud SMTP Server is a simple mail transfer program
-                    which acts as server that runs as part of CoffeeMud. It's primary
+                <p>The AetherMud SMTP Server is a simple mail transfer program
+                    which acts as server that runs as part of AetherMud. It's primary
                     purpose is to act as a mail forwarding and relay engine for email
                     between mud users, and as a distribution point for mailing lists and
                     other email related functions.</p>
@@ -36,24 +36,24 @@
                     default. Changing this port value is generally a bad idea which will
                     almost certainly eliminate the ability for your server to receive mail
                     from others.</p>
-                <p>Messages sent either directly or indirectly to the CoffeeMud
+                <p>Messages sent either directly or indirectly to the AetherMud
                     SMTP Server MUST follow ALL of these rules or face rejection:</p>
                 <ul>
                     <li>The email MUST be formatted in PLAIN TEXT</li>
-                    <li>The DOMAIN must be correctly defined in the CoffeeMud INI
-                        file (coffeemud.ini)
+                    <li>The DOMAIN must be correctly defined in the AetherMud INI
+                        file (aethermud.ini)
                     </li>
                     <li> The email must be from:
                         <ul>
-                            <li>a CoffeeMud journal name listed under JOURNALS in the
+                            <li>a AetherMud journal name listed under JOURNALS in the
                                 SMTP Server INI file (web/email.ini)
                             </li>
-                            <li><strong>OR</strong> a CoffeeMud journal name at the
-                                local domain: example: <a href="mailto:My_Journal@CoffeeMud.homeip.net">My_Journal@mydomain.net</a>
+                            <li><strong>OR</strong> a AetherMud journal name at the
+                                local domain: example: <a href="mailto:My_Journal@AetherMud.homeip.net">My_Journal@mydomain.net</a>
                             </li>
                             <li><strong>OR</strong> a local player name</li>
                             <li><strong>OR</strong> a local player name at the local
-                                domain: example: <a href="mailto:brutus@CoffeeMud.homeip.net">brutus@mydomain.net</a>
+                                domain: example: <a href="mailto:brutus@AetherMud.homeip.net">brutus@mydomain.net</a>
                             </li>
                             <li><strong>OR</strong> the email address which a player
                                 has on file in their account.
@@ -62,10 +62,10 @@
                     </li>
                     <li> The email must be addressed to:
                         <ul>
-                            <li>a CoffeeMud journal name at the local domain: example: <a
-                                href="mailto:My_Journal@CoffeeMud.homeip.net">My_Journal@mydomain.net</a></li>
+                            <li>a AetherMud journal name at the local domain: example: <a
+                                href="mailto:My_Journal@AetherMud.homeip.net">My_Journal@mydomain.net</a></li>
                             <li><strong>OR</strong> a local player name at the local
-                                domain: example: <a href="mailto:brutus@CoffeeMud.homeip.net">brutus@mydomain.net</a>
+                                domain: example: <a href="mailto:brutus@AetherMud.homeip.net">brutus@mydomain.net</a>
                             </li>
                             <li><strong>OR</strong> the email address which a player
                                 has on file in their account.
@@ -94,18 +94,18 @@
                     taking up disk space, much less being relayed. It doesn't get any more
                     secure than that.</p>
                 <h2><a name="configuration">Configuration</a></h2>
-                <p>The default installation of CoffeeMud has two inbuilt web
+                <p>The default installation of AetherMud has two inbuilt web
                     servers, named 'pub' and 'admin'. The web servers are enabled with the
-                    line 'RUNWEBSERVERS=true' in 'CoffeeMud.ini'; any other value or the
+                    line 'RUNWEBSERVERS=true' in 'AetherMud.ini'; any other value or the
                     absence of this line will cause the web servers not to be loaded.</p>
                 <p>Normally, CofeeMud's SMTP server will send mail directly to
                     the recipients mail servers. If you wish to use your own relay server,
-                    you should set the SMTPSERVERNAME field in your coffeemud.ini file to
-                    the address of your relay server. Obviously this server and CoffeeMud's
+                    you should set the SMTPSERVERNAME field in your aethermud.ini file to
+                    the address of your relay server. Obviously this server and AetherMud's
                     can not exist on the same machine, as they will be listening on the
                     same ports.</p>
                 <p>INI files for the email server lives in the 'web/' directory
-                    off the CoffeeMud root. The file is called email.ini, and contains the
+                    off the AetherMud root. The file is called email.ini, and contains the
                     following entries:</p>
                 <ul>
                     <li><b>PORT</b>=xx : <b>[REQUIRED]</b> <em>(e.g.25)</em>
@@ -124,12 +124,12 @@
                             access to the pages. Identical to MUD server usage.</p>
                     </li>
                     <li><b>RELAYSERVER</b>=addr : <em>(e.g.127.0.0.1)</em>
-                        <p>Normally the CoffeeMud server will attempt to send mail
+                        <p>Normally the AetherMud server will attempt to send mail
                             directly to the recipients. If you have another SMTP mail server that
                             you would like to use to relay messages through, you should set this
                             value to the address of that SMTP relay server. Since they will be
                             sharing ports, this server should obviously be on a different machine
-                            than CoffeeMud's SMTP server.</p>
+                            than AetherMud's SMTP server.</p>
                     </li>
                     <li>
                         <p><strong>FORWARD</strong>=trueorfalse (e.g. TRUE)<br/>
@@ -232,7 +232,7 @@
                     </li>
                 </ul>
                 <p>Not listed here, but even more important is the <strong>DOMAIN</strong>
-                    entry in your CoffeeMud.ini file. This is your servers domain for the
+                    entry in your AetherMud.ini file. This is your servers domain for the
                     purposes of interpreting local email addresses. It should be identical
                     to your servers domain. For instance, if your server is
                     myserver.myhost.com, then so should this value. Email addressed to your

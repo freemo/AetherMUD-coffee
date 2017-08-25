@@ -21,7 +21,7 @@ import com.syncleus.aethermud.game.Locales.interfaces.Room;
 
 
 /**
- * An object which is permitted to monitor game events in CoffeeMud.
+ * An object which is permitted to monitor game events in AetherMud.
  * @author Bo Zimmerman
  */
 public interface MsgMonitor {

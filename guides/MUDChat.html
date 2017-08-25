@@ -41,23 +41,23 @@
                 <h2><a name="basics" id="basics">Basic Chat.Dat Information</a></h2>
                 <p>If you've ever popped open the resources/chat.dat file and
                     tried to read the instructions, you'll be familiar with this:</p>
-                <pre>#There are several "operators" available:<br/># pattern matching: Which work only in ( string | string &amp; (str ~ str))<br/># | or<br/># &amp; and<br/># ~ and-not<br/># special pattern matching:<br/># ^ match start This anchors the match to the beginning of the<br/># input string.<br/># = exact match This must match the input string entirely.<br/># / beginning and end of a coffeemud specific zappermask<br/># pass 1 scan operators:<br/># ( beginning of a 'say' expression<br/># [ beginning of a non-say expression targeted<br/># { beginning of a non-say expression not targeted<br/># * combat expression, must preceed (, [, or {<br/># # remark<br/># " output to stderr<br/># ' output to stdout<br/># &gt; start of named database, there can be more than one name<br/># to a database '&gt; dragon red_dragon' The _ here is treated<br/># as a space in the name.   You may also use the / operator.<br/># % include another file inline Ex: %talk.data<br/># @ adds a continue jump to link to the database. Ex: @dog<br/># will make a continue link to the dog database. Use @default<br/># to link to the default database. Only 1 @ per database.<br/># @ cannot do forward links!!!<br/># @ is more memory efficient than % but less flexible.<br/># You must avoid circularities with @.<br/># response operators:<br/># 1-9 weights are the numerals. First column only. Mandatory.<br/># " Issue response as "say". Muds and 2nd column only. Optional.<br/># : Issue response as "emote". Muds and 2nd column only. Optional.<br/># ! Issue response as command. Muds and 2nd column only. Optional.<br/># Note, you do not need a space after an :,", or !<br/>#<br/># $? Are variables where ? is a case sensitive letter.<br/># $r is rest of sentence, $n is its name, $t is target's name.<br/># They may appear anywhere in the response, multiple times.<br/>#<br/>#Some special notes:<br/># #,',",weights, and the first (,[,or { must be in column one.<br/>#<br/>#Syntax of a simple pattern match:<br/>#<br/>#( A | B &amp; C ~ ( D | E | F)) 'say command targeted at the mob<br/>#[ A | B &amp; C ~ ( D | E | F)] 'another action targeted at the mob<br/>#{ A | B &amp; C ~ ( D | E | F)} 'another action not targeted at mob<br/>#<br/>#The above would mean if A or B and C and-not D or E or F was in the<br/>#sentence then pick one of the responses.<br/>#<br/>#The responses take on the form:<br/>#<br/>#9this is most likely<br/>#4somewhat likely<br/>#1least likely<br/>#<br/>#Responses or pattern match strings may not span more than one line.<br/>#The guaranteed line length is a magic 80 characters (letters) wide.<br/>#<br/>#Please note the system will return the first match found. So<br/>#please put more ambiguous matches last!!<br/>#<br/></pre>
+                <pre>#There are several "operators" available:<br/># pattern matching: Which work only in ( string | string &amp; (str ~ str))<br/># | or<br/># &amp; and<br/># ~ and-not<br/># special pattern matching:<br/># ^ match start This anchors the match to the beginning of the<br/># input string.<br/># = exact match This must match the input string entirely.<br/># / beginning and end of a aethermud specific zappermask<br/># pass 1 scan operators:<br/># ( beginning of a 'say' expression<br/># [ beginning of a non-say expression targeted<br/># { beginning of a non-say expression not targeted<br/># * combat expression, must preceed (, [, or {<br/># # remark<br/># " output to stderr<br/># ' output to stdout<br/># &gt; start of named database, there can be more than one name<br/># to a database '&gt; dragon red_dragon' The _ here is treated<br/># as a space in the name.   You may also use the / operator.<br/># % include another file inline Ex: %talk.data<br/># @ adds a continue jump to link to the database. Ex: @dog<br/># will make a continue link to the dog database. Use @default<br/># to link to the default database. Only 1 @ per database.<br/># @ cannot do forward links!!!<br/># @ is more memory efficient than % but less flexible.<br/># You must avoid circularities with @.<br/># response operators:<br/># 1-9 weights are the numerals. First column only. Mandatory.<br/># " Issue response as "say". Muds and 2nd column only. Optional.<br/># : Issue response as "emote". Muds and 2nd column only. Optional.<br/># ! Issue response as command. Muds and 2nd column only. Optional.<br/># Note, you do not need a space after an :,", or !<br/>#<br/># $? Are variables where ? is a case sensitive letter.<br/># $r is rest of sentence, $n is its name, $t is target's name.<br/># They may appear anywhere in the response, multiple times.<br/>#<br/>#Some special notes:<br/># #,',",weights, and the first (,[,or { must be in column one.<br/>#<br/>#Syntax of a simple pattern match:<br/>#<br/>#( A | B &amp; C ~ ( D | E | F)) 'say command targeted at the mob<br/>#[ A | B &amp; C ~ ( D | E | F)] 'another action targeted at the mob<br/>#{ A | B &amp; C ~ ( D | E | F)} 'another action not targeted at mob<br/>#<br/>#The above would mean if A or B and C and-not D or E or F was in the<br/>#sentence then pick one of the responses.<br/>#<br/>#The responses take on the form:<br/>#<br/>#9this is most likely<br/>#4somewhat likely<br/>#1least likely<br/>#<br/>#Responses or pattern match strings may not span more than one line.<br/>#The guaranteed line length is a magic 80 characters (letters) wide.<br/>#<br/>#Please note the system will return the first match found. So<br/>#please put more ambiguous matches last!!<br/>#<br/></pre>
                 <p>Helpful and clear, eh? Here's a better breakdown.</p>
                 <p>The chat.dat file is basically a giant text file that is used
                     for pattern-matching, with a couple of extra features. What this means
                     is that you enter 'trigger' text and when the MOB hears someone say it,
                     they'll respond with whatever you set for them to say. An example is
                     warranted:</p>
-                <p>Bo decides he wants MOBs to praise CoffeeMud in a couple ways
+                <p>Bo decides he wants MOBs to praise AetherMud in a couple ways
                     when it's mentioned. He opens up his chat.dat file. He would enter this:</p>
-                <pre>(coffeemud)<br/>9I've heard of CoffeeMud. Isn't that that slick Java MUD codebase?<br/>6CoffeeMud? What the heck is that?<br/>2:smiles warmly.<br/></pre>
+                <pre>(aethermud)<br/>9I've heard of AetherMud. Isn't that that slick Java MUD codebase?<br/>6AetherMud? What the heck is that?<br/>2:smiles warmly.<br/></pre>
                 <p>There's a few different things to understand there. Let's
                     break it down by lines:</p>
                 <ul>
                     <li>
-                        <p>(coffeemud)- This is the trigger text. Anyone saying "Hey
-                            - how do you feel about CoffeeMud?", "whats coffeemud", or anything
-                            else with (case insensitive) 'coffeemud' in it will trigger the
+                        <p>(aethermud)- This is the trigger text. Anyone saying "Hey
+                            - how do you feel about AetherMud?", "whats aethermud", or anything
+                            else with (case insensitive) 'aethermud' in it will trigger the
                             following response lines.</p>
                     </li>
                     <li>
@@ -76,8 +76,8 @@
                             well.) The other thing to note here is that you don't need a space
                             after either the 1st or 2nd columns.</p>
                         <p>So, bearing that in mind, it's most likely the MOB, upon
-                            hearing 'coffeemud', will say 'I've heard of CoffeeMud. Isn't that that
-                            slick Java MUD codebase?', may say 'CoffeeMud? What the heck is that?',
+                            hearing 'aethermud', will say 'I've heard of AetherMud. Isn't that that
+                            slick Java MUD codebase?', may say 'AetherMud? What the heck is that?',
                             or (least likely, it will emote 'smiles warmly').</p>
                     </li>
                 </ul>
@@ -97,8 +97,8 @@
                         if anyone said 'kill him yourself' etc..
                     </li>
                     <li>/ - This is the zapper mask character, so
-                        (coffeemud&amp;/-GENDER +FEMALE/) would trigger only if a female says
-                        coffeemud. &nbsp;See help on ZAPPERMASK for more information.
+                        (aethermud&amp;/-GENDER +FEMALE/) would trigger only if a female says
+                        aethermud. &nbsp;See help on ZAPPERMASK for more information.
                     </li>
                 </ul>
                 <p>Note: You can also use all of the &lt;S-HIS-HER&gt; type codes
@@ -116,7 +116,7 @@
                     to the ChatGroups 'healer', 'cleric', or 'doctor' will respond with
                     these patterns. &nbsp;&nbsp;</p>
                 <p>Another trick you can use to narrow matches on a ChatGroup
-                    with the &gt; command is to include a CoffeeMud Zapper Mask. In that
+                    with the &gt; command is to include a AetherMud Zapper Mask. In that
                     case the zapper masks would be included in your set of matching words
                     by surrounding it with '/' characters like so:&nbsp;<br/>
                 </p>

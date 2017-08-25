@@ -36,10 +36,10 @@ public class Ver extends StdCommand {
     @Override
     public boolean execute(MOB mob, List<String> commands, int metaFlags)
         throws java.io.IOException {
-        mob.tell(L("CoffeeMud v@x1", CMProps.getVar(CMProps.Str.MUDVER)));
+        mob.tell(L("AetherMud v@x1", CMProps.getVar(CMProps.Str.MUDVER)));
         mob.tell(L("(C) 2000-2017 Bo Zimmerman"));
         mob.tell(L("^<A HREF=\"mailto:bo@zimmers.net\"^>bo@zimmers.net^</A^>"));
-        mob.tell(L("^<A HREF=\"http://www.coffeemud.org\"^>http://www.coffeemud.org^</A^>"));
+        mob.tell(L("^<A HREF=\"http://www.aethermud.org\"^>http://www.aethermud.org^</A^>"));
         return false;
     }
 

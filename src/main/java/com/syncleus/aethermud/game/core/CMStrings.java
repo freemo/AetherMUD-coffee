@@ -873,7 +873,7 @@ public class CMStrings {
     /**
      * Capitalizes the first letter in the given string, and forcibly lowercases
      * the remaining letters in the string.
-     * This method respects special CoffeeMUD color codes, skipping over
+     * This method respects special AetherMUD color codes, skipping over
      * them to find that elusive first letter.
      * @param name the string to capitalize and lowercase
      * @return the string, capitalized, with other letters lowercased
@@ -933,7 +933,7 @@ public class CMStrings {
     /**
      * Capitalizes the first letter in every word in the given string, and lowercases any
      * other letters in each word.
-     * This method respects special CoffeeMUD color codes, skipping over
+     * This method respects special AetherMUD color codes, skipping over
      * them to find that elusive first letters.
      * @param name the string with words to capitalize and lowercase.
      * @return the string, with all words capitalized and remaining word letters lowercased.
@@ -992,7 +992,7 @@ public class CMStrings {
 
     /**
      * Capitalizes the first letter in the given string, if one is found.
-     * This method respects special CoffeeMUD color codes, skipping over
+     * This method respects special AetherMUD color codes, skipping over
      * them to find that elusive first letter.
      * @param name the string to capitalize
      * @return the string, capitalized
@@ -1826,7 +1826,7 @@ public class CMStrings {
      * length of the given number. If the string is already larger than the given
      * number, no spaces are added, and the string is truncated.  Color codes are
      * removed if truncation is necessary.
-     * This method removes any special CoffeeMud/ANSI color codes before calculating
+     * This method removes any special AetherMud/ANSI color codes before calculating
      * length.
      * @param thisStr the string to pad
      * @param thisMuch the final minimum length of the string.
@@ -1848,7 +1848,7 @@ public class CMStrings {
      * of the given number. If the string is already larger than the given number, the
      * string is truncated at the end until it is the given length.  If the string
      * must be truncated, any color codes are also removed.
-     * This method removes any special CoffeeMud/ANSI color codes before calculating
+     * This method removes any special AetherMud/ANSI color codes before calculating
      * length.
      * @param thisStr the string to pad or truncate
      * @param thisMuch the final minimum length of the string.
@@ -1866,7 +1866,7 @@ public class CMStrings {
      * of the given number. If the string is already larger than the given number, the
      * string is truncated at the end until it is the given length.  If the string
      * must be truncated, any color codes are also removed.
-     * This method removes any special CoffeeMud/ANSI color codes before calculating
+     * This method removes any special AetherMud/ANSI color codes before calculating
      * length.
      * @param thisStr the string to pad or truncate
      * @param c the character to pad the string with
@@ -1890,7 +1890,7 @@ public class CMStrings {
      * truncated at the end until it is the given length.
      * This method always prepends the given colorSuffix string to the beginning of the string
      * after any spaces are added, before the string is truncated.
-     * This method removes any special CoffeeMud/ANSI color codes before calculating
+     * This method removes any special AetherMud/ANSI color codes before calculating
      * length.
      * @param thisStr the string to pad or truncate
      * @param colorPrefix the string to always add to the beginning of the given string before spaces
@@ -1950,7 +1950,7 @@ public class CMStrings {
      * of the given number. If the string is already larger than the given number, the
      * string is truncated at the end until it is the given length.  If the string
      * must be truncated, any color codes are also removed.
-     * This method removes any special CoffeeMud/ANSI color codes before calculating
+     * This method removes any special AetherMud/ANSI color codes before calculating
      * length.
      * @param thisStr the string to pad or truncate
      * @param thisMuch the final minimum length of the string.
@@ -1972,7 +1972,7 @@ public class CMStrings {
      * of the given number. If the string is already larger than the given number, the
      * string is truncated at the end until it is the given length.  If the string
      * must be truncated, any color codes are also removed.
-     * This method removes any special CoffeeMud/ANSI color codes before calculating
+     * This method removes any special AetherMud/ANSI color codes before calculating
      * length.
      * @param prefixColorStr the string to prefix the padded string with
      * @param thisStr the string to pad or truncate
@@ -1996,7 +1996,7 @@ public class CMStrings {
      * of the given number. If the string is already larger than the given number, the
      * string is truncated at the end until it is the given length.  If the string
      * must be truncated, any color codes are also removed.
-     * This method removes any special CoffeeMud/ANSI color codes before calculating
+     * This method removes any special AetherMud/ANSI color codes before calculating
      * length.
      * @param thisStr the string to pad or truncate
      * @param c the character to pad the string with
@@ -2019,7 +2019,7 @@ public class CMStrings {
      * Truncates the given string if the string is larger than the given number,
      * or returns it unchanged otherwise. If the string is larger than the given
      * number, color codes are removed.
-     * This method removes any special CoffeeMud/ANSI color codes before calculating
+     * This method removes any special AetherMud/ANSI color codes before calculating
      * length.
      * @param prefixColorStr the string to prefix the padded string with
      * @param thisStr the string to pad or truncate
@@ -2038,7 +2038,7 @@ public class CMStrings {
      * Truncates the given string if the string is larger than the given number,
      * or returns it unchanged otherwise. If the string is larger than the given
      * number, color codes are removed.
-     * This method removes any special CoffeeMud/ANSI color codes before calculating
+     * This method removes any special AetherMud/ANSI color codes before calculating
      * length.
      * @param thisStr the string to pad or truncate
      * @param thisMuch the final maximum length of the string.
@@ -2056,7 +2056,7 @@ public class CMStrings {
      * the given number, or returns it unchanged otherwise. If the string is
      * larger than the given number, the string is truncated at the end, color codes
      * removed, until it is the given length, and the ellipse added.
-     * This method removes any special CoffeeMud/ANSI color codes before calculating
+     * This method removes any special AetherMud/ANSI color codes before calculating
      * length.
      * @param thisStr the string to pad or truncate
      * @param thisMuch the final maximum length of the string before ...
@@ -2075,7 +2075,7 @@ public class CMStrings {
      * truncated at the end until it is the given length.
      * This method always adds the given colorSuffix string to the end of the string
      * before any spaces are added, or after the string is truncated.
-     * This method removes any special CoffeeMud/ANSI color codes before calculating
+     * This method removes any special AetherMud/ANSI color codes before calculating
      * length.
      * @param thisStr the string to pad or truncate
      * @param colorSuffix the string to always add to the end of the given string before spaces
@@ -2095,7 +2095,7 @@ public class CMStrings {
      * Pads the string to the right with spaces until it is the length of the given
      * number. If the string is already larger than the given number, no spaces are
      * added, and the string is returned unchanged.
-     * This method removes any special CoffeeMud/ANSI color codes before calculating
+     * This method removes any special AetherMud/ANSI color codes before calculating
      * length.
      * @param thisStr the string to pad
      * @param thisMuch the final minimum length of the string.
@@ -2114,7 +2114,7 @@ public class CMStrings {
      * Pads the string equally to the left and right with spaces until it is the
      * length of the given number. If the string is already larger than the given
      * number, no spaces are added, and the string is returned unchanged.
-     * This method removes any special CoffeeMud/ANSI color codes before calculating
+     * This method removes any special AetherMud/ANSI color codes before calculating
      * length.
      * @param thisStr the string to pad
      * @param thisMuch the final minimum length of the string.
@@ -2135,7 +2135,7 @@ public class CMStrings {
      * Pads the string to the left with spaces until it is the length of the given
      * number. If the string is already larger than the given number, no spaces are
      * added, and the string is returned unchanged.
-     * This method removes any special CoffeeMud/ANSI color codes before calculating
+     * This method removes any special AetherMud/ANSI color codes before calculating
      * length.
      * @param thisStr the string to pad
      * @param thisMuch the final minimum length of the string.

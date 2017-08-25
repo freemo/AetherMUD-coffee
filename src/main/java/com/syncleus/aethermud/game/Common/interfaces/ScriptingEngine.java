@@ -29,7 +29,7 @@ import java.util.List;
 
 
 /**
- * The interface for the main CoffeeMud scripting engine, which implements
+ * The interface for the main AetherMud scripting engine, which implements
  * a scripting engine descended from the old mud codebases of the 90's
  * usually called MOBPROG.  Its main features include easy to understand
  * event-oriented triggers, making all mud commands implicit scripting

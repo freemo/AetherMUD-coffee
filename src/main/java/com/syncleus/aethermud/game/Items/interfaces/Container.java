@@ -110,7 +110,7 @@ public interface Container extends Item, CloseableLockable {
 
     /**
      * Returns the maximum weight that can fit inside this container.  Weight
-     * is used as a proxy for volume in CoffeeMud.
+     * is used as a proxy for volume in AetherMud.
      * @see Container#setCapacity(int)
      * @return the maximum weight that can fit inside this container
      */
@@ -118,7 +118,7 @@ public interface Container extends Item, CloseableLockable {
 
     /**
      * Sets the maximum weight that can fit inside this container.  Weight
-     * is used as a proxy for volume in CoffeeMud.
+     * is used as a proxy for volume in AetherMud.
      * @see Container#capacity()
      * @param newValue the maximum weight that can fit inside this container
      */

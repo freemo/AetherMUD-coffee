@@ -401,10 +401,10 @@ public class Intermud implements Runnable, Persistent, Serializable {
         attempts++;
         try {
             if (name_servers.size() == 0)
-                Log.sysOut("Intermud3", "No I3 routers defined in coffeemud.ini file.");
+                Log.sysOut("Intermud3", "No I3 routers defined in aethermud.ini file.");
             else {
                 if (CMProps.getVar(CMProps.Str.ADMINEMAIL).indexOf('@') < 0)
-                    Log.errOut("Intermud", "Please set ADMINEMAIL in your coffeemud.ini file.");
+                    Log.errOut("Intermud", "Please set ADMINEMAIL in your aethermud.ini file.");
                 final Vector connectionStatuses = new Vector(name_servers.size());
                 for (int i = 0; i < name_servers.size(); i++) {
                     currentRouter = name_servers.get(i);
@@ -414,7 +414,7 @@ public class Intermud implements Runnable, Persistent, Serializable {
                         send("({\"startup-req-3\",5,\"" + intermud.getMudName() + "\",0,\"" +
                             currentRouter.name + "\",0," + password +
                             "," + muds.getMudListId() + "," + channels.getChannelListId() + "," + intermud.getMudPort() +
-                            ",0,0,\"" + intermud.getMudVersion() + "\",\"" + intermud.getMudVersion() + "\",\"" + intermud.getMudVersion() + "\",\"CoffeeMud\"," +
+                            ",0,0,\"" + intermud.getMudVersion() + "\",\"" + intermud.getMudVersion() + "\",\"" + intermud.getMudVersion() + "\",\"AetherMud\"," +
                             "\"" + intermud.getMudState() + "\",\"" + CMProps.getVar(CMProps.Str.ADMINEMAIL).toLowerCase() + "\",([" +
                             "\"who\":1,\"finger\":1,\"channel\":1,\"tell\":1,\"locate\":1,\"auth\":1,]),([]),})");
                     } catch (final java.io.IOException e) {

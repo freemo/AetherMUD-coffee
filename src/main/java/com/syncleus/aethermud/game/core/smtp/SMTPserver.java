@@ -40,7 +40,7 @@ import java.util.concurrent.TimeUnit;
 public class SMTPserver extends Thread implements Tickable {
     public static final float HOST_VERSION_MAJOR = (float) 1.1;
     public static final float HOST_VERSION_MINOR = (float) 1.0;
-    public static final String ServerVersionString = "CoffeeMud SMTPserver/" + HOST_VERSION_MAJOR + "." + HOST_VERSION_MINOR;
+    public static final String ServerVersionString = "AetherMud SMTPserver/" + HOST_VERSION_MAJOR + "." + HOST_VERSION_MINOR;
     private final MudHost mud;
     private final HashSet<String> oldEmailComplaints = new HashSet<String>();
     private final CMThreadPoolExecutor threadPool;
@@ -50,7 +50,7 @@ public class SMTPserver extends Thread implements Tickable {
     public ServerSocket servsock = null;
     public CMProps iniPage = null;
     private boolean displayedBlurb = false;
-    private String domain = "coffeemud";
+    private String domain = "aethermud";
     private int maxThreads = 3;
     private int threadTimeoutMins = 10;
     public SMTPserver() {
@@ -143,11 +143,11 @@ public class SMTPserver extends Thread implements Tickable {
         }
 
         if (CMProps.getVar(CMProps.Str.MUDDOMAIN).toLowerCase().length() == 0) {
-            Log.errOut(getName(), "Set your coffeemud.ini parameter: DOMAIN");
+            Log.errOut(getName(), "Set your aethermud.ini parameter: DOMAIN");
             return false;
         }
         if (page.getStr("PORT").length() == 0) {
-            Log.errOut(getName(), "Set your coffeemud.ini parameter: PORT");
+            Log.errOut(getName(), "Set your aethermud.ini parameter: PORT");
             return false;
         }
         if (CMath.isNumber(page.getStr("REQUESTTIMEOUTMINS")))

@@ -18,14 +18,14 @@ package com.syncleus.aethermud.game.core.interfaces;
 
 /**
  * The general base interface which is implemented by every class
- * which the CoffeeMud ClassLoader (CMClass) handles.
+ * which the AetherMud ClassLoader (CMClass) handles.
  * @see com.syncleus.aethermud.game.core.CMClass
  * @author Bo Zimmerman
  *
  */
 public interface CMObject extends Cloneable, Comparable<CMObject> {
     /**
-     * The CoffeeMud Java Class ID shared by all instances of
+     * The AetherMud Java Class ID shared by all instances of
      * this object.  Unlike the Java Class name, this method
      * does not include package information.  However, it must
      * return a String value unique to its class category in

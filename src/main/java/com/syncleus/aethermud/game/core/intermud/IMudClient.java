@@ -683,13 +683,13 @@ public class IMudClient implements I3Interface {
     }
 
     @Override
-    public List<String> getI3MudList(boolean coffeemudOnly) {
+    public List<String> getI3MudList(boolean aethermudOnly) {
         List<String> list = new Vector<String>();
         if (!i3online())
             return list;
         List<I3Mud> muds = getSortedI3Muds();
         for (I3Mud mud : muds) {
-            if ((mud != null) && ((!coffeemudOnly) || mud.base_mudlib.startsWith("CoffeeMud")))
+            if ((mud != null) && ((!aethermudOnly) || mud.base_mudlib.startsWith("AetherMud")))
                 list.add(mud.mud_name);
         }
         return list;
@@ -707,7 +707,7 @@ public class IMudClient implements I3Interface {
         List<I3Mud> muds = getSortedI3Muds();
         for (I3Mud m : muds) {
             if ((m != null) && (m.base_mudlib != null)) {
-                final String mudlib = m.base_mudlib.startsWith("CoffeeMud") ? "^H" + m.base_mudlib + "^?" : m.base_mudlib;
+                final String mudlib = m.base_mudlib.startsWith("AetherMud") ? "^H" + m.base_mudlib + "^?" : m.base_mudlib;
                 buf.append("[" + CMStrings.padRight(m.mud_name, col1Width) + "][" + CMStrings.padRight(mudlib, col2Width) + "] " + m.address + " (" + m.player_port + ")\n\r");
             }
         }

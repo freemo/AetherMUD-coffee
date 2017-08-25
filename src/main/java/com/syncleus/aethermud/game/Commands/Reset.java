@@ -620,7 +620,7 @@ public class Reset extends StdCommand {
                 Log.sysOut("Reset", "Password for " + finalName + " has been reset by " + mob.Name());
             } else
                 mob.tell(L("Cancelled."));
-        } else if (s.equalsIgnoreCase("INIFILE") || s.equalsIgnoreCase("coffeemud.ini")) {
+        } else if (s.equalsIgnoreCase("INIFILE") || s.equalsIgnoreCase("aethermud.ini")) {
             CMProps.instance().resetSecurityVars();
             CMProps.instance().resetSystemVars();
             mob.tell(L("Done."));

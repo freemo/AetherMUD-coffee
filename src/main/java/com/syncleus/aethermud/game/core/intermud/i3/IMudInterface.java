@@ -40,8 +40,8 @@ import java.util.Vector;
 public class IMudInterface implements ImudServices, Serializable {
     public static final long serialVersionUID = 0;
     private static volatile long lastPacketReceivedTime = System.currentTimeMillis();
-    public String version = "CoffeeMud vX.X";
-    public String name = "CoffeeMud";
+    public String version = "AetherMud vX.X";
+    public String name = "AetherMud";
     public String i3state = "Development";
     public Room universalR = null;
     public int port = 5555;

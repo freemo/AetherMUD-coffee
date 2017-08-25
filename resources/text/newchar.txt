@@ -8,4 +8,4 @@ You'll find that the character creation process is rather simple, but that the g
 
 For more information, visit the game web site at http://@MudInfo?DOMAIN@:@WebServerPort@
 
-If you are unfamiliar with MUDs, check out the code base site at http://www.coffeemud.org for more information before proceeding.
+If you are unfamiliar with MUDs, check out the code base site at http://www.aethermud.org for more information before proceeding.

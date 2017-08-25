@@ -750,7 +750,7 @@ public class CMChannels extends StdLibrary implements ChannelsLibrary {
                         else {
                             String[] ss = propStr.split(" ");
                             if ((ss.length != 2) && (!CMath.isInteger(ss[0])))
-                                Log.errOut("CMChannels", "Malformed CHANNELBACKLOG entry in coffeemud.ini file: " + propStr);
+                                Log.errOut("CMChannels", "Malformed CHANNELBACKLOG entry in aethermud.ini file: " + propStr);
                             else if (ss[1].equals("DAYS") || ss[1].equals("DAY"))
                                 CMLib.database().trimBackLogEntries(getChannelNames(), Integer.MAX_VALUE, System.currentTimeMillis() - (CMath.s_int(ss[0]) * TimeManager.MILI_DAY));
                             else if (ss[1].equals("WEEKS") || ss[1].equals("WEEK"))
@@ -760,7 +760,7 @@ public class CMChannels extends StdLibrary implements ChannelsLibrary {
                             else if (ss[1].equals("YEARSS") || ss[1].equals("YEAR"))
                                 CMLib.database().trimBackLogEntries(getChannelNames(), Integer.MAX_VALUE, System.currentTimeMillis() - (CMath.s_int(ss[0]) * TimeManager.MILI_YEAR));
                             else
-                                Log.errOut("CMChannels", "Malformed CHANNELBACKLOG entry in coffeemud.ini file: " + propStr);
+                                Log.errOut("CMChannels", "Malformed CHANNELBACKLOG entry in aethermud.ini file: " + propStr);
                         }
                     }
                 } finally {

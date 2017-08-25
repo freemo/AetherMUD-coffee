@@ -46,7 +46,7 @@ public class Credits extends StdCommand {
         if ((credits != null) && (mob.session() != null) && (credits.length() > 0))
             mob.session().colorOnlyPrintln(credits.toString());
         else
-            mob.tell(L("CoffeeMud is (C)2000-2017 by Bo Zimmerman"));
+            mob.tell(L("AetherMud is (C)2000-2017 by Bo Zimmerman"));
         return false;
     }
 

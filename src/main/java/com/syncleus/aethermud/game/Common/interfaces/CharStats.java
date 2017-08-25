@@ -1031,7 +1031,7 @@ public interface CharStats extends CMCommon, Modifiable {
                 final String p = array[1];
                 final List<String> V = CMParms.parseCommas(p, false);
                 if (V.size() != 4) {
-                    Log.errOut("CharStats", "Bad coffeemud.ini charstat row, requires 4 ; separated entries: " + p);
+                    Log.errOut("CharStats", "Bad aethermud.ini charstat row, requires 4 ; separated entries: " + p);
                     continue;
                 }
                 String type = V.get(0).toUpperCase().trim();
@@ -1045,7 +1045,7 @@ public interface CharStats extends CMCommon, Modifiable {
                     if (oldStatCode >= 0)
                         type = "REPLACE";
                     else {
-                        Log.errOut("CharStats", "Bad coffeemud.ini charstat row, bad stat name: " + repStat);
+                        Log.errOut("CharStats", "Bad aethermud.ini charstat row, bad stat name: " + repStat);
                         continue;
                     }
                 }
@@ -1071,7 +1071,7 @@ public interface CharStats extends CMCommon, Modifiable {
                     statAttributionDescriptions[oldStatCode] = adj;
                     statCMMsgMapping[oldStatCode] = -1;
                 } else
-                    Log.errOut("CharStats", "Bad coffeemud.ini charstat row, bad type: " + type);
+                    Log.errOut("CharStats", "Bad aethermud.ini charstat row, bad type: " + type);
             }
         }
 

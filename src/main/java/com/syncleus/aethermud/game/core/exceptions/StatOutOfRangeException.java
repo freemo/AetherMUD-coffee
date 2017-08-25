@@ -16,7 +16,7 @@
  */
 package com.syncleus.aethermud.game.core.exceptions;
 
-public class StatOutOfRangeException extends CoffeeMudException {
+public class StatOutOfRangeException extends AetherMudException {
     static final long serialVersionUID = 0;
 
     public StatOutOfRangeException(String s) {

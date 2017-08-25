@@ -243,7 +243,7 @@ public interface ClanManager extends CMLibrary {
 
     /**
      * Returns the clan associated with a given specific web path.
-     * It is derived from the clanwebsites entry in coffeemud.ini file.
+     * It is derived from the clanwebsites entry in aethermud.ini file.
      * @param webPath a full vfs resource path
      * @return the clan associated with the path, or null
      */
@@ -252,7 +252,7 @@ public interface ClanManager extends CMLibrary {
     /**
      * Returns the template vfs path associated with a given specific
      * web path. It is derived from the clanwebsites entry in
-     * coffeemud.ini file.
+     * aethermud.ini file.
      * @param webPath a full vfs resource path
      * @return the template path associated with the resource path, or null
      */
@@ -398,7 +398,7 @@ public interface ClanManager extends CMLibrary {
 
     /**
      * Makes an announcement to the clan announcement channel from
-     * the given mob.  These are channels marked in the coffeemud.ini file
+     * the given mob.  These are channels marked in the aethermud.ini file
      * as receiving clan info messages.  These messages are only seen
      * by the authors clan members.
      * @param mob the mob who is announcing the message

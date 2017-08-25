@@ -61,7 +61,7 @@ public class DefaultClanGovernment implements ClanGovernment {
     public boolean isFamilyOnly;
     /** Whether clans made from this government are rivalrous by default */
     public boolean isRivalrous;
-    /**  The number of minimum members for the clan to survive -- overrides coffeemud.ini */
+    /**  The number of minimum members for the clan to survive -- overrides aethermud.ini */
     public Integer overrideMinMembers;
     /** Whether conquest is enabled for this clan */
     public boolean conquestEnabled;

@@ -1,7 +1,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <html>
 <head>
-	<link rel="coffeemud icon" href="images/coffeemud.ico" >
+	<link rel="aethermud icon" href="images/aethermud.ico" >
 	<title>Help Files</title>
 	<SCRIPT LANGUAGE=JavaScript>
 	<!--
@@ -25,7 +25,7 @@
 	@back@
 	<P>
 	<TABLE WIDTH=100% BORDER=1>
-	<TR><TD WIDTH=25% COLSPAN=4 BGCOLOR=#90ee90 ALIGN=CENTER><H2>CoffeeMud @MudServerVersion@ Help Topics</H2></TD></TR>
+	<TR><TD WIDTH=25% COLSPAN=4 BGCOLOR=#90ee90 ALIGN=CENTER><H2>AetherMud @MudServerVersion@ Help Topics</H2></TD></TR>
 	@HelpTopics?reset@
 	@loop@
 	<TR>

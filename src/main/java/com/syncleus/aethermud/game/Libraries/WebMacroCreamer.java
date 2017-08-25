@@ -1018,14 +1018,14 @@ public class WebMacroCreamer extends StdLibrary implements WebMacroLibrary, Simp
                 author = "_" + author;
 
             String parent = "";
-            if (subject.toLowerCase().startsWith("[coffeemud]"))
+            if (subject.toLowerCase().startsWith("[aethermud]"))
                 subject = subject.substring(11).trim();
             if (subject.toUpperCase().startsWith("RE:")) {
                 String subj = subject;
-                while (subj.toUpperCase().startsWith("RE:") || subj.toLowerCase().startsWith("[coffeemud]")) {
+                while (subj.toUpperCase().startsWith("RE:") || subj.toLowerCase().startsWith("[aethermud]")) {
                     if (subj.toUpperCase().startsWith("RE:"))
                         subj = subj.substring(3).trim();
-                    if (subj.toLowerCase().startsWith("[coffeemud]"))
+                    if (subj.toLowerCase().startsWith("[aethermud]"))
                         subj = subj.substring(11).trim();
                 }
 
@@ -1199,7 +1199,7 @@ public class WebMacroCreamer extends StdLibrary implements WebMacroLibrary, Simp
     }
 
     // better message url:
-    // http://groups.yahoo.com/api/v1/groups/coffeemud/messages/1/raw
+    // http://groups.yahoo.com/api/v1/groups/aethermud/messages/1/raw
     // all you need is a login token and its done.
     private static class YahooGroupSession {
         protected HttpClient H = null;

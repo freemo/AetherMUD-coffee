@@ -2,8 +2,8 @@
 
 <html>
 <head>
-	<link rel="coffeemud icon" href="images/coffeemud.ico" >
-	<link rel="STYLESHEET" TYPE="TEXT/CSS" HREF="coffeemud.css">
+	<link rel="aethermud icon" href="images/aethermud.ico" >
+	<link rel="STYLESHEET" TYPE="TEXT/CSS" HREF="aethermud.css">
 	<title>Expertises/Skill enhancements</title>
 	<SCRIPT LANGUAGE=JavaScript>
 	<!--
@@ -18,10 +18,10 @@
 </head>
 
 <body BGCOLOR=#00FF99>
-<h3>CoffeeMud @MudServerVersion@ Expertises Information</h3><P>
+<h3>AetherMud @MudServerVersion@ Expertises Information</h3><P>
 
 	<TABLE WIDTH=100% BORDER=1>
-	<TR><TD WIDTH=25% COLSPAN=4 BGCOLOR=#90ee90 ALIGN=CENTER><H2>CoffeeMud @MudServerVersion@ Expertises</H2></TD></TR>
+	<TR><TD WIDTH=25% COLSPAN=4 BGCOLOR=#90ee90 ALIGN=CENTER><H2>AetherMud @MudServerVersion@ Expertises</H2></TD></TR>
 	@ExpertiseNext?reset@
 	@loop@
 	<TR>

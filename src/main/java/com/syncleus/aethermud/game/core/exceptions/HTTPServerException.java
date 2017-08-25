@@ -16,7 +16,7 @@
  */
 package com.syncleus.aethermud.game.core.exceptions;
 
-public class HTTPServerException extends CoffeeMudException {
+public class HTTPServerException extends AetherMudException {
     public static final long serialVersionUID = 0;
 
     public HTTPServerException(String s) {

@@ -41,7 +41,7 @@
 </TR>
 </TABLE>
 <IMG SRC="images/pyramid.jpg" WIDTH=78 HEIGHT=122 ALT="" BORDER="0"><br>
-<h3>CoffeeMud Admin Server</H3>
+<h3>AetherMud Admin Server</H3>
 <B>@WEBSERVERVERSION@ '@WEBSERVERNAME@'</B> on port <B>@WEBSERVERPORT@</B><br>
 <br>
 MUD Server: <b>@MUDSERVERVERSION@</b> on port <b>@MUDSERVERPORT@</b>: <b>@MUDSERVERSTATUS@</B><br>

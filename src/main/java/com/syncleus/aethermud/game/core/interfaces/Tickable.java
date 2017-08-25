@@ -18,7 +18,7 @@ package com.syncleus.aethermud.game.core.interfaces;
 
 /**
  * This interface is implemented by any object which wishes to get periodic thread time from
- * the threads engine.  Almost all CoffeeMud objects implement this interface
+ * the threads engine.  Almost all AetherMud objects implement this interface
  * @author Bo Zimmerman
  *
  */

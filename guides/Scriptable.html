@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta name="generator" content="HTML Tidy, see www.w3.org"/>
-    <title>Scripting in CoffeeMud 5.9</title>
+    <title>Scripting in AetherMud 5.9</title>
     <link rel="StyleSheet" href="style.css" type="text/css" media="screen"/>
     <!-- Modified by Josh Mueller, 2006-05-05, fix validation problems, add index, and fix spelling errors -->
     <!-- Modified by Josh Mueller, 2006-05-06, add close_prog, lock_prog, unlock_prog, open_prog -->
@@ -14,7 +14,7 @@
         <tbody>
         <tr>
             <td colspan="2" align="left" bgcolor="#dfdfdf" width="100%">
-                <h1>Scripting in CoffeeMud 5.9</h1>
+                <h1>Scripting in AetherMud 5.9</h1>
             </td>
         </tr>
         <tr>
@@ -268,13 +268,13 @@
                 </ul>
             </td>
             <td align="left">
-                <p class="center"><img src="images/mug.jpg" alt="coffeemud logo"/></p>
+                <p class="center"><img src="images/mug.jpg" alt="aethermud logo"/></p>
                 <h2><a name="introduction">Introduction to Scripting</a></h2>
                 <p>Scripting is the ability
                     to makes something behave
                     proactively, or respond to game stimuli, in a way specified by the game
                     builders. A Script is the set of commands written by the builders to
-                    perform this function. In CoffeeMud, any object may be scripted. This
+                    perform this function. In AetherMud, any object may be scripted. This
                     means that rooms, areas, items, and especially MOBs can be scripted.</p>
                 <p>Scripting is accomplished
                     through the Scriptable Behavior.
@@ -289,7 +289,7 @@
                 <p>The starting path for the
                     Scriptable behavior is the <span
                         style="font-family: monospace; font-weight: bold;">/resources/</span>
-                    directory in your CoffeeMud package. Any further paths will branch from
+                    directory in your AetherMud package. Any further paths will branch from
                     that directory. The file specified is a text file containing the
                     script. You can also specify more than one script in the Scriptable
                     parameters by separating LOAD= commands with the ~ character like so:</p>
@@ -312,12 +312,12 @@
                 <p>When the Scriptable
                     behavior loads a file using the LOAD=
                     syntax, it automatically keeps a copy of it in memory for future use.
-                    This memory cache is called the CoffeeMud Resources. If you have a
+                    This memory cache is called the AetherMud Resources. If you have a
                     Scriptable prog you have entered using the LOAD= syntax, you can see
                     its entry in the cache by using your Archon character to enter LIST
-                    RESOURCES from the CoffeeMud command line. Because the script files
+                    RESOURCES from the AetherMud command line. Because the script files
                     from disk are kept in memory for quick access, any changes or additions
-                    to your script on disk will not be immediately noticed by the CoffeeMud
+                    to your script on disk will not be immediately noticed by the AetherMud
                     engine. To force the engine to notice your changes, you must first
                     UNLOAD your script file from the Resources cache. This is done by using
                     the Archon command UNLOAD. Check the ahelp entry for that command for
@@ -325,11 +325,11 @@
                     files on disk.</p>
                 <p>Those who are familiar
                     with the mobprog scripting language in
-                    other mud codebases will have no trouble picking up on the CoffeeMud
+                    other mud codebases will have no trouble picking up on the AetherMud
                     scripting language. In fact, most of your existing scripts will
                     probably work without changes.</p>
                 <h2><a name="structure">Script Structure</a></h2>
-                <p>The CoffeeMud scripting
+                <p>The AetherMud scripting
                     language is an "event-based" language.
                     Each script may contain one or more event "triggers". Each trigger
                     defines the conditions of its occurrence on a single line. This line is
@@ -596,7 +596,7 @@
                 <pre>cnclmsg_prog [message code] [commands/keyword list]<br/>cnclmsg_prog [message code] p [commands/keyword list]<br/>cnclmsg_prog [message code] all<br/></pre>
                 <p>This type of mobprog is
                     definitely for those very familiar
-                    with CoffeeMud. In fact, I'd recommend at least a cursory knowledge of
+                    with AetherMud. In fact, I'd recommend at least a cursory knowledge of
                     the Programmer's Guide to consider using it. The purpose of this
                     trigger is that it executes before a particular event or "message"
                     occurs in the mud. The kind of event is called the "message code". The
@@ -733,7 +733,7 @@ COMMANDFAIL , METACOMMAND</span>
                 <p>This type of mobprog
                     triggers once per mud day, on the days of
                     the month listed. This allows you to have a script which triggers very
-                    infrequently indeed. There are 30 days per month in CoffeeMud.</p>
+                    infrequently indeed. There are 30 days per month in AetherMud.</p>
                 <p>EXAMPLES:</p>
                 <pre>day_prog 20 21 22<br/></pre>
                 <p>This will trigger if day
@@ -832,7 +832,7 @@ COMMANDFAIL , METACOMMAND</span>
                 <pre>execmsg_prog [message code] [commands/keyword list]<br/>execmsg_prog [message code] p [commands/keyword list]<br/>execmsg_prog [message code] all<br/></pre>
                 <p>This type of mobprog is
                     definitely for those very familiar
-                    with CoffeeMud. In fact, I'd recommend at least a cursory knowledge of
+                    with AetherMud. In fact, I'd recommend at least a cursory knowledge of
                     the Programmer's Guide to consider using it. The purpose of this
                     trigger is that it executes while a particular and valid event or
                     "message" occurs in the mud. The kind of event is called the "message
@@ -1558,7 +1558,7 @@ DUELLOSS, COMMANDFAIL, METACOMMAND</span>
                 <p>This type of mobprog
                     triggers once per mud hour, on the hours
                     of the day listed. This allows you to have a script which triggers
-                    infrequently. There are 16 hours per day (0-15) in CoffeeMud.</p>
+                    infrequently. There are 16 hours per day (0-15) in AetherMud.</p>
                 <p>EXAMPLES:</p>
                 <pre>time_prog 10 1 2<br/></pre>
                 <p>This will trigger if hour
@@ -2924,7 +2924,7 @@ DUELLOSS, COMMANDFAIL, METACOMMAND</span>
                 <p>Javascript is a wholly
                     different language than the standard
                     Scriptable/MOBPROG language described in this document. You should read
-                    the JavaScripting section of the CoffeeMud <a href="Programming.html">Programming
+                    the JavaScripting section of the AetherMud <a href="Programming.html">Programming
                         Guide</a> for more information, as
                     well as the following web sites
                     which discuss the usage and syntax of the Javascript language itself: <a
@@ -2994,13 +2994,13 @@ DUELLOSS, COMMANDFAIL, METACOMMAND</span>
                 <pre>mpaffect [spell name] [target] [parameters]<br/></pre>
                 <p>This command will put the
                     target under the affect of the given
-                    spell, chant, prayer, song, skill, or CoffeeMud property. This is not
+                    spell, chant, prayer, song, skill, or AetherMud property. This is not
                     the same as someone casting the given spell on the target. Instead,
                     this command causes the target simply to come under the affect (as if
                     the whole casting process were skipped). This means that not all spells
                     will work with this command. Fireball, for instance, since it has no
                     effect after casting, would do nothing under this command. The
-                    parameters given apply specifically to CoffeeMud properties, and are
+                    parameters given apply specifically to AetherMud properties, and are
                     unnecessary for most spells, chants, etc.</p>
                 <p>EXAMPLES:</p>
                 <pre>mpaffect Invisibility $n<br/>mpaffect Prop_PracticeDummy $n KILLABLE<br/></pre>
@@ -3081,8 +3081,8 @@ $var]</span>
                 <pre>mpbehave [behavior id] [target] [parameters]<br/></pre>
                 <p>This command will put the
                     target under the affect of the given
-                    CoffeeMud behavior. The parameters given apply specifically to
-                    CoffeeMud behaviors. The Archon may use LIST BEHAVIORS, and AHELP
+                    AetherMud behavior. The parameters given apply specifically to
+                    AetherMud behaviors. The Archon may use LIST BEHAVIORS, and AHELP
                     [behavior name] for more information.</p>
                 <p>EXAMPLES:</p>
                 <pre>mpbehave Aggressive $n<br/>mpbehave Mobile $n<br/>mbehave Scriptable $n ONCE_PROG;say hello;~;<br/></pre>
@@ -3135,7 +3135,7 @@ $var]</span>
 [variable]</span><span style="font-family: monospace;"> [choices]
 [default choice] [prompt string]</span>
                 <p>This command blocks the
-                    current coffeemud thread and waits for
+                    current aethermud thread and waits for
                     the player character denoted by the pc name variable to enter a
                     one-letter choice from among the list of choices. &nbsp;This
                     command
@@ -3181,7 +3181,7 @@ $var]</span>
 [variable]</span><span style="font-family: monospace;"> [default value]
 [prompt string]</span>
                 <p>This
-                    command blocks the current coffeemud thread and waits for the player
+                    command blocks the current aethermud thread and waits for the player
                     character denoted by the pc name variable to enter either yes or no, Y
                     or N. &nbsp;This command will then store the
                     chosen value in a variable of the given name under the pc name's
@@ -3565,9 +3565,9 @@ $var]</span>
                 mplog error [module] [message] mplog info [module] [message] mplog
                 debug [module] [message]
                 <p>This command outputs the
-                    given message to the coffeemud log
+                    given message to the aethermud log
                     file. For debug style messages to appear, the appropriate DBGMSGS entry
-                    in the coffeemud.ini file must be turned on.</p>
+                    in the aethermud.ini file must be turned on.</p>
                 <p>EXAMPLE:</p>
                 mplog info MyQuest $n has successfully completed my quest.
                 <h3><a name="mpm2i2m">mpm2i2m</a></h3>
@@ -3806,7 +3806,7 @@ $var]</span>
 [pc name]
 [variable]</span><span style="font-family: monospace;"> [prompt string]</span>
                 <p>This
-                    command blocks the current coffeemud thread and waits for the player
+                    command blocks the current aethermud thread and waits for the player
                     character denoted by the pc name variable to enter either a string
                     value. &nbsp;This command will then store the&nbsp;value in a
                     variable
@@ -3877,7 +3877,7 @@ $var]</span>
                     or mpoload fromfile to ensure that the quest will clean up the item or
                     mob when the quest ends. You can also set a Scriptable-only variable
                     called STATISTICS to either ACCEPTED, SUCCESS, or FAILED to help
-                    CoffeeMud keep tabs on your quests.</p>
+                    AetherMud keep tabs on your quests.</p>
                 <p>EXAMPLES:</p>
                 <pre>mpqset 'myquest' 'myspecialquestvariable' $n<br/></pre>
                 <h3><a name="mpquestpoints">mpquestpoints</a></h3>
@@ -4270,7 +4270,7 @@ $var]</span>
                     the name of a Scriptable script file
                     that has already been loaded from the filesystem by a Scriptable
                     behavior and parsed for processing. The parameter MUST resolve to a
-                    valid file in your CoffeeMud file system, and is usually the result of
+                    valid file in your AetherMud file system, and is usually the result of
                     putting a LOAD=&lt;filename&gt; parameter on a Scriptable
                     behavior.
                     Remember that, since this is a Scriptable filename, that /resources/ is
@@ -4279,7 +4279,7 @@ $var]</span>
                     command is to allow the script writer to
                     de-cache his scripts automatically for cases where scripts are being
                     dynamically built, so that they can be re-read and re-processed by the
-                    CoffeeMud Scripting Engine.</p>
+                    AetherMud Scripting Engine.</p>
                 <p>EXAMPLES:</p>
                 mpunloadscript progs/myscript.script
                 <h3><a name="mpunlock">mpunlock</a></h3>
@@ -4738,7 +4738,7 @@ contain a dagger.</span><br style="font-family: monospace;"/>
                 <pre>isimmort(character)<br/></pre>
                 <p>This checks to see if the
                     character variable is immortal. In
-                    CoffeeMud, that means they have the security code IMMORT, which makes
+                    AetherMud, that means they have the security code IMMORT, which makes
                     them unable to die.</p>
                 <p>EXAMPLE:</p>
                 <pre>if isimmort($n)<br/> mpecho The person triggering my prog is an immortal or lord.<br/>else<br/> mpecho The person triggering my prog is a mortal.<br/>endif<br/></pre>
@@ -5167,7 +5167,7 @@ value)</span>
                     you may also add the extension "_ROOMID" to return
                     the&nbsp;official
                     room id of the location of the object (if available), or "_CLASS" to
-                    return the CoffeeMud Class ID, or the Java class name, whichever is
+                    return the AetherMud Class ID, or the Java class name, whichever is
                     appropriate.</p>
                 <p>If the Scriptable
                     behavior was granted as part of a Quest,
