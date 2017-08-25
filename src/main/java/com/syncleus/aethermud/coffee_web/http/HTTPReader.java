@@ -16,9 +16,9 @@
  */
 package com.planet_ink.coffee_web.http;
 
-import com.planet_ink.coffee_mud.core.Log;
-import com.planet_ink.coffee_mud.core.Log.Type;
-import com.planet_ink.coffee_mud.core.collections.Pair;
+import com.planet_ink.game.core.Log;
+import com.planet_ink.game.core.Log.Type;
+import com.planet_ink.game.core.collections.Pair;
 import com.planet_ink.coffee_web.interfaces.DataBuffers;
 import com.planet_ink.coffee_web.interfaces.HTTPIOHandler;
 import com.planet_ink.coffee_web.interfaces.HTTPRequest;

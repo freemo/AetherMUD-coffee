@@ -16,7 +16,7 @@
  */
 package com.planet_ink.coffee_web.server;
 
-import com.planet_ink.coffee_mud.core.Log;
+import com.planet_ink.game.core.Log;
 import com.planet_ink.coffee_web.http.*;
 import com.planet_ink.coffee_web.interfaces.HTTPIOHandler;
 import com.planet_ink.coffee_web.interfaces.MimeConverterManager;

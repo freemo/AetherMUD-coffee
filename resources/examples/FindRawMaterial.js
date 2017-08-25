@@ -1,7 +1,7 @@
-//extends com.planet_ink.coffee_mud.Commands.StdCommand
-var CMLib = Packages.com.planet_ink.coffee_mud.core.CMLib;
-var CMParms = Packages.com.planet_ink.coffee_mud.core.CMParms;
-var RawMaterial = Packages.com.planet_ink.coffee_mud.Items.interfaces.RawMaterial;
+//extends com.planet_ink.game.Commands.StdCommand
+var CMLib = Packages.com.planet_ink.game.core.CMLib;
+var CMParms = Packages.com.planet_ink.game.core.CMParms;
+var RawMaterial = Packages.com.planet_ink.game.Items.interfaces.RawMaterial;
 
 function ID() {
     return "FindRawMaterial";

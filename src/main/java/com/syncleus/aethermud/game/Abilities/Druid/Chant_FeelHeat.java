@@ -1,0 +1,167 @@
+/**
+ * Copyright 2017 Syncleus, Inc.
+ * with portions copyright 2004-2017 Bo Zimmerman
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+package com.planet_ink.game.Abilities.Druid;
+
+import com.planet_ink.game.Abilities.interfaces.Ability;
+import com.planet_ink.game.Common.interfaces.CMMsg;
+import com.planet_ink.game.Common.interfaces.CharStats;
+import com.planet_ink.game.Common.interfaces.Climate;
+import com.planet_ink.game.Items.interfaces.Weapon;
+import com.planet_ink.game.Locales.interfaces.Room;
+import com.planet_ink.game.MOBS.interfaces.MOB;
+import com.planet_ink.game.core.CMClass;
+import com.planet_ink.game.core.CMLib;
+import com.planet_ink.game.core.CMath;
+import com.planet_ink.game.core.interfaces.Environmental;
+import com.planet_ink.game.core.interfaces.Physical;
+import com.planet_ink.game.core.interfaces.Tickable;
+
+import java.util.List;
+
+
+public class Chant_FeelHeat extends Chant {
+    private final static String localizedName = CMLib.lang().L("Feel Heat");
+    private final static String localizedStaticDisplay = CMLib.lang().L("(Feel Heat)");
+
+    @Override
+    public String ID() {
+        return "Chant_FeelHeat";
+    }
+
+    @Override
+    public String name() {
+        return localizedName;
+    }
+
+    @Override
+    public String displayText() {
+        return localizedStaticDisplay;
+    }
+
+    @Override
+    public int classificationCode() {
+        return Ability.ACODE_CHANT | Ability.DOMAIN_ENDURING;
+    }
+
+    @Override
+    public int abstractQuality() {
+        return Ability.QUALITY_MALICIOUS;
+    }
+
+    @Override
+    protected int canAffectCode() {
+        return CAN_MOBS;
+    }
+
+    @Override
+    protected int canTargetCode() {
+        return CAN_MOBS;
+    }
+
+    @Override
+    public boolean okMessage(final Environmental myHost, final CMMsg msg) {
+        if (!super.okMessage(myHost, msg))
+            return false;
+
+        if (!(affected instanceof MOB))
+            return true;
+
+        final MOB mob = (MOB) affected;
+        if ((msg.amITarget(mob)) && (msg.targetMinor() == CMMsg.TYP_DAMAGE)
+            && (msg.sourceMinor() == CMMsg.TYP_FIRE)) {
+            final int recovery = (int) Math.round(CMath.mul((msg.value()), 2.0));
+            msg.setValue(msg.value() + recovery);
+        }
+        return true;
+    }
+
+    @Override
+    public boolean tick(Tickable ticking, int tickID) {
+        if (!super.tick(ticking, tickID))
+            return false;
+        if (tickID != Tickable.TICKID_MOB)
+            return false;
+        if ((affecting() != null) && (affecting() instanceof MOB)) {
+            final MOB M = (MOB) affecting();
+            final Room room = M.location();
+            if (room != null) {
+                final MOB invoker = (invoker() != null) ? invoker() : M;
+                if ((room.getArea().getClimateObj().weatherType(room) == Climate.WEATHER_HEAT_WAVE)
+                    && (CMLib.dice().rollPercentage() > M.charStats().getSave(CharStats.STAT_SAVE_FIRE))) {
+                    final int damage = CMLib.dice().roll(1, 8, 0);
+                    CMLib.combat().postDamage(invoker, M, null, damage, CMMsg.MASK_MALICIOUS | CMMsg.MASK_ALWAYS | CMMsg.TYP_FIRE, Weapon.TYPE_BURNING, L("The scorching heat <DAMAGE> <T-NAME>!"));
+                } else if ((room.getArea().getClimateObj().weatherType(room) == Climate.WEATHER_DUSTSTORM)
+                    && (CMLib.dice().rollPercentage() > M.charStats().getSave(CharStats.STAT_SAVE_FIRE))) {
+                    final int damage = CMLib.dice().roll(1, 16, 0);
+                    CMLib.combat().postDamage(invoker, M, null, damage, CMMsg.MASK_MALICIOUS | CMMsg.MASK_ALWAYS | CMMsg.TYP_FIRE, Weapon.TYPE_BURNING, L("The burning hot dust <DAMAGE> <T-NAME>!"));
+                } else if ((room.getArea().getClimateObj().weatherType(room) == Climate.WEATHER_DROUGHT)
+                    && (CMLib.dice().rollPercentage() > M.charStats().getSave(CharStats.STAT_SAVE_FIRE))) {
+                    final int damage = CMLib.dice().roll(1, 8, 0);
+                    CMLib.combat().postDamage(invoker, M, null, damage, CMMsg.MASK_MALICIOUS | CMMsg.MASK_ALWAYS | CMMsg.TYP_FIRE, Weapon.TYPE_BURNING, L("The burning dry heat <DAMAGE> <T-NAME>!"));
+                } else
+                    return true;
+                CMLib.combat().postRevengeAttack(M, invoker);
+            }
+        }
+        return true;
+    }
+
+    @Override
+    public void unInvoke() {
+        // undo the affects of this spell
+        if (!(affected instanceof MOB))
+            return;
+        final MOB mob = (MOB) affected;
+        if (canBeUninvoked())
+            mob.tell(L("Your hot feeling is gone."));
+
+        super.unInvoke();
+
+    }
+
+    @Override
+    public void affectCharStats(MOB affectedMOB, CharStats affectedStats) {
+        super.affectCharStats(affectedMOB, affectedStats);
+        affectedStats.setStat(CharStats.STAT_SAVE_FIRE, affectedStats.getStat(CharStats.STAT_SAVE_FIRE) - 100);
+    }
+
+    @Override
+    public boolean invoke(MOB mob, List<String> commands, Physical givenTarget, boolean auto, int asLevel) {
+        final MOB target = this.getTarget(mob, commands, givenTarget);
+        if (target == null)
+            return false;
+
+        if (!super.invoke(mob, commands, givenTarget, auto, asLevel))
+            return false;
+        final boolean success = proficiencyCheck(mob, 0, auto);
+
+        if (success) {
+            invoker = mob;
+            final CMMsg msg = CMClass.getMsg(mob, target, this, verbalCastCode(mob, target, auto), auto ? "" : L("^S<S-NAME> chant(s) to <T-NAMESELF>.^?"));
+            if (mob.location().okMessage(mob, msg)) {
+                mob.location().send(mob, msg);
+                if (msg.value() <= 0) {
+                    mob.location().show(target, null, CMMsg.MSG_OK_VISUAL, L("<S-NAME> feel(s) very hot"));
+                    maliciousAffect(mob, target, asLevel, 0, -1);
+                }
+            }
+        } else
+            return maliciousFizzle(mob, target, L("<S-NAME> chant(s) to <T-NAMESELF>, but the magic fades."));
+        // return whether it worked
+        return success;
+    }
+}

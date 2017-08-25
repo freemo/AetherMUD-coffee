@@ -1,0 +1,63 @@
+/**
+ * Copyright 2017 Syncleus, Inc.
+ * with portions copyright 2004-2017 Bo Zimmerman
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+package com.planet_ink.game.Commands;
+
+import com.planet_ink.game.Common.interfaces.PlayerAccount;
+import com.planet_ink.game.Common.interfaces.Session;
+import com.planet_ink.game.MOBS.interfaces.MOB;
+
+import java.util.List;
+
+
+public class NoANSI extends StdCommand {
+    private final String[] access = I(new String[]{"NOANSI", "NOCOLOR", "NOCOLOUR"});
+
+    public NoANSI() {
+    }
+
+    @Override
+    public String[] getAccessWords() {
+        return access;
+    }
+
+    @Override
+    public boolean execute(MOB mob, List<String> commands, int metaFlags)
+        throws java.io.IOException {
+        if (!mob.isMonster()) {
+            PlayerAccount acct = null;
+            if (mob.playerStats() != null)
+                acct = mob.playerStats().getAccount();
+            if (acct != null)
+                acct.setFlag(PlayerAccount.AccountFlag.ANSI, false);
+            if (mob.isAttributeSet(MOB.Attrib.ANSI)) {
+                mob.setAttribute(MOB.Attrib.ANSI, false);
+                mob.tell(L("ANSI colour disabled.\n\r"));
+            } else {
+                mob.tell(L("ANSI is already disabled.\n\r"));
+            }
+            mob.session().setClientTelnetMode(Session.TELNET_ANSI, false);
+            mob.session().setServerTelnetMode(Session.TELNET_ANSI, false);
+        }
+        return false;
+    }
+
+    @Override
+    public boolean canBeOrdered() {
+        return true;
+    }
+
+}

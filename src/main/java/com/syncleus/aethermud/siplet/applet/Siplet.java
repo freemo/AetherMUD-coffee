@@ -16,7 +16,7 @@
  */
 package com.planet_ink.siplet.applet;
 
-import com.planet_ink.coffee_mud.core.CMLib;
+import com.planet_ink.game.core.CMLib;
 import com.planet_ink.siplet.support.TelnetFilter;
 
 import java.awt.*;

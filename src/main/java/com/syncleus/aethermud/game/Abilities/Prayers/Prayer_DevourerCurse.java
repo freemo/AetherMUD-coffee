@@ -1,0 +1,126 @@
+/**
+ * Copyright 2017 Syncleus, Inc.
+ * with portions copyright 2004-2017 Bo Zimmerman
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+package com.planet_ink.game.Abilities.Prayers;
+
+import com.planet_ink.game.Abilities.interfaces.Ability;
+import com.planet_ink.game.Common.interfaces.CMMsg;
+import com.planet_ink.game.Common.interfaces.CharStats;
+import com.planet_ink.game.Common.interfaces.PhyStats;
+import com.planet_ink.game.MOBS.interfaces.MOB;
+import com.planet_ink.game.core.CMClass;
+import com.planet_ink.game.core.CMLib;
+import com.planet_ink.game.core.interfaces.Physical;
+
+import java.util.List;
+
+
+public class Prayer_DevourerCurse extends Prayer {
+    private final static String localizedName = CMLib.lang().L("Devourer Curse");
+    private final static String localizedStaticDisplay = CMLib.lang().L("(Face of the Devourer)");
+
+    @Override
+    public String ID() {
+        return "Prayer_DevourerCurse";
+    }
+
+    @Override
+    public String name() {
+        return localizedName;
+    }
+
+    @Override
+    public String displayText() {
+        return localizedStaticDisplay;
+    }
+
+    @Override
+    public int abstractQuality() {
+        return Ability.QUALITY_MALICIOUS;
+    }
+
+    @Override
+    public int classificationCode() {
+        return Ability.ACODE_PRAYER | Ability.DOMAIN_CURSING;
+    }
+
+    @Override
+    public long flags() {
+        return Ability.FLAG_UNHOLY;
+    }
+
+    @Override
+    protected int canAffectCode() {
+        return Ability.CAN_MOBS;
+    }
+
+    @Override
+    protected int canTargetCode() {
+        return Ability.CAN_MOBS;
+    }
+
+    @Override
+    public void affectPhyStats(Physical affected, PhyStats affectableStats) {
+        super.affectPhyStats(affected, affectableStats);
+        if (affected == null)
+            return;
+        affectableStats.setName(L("@x1, a horrid devourer", affected.Name()));
+    }
+
+    @Override
+    public void affectCharStats(MOB affected, CharStats affectableStats) {
+        super.affectCharStats(affected, affectableStats);
+        if (affected == null)
+            return;
+        affectableStats.setStat(CharStats.STAT_CHARISMA, 3);
+    }
+
+    @Override
+    public void unInvoke() {
+        // undo the affects of this spell
+        final MOB mob = (MOB) affected;
+        if (canBeUninvoked() && (mob != null))
+            mob.tell(L("The devourer curse is lifted."));
+        super.unInvoke();
+    }
+
+    @Override
+    public boolean invoke(MOB mob, List<String> commands, Physical givenTarget, boolean auto, int asLevel) {
+        final MOB target = this.getTarget(mob, commands, givenTarget);
+        if (target == null)
+            return false;
+
+        if (!super.invoke(mob, commands, givenTarget, auto, asLevel))
+            return false;
+
+        boolean success = proficiencyCheck(mob, 0, auto);
+
+        if (success) {
+            final CMMsg msg = CMClass.getMsg(mob, target, this, verbalCastCode(mob, target, auto) | CMMsg.MASK_MALICIOUS, auto ? L("<T-NAME> <T-IS-ARE> cursed by the devourer!") : L("^S<S-NAME> curse(s) <T-NAMESELF>.^?"));
+            if (mob.location().okMessage(mob, msg)) {
+                mob.location().send(mob, msg);
+                if (msg.value() <= 0) {
+                    success = maliciousAffect(mob, target, asLevel, 0, -1) != null;
+                    target.recoverPhyStats();
+                }
+            }
+        } else
+            return maliciousFizzle(mob, target, L("<S-NAME> attempt(s) to curse <T-NAMESELF>, but nothing happens."));
+
+        // return whether it worked
+        return success;
+    }
+}

@@ -105,78 +105,78 @@ endif
 # Packages we should compile
 PACKAGES = \
 com.planet_ink.fakedb \
-com.planet_ink.coffee_mud.Abilities \
-com.planet_ink.coffee_mud.application \
-com.planet_ink.coffee_mud.Areas \
-com.planet_ink.coffee_mud.Behaviors \
-com.planet_ink.coffee_mud.CharClasses \
-com.planet_ink.coffee_mud.Commands \
-com.planet_ink.coffee_mud.Common \
-com.planet_ink.coffee_mud.core \
-com.planet_ink.coffee_mud.core.collections \
-com.planet_ink.coffee_mud.core.database \
-com.planet_ink.coffee_mud.core.exceptions \
-com.planet_ink.coffee_mud.core.interfaces \
-com.planet_ink.coffee_mud.core.intermud \
-com.planet_ink.coffee_mud.core.intermud.cm1 \
-com.planet_ink.coffee_mud.core.intermud.cm1.commands \
-com.planet_ink.coffee_mud.core.intermud.imc2 \
-com.planet_ink.coffee_mud.core.intermud.i3 \
-com.planet_ink.coffee_mud.core.intermud.i3.net \
-com.planet_ink.coffee_mud.core.intermud.i3.packets \
-com.planet_ink.coffee_mud.core.intermud.i3.persist \
-com.planet_ink.coffee_mud.core.intermud.i3.server \
-com.planet_ink.coffee_mud.core.smtp \
-com.planet_ink.coffee_mud.core.threads \
-com.planet_ink.coffee_mud.Exits \
-com.planet_ink.coffee_mud.Libraries \
-com.planet_ink.coffee_mud.Locales \
-com.planet_ink.coffee_mud.MOBS \
-com.planet_ink.coffee_mud.Races \
-com.planet_ink.coffee_mud.WebMacros \
-com.planet_ink.coffee_mud.Abilities.Archon \
-com.planet_ink.coffee_mud.Abilities.Common \
-com.planet_ink.coffee_mud.Abilities.Diseases \
-com.planet_ink.coffee_mud.Abilities.Druid \
-com.planet_ink.coffee_mud.Abilities.Fighter \
-com.planet_ink.coffee_mud.Abilities.interfaces \
-com.planet_ink.coffee_mud.Abilities.Languages \
-com.planet_ink.coffee_mud.Abilities.Misc \
-com.planet_ink.coffee_mud.Abilities.Paladin \
-com.planet_ink.coffee_mud.Abilities.Poisons \
-com.planet_ink.coffee_mud.Abilities.Prayers \
-com.planet_ink.coffee_mud.Abilities.Properties \
-com.planet_ink.coffee_mud.Abilities.Ranger \
-com.planet_ink.coffee_mud.Abilities.Skills \
-com.planet_ink.coffee_mud.Abilities.Songs \
-com.planet_ink.coffee_mud.Abilities.Specializations \
-com.planet_ink.coffee_mud.Abilities.Spells \
-com.planet_ink.coffee_mud.Abilities.SuperPowers \
-com.planet_ink.coffee_mud.Abilities.Tech \
-com.planet_ink.coffee_mud.Abilities.Thief \
-com.planet_ink.coffee_mud.Abilities.Traps \
-com.planet_ink.coffee_mud.Areas.interfaces \
-com.planet_ink.coffee_mud.Behaviors.interfaces \
-com.planet_ink.coffee_mud.CharClasses.interfaces \
-com.planet_ink.coffee_mud.Commands.interfaces \
-com.planet_ink.coffee_mud.Common.interfaces \
-com.planet_ink.coffee_mud.Exits.interfaces \
-com.planet_ink.coffee_mud.Items.Armor \
-com.planet_ink.coffee_mud.Items.Basic \
-com.planet_ink.coffee_mud.Items.ClanItems \
-com.planet_ink.coffee_mud.Items.interfaces \
-com.planet_ink.coffee_mud.Items.MiscMagic \
-com.planet_ink.coffee_mud.Items.BasicTech \
-com.planet_ink.coffee_mud.Items.ShipTech \
-com.planet_ink.coffee_mud.Items.Software \
-com.planet_ink.coffee_mud.Items.Weapons \
-com.planet_ink.coffee_mud.Libraries.interfaces \
-com.planet_ink.coffee_mud.Libraries.layouts \
-com.planet_ink.coffee_mud.Locales.interfaces \
-com.planet_ink.coffee_mud.MOBS.interfaces \
-com.planet_ink.coffee_mud.Races.interfaces \
-com.planet_ink.coffee_mud.WebMacros.grinder \
-com.planet_ink.coffee_mud.WebMacros.interfaces \
+com.planet_ink.game.Abilities \
+com.planet_ink.game.application \
+com.planet_ink.game.Areas \
+com.planet_ink.game.Behaviors \
+com.planet_ink.game.CharClasses \
+com.planet_ink.game.Commands \
+com.planet_ink.game.Common \
+com.planet_ink.game.core \
+com.planet_ink.game.core.collections \
+com.planet_ink.game.core.database \
+com.planet_ink.game.core.exceptions \
+com.planet_ink.game.core.interfaces \
+com.planet_ink.game.core.intermud \
+com.planet_ink.game.core.intermud.cm1 \
+com.planet_ink.game.core.intermud.cm1.commands \
+com.planet_ink.game.core.intermud.imc2 \
+com.planet_ink.game.core.intermud.i3 \
+com.planet_ink.game.core.intermud.i3.net \
+com.planet_ink.game.core.intermud.i3.packets \
+com.planet_ink.game.core.intermud.i3.persist \
+com.planet_ink.game.core.intermud.i3.server \
+com.planet_ink.game.core.smtp \
+com.planet_ink.game.core.threads \
+com.planet_ink.game.Exits \
+com.planet_ink.game.Libraries \
+com.planet_ink.game.Locales \
+com.planet_ink.game.MOBS \
+com.planet_ink.game.Races \
+com.planet_ink.game.WebMacros \
+com.planet_ink.game.Abilities.Archon \
+com.planet_ink.game.Abilities.Common \
+com.planet_ink.game.Abilities.Diseases \
+com.planet_ink.game.Abilities.Druid \
+com.planet_ink.game.Abilities.Fighter \
+com.planet_ink.game.Abilities.interfaces \
+com.planet_ink.game.Abilities.Languages \
+com.planet_ink.game.Abilities.Misc \
+com.planet_ink.game.Abilities.Paladin \
+com.planet_ink.game.Abilities.Poisons \
+com.planet_ink.game.Abilities.Prayers \
+com.planet_ink.game.Abilities.Properties \
+com.planet_ink.game.Abilities.Ranger \
+com.planet_ink.game.Abilities.Skills \
+com.planet_ink.game.Abilities.Songs \
+com.planet_ink.game.Abilities.Specializations \
+com.planet_ink.game.Abilities.Spells \
+com.planet_ink.game.Abilities.SuperPowers \
+com.planet_ink.game.Abilities.Tech \
+com.planet_ink.game.Abilities.Thief \
+com.planet_ink.game.Abilities.Traps \
+com.planet_ink.game.Areas.interfaces \
+com.planet_ink.game.Behaviors.interfaces \
+com.planet_ink.game.CharClasses.interfaces \
+com.planet_ink.game.Commands.interfaces \
+com.planet_ink.game.Common.interfaces \
+com.planet_ink.game.Exits.interfaces \
+com.planet_ink.game.Items.Armor \
+com.planet_ink.game.Items.Basic \
+com.planet_ink.game.Items.ClanItems \
+com.planet_ink.game.Items.interfaces \
+com.planet_ink.game.Items.MiscMagic \
+com.planet_ink.game.Items.BasicTech \
+com.planet_ink.game.Items.ShipTech \
+com.planet_ink.game.Items.Software \
+com.planet_ink.game.Items.Weapons \
+com.planet_ink.game.Libraries.interfaces \
+com.planet_ink.game.Libraries.layouts \
+com.planet_ink.game.Locales.interfaces \
+com.planet_ink.game.MOBS.interfaces \
+com.planet_ink.game.Races.interfaces \
+com.planet_ink.game.WebMacros.grinder \
+com.planet_ink.game.WebMacros.interfaces \
 com.planet_ink.coffee_web.converters \
 com.planet_ink.coffee_web.http \
 com.planet_ink.coffee_web.interfaces \
@@ -189,9 +189,9 @@ com.planet_ink.siplet.support \
 
 # All packages that can be recursively compiled.
 ALL_PACKAGES = \
-	com.planet_ink.coffee_mud \
+	com.planet_ink.game \
 	com.planet_ink \
-    com.planet_ink.coffee_mud.Items \
+    com.planet_ink.game.Items \
 	com \
 	$(PACKAGES)
 
@@ -490,83 +490,83 @@ endif
 
 #package targets
 
-com.planet_ink.coffee_mud : $(call PACKAGE_OBJS,com.planet_ink.coffee_mud)
+com.planet_ink.game : $(call PACKAGE_OBJS,com.planet_ink.game)
 com.planet_ink : $(call PACKAGE_OBJS,com.planet_ink)
-com.planet_ink.coffee_mud.Items : $(call PACKAGE_OBJS,com.planet_ink.coffee_mud.Items)
+com.planet_ink.game.Items : $(call PACKAGE_OBJS,com.planet_ink.game.Items)
 com : $(call PACKAGE_OBJS,com)
 com.planet_ink.fakedb : $(call PACKAGE_OBJS,com.planet_ink.fakedb)
-com.planet_ink.coffee_mud.Abilities : $(call PACKAGE_OBJS,com.planet_ink.coffee_mud.Abilities)
-com.planet_ink.coffee_mud.application : $(call PACKAGE_OBJS,com.planet_ink.coffee_mud.application)
-com.planet_ink.coffee_mud.Areas : $(call PACKAGE_OBJS,com.planet_ink.coffee_mud.Areas)
-com.planet_ink.coffee_mud.Behaviors : $(call PACKAGE_OBJS,com.planet_ink.coffee_mud.Behaviors)
-com.planet_ink.coffee_mud.CharClasses : $(call PACKAGE_OBJS,com.planet_ink.coffee_mud.CharClasses)
-com.planet_ink.coffee_mud.Commands : $(call PACKAGE_OBJS,com.planet_ink.coffee_mud.Commands)
-com.planet_ink.coffee_mud.Common : $(call PACKAGE_OBJS,com.planet_ink.coffee_mud.Common)
-com.planet_ink.coffee_mud.core : $(call PACKAGE_OBJS,com.planet_ink.coffee_mud.core)
-com.planet_ink.coffee_mud.Exits : $(call PACKAGE_OBJS,com.planet_ink.coffee_mud.Exits)
-com.planet_ink.coffee_mud.Libraries : $(call PACKAGE_OBJS,com.planet_ink.coffee_mud.Libraries)
-com.planet_ink.coffee_mud.Locales : $(call PACKAGE_OBJS,com.planet_ink.coffee_mud.Locales)
-com.planet_ink.coffee_mud.MOBS : $(call PACKAGE_OBJS,com.planet_ink.coffee_mud.MOBS)
-com.planet_ink.coffee_mud.Races : $(call PACKAGE_OBJS,com.planet_ink.coffee_mud.Races)
-com.planet_ink.coffee_mud.WebMacros : $(call PACKAGE_OBJS,com.planet_ink.coffee_mud.WebMacros)
-com.planet_ink.coffee_mud.Abilities.Archon : $(call PACKAGE_OBJS,com.planet_ink.coffee_mud.Abilities.Archon)
-com.planet_ink.coffee_mud.Abilities.Common : $(call PACKAGE_OBJS,com.planet_ink.coffee_mud.Abilities.Common)
-com.planet_ink.coffee_mud.Abilities.Diseases : $(call PACKAGE_OBJS,com.planet_ink.coffee_mud.Abilities.Diseases)
-com.planet_ink.coffee_mud.Abilities.Druid : $(call PACKAGE_OBJS,com.planet_ink.coffee_mud.Abilities.Druid)
-com.planet_ink.coffee_mud.Abilities.Fighter : $(call PACKAGE_OBJS,com.planet_ink.coffee_mud.Abilities.Fighter)
-com.planet_ink.coffee_mud.Abilities.interfaces : $(call PACKAGE_OBJS,com.planet_ink.coffee_mud.Abilities.interfaces)
-com.planet_ink.coffee_mud.Abilities.Languages : $(call PACKAGE_OBJS,com.planet_ink.coffee_mud.Abilities.Languages)
-com.planet_ink.coffee_mud.Abilities.Misc : $(call PACKAGE_OBJS,com.planet_ink.coffee_mud.Abilities.Misc)
-com.planet_ink.coffee_mud.Abilities.Paladin : $(call PACKAGE_OBJS,com.planet_ink.coffee_mud.Abilities.Paladin)
-com.planet_ink.coffee_mud.Abilities.Poisons : $(call PACKAGE_OBJS,com.planet_ink.coffee_mud.Abilities.Poisons)
-com.planet_ink.coffee_mud.Abilities.Prayers : $(call PACKAGE_OBJS,com.planet_ink.coffee_mud.Abilities.Prayers)
-com.planet_ink.coffee_mud.Abilities.Properties : $(call PACKAGE_OBJS,com.planet_ink.coffee_mud.Abilities.Properties)
-com.planet_ink.coffee_mud.Abilities.Ranger : $(call PACKAGE_OBJS,com.planet_ink.coffee_mud.Abilities.Ranger)
-com.planet_ink.coffee_mud.Abilities.Skills : $(call PACKAGE_OBJS,com.planet_ink.coffee_mud.Abilities.Skills)
-com.planet_ink.coffee_mud.Abilities.Songs : $(call PACKAGE_OBJS,com.planet_ink.coffee_mud.Abilities.Songs)
-com.planet_ink.coffee_mud.Abilities.Specializations : $(call PACKAGE_OBJS,com.planet_ink.coffee_mud.Abilities.Specializations)
-com.planet_ink.coffee_mud.Abilities.Spells : $(call PACKAGE_OBJS,com.planet_ink.coffee_mud.Abilities.Spells)
-com.planet_ink.coffee_mud.Abilities.SuperPowers : $(call PACKAGE_OBJS,com.planet_ink.coffee_mud.Abilities.SuperPowers)
-com.planet_ink.coffee_mud.Abilities.Tech : $(call PACKAGE_OBJS,com.planet_ink.coffee_mud.Abilities.Tech)
-com.planet_ink.coffee_mud.Abilities.Thief : $(call PACKAGE_OBJS,com.planet_ink.coffee_mud.Abilities.Thief)
-com.planet_ink.coffee_mud.Abilities.Traps : $(call PACKAGE_OBJS,com.planet_ink.coffee_mud.Abilities.Traps)
-com.planet_ink.coffee_mud.Areas.interfaces : $(call PACKAGE_OBJS,com.planet_ink.coffee_mud.Areas.interfaces)
-com.planet_ink.coffee_mud.Behaviors.interfaces : $(call PACKAGE_OBJS,com.planet_ink.coffee_mud.Behaviors.interfaces)
-com.planet_ink.coffee_mud.CharClasses.interfaces : $(call PACKAGE_OBJS,com.planet_ink.coffee_mud.CharClasses.interfaces)
-com.planet_ink.coffee_mud.Commands.interfaces : $(call PACKAGE_OBJS,com.planet_ink.coffee_mud.Commands.interfaces)
-com.planet_ink.coffee_mud.Common.interfaces : $(call PACKAGE_OBJS,com.planet_ink.coffee_mud.Common.interfaces)
-com.planet_ink.coffee_mud.core.collections : $(call PACKAGE_OBJS,com.planet_ink.coffee_mud.core.collections)
-com.planet_ink.coffee_mud.core.database : $(call PACKAGE_OBJS,com.planet_ink.coffee_mud.core.database)
-com.planet_ink.coffee_mud.core.exceptions : $(call PACKAGE_OBJS,com.planet_ink.coffee_mud.core.exceptions)
-com.planet_ink.coffee_mud.core.interfaces : $(call PACKAGE_OBJS,com.planet_ink.coffee_mud.core.interfaces)
-com.planet_ink.coffee_mud.core.intermud : $(call PACKAGE_OBJS,com.planet_ink.coffee_mud.core.intermud)
-com.planet_ink.coffee_mud.core.smtp : $(call PACKAGE_OBJS,com.planet_ink.coffee_mud.core.smtp)
-com.planet_ink.coffee_mud.core.threads : $(call PACKAGE_OBJS,com.planet_ink.coffee_mud.core.threads)
-com.planet_ink.coffee_mud.core.intermud.cm1 : $(call PACKAGE_OBJS,com.planet_ink.coffee_mud.core.intermud.cm1)
-com.planet_ink.coffee_mud.core.intermud.cm1.commands : $(call PACKAGE_OBJS,com.planet_ink.coffee_mud.core.intermud.cm1.commands)
-com.planet_ink.coffee_mud.core.intermud.imc2 : $(call PACKAGE_OBJS,com.planet_ink.coffee_mud.core.intermud.imc2)
-com.planet_ink.coffee_mud.core.intermud.i3 : $(call PACKAGE_OBJS,com.planet_ink.coffee_mud.core.intermud.i3)
-com.planet_ink.coffee_mud.core.intermud.i3.net : $(call PACKAGE_OBJS,com.planet_ink.coffee_mud.core.intermud.i3.net)
-com.planet_ink.coffee_mud.core.intermud.i3.packets : $(call PACKAGE_OBJS,com.planet_ink.coffee_mud.core.intermud.i3.packets)
-com.planet_ink.coffee_mud.core.intermud.i3.persist : $(call PACKAGE_OBJS,com.planet_ink.coffee_mud.core.intermud.i3.persist)
-com.planet_ink.coffee_mud.core.intermud.i3.server : $(call PACKAGE_OBJS,com.planet_ink.coffee_mud.core.intermud.i3.server)
-com.planet_ink.coffee_mud.Exits.interfaces : $(call PACKAGE_OBJS,com.planet_ink.coffee_mud.Exits.interfaces)
-com.planet_ink.coffee_mud.Items.Armor : $(call PACKAGE_OBJS,com.planet_ink.coffee_mud.Items.Armor)
-com.planet_ink.coffee_mud.Items.Basic : $(call PACKAGE_OBJS,com.planet_ink.coffee_mud.Items.Basic)
-com.planet_ink.coffee_mud.Items.ClanItems : $(call PACKAGE_OBJS,com.planet_ink.coffee_mud.Items.ClanItems)
-com.planet_ink.coffee_mud.Items.interfaces : $(call PACKAGE_OBJS,com.planet_ink.coffee_mud.Items.interfaces)
-com.planet_ink.coffee_mud.Items.MiscMagic : $(call PACKAGE_OBJS,com.planet_ink.coffee_mud.Items.MiscMagic)
-com.planet_ink.coffee_mud.Items.BasicTech : $(call PACKAGE_OBJS,com.planet_ink.coffee_mud.Items.BasicTech)
-com.planet_ink.coffee_mud.Items.ShipTech : $(call PACKAGE_OBJS,com.planet_ink.coffee_mud.Items.ShipTech)
-com.planet_ink.coffee_mud.Items.Software : $(call PACKAGE_OBJS,com.planet_ink.coffee_mud.Items.Software)
-com.planet_ink.coffee_mud.Items.Weapons : $(call PACKAGE_OBJS,com.planet_ink.coffee_mud.Items.Weapons)
-com.planet_ink.coffee_mud.Libraries.interfaces : $(call PACKAGE_OBJS,com.planet_ink.coffee_mud.Libraries.interfaces)
-com.planet_ink.coffee_mud.Libraries.layouts : $(call PACKAGE_OBJS,com.planet_ink.coffee_mud.Libraries.layouts)
-com.planet_ink.coffee_mud.Locales.interfaces : $(call PACKAGE_OBJS,com.planet_ink.coffee_mud.Locales.interfaces)
-com.planet_ink.coffee_mud.MOBS.interfaces : $(call PACKAGE_OBJS,com.planet_ink.coffee_mud.MOBS.interfaces)
-com.planet_ink.coffee_mud.Races.interfaces : $(call PACKAGE_OBJS,com.planet_ink.coffee_mud.Races.interfaces)
-com.planet_ink.coffee_mud.WebMacros.grinder : $(call PACKAGE_OBJS,com.planet_ink.coffee_mud.WebMacros.grinder)
-com.planet_ink.coffee_mud.WebMacros.interfaces : $(call PACKAGE_OBJS,com.planet_ink.coffee_mud.WebMacros.interfaces)
+com.planet_ink.game.Abilities : $(call PACKAGE_OBJS,com.planet_ink.game.Abilities)
+com.planet_ink.game.application : $(call PACKAGE_OBJS,com.planet_ink.game.application)
+com.planet_ink.game.Areas : $(call PACKAGE_OBJS,com.planet_ink.game.Areas)
+com.planet_ink.game.Behaviors : $(call PACKAGE_OBJS,com.planet_ink.game.Behaviors)
+com.planet_ink.game.CharClasses : $(call PACKAGE_OBJS,com.planet_ink.game.CharClasses)
+com.planet_ink.game.Commands : $(call PACKAGE_OBJS,com.planet_ink.game.Commands)
+com.planet_ink.game.Common : $(call PACKAGE_OBJS,com.planet_ink.game.Common)
+com.planet_ink.game.core : $(call PACKAGE_OBJS,com.planet_ink.game.core)
+com.planet_ink.game.Exits : $(call PACKAGE_OBJS,com.planet_ink.game.Exits)
+com.planet_ink.game.Libraries : $(call PACKAGE_OBJS,com.planet_ink.game.Libraries)
+com.planet_ink.game.Locales : $(call PACKAGE_OBJS,com.planet_ink.game.Locales)
+com.planet_ink.game.MOBS : $(call PACKAGE_OBJS,com.planet_ink.game.MOBS)
+com.planet_ink.game.Races : $(call PACKAGE_OBJS,com.planet_ink.game.Races)
+com.planet_ink.game.WebMacros : $(call PACKAGE_OBJS,com.planet_ink.game.WebMacros)
+com.planet_ink.game.Abilities.Archon : $(call PACKAGE_OBJS,com.planet_ink.game.Abilities.Archon)
+com.planet_ink.game.Abilities.Common : $(call PACKAGE_OBJS,com.planet_ink.game.Abilities.Common)
+com.planet_ink.game.Abilities.Diseases : $(call PACKAGE_OBJS,com.planet_ink.game.Abilities.Diseases)
+com.planet_ink.game.Abilities.Druid : $(call PACKAGE_OBJS,com.planet_ink.game.Abilities.Druid)
+com.planet_ink.game.Abilities.Fighter : $(call PACKAGE_OBJS,com.planet_ink.game.Abilities.Fighter)
+com.planet_ink.game.Abilities.interfaces : $(call PACKAGE_OBJS,com.planet_ink.game.Abilities.interfaces)
+com.planet_ink.game.Abilities.Languages : $(call PACKAGE_OBJS,com.planet_ink.game.Abilities.Languages)
+com.planet_ink.game.Abilities.Misc : $(call PACKAGE_OBJS,com.planet_ink.game.Abilities.Misc)
+com.planet_ink.game.Abilities.Paladin : $(call PACKAGE_OBJS,com.planet_ink.game.Abilities.Paladin)
+com.planet_ink.game.Abilities.Poisons : $(call PACKAGE_OBJS,com.planet_ink.game.Abilities.Poisons)
+com.planet_ink.game.Abilities.Prayers : $(call PACKAGE_OBJS,com.planet_ink.game.Abilities.Prayers)
+com.planet_ink.game.Abilities.Properties : $(call PACKAGE_OBJS,com.planet_ink.game.Abilities.Properties)
+com.planet_ink.game.Abilities.Ranger : $(call PACKAGE_OBJS,com.planet_ink.game.Abilities.Ranger)
+com.planet_ink.game.Abilities.Skills : $(call PACKAGE_OBJS,com.planet_ink.game.Abilities.Skills)
+com.planet_ink.game.Abilities.Songs : $(call PACKAGE_OBJS,com.planet_ink.game.Abilities.Songs)
+com.planet_ink.game.Abilities.Specializations : $(call PACKAGE_OBJS,com.planet_ink.game.Abilities.Specializations)
+com.planet_ink.game.Abilities.Spells : $(call PACKAGE_OBJS,com.planet_ink.game.Abilities.Spells)
+com.planet_ink.game.Abilities.SuperPowers : $(call PACKAGE_OBJS,com.planet_ink.game.Abilities.SuperPowers)
+com.planet_ink.game.Abilities.Tech : $(call PACKAGE_OBJS,com.planet_ink.game.Abilities.Tech)
+com.planet_ink.game.Abilities.Thief : $(call PACKAGE_OBJS,com.planet_ink.game.Abilities.Thief)
+com.planet_ink.game.Abilities.Traps : $(call PACKAGE_OBJS,com.planet_ink.game.Abilities.Traps)
+com.planet_ink.game.Areas.interfaces : $(call PACKAGE_OBJS,com.planet_ink.game.Areas.interfaces)
+com.planet_ink.game.Behaviors.interfaces : $(call PACKAGE_OBJS,com.planet_ink.game.Behaviors.interfaces)
+com.planet_ink.game.CharClasses.interfaces : $(call PACKAGE_OBJS,com.planet_ink.game.CharClasses.interfaces)
+com.planet_ink.game.Commands.interfaces : $(call PACKAGE_OBJS,com.planet_ink.game.Commands.interfaces)
+com.planet_ink.game.Common.interfaces : $(call PACKAGE_OBJS,com.planet_ink.game.Common.interfaces)
+com.planet_ink.game.core.collections : $(call PACKAGE_OBJS,com.planet_ink.game.core.collections)
+com.planet_ink.game.core.database : $(call PACKAGE_OBJS,com.planet_ink.game.core.database)
+com.planet_ink.game.core.exceptions : $(call PACKAGE_OBJS,com.planet_ink.game.core.exceptions)
+com.planet_ink.game.core.interfaces : $(call PACKAGE_OBJS,com.planet_ink.game.core.interfaces)
+com.planet_ink.game.core.intermud : $(call PACKAGE_OBJS,com.planet_ink.game.core.intermud)
+com.planet_ink.game.core.smtp : $(call PACKAGE_OBJS,com.planet_ink.game.core.smtp)
+com.planet_ink.game.core.threads : $(call PACKAGE_OBJS,com.planet_ink.game.core.threads)
+com.planet_ink.game.core.intermud.cm1 : $(call PACKAGE_OBJS,com.planet_ink.game.core.intermud.cm1)
+com.planet_ink.game.core.intermud.cm1.commands : $(call PACKAGE_OBJS,com.planet_ink.game.core.intermud.cm1.commands)
+com.planet_ink.game.core.intermud.imc2 : $(call PACKAGE_OBJS,com.planet_ink.game.core.intermud.imc2)
+com.planet_ink.game.core.intermud.i3 : $(call PACKAGE_OBJS,com.planet_ink.game.core.intermud.i3)
+com.planet_ink.game.core.intermud.i3.net : $(call PACKAGE_OBJS,com.planet_ink.game.core.intermud.i3.net)
+com.planet_ink.game.core.intermud.i3.packets : $(call PACKAGE_OBJS,com.planet_ink.game.core.intermud.i3.packets)
+com.planet_ink.game.core.intermud.i3.persist : $(call PACKAGE_OBJS,com.planet_ink.game.core.intermud.i3.persist)
+com.planet_ink.game.core.intermud.i3.server : $(call PACKAGE_OBJS,com.planet_ink.game.core.intermud.i3.server)
+com.planet_ink.game.Exits.interfaces : $(call PACKAGE_OBJS,com.planet_ink.game.Exits.interfaces)
+com.planet_ink.game.Items.Armor : $(call PACKAGE_OBJS,com.planet_ink.game.Items.Armor)
+com.planet_ink.game.Items.Basic : $(call PACKAGE_OBJS,com.planet_ink.game.Items.Basic)
+com.planet_ink.game.Items.ClanItems : $(call PACKAGE_OBJS,com.planet_ink.game.Items.ClanItems)
+com.planet_ink.game.Items.interfaces : $(call PACKAGE_OBJS,com.planet_ink.game.Items.interfaces)
+com.planet_ink.game.Items.MiscMagic : $(call PACKAGE_OBJS,com.planet_ink.game.Items.MiscMagic)
+com.planet_ink.game.Items.BasicTech : $(call PACKAGE_OBJS,com.planet_ink.game.Items.BasicTech)
+com.planet_ink.game.Items.ShipTech : $(call PACKAGE_OBJS,com.planet_ink.game.Items.ShipTech)
+com.planet_ink.game.Items.Software : $(call PACKAGE_OBJS,com.planet_ink.game.Items.Software)
+com.planet_ink.game.Items.Weapons : $(call PACKAGE_OBJS,com.planet_ink.game.Items.Weapons)
+com.planet_ink.game.Libraries.interfaces : $(call PACKAGE_OBJS,com.planet_ink.game.Libraries.interfaces)
+com.planet_ink.game.Libraries.layouts : $(call PACKAGE_OBJS,com.planet_ink.game.Libraries.layouts)
+com.planet_ink.game.Locales.interfaces : $(call PACKAGE_OBJS,com.planet_ink.game.Locales.interfaces)
+com.planet_ink.game.MOBS.interfaces : $(call PACKAGE_OBJS,com.planet_ink.game.MOBS.interfaces)
+com.planet_ink.game.Races.interfaces : $(call PACKAGE_OBJS,com.planet_ink.game.Races.interfaces)
+com.planet_ink.game.WebMacros.grinder : $(call PACKAGE_OBJS,com.planet_ink.game.WebMacros.grinder)
+com.planet_ink.game.WebMacros.interfaces : $(call PACKAGE_OBJS,com.planet_ink.game.WebMacros.interfaces)
 com.planet_ink.miniweb.converters : $(call PACKAGE_OBJS,com.planet_ink.miniweb.converters)
 com.planet_ink.miniweb.http : $(call PACKAGE_OBJS,com.planet_ink.miniweb.http)
 com.planet_ink.miniweb.interfaces : $(call PACKAGE_OBJS,com.planet_ink.miniweb.interfaces)

@@ -16,7 +16,7 @@
  */
 package com.planet_ink.siplet.support;
 
-import com.planet_ink.coffee_mud.Common.interfaces.Session;
+import com.planet_ink.game.Common.interfaces.Session;
 import com.planet_ink.siplet.applet.Siplet;
 import com.planet_ink.siplet.support.MiniJSON.JSONObject;
 import com.planet_ink.siplet.support.MiniJSON.MJSONException;

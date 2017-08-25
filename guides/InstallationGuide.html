@@ -87,11 +87,11 @@
                     CoffeeMud directory on a command line or DOS prompt and enter (for
                     Windows or DOS users):</p>
                 <p><code>java -classpath ".;.\lib\js.jar;.\lib\jzlib.jar"
-                    -Xmx85m com.planet_ink.coffee_mud.application.MUD "Your Muds Name"</code></p>
+                    -Xmx85m com.planet_ink.game.application.MUD "Your Muds Name"</code></p>
                 <p>And for Unix, Linux, or FreeBSD users, the command differs
                     only in the classpath:</p>
                 <p><code>java -classpath ".:./lib/js.jar:./lib/jzlib.jar"
-                    -Xmx85m com.planet_ink.coffee_mud.application.MUD "Your Muds Name"</code></p>
+                    -Xmx85m com.planet_ink.game.application.MUD "Your Muds Name"</code></p>
                 <p>This will start up the CoffeeMud server. Remember to change
                     the "Your Muds Name" text at the end to the unique name you want to
                     give your mud. If you are running Windows, you might also get away with
@@ -501,7 +501,7 @@ CHARCLASSES, RACES, COMMANDS, LOCALES, AREAS, EXITS, etc&nbsp;</span>
                     each relying to some extent on their own ini files for database and
                     other information.</p>
                 <p><code>java -classpath ".:./lib/js.jar:./lib/jzlib.jar
-                    -Xmx256m com.planet_ink.coffee_mud.application.MUD
+                    -Xmx256m com.planet_ink.game.application.MUD
                     boot=coffeemud1.ini boot=coffeemud2.ini "Your Two-Headed Muds Common
                     Name"</code></p>
                 <p>The first BOOT parameter is considered by the CoffeeMud Engine
@@ -1632,7 +1632,7 @@ DBCONNECTIONS=1<br/>
                             by the name of the database.</p>
                     </li>
                     <li> Shut down the database gracefully
-                        <p>Open DBConnections.java (<code>com\planet_ink\coffee_mud\core\database\</code>)
+                        <p>Open DBConnections.java (<code>com\planet_ink\game\core\database\</code>)
                             in your text editor of choice. Go to the <code>public void
                                 killConnections()</code> function.</p>
                         <p>Before the synchronized block opens add the following line:</p>
@@ -1694,7 +1694,7 @@ DBCONNECTIONS=1<br/>
                             cleaner. Currently when CoffeeMUD is shut down it does not exit the
                             database properly, I have not yet worked out a good way to fix this,
                             however, the following will work:</p>
-                        <p>Open DBConnections.java (<code>com\planet_ink\coffee_mud\core\database\</code>)
+                        <p>Open DBConnections.java (<code>com\planet_ink\game\core\database\</code>)
                             in your text editor of choice. Go to the <code>public void
                                 killConnections()</code> function.</p>
                         <p>after the synchronized block closes add this:</p>
@@ -1729,13 +1729,13 @@ DBCONNECTIONS=1<br/>
                     file resources/text/down.txt before disconnecting the user
                     automatically. To execute this application, you should go into your
                     coffeemud directory and enter:</p>
-                <pre>java com.planet_ink.coffee_mud.application.OffLine<br/></pre>
+                <pre>java com.planet_ink.game.application.OffLine<br/></pre>
                 <p>The Shutdown application is a means of shutting down your MUD
                     remotely without logging in. It is part of the application package of
                     CoffeeMud, but it does not rely on any of the other internal classes.
                     You may therefore, if you like, copy the file Shutdown.class onto a
                     floppy disk and execute it from there, so long as the file is stored in
-                    a com/planet_ink/coffee_mud/application folder or directory.</p>
+                    a com/planet_ink/game/application folder or directory.</p>
                 <p>The Shutdown application requires that you pass to it the URL
                     of your server, the standard MUD port to connect to, the login name of
                     a valid Archon character, and the password. You may optionally also
@@ -1743,7 +1743,7 @@ DBCONNECTIONS=1<br/>
                     simply shutting down. To execute this application, you should go into
                     your coffeemud directory or wherever the "com" directory for CoffeeMud
                     is located, and enter:</p>
-                <pre>java com.planet_ink.coffee_mud.application.Shutdown localhost 5555 AdminName AdminPassword<br/><br/><br/><br/><br/></pre>
+                <pre>java com.planet_ink.game.application.Shutdown localhost 5555 AdminName AdminPassword<br/><br/><br/><br/><br/></pre>
                 <hr style="width: 100%; height: 2px;"/>
                 <h2><a name="twitter">Twitter Installation</a></h2>
                 <p>CoffeeMud supports sending standard chat channel messages,

@@ -1,0 +1,141 @@
+/**
+ * Copyright 2017 Syncleus, Inc.
+ * with portions copyright 2004-2017 Bo Zimmerman
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+package com.planet_ink.game.Abilities.Prayers;
+
+import com.planet_ink.game.Abilities.interfaces.Ability;
+import com.planet_ink.game.Common.interfaces.CMMsg;
+import com.planet_ink.game.MOBS.interfaces.MOB;
+import com.planet_ink.game.core.CMClass;
+import com.planet_ink.game.core.CMLib;
+import com.planet_ink.game.core.CMath;
+import com.planet_ink.game.core.collections.XVector;
+import com.planet_ink.game.core.interfaces.Physical;
+import com.planet_ink.game.core.interfaces.Tickable;
+
+import java.util.List;
+
+
+public class Prayer_DeathGuard extends Prayer {
+    private final static String localizedName = CMLib.lang().L("Death Guard");
+    private final static String localizedStaticDisplay = CMLib.lang().L("(Death Guard)");
+
+    @Override
+    public String ID() {
+        return "Prayer_DeathGuard";
+    }
+
+    @Override
+    public String name() {
+        return localizedName;
+    }
+
+    @Override
+    public String displayText() {
+        return localizedStaticDisplay;
+    }
+
+    @Override
+    public int classificationCode() {
+        return Ability.ACODE_PRAYER | Ability.DOMAIN_HEALING;
+    }
+
+    @Override
+    public int abstractQuality() {
+        return Ability.QUALITY_BENEFICIAL_OTHERS;
+    }
+
+    @Override
+    public long flags() {
+        return Ability.FLAG_HOLY;
+    }
+
+    @Override
+    protected int canAffectCode() {
+        return Ability.CAN_MOBS;
+    }
+
+    @Override
+    protected int canTargetCode() {
+        return Ability.CAN_MOBS;
+    }
+
+    @Override
+    public boolean tick(Tickable ticking, int tickID) {
+        if (!super.tick(ticking, tickID))
+            return false;
+        if ((affected instanceof MOB) && (invoker() != null)) {
+            final MOB mob = (MOB) affected;
+            final MOB clericM = invoker();
+            if ((clericM != null)
+                && (!clericM.amDead())
+                && (mob != null)
+                && (!mob.amDead())
+                && ((mob.curState().getHitPoints() < (int) Math.round(CMath.mul(mob.getWimpHitPoint(), 1.30)))
+                || (CMath.div(mob.curState().getHitPoints(), mob.maxState().getHitPoints()) <= 0.30))
+                && (mob.location() != null)
+                && (mob.location().isHere(clericM))) {
+                Ability A = clericM.fetchAbility("Prayer_Heal");
+                if (A == null)
+                    A = clericM.fetchAbility("Prayer_CureCritical");
+                if (A == null)
+                    A = clericM.fetchAbility("Prayer_CureSerious");
+                if (A == null)
+                    A = clericM.fetchAbility("Prayer_CureLight");
+                if (A != null)
+                    A.invoke(clericM, new XVector<String>(mob.Name()), mob, false, 0);
+            }
+        }
+        return true;
+    }
+
+    @Override
+    public void unInvoke() {
+        // undo the affects of this spell
+        if (!(affected instanceof MOB))
+            return;
+        final MOB mob = (MOB) affected;
+
+        super.unInvoke();
+
+        if (canBeUninvoked())
+            mob.tell(L("Your death guard fades."));
+    }
+
+    @Override
+    public boolean invoke(MOB mob, List<String> commands, Physical givenTarget, boolean auto, int asLevel) {
+        final MOB target = getTarget(mob, commands, givenTarget);
+        if (target == null)
+            return false;
+
+        if (!super.invoke(mob, commands, givenTarget, auto, asLevel))
+            return false;
+
+        final boolean success = proficiencyCheck(mob, 0, auto);
+
+        if (success) {
+            final CMMsg msg = CMClass.getMsg(mob, target, this, verbalCastCode(mob, target, auto), auto ? L("<T-NAME> become(s) protected by a death guard!") : L("^S<S-NAME> @x1 for a a death guard over <T-NAMESELF>!^?", prayWord(mob)));
+            if (mob.location().okMessage(mob, msg)) {
+                mob.location().send(mob, msg);
+                beneficialAffect(mob, target, asLevel, 0);
+            }
+        } else
+            return beneficialWordsFizzle(mob, target, L("<S-NAME> @x1 for a a death guard over <T-NAMESELF>, but there is no answer.", prayWord(mob)));
+
+        // return whether it worked
+        return success;
+    }
+}

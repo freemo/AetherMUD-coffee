@@ -166,7 +166,7 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <mainClass>com.planet_ink.coffee_mud.application.MUD</mainClass>
+                    <mainClass>com.planet_ink.game.application.MUD</mainClass>
                     <arguments>
                         <argument>DefaultMUD</argument>
                     </arguments>

@@ -41,7 +41,7 @@ if [ $yesnodocs = y ] ; then
 echo "/nBeginning compile of the source docs...this may take awhile...you were warned!/n"
 sleep 1
 
-$Java_Home/bin/javadoc -d ./docs -J-Xmx256m -subpackages com.planet_ink.coffee_mud
+$Java_Home/bin/javadoc -d ./docs -J-Xmx256m -subpackages com.planet_ink.game
 
 else
 
@@ -55,79 +55,79 @@ fi
 if [ $yesnofullcompile = y ] ; then
 
 $JAVACPATH com/planet_ink/fakedb/*.java
-$JAVACPATH com/planet_ink/coffee_mud/Abilities/*.java
-$JAVACPATH com/planet_ink/coffee_mud/application/*.java
-$JAVACPATH com/planet_ink/coffee_mud/Areas/*.java
-$JAVACPATH com/planet_ink/coffee_mud/Behaviors/*.java
-$JAVACPATH com/planet_ink/coffee_mud/CharClasses/*.java
-$JAVACPATH com/planet_ink/coffee_mud/Commands/*.java
-$JAVACPATH com/planet_ink/coffee_mud/Common/*.java
-$JAVACPATH com/planet_ink/coffee_mud/core/*.java
-$JAVACPATH com/planet_ink/coffee_mud/core/database/*.java
-$JAVACPATH com/planet_ink/coffee_mud/core/exceptions/*.java
-$JAVACPATH com/planet_ink/coffee_mud/core/interfaces/*.java
-$JAVACPATH com/planet_ink/coffee_mud/core/intermud/*.java
-$JAVACPATH com/planet_ink/coffee_mud/core/intermud/cm1/*.java
-$JAVACPATH com/planet_ink/coffee_mud/core/intermud/cm1/commands/*.java
-$JAVACPATH com/planet_ink/coffee_mud/core/intermud/i3/*.java
-$JAVACPATH com/planet_ink/coffee_mud/core/intermud/i3/net/*.java
-$JAVACPATH com/planet_ink/coffee_mud/core/intermud/i3/packets/*.java
-$JAVACPATH com/planet_ink/coffee_mud/core/intermud/i3/persist/*.java
-$JAVACPATH com/planet_ink/coffee_mud/core/intermud/i3/server/*.java
-$JAVACPATH com/planet_ink/coffee_mud/core/intermud/imc2/*.java
-$JAVACPATH com/planet_ink/coffee_mud/core/smtp/*.java
-$JAVACPATH com/planet_ink/coffee_mud/core/threads/*.java
-$JAVACPATH com/planet_ink/coffee_mud/core/collections/*.java
-$JAVACPATH com/planet_ink/coffee_mud/Exits/*.java
-$JAVACPATH com/planet_ink/coffee_mud/Libraries/*.java
-$JAVACPATH com/planet_ink/coffee_mud/Locales/*.java
-$JAVACPATH com/planet_ink/coffee_mud/MOBS/*.java
-$JAVACPATH com/planet_ink/coffee_mud/Races/*.java
-$JAVACPATH com/planet_ink/coffee_mud/WebMacros/*.java
-$JAVACPATH com/planet_ink/coffee_mud/Abilities/Archon/*.java
-$JAVACPATH com/planet_ink/coffee_mud/Abilities/Common/*.java
-$JAVACPATH com/planet_ink/coffee_mud/Abilities/Diseases/*.java
-$JAVACPATH com/planet_ink/coffee_mud/Abilities/Druid/*.java
-$JAVACPATH com/planet_ink/coffee_mud/Abilities/Fighter/*.java
-$JAVACPATH com/planet_ink/coffee_mud/Abilities/interfaces/*.java
-$JAVACPATH com/planet_ink/coffee_mud/Abilities/Languages/*.java
-$JAVACPATH com/planet_ink/coffee_mud/Abilities/Misc/*.java
-$JAVACPATH com/planet_ink/coffee_mud/Abilities/Paladin/*.java
-$JAVACPATH com/planet_ink/coffee_mud/Abilities/Poisons/*.java
-$JAVACPATH com/planet_ink/coffee_mud/Abilities/Prayers/*.java
-$JAVACPATH com/planet_ink/coffee_mud/Abilities/Properties/*.java
-$JAVACPATH com/planet_ink/coffee_mud/Abilities/Ranger/*.java
-$JAVACPATH com/planet_ink/coffee_mud/Abilities/Skills/*.java
-$JAVACPATH com/planet_ink/coffee_mud/Abilities/Songs/*.java
-$JAVACPATH com/planet_ink/coffee_mud/Abilities/Specializations/*.java
-$JAVACPATH com/planet_ink/coffee_mud/Abilities/Spells/*.java
-$JAVACPATH com/planet_ink/coffee_mud/Abilities/SuperPowers/*.java
-$JAVACPATH com/planet_ink/coffee_mud/Abilities/Tech/*.java
-$JAVACPATH com/planet_ink/coffee_mud/Abilities/Thief/*.java
-$JAVACPATH com/planet_ink/coffee_mud/Abilities/Traps/*.java
-$JAVACPATH com/planet_ink/coffee_mud/Areas/interfaces/*.java
-$JAVACPATH com/planet_ink/coffee_mud/Behaviors/interfaces/*.java
-$JAVACPATH com/planet_ink/coffee_mud/CharClasses/interfaces/*.java
-$JAVACPATH com/planet_ink/coffee_mud/Commands/interfaces/*.java
-$JAVACPATH com/planet_ink/coffee_mud/Common/interfaces/*.java
-$JAVACPATH com/planet_ink/coffee_mud/Exits/interfaces/*.java
-$JAVACPATH com/planet_ink/coffee_mud/Items/Armor/*.java
-$JAVACPATH com/planet_ink/coffee_mud/Items/Basic/*.java
-$JAVACPATH com/planet_ink/coffee_mud/Items/ClanItems/*.java
-$JAVACPATH com/planet_ink/coffee_mud/Items/interfaces/*.java
-$JAVACPATH com/planet_ink/coffee_mud/Items/MiscMagic/*.java
-$JAVACPATH com/planet_ink/coffee_mud/Items/BasicTech/*.java
-$JAVACPATH com/planet_ink/coffee_mud/Items/CompTech/*.java
-$JAVACPATH com/planet_ink/coffee_mud/Items/Software/*.java
-$JAVACPATH com/planet_ink/coffee_mud/Items/Weapons/*.java
-$JAVACPATH com/planet_ink/coffee_mud/Libraries/interfaces/*.java
-$JAVACPATH com/planet_ink/coffee_mud/Libraries/layouts/*.java
-$JAVACPATH com/planet_ink/coffee_mud/Libraries/mcppkgs/*.java
-$JAVACPATH com/planet_ink/coffee_mud/Locales/interfaces/*.java
-$JAVACPATH com/planet_ink/coffee_mud/MOBS/interfaces/*.java
-$JAVACPATH com/planet_ink/coffee_mud/Races/interfaces/*.java
-$JAVACPATH com/planet_ink/coffee_mud/WebMacros/grinder/*.java
-$JAVACPATH com/planet_ink/coffee_mud/WebMacros/interfaces/*.java
+$JAVACPATH com/planet_ink/game/Abilities/*.java
+$JAVACPATH com/planet_ink/game/application/*.java
+$JAVACPATH com/planet_ink/game/Areas/*.java
+$JAVACPATH com/planet_ink/game/Behaviors/*.java
+$JAVACPATH com/planet_ink/game/CharClasses/*.java
+$JAVACPATH com/planet_ink/game/Commands/*.java
+$JAVACPATH com/planet_ink/game/Common/*.java
+$JAVACPATH com/planet_ink/game/core/*.java
+$JAVACPATH com/planet_ink/game/core/database/*.java
+$JAVACPATH com/planet_ink/game/core/exceptions/*.java
+$JAVACPATH com/planet_ink/game/core/interfaces/*.java
+$JAVACPATH com/planet_ink/game/core/intermud/*.java
+$JAVACPATH com/planet_ink/game/core/intermud/cm1/*.java
+$JAVACPATH com/planet_ink/game/core/intermud/cm1/commands/*.java
+$JAVACPATH com/planet_ink/game/core/intermud/i3/*.java
+$JAVACPATH com/planet_ink/game/core/intermud/i3/net/*.java
+$JAVACPATH com/planet_ink/game/core/intermud/i3/packets/*.java
+$JAVACPATH com/planet_ink/game/core/intermud/i3/persist/*.java
+$JAVACPATH com/planet_ink/game/core/intermud/i3/server/*.java
+$JAVACPATH com/planet_ink/game/core/intermud/imc2/*.java
+$JAVACPATH com/planet_ink/game/core/smtp/*.java
+$JAVACPATH com/planet_ink/game/core/threads/*.java
+$JAVACPATH com/planet_ink/game/core/collections/*.java
+$JAVACPATH com/planet_ink/game/Exits/*.java
+$JAVACPATH com/planet_ink/game/Libraries/*.java
+$JAVACPATH com/planet_ink/game/Locales/*.java
+$JAVACPATH com/planet_ink/game/MOBS/*.java
+$JAVACPATH com/planet_ink/game/Races/*.java
+$JAVACPATH com/planet_ink/game/WebMacros/*.java
+$JAVACPATH com/planet_ink/game/Abilities/Archon/*.java
+$JAVACPATH com/planet_ink/game/Abilities/Common/*.java
+$JAVACPATH com/planet_ink/game/Abilities/Diseases/*.java
+$JAVACPATH com/planet_ink/game/Abilities/Druid/*.java
+$JAVACPATH com/planet_ink/game/Abilities/Fighter/*.java
+$JAVACPATH com/planet_ink/game/Abilities/interfaces/*.java
+$JAVACPATH com/planet_ink/game/Abilities/Languages/*.java
+$JAVACPATH com/planet_ink/game/Abilities/Misc/*.java
+$JAVACPATH com/planet_ink/game/Abilities/Paladin/*.java
+$JAVACPATH com/planet_ink/game/Abilities/Poisons/*.java
+$JAVACPATH com/planet_ink/game/Abilities/Prayers/*.java
+$JAVACPATH com/planet_ink/game/Abilities/Properties/*.java
+$JAVACPATH com/planet_ink/game/Abilities/Ranger/*.java
+$JAVACPATH com/planet_ink/game/Abilities/Skills/*.java
+$JAVACPATH com/planet_ink/game/Abilities/Songs/*.java
+$JAVACPATH com/planet_ink/game/Abilities/Specializations/*.java
+$JAVACPATH com/planet_ink/game/Abilities/Spells/*.java
+$JAVACPATH com/planet_ink/game/Abilities/SuperPowers/*.java
+$JAVACPATH com/planet_ink/game/Abilities/Tech/*.java
+$JAVACPATH com/planet_ink/game/Abilities/Thief/*.java
+$JAVACPATH com/planet_ink/game/Abilities/Traps/*.java
+$JAVACPATH com/planet_ink/game/Areas/interfaces/*.java
+$JAVACPATH com/planet_ink/game/Behaviors/interfaces/*.java
+$JAVACPATH com/planet_ink/game/CharClasses/interfaces/*.java
+$JAVACPATH com/planet_ink/game/Commands/interfaces/*.java
+$JAVACPATH com/planet_ink/game/Common/interfaces/*.java
+$JAVACPATH com/planet_ink/game/Exits/interfaces/*.java
+$JAVACPATH com/planet_ink/game/Items/Armor/*.java
+$JAVACPATH com/planet_ink/game/Items/Basic/*.java
+$JAVACPATH com/planet_ink/game/Items/ClanItems/*.java
+$JAVACPATH com/planet_ink/game/Items/interfaces/*.java
+$JAVACPATH com/planet_ink/game/Items/MiscMagic/*.java
+$JAVACPATH com/planet_ink/game/Items/BasicTech/*.java
+$JAVACPATH com/planet_ink/game/Items/CompTech/*.java
+$JAVACPATH com/planet_ink/game/Items/Software/*.java
+$JAVACPATH com/planet_ink/game/Items/Weapons/*.java
+$JAVACPATH com/planet_ink/game/Libraries/interfaces/*.java
+$JAVACPATH com/planet_ink/game/Libraries/layouts/*.java
+$JAVACPATH com/planet_ink/game/Libraries/mcppkgs/*.java
+$JAVACPATH com/planet_ink/game/Locales/interfaces/*.java
+$JAVACPATH com/planet_ink/game/MOBS/interfaces/*.java
+$JAVACPATH com/planet_ink/game/Races/interfaces/*.java
+$JAVACPATH com/planet_ink/game/WebMacros/grinder/*.java
+$JAVACPATH com/planet_ink/game/WebMacros/interfaces/*.java
 $JAVACPATH com/planet_ink/coffee_web/converters/*.java
 $JAVACPATH com/planet_ink/coffee_web/http/*.java
 $JAVACPATH com/planet_ink/coffee_web/interfaces/*.java
@@ -147,7 +147,7 @@ echo "#You should really input a name for your MUD below...." >> mudUNIX.sh
 echo "#Before using this on a UNIX machine, you must 'chmod 755 mudUNIX.sh' to make this file executable by the UNIX machine" >> mudUNIX.sh
 echo "#FYI - the nohup command will make a nohup.out file, usually in the CofferMud (directory where you start this from) directory - it will log the server messages..." >> mudUNIX.sh
 echo "" >> mudUNIX.sh
-echo "nohup $Java_Home/bin/java -classpath \".:./lib/js.jar:./lib/jzlib.jar\" -Xms129m -Xmx256m com.planet_ink.coffee_mud.application.MUD \"$MUDname\" &" >> mudUNIX.sh
+echo "nohup $Java_Home/bin/java -classpath \".:./lib/js.jar:./lib/jzlib.jar\" -Xms129m -Xmx256m com.planet_ink.game.application.MUD \"$MUDname\" &" >> mudUNIX.sh
 chmod 755 mudUNIX.sh
 echo "Your mudUNIX.sh script has been written."
 echo "To change memory or other settings, you must MANUALLY edit mudUNIX.sh after every time you run this script."

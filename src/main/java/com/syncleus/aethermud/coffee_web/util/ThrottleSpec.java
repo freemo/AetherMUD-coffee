@@ -16,7 +16,7 @@
  */
 package com.planet_ink.coffee_web.util;
 
-import com.planet_ink.coffee_mud.core.collections.Pair;
+import com.planet_ink.game.core.collections.Pair;
 
 import java.util.LinkedList;
 

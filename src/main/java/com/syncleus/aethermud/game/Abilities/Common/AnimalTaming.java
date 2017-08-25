@@ -1,0 +1,209 @@
+/**
+ * Copyright 2017 Syncleus, Inc.
+ * with portions copyright 2004-2017 Bo Zimmerman
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+package com.planet_ink.game.Abilities.Common;
+
+import com.planet_ink.game.Abilities.interfaces.Ability;
+import com.planet_ink.game.Behaviors.interfaces.Behavior;
+import com.planet_ink.game.Common.interfaces.CMMsg;
+import com.planet_ink.game.Items.interfaces.CagedAnimal;
+import com.planet_ink.game.Items.interfaces.Container;
+import com.planet_ink.game.Items.interfaces.Item;
+import com.planet_ink.game.MOBS.interfaces.MOB;
+import com.planet_ink.game.core.CMClass;
+import com.planet_ink.game.core.CMLib;
+import com.planet_ink.game.core.CMParms;
+import com.planet_ink.game.core.interfaces.Physical;
+import com.planet_ink.game.core.interfaces.Tickable;
+
+import java.util.List;
+
+
+public class AnimalTaming extends CommonSkill {
+    private final static String localizedName = CMLib.lang().L("Animal Taming");
+    private static final String[] triggerStrings = I(new String[]{"TAME", "TAMING", "ANIMALTAMING"});
+    protected Physical taming = null;
+    protected boolean messedUp = false;
+
+    public AnimalTaming() {
+        super();
+        displayText = L("You are taming...");
+        verb = L("taming");
+    }
+
+    @Override
+    public String ID() {
+        return "AnimalTaming";
+    }
+
+    @Override
+    public String name() {
+        return localizedName;
+    }
+
+    @Override
+    public String[] triggerStrings() {
+        return triggerStrings;
+    }
+
+    @Override
+    public int classificationCode() {
+        return Ability.ACODE_COMMON_SKILL | Ability.DOMAIN_ANIMALAFFINITY;
+    }
+
+    @Override
+    public boolean tick(Tickable ticking, int tickID) {
+        if ((affected != null)
+            && (affected instanceof MOB)
+            && (tickID == Tickable.TICKID_MOB)) {
+            final MOB mob = (MOB) affected;
+            if ((taming == null) || (mob.location() == null)) {
+                messedUp = true;
+                unInvoke();
+            }
+            if ((taming instanceof MOB) && (!mob.location().isInhabitant((MOB) taming))) {
+                messedUp = true;
+                unInvoke();
+            }
+            if ((taming instanceof Item) && (!mob.location().isContent((Item) taming))) {
+                messedUp = true;
+                unInvoke();
+            }
+        }
+        return super.tick(ticking, tickID);
+    }
+
+    @Override
+    public void unInvoke() {
+        if (canBeUninvoked()) {
+            if (affected instanceof MOB) {
+                final MOB mob = (MOB) affected;
+                if ((taming != null) && (!aborted)) {
+                    MOB animal = null;
+                    if (taming instanceof MOB)
+                        animal = (MOB) taming;
+                    else if ((taming != null) && (taming instanceof CagedAnimal))
+                        animal = ((CagedAnimal) taming).unCageMe();
+                    if ((messedUp) || (animal == null))
+                        commonTell(mob, L("You've failed to tame @x1!", taming.name()));
+                    else {
+                        if (animal.numBehaviors() == 0)
+                            commonTell(mob, L("@x1 is already tame.", taming.name()));
+                        else {
+                            int amount = 1;
+                            amount = amount * (baseYield() + abilityCode());
+                            if (amount > animal.numBehaviors())
+                                amount = animal.numBehaviors();
+                            String s = "";
+                            if (amount > 1)
+                                s = "of " + amount + " ";
+                            s += "of " + animal.charStats().hisher() + " behaviors";
+                            mob.location().show(mob, null, getActivityMessageType(), L("<S-NAME> manage(s) to tame @x1 @x2.", animal.name(), s));
+                            for (int i = 0; i < amount; i++) {
+                                if (animal.numBehaviors() == 0)
+                                    break;
+                                final Behavior B = animal.fetchBehavior(CMLib.dice().roll(1, animal.numBehaviors(), -1));
+                                if (B != null) {
+                                    animal.delBehavior(B);
+                                }
+                                animal.recoverCharStats();
+                                animal.recoverPhyStats();
+                                animal.recoverMaxState();
+                            }
+                            animal.resetToMaxState();
+                            if (taming instanceof CagedAnimal) {
+                                animal.text();
+                                ((CagedAnimal) taming).cageMe(animal);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        super.unInvoke();
+    }
+
+    @Override
+    public boolean invoke(MOB mob, List<String> commands, Physical givenTarget, boolean auto, int asLevel) {
+        if (super.checkStop(mob, commands))
+            return true;
+        verb = L("taming");
+        taming = null;
+        Item cage = null;
+        final String str = CMParms.combine(commands, 0);
+        MOB M = mob.location().fetchInhabitant(str);
+        taming = null;
+        if (M != null) {
+            if (!CMLib.flags().canBeSeenBy(M, mob)) {
+                commonTell(mob, L("You don't see anyone called '@x1' here.", str));
+                return false;
+            }
+            if ((!M.isMonster())
+                || (!CMLib.flags().isAnimalIntelligence(M))) {
+                commonTell(mob, L("You can't tame @x1.", M.name(mob)));
+                return false;
+            }
+            if ((CMLib.flags().canMove(M)) && (!CMLib.flags().isBoundOrHeld(M))) {
+                commonTell(mob, L("@x1 doesn't seem willing to cooperate.", M.name(mob)));
+                return false;
+            }
+            taming = M;
+        } else if (mob.location() != null) {
+            for (int i = 0; i < mob.location().numItems(); i++) {
+                final Item I = mob.location().getItem(i);
+                if ((I != null)
+                    && (I instanceof Container)
+                    && ((((Container) I).containTypes() & Container.CONTAIN_CAGED) == Container.CONTAIN_CAGED)) {
+                    cage = I;
+                    break;
+                }
+            }
+            if (commands.size() > 0) {
+                final String last = commands.get(commands.size() - 1);
+                final Item I = mob.location().findItem(null, last);
+                if ((I != null)
+                    && (I instanceof Container)
+                    && ((((Container) I).containTypes() & Container.CONTAIN_CAGED) == Container.CONTAIN_CAGED)) {
+                    cage = I;
+                    commands.remove(last);
+                }
+            }
+            if (cage == null) {
+                commonTell(mob, L("You don't see anyone called '@x1' here.", str));
+                return false;
+            }
+            taming = mob.location().findItem(cage, CMParms.combine(commands, 0));
+            if ((taming == null) || (!CMLib.flags().canBeSeenBy(taming, mob)) || (!(taming instanceof CagedAnimal))) {
+                commonTell(mob, L("You don't see any creatures in @x1 called '@x2'.", cage.name(), CMParms.combine(commands, 0)));
+                return false;
+            }
+            M = ((CagedAnimal) taming).unCageMe();
+        } else
+            return false;
+
+        if (!super.invoke(mob, commands, givenTarget, auto, asLevel))
+            return false;
+        messedUp = !proficiencyCheck(mob, -taming.phyStats().level() + (2 * getXLEVELLevel(mob)), auto);
+        final int duration = getDuration(35, mob, taming.phyStats().level(), 10);
+        verb = L("taming @x1", M.name());
+        final CMMsg msg = CMClass.getMsg(mob, null, this, getActivityMessageType(), L("<S-NAME> start(s) taming @x1.", M.name()));
+        if (mob.location().okMessage(mob, msg)) {
+            mob.location().send(mob, msg);
+            beneficialAffect(mob, mob, asLevel, duration);
+        }
+        return true;
+    }
+}

@@ -1,5 +1,5 @@
-var CMLib = Packages.com.planet_ink.coffee_mud.core.CMLib;
-var CMParms = Packages.com.planet_ink.coffee_mud.core.CMParms;
+var CMLib = Packages.com.planet_ink.game.core.CMLib;
+var CMParms = Packages.com.planet_ink.game.core.CMParms;
 
 var e, e2;
 var R, M;

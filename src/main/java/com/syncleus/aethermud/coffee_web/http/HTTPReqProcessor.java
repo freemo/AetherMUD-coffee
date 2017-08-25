@@ -16,7 +16,7 @@
  */
 package com.planet_ink.coffee_web.http;
 
-import com.planet_ink.coffee_mud.core.collections.Pair;
+import com.planet_ink.game.core.collections.Pair;
 import com.planet_ink.coffee_web.interfaces.*;
 import com.planet_ink.coffee_web.util.CWConfig;
 import com.planet_ink.coffee_web.util.CWDataBuffers;

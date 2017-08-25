@@ -16,10 +16,10 @@
  */
 package com.planet_ink.coffee_web.util;
 
-import com.planet_ink.coffee_mud.core.collections.KeyPairSearchTree;
-import com.planet_ink.coffee_mud.core.collections.KeyPairWildSearchTree;
-import com.planet_ink.coffee_mud.core.collections.Pair;
-import com.planet_ink.coffee_mud.core.collections.Triad;
+import com.planet_ink.game.core.collections.KeyPairSearchTree;
+import com.planet_ink.game.core.collections.KeyPairWildSearchTree;
+import com.planet_ink.game.core.collections.Pair;
+import com.planet_ink.game.core.collections.Triad;
 import com.planet_ink.coffee_web.http.MIMEType;
 import com.planet_ink.coffee_web.interfaces.*;
 import com.planet_ink.coffee_web.server.WebServer;

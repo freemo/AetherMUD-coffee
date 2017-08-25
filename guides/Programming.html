@@ -211,7 +211,7 @@
                     is always used as a substitute for the default CoffeeMud object path.
                     For instance, if you installed CoffeeMud at "<code>C:\CoffeeMud\</code>",
                     then "<code>BEHAVIORS=%DEFAULT%</code>"
-                    in the ini file would load "<code>C:\CoffeeMud\com\planet_ink\coffee_mud\Behaviors\*.class</code>"
+                    in the ini file would load "<code>C:\CoffeeMud\com\planet_ink\game\Behaviors\*.class</code>"
                     into its behavior set.</p>
                 <p>This default object boot
                     paths may be removed or added-to
@@ -293,7 +293,7 @@
                 </ul>
                 <h3><a name="IMPORTS" id="IMPORTS">Complete Default
                     Import List</a></h3>
-                <pre>import com.planet_ink.coffee_mud.core.*;<br/>import com.planet_ink.coffee_mud.core.collections.*;<br/>import com.planet_ink.coffee_mud.core.interfaces.*;<br/>import com.planet_ink.coffee_mud.Abilities.interfaces.*;<br/>import com.planet_ink.coffee_mud.Areas.interfaces.*;<br/>import com.planet_ink.coffee_mud.Behaviors.interfaces.*;<br/>import com.planet_ink.coffee_mud.CharClasses.interfaces.*;<br/>import com.planet_ink.coffee_mud.Commands.interfaces.*;<br/>import com.planet_ink.coffee_mud.Common.interfaces.*;<br/>import com.planet_ink.coffee_mud.Exits.interfaces.*;<br/>import com.planet_ink.coffee_mud.Items.interfaces.*;<br/>import com.planet_ink.coffee_mud.Locales.interfaces.*;<br/>import com.planet_ink.coffee_mud.MOBS.interfaces.*;<br/>import com.planet_ink.coffee_mud.Races.interfaces.*;<br/>import com.planet_ink.coffee_mud.Libraries.interfaces.*;<br/>import java.io.IOException;<br/>import java.util.*;<br/></pre>
+                <pre>import com.planet_ink.game.core.*;<br/>import com.planet_ink.game.core.collections.*;<br/>import com.planet_ink.game.core.interfaces.*;<br/>import com.planet_ink.game.Abilities.interfaces.*;<br/>import com.planet_ink.game.Areas.interfaces.*;<br/>import com.planet_ink.game.Behaviors.interfaces.*;<br/>import com.planet_ink.game.CharClasses.interfaces.*;<br/>import com.planet_ink.game.Commands.interfaces.*;<br/>import com.planet_ink.game.Common.interfaces.*;<br/>import com.planet_ink.game.Exits.interfaces.*;<br/>import com.planet_ink.game.Items.interfaces.*;<br/>import com.planet_ink.game.Locales.interfaces.*;<br/>import com.planet_ink.game.MOBS.interfaces.*;<br/>import com.planet_ink.game.Races.interfaces.*;<br/>import com.planet_ink.game.Libraries.interfaces.*;<br/>import java.io.IOException;<br/>import java.util.*;<br/></pre>
                 <img src="images/rainbow.jpg" alt="Text"/>
                 <h2><a name="TEXT" id="TEXT">Text</a></h2>
                 <p>Before we get started
@@ -777,7 +777,7 @@
                     method from a <span style="font-weight: bold;">class</span>
                     written in
                     JavaScript:</p>
-                <pre>var javascriptstring=' this is a javascript string ';<br/>var javastring=Packages.com.planet_ink.coffee_mud.core.CMLib.toJavaString(javascriptstring);<br/>// and now javastring is a real-live Java-compliant and Java-friendly string<br/></pre>
+                <pre>var javascriptstring=' this is a javascript string ';<br/>var javastring=Packages.com.planet_ink.game.core.CMLib.toJavaString(javascriptstring);<br/>// and now javastring is a real-live Java-compliant and Java-friendly string<br/></pre>
                 <p>The most important
                     difference between coding Javascript for
                     CoffeeMud and for browsers is that there is no HTML DOM (Document
@@ -792,13 +792,13 @@
                     the imported objects are in your CoffeeMud classpath, they can be
                     accessed and used. For instance, to use the CoffeeMud <code>pow(x,y)</code>
                     function in CMath.java:</p>
-                <pre>var lib=Packages.com.planet_ink.coffee_mud.core.CMLib;<br/>// the above creates a reference to the CoffeeMud Library as a shortcut<br/>var value=lib.math().pow(4,2);<br/>// now we can access the math() library from our shortcut.<br/></pre>
+                <pre>var lib=Packages.com.planet_ink.game.core.CMLib;<br/>// the above creates a reference to the CoffeeMud Library as a shortcut<br/>var value=lib.math().pow(4,2);<br/>// now we can access the math() library from our shortcut.<br/></pre>
                 <p>Depending upon the
                     context from which your script runs (the
                     Scriptable behavior, JRun command, the Quest engine, or the http/web
                     server), certain other objects are made available to assist scripts in
                     properly interacting with their environment. When writing Java classes
-                    in JavaScript for the ClassLoader, however, you must always use the <code>Packages.com.planet_ink.coffee_mud.core.CMLib</code>
+                    in JavaScript for the ClassLoader, however, you must always use the <code>Packages.com.planet_ink.game.core.CMLib</code>
                     reference to access special methods such as the toJavaString method
                     discussed above.</p>
                 <p>In the Scriptable
@@ -860,7 +860,7 @@
                     under the name "GenLemming.js", and add an object path reference to it
                     in the MOBS entry in your coffeemud.ini file, as described in section
                     one.</p>
-                <pre>//extends com.planet_ink.coffee_mud.MOBS.GenMob<br/><br/>function ID(){return "GenLemming";}<br/><br/>var lib=Packages.com.planet_ink.coffee_mud.core.CMLib;<br/></pre>
+                <pre>//extends com.planet_ink.game.MOBS.GenMob<br/><br/>function ID(){return "GenLemming";}<br/><br/>var lib=Packages.com.planet_ink.game.core.CMLib;<br/></pre>
                 <p>The first lines of our
                     class include the special //extends
                     command which informs the CoffeeMud ClassLoader that this JavaScript
@@ -1801,7 +1801,7 @@
                     some are Common classes.</p>
                 <p>Core classes are those
                     classes found in the
-                    com.planet_ink.coffee_mud.core package. Like the interfaces, they may
+                    com.planet_ink.game.core package. Like the interfaces, they may
                     not be extended or overwritten without risking problems. The core
                     classes, and their general purpose is:</p>
                 <a name="corepurpose" id="corepurpose"> </a>
@@ -1912,9 +1912,9 @@
                     CMLib methods, making it a one-stop shop.</p>
                 <p>Now, non-core libraries,
                     or Libraries proper, are located in
-                    the com.planet_ink.coffee_mud.Libraries package, and each one
+                    the com.planet_ink.game.Libraries package, and each one
                     implements a unique interface from the
-                    com.planet_ink.coffee_mud.Libraries.interfaces package. This is unique,
+                    com.planet_ink.game.Libraries.interfaces package. This is unique,
                     that each class in the Libraries package implements a unique interface
                     all its own, but that is not the only unique thing about this package.
                     Libraries are also singletons -- there is never more than 1 instance of
@@ -2351,9 +2351,9 @@
                     to discuss under this topic are
                     neither Core class or Libraries, but form parts of the cores of other
                     classes, including many of the Libraries. These are the Common classes.
-                    They are part of the com.planet_ink.coffee_mud.Common package. Like the
+                    They are part of the com.planet_ink.game.Common package. Like the
                     Libraries, they each implement their own unique interface from the
-                    com.planet_ink.coffee_mud.Common.interfaces package. However, unlike
+                    com.planet_ink.game.Common.interfaces package. However, unlike
                     the Libraries, numerous instances of each class will exist in your mud,
                     and they are created from the core CMClass loader, much like MOBs,
                     Items, Rooms, and so forth. The javadocs are also a good place to learn
@@ -3654,12 +3654,12 @@ String, String)</span>
                     of the Command be unique in the system. A custom Command imports the
                     same packages mentioned in the first section of this document under
                     Complete Default Import List as well as
-                    com.planet_ink.coffee_mud.Commands.StdCommand.</p>
-                <pre>public class DoNothing extends com.planet_ink.coffee_mud.Commands.StdCommand<br/>{<br/> public DoNothing(){}<br/><br/> private final String[] access={ "DONOTHING" };<br/> public String[] getAccessWords(){ return access; }<br/></pre>
+                    com.planet_ink.game.Commands.StdCommand.</p>
+                <pre>public class DoNothing extends com.planet_ink.game.Commands.StdCommand<br/>{<br/> public DoNothing(){}<br/><br/> private final String[] access={ "DONOTHING" };<br/> public String[] getAccessWords(){ return access; }<br/></pre>
                 <p>All Commands should
                     extend StdCommand for conformity's sake,
                     though it is not required so long as your class implements the
-                    com.planet_ink.coffee_mud.core.interfaces.Command interface. In our
+                    com.planet_ink.game.core.interfaces.Command interface. In our
                     example above, we have an empty constructor, but we do define some
                     access words.</p>
                 <p>Access words are what you
@@ -3770,7 +3770,7 @@ String, String)</span>
                     though it is important that the ID() of the MOB be unique in the
                     system. A custom MOB imports the same packages mentioned in the first
                     section of this document under Complete Default Import List as well as
-                    (in this case) com.planet_ink.coffee_mud.MOBS.StdMOB because our sample
+                    (in this case) com.planet_ink.game.MOBS.StdMOB because our sample
                     mob extends it.</p>
                 <p>A MOB class must extend
                     either StdMOB or GenMob, StdShopKeeper
@@ -3792,7 +3792,7 @@ String, String)</span>
                     method as shown below. Notice that the <code>ID()</code>
                     is the same
                     as the name of the class. This is no accident -- this is required!</p>
-                <pre>public class MyNewMOB extends com.planet_ink.coffee_mud.MOBS.StdMOB<br/>{<br/>  public String ID(){ return "MyNewMOB";}<br/></pre>
+                <pre>public class MyNewMOB extends com.planet_ink.game.MOBS.StdMOB<br/>{<br/>  public String ID(){ return "MyNewMOB";}<br/></pre>
                 <p>All of your customizing
                     will be done inside the constructor:
                     name, displayText, description, etc, etc.</p>
@@ -3832,7 +3832,7 @@ String, String)</span>
                     object access
                     method as shown below. The <code>getShop()</code>
                     method returns an instance of the
-                    com.planet_ink.coffee_mud.Common.interfaces.CoffeeShop interface, which
+                    com.planet_ink.game.Common.interfaces.CoffeeShop interface, which
                     stores inventory for the shopkeepers. In creating the shopkeepers, you
                     will also need to specify the type of ShopKeeper.</p>
                 <pre>  setWhatIsSold( ShopKeeper.ONLYBASEINVENTORY );<br/><br/>  Weapon sword = (Weapon)CMClass.getWeapon( "Longsword" );<br/>  getShop().addStoreInventory( sword, 35, -1, this );<br/>  Armor mail = (Armor)CMClass.getArmor( "FullPlate" );<br/>  getShop().addStoreInventory( mail, 35, -1, this );<br/>  Item waterskin = CMClass.getItem( "Waterskin" );<br/>  getShop().addStoreInventory( waterskin, 35, -1, this );<br/></pre>
@@ -3866,7 +3866,7 @@ String, String)</span>
                     other methods which might be extended to the end of altering or
                     enhancing basic aspects of the mud. Those are numerated both in the
                     classes you are extending, and in
-                    com.planet_ink.coffee_mud.MOBS.interfaces.MOB.java. Consult the
+                    com.planet_ink.game.MOBS.interfaces.MOB.java. Consult the
                     CoffeeMud java docs for more information.</p>
                 <h3><a name="moblife" id="moblife">Bringing MOBs to
                     Life, and
@@ -3881,7 +3881,7 @@ String, String)</span>
                     existence, a MOB must have somewhere to
                     exist! Presumably, this is some room on your map. Rooms on the map are
                     classes which implement the interface
-                    com.planet_ink.coffee_mud.Locales.interfaces.Room. If a MOB is to have
+                    com.planet_ink.game.Locales.interfaces.Room. If a MOB is to have
                     a permanent existence, it must also have a starting room, or a place to
                     rejuvenate into when necessary. If a MOB does not have a starting room,
                     then its death, when that death comes, will be forever.</p>
@@ -3909,7 +3909,7 @@ String, String)</span>
                     of the Item be unique in the system. A custom Item imports the same
                     packages mentioned in the first section of this document under Complete
                     Default Import List as well as (in this case)
-                    com.planet_ink.coffee_mud.Items.Weapons.StdWeapon because our first
+                    com.planet_ink.game.Items.Weapons.StdWeapon because our first
                     sample item extends it.</p>
                 <p>An Item class must extend
                     either StdItem or GenItem, StdWeapon
@@ -3935,7 +3935,7 @@ String, String)</span>
                     shown below. Notice that the <code>ID()</code>
                     is the same as the name
                     of the class. This is no accident -- this is required!</p>
-                <pre>public class MyNewSword extends com.planet_ink.coffee_mud.Items.Weapons.StdWeapon<br/>{<br/>  public String ID(){ return "MyNewSword"; }<br/><br/>  public MyNewSword()<br/>  {<br/>     super();<br/>  }<br/>}<br/></pre>
+                <pre>public class MyNewSword extends com.planet_ink.game.Items.Weapons.StdWeapon<br/>{<br/>  public String ID(){ return "MyNewSword"; }<br/><br/>  public MyNewSword()<br/>  {<br/>     super();<br/>  }<br/>}<br/></pre>
                 <p>All of your customizing
                     will be done inside the constructor:
                     name, displayText, description, etc, etc.</p>
@@ -3958,42 +3958,42 @@ String, String)</span>
                     Other classes, however, have different
                     requirements
                     altogether. For instance, if class extends
-                    com.planet_ink.coffee_mud.Items.Armor.StdArmor:</p>
+                    com.planet_ink.game.Items.Armor.StdArmor:</p>
                 <pre> public MyNewArmor()<br/> {<br/>   super();<br/><br/>   setName( "a super bracer" );<br/>   setDescription( "A super duper bracer" );<br/>   setDisplayText( "Someone left their super bracer here." );<br/>   setSecretIdentity( "" );<br/><br/>   setMaterial( RawMaterial.RESOURCE_STEEL );<br/>   setBaseValue( 100 );<br/>   basePhyStats.setWeight( 5 );<br/>   basePhyStats.setArmor( 5 );<br/>   setRawProperLocationBitmap( Wearable.WORN_LEFT_WRIST|Wearable.WORN_RIGHT_WRIST );<br/>   setRawLogicalAnd( false );<br/>   recoverPhyStats();<br/> }<br/><br/> public void recoverPhyStats()<br/> {<br/>   basePhyStats().setArmor(2+(basePhyStats().level()/2));<br/>   super.recoverPhyStats();<br/> }<br/></pre>
                 <p>In this case, we made a
                     bracer wearable on both left and right
                     wrists. If it were something that could only be worn on both wrists at
                     the same time (like handcuffs), then the RawLogicalAnd value would have
                     been true. Now, a class extending
-                    com.planet_ink.coffee_mud.Items.Basic.StdContainer:</p>
+                    com.planet_ink.game.Items.Basic.StdContainer:</p>
                 <pre> public MyNewBag()<br/> {<br/>   super();<br/><br/>   setName( "a super bag" );<br/>   setDescription( "A super duper bag" );<br/>   setDisplayText( "Someone left their super bag here." );<br/>   setSecretIdentity( "" );<br/><br/>   setBaseValue( 50 );<br/>   setDoorsNLocks( false, true, false, false, false, false );<br/>   setKeyName( "" );<br/>   setMaterial( RawMaterial.RESOURCE_LEATHER );<br/>   basePhyStats.setWeight( 1 );<br/>   setCapacity( 100 );<br/>   recoverPhyStats();<br/> }<br/></pre>
                 <p>When setting the capacity
                     of a container, remember that it
                     must also be able to hold its own weight! Also, note the lids and locks
                     flags have made this container lidless and lockless and always open. Of
                     course, without a lock, setting a key would be silly! Now, a class
-                    extending com.planet_ink.coffee_mud.Items.Basic.StdDrink will create a
+                    extending com.planet_ink.game.Items.Basic.StdDrink will create a
                     drinkable container:</p>
                 <pre> public MyNewCup()<br/> {<br/>   super();<br/><br/>   setName( "a super cup" );<br/>   setDescription( "A super duper cup" );<br/>   setDisplayText( "Someone left their super cup here." );<br/>   setSecretIdentity( "" );<br/><br/>   setMaterial( RawMaterial.RESOURCE_LEATHER );<br/>   setBaseValue( 5 );<br/>   setLiquidHeld( 2000 );<br/>   setLiquidRemaining( 2000 );<br/>   setThirstQuenched( 500 );<br/>   setLiquidType( RawMaterial.RESOURCE_MILK );<br/>   basePhyStats.setWeight( 1 );<br/>   setCapacity( 0 );<br/>   recoverPhyStats();<br/> }<br/></pre>
                 <p>The StdDrink created
                     above is an enormous cup of milk! You'll
                     notice the capacity is 0, meaning that mundane objects cannot be stored
                     in it. Now, a class extending
-                    com.planet_ink.coffee_mud.Items.Basic.StdFood:</p>
+                    com.planet_ink.game.Items.Basic.StdFood:</p>
                 <pre> public MyNewFood()<br/> {<br/>   super();<br/><br/>   setName( "a super crumb" );<br/>   setDescription( "A super duper crumb" );<br/>   setDisplayText( "Someone left their super crumbs." );<br/>   setSecretIdentity( "" );<br/><br/>   setBaseValue( 1 );<br/>   setMaterial( RawMaterial.RESOURCE_MEAT );<br/>   setNourishment( 500 );<br/>   basePhyStats.setWeight( 1 );<br/>   recoverPhyStats();<br/> }<br/></pre>
                 <p>Now, the items extending
-                    com.planet_ink.coffee_mud.Items.Basic.StdRideable resemble the MOB of
+                    com.planet_ink.game.Items.Basic.StdRideable resemble the MOB of
                     the same name, and thus, have identical modifications.</p>
                 <pre> public MyNewBed()<br/> {<br/>   super();<br/><br/>   setName( "a bed" );<br/>   setDescription( "A bed" );<br/>   setDisplayText( "A bed is here" );<br/>   setSecretIdentity( "" );<br/><br/>   setBaseValue( 100 );<br/>   setMobCapacity( 2 );<br/>   setRideBasis( Rideable.RIDEABLE_SLEEP );<br/>   basePhyStats.setWeight( 100 );<br/>   recoverPhyStats();<br/> }<br/></pre>
                 <p>A pile of money extends
                     class
-                    com.planet_ink.coffee_mud.Items.Basic.StdCoins, and is simplest of all:</p>
+                    com.planet_ink.game.Items.Basic.StdCoins, and is simplest of all:</p>
                 <pre> public MyNewMoney()<br/> {<br/>   super();<br/><br/>   setName( "a pile of coins" );<br/>   setDescription( "A pile of coins" );<br/>   setDisplayText( "Someone left their money here." );<br/>   setSecretIdentity( "" );<br/><br/>   setBaseValue( 0 );<br/>   setMaterial( RawMaterial.RESOURCE_GOLD );<br/>   setNumberOfCoins( 1000 ); // 1000 coins!<br/>   setDenomination( 1.0 ); // each coin worth 1.0 basic gold<br/>   basePhyStats.setWeight( 1 );<br/>   recoverPhyStats();<br/> }<br/></pre>
                 <p>Notice that the base
                     value of the coins is 0, it's the other
                     methods that truly determine its value. Now, to make a magical pill,
                     our class should extend
-                    com.planet_ink.coffee_mud.Items.MiscMagic.StdPill:</p>
+                    com.planet_ink.game.Items.MiscMagic.StdPill:</p>
                 <pre> public MyNewPill()<br/> {<br/>   super();<br/><br/>   setName( "a super pill" );<br/>   setDescription( "A super duper pill" );<br/>   setDisplayText( "Someone left their super pill." );<br/>   setSecretIdentity( "" );<br/><br/>   setBaseValue( 1 );<br/>   setMaterial( RawMaterial.RESOURCE_MEAT );<br/>   setNourishment( 500 );<br/>   basePhyStats.setWeight( 1 );<br/>   setSpellList( "Spell_Sleep;Prayer_CureLightWounds" );<br/>   recoverPhyStats();<br/> }<br/></pre>
                 <p>The spells cast on the
                     eater are listed by their Class names,
@@ -4001,17 +4001,17 @@ String, String)</span>
                     the system will handle that automaticallyy. Also notice that the
                     StdPill resembles StdFood except for the addition of the setSpellList
                     method. In the exact same way, the
-                    com.planet_ink.coffee_mud.Items.MiscMagic.StdPotion class resembles the
+                    com.planet_ink.game.Items.MiscMagic.StdPotion class resembles the
                     StdDrink class except that it has an identical setSpellList method
                     added to IT. So, in the interests of saving a little sand for future
                     generations, I would enumerate the StdPotion. We can, however, show off
                     another class which extends
-                    com.planet_ink.coffee_mud.Items.MiscMagic.StdScroll:</p>
+                    com.planet_ink.game.Items.MiscMagic.StdScroll:</p>
                 <pre> public MyNewScroll()<br/> {<br/>   super();<br/><br/>   setName( "a super scroll" );<br/>   setDescription( "A super duper scroll" );<br/>   setDisplayText( "Someone left their super scroll." );<br/>   setSecretIdentity( "" );<br/>   setBaseValue( 100 );<br/><br/>   setMaterial( RawMaterial.RESOURCE_PAPER );<br/>   setUsesRemaining( 50 );<br/>   basePhyStats.setWeight( 1 );<br/>   setScrollSpells( "Spell_Sleep;Prayer_CureLightWounds" );<br/>   recoverPhyStats();<br/> }<br/></pre>
                 <p>Not too difficult, right?
                     Looks like the other two, but the
                     spell setting method has a different name. Now, let's look at a sample
-                    of a class extending com.planet_ink.coffee_mud.Items.MiscMagic.StdWand:</p>
+                    of a class extending com.planet_ink.game.Items.MiscMagic.StdWand:</p>
                 <pre> public MyNewWand()<br/> {<br/>   super();<br/><br/>   setName( "a wand" );<br/>   setDescription( "A magic wand" );<br/>   setDisplayText( "Someone left their magic wand." );<br/>   setSecretIdentity( "" );<br/><br/>   setBaseValue( 1000 );<br/>   setMaterial( RawMaterial.RESOURCE_OAK );<br/>   basePhyStats.setWeight( 1 );<br/>   setSpell( CMClass.getAbility( "Spell_Fireball" ) );<br/>   setUsesRemaining( 50 );<br/>   recoverPhyStats();<br/> }<br/></pre>
                 <p>In this case, we made use
                     of the "uses remaining" field to set
@@ -4019,7 +4019,7 @@ String, String)</span>
                     different. A wand may only have one spell, and the actual Ability
                     object for the spell must be passed in, instead of just the class name
                     as we did before. You will find that this is also how the classes
-                    extending com.planet_ink.coffee_mud.Items.MiscMagic.StdStaff work. The
+                    extending com.planet_ink.game.Items.MiscMagic.StdStaff work. The
                     StdStaff resembles the StdWeapon we did above, except that the
                     additional setSpell and setUsesRemaining calls become appropriate to
                     the constructor.</p>
@@ -4051,7 +4051,7 @@ String, String)</span>
                     other methods which might be extended to the end of altering or
                     enhancing basic aspects of the mud. Those are numerated both in the
                     classes you are extending, in
-                    com.planet_ink.coffee_mud.Items.interfaces.Item.java, and in other
+                    com.planet_ink.game.Items.interfaces.Item.java, and in other
                     interface files in that directory. Consult the CoffeeMud java docs for
                     more information.</p>
                 <h3><a name="itemlife" id="itemlife">Creating and
@@ -4111,12 +4111,12 @@ String, String)</span>
                     auto-emoting, and scripting. Behaviors import the same packages
                     mentioned in the first section of this document under Complete Default
                     Import List as well as (in this case)
-                    com.planet_ink.coffee_mud.Behaviors.StdBehavior because our sample
+                    com.planet_ink.game.Behaviors.StdBehavior because our sample
                     behavior extends it. Custom behaviors are loaded at boot-time by adding
                     references to them to the BEHAVIORS entry in your coffeemud.ini file.
                     Let's take a look at a sample Behavior and see how they are put
                     together:</p>
-                <pre>public class Ravenous extends com.planet_ink.coffee_mud.Behaviors.StdBehavior<br/>{<br/>  public String ID(){ return "Ravenous"; }<br/>  public String name(){ return "Ravenous Eater"; }<br/></pre>
+                <pre>public class Ravenous extends com.planet_ink.game.Behaviors.StdBehavior<br/>{<br/>  public String ID(){ return "Ravenous"; }<br/>  public String name(){ return "Ravenous Eater"; }<br/></pre>
                 <p>Our first step, as seen
                     above, is to make sure we define an <code>ID()</code>
                     method with the classes name, just as we do in other CoffeeMud objects.
@@ -4227,7 +4227,7 @@ String, String)</span>
                     Character Classes are not difficult to code. CharClasses import the
                     same packages mentioned in the first section of this document under
                     Complete Default Import List as well as (in this case)
-                    com.planet_ink.coffee_mud.CharClasses.StdCharClass because our sample
+                    com.planet_ink.game.CharClasses.StdCharClass because our sample
                     class extends it. Your custom classes need to be listed in your
                     coffeemud.ini file under the CHARCLASSES entry. Aside from making
                     custom classes, you can also extend an existing class, return an
@@ -4235,7 +4235,7 @@ String, String)</span>
                     string, and then list it at the end of the
                     aforementioned entry in the coffeemud.ini file. Now, let's take a look
                     at a simple one here:</p>
-                <pre>public class NormalGuy extends com.planet_ink.coffee_mud.CharClasses.StdCharClass<br/>{<br/></pre>
+                <pre>public class NormalGuy extends com.planet_ink.game.CharClasses.StdCharClass<br/>{<br/></pre>
                 <p>Our Normal Guy character
                     class will define all of the basic
                     elements of a filled-out character class.</p>
@@ -4529,13 +4529,13 @@ String, String)</span>
                     as many races as humanly possible. The more, the better! Races import
                     the same packages mentioned in the first section of this document under
                     Complete Default Import List as well as (in this case)
-                    com.planet_ink.coffee_mud.Races.StdRace because our sample class
+                    com.planet_ink.game.Races.StdRace because our sample class
                     extends it. Your custom races need to be listed in your coffeemud.ini
                     file under the RACES entry. Aside from making custom race classes, you
                     can also extend an existing race class, return an identical ID()
                     string, and then list it at the end of the aforementioned entry in the
                     coffeemud.ini file. Now, let's take a look at a simple one here:</p>
-                <pre>public class Grumbler extends com.planet_ink.coffee_mud.Races.StdRace<br/>{<br/></pre>
+                <pre>public class Grumbler extends com.planet_ink.game.Races.StdRace<br/>{<br/></pre>
                 <p>Our Grumbler race will
                     define all of the basic elements of a
                     filled-out race.</p>
@@ -4719,9 +4719,9 @@ getBreathables() { return new int[]{ RawMaterial.RESOURCE_AIR }; }</span><br/>
                 <p>Exits import the same
                     packages mentioned in the first section
                     of this document under Complete Default Import List as well as (in this
-                    case) com.planet_ink.coffee_mud.Exits.StdExit because our sample class
+                    case) com.planet_ink.game.Exits.StdExit because our sample class
                     extends it. Here is an example exit:</p>
-                <pre>public class SlidingDoor extends com.planet_ink.coffee_mud.Exits.StdExit<br/>{<br/>  public String ID()<br/>  {<br/>    return "SlidingDoor";<br/>  }<br/><br/>  public SlidingDoor()<br/>  {<br/>    super();<br/>    Ability A = CMClass.getAbility( "Prop_ReqHeight" );<br/>    A.setMiscText( "30" );<br/>    addNonUninvokableEffect( A );<br/>  }<br/><br/>  public String name()<br/>  {<br/>    return "a sliding door";<br/>  }<br/><br/>  public String displayText()<br/>  {<br/>    return "";<br/>  }<br/><br/>  public String closedText()<br/>  {<br/>    return "a closed sliding door";<br/>  }<br/><br/>  public String doorName()<br/>  {<br/>    return "door";<br/>  }<br/><br/>  public String openName()<br/>  {<br/>    return "slide";<br/>  }<br/><br/>  public String closeName()<br/>  {<br/>    return "slide";<br/>  }<br/><br/>  public boolean hasADoor()<br/>  {<br/>    return true;<br/>  }<br/><br/>  public boolean hasALock()<br/>  {<br/>    return false;<br/>  }<br/><br/>  public boolean defaultsLocked()<br/>  {<br/>    return false;<br/>  }<br/><br/>  public boolean defaultsClosed()<br/>  {<br/>    return true;<br/>  }<br/><br/>  public int openDelayTicks()<br/>  {<br/>    return 45;<br/>  }<br/>}<br/></pre>
+                <pre>public class SlidingDoor extends com.planet_ink.game.Exits.StdExit<br/>{<br/>  public String ID()<br/>  {<br/>    return "SlidingDoor";<br/>  }<br/><br/>  public SlidingDoor()<br/>  {<br/>    super();<br/>    Ability A = CMClass.getAbility( "Prop_ReqHeight" );<br/>    A.setMiscText( "30" );<br/>    addNonUninvokableEffect( A );<br/>  }<br/><br/>  public String name()<br/>  {<br/>    return "a sliding door";<br/>  }<br/><br/>  public String displayText()<br/>  {<br/>    return "";<br/>  }<br/><br/>  public String closedText()<br/>  {<br/>    return "a closed sliding door";<br/>  }<br/><br/>  public String doorName()<br/>  {<br/>    return "door";<br/>  }<br/><br/>  public String openName()<br/>  {<br/>    return "slide";<br/>  }<br/><br/>  public String closeName()<br/>  {<br/>    return "slide";<br/>  }<br/><br/>  public boolean hasADoor()<br/>  {<br/>    return true;<br/>  }<br/><br/>  public boolean hasALock()<br/>  {<br/>    return false;<br/>  }<br/><br/>  public boolean defaultsLocked()<br/>  {<br/>    return false;<br/>  }<br/><br/>  public boolean defaultsClosed()<br/>  {<br/>    return true;<br/>  }<br/><br/>  public int openDelayTicks()<br/>  {<br/>    return 45;<br/>  }<br/>}<br/></pre>
                 <p>As you can see, exits are
                     very simple. A set of variables and
                     parameters are sufficient to establish every function of an exit, and
@@ -4752,14 +4752,14 @@ getBreathables() { return new int[]{ RawMaterial.RESOURCE_AIR }; }</span><br/>
                     standard maze. Each of those respectively is a functional superset of
                     the former respectively. Rooms import the same packages mentioned in
                     the first section of this document under Complete Default Import List
-                    as well as (in this case) com.planet_ink.coffee_mud.Rooms.StdGrid,
-                    com.planet_ink.coffee_mud.Rooms.StdRoom, or
-                    com.planet_ink.coffee_mud.Rooms.StdMaze, because our sample classes
+                    as well as (in this case) com.planet_ink.game.Rooms.StdGrid,
+                    com.planet_ink.game.Rooms.StdRoom, or
+                    com.planet_ink.game.Rooms.StdMaze, because our sample classes
                     extends them.</p>
                 <p>Let's looks at an example
                     of a standard grid room, which has
                     much of the functionality we are interested in:</p>
-                <pre>public class RoadGrid extends com.planet_ink.coffee_mud.Locales.StdGrid<br/>{<br/>  public String ID()<br/>  {<br/>    return "RoadGrid";<br/>  }<br/><br/>  public RoadGrid()<br/>  {<br/>    super();<br/>    name = "a road";<br/>    basePhyStats.setWeight( 1 );<br/>    recoverPhyStats();<br/>  }<br/><br/>  public String getGridChildLocaleID()<br/>  {<br/>    return "Road";<br/>  }<br/><br/>  public List&lt;Integer&gt; resourceChoices()<br/>  {<br/>    return Road.roomResources;<br/>  }<br/><br/>  public int domainType()<br/>  {<br/>    return Room.DOMAIN_OUTDOORS_PLAINS;<br/>  }<br/>}<br/></pre>
+                <pre>public class RoadGrid extends com.planet_ink.game.Locales.StdGrid<br/>{<br/>  public String ID()<br/>  {<br/>    return "RoadGrid";<br/>  }<br/><br/>  public RoadGrid()<br/>  {<br/>    super();<br/>    name = "a road";<br/>    basePhyStats.setWeight( 1 );<br/>    recoverPhyStats();<br/>  }<br/><br/>  public String getGridChildLocaleID()<br/>  {<br/>    return "Road";<br/>  }<br/><br/>  public List&lt;Integer&gt; resourceChoices()<br/>  {<br/>    return Road.roomResources;<br/>  }<br/><br/>  public int domainType()<br/>  {<br/>    return Room.DOMAIN_OUTDOORS_PLAINS;<br/>  }<br/>}<br/></pre>
                 <p>Here we see the standard
                     RoadGrid. It's effects, behaviors,
                     displaytext, description, and (since it is a grid type) size in the x
@@ -4897,7 +4897,7 @@ getBreathables() { return new int[]{ RawMaterial.RESOURCE_AIR }; }</span><br/>
                     package, though it is important that the ID() of the property be unique
                     in the system. Properties import the same packages mentioned in the
                     first section of this document under Complete Default Import List as
-                    well as (in this case) com.planet_ink.coffee_mud.Properties.Property
+                    well as (in this case) com.planet_ink.game.Properties.Property
                     because our sample class extends it.</p>
                 <p>A customized property
                     class must extend the Property class
@@ -4911,7 +4911,7 @@ getBreathables() { return new int[]{ RawMaterial.RESOURCE_AIR }; }</span><br/>
                     methods as shown below. Notice that the <code>ID()</code>
                     is the same
                     as the name of the class. This is no accident -- this is required!</p>
-                <pre>public class Prop_AstralSpirit extends com.planet_ink.coffee_mud.Abilities.Properties.Property<br/>{<br/>  public String ID()<br/>  {<br/>    return "Prop_AstralSpirit";<br/>  }<br/><br/>  public String name()<br/>  {<br/>    return "Astral Spirit";<br/>  }<br/></pre>
+                <pre>public class Prop_AstralSpirit extends com.planet_ink.game.Abilities.Properties.Property<br/>{<br/>  public String ID()<br/>  {<br/>    return "Prop_AstralSpirit";<br/>  }<br/><br/>  public String name()<br/>  {<br/>    return "Astral Spirit";<br/>  }<br/></pre>
                 <p>Above we see the
                     aforementioned methods defined. The Property
                     does not differ from other Abilities, or indeed other Physical
@@ -4985,7 +4985,7 @@ getBreathables() { return new int[]{ RawMaterial.RESOURCE_AIR }; }</span><br/>
                     of the ability be unique in the system. A custom ability imports the
                     same packages mentioned in the first section of this document under
                     Complete Default Import List as well as (in this case)
-                    com.planet_ink.coffee_mud.Abilities.StdAbility because our sample class
+                    com.planet_ink.game.Abilities.StdAbility because our sample class
                     extends it.</p>
                 <p>A customized ability
                     class usually extends the StdAbility
@@ -4998,7 +4998,7 @@ getBreathables() { return new int[]{ RawMaterial.RESOURCE_AIR }; }</span><br/>
                     methods as shown below. Notice that the <code>ID()</code>
                     is the same
                     as the name of the class. This is no accident -- this is required!</p>
-                <pre>public class Skill_Trip extends com.planet_ink.coffee_mud.Abilities.StdAbility<br/>{<br/>  public String ID()<br/>  {<br/>    return "Skill_Trip";<br/>  }<br/><br/>  public String name()<br/>  {<br/>    return "Trip";<br/>  }<br/></pre>
+                <pre>public class Skill_Trip extends com.planet_ink.game.Abilities.StdAbility<br/>{<br/>  public String ID()<br/>  {<br/>    return "Skill_Trip";<br/>  }<br/><br/>  public String name()<br/>  {<br/>    return "Trip";<br/>  }<br/></pre>
                 <p>Above we see the
                     aforementioned methods defined. This skill
                     does not differ from other Abilities, or indeed other Environmental
@@ -5373,7 +5373,7 @@ getBreathables() { return new int[]{ RawMaterial.RESOURCE_AIR }; }</span><br/>
                 <p>Spells will follow all
                     the rules mentioned above in the Skill
                     Abilities section, with a few differences:</p>
-                <pre>public class Spell_ResistFire extends com.planet_ink.coffee_mud.Abilities.Spells.Spell<br/>{<br/>  public String ID()<br/>  {<br/>    return "Spell_ResistFire";<br/>  }<br/><br/>  public String name()<br/>  {<br/>    return "Resist Fire";<br/>  }<br/><br/>  public String displayText()<br/>  {<br/>    return "(Resist Fire)";<br/>  }<br/><br/>  public int abstractQuality()<br/>  {<br/>    return Ability.QUALITY_BENEFICIAL_OTHERS;<br/>  }<br/><br/>  protected int canAffectCode()<br/>  {<br/>    return CAN_MOBS;<br/>  }<br/><br/>  public int classificationCode()<br/>  {<br/>    return Ability.ACODE_SPELL|Ability.DOMAIN_ABJURATION;<br/>  }<br/></pre>
+                <pre>public class Spell_ResistFire extends com.planet_ink.game.Abilities.Spells.Spell<br/>{<br/>  public String ID()<br/>  {<br/>    return "Spell_ResistFire";<br/>  }<br/><br/>  public String name()<br/>  {<br/>    return "Resist Fire";<br/>  }<br/><br/>  public String displayText()<br/>  {<br/>    return "(Resist Fire)";<br/>  }<br/><br/>  public int abstractQuality()<br/>  {<br/>    return Ability.QUALITY_BENEFICIAL_OTHERS;<br/>  }<br/><br/>  protected int canAffectCode()<br/>  {<br/>    return CAN_MOBS;<br/>  }<br/><br/>  public int classificationCode()<br/>  {<br/>    return Ability.ACODE_SPELL|Ability.DOMAIN_ABJURATION;<br/>  }<br/></pre>
                 <p>The first difference you
                     will notice above is that spells
                     extend the base class Spell.java found in the Abilities/Spells
@@ -5457,7 +5457,7 @@ getBreathables() { return new int[]{ RawMaterial.RESOURCE_AIR }; }</span><br/>
                 <p>Prayers will follow all
                     the rules mentioned above in the Skill
                     Abilities section, with a few differences:</p>
-                <pre>public class Prayer_Anger extends com.planet_ink.coffee_mud.Abilities.Prayers.Prayer<br/>{<br/>  public String ID()<br/>  {<br/>    return "Prayer_Anger";<br/>  }<br/><br/>  public String name()<br/>  {<br/>    return "Anger";<br/>  }<br/><br/>  public int abstractQuality()<br/>  {<br/>    return Ability.QUALITY_MALICIOUS;<br/>  }<br/><br/>  public long flags()<br/>  {<br/>    return Ability.FLAG_UNHOLY;<br/>  }<br/><br/>  public boolean invoke( MOB mob, List&lt;String&gt; commands, Physical givenTarget, boolean auto, int asLevel )<br/>  {<br/>    if( !super.invoke( mob, commands, givenTarget, auto ) )<br/>    {<br/>      return false;<br/>    }<br/><br/>    boolean success = proficiencyCheck( mob, 0, auto );<br/><br/>    boolean someoneIsFighting = false;<br/>    for( int i = 0; i &lt; mob.location().numInhabitants(); i++ )<br/>    {<br/>      MOB inhab = mob.location().fetchInhabitant( i );<br/>      if( ( inhab != null ) &amp;&amp; ( inhab.isInCombat() ) )<br/>      {<br/>        someoneIsFighting = true;<br/>      }<br/>    }<br/><br/>    if( success<br/>    &amp;&amp;( !someoneIsFighting )<br/>    &amp;&amp;( mob.location().numInhabitants() &gt; 3 ))<br/>    {<br/>      // it worked, so build a copy of this ability,<br/>      // and add it to the effects list of the<br/>      // affected MOB. Then tell everyone else<br/>      // what happened.<br/>       CMMsg msg = CMClass.getMsg( mob, null, this, affectType(auto), auto?"A feeling of anger descends": "^S&lt;S-NAME&gt; rage(s) for anger.^?" );<br/><br/>       if( mob.location().okMessage( mob, msg ) )<br/>       {<br/>         mob.location().send( mob, msg );<br/><br/>         [.......]<br/>}<br/></pre>
+                <pre>public class Prayer_Anger extends com.planet_ink.game.Abilities.Prayers.Prayer<br/>{<br/>  public String ID()<br/>  {<br/>    return "Prayer_Anger";<br/>  }<br/><br/>  public String name()<br/>  {<br/>    return "Anger";<br/>  }<br/><br/>  public int abstractQuality()<br/>  {<br/>    return Ability.QUALITY_MALICIOUS;<br/>  }<br/><br/>  public long flags()<br/>  {<br/>    return Ability.FLAG_UNHOLY;<br/>  }<br/><br/>  public boolean invoke( MOB mob, List&lt;String&gt; commands, Physical givenTarget, boolean auto, int asLevel )<br/>  {<br/>    if( !super.invoke( mob, commands, givenTarget, auto ) )<br/>    {<br/>      return false;<br/>    }<br/><br/>    boolean success = proficiencyCheck( mob, 0, auto );<br/><br/>    boolean someoneIsFighting = false;<br/>    for( int i = 0; i &lt; mob.location().numInhabitants(); i++ )<br/>    {<br/>      MOB inhab = mob.location().fetchInhabitant( i );<br/>      if( ( inhab != null ) &amp;&amp; ( inhab.isInCombat() ) )<br/>      {<br/>        someoneIsFighting = true;<br/>      }<br/>    }<br/><br/>    if( success<br/>    &amp;&amp;( !someoneIsFighting )<br/>    &amp;&amp;( mob.location().numInhabitants() &gt; 3 ))<br/>    {<br/>      // it worked, so build a copy of this ability,<br/>      // and add it to the effects list of the<br/>      // affected MOB. Then tell everyone else<br/>      // what happened.<br/>       CMMsg msg = CMClass.getMsg( mob, null, this, affectType(auto), auto?"A feeling of anger descends": "^S&lt;S-NAME&gt; rage(s) for anger.^?" );<br/><br/>       if( mob.location().okMessage( mob, msg ) )<br/>       {<br/>         mob.location().send( mob, msg );<br/><br/>         [.......]<br/>}<br/></pre>
                 <p>The first difference you
                     may notice between this and the Skill
                     Ability discussed in the previous section is that this skill extends
@@ -5490,7 +5490,7 @@ getBreathables() { return new int[]{ RawMaterial.RESOURCE_AIR }; }</span><br/>
                 <p>Chants will follow all
                     the rules mentioned above in the Skill
                     Abilities section, with a few differences:</p>
-                <pre>public class Chant_AlterTime extends com.planet_ink.coffee_mud.Abilities.Druid.Chant<br/>{<br/>  public String ID()<br/>  {<br/>    return "Chant_AlterTime";<br/>  }<br/><br/>  public String name()<br/>  {<br/>    return "Alter Time";<br/>  }<br/><br/>  public String displayText()<br/>  {<br/>    return "";<br/>  }<br/><br/>  public int overrideMana()<br/>  {<br/>    return 100;<br/>  }<br/><br/>  public int abstractQuality()<br/>  {<br/>    return Ability.QUALITY_INDIFFERENT;<br/>  }<br/><br/>  protected int canAffectCode()<br/>  {<br/>    return 0;<br/>  }<br/><br/>  protected int canTargetCode()<br/>  {<br/>    return 0;<br/>  }<br/><br/>  public boolean invoke( MOB mob, List&lt;String&gt; commands, Physical givenTarget, boolean auto, int asLevel )<br/>  {<br/>    if( !super.invoke( mob, commands, givenTarget, auto ) )<br/>    {<br/>      return false;<br/>    }<br/><br/>    boolean success = proficiencyCheck( mob, 0, auto );<br/>    if( success )<br/>    {<br/>      // it worked, so build a copy of this ability,<br/>      // and add it to the effects list of the<br/>      // affected MOB. Then tell everyone else<br/>      // what happened.<br/>      CMMsg msg = CMClass.getMsg( mob, null, this, affectType( auto ), auto ? "" : "^S&lt;S-NAME&gt; chant(s), and reality seems to start blurring.^?" );<br/><br/>      if( mob.location().okMessage( mob, msg ) )<br/>      {<br/>        mob.location().send( mob, msg );<br/>        int x = CMath.s_int( text() );<br/>        while( x == 0 )<br/>        {<br/>          x = CMLib.dice().roll( 1, 3, -2 );<br/>        }<br/><br/>        if( x &gt; 0 )<br/>        {<br/>          mob.location().showHappens( CMMsg.MSG_OK_VISUAL, "Time moves forwards!" );<br/>        }<br/>        else<br/>        {<br/>          mob.location().showHappens( CMMsg.MSG_OK_VISUAL, "Time moves backwards!" );<br/>        }<br/><br/>        if( CMLib.map().numAreas() &gt; 0 )<br/>        {<br/>          CMLib.map().getFirstArea().tickTock( x );<br/>        }<br/>      }<br/>    }<br/>    else<br/>    {<br/>      return beneficialWordsFizzle( mob, null, "&lt;S-NAME&gt; chant(s), but the magic fades" );<br/>    }<br/><br/>    // return whether it worked<br/>    return success;<br/>  }<br/>}<br/></pre>
+                <pre>public class Chant_AlterTime extends com.planet_ink.game.Abilities.Druid.Chant<br/>{<br/>  public String ID()<br/>  {<br/>    return "Chant_AlterTime";<br/>  }<br/><br/>  public String name()<br/>  {<br/>    return "Alter Time";<br/>  }<br/><br/>  public String displayText()<br/>  {<br/>    return "";<br/>  }<br/><br/>  public int overrideMana()<br/>  {<br/>    return 100;<br/>  }<br/><br/>  public int abstractQuality()<br/>  {<br/>    return Ability.QUALITY_INDIFFERENT;<br/>  }<br/><br/>  protected int canAffectCode()<br/>  {<br/>    return 0;<br/>  }<br/><br/>  protected int canTargetCode()<br/>  {<br/>    return 0;<br/>  }<br/><br/>  public boolean invoke( MOB mob, List&lt;String&gt; commands, Physical givenTarget, boolean auto, int asLevel )<br/>  {<br/>    if( !super.invoke( mob, commands, givenTarget, auto ) )<br/>    {<br/>      return false;<br/>    }<br/><br/>    boolean success = proficiencyCheck( mob, 0, auto );<br/>    if( success )<br/>    {<br/>      // it worked, so build a copy of this ability,<br/>      // and add it to the effects list of the<br/>      // affected MOB. Then tell everyone else<br/>      // what happened.<br/>      CMMsg msg = CMClass.getMsg( mob, null, this, affectType( auto ), auto ? "" : "^S&lt;S-NAME&gt; chant(s), and reality seems to start blurring.^?" );<br/><br/>      if( mob.location().okMessage( mob, msg ) )<br/>      {<br/>        mob.location().send( mob, msg );<br/>        int x = CMath.s_int( text() );<br/>        while( x == 0 )<br/>        {<br/>          x = CMLib.dice().roll( 1, 3, -2 );<br/>        }<br/><br/>        if( x &gt; 0 )<br/>        {<br/>          mob.location().showHappens( CMMsg.MSG_OK_VISUAL, "Time moves forwards!" );<br/>        }<br/>        else<br/>        {<br/>          mob.location().showHappens( CMMsg.MSG_OK_VISUAL, "Time moves backwards!" );<br/>        }<br/><br/>        if( CMLib.map().numAreas() &gt; 0 )<br/>        {<br/>          CMLib.map().getFirstArea().tickTock( x );<br/>        }<br/>      }<br/>    }<br/>    else<br/>    {<br/>      return beneficialWordsFizzle( mob, null, "&lt;S-NAME&gt; chant(s), but the magic fades" );<br/>    }<br/><br/>    // return whether it worked<br/>    return success;<br/>  }<br/>}<br/></pre>
                 <p>The first difference you
                     may notice between this and the Skill
                     Ability discussed in the previous section is that this skill extends
@@ -5527,9 +5527,9 @@ getBreathables() { return new int[]{ RawMaterial.RESOURCE_AIR }; }</span><br/>
                     they are the most unique of skills. More than any other skill, they
                     rely very heavily on basic functionality provide by their appropriate
                     superclasses. For your sanity, I recommend that ALL of your coded songs
-                    extend either com.planet_ink.coffee_mud.Abilities.Songs.Song,
-                    com.planet_ink.coffee_mud.Abilities.Songs.Dance, or
-                    com.planet_ink.coffee_mud.Abilities.Songs.Play. This is because those
+                    extend either com.planet_ink.game.Abilities.Songs.Song,
+                    com.planet_ink.game.Abilities.Songs.Dance, or
+                    com.planet_ink.game.Abilities.Songs.Play. This is because those
                     classes provide very important basic functionality unique to songs, and
                     save you as the coder from having to worry about coding that unique
                     functionality yourself.</p>
@@ -5538,7 +5538,7 @@ getBreathables() { return new int[]{ RawMaterial.RESOURCE_AIR }; }</span><br/>
                     behave when invoked in particular. They are always invoked upon groups,
                     and always require the invoker to remain in the room for the song to
                     remain in effect.</p>
-                <pre>public class Song_Protection extends com.planet_ink.coffee_mud.Abilities.Songs.Song<br/>{<br/>  public String ID()<br/>  {<br/>    return "Song_Protection";<br/>  }<br/><br/>  public String name()<br/>  {<br/>    return "Protection";<br/>  }<br/></pre>
+                <pre>public class Song_Protection extends com.planet_ink.game.Abilities.Songs.Song<br/>{<br/>  public String ID()<br/>  {<br/>    return "Song_Protection";<br/>  }<br/><br/>  public String name()<br/>  {<br/>    return "Protection";<br/>  }<br/></pre>
                 <p>Like the skill abilities
                     above, <code>ID()</code>
                     and <code>name()</code>
@@ -5569,9 +5569,9 @@ getBreathables() { return new int[]{ RawMaterial.RESOURCE_AIR }; }</span><br/>
                     unique kinds of common skills. One type
                     is simply a normal skill, just like the ones shown above. Another type
                     is the gathering skill, which is used to collect resources, and extends
-                    com.planet_ink.coffee_mud.Abilities.Common.GatheringSkill. The last
+                    com.planet_ink.game.Abilities.Common.GatheringSkill. The last
                     type is the crafting skill, which extends
-                    com.planet_ink.coffee_mud.Abilities.Common.CraftingSkill. In general,
+                    com.planet_ink.game.Abilities.Common.CraftingSkill. In general,
                     common skills have this in common: they invoke immediately, but take a
                     long time to complete. They give messages of progress to the user, and
                     they immediately unInvoke themselves if the user leaves the room,
@@ -5581,7 +5581,7 @@ getBreathables() { return new int[]{ RawMaterial.RESOURCE_AIR }; }</span><br/>
                     especially in the way they select the items they create, and in the way
                     they fill-in the variables for what they are creating, you will find
                     them remarkably similar to gathering skills.</a></p>
-                <pre>public class Fishing extends com.planet_ink.coffee_mud.Abilities.Common.GatheringSkill<br/>{<br/>  public String ID()<br/>  {<br/>    return "Fishing";<br/>  }<br/><br/>  public String name()<br/>  {<br/>    return "Fishing";<br/>  }<br/> <br/></pre>
+                <pre>public class Fishing extends com.planet_ink.game.Abilities.Common.GatheringSkill<br/>{<br/>  public String ID()<br/>  {<br/>    return "Fishing";<br/>  }<br/><br/>  public String name()<br/>  {<br/>    return "Fishing";<br/>  }<br/> <br/></pre>
                 <p>If you've read the Skill
                     Abilities section above, you will
                     recognize these methods and their importance. As always, the <code>ID()</code>
@@ -5606,7 +5606,7 @@ getBreathables() { return new int[]{ RawMaterial.RESOURCE_AIR }; }</span><br/>
                     by this skill. Fishing is for catching fish, so we'll notify the system
                     that we deal in meat (flesh). Appropriate strings to return from this
                     method are listed in
-                    com.planet_ink.coffee_mud.Items.interfaces.RawMaterial.java. If there
+                    com.planet_ink.game.Items.interfaces.RawMaterial.java. If there
                     is more than one resource or material type, they are separated with the
                     pipe | character.</p>
                 <pre>  protected Item found = null;<br/>  protected String foundShortName = "";<br/> <br/></pre>
@@ -5674,7 +5674,7 @@ getBreathables() { return new int[]{ RawMaterial.RESOURCE_AIR }; }</span><br/>
                 <pre>    int foundFish = -1;<br/>    boolean maybeFish = false;<br/>    if( mob.location() != null )<br/>    {<br/>      for( int i = 0; i &lt; RawMaterial.FISHES.length; i++ )<br/>      {<br/>        if( mob.location().myResource() == RawMaterial.FISHES[i] )<br/>        {<br/>          foundFish = RawMaterial.FISHES[i];<br/>          maybeFish = true;<br/>        }<br/>        else <br/>        if( ( mob.location().resourceChoices() != null )<br/>        &amp;&amp; ( mob.location().resourceChoices().contains(Integer.valueOf( RawMaterial.FISHES[i] ) ) ) )<br/>        {<br/>          maybeFish = true;<br/>        }<br/>      }<br/>    }<br/> <br/></pre>
                 <p>Our next step is to
                     initialize a variable for the
-                    com.planet_ink.coffee_mud.Items.interfaces.RawMaterial.java (resource)
+                    com.planet_ink.game.Items.interfaces.RawMaterial.java (resource)
                     code which will represent the type of fish we have caught here. We also
                     set a variable saying whether or not ANY fish are even POSSIBLY
                     available here.</p>
@@ -5725,9 +5725,9 @@ getBreathables() { return new int[]{ RawMaterial.RESOURCE_AIR }; }</span><br/>
                     gathering skills, but you'll be able to apply almost all you learned by
                     reviewing the gathering skill to build a good picture of the way
                     crafting skills work. The first difference is that the crafting skills
-                    extend com.planet_ink.coffee_mud.Abilities.Common.CraftingSkill. Many
+                    extend com.planet_ink.game.Abilities.Common.CraftingSkill. Many
                     of them also implement the
-                    com.planet_ink.coffee_mud.Abilities.interfaces.ItemCrafter interface,
+                    com.planet_ink.game.Abilities.interfaces.ItemCrafter interface,
                     which allows them to provide items to other parts of coffeemud
                     instantly!</a></p>
                 <pre>public class GlassBlowing extends CraftingSkill implements ItemCraftor<br/>{<br/>  public String ID()<br/>  {<br/>    return "GlassBlowing";<br/>  }<br/><br/>  public String name()<br/>  {<br/>    return "Glass Blowing";<br/>  }<br/> <br/></pre>
@@ -5750,7 +5750,7 @@ getBreathables() { return new int[]{ RawMaterial.RESOURCE_AIR }; }</span><br/>
                     by this skill. GlassBlowing is for turning sand into glass, so we'll
                     notify the system that we deal in sand and glass resources. Appropriate
                     strings to return from this method are listed in
-                    com.planet_ink.coffee_mud.Items.interfaces.RawMaterial.java. If there
+                    com.planet_ink.game.Items.interfaces.RawMaterial.java. If there
                     is more than one resource or material type, they are separated with the
                     pipe | character.</p>
                 <pre>  protected static final int RCP_FINALNAME = 0;<br/>  protected static final int RCP_LEVEL = 1;<br/>  protected static final int RCP_TICKS = 2;<br/>  protected static final int RCP_WOOD = 3;<br/>  protected static final int RCP_VALUE = 4;<br/>  protected static final int RCP_CLASSTYPE = 5;<br/>  protected static final int RCP_MISCTYPE = 6;<br/>  protected static final int RCP_CAPACITY = 7;<br/>  protected static final int RCP_SPELL = 8;<br/> <br/></pre>
@@ -5998,7 +5998,7 @@ SMOKE_FLAG, STONE_FLAG</span></p>
                     determine how long it will take to generate the item.</p>
                 <img src="images/prayer.jpg" alt="poisons"/>
                 <h2><a name="POISON" id="POISON">Poisons</a></h2>
-                <pre>public class Poison_BeeSting extends com.planet_ink.coffee_mud.Abilities.Poisons.Poison<br/>{<br/>  public String ID()<br/>  {<br/>    return "Poison_BeeSting";<br/>  }<br/><br/>  public String name()<br/>  {<br/>    return "Bee Sting";<br/>  }<br/></pre>
+                <pre>public class Poison_BeeSting extends com.planet_ink.game.Abilities.Poisons.Poison<br/>{<br/>  public String ID()<br/>  {<br/>    return "Poison_BeeSting";<br/>  }<br/><br/>  public String name()<br/>  {<br/>    return "Bee Sting";<br/>  }<br/></pre>
                 <p>The Poison base class in
                     the Poisons package provides a tidy
                     template upon which your more common, mundane poisons can be based. The
@@ -6038,7 +6038,7 @@ SMOKE_FLAG, STONE_FLAG</span></p>
                     base class in the Diseases package
                     provides a tidy template upon which your more common, mundane diseases
                     can be based.</p>
-                <pre>public class Disease_Cold extends com.planet_ink.coffee_mud.Abilities.Diseases.Disease<br/>{<br/>  public String ID()<br/>  {<br/>    return "Disease_Cold";<br/>  }<br/><br/>  public String name()<br/>  {<br/>    return "Cold";<br/>  }<br/><br/>  public String displayText()<br/>  {<br/>    return "(Cold Virus)";<br/>  }<br/><br/>  protected int canAffectCode()<br/>  {<br/>    return CAN_MOBS;<br/>  }<br/><br/>  protected int canTargetCode()<br/>  {<br/>    return CAN_MOBS;<br/>  }<br/><br/>  public int abstractQuality()<br/>  {<br/>    return Ability.QUALITY_MALICIOUS;<br/>  }<br/><br/>  public boolean putInCommandlist()<br/>  {<br/>    return false;<br/>  }<br/></pre>
+                <pre>public class Disease_Cold extends com.planet_ink.game.Abilities.Diseases.Disease<br/>{<br/>  public String ID()<br/>  {<br/>    return "Disease_Cold";<br/>  }<br/><br/>  public String name()<br/>  {<br/>    return "Cold";<br/>  }<br/><br/>  public String displayText()<br/>  {<br/>    return "(Cold Virus)";<br/>  }<br/><br/>  protected int canAffectCode()<br/>  {<br/>    return CAN_MOBS;<br/>  }<br/><br/>  protected int canTargetCode()<br/>  {<br/>    return CAN_MOBS;<br/>  }<br/><br/>  public int abstractQuality()<br/>  {<br/>    return Ability.QUALITY_MALICIOUS;<br/>  }<br/><br/>  public boolean putInCommandlist()<br/>  {<br/>    return false;<br/>  }<br/></pre>
                 <p>The Disease base class
                     provides many important base services
                     that allows CoffeeMud to interact properly with your disease. For this
@@ -6114,13 +6114,13 @@ SMOKE_FLAG, STONE_FLAG</span></p>
                     worth mentioning. However, although they are classified as skill
                     abilities, they are different from normal Skill Abilities mentioned
                     above in that they rely very heavily on their superclass bases, which
-                    are com.planet_ink.coffee_mud.Abilities.Traps.StdTrap, and
-                    com.planet_ink.coffee_mud.Abilities.Traps.StdBomb respectively. Making
+                    are com.planet_ink.game.Abilities.Traps.StdTrap, and
+                    com.planet_ink.game.Abilities.Traps.StdBomb respectively. Making
                     a proper and compliant trap is helped considerably by following that
                     advice. Otherwise, so long as your trap implements the
-                    com.planet_ink.coffee_mud.Abilities.interfaces.Trap interface, it will
+                    com.planet_ink.game.Abilities.interfaces.Trap interface, it will
                     be ok.</p>
-                <pre>public class Trap_ElectricShock extends com.planet_ink.coffee_mud.Abilities.Traps.StdTrap<br/>{<br/>  public String ID()<br/>  {<br/>    return "Trap_ElectricShock";<br/>  }<br/><br/>  public String name()<br/>  {<br/>    return "electric shock";<br/>  }<br/> <br/></pre>
+                <pre>public class Trap_ElectricShock extends com.planet_ink.game.Abilities.Traps.StdTrap<br/>{<br/>  public String ID()<br/>  {<br/>    return "Trap_ElectricShock";<br/>  }<br/><br/>  public String name()<br/>  {<br/>    return "electric shock";<br/>  }<br/> <br/></pre>
                 <p>If you've read the Skill
                     Abilities section above, you will
                     recognize these methods and their importance. As always, the <code>ID()</code>
@@ -6220,7 +6220,7 @@ SMOKE_FLAG, STONE_FLAG</span></p>
                     knowledge if you follow the K.I.S.S. principle and use the simple
                     template provided by the StdLanguage base class in the Languages
                     package, which implements the Language interface.</p>
-                <pre>public class Elvish extends com.planet_ink.coffee_mud.Abilities.Languages.StdLanguage<br/>{<br/>  public String ID()<br/>  {<br/>    return "Elvish";<br/>  }<br/><br/>  public String name()<br/>  {<br/>    return "Elvish";<br/>  }<br/></pre>
+                <pre>public class Elvish extends com.planet_ink.game.Abilities.Languages.StdLanguage<br/>{<br/>  public String ID()<br/>  {<br/>    return "Elvish";<br/>  }<br/><br/>  public String name()<br/>  {<br/>    return "Elvish";<br/>  }<br/></pre>
                 <p>Like all Abilities, the
                     Language requires an ID which is the
                     same as its class name, and a readable name. In the case of Elvish,
