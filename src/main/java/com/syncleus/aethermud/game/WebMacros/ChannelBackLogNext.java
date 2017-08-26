@@ -106,7 +106,7 @@ public class ChannelBackLogNext extends StdWebMacro {
                     }
                     str += " (" + CMLib.time().date2SmartEllapsedTime(elapsedTime, false) + " ago)";
                     if (CMLib.channels().mayReadThisChannel(msg.source(), areareq, mob, channelInt, true))
-                        return clearWebMacros(CMLib.coffeeFilter().fullOutFilter(mob.session(), mob, msg.source(), msg.target(), msg.tool(), CMStrings.removeColors(str), false));
+                        return clearWebMacros(CMLib.aetherFilter().fullOutFilter(mob.session(), mob, msg.source(), msg.target(), msg.tool(), CMStrings.removeColors(str), false));
                 }
             }
             return "";

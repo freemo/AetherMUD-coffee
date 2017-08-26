@@ -89,13 +89,13 @@ public class Thief_PubContacts extends ThiefSkill {
             final MOB M = room.fetchInhabitant(m);
             if ((M != null) && (M != mob)) {
                 if (CMLib.flags().canBeSeenBy(M, mob)) {
-                    final ShopKeeper SK = CMLib.coffeeShops().getShopKeeper(M);
+                    final ShopKeeper SK = CMLib.aetherShops().getShopKeeper(M);
                     if (SK != null) {
                         for (final Iterator<Environmental> i = SK.getShop().getStoreInventory(); i.hasNext(); ) {
                             final Environmental E = i.next();
                             if ((E instanceof Item) && (CMLib.flags().isAlcoholic((Item) E))) {
                                 double moneyPrice = 0;
-                                ShopKeeper.ShopPrice price = CMLib.coffeeShops().sellingPrice(M, mob, E, SK, true);
+                                ShopKeeper.ShopPrice price = CMLib.aetherShops().sellingPrice(M, mob, E, SK, true);
                                 if (price.experiencePrice > 0)
                                     moneyPrice = (100 * price.experiencePrice);
                                 else if (price.questPointPrice > 0)
@@ -106,7 +106,7 @@ public class Thief_PubContacts extends ThiefSkill {
                                 if (moneyPrice < lowestPrice) {
                                     lowestPrice = moneyPrice;
                                     lowestItem = (Item) E;
-                                    currency = CMLib.beanCounter().getCurrency(M);
+                                    currency = CMLib.moneyCounter().getCurrency(M);
                                 }
                             }
                         }
@@ -317,8 +317,8 @@ public class Thief_PubContacts extends ThiefSkill {
             }
             double pct = 0.5 + (CMath.mul(CMath.div(10 - super.getXLOWCOSTLevel(mob), 2.0), 0.1));
             money = CMath.mul(pct, alco.second.doubleValue() * 6.0);
-            moneyStr = CMLib.beanCounter().abbreviatedPrice(alco.third, money);
-            if (CMLib.beanCounter().getTotalAbsoluteValue(mob, alco.third) < money) {
+            moneyStr = CMLib.moneyCounter().abbreviatedPrice(alco.third, money);
+            if (CMLib.moneyCounter().getTotalAbsoluteValue(mob, alco.third) < money) {
                 mob.tell(L("You need at least @x1 to buy enough drinks to loosen tongues.", moneyStr));
                 return false;
             }
@@ -330,7 +330,7 @@ public class Thief_PubContacts extends ThiefSkill {
         final boolean success = proficiencyCheck(mob, 0, auto);
 
         if (money > 0.0)
-            CMLib.beanCounter().subtractMoney(mob, money);
+            CMLib.moneyCounter().subtractMoney(mob, money);
 
         final CMMsg msg = CMClass.getMsg(mob, null, this, CMMsg.MSG_THIEF_ACT, L("<S-NAME> drop(s) @x1 on drinks and start(s) socializing.", moneyStr));
         if (mob.location().okMessage(mob, msg)) {

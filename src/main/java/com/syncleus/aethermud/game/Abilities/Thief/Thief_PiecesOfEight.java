@@ -137,12 +137,12 @@ public class Thief_PiecesOfEight extends ThiefSkill {
             }
         }
         if (coins.size() == 0) {
-            mob.tell(L("You don't have any buried @x1.", CMLib.beanCounter().getDenominationName(triad.first, triad.second.doubleValue())));
+            mob.tell(L("You don't have any buried @x1.", CMLib.moneyCounter().getDenominationName(triad.first, triad.second.doubleValue())));
             return false;
         }
 
         if (totalAmount > totalCoinValue) {
-            mob.tell(L("You don't have enough buried @x1.", CMLib.beanCounter().getDenominationName(triad.first, triad.second.doubleValue())));
+            mob.tell(L("You don't have enough buried @x1.", CMLib.moneyCounter().getDenominationName(triad.first, triad.second.doubleValue())));
             return false;
         }
 
@@ -164,11 +164,11 @@ public class Thief_PiecesOfEight extends ThiefSkill {
         final boolean success = proficiencyCheck(mob, 0, auto);
 
         if (success) {
-            final String moneyStr = triad.third + " " + CMLib.beanCounter().getDenominationName(triad.first, triad.second.doubleValue());
+            final String moneyStr = triad.third + " " + CMLib.moneyCounter().getDenominationName(triad.first, triad.second.doubleValue());
             final CMMsg msg = CMClass.getMsg(mob, null, this, CMMsg.MASK_MAGIC | CMMsg.MSG_THIEF_ACT, L("<S-NAME> pull(s) @x1 out of <S-HIS-HER> hard earned booty.", moneyStr));
             if (mob.location().okMessage(mob, msg)) {
                 mob.location().send(mob, msg);
-                Coins C = CMLib.beanCounter().makeCurrency(triad.first, triad.second.doubleValue(), triad.third.intValue());
+                Coins C = CMLib.moneyCounter().makeCurrency(triad.first, triad.second.doubleValue(), triad.third.intValue());
                 mob.addItem(C);
                 C.putCoinsBack();
             }

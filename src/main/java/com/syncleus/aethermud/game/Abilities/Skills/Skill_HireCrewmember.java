@@ -382,7 +382,7 @@ public class Skill_HireCrewmember extends StdSkill {
             final MOB M = room.fetchInhabitant(m);
             if ((M != null) && (M != mob)) {
                 if (CMLib.flags().canBeSeenBy(M, mob)) {
-                    final ShopKeeper SK = CMLib.coffeeShops().getShopKeeper(M);
+                    final ShopKeeper SK = CMLib.aetherShops().getShopKeeper(M);
                     if (SK != null) {
                         for (final Iterator<Environmental> i = SK.getShop().getStoreInventory(); i.hasNext(); ) {
                             final Environmental E = i.next();
@@ -427,8 +427,8 @@ public class Skill_HireCrewmember extends StdSkill {
             int medLevel = minLevel + (int) Math.round(CMath.ceiling(CMath.div(range, 2.0)));
             double amt = medLevel * 10.0;
             String currency = R.getArea().getCurrency();
-            moneyStr = CMLib.beanCounter().abbreviatedPrice(currency, amt);
-            if (CMLib.beanCounter().getTotalAbsoluteValue(mob, currency) < amt) {
+            moneyStr = CMLib.moneyCounter().abbreviatedPrice(currency, amt);
+            if (CMLib.moneyCounter().getTotalAbsoluteValue(mob, currency) < amt) {
                 mob.tell(L("You need at least @x1 to hire a decent sailor here.", moneyStr));
                 return false;
             }
@@ -446,7 +446,7 @@ public class Skill_HireCrewmember extends StdSkill {
         boolean success = proficiencyCheck(mob, 0, auto);
         if (success) {
             if (money > 0.0)
-                CMLib.beanCounter().subtractMoney(mob, money);
+                CMLib.moneyCounter().subtractMoney(mob, money);
             final MOB targetM = CMClass.getMOB("GenMob");
             final List<Race> races = CMLib.login().raceQualifies(Area.THEME_FANTASY);
             final Race raceR = races.get(CMLib.dice().roll(1, races.size(), -1));
@@ -493,7 +493,7 @@ public class Skill_HireCrewmember extends StdSkill {
             targetM.resetToMaxState();
             targetM.text();
             targetM.bringToLife(R, true);
-            CMLib.beanCounter().clearZeroMoney(targetM, null);
+            CMLib.moneyCounter().clearZeroMoney(targetM, null);
             targetM.setMoneyVariation(0);
             //targetM.location().showOthers(targetM,null,CMMsg.MSG_OK_ACTION,L("<S-NAME> appears!"));
             R.recoverRoomStats();

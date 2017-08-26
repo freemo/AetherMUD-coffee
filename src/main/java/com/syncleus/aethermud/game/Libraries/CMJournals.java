@@ -796,7 +796,7 @@ public class CMJournals extends StdLibrary implements JournalsLibrary {
                     case 'L': {
                         final StringBuffer list = new StringBuffer(messageTitle + "\n\r");
                         for (int v = 0; v < vbuf.size(); v++)
-                            list.append(CMLib.coffeeFilter().colorOnlyFilter("^X" + CMStrings.padRight("" + v, 3) + ")^.^N ", sess) + vbuf.get(v) + "\n\r");
+                            list.append(CMLib.aetherFilter().colorOnlyFilter("^X" + CMStrings.padRight("" + v, 3) + ")^.^N ", sess) + vbuf.get(v) + "\n\r");
                         sess.rawPrint(list.toString());
                         break;
                     }
@@ -850,9 +850,9 @@ public class CMJournals extends StdLibrary implements JournalsLibrary {
                     final String[] msgs = CMProps.getListVar(CMProps.StrList.SUBSCRIPTION_STRS);
                     if ((msgs != null) && (msgs.length > 0)) {
                         if (msgs[0].length() > 0)
-                            subscribeTitle = CMLib.coffeeFilter().fullInFilter(CMStrings.replaceAll(msgs[0], "<NAME>", journalName));
+                            subscribeTitle = CMLib.aetherFilter().fullInFilter(CMStrings.replaceAll(msgs[0], "<NAME>", journalName));
                         if ((msgs.length > 0) && (msgs[1].length() > 0))
-                            subscribedMsg = CMLib.coffeeFilter().fullInFilter(CMStrings.replaceAll(msgs[1], "<NAME>", journalName));
+                            subscribedMsg = CMLib.aetherFilter().fullInFilter(CMStrings.replaceAll(msgs[1], "<NAME>", journalName));
                     }
                     CMLib.database().DBWriteJournalEmail(CMProps.getVar(CMProps.Str.MAILBOX), journalName, journalName, userName, subscribeTitle, subscribedMsg);
                 }
@@ -884,9 +884,9 @@ public class CMJournals extends StdLibrary implements JournalsLibrary {
                     final String[] msgs = CMProps.getListVar(CMProps.StrList.SUBSCRIPTION_STRS);
                     if ((msgs != null) && (msgs.length > 2)) {
                         if (msgs[2].length() > 0)
-                            unsubscribeTitle = CMLib.coffeeFilter().fullInFilter(CMStrings.replaceAll(msgs[2], "<NAME>", journalName));
+                            unsubscribeTitle = CMLib.aetherFilter().fullInFilter(CMStrings.replaceAll(msgs[2], "<NAME>", journalName));
                         if ((msgs.length > 3) && (msgs[1].length() > 0))
-                            unsubscribedMsg = CMLib.coffeeFilter().fullInFilter(CMStrings.replaceAll(msgs[3], "<NAME>", journalName));
+                            unsubscribedMsg = CMLib.aetherFilter().fullInFilter(CMStrings.replaceAll(msgs[3], "<NAME>", journalName));
                     }
                     CMLib.database().DBWriteJournalEmail(CMProps.getVar(CMProps.Str.MAILBOX), journalName, journalName, userName, unsubscribeTitle, unsubscribedMsg);
                 }

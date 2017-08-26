@@ -445,7 +445,7 @@ public class Import extends StdCommand {
                 if (areaName.indexOf(color[0]) >= 0)
                     areaName = CMStrings.replaceAll(areaName, color[0], color[1]);
         }
-        return CMStrings.removeColors(CMLib.coffeeFilter().safetyFilter(areaName));
+        return CMStrings.removeColors(CMLib.aetherFilter().safetyFilter(areaName));
     }
 
     protected static Room getRoom(java.util.Map<String, Room> hashedRoomSet, String areaName, String calledThis) {
@@ -1962,7 +1962,7 @@ public class Import extends StdCommand {
             }
             if (useThisOne != null) {
                 if (okString)
-                    useThisOne.add(CMLib.coffeeFilter().safetyFilter(buf.get(0)));
+                    useThisOne.add(CMLib.aetherFilter().safetyFilter(buf.get(0)));
                 buf.remove(0);
             } else {
                 Log.sysOut("Import", "Just eating: " + s);
@@ -2251,10 +2251,10 @@ public class Import extends StdCommand {
             if (!mobID.equals(OfThisID))
                 continue;
 
-            final String simpleName = CMLib.coffeeFilter().safetyFilter(eatLineSquiggle(objV));
-            String mobName = CMLib.coffeeFilter().safetyFilter(eatLineSquiggle(objV));
-            final String mobDisplay = CMLib.coffeeFilter().safetyFilter(eatLineSquiggle(objV));
-            final String mobDescription = CMLib.coffeeFilter().safetyFilter(eatLineSquiggle(objV));
+            final String simpleName = CMLib.aetherFilter().safetyFilter(eatLineSquiggle(objV));
+            String mobName = CMLib.aetherFilter().safetyFilter(eatLineSquiggle(objV));
+            final String mobDisplay = CMLib.aetherFilter().safetyFilter(eatLineSquiggle(objV));
+            final String mobDescription = CMLib.aetherFilter().safetyFilter(eatLineSquiggle(objV));
             Race R = null;
             boolean circleFormat = false;
             if (nextLine(objV).endsWith("~")) {
@@ -3213,12 +3213,12 @@ public class Import extends StdCommand {
             if (!objectID.equals(OfThisID))
                 continue;
 
-            final String simpleName = CMLib.coffeeFilter().safetyFilter(eatLineSquiggle(objV));
-            String objectName = CMLib.coffeeFilter().safetyFilter(eatLineSquiggle(objV));
-            final String objectDisplay = CMLib.coffeeFilter().safetyFilter(eatLineSquiggle(objV));
+            final String simpleName = CMLib.aetherFilter().safetyFilter(eatLineSquiggle(objV));
+            String objectName = CMLib.aetherFilter().safetyFilter(eatLineSquiggle(objV));
+            final String objectDisplay = CMLib.aetherFilter().safetyFilter(eatLineSquiggle(objV));
             String objectDescription = "";
             if ((nextLine(objV).indexOf('~') >= 0) || ((nextLine(objV).length() > 0) && (!Character.isDigit(nextLine(objV).charAt(0)))))
-                objectDescription = CMLib.coffeeFilter().safetyFilter(eatLineSquiggle(objV));
+                objectDescription = CMLib.aetherFilter().safetyFilter(eatLineSquiggle(objV));
 
             String codeStr1 = eatNextLine(objV);
             String codeStr2 = eatNextLine(objV);
@@ -3785,7 +3785,7 @@ public class Import extends StdCommand {
                     }
                     if (!squiggleFound)
                         objV.add("~");
-                    final String desc = CMLib.coffeeFilter().safetyFilter(eatLineSquiggle(objV));
+                    final String desc = CMLib.aetherFilter().safetyFilter(eatLineSquiggle(objV));
                     I.setDescription(I.description() + desc);
                     if (I.ID().equals("GenReadable"))
                         I.setReadableText(fixReadableContent(I.description()));
@@ -3991,7 +3991,7 @@ public class Import extends StdCommand {
                 } else if (codeLine.equals("EXTRA")) {
                     eatNextLine(objV); // extra
                     eatLineSquiggle(objV); // key word
-                    final String desc = CMLib.coffeeFilter().safetyFilter(eatLineSquiggle(objV)); // description
+                    final String desc = CMLib.aetherFilter().safetyFilter(eatLineSquiggle(objV)); // description
                     I.setDescription(I.description() + desc);
                     if (I.ID().equals("GenReadable"))
                         I.setReadableText(fixReadableContent(I.description()));
@@ -4612,7 +4612,7 @@ public class Import extends StdCommand {
                     final List<List<XMLLibrary.XMLTag>> areas = new Vector<List<XMLLibrary.XMLTag>>();
                     if (session != null)
                         session.rawPrint(L("Unpacking area(s) from file: '@x1'...", areaFileName));
-                    String error = CMLib.coffeeMaker().fillAreasVectorFromXML(buf.toString(), areas, custom, externalFiles);
+                    String error = CMLib.aetherMaker().fillAreasVectorFromXML(buf.toString(), areas, custom, externalFiles);
                     if (error.length() == 0)
                         importCustomObjects(mob, custom, customBotherChecker, !prompt, nodelete);
                     if (error.length() == 0)
@@ -4629,7 +4629,7 @@ public class Import extends StdCommand {
                         if (session != null)
                             session.rawPrint(L("Unpacking area #@x1/@x2...", "" + (a + 1), "" + num));
                         final List<XMLLibrary.XMLTag> area = areas.get(0);
-                        error = CMLib.coffeeMaker().unpackAreaFromXML(area, session, areaType, true);
+                        error = CMLib.aetherMaker().unpackAreaFromXML(area, session, areaType, true);
                         if (session != null)
                             session.rawPrintln("!");
                         if (error.startsWith("Area Exists: ")) {
@@ -4679,13 +4679,13 @@ public class Import extends StdCommand {
                     if (session != null)
                         session.rawPrint(L("Unpacking area from file: '@x1'...", areaFileName));
                     final Vector<XMLLibrary.XMLTag> areaD = new Vector<XMLLibrary.XMLTag>();
-                    String error = CMLib.coffeeMaker().fillAreaAndCustomVectorFromXML(buf.toString(), areaD, custom, externalFiles);
+                    String error = CMLib.aetherMaker().fillAreaAndCustomVectorFromXML(buf.toString(), areaD, custom, externalFiles);
                     if (error.length() == 0)
                         importCustomObjects(mob, custom, customBotherChecker, !prompt, nodelete);
                     if (error.length() == 0)
                         importCustomFiles(mob, externalFiles, customBotherChecker, !prompt, nodelete);
                     if (error.length() == 0)
-                        error = CMLib.coffeeMaker().unpackAreaFromXML(areaD, session, areaType, true);
+                        error = CMLib.aetherMaker().unpackAreaFromXML(areaD, session, areaType, true);
                     if (session != null)
                         session.rawPrintln("!");
                     if (error.startsWith("Area Exists: ")) {
@@ -4701,7 +4701,7 @@ public class Import extends StdCommand {
                             return false;
                         if (session != null)
                             session.rawPrint(L("Unpacking area from file: '@x1'...", areaFileName));
-                        error = CMLib.coffeeMaker().unpackAreaFromXML(areaD, session, areaType, true);
+                        error = CMLib.aetherMaker().unpackAreaFromXML(areaD, session, areaType, true);
                         if (session != null)
                             session.rawPrintln("!");
                     }
@@ -4722,13 +4722,13 @@ public class Import extends StdCommand {
                         buf = new StringBuffer("");
                     if (session != null)
                         session.println(L("Unpacking room from file: '@x1'...", areaFileName));
-                    String error = CMLib.coffeeMaker().fillCustomVectorFromXML(buf.toString(), custom, externalFiles);
+                    String error = CMLib.aetherMaker().fillCustomVectorFromXML(buf.toString(), custom, externalFiles);
                     if (error.length() == 0)
                         importCustomObjects(mob, custom, customBotherChecker, !prompt, nodelete);
                     if (error.length() == 0)
                         importCustomFiles(mob, externalFiles, customBotherChecker, !prompt, nodelete);
                     if (error.length() == 0)
-                        error = CMLib.coffeeMaker().unpackRoomFromXML(buf.toString(), true);
+                        error = CMLib.aetherMaker().unpackRoomFromXML(buf.toString(), true);
                     if (error.startsWith("Room Exists: ")) {
                         final Room R = CMLib.map().getRoom(error.substring(13).trim());
                         if (R != null) {
@@ -4750,7 +4750,7 @@ public class Import extends StdCommand {
                             }
                             CMLib.map().obliterateRoom(R);
                         }
-                        error = CMLib.coffeeMaker().unpackRoomFromXML(buf.toString(), true);
+                        error = CMLib.aetherMaker().unpackRoomFromXML(buf.toString(), true);
                     }
                     if (error.length() > 0)
                         return returnAnError(session, "An error occurred on import: " + error + "\n\rPlease correct the problem and try the import again.", compileErrors, commands);
@@ -4781,7 +4781,7 @@ public class Import extends StdCommand {
                     buf = new StringBuffer(xmlFirst.get(0).value());
                     xmlFirst.clear();
 
-                    String error = CMLib.coffeeMaker().fillCustomVectorFromXML(buf.toString(), custom, externalFiles);
+                    String error = CMLib.aetherMaker().fillCustomVectorFromXML(buf.toString(), custom, externalFiles);
                     if (error.length() == 0)
                         importCustomObjects(mob, custom, customBotherChecker, !prompt, nodelete);
                     if (error.length() == 0)
@@ -4789,16 +4789,16 @@ public class Import extends StdCommand {
                     final Vector<MOB> mobs = new Vector<MOB>();
                     final Vector<CataData> mobCatData = new Vector<CataData>();
                     if ((error.length() == 0) && (hasMobs)) {
-                        error = CMLib.coffeeMaker().addMOBsFromXML(buf.toString(), mobs, session);
+                        error = CMLib.aetherMaker().addMOBsFromXML(buf.toString(), mobs, session);
                         if (error.length() == 0)
-                            error = CMLib.coffeeMaker().addCataDataFromXML(buf.toString(), mobCatData, mobs, session);
+                            error = CMLib.aetherMaker().addCataDataFromXML(buf.toString(), mobCatData, mobs, session);
                     }
                     final Vector<Item> items = new Vector<Item>();
                     final Vector<CataData> itemCatData = new Vector<CataData>();
                     if ((error.length() == 0) && (hasItems)) {
-                        error = CMLib.coffeeMaker().addItemsFromXML(buf.toString(), items, session);
+                        error = CMLib.aetherMaker().addItemsFromXML(buf.toString(), items, session);
                         if (error.length() == 0)
-                            error = CMLib.coffeeMaker().addCataDataFromXML(buf.toString(), itemCatData, items, session);
+                            error = CMLib.aetherMaker().addCataDataFromXML(buf.toString(), itemCatData, items, session);
                     }
                     if (session != null)
                         session.rawPrintln("!");
@@ -4855,13 +4855,13 @@ public class Import extends StdCommand {
                     if (session != null)
                         session.rawPrint(L("Unpacking mobs from file: '@x1'...", areaFileName));
                     final Vector<MOB> mobs = new Vector<MOB>();
-                    String error = CMLib.coffeeMaker().fillCustomVectorFromXML(buf.toString(), custom, externalFiles);
+                    String error = CMLib.aetherMaker().fillCustomVectorFromXML(buf.toString(), custom, externalFiles);
                     if (error.length() == 0)
                         importCustomObjects(mob, custom, customBotherChecker, !prompt, nodelete);
                     if (error.length() == 0)
                         importCustomFiles(mob, externalFiles, customBotherChecker, !prompt, nodelete);
                     if (error.length() == 0)
-                        error = CMLib.coffeeMaker().addMOBsFromXML(buf.toString(), mobs, session);
+                        error = CMLib.aetherMaker().addMOBsFromXML(buf.toString(), mobs, session);
                     if (session != null)
                         session.rawPrintln("!");
                     if (error.length() > 0)
@@ -4892,13 +4892,13 @@ public class Import extends StdCommand {
                         session.rawPrint(L("Unpacking players from file: '@x1'...", areaFileName));
                     final List<MOB> mobs = new Vector<MOB>();
                     final List<PlayerAccount> accounts = new Vector<PlayerAccount>();
-                    String error = CMLib.coffeeMaker().fillCustomVectorFromXML(buf.toString(), custom, externalFiles);
+                    String error = CMLib.aetherMaker().fillCustomVectorFromXML(buf.toString(), custom, externalFiles);
                     if (error.length() == 0)
                         importCustomObjects(mob, custom, customBotherChecker, !prompt, nodelete);
                     if (error.length() == 0)
                         importCustomFiles(mob, externalFiles, customBotherChecker, !prompt, nodelete);
                     if (error.length() == 0)
-                        error = CMLib.coffeeMaker().addPlayersAndAccountsFromXML(buf.toString(), accounts, mobs, session);
+                        error = CMLib.aetherMaker().addPlayersAndAccountsFromXML(buf.toString(), accounts, mobs, session);
                     if (session != null)
                         session.rawPrintln("!");
                     if (error.length() > 0)
@@ -5006,13 +5006,13 @@ public class Import extends StdCommand {
                     if (session != null)
                         session.rawPrint(L("Unpacking items from file: '@x1'...", areaFileName));
                     final Vector<Item> items = new Vector<Item>();
-                    String error = CMLib.coffeeMaker().fillCustomVectorFromXML(buf.toString(), custom, externalFiles);
+                    String error = CMLib.aetherMaker().fillCustomVectorFromXML(buf.toString(), custom, externalFiles);
                     if (error.length() == 0)
                         importCustomObjects(mob, custom, customBotherChecker, !prompt, nodelete);
                     if (error.length() == 0)
                         importCustomFiles(mob, externalFiles, customBotherChecker, !prompt, nodelete);
                     if (error.length() == 0)
-                        error = CMLib.coffeeMaker().addItemsFromXML(buf.toString(), items, session);
+                        error = CMLib.aetherMaker().addItemsFromXML(buf.toString(), items, session);
                     if (session != null)
                         session.rawPrintln("!");
                     if (error.length() > 0)
@@ -5304,8 +5304,8 @@ public class Import extends StdCommand {
                         R.setDisplayText(L("Emptiness..."));
                         R.setDescription("");
                     } else {
-                        R.setDisplayText(CMLib.coffeeFilter().safetyFilter(eatLineSquiggle(roomV)));
-                        R.setDescription(CMLib.coffeeFilter().safetyFilter(eatLineSquiggle(roomV)));
+                        R.setDisplayText(CMLib.aetherFilter().safetyFilter(eatLineSquiggle(roomV)));
+                        R.setDescription(CMLib.aetherFilter().safetyFilter(eatLineSquiggle(roomV)));
                     }
                     if (R.expirationDate() != 0)
                         R.setExpirationDate(R.expirationDate() + (360000));
@@ -5549,8 +5549,8 @@ public class Import extends StdCommand {
                         if (nextLine.toUpperCase().startsWith("S"))
                             continue;
                         else if (nextLine.toUpperCase().startsWith("E")) {
-                            final String nameString = CMLib.coffeeFilter().safetyFilter(eatLineSquiggle(roomV));
-                            final String descString = CMLib.coffeeFilter().safetyFilter(eatLineSquiggle(roomV));
+                            final String nameString = CMLib.aetherFilter().safetyFilter(eatLineSquiggle(roomV));
+                            final String descString = CMLib.aetherFilter().safetyFilter(eatLineSquiggle(roomV));
                             Item I = null;
                             if (hasReadableContent(nameString)) {
                                 I = CMClass.getBasicItem("GenWallpaper");
@@ -5564,8 +5564,8 @@ public class Import extends StdCommand {
                             R.addItem(I);
                         } else if (nextLine.toUpperCase().startsWith("D")) {
                             int dirCode = CMath.s_int(CMParms.getCleanBit(nextLine, 0).substring(1).trim());
-                            final String descStr = CMLib.coffeeFilter().safetyFilter(eatLineSquiggle(roomV));
-                            final String nameStr = CMLib.coffeeFilter().safetyFilter(eatLineSquiggle(roomV));
+                            final String descStr = CMLib.aetherFilter().safetyFilter(eatLineSquiggle(roomV));
+                            final String nameStr = CMLib.aetherFilter().safetyFilter(eatLineSquiggle(roomV));
                             String codeStr = eatLine(roomV);
                             if (codeStr.equalsIgnoreCase("~"))
                                 codeStr = eatLine(roomV);

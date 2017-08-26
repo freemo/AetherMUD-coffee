@@ -327,7 +327,7 @@ public class StdWebMacro implements WebMacro {
             return null;
         if (buf.length() == 0)
             return "";
-        return CMLib.coffeeFilter().simpleInFilter(new StringBuilder(buf));
+        return CMLib.aetherFilter().simpleInFilter(new StringBuilder(buf));
     }
 
     protected String htmlIncomingFilter(String buf) {

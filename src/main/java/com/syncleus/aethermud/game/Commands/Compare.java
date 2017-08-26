@@ -52,11 +52,11 @@ public class Compare extends StdCommand {
         commands.remove(0);
         Item compareThis = mob.findItem(null, commands.get(0));
         if ((compareThis == null) || (!CMLib.flags().canBeSeenBy(compareThis, mob))) {
-            final List<Environmental> V = CMLib.coffeeShops().getAllShopkeepers(mob.location(), mob);
+            final List<Environmental> V = CMLib.aetherShops().getAllShopkeepers(mob.location(), mob);
             if (V.size() > 0) {
                 for (int i = 0; i < V.size(); i++) {
                     final Environmental shopkeeper = V.get(i);
-                    final ShopKeeper SK = CMLib.coffeeShops().getShopKeeper(shopkeeper);
+                    final ShopKeeper SK = CMLib.aetherShops().getShopKeeper(shopkeeper);
                     final Environmental itemToDo = SK.getShop().getStock(commands.get(0), mob);
                     if ((itemToDo == null) || (!(itemToDo instanceof Item))) {
                         continue; // next shopkeeper

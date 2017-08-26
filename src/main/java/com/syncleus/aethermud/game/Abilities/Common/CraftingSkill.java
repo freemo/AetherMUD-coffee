@@ -635,7 +635,7 @@ public class CraftingSkill extends GatheringSkill {
             if (pair == null) {
                 commonTell(mob, L("You don't know how to make '@x1'", recipeName));
             } else {
-                final String viewDesc = CMLib.coffeeShops().getViewDescription(mob, pair.item);
+                final String viewDesc = CMLib.aetherShops().getViewDescription(mob, pair.item);
                 commonTell(mob, viewDesc);
                 pair.item.destroy();
                 if (pair.key != null)

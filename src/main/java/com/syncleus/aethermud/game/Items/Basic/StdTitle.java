@@ -348,7 +348,7 @@ public class StdTitle extends StdItem implements LandTitle {
             && (msg.tool() == this)) {
             final PrivateProperty P = this.fetchAPropertyRecord();
             if ((P != null) && (P.getOwnerName().length() > 0)) {
-                final ShopKeeper SK = CMLib.coffeeShops().getShopKeeper(msg.target());
+                final ShopKeeper SK = CMLib.aetherShops().getShopKeeper(msg.target());
                 if (((SK.isSold(ShopKeeper.DEAL_CLANBANKER) || SK.isSold(ShopKeeper.DEAL_CLANDSELLER) || SK.isSold(ShopKeeper.DEAL_CSHIPSELLER))
                     && (msg.source().getClanRole(P.getOwnerName()) == null))
                     || (((SK.isSold(ShopKeeper.DEAL_BANKER)) || (SK.isSold(ShopKeeper.DEAL_CLANBANKER)))
@@ -381,7 +381,7 @@ public class StdTitle extends StdItem implements LandTitle {
                     CMLib.commands().postSay((MOB) msg.target(), msg.source(), str, false, false);
                 else
                     ((MOB) msg.target()).tell(L("@x1 You might want to tell the customer.", str));
-                final ShopKeeper SK = CMLib.coffeeShops().getShopKeeper(msg.target());
+                final ShopKeeper SK = CMLib.aetherShops().getShopKeeper(msg.target());
                 if (SK != null)
                     SK.getShop().removeStock(msg.tool().Name(), msg.source());
                 destroy();

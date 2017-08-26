@@ -44,10 +44,10 @@ import com.syncleus.aethermud.game.core.interfaces.*;
 import java.util.*;
 
 
-public class CoffeeMaker extends StdLibrary implements GenericBuilder {
+public class AetherMaker extends StdLibrary implements GenericBuilder {
     @Override
     public String ID() {
-        return "CoffeeMaker";
+        return "AetherMaker";
     }
 
     @Override
@@ -159,7 +159,7 @@ public class CoffeeMaker extends StdLibrary implements GenericBuilder {
     @Override
     public String getPropertiesStr(Environmental E, boolean fromTop) {
         if (E == null) {
-            Log.errOut("CoffeeMaker", "getPropertiesStr: null 'E'");
+            Log.errOut("AetherMaker", "getPropertiesStr: null 'E'");
             return "";
         }
         if (E instanceof SpaceObject) {
@@ -505,10 +505,10 @@ public class CoffeeMaker extends StdLibrary implements GenericBuilder {
         }
 
         if (E instanceof MOB) {
-            final int money = CMLib.beanCounter().getMoney((MOB) E);
+            final int money = CMLib.moneyCounter().getMoney((MOB) E);
             text.append(CMLib.xml().convertXMLtoTag("MONEY", money));
             text.append(CMLib.xml().convertXMLtoTag("VARMONEY", "" + ((MOB) E).getMoneyVariation()));
-            CMLib.beanCounter().clearInventoryMoney((MOB) E, null);
+            CMLib.moneyCounter().clearInventoryMoney((MOB) E, null);
             ((MOB) E).setMoney(money);
             for (final Pair<Clan, Integer> p : ((MOB) E).clans())
                 text.append("<CLAN ROLE=").append(p.second.toString()).append(">").append(p.first.clanID()).append("</CLAN>");
@@ -622,14 +622,14 @@ public class CoffeeMaker extends StdLibrary implements GenericBuilder {
     }
 
     protected String unpackErr(String where, String msg) {
-        Log.errOut("CoffeeMaker", "unpack" + where + "FromXML: " + msg);
+        Log.errOut("AetherMaker", "unpack" + where + "FromXML: " + msg);
         return msg;
     }
 
     protected String unpackErr(String where, String msg, XMLTag piece) {
         if (piece == null)
             return unpackErr(where, msg);
-        Log.errOut("CoffeeMaker", "unpack" + where + "FromXML: " + msg + " in piece " + piece.toString());
+        Log.errOut("AetherMaker", "unpack" + where + "FromXML: " + msg + " in piece " + piece.toString());
         return msg;
     }
 
@@ -638,7 +638,7 @@ public class CoffeeMaker extends StdLibrary implements GenericBuilder {
             return unpackErr(where, msg);
         if (list.size() > 0)
             return unpackErr(where, msg, list.get(0));
-        Log.errOut("CoffeeMaker", "unpack" + where + "FromXML: " + msg + " in empty pieces list");
+        Log.errOut("AetherMaker", "unpack" + where + "FromXML: " + msg + " in empty pieces list");
         return msg;
     }
 
@@ -1104,7 +1104,7 @@ public class CoffeeMaker extends StdLibrary implements GenericBuilder {
         CMLib.map().addArea(newArea);
         CMLib.database().DBCreateArea(newArea);
 
-        newArea.setDescription(CMLib.coffeeFilter().safetyFilter(CMLib.xml().getValFromPieces(aV, "ADESC")));
+        newArea.setDescription(CMLib.aetherFilter().safetyFilter(CMLib.xml().getValFromPieces(aV, "ADESC")));
         newArea.setClimateType(CMLib.xml().getIntFromPieces(aV, "ACLIM"));
         newArea.setTheme(CMLib.xml().getIntFromPieces(aV, "ATECH"));
         newArea.setSubOpList(CMLib.xml().getValFromPieces(aV, "ASUBS"));
@@ -1156,7 +1156,7 @@ public class CoffeeMaker extends StdLibrary implements GenericBuilder {
             throw new CMException(unpackErr("Area", "No class: " + areaClass));
         newArea.setName(areaName);
 
-        newArea.setDescription(CMLib.coffeeFilter().safetyFilter(CMLib.xml().getValFromPieces(aV, "ADESC")));
+        newArea.setDescription(CMLib.aetherFilter().safetyFilter(CMLib.xml().getValFromPieces(aV, "ADESC")));
         newArea.setClimateType(CMLib.xml().getIntFromPieces(aV, "ACLIM"));
         newArea.setTheme(CMLib.xml().getIntFromPieces(aV, "ATECH"));
         newArea.setSubOpList(CMLib.xml().getValFromPieces(aV, "ASUBS"));
@@ -1293,7 +1293,7 @@ public class CoffeeMaker extends StdLibrary implements GenericBuilder {
                 str.append(logTextDiff(item.text(), dup.text()));
         }
         if (Log.debugChannelOn())
-            Log.debugOut("CoffeeMaker", str.toString());
+            Log.debugOut("AetherMaker", str.toString());
     }
 
     @Override
@@ -1732,8 +1732,8 @@ public class CoffeeMaker extends StdLibrary implements GenericBuilder {
                     final Item item = M.getItem(i);
                     buf.append(getUniqueItemXML(item, type, found, files));
                 }
-                if (CMLib.coffeeShops().getShopKeeper(M) != null) {
-                    for (final Iterator<Environmental> i = CMLib.coffeeShops().getShopKeeper(M).getShop().getStoreInventory(); i.hasNext(); ) {
+                if (CMLib.aetherShops().getShopKeeper(M) != null) {
+                    for (final Iterator<Environmental> i = CMLib.aetherShops().getShopKeeper(M).getShop().getStoreInventory(); i.hasNext(); ) {
                         final Environmental E = i.next();
                         if (E instanceof Item)
                             buf.append(getUniqueItemXML((Item) E, type, found, files));
@@ -1939,7 +1939,7 @@ public class CoffeeMaker extends StdLibrary implements GenericBuilder {
     public void setPropertiesStr(Environmental E, String buf, boolean fromTop) {
         final List<XMLLibrary.XMLTag> V = CMLib.xml().parseAllXML(buf);
         if (V == null)
-            Log.errOut("CoffeeMaker", "setPropertiesStr: null 'V': " + ((E == null) ? "" : E.Name()));
+            Log.errOut("AetherMaker", "setPropertiesStr: null 'V': " + ((E == null) ? "" : E.Name()));
         else
             setPropertiesStr(E, V, fromTop);
     }
@@ -1958,7 +1958,7 @@ public class CoffeeMaker extends StdLibrary implements GenericBuilder {
     @Override
     public void setPropertiesStr(Environmental E, List<XMLTag> V, boolean fromTop) {
         if (E == null) {
-            Log.errOut("CoffeeMaker", "setPropertiesStr2: null 'E'");
+            Log.errOut("AetherMaker", "setPropertiesStr2: null 'E'");
             return;
         }
         if ((!(E instanceof Physical))
@@ -1984,7 +1984,7 @@ public class CoffeeMaker extends StdLibrary implements GenericBuilder {
 
     protected void setOrdPropertiesStr(Environmental E, List<XMLTag> V) {
         if (V == null) {
-            Log.errOut("CoffeeMaker", "null XML returned on " + identifier(E, null) + " parse. Load aborted.");
+            Log.errOut("AetherMaker", "null XML returned on " + identifier(E, null) + " parse. Load aborted.");
             return;
         }
 
@@ -2011,13 +2011,13 @@ public class CoffeeMaker extends StdLibrary implements GenericBuilder {
                 for (int i = 0; i < VP.size(); i++) {
                     final XMLTag ablk = VP.get(i);
                     if ((!ablk.tag().equalsIgnoreCase("PARENT")) || (ablk.contents() == null)) {
-                        Log.errOut("CoffeeMaker", "Error parsing 'PARENT' of " + identifier(E, null) + ".  Load aborted");
+                        Log.errOut("AetherMaker", "Error parsing 'PARENT' of " + identifier(E, null) + ".  Load aborted");
                         return;
                     }
                     final String aName = ablk.getValFromPieces("PARENTNAMED");
                     final Area A = CMLib.map().getArea(aName);
                     if (A == null)
-                        Log.warnOut("CoffeeMaker", "Unknown parent area '" + aName + "' of " + identifier(E, null));
+                        Log.warnOut("AetherMaker", "Unknown parent area '" + aName + "' of " + identifier(E, null));
                     else {
                         ((Area) E).addParent(A);
                         A.addChild((Area) E);
@@ -2029,13 +2029,13 @@ public class CoffeeMaker extends StdLibrary implements GenericBuilder {
                 for (int i = 0; i < VC.size(); i++) {
                     final XMLTag ablk = VC.get(i);
                     if ((!ablk.tag().equalsIgnoreCase("CHILD")) || (ablk.contents() == null)) {
-                        Log.errOut("CoffeeMaker", "Error parsing 'CHILD' of " + identifier(E, null) + ".  Load aborted");
+                        Log.errOut("AetherMaker", "Error parsing 'CHILD' of " + identifier(E, null) + ".  Load aborted");
                         return;
                     }
                     final String aName = ablk.getValFromPieces("CHILDNAMED");
                     final Area A = CMLib.map().getArea(aName);
                     if (A == null)
-                        Log.warnOut("CoffeeMaker", "Unknown child area '" + aName + "' of " + identifier(E, null));
+                        Log.warnOut("AetherMaker", "Unknown child area '" + aName + "' of " + identifier(E, null));
                     else {
                         ((Area) E).addChild(A);
                         A.addParent((Area) E);
@@ -2080,23 +2080,23 @@ public class CoffeeMaker extends StdLibrary implements GenericBuilder {
     protected void setGenMobAbilities(MOB M, List<XMLLibrary.XMLTag> buf) {
         final List<XMLLibrary.XMLTag> V = CMLib.xml().getContentsFromPieces(buf, "ABLTYS");
         if (V == null) {
-            Log.errOut("CoffeeMaker", "Error parsing 'ABLTYS' of " + identifier(M, null) + ".  Load aborted");
+            Log.errOut("AetherMaker", "Error parsing 'ABLTYS' of " + identifier(M, null) + ".  Load aborted");
             return;
         }
         for (int i = 0; i < V.size(); i++) {
             final XMLTag ablk = V.get(i);
             if ((!ablk.tag().equalsIgnoreCase("ABLTY")) || (ablk.contents() == null)) {
-                Log.errOut("CoffeeMaker", "Error parsing 'ABLTY' of " + identifier(M, null) + ".  Load aborted");
+                Log.errOut("AetherMaker", "Error parsing 'ABLTY' of " + identifier(M, null) + ".  Load aborted");
                 return;
             }
             final Ability newOne = CMClass.getAbility(ablk.getValFromPieces("ACLASS"));
             if (newOne == null) {
-                Log.errOut("CoffeeMaker", "Unknown ability " + ablk.getValFromPieces("ACLASS") + " on " + identifier(M, null) + ", skipping.");
+                Log.errOut("AetherMaker", "Unknown ability " + ablk.getValFromPieces("ACLASS") + " on " + identifier(M, null) + ", skipping.");
                 continue;
             }
             final List<XMLLibrary.XMLTag> adat = ablk.getContentsFromPieces("ADATA");
             if (adat == null) {
-                Log.errOut("CoffeeMaker", "Error parsing 'ABLTY DATA' of " + identifier(M, null) + ".  Load aborted");
+                Log.errOut("AetherMaker", "Error parsing 'ABLTY DATA' of " + identifier(M, null) + ".  Load aborted");
                 return;
             }
             final String proff = ablk.getValFromPieces("APROF");
@@ -2121,14 +2121,14 @@ public class CoffeeMaker extends StdLibrary implements GenericBuilder {
         for (int i = 0; i < V.size(); i++) {
             final XMLTag sblk = V.get(i);
             if ((!sblk.tag().equalsIgnoreCase("SCRPT")) || (sblk.contents() == null)) {
-                Log.errOut("CoffeeMaker", "Error parsing 'SCRPT' of " + identifier(E, null) + ".  Load aborted");
+                Log.errOut("AetherMaker", "Error parsing 'SCRPT' of " + identifier(E, null) + ".  Load aborted");
                 return;
             }
             final ScriptingEngine S = (ScriptingEngine) CMClass.getCommon("DefaultScriptingEngine");
             S.setSavable(true);
             final String script = sblk.getValFromPieces("SCRIPT");
             if (script == null) {
-                Log.errOut("CoffeeMaker", "Error parsing 'SCRIPT' of " + identifier(E, null) + ".  Load aborted");
+                Log.errOut("AetherMaker", "Error parsing 'SCRIPT' of " + identifier(E, null) + ".  Load aborted");
                 continue;
             }
             S.setScript(CMLib.xml().restoreAngleBrackets(script));
@@ -2153,7 +2153,7 @@ public class CoffeeMaker extends StdLibrary implements GenericBuilder {
         final List<XMLLibrary.XMLTag> V = CMLib.xml().getContentsFromPieces(buf, "INVEN");
         boolean variableEq = false;
         if (V == null) {
-            Log.errOut("CoffeeMaker", "Error parsing 'INVEN' of " + identifier(M, null) + ".  Load aborted");
+            Log.errOut("AetherMaker", "Error parsing 'INVEN' of " + identifier(M, null) + ".  Load aborted");
             return;
         }
         final Hashtable<String, Container> IIDmap = new Hashtable<String, Container>();
@@ -2161,19 +2161,19 @@ public class CoffeeMaker extends StdLibrary implements GenericBuilder {
         for (int i = 0; i < V.size(); i++) {
             final XMLTag iblk = V.get(i);
             if ((!iblk.tag().equalsIgnoreCase("ITEM")) || (iblk.contents() == null)) {
-                Log.errOut("CoffeeMaker", "Error parsing 'ITEM' of " + identifier(M, null) + ".  Load aborted");
+                Log.errOut("AetherMaker", "Error parsing 'ITEM' of " + identifier(M, null) + ".  Load aborted");
                 return;
             }
             final Item newOne = CMClass.getItem(iblk.getValFromPieces("ICLASS"));
             if (newOne instanceof ArchonOnly)
                 continue;
             if (newOne == null) {
-                Log.errOut("CoffeeMaker", "Unknown item " + iblk.getValFromPieces("ICLASS") + " on " + identifier(M, null) + ", skipping.");
+                Log.errOut("AetherMaker", "Unknown item " + iblk.getValFromPieces("ICLASS") + " on " + identifier(M, null) + ", skipping.");
                 continue;
             }
             final List<XMLLibrary.XMLTag> idat = iblk.getContentsFromPieces("IDATA");
             if (idat == null) {
-                Log.errOut("CoffeeMaker", "Error parsing 'ITEM DATA' of " + identifier(M, null) + ".  Load aborted");
+                Log.errOut("AetherMaker", "Error parsing 'ITEM DATA' of " + identifier(M, null) + ".  Load aborted");
                 return;
             }
             final long wornCode = CMLib.xml().getLongFromPieces(idat, "IWORN");
@@ -2215,7 +2215,7 @@ public class CoffeeMaker extends StdLibrary implements GenericBuilder {
         shopKeep.getShop().emptyAllShelves();
         final List<XMLLibrary.XMLTag> V = CMLib.xml().getContentsFromPieces(buf, "STORE");
         if (V == null) {
-            Log.errOut("CoffeeMaker", "Error parsing 'STORE' of " + identifier(shopKeep, null) + ".  Load aborted");
+            Log.errOut("AetherMaker", "Error parsing 'STORE' of " + identifier(shopKeep, null) + ".  Load aborted");
             return;
         }
         final Hashtable<String, Container> IIDmap = new Hashtable<String, Container>();
@@ -2223,7 +2223,7 @@ public class CoffeeMaker extends StdLibrary implements GenericBuilder {
         for (int i = 0; i < V.size(); i++) {
             final XMLTag iblk = V.get(i);
             if ((!iblk.tag().equalsIgnoreCase("SHITEM")) || (iblk.contents() == null)) {
-                Log.errOut("CoffeeMaker", "Error parsing 'SHITEM' of " + identifier(shopKeep, null) + ".  Load aborted");
+                Log.errOut("AetherMaker", "Error parsing 'SHITEM' of " + identifier(shopKeep, null) + ".  Load aborted");
                 continue;
             }
             final String itemi = iblk.getValFromPieces("SICLASS");
@@ -2243,11 +2243,11 @@ public class CoffeeMaker extends StdLibrary implements GenericBuilder {
             if (newOne == null)
                 newOne = CMClass.getUnknown(itemi);
             if (newOne == null) {
-                Log.errOut("CoffeeMaker", "Unknown item " + itemi + " on " + identifier(shopKeep, null) + ", skipping.");
+                Log.errOut("AetherMaker", "Unknown item " + itemi + " on " + identifier(shopKeep, null) + ", skipping.");
                 continue;
             }
             if (idat == null) {
-                Log.errOut("CoffeeMaker", "Error parsing 'SHOP DATA' of " + identifier(shopKeep, null) + ".  Load aborted");
+                Log.errOut("AetherMaker", "Error parsing 'SHOP DATA' of " + identifier(shopKeep, null) + ".  Load aborted");
                 continue;
             }
             if (newOne instanceof Item) {
@@ -2297,7 +2297,7 @@ public class CoffeeMaker extends StdLibrary implements GenericBuilder {
             final Physical cataP = CMLib.catalog().getCatalogObj(P);
             if (cataP != null) {
                 if (CMath.bset(cataP.basePhyStats().disposition(), PhyStats.IS_CATALOGED))
-                    Log.errOut("CoffeeMaker", "Error with catalog object " + P.Name() + ".");
+                    Log.errOut("AetherMaker", "Error with catalog object " + P.Name() + ".");
                 else if (cataP != P) {
                     if (fromTop)
                         setOrdPropertiesStr(P, buf);
@@ -2504,12 +2504,12 @@ public class CoffeeMaker extends StdLibrary implements GenericBuilder {
 
     protected void setGenPropertiesStr(Environmental E, List<XMLTag> buf) {
         if (buf == null) {
-            Log.errOut("CoffeeMaker", "null XML returned on " + identifier(E, null) + " parse.  Load aborted.");
+            Log.errOut("AetherMaker", "null XML returned on " + identifier(E, null) + " parse.  Load aborted.");
             return;
         }
 
         if ((E instanceof MOB) && (CMLib.xml().getValFromPieces(buf, "GENDER").length() == 0)) {
-            Log.errOut("CoffeeMaker", "MOB " + identifier(E, null) + " has malformed XML. Load aborted.");
+            Log.errOut("AetherMaker", "MOB " + identifier(E, null) + " has malformed XML. Load aborted.");
             return;
         }
 
@@ -2766,7 +2766,7 @@ public class CoffeeMaker extends StdLibrary implements GenericBuilder {
                         final List<XMLLibrary.XMLTag> idat = CMLib.xml().getContentsFromPieces(dblk, "KLDATA");
                         final Environmental newOne = CMClass.getUnknown(itemi);
                         if (newOne == null)
-                            Log.errOut("CoffeeMaker", "Unknown tool " + itemi + " of " + identifier(E, null) + ".  Skipping.");
+                            Log.errOut("AetherMaker", "Unknown tool " + itemi + " of " + identifier(E, null) + ".  Skipping.");
                         else {
                             setPropertiesStr(newOne, idat, true);
                             ((DeadBody) E).setKillerTool(newOne);
@@ -2787,7 +2787,7 @@ public class CoffeeMaker extends StdLibrary implements GenericBuilder {
             final String alignStr = CMLib.xml().getValFromPieces(buf, "ALIG");
             if ((alignStr.length() > 0) && (CMLib.factions().getFaction(CMLib.factions().AlignID()) != null))
                 CMLib.factions().setAlignmentOldRange(mob, CMath.s_int(alignStr));
-            CMLib.beanCounter().setMoney(mob, CMLib.xml().getIntFromPieces(buf, "MONEY"));
+            CMLib.moneyCounter().setMoney(mob, CMLib.xml().getIntFromPieces(buf, "MONEY"));
             mob.setMoneyVariation(CMLib.xml().getDoubleFromPieces(buf, "VARMONEY"));
             setGenMobInventory((MOB) E, buf);
             setGenMobAbilities((MOB) E, buf);
@@ -2835,24 +2835,24 @@ public class CoffeeMaker extends StdLibrary implements GenericBuilder {
 
                 List<XMLLibrary.XMLTag> V = CMLib.xml().getContentsFromPieces(buf, "BLESSINGS");
                 if (V == null) {
-                    Log.errOut("CoffeeMaker", "Error parsing 'BLESSINGS' of " + identifier(E, null) + ".  Load aborted");
+                    Log.errOut("AetherMaker", "Error parsing 'BLESSINGS' of " + identifier(E, null) + ".  Load aborted");
                     return;
                 }
                 for (int i = 0; i < V.size(); i++) {
                     final XMLTag ablk = V.get(i);
                     if ((!ablk.tag().equalsIgnoreCase("BLESS")) || (ablk.contents() == null)) {
-                        Log.errOut("CoffeeMaker", "Error parsing 'BLESS' of " + identifier(E, null) + ".  Load aborted");
+                        Log.errOut("AetherMaker", "Error parsing 'BLESS' of " + identifier(E, null) + ".  Load aborted");
                         return;
                     }
                     final Ability newOne = CMClass.getAbility(ablk.getValFromPieces("BLCLASS"));
                     if (newOne == null) {
-                        Log.errOut("CoffeeMaker", "Unknown bless " + ablk.getValFromPieces("BLCLASS") + " on " + identifier(E, null) + ", skipping.");
+                        Log.errOut("AetherMaker", "Unknown bless " + ablk.getValFromPieces("BLCLASS") + " on " + identifier(E, null) + ", skipping.");
                         continue;
                     }
                     final boolean clericsOnly = ablk.getBoolFromPieces("BLONLY");
                     final List<XMLLibrary.XMLTag> adat = ablk.getContentsFromPieces("BLDATA");
                     if (adat == null) {
-                        Log.errOut("CoffeeMaker", "Error parsing 'BLESS DATA' of " + identifier(E, null) + ".  Load aborted");
+                        Log.errOut("AetherMaker", "Error parsing 'BLESS DATA' of " + identifier(E, null) + ".  Load aborted");
                         return;
                     }
                     setPropertiesStr(newOne, adat, true);
@@ -2863,18 +2863,18 @@ public class CoffeeMaker extends StdLibrary implements GenericBuilder {
                     for (int i = 0; i < V.size(); i++) {
                         final XMLTag ablk = V.get(i);
                         if ((!ablk.tag().equalsIgnoreCase("CURSE")) || (ablk.contents() == null)) {
-                            Log.errOut("CoffeeMaker", "Error parsing 'CURSE' of " + identifier(E, null) + ".  Load aborted");
+                            Log.errOut("AetherMaker", "Error parsing 'CURSE' of " + identifier(E, null) + ".  Load aborted");
                             return;
                         }
                         final Ability newOne = CMClass.getAbility(ablk.getValFromPieces("CUCLASS"));
                         if (newOne == null) {
-                            Log.errOut("CoffeeMaker", "Unknown curse " + ablk.getValFromPieces("CUCLASS") + " on " + identifier(E, null) + ", skipping.");
+                            Log.errOut("AetherMaker", "Unknown curse " + ablk.getValFromPieces("CUCLASS") + " on " + identifier(E, null) + ", skipping.");
                             continue;
                         }
                         final boolean clericsOnly = ablk.getBoolFromPieces("CUONLY");
                         final List<XMLLibrary.XMLTag> adat = ablk.getContentsFromPieces("CUDATA");
                         if (adat == null) {
-                            Log.errOut("CoffeeMaker", "Error parsing 'CURSE DATA' of " + identifier(E, null) + ".  Load aborted");
+                            Log.errOut("AetherMaker", "Error parsing 'CURSE DATA' of " + identifier(E, null) + ".  Load aborted");
                             return;
                         }
                         setPropertiesStr(newOne, adat, true);
@@ -2886,17 +2886,17 @@ public class CoffeeMaker extends StdLibrary implements GenericBuilder {
                     for (int i = 0; i < V.size(); i++) {
                         final XMLTag ablk = V.get(i);
                         if ((!ablk.tag().equalsIgnoreCase("POWER")) || (ablk.contents() == null)) {
-                            Log.errOut("CoffeeMaker", "Error parsing 'POWER' of " + identifier(E, null) + ".  Load aborted");
+                            Log.errOut("AetherMaker", "Error parsing 'POWER' of " + identifier(E, null) + ".  Load aborted");
                             return;
                         }
                         final Ability newOne = CMClass.getAbility(ablk.getValFromPieces("POCLASS"));
                         if (newOne == null) {
-                            Log.errOut("CoffeeMaker", "Unknown power " + ablk.getValFromPieces("POCLASS") + " on " + identifier(E, null) + ", skipping.");
+                            Log.errOut("AetherMaker", "Unknown power " + ablk.getValFromPieces("POCLASS") + " on " + identifier(E, null) + ", skipping.");
                             continue;
                         }
                         final List<XMLLibrary.XMLTag> adat = ablk.getContentsFromPieces("PODATA");
                         if (adat == null) {
-                            Log.errOut("CoffeeMaker", "Error parsing 'POWER DATA' of " + identifier(E, null) + ".  Load aborted");
+                            Log.errOut("AetherMaker", "Error parsing 'POWER DATA' of " + identifier(E, null) + ".  Load aborted");
                             return;
                         }
                         setPropertiesStr(newOne, adat, true);
@@ -3532,7 +3532,7 @@ public class CoffeeMaker extends StdLibrary implements GenericBuilder {
                 for (int i = 0; i < iV.size(); i++) {
                     final XMLTag iblk = iV.get(i);
                     if ((!iblk.tag().equalsIgnoreCase("IPRIC")) || (iblk.contents() == null)) {
-                        Log.errOut("CoffeeMaker", "Error parsing 'IPRICS' of " + identifier(E, null) + ".  Load aborted");
+                        Log.errOut("AetherMaker", "Error parsing 'IPRICS' of " + identifier(E, null) + ".  Load aborted");
                         continue;
                     }
                     ipric[i] = CMLib.xml().restoreAngleBrackets(iblk.value());
@@ -3543,19 +3543,19 @@ public class CoffeeMaker extends StdLibrary implements GenericBuilder {
         if (E instanceof PhysicalAgent) {
             final List<XMLLibrary.XMLTag> V = CMLib.xml().getContentsFromPieces(buf, "BEHAVES");
             if (V == null) {
-                Log.errOut("CoffeeMaker", "Error parsing 'BEHAVES' of " + identifier(E, null) + ".  Load aborted");
+                Log.errOut("AetherMaker", "Error parsing 'BEHAVES' of " + identifier(E, null) + ".  Load aborted");
                 return;
             }
             for (int i = 0; i < V.size(); i++) {
                 final XMLTag ablk = V.get(i);
                 if ((!ablk.tag().equalsIgnoreCase("BHAVE")) || (ablk.contents() == null)) {
-                    Log.errOut("CoffeeMaker", "Error parsing 'BHAVE' of " + identifier(E, null) + ".  Load aborted");
+                    Log.errOut("AetherMaker", "Error parsing 'BHAVE' of " + identifier(E, null) + ".  Load aborted");
                     return;
                 }
                 final Behavior newOne = CMClass.getBehavior(ablk.getValFromPieces("BCLASS"));
                 final String bparms = ablk.getValFromPieces("BPARMS");
                 if (newOne == null) {
-                    Log.errOut("CoffeeMaker", "Unknown behavior " + ablk.getValFromPieces("BCLASS") + " on " + identifier(E, null) + ", skipping.");
+                    Log.errOut("AetherMaker", "Unknown behavior " + ablk.getValFromPieces("BCLASS") + " on " + identifier(E, null) + ", skipping.");
                     continue;
                 }
                 newOne.setParms(CMLib.xml().restoreAngleBrackets(bparms));
@@ -3568,19 +3568,19 @@ public class CoffeeMaker extends StdLibrary implements GenericBuilder {
         if (E instanceof Physical) {
             final List<XMLLibrary.XMLTag> V = CMLib.xml().getContentsFromPieces(buf, "AFFECS");
             if (V == null) {
-                Log.errOut("CoffeeMaker", "Error parsing 'AFFECS' of " + identifier(E, null) + ".  Load aborted");
+                Log.errOut("AetherMaker", "Error parsing 'AFFECS' of " + identifier(E, null) + ".  Load aborted");
                 return;
             }
             for (int i = 0; i < V.size(); i++) {
                 final XMLTag ablk = V.get(i);
                 if ((!ablk.tag().equalsIgnoreCase("AFF")) || (ablk.contents() == null)) {
-                    Log.errOut("CoffeeMaker", "Error parsing 'AFF' of " + identifier(E, null) + ".  Load aborted");
+                    Log.errOut("AetherMaker", "Error parsing 'AFF' of " + identifier(E, null) + ".  Load aborted");
                     return;
                 }
                 final Ability newOne = CMClass.getAbility(ablk.getValFromPieces("ACLASS"));
                 final String aparms = ablk.getValFromPieces("ATEXT");
                 if (newOne == null) {
-                    Log.errOut("CoffeeMaker", "Unknown affect " + ablk.getValFromPieces("ACLASS") + " on " + identifier(E, null) + ", skipping.");
+                    Log.errOut("AetherMaker", "Unknown affect " + ablk.getValFromPieces("ACLASS") + " on " + identifier(E, null) + ", skipping.");
                     continue;
                 }
                 newOne.setMiscText(CMLib.xml().restoreAngleBrackets(aparms));
@@ -3845,8 +3845,8 @@ public class CoffeeMaker extends StdLibrary implements GenericBuilder {
             case DESCRIPTION:
                 return M.description(); // description
             case MONEY: {
-                final String money = "" + CMLib.beanCounter().getMoney(M); // money
-                // CMLib.beanCounter().clearZeroMoney(M,null); WHY THE HECK WAS THIS
+                final String money = "" + CMLib.moneyCounter().getMoney(M); // money
+                // CMLib.moneyCounter().clearZeroMoney(M,null); WHY THE HECK WAS THIS
                 // EVER HERE?!?!
                 return money;
             }
@@ -3940,7 +3940,7 @@ public class CoffeeMaker extends StdLibrary implements GenericBuilder {
                 M.setDescription(val);
                 break; // description
             case MONEY:
-                CMLib.beanCounter().setMoney(M, CMath.s_parseIntExpression(val));
+                CMLib.moneyCounter().setMoney(M, CMath.s_parseIntExpression(val));
                 break; // money
             case ALIGNMENT:
                 if (CMath.s_int(val) == Integer.MAX_VALUE) // alignment

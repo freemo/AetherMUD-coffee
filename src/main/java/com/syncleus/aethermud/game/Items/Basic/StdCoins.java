@@ -59,12 +59,12 @@ public class StdCoins extends StdItem implements Coins {
 
     @Override
     public String Name() {
-        return CMLib.beanCounter().getDenominationName(getCurrency(), getDenomination(), getNumberOfCoins());
+        return CMLib.moneyCounter().getDenominationName(getCurrency(), getDenomination(), getNumberOfCoins());
     }
 
     @Override
     public String displayText() {
-        return CMLib.beanCounter().getDenominationName(getCurrency(), getDenomination(), getNumberOfCoins()) + ((getNumberOfCoins() == 1) ? " lies here." : " lie here.");
+        return CMLib.moneyCounter().getDenominationName(getCurrency(), getDenomination(), getNumberOfCoins()) + ((getNumberOfCoins() == 1) ? " lies here." : " lie here.");
     }
 
     public void setDynamicMaterial() {
@@ -81,7 +81,7 @@ public class StdCoins extends StdItem implements Coins {
                 }
             }
         }
-        setDescription(CMLib.beanCounter().getConvertableDescription(getCurrency(), getDenomination()));
+        setDescription(CMLib.moneyCounter().getConvertableDescription(getCurrency(), getDenomination()));
     }
 
     @Override

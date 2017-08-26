@@ -65,14 +65,14 @@ public class MoneyChanger extends StdBehavior {
         currency = currency.toUpperCase();
         if (rates.containsKey(currency))
             return rates;
-        String myCurrency = CMLib.beanCounter().getCurrency(affecting);
+        String myCurrency = CMLib.moneyCounter().getCurrency(affecting);
         if (myCurrency.equalsIgnoreCase(currency)) {
             rates.put(currency, Double.valueOf(cut));
             return rates;
         }
         SpaceObject homeO = CMLib.map().getSpaceObject(affecting, false);
         if (homeO != null) {
-            myCurrency = CMLib.beanCounter().getCurrency(homeO);
+            myCurrency = CMLib.moneyCounter().getCurrency(homeO);
             if (myCurrency.equalsIgnoreCase(currency)) {
                 rates.put(currency, Double.valueOf(cut));
                 return rates;
@@ -88,7 +88,7 @@ public class MoneyChanger extends StdBehavior {
         for (Enumeration<Area> a = CMLib.map().spaceAreas(); a.hasMoreElements(); ) {
             Area A = a.nextElement();
             if ((A != null) && (A != homeO)) {
-                myCurrency = CMLib.beanCounter().getCurrency(A);
+                myCurrency = CMLib.moneyCounter().getCurrency(A);
                 if (myCurrency.equalsIgnoreCase(currency)) {
                     SpaceObject oA = (SpaceObject) A;
                     long distance = CMLib.map().getDistanceFrom(homeO, oA);
@@ -196,12 +196,12 @@ public class MoneyChanger extends StdBehavior {
             double value = ((Coins) msg.tool()).getTotalValue();
             final String currency = ((Coins) msg.tool()).getCurrency().toUpperCase();
             double takeCut = getMyCut(affecting, currency);
-            double amountToTake = CMLib.beanCounter().abbreviatedRePrice(observer, value * takeCut);
-            if ((amountToTake > 0.0) && (amountToTake < CMLib.beanCounter().getLowestDenomination(CMLib.beanCounter().getCurrency(observer))))
-                amountToTake = CMLib.beanCounter().getLowestDenomination(CMLib.beanCounter().getCurrency(observer));
+            double amountToTake = CMLib.moneyCounter().abbreviatedRePrice(observer, value * takeCut);
+            if ((amountToTake > 0.0) && (amountToTake < CMLib.moneyCounter().getLowestDenomination(CMLib.moneyCounter().getCurrency(observer))))
+                amountToTake = CMLib.moneyCounter().getLowestDenomination(CMLib.moneyCounter().getCurrency(observer));
             value -= amountToTake;
             observer.recoverPhyStats();
-            final Coins C = CMLib.beanCounter().makeBestCurrency(observer, value);
+            final Coins C = CMLib.moneyCounter().makeBestCurrency(observer, value);
             if ((value <= 0) || (C == null)) {
                 CMLib.commands().postSay(observer, source, L("I'm sorry, I can not change such a small amount."), true, false);
                 return false;
@@ -227,12 +227,12 @@ public class MoneyChanger extends StdBehavior {
                 double value = ((Coins) msg.tool()).getTotalValue();
                 final String currency = ((Coins) msg.tool()).getCurrency().toUpperCase();
                 double takeCut = getMyCut(affecting, currency);
-                double amountToTake = CMLib.beanCounter().abbreviatedRePrice(observer, value * takeCut);
-                if ((amountToTake > 0.0) && (amountToTake < CMLib.beanCounter().getLowestDenomination(CMLib.beanCounter().getCurrency(observer))))
-                    amountToTake = CMLib.beanCounter().getLowestDenomination(CMLib.beanCounter().getCurrency(observer));
+                double amountToTake = CMLib.moneyCounter().abbreviatedRePrice(observer, value * takeCut);
+                if ((amountToTake > 0.0) && (amountToTake < CMLib.moneyCounter().getLowestDenomination(CMLib.moneyCounter().getCurrency(observer))))
+                    amountToTake = CMLib.moneyCounter().getLowestDenomination(CMLib.moneyCounter().getCurrency(observer));
                 value -= amountToTake;
                 observer.recoverPhyStats();
-                final Coins C = CMLib.beanCounter().makeBestCurrency(observer, value);
+                final Coins C = CMLib.moneyCounter().makeBestCurrency(observer, value);
                 if ((value > 0.0) && (C != null)) {
                     // this message will actually end up triggering the hand-over.
                     final CMMsg newMsg = CMClass.getMsg(observer, source, C, CMMsg.MSG_SPEAK, L("^T<S-NAME> say(s) 'Thank you for your business' to <T-NAMESELF>.^?"));
@@ -257,6 +257,6 @@ public class MoneyChanger extends StdBehavior {
             && (((Coins) msg.tool()).amDestroyed())
             && (!msg.source().isMine(msg.tool()))
             && (!((MOB) msg.target()).isMine(msg.tool())))
-            CMLib.beanCounter().giveSomeoneMoney(msg.source(), (MOB) msg.target(), ((Coins) msg.tool()).getTotalValue());
+            CMLib.moneyCounter().giveSomeoneMoney(msg.source(), (MOB) msg.target(), ((Coins) msg.tool()).getTotalValue());
     }
 }

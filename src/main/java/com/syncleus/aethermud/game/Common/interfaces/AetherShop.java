@@ -25,7 +25,7 @@ import java.util.List;
 
 
 /**
- * A CoffeeShop is an object for storing the inventory of a shopkeeper, banker,
+ * A AetherShop is an object for storing the inventory of a shopkeeper, banker,
  * auctionhouse, merchant, or other object that implements the ShopKeeper interface
  * for the purpose of selling goods and services.
  *
@@ -41,7 +41,7 @@ import java.util.List;
  * @see com.syncleus.aethermud.game.core.interfaces.ShopKeeper#isSold(int)
  * @see com.syncleus.aethermud.game.core.interfaces.ShopKeeper#DEAL_INVENTORYONLY
  */
-public interface CoffeeShop extends CMCommon {
+public interface AetherShop extends CMCommon {
     /**
      * Returns whether an item sufficiently like the given item originally
      * existed in this shops inventory when it was created.  Applies only
@@ -56,7 +56,7 @@ public interface CoffeeShop extends CMCommon {
     /**
      * Adds a new item to the store inventory.  Use this method when an item is sold
      * to the store, as pricing and other information will have to be derived.
-     * @see com.syncleus.aethermud.game.Common.interfaces.CoffeeShop#addStoreInventory(Environmental, int, int)
+     * @see AetherShop#addStoreInventory(Environmental, int, int)
      * @param thisThang the thing to sell
      * @return the core store inventory item added
      */
@@ -74,7 +74,7 @@ public interface CoffeeShop extends CMCommon {
     /**
      * Returns the number of items this shop currently has for sale.  Does not
      * take number of duplicates into account.  For that call totalStockSizeIncludingDuplicates
-     * @see com.syncleus.aethermud.game.Common.interfaces.CoffeeShop#totalStockSizeIncludingDuplicates()
+     * @see AetherShop#totalStockSizeIncludingDuplicates()
      * @return the number of items for sale.
      */
     public int totalStockSize();
@@ -144,7 +144,7 @@ public interface CoffeeShop extends CMCommon {
     /**
      * The number of items in the store inventory, taking number in stock into account.
      * Call this method to see how crowded the shop really is, as opposed to totalStockSize.
-     * @see com.syncleus.aethermud.game.Common.interfaces.CoffeeShop#totalStockSize()
+     * @see AetherShop#totalStockSize()
      * @return the total number of all items in stock
      */
     public int totalStockSizeIncludingDuplicates();
@@ -171,7 +171,7 @@ public interface CoffeeShop extends CMCommon {
      * will use as a foundation for determining the given items price.  -1 would mean
      * that the shopkeeper uses the valuation of the item as a basis, whereas another
      * value is in base gold.  Best to get likeThis item from the getStoreInventory()
-     * @see com.syncleus.aethermud.game.Common.interfaces.CoffeeShop#getStoreInventory()
+     * @see AetherShop#getStoreInventory()
      * @param likeThis the item like which to compare
      * @return the stock price of the item given.
      */
@@ -180,7 +180,7 @@ public interface CoffeeShop extends CMCommon {
     /**
      * Returns the number of items like the one given that the shopkeeper presently
      * has in stock and available for sale.
-     * @see com.syncleus.aethermud.game.Common.interfaces.CoffeeShop#getStoreInventory()
+     * @see AetherShop#getStoreInventory()
      * @param likeThis the item like which to compare
      * @return the number currently in stock.
      */
@@ -188,7 +188,7 @@ public interface CoffeeShop extends CMCommon {
 
     /**
      * Searches this shops stock of items for sale for one matching the given name.
-     * @see com.syncleus.aethermud.game.Common.interfaces.CoffeeShop#getStoreInventory()
+     * @see AetherShop#getStoreInventory()
      * @param name the name of the item to search for
      * @param mob the mob who is interested (stock can differ depending on customer)
      * @return the available item, if found
@@ -199,7 +199,7 @@ public interface CoffeeShop extends CMCommon {
      * Searches this shops stock of items for sale for one matching the given name.
      * If one is found, it copies the item, removes one from the available stock, and
      * returns the copy.
-     * @see com.syncleus.aethermud.game.Common.interfaces.CoffeeShop#getStoreInventory()
+     * @see AetherShop#getStoreInventory()
      * @param name the name of the item to search for
      * @param mob the mob who is interested (stock can differ depending on customer)
      * @return the available item, if found
@@ -211,7 +211,7 @@ public interface CoffeeShop extends CMCommon {
      * If one is found, it copies the item, removes one from the available stock, and
      * prepares it for sale by adding it to a list along with any necessary accessories,
      * such as necessary keys, or if a container, any contents of the container.
-     * @see com.syncleus.aethermud.game.Common.interfaces.CoffeeShop#getStoreInventory()
+     * @see AetherShop#getStoreInventory()
      * @param named the name of the item to search for
      * @param mob the mob who is interested (stock can differ depending on customer)
      * @return the available items, if found, as a list of Environmental objects
@@ -220,8 +220,8 @@ public interface CoffeeShop extends CMCommon {
 
     /**
      * Generates an XML document of all available shop inventory, prices, and availability.
-     * @see com.syncleus.aethermud.game.Common.interfaces.CoffeeShop#getStoreInventory()
-     * @see com.syncleus.aethermud.game.Common.interfaces.CoffeeShop#buildShopFromXML(String)
+     * @see AetherShop#getStoreInventory()
+     * @see AetherShop#buildShopFromXML(String)
      * @return an XML document.
      */
     public String makeXML();
@@ -229,7 +229,7 @@ public interface CoffeeShop extends CMCommon {
     /**
      * Repopulates this shop inventory from a given xml document, restoring store inventory,
      * base inventory, prices, and availability.
-     * @see com.syncleus.aethermud.game.Common.interfaces.CoffeeShop#makeXML()
+     * @see AetherShop#makeXML()
      * @param text the xml document to restore from
      */
     public void buildShopFromXML(String text);
@@ -248,7 +248,7 @@ public interface CoffeeShop extends CMCommon {
      * @param SK the shopkeeper that hosts this object
      * @return always this
      */
-    public CoffeeShop build(ShopKeeper SK);
+    public AetherShop build(ShopKeeper SK);
 
     /**
      * Returns the shopKeeper that is hosting this shop

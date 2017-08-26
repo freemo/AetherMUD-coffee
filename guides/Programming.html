@@ -2070,15 +2070,15 @@
                         <td>Manage player lists</td>
                     </tr>
                     <tr>
-                        <td>CoffeeFilter</td>
+                        <td>AetherFilter</td>
                         <td>TelnetFilter</td>
-                        <td><code>coffeeFilter()</code></td>
+                        <td><code>aetherFilter()</code></td>
                         <td>Filters/transforms
                             text going to and from a player.
                         </td>
                     </tr>
                     <tr>
-                        <td>CoffeeLevels</td>
+                        <td>AetherLevels</td>
                         <td>ExpLevelLibrary</td>
                         <td><code>leveler()</code></td>
                         <td>Leveling and
@@ -2086,15 +2086,15 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>CoffeeMaker</td>
+                        <td>AetherMaker</td>
                         <td>GenericBuilder</td>
-                        <td><code>coffeeMaker()</code></td>
+                        <td><code>aetherMaker()</code></td>
                         <td>Generic Mob/Item
-                            and CoffeeXML generators.
+                            and AetherXML generators.
                         </td>
                     </tr>
                     <tr>
-                        <td>CoffeeUtensils</td>
+                        <td>AetherUtensils</td>
                         <td>ProtocolsLibrary</td>
                         <td><code>protocol()</code></td>
                         <td>Special protocol
@@ -2102,23 +2102,23 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>CoffeeShops</td>
+                        <td>AetherShops</td>
                         <td>ShoppingLibrary</td>
-                        <td><code>coffeeShops()</code></td>
+                        <td><code>aetherShops()</code></td>
                         <td>Handles
                             manipulation of shop inventories.
                         </td>
                     </tr>
                     <tr>
-                        <td>CoffeeTables</td>
+                        <td>AetherTables</td>
                         <td>StatisticsLibrary</td>
-                        <td><code>coffeeTables()</code></td>
+                        <td><code>aetherTables()</code></td>
                         <td>Maintains player
                             usage stats.
                         </td>
                     </tr>
                     <tr>
-                        <td>CoffeeTime</td>
+                        <td>AetherTime</td>
                         <td>TimeManager</td>
                         <td><code>time()</code></td>
                         <td>Real-life
@@ -2126,7 +2126,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>CoffeeUtensils</td>
+                        <td>AetherUtensils</td>
                         <td>CMMiscUtils</td>
                         <td><code>utensils()</code></td>
                         <td>Misc stuff-- law,
@@ -2369,9 +2369,9 @@
                     </thead>
                     <tbody>
                     <tr>
-                        <td>AuctionCoffeeShop</td>
+                        <td>AuctionAetherShop</td>
                         <td>A special
-                            derivative of DefaultCoffeeShop for
+                            derivative of DefaultAetherShop for
                             auctioneers
                         </td>
                     </tr>
@@ -2438,13 +2438,13 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>DefaultCoffeeShop</td>
+                        <td>DefaultAetherShop</td>
                         <td>Represents a
                             single shop store inventory.
                         </td>
                     </tr>
                     <tr>
-                        <td>DefaultCoffeeTableRow</td>
+                        <td>DefaultAetherTableRow</td>
                         <td>Represents a days
                             worth of game player usage statistics.
                         </td>
@@ -3832,7 +3832,7 @@ String, String)</span>
                     object access
                     method as shown below. The <code>getShop()</code>
                     method returns an instance of the
-                    com.syncleus.aethermud.game.Common.interfaces.CoffeeShop interface, which
+                    com.syncleus.aethermud.game.Common.interfaces.AetherShop interface, which
                     stores inventory for the shopkeepers. In creating the shopkeepers, you
                     will also need to specify the type of ShopKeeper.</p>
                 <pre>  setWhatIsSold( ShopKeeper.ONLYBASEINVENTORY );<br/><br/>  Weapon sword = (Weapon)CMClass.getWeapon( "Longsword" );<br/>  getShop().addStoreInventory( sword, 35, -1, this );<br/>  Armor mail = (Armor)CMClass.getArmor( "FullPlate" );<br/>  getShop().addStoreInventory( mail, 35, -1, this );<br/>  Item waterskin = CMClass.getItem( "Waterskin" );<br/>  getShop().addStoreInventory( waterskin, 35, -1, this );<br/></pre>

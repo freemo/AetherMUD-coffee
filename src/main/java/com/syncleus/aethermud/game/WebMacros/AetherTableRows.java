@@ -18,7 +18,7 @@ package com.syncleus.aethermud.game.WebMacros;
 
 import com.syncleus.aethermud.game.Abilities.interfaces.Ability;
 import com.syncleus.aethermud.game.CharClasses.interfaces.CharClass;
-import com.syncleus.aethermud.game.Common.interfaces.CoffeeTableRow;
+import com.syncleus.aethermud.game.Common.interfaces.AetherTableRow;
 import com.syncleus.aethermud.game.Common.interfaces.Quest;
 import com.syncleus.aethermud.game.core.*;
 import com.syncleus.aethermud.game.core.collections.PairSVector;
@@ -31,10 +31,10 @@ import java.util.List;
 import java.util.Vector;
 
 
-public class CoffeeTableRows extends StdWebMacro {
+public class AetherTableRows extends StdWebMacro {
     @Override
     public String name() {
-        return "CoffeeTableRows";
+        return "AetherTableRows";
     }
 
     //HEADER, FOOTER, DATERANGE, DATESTART, DATEEND, LEVELSUP, DIVORCES, BIRTHS, MARRIAGES, PURGES, CLASSCHANGES, PKDEATHS, DEATHS, NEWPLAYERS, TOTALHOURS, AVERAGETICKS, AVERAGEONLINE, MOSTONLINE, LOGINS,
@@ -67,8 +67,8 @@ public class CoffeeTableRows extends StdWebMacro {
         ENDQ.set(Calendar.MINUTE, 59);
         ENDQ.set(Calendar.SECOND, 59);
         ENDQ.set(Calendar.MILLISECOND, 000);
-        CMLib.coffeeTables().update();
-        final List<CoffeeTableRow> V = CMLib.database().DBReadStats(ENDQ.getTimeInMillis() - 1, 0);
+        CMLib.aetherTables().update();
+        final List<AetherTableRow> V = CMLib.database().DBReadStats(ENDQ.getTimeInMillis() - 1, 0);
         if (V.size() == 0) {
             return "";
         }
@@ -107,7 +107,7 @@ public class CoffeeTableRows extends StdWebMacro {
                     && ((onlyAbilityDomains < 0) || ((A.classificationCode() & Ability.ALL_DOMAINS) == onlyAbilityDomains)))
                     allSkills.addElement(A);
             }
-            final long[][] totals = new long[allSkills.size()][CoffeeTableRow.STAT_TOTAL];
+            final long[][] totals = new long[allSkills.size()][AetherTableRow.STAT_TOTAL];
             while ((V.size() > 0) && (curTime > (ENDQ.getTimeInMillis()))) {
                 lastCur = curTime;
                 final Calendar C2 = Calendar.getInstance();
@@ -118,21 +118,21 @@ public class CoffeeTableRows extends StdWebMacro {
                 C2.set(Calendar.SECOND, 59);
                 C2.set(Calendar.MILLISECOND, 999);
                 curTime = C2.getTimeInMillis();
-                final Vector<CoffeeTableRow> set = new Vector<CoffeeTableRow>();
+                final Vector<AetherTableRow> set = new Vector<AetherTableRow>();
                 if (V.size() == 1) {
-                    final CoffeeTableRow T = V.get(0);
+                    final AetherTableRow T = V.get(0);
                     set.addElement(T);
                     V.remove(0);
                 } else
                     for (int v = V.size() - 1; v >= 0; v--) {
-                        final CoffeeTableRow T = V.get(v);
+                        final AetherTableRow T = V.get(v);
                         if ((T.startTime() > curTime) && (T.endTime() <= lastCur)) {
                             set.addElement(T);
                             V.remove(v);
                         }
                     }
                 for (int s = 0; s < set.size(); s++) {
-                    final CoffeeTableRow T = set.elementAt(s);
+                    final AetherTableRow T = set.elementAt(s);
                     for (int x = 0; x < allSkills.size(); x++)
                         T.totalUp("A" + allSkills.elementAt(x).ID().toUpperCase(), totals[x]);
                 }
@@ -157,13 +157,13 @@ public class CoffeeTableRows extends StdWebMacro {
                         }
                     } else if (key.equalsIgnoreCase("SKILLUSE")) {
                         if (A != null)
-                            table.append("<TD" + colspan + ">" + header + totals[x][CoffeeTableRow.STAT_SKILLUSE] + footer + "</TD>");
+                            table.append("<TD" + colspan + ">" + header + totals[x][AetherTableRow.STAT_SKILLUSE] + footer + "</TD>");
                     }
                 }
                 table.append("</TR>");
             }
         } else if (parms.containsKey("QUESTNAME") || parms.containsKey("QUESTRPT")) {
-            final long[][] totals = new long[CMLib.quests().numQuests()][CoffeeTableRow.STAT_TOTAL];
+            final long[][] totals = new long[CMLib.quests().numQuests()][AetherTableRow.STAT_TOTAL];
             while ((V.size() > 0) && (curTime > (ENDQ.getTimeInMillis()))) {
                 lastCur = curTime;
                 final Calendar C2 = Calendar.getInstance();
@@ -174,14 +174,14 @@ public class CoffeeTableRows extends StdWebMacro {
                 C2.set(Calendar.SECOND, 59);
                 C2.set(Calendar.MILLISECOND, 999);
                 curTime = C2.getTimeInMillis();
-                final Vector<CoffeeTableRow> set = new Vector<CoffeeTableRow>();
+                final Vector<AetherTableRow> set = new Vector<AetherTableRow>();
                 if (V.size() == 1) {
-                    final CoffeeTableRow T = V.get(0);
+                    final AetherTableRow T = V.get(0);
                     set.addElement(T);
                     V.remove(0);
                 } else
                     for (int v = V.size() - 1; v >= 0; v--) {
-                        final CoffeeTableRow T = V.get(v);
+                        final AetherTableRow T = V.get(v);
                         if ((T.startTime() > curTime) && (T.endTime() <= lastCur)) {
                             set.addElement(T);
                             V.remove(v);
@@ -192,7 +192,7 @@ public class CoffeeTableRows extends StdWebMacro {
                     V.clear();
                 }
                 for (int s = 0; s < set.size(); s++) {
-                    final CoffeeTableRow T = set.elementAt(s);
+                    final AetherTableRow T = set.elementAt(s);
                     for (int x = 0; x < CMLib.quests().numQuests(); x++)
                         T.totalUp("U" + T.tagFix(CMLib.quests().fetchQuest(x).name()), totals[x]);
                 }
@@ -216,23 +216,23 @@ public class CoffeeTableRows extends StdWebMacro {
                     else if (key.equalsIgnoreCase("DATEEND"))
                         table.append("<TD" + colspan + ">" + header + CMLib.time().date2DateString(lastCur) + footer + "</TD>");
                     else if (key.equalsIgnoreCase("FAILEDSTART"))
-                        table.append("<TD" + colspan + ">" + header + totals[x][CoffeeTableRow.STAT_QUESTFAILEDSTART] + footer + "</TD>");
+                        table.append("<TD" + colspan + ">" + header + totals[x][AetherTableRow.STAT_QUESTFAILEDSTART] + footer + "</TD>");
                     else if (key.equalsIgnoreCase("TIMESTART"))
-                        table.append("<TD" + colspan + ">" + header + totals[x][CoffeeTableRow.STAT_QUESTTIMESTART] + footer + "</TD>");
+                        table.append("<TD" + colspan + ">" + header + totals[x][AetherTableRow.STAT_QUESTTIMESTART] + footer + "</TD>");
                     else if (key.equalsIgnoreCase("TIMESTOP"))
-                        table.append("<TD" + colspan + ">" + header + totals[x][CoffeeTableRow.STAT_QUESTTIMESTOP] + footer + "</TD>");
+                        table.append("<TD" + colspan + ">" + header + totals[x][AetherTableRow.STAT_QUESTTIMESTOP] + footer + "</TD>");
                     else if (key.equalsIgnoreCase("STOP"))
-                        table.append("<TD" + colspan + ">" + header + totals[x][CoffeeTableRow.STAT_QUESTSTOP] + footer + "</TD>");
+                        table.append("<TD" + colspan + ">" + header + totals[x][AetherTableRow.STAT_QUESTSTOP] + footer + "</TD>");
                     else if (key.equalsIgnoreCase("ACCEPTED"))
-                        table.append("<TD" + colspan + ">" + header + totals[x][CoffeeTableRow.STAT_QUESTACCEPTED] + footer + "</TD>");
+                        table.append("<TD" + colspan + ">" + header + totals[x][AetherTableRow.STAT_QUESTACCEPTED] + footer + "</TD>");
                     else if (key.equalsIgnoreCase("FAILED"))
-                        table.append("<TD" + colspan + ">" + header + totals[x][CoffeeTableRow.STAT_QUESTFAILED] + footer + "</TD>");
+                        table.append("<TD" + colspan + ">" + header + totals[x][AetherTableRow.STAT_QUESTFAILED] + footer + "</TD>");
                     else if (key.equalsIgnoreCase("SUCCESS"))
-                        table.append("<TD" + colspan + ">" + header + totals[x][CoffeeTableRow.STAT_QUESTSUCCESS] + footer + "</TD>");
+                        table.append("<TD" + colspan + ">" + header + totals[x][AetherTableRow.STAT_QUESTSUCCESS] + footer + "</TD>");
                     else if (key.equalsIgnoreCase("DROPPED"))
-                        table.append("<TD" + colspan + ">" + header + totals[x][CoffeeTableRow.STAT_QUESTDROPPED] + footer + "</TD>");
+                        table.append("<TD" + colspan + ">" + header + totals[x][AetherTableRow.STAT_QUESTDROPPED] + footer + "</TD>");
                     else if (key.equalsIgnoreCase("STARTATTEMPT"))
-                        table.append("<TD" + colspan + ">" + header + totals[x][CoffeeTableRow.STAT_QUESTSTARTATTEMPT] + footer + "</TD>");
+                        table.append("<TD" + colspan + ">" + header + totals[x][AetherTableRow.STAT_QUESTSTARTATTEMPT] + footer + "</TD>");
                 }
                 table.append("</TR>");
             }
@@ -248,28 +248,28 @@ public class CoffeeTableRows extends StdWebMacro {
                 C2.set(Calendar.SECOND, 59);
                 C2.set(Calendar.MILLISECOND, 999);
                 curTime = C2.getTimeInMillis();
-                final Vector<CoffeeTableRow> set = new Vector<CoffeeTableRow>();
+                final Vector<AetherTableRow> set = new Vector<AetherTableRow>();
                 for (int v = V.size() - 1; v >= 0; v--) {
-                    final CoffeeTableRow T = V.get(v);
+                    final AetherTableRow T = V.get(v);
                     if ((T.startTime() > curTime) && (T.endTime() <= lastCur)) {
                         set.addElement(T);
                         V.remove(v);
                     }
                 }
-                final long[] totals = new long[CoffeeTableRow.STAT_TOTAL];
+                final long[] totals = new long[AetherTableRow.STAT_TOTAL];
                 long highestOnline = 0;
                 long numberOnlineTotal = 0;
                 long numberOnlineCounter = 0;
                 for (int s = 0; s < set.size(); s++) {
-                    final CoffeeTableRow T = set.elementAt(s);
+                    final AetherTableRow T = set.elementAt(s);
                     T.totalUp(code, totals);
                     if (T.highestOnline() > highestOnline)
                         highestOnline = T.highestOnline();
                     numberOnlineTotal += T.numberOnlineTotal();
                     numberOnlineCounter += T.numberOnlineCounter();
                 }
-                final long minsOnline = (totals[CoffeeTableRow.STAT_TICKSONLINE] * CMProps.getTickMillis()) / (1000 * 60);
-                totals[CoffeeTableRow.STAT_TICKSONLINE] = (totals[CoffeeTableRow.STAT_TICKSONLINE] * CMProps.getTickMillis()) / (1000 * 60 * 60);
+                final long minsOnline = (totals[AetherTableRow.STAT_TICKSONLINE] * CMProps.getTickMillis()) / (1000 * 60);
+                totals[AetherTableRow.STAT_TICKSONLINE] = (totals[AetherTableRow.STAT_TICKSONLINE] * CMProps.getTickMillis()) / (1000 * 60 * 60);
                 double avgOnline = (numberOnlineCounter > 0) ? CMath.div(numberOnlineTotal, numberOnlineCounter) : 0.0;
                 avgOnline = CMath.div(Math.round(avgOnline * 10.0), 10.0);
                 table.append("<TR>");
@@ -284,33 +284,33 @@ public class CoffeeTableRows extends StdWebMacro {
                     else if (key.equalsIgnoreCase("DATEEND"))
                         table.append("<TD" + colspan + ">" + header + CMLib.time().date2DateString(lastCur) + footer + "</TD>");
                     else if (key.equalsIgnoreCase("LOGINS"))
-                        table.append("<TD" + colspan + ">" + header + totals[CoffeeTableRow.STAT_LOGINS] + footer + "</TD>");
+                        table.append("<TD" + colspan + ">" + header + totals[AetherTableRow.STAT_LOGINS] + footer + "</TD>");
                     else if (key.equalsIgnoreCase("MOSTONLINE"))
                         table.append("<TD" + colspan + ">" + header + highestOnline + footer + "</TD>");
                     else if (key.equalsIgnoreCase("AVERAGEONLINE"))
                         table.append("<TD" + colspan + ">" + header + avgOnline + footer + "</TD>");
                     else if (key.equalsIgnoreCase("AVERAGETICKS"))
-                        table.append("<TD" + colspan + ">" + header + ((totals[CoffeeTableRow.STAT_LOGINS] > 0) ? (minsOnline / totals[CoffeeTableRow.STAT_LOGINS]) : 0) + "</TD>");
+                        table.append("<TD" + colspan + ">" + header + ((totals[AetherTableRow.STAT_LOGINS] > 0) ? (minsOnline / totals[AetherTableRow.STAT_LOGINS]) : 0) + "</TD>");
                     else if (key.equalsIgnoreCase("TOTALHOURS"))
-                        table.append("<TD" + colspan + ">" + header + totals[CoffeeTableRow.STAT_TICKSONLINE] + footer + "</TD>");
+                        table.append("<TD" + colspan + ">" + header + totals[AetherTableRow.STAT_TICKSONLINE] + footer + "</TD>");
                     else if (key.equalsIgnoreCase("NEWPLAYERS"))
-                        table.append("<TD" + colspan + ">" + header + totals[CoffeeTableRow.STAT_NEWPLAYERS] + footer + "</TD>");
+                        table.append("<TD" + colspan + ">" + header + totals[AetherTableRow.STAT_NEWPLAYERS] + footer + "</TD>");
                     else if (key.equalsIgnoreCase("DEATHS"))
-                        table.append("<TD" + colspan + ">" + header + totals[CoffeeTableRow.STAT_DEATHS] + footer + "</TD>");
+                        table.append("<TD" + colspan + ">" + header + totals[AetherTableRow.STAT_DEATHS] + footer + "</TD>");
                     else if (key.equalsIgnoreCase("PKDEATHS"))
-                        table.append("<TD" + colspan + ">" + header + totals[CoffeeTableRow.STAT_PKDEATHS] + footer + "</TD>");
+                        table.append("<TD" + colspan + ">" + header + totals[AetherTableRow.STAT_PKDEATHS] + footer + "</TD>");
                     else if (key.equalsIgnoreCase("CLASSCHANGES"))
-                        table.append("<TD" + colspan + ">" + header + totals[CoffeeTableRow.STAT_CLASSCHANGE] + footer + "</TD>");
+                        table.append("<TD" + colspan + ">" + header + totals[AetherTableRow.STAT_CLASSCHANGE] + footer + "</TD>");
                     else if (key.equalsIgnoreCase("PURGES"))
-                        table.append("<TD" + colspan + ">" + header + totals[CoffeeTableRow.STAT_PURGES] + footer + "</TD>");
+                        table.append("<TD" + colspan + ">" + header + totals[AetherTableRow.STAT_PURGES] + footer + "</TD>");
                     else if (key.equalsIgnoreCase("MARRIAGES"))
-                        table.append("<TD" + colspan + ">" + header + totals[CoffeeTableRow.STAT_MARRIAGES] + footer + "</TD>");
+                        table.append("<TD" + colspan + ">" + header + totals[AetherTableRow.STAT_MARRIAGES] + footer + "</TD>");
                     else if (key.equalsIgnoreCase("BIRTHS"))
-                        table.append("<TD" + colspan + ">" + header + totals[CoffeeTableRow.STAT_BIRTHS] + footer + "</TD>");
+                        table.append("<TD" + colspan + ">" + header + totals[AetherTableRow.STAT_BIRTHS] + footer + "</TD>");
                     else if (key.equalsIgnoreCase("DIVORCES"))
-                        table.append("<TD" + colspan + ">" + header + totals[CoffeeTableRow.STAT_DIVORCES] + footer + "</TD>");
+                        table.append("<TD" + colspan + ">" + header + totals[AetherTableRow.STAT_DIVORCES] + footer + "</TD>");
                     else if (key.equalsIgnoreCase("LEVELSUP"))
-                        table.append("<TD" + colspan + ">" + header + totals[CoffeeTableRow.STAT_LEVELSGAINED] + footer + "</TD>");
+                        table.append("<TD" + colspan + ">" + header + totals[AetherTableRow.STAT_LEVELSGAINED] + footer + "</TD>");
                 }
                 table.append("</TR>");
                 if (scale == 0)

@@ -649,7 +649,7 @@ public class MUDLaw extends StdLibrary implements LegalLibrary {
             M = R.fetchInhabitant(i);
             if ((M.getStartRoom() == R)
                 && (M.isMonster())
-                && (CMLib.coffeeShops().getShopKeeper(M) != null))
+                && (CMLib.aetherShops().getShopKeeper(M) != null))
                 return true;
         }
         return false;

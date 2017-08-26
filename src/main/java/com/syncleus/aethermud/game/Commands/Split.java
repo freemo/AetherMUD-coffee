@@ -72,12 +72,12 @@ public class Split extends StdCommand {
 
             double totalAbsoluteValue = CMath.mul(numGold, denom);
             totalAbsoluteValue = CMath.div(totalAbsoluteValue, num + 1);
-            if ((totalAbsoluteValue * num) > CMLib.beanCounter().getTotalAbsoluteValue(mob, currency)) {
-                mob.tell(L("You don't have that much @x1.", CMLib.beanCounter().getDenominationName(currency, denom)));
+            if ((totalAbsoluteValue * num) > CMLib.moneyCounter().getTotalAbsoluteValue(mob, currency)) {
+                mob.tell(L("You don't have that much @x1.", CMLib.moneyCounter().getDenominationName(currency, denom)));
                 return false;
             }
-            final List<Coins> V = CMLib.beanCounter().makeAllCurrency(currency, totalAbsoluteValue);
-            CMLib.beanCounter().subtractMoney(mob, totalAbsoluteValue * num);
+            final List<Coins> V = CMLib.moneyCounter().makeAllCurrency(currency, totalAbsoluteValue);
+            CMLib.moneyCounter().subtractMoney(mob, totalAbsoluteValue * num);
             for (final Object element : H) {
                 final MOB recipient = (MOB) element;
                 for (int v = 0; v < V.size(); v++) {

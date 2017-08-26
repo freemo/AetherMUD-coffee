@@ -89,8 +89,8 @@ public class ItemRefitter extends StdBehavior {
                 CMLib.commands().postSay(observer, source, L("This already looks your size!"), true, false);
                 return false;
             }
-            if (CMLib.beanCounter().getTotalAbsoluteShopKeepersValue(msg.source(), observer) < (cost)) {
-                final String costStr = CMLib.beanCounter().nameCurrencyShort(observer, cost);
+            if (CMLib.moneyCounter().getTotalAbsoluteShopKeepersValue(msg.source(), observer) < (cost)) {
+                final String costStr = CMLib.moneyCounter().nameCurrencyShort(observer, cost);
                 CMLib.commands().postSay(observer, source, L("You'll need @x1 for me to refit that.", costStr), true, false);
                 return false;
             }
@@ -114,8 +114,8 @@ public class ItemRefitter extends StdBehavior {
             && (!(msg.tool() instanceof Coins))
             && (msg.tool() instanceof Armor)) {
             final double cost = cost((Item) msg.tool());
-            CMLib.beanCounter().subtractMoney(source, CMLib.beanCounter().getCurrency(observer), cost);
-            final String costStr = CMLib.beanCounter().nameCurrencyLong(observer, cost);
+            CMLib.moneyCounter().subtractMoney(source, CMLib.moneyCounter().getCurrency(observer), cost);
+            final String costStr = CMLib.moneyCounter().nameCurrencyLong(observer, cost);
             source.recoverPhyStats();
             ((Item) msg.tool()).basePhyStats().setHeight(0);
             ((Item) msg.tool()).recoverPhyStats();

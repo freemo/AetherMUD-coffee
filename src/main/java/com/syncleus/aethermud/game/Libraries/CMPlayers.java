@@ -443,7 +443,7 @@ public class CMPlayers extends StdLibrary implements PlayerLibrary {
                 name += " (" + pStats.getAccount().getAccountName() + ")";
             CMLib.commands().postChannel(channels.get(i), deadMOB.clans(), CMLib.lang().fullSessionTranslation("@x1 has just been deleted.", name), true);
         }
-        CMLib.coffeeTables().bump(deadMOB, CoffeeTableRow.STAT_PURGES);
+        CMLib.aetherTables().bump(deadMOB, AetherTableRow.STAT_PURGES);
 
         CMLib.database().DBDeletePlayer(deadMOB.Name());
         deadMOB.delAllItems(false);
@@ -996,7 +996,7 @@ public class CMPlayers extends StdLibrary implements PlayerLibrary {
                 mob.playerStats().getEmail(),
                 mob.playerStats().getEmail(),
                 subj,
-                CMLib.coffeeFilter().simpleOutFilter(msg));
+                CMLib.aetherFilter().simpleOutFilter(msg));
         } catch (final java.io.IOException ioe) {
             Log.errOut(serviceClient.getName(), "Unable to notify " + to + " of impending autopurge.");
         }

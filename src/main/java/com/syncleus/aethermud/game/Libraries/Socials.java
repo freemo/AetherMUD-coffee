@@ -840,43 +840,43 @@ public class Socials extends StdLibrary implements SocialsList {
                 help.append("\n\r");
                 help.append("^H");
                 help.append("Target     ^?: ^xnone^.^N\n\r");
-                help.append("You see    : " + CMLib.coffeeFilter().fullOutFilter(session, mob, mob, null, null, S.You_see(), false) + "\n\r");
-                help.append("Others see : " + CMLib.coffeeFilter().fullOutFilter(session, othMOB, mob, null, null, S.Third_party_sees(), false) + "\n\r");
+                help.append("You see    : " + CMLib.aetherFilter().fullOutFilter(session, mob, mob, null, null, S.You_see(), false) + "\n\r");
+                help.append("Others see : " + CMLib.aetherFilter().fullOutFilter(session, othMOB, mob, null, null, S.Third_party_sees(), false) + "\n\r");
             } else if (rest.equals("<T-NAME>")) {
                 help.append("\n\r");
                 help.append("^H");
                 help.append("Target     ^?: ^xsomeone^.^N\n\r");
-                help.append("No Target  : " + CMLib.coffeeFilter().fullOutFilter(session, mob, mob, tgtMOB, null, S.See_when_no_target(), false) + "\n\r");
-                help.append("You see    : " + CMLib.coffeeFilter().fullOutFilter(session, mob, mob, tgtMOB, null, S.You_see(), false) + "\n\r");
-                help.append("Target sees: " + CMLib.coffeeFilter().fullOutFilter(session, tgtMOB, mob, tgtMOB, null, S.Target_sees(), false) + "\n\r");
-                help.append("Others see : " + CMLib.coffeeFilter().fullOutFilter(session, othMOB, mob, tgtMOB, null, S.Third_party_sees(), false) + "\n\r");
+                help.append("No Target  : " + CMLib.aetherFilter().fullOutFilter(session, mob, mob, tgtMOB, null, S.See_when_no_target(), false) + "\n\r");
+                help.append("You see    : " + CMLib.aetherFilter().fullOutFilter(session, mob, mob, tgtMOB, null, S.You_see(), false) + "\n\r");
+                help.append("Target sees: " + CMLib.aetherFilter().fullOutFilter(session, tgtMOB, mob, tgtMOB, null, S.Target_sees(), false) + "\n\r");
+                help.append("Others see : " + CMLib.aetherFilter().fullOutFilter(session, othMOB, mob, tgtMOB, null, S.Third_party_sees(), false) + "\n\r");
             } else if (rest.equals("<I-NAME>")) {
                 help.append("\n\r");
                 help.append("^H");
                 help.append("Target     ^?: ^xroom item^.^N\n\r");
-                help.append("No Target  : " + CMLib.coffeeFilter().fullOutFilter(session, mob, mob, tgtMOB, null, S.See_when_no_target(), false) + "\n\r");
-                help.append("You see    : " + CMLib.coffeeFilter().fullOutFilter(session, mob, mob, tgtMOB, null, S.You_see(), false) + "\n\r");
-                help.append("Others see : " + CMLib.coffeeFilter().fullOutFilter(session, othMOB, mob, tgtMOB, null, S.Third_party_sees(), false) + "\n\r");
+                help.append("No Target  : " + CMLib.aetherFilter().fullOutFilter(session, mob, mob, tgtMOB, null, S.See_when_no_target(), false) + "\n\r");
+                help.append("You see    : " + CMLib.aetherFilter().fullOutFilter(session, mob, mob, tgtMOB, null, S.You_see(), false) + "\n\r");
+                help.append("Others see : " + CMLib.aetherFilter().fullOutFilter(session, othMOB, mob, tgtMOB, null, S.Third_party_sees(), false) + "\n\r");
             } else if (rest.equals("<V-NAME>")) {
                 help.append("\n\r");
                 help.append("^H");
                 help.append("Target     ^?: ^xinventory item^.^N\n\r");
-                help.append("No Target  : " + CMLib.coffeeFilter().fullOutFilter(session, mob, mob, tgtMOB, null, S.See_when_no_target(), false) + "\n\r");
-                help.append("You see    : " + CMLib.coffeeFilter().fullOutFilter(session, mob, mob, tgtMOB, null, S.You_see(), false) + "\n\r");
-                help.append("Others see : " + CMLib.coffeeFilter().fullOutFilter(session, othMOB, mob, tgtMOB, null, S.Third_party_sees(), false) + "\n\r");
+                help.append("No Target  : " + CMLib.aetherFilter().fullOutFilter(session, mob, mob, tgtMOB, null, S.See_when_no_target(), false) + "\n\r");
+                help.append("You see    : " + CMLib.aetherFilter().fullOutFilter(session, mob, mob, tgtMOB, null, S.You_see(), false) + "\n\r");
+                help.append("Others see : " + CMLib.aetherFilter().fullOutFilter(session, othMOB, mob, tgtMOB, null, S.Third_party_sees(), false) + "\n\r");
             } else if (rest.equals("<E-NAME>")) {
                 help.append("\n\r");
                 help.append("^H");
                 help.append("Target     ^?: ^xequipped item^.^N\n\r");
-                help.append("No Target  : " + CMLib.coffeeFilter().fullOutFilter(session, mob, mob, tgtMOB, null, S.See_when_no_target(), false) + "\n\r");
-                help.append("You see    : " + CMLib.coffeeFilter().fullOutFilter(session, mob, mob, tgtMOB, null, S.You_see(), false) + "\n\r");
-                help.append("Others see : " + CMLib.coffeeFilter().fullOutFilter(session, othMOB, mob, tgtMOB, null, S.Third_party_sees(), false) + "\n\r");
+                help.append("No Target  : " + CMLib.aetherFilter().fullOutFilter(session, mob, mob, tgtMOB, null, S.See_when_no_target(), false) + "\n\r");
+                help.append("You see    : " + CMLib.aetherFilter().fullOutFilter(session, mob, mob, tgtMOB, null, S.You_see(), false) + "\n\r");
+                help.append("Others see : " + CMLib.aetherFilter().fullOutFilter(session, othMOB, mob, tgtMOB, null, S.Third_party_sees(), false) + "\n\r");
             } else {
                 help.append("\n\r");
                 help.append("^H");
                 help.append("Target     ^?: ^x" + rest.toLowerCase() + "^.^N\n\r");
-                help.append("You see    : " + CMLib.coffeeFilter().fullOutFilter(session, mob, mob, null, null, S.You_see(), false) + "\n\r");
-                help.append("Others see : " + CMLib.coffeeFilter().fullOutFilter(session, othMOB, mob, null, null, S.Third_party_sees(), false) + "\n\r");
+                help.append("You see    : " + CMLib.aetherFilter().fullOutFilter(session, mob, mob, null, null, S.You_see(), false) + "\n\r");
+                help.append("Others see : " + CMLib.aetherFilter().fullOutFilter(session, othMOB, mob, null, null, S.Third_party_sees(), false) + "\n\r");
             }
         }
         tgtMOB.destroy();

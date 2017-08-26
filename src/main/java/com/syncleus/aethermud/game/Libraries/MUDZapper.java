@@ -4844,7 +4844,7 @@ public class MUDZapper extends StdLibrary implements MaskingLibrary {
                     case VALUE: // +value
                         if (E instanceof MOB) {
                             if ((entry.parms().length > 0)
-                                && (CMLib.beanCounter().getTotalAbsoluteValueAllCurrencies(mob) > (((Integer) entry.parms()[0]).intValue())))
+                                && (CMLib.moneyCounter().getTotalAbsoluteValueAllCurrencies(mob) > (((Integer) entry.parms()[0]).intValue())))
                                 return false;
                         } else {
                             if ((entry.parms().length > 0)
@@ -4855,7 +4855,7 @@ public class MUDZapper extends StdLibrary implements MaskingLibrary {
                     case _VALUE: // -value
                         if (E instanceof MOB) {
                             if ((entry.parms().length > 0)
-                                && (CMLib.beanCounter().getTotalAbsoluteValueAllCurrencies(mob) < (((Integer) entry.parms()[0]).intValue())))
+                                && (CMLib.moneyCounter().getTotalAbsoluteValueAllCurrencies(mob) < (((Integer) entry.parms()[0]).intValue())))
                                 return false;
                         } else {
                             if ((entry.parms().length > 0)
@@ -4935,7 +4935,7 @@ public class MUDZapper extends StdLibrary implements MaskingLibrary {
                         boolean found = false;
                         if (E instanceof Physical) {
                             for (int i = 0; i < entry.parms().length; i += 2) {
-                                if (CMLib.coffeeMaker().getAnyGenStat((Physical) E, (String) entry.parms()[i]).equalsIgnoreCase((String) entry.parms()[i + 1])) {
+                                if (CMLib.aetherMaker().getAnyGenStat((Physical) E, (String) entry.parms()[i]).equalsIgnoreCase((String) entry.parms()[i + 1])) {
                                     found = true;
                                     break;
                                 }
@@ -4955,7 +4955,7 @@ public class MUDZapper extends StdLibrary implements MaskingLibrary {
                     case IFSTAT: {
                         if (E instanceof Physical) {
                             for (int i = 0; i < entry.parms().length; i += 2) {
-                                if (CMLib.coffeeMaker().getAnyGenStat((Physical) E, (String) entry.parms()[i]).equalsIgnoreCase((String) entry.parms()[i + 1]))
+                                if (CMLib.aetherMaker().getAnyGenStat((Physical) E, (String) entry.parms()[i]).equalsIgnoreCase((String) entry.parms()[i + 1]))
                                     return false;
                             }
                         } else {

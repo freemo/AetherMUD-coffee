@@ -17,7 +17,7 @@
 package com.syncleus.aethermud.game.Common;
 
 import com.syncleus.aethermud.game.Common.interfaces.AuctionData;
-import com.syncleus.aethermud.game.Common.interfaces.CoffeeShop;
+import com.syncleus.aethermud.game.Common.interfaces.AetherShop;
 import com.syncleus.aethermud.game.Items.interfaces.Item;
 import com.syncleus.aethermud.game.MOBS.interfaces.Auctioneer;
 import com.syncleus.aethermud.game.MOBS.interfaces.MOB;
@@ -34,7 +34,7 @@ import java.util.Vector;
 
 
 @SuppressWarnings({"unchecked", "rawtypes"})
-public class AuctionCoffeeShop implements CoffeeShop {
+public class AuctionAetherShop implements AetherShop {
     public static final Vector<Environmental> emptyV = new Vector<Environmental>();
     public static final Vector<ShelfProduct> emptyV2 = new Vector<ShelfProduct>();
     public String auctionShop = "";
@@ -42,7 +42,7 @@ public class AuctionCoffeeShop implements CoffeeShop {
 
     @Override
     public String ID() {
-        return "AuctionCoffeeShop";
+        return "AuctionAetherShop";
     }
 
     @Override
@@ -61,7 +61,7 @@ public class AuctionCoffeeShop implements CoffeeShop {
             final Object O = this.clone();
             return (CMObject) O;
         } catch (final CloneNotSupportedException e) {
-            return new AuctionCoffeeShop();
+            return new AuctionAetherShop();
         }
     }
 
@@ -70,7 +70,7 @@ public class AuctionCoffeeShop implements CoffeeShop {
         try {
             return getClass().newInstance();
         } catch (final Exception e) {
-            return new AuctionCoffeeShop();
+            return new AuctionAetherShop();
         }
     }
 
@@ -79,7 +79,7 @@ public class AuctionCoffeeShop implements CoffeeShop {
     }
 
     @Override
-    public CoffeeShop build(ShopKeeper SK) {
+    public AetherShop build(ShopKeeper SK) {
         shopKeeper = new WeakReference(SK);
         return this;
     }
@@ -179,7 +179,7 @@ public class AuctionCoffeeShop implements CoffeeShop {
 
     @Override
     public Environmental getStock(String name, MOB mob) {
-        final List<AuctionData> auctions = CMLib.coffeeShops().getAuctions(null, auctionShop);
+        final List<AuctionData> auctions = CMLib.aetherShops().getAuctions(null, auctionShop);
         final Vector<Environmental> auctionItems = new Vector<Environmental>();
         for (int a = 0; a < auctions.size(); a++) {
             final Item I = auctions.get(a).getAuctionedItem();

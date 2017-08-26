@@ -44,7 +44,7 @@ public class GenCoins extends GenItem implements Coins {
         setMaterial(RawMaterial.RESOURCE_GOLD);
         setNumberOfCoins(100);
         setCurrency("");
-        setDenomination(CMLib.beanCounter().getLowestDenomination(""));
+        setDenomination(CMLib.moneyCounter().getLowestDenomination(""));
         setDescription("");
     }
 
@@ -60,12 +60,12 @@ public class GenCoins extends GenItem implements Coins {
 
     @Override
     public String Name() {
-        return CMLib.beanCounter().getDenominationName(getCurrency(), getDenomination(), getNumberOfCoins());
+        return CMLib.moneyCounter().getDenominationName(getCurrency(), getDenomination(), getNumberOfCoins());
     }
 
     @Override
     public String displayText() {
-        return CMLib.beanCounter().getDenominationName(getCurrency(), getDenomination(), getNumberOfCoins()) + ((getNumberOfCoins() == 1) ? " lies here." : " lie here.");
+        return CMLib.moneyCounter().getDenominationName(getCurrency(), getDenomination(), getNumberOfCoins()) + ((getNumberOfCoins() == 1) ? " lies here." : " lie here.");
     }
 
     @Override
@@ -87,7 +87,7 @@ public class GenCoins extends GenItem implements Coins {
                 }
             }
         }
-        setDescription(CMLib.beanCounter().getConvertableDescription(getCurrency(), getDenomination()));
+        setDescription(CMLib.moneyCounter().getConvertableDescription(getCurrency(), getDenomination()));
     }
 
     @Override
@@ -196,8 +196,8 @@ public class GenCoins extends GenItem implements Coins {
 
     @Override
     public String getStat(String code) {
-        if (CMLib.coffeeMaker().getGenItemCodeNum(code) >= 0)
-            return CMLib.coffeeMaker().getGenItemStat(this, code);
+        if (CMLib.aetherMaker().getGenItemCodeNum(code) >= 0)
+            return CMLib.aetherMaker().getGenItemStat(this, code);
         switch (getCodeNum(code)) {
             case 0:
                 return "" + getNumberOfCoins();
@@ -212,8 +212,8 @@ public class GenCoins extends GenItem implements Coins {
 
     @Override
     public void setStat(String code, String val) {
-        if (CMLib.coffeeMaker().getGenItemCodeNum(code) >= 0)
-            CMLib.coffeeMaker().setGenItemStat(this, code, val);
+        if (CMLib.aetherMaker().getGenItemCodeNum(code) >= 0)
+            CMLib.aetherMaker().setGenItemStat(this, code, val);
         else
             switch (getCodeNum(code)) {
                 case 0:

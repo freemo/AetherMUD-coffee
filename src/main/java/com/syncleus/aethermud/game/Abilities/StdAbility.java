@@ -1147,7 +1147,7 @@ public class StdAbility implements Ability {
             return;
 
         if (!mob.isMonster()) {
-            CMLib.coffeeTables().bump(this, CoffeeTableRow.STAT_SKILLUSE);
+            CMLib.aetherTables().bump(this, AetherTableRow.STAT_SKILLUSE);
             CMLib.achievements().possiblyBumpAchievement(mob, AchievementLibrary.Event.SKILLUSE, 1, this);
         }
 

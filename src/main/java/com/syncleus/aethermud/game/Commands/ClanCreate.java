@@ -70,8 +70,8 @@ public class ClanCreate extends StdCommand {
         if (session != null) {
             final int cost = CMProps.getIntVar(CMProps.Int.CLANCOST);
             if (cost > 0) {
-                if (CMLib.beanCounter().getTotalAbsoluteNativeValue(mob) < (cost)) {
-                    mob.tell(L("It costs @x1 to create a clan.  You don't have it.", CMLib.beanCounter().nameCurrencyShort(mob, cost)));
+                if (CMLib.moneyCounter().getTotalAbsoluteNativeValue(mob) < (cost)) {
+                    mob.tell(L("It costs @x1 to create a clan.  You don't have it.", CMLib.moneyCounter().nameCurrencyShort(mob, cost)));
                     return false;
                 }
             }
@@ -197,7 +197,7 @@ public class ClanCreate extends StdCommand {
                                                     return;
                                                 }
                                                 if (cost > 0) {
-                                                    CMLib.beanCounter().subtractMoney(mob, cost);
+                                                    CMLib.moneyCounter().subtractMoney(mob, cost);
                                                 }
 
                                                 newClan.setStatus(Clan.CLANSTATUS_PENDING);

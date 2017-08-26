@@ -678,7 +678,7 @@ public class DefaultScriptingEngine implements ScriptingEngine {
 
     public String getVar(final Resources resources, final String host, String var, String defaultVal) {
         if (host.equalsIgnoreCase("*")) {
-            if (var.equals("COFFEEMUD_SYSTEM_INTERNAL_NONFILENAME_SCRIPT")) {
+            if (var.equals("AETHERMUD_SYSTEM_INTERNAL_NONFILENAME_SCRIPT")) {
                 final StringBuffer str = new StringBuffer("");
                 parseLoads(getScript(), 0, null, str);
                 return str.toString();
@@ -1010,7 +1010,7 @@ public class DefaultScriptingEngine implements ScriptingEngine {
         monsters = new Vector<PhysicalAgent>();
         if (xml != null) {
             if (CMLib.xml().getContentsFromPieces(xml, "MOBS") != null) {
-                final String error = CMLib.coffeeMaker().addMOBsFromXML(xml, monsters, null);
+                final String error = CMLib.aetherMaker().addMOBsFromXML(xml, monsters, null);
                 if (error.length() > 0) {
                     logError(scripted, "XMLLOAD", "?", "Error in XML file: '" + filename + "'");
                     return null;
@@ -1114,7 +1114,7 @@ public class DefaultScriptingEngine implements ScriptingEngine {
         final List<XMLLibrary.XMLTag> xml = CMLib.xml().parseAllXML(buf.toString());
         if (xml != null) {
             if (CMLib.xml().getContentsFromPieces(xml, "ITEMS") != null) {
-                final String error = CMLib.coffeeMaker().addItemsFromXML(buf.toString(), items, null);
+                final String error = CMLib.aetherMaker().addItemsFromXML(buf.toString(), items, null);
                 if (error.length() > 0) {
                     logError(scripted, "XMLLOAD", "?", "Error in XML file: '" + filename + "' in " + thangName);
                     return null;
@@ -1941,7 +1941,7 @@ public class DefaultScriptingEngine implements ScriptingEngine {
                 arg2 = arg2.toUpperCase().trim();
                 final GenericBuilder.GenMOBCode element = (GenericBuilder.GenMOBCode) CMath.s_valueOf(GenericBuilder.GenMOBCode.class, arg2);
                 if (element != null) {
-                    val = CMLib.coffeeMaker().getGenMobStat((MOB) E, element.name());
+                    val = CMLib.aetherMaker().getGenMobStat((MOB) E, element.name());
                     found = true;
                 }
                 if (!found) {
@@ -2018,7 +2018,7 @@ public class DefaultScriptingEngine implements ScriptingEngine {
             } else if (E instanceof Item) {
                 final GenericBuilder.GenItemCode code = (GenericBuilder.GenItemCode) CMath.s_valueOf(GenericBuilder.GenItemCode.class, arg2.toUpperCase().trim());
                 if (code != null) {
-                    val = CMLib.coffeeMaker().getGenItemStat((Item) E, code.name());
+                    val = CMLib.aetherMaker().getGenItemStat((Item) E, code.name());
                     found = true;
                 }
             }
@@ -2816,7 +2816,7 @@ public class DefaultScriptingEngine implements ScriptingEngine {
                         if (E == null)
                             returnable = false;
                         else
-                            returnable = simpleEvalStr(scripted, CMLib.beanCounter().getCurrency(E), arg3, arg2, "CURRENCY");
+                            returnable = simpleEvalStr(scripted, CMLib.moneyCounter().getCurrency(E), arg3, arg2, "CURRENCY");
                         break;
                     }
                     case 61: // strin
@@ -3541,15 +3541,15 @@ public class DefaultScriptingEngine implements ScriptingEngine {
                         }
                         int ct = 0;
                         if (which != null) {
-                            ShopKeeper shopHere = CMLib.coffeeShops().getShopKeeper(which);
+                            ShopKeeper shopHere = CMLib.aetherShops().getShopKeeper(which);
                             if ((shopHere == null) && (scripted instanceof Item))
-                                shopHere = CMLib.coffeeShops().getShopKeeper(((Item) which).owner());
+                                shopHere = CMLib.aetherShops().getShopKeeper(((Item) which).owner());
                             if ((shopHere == null) && (scripted instanceof MOB))
-                                shopHere = CMLib.coffeeShops().getShopKeeper(((MOB) which).location());
+                                shopHere = CMLib.aetherShops().getShopKeeper(((MOB) which).location());
                             if (shopHere == null)
-                                shopHere = CMLib.coffeeShops().getShopKeeper(lastKnownLocation);
+                                shopHere = CMLib.aetherShops().getShopKeeper(lastKnownLocation);
                             if (shopHere != null) {
-                                CoffeeShop shop = shopHere.getShop();
+                                AetherShop shop = shopHere.getShop();
                                 if (shop != null) {
                                     for (Iterator<Environmental> i = shop.getStoreInventory(); i.hasNext(); i.next()) {
                                         ct++;
@@ -3581,15 +3581,15 @@ public class DefaultScriptingEngine implements ScriptingEngine {
                         Environmental which = null;
                         int ct = 1;
                         if (where != null) {
-                            ShopKeeper shopHere = CMLib.coffeeShops().getShopKeeper(where);
+                            ShopKeeper shopHere = CMLib.aetherShops().getShopKeeper(where);
                             if ((shopHere == null) && (scripted instanceof Item))
-                                shopHere = CMLib.coffeeShops().getShopKeeper(((Item) where).owner());
+                                shopHere = CMLib.aetherShops().getShopKeeper(((Item) where).owner());
                             if ((shopHere == null) && (scripted instanceof MOB))
-                                shopHere = CMLib.coffeeShops().getShopKeeper(((MOB) where).location());
+                                shopHere = CMLib.aetherShops().getShopKeeper(((MOB) where).location());
                             if (shopHere == null)
-                                shopHere = CMLib.coffeeShops().getShopKeeper(lastKnownLocation);
+                                shopHere = CMLib.aetherShops().getShopKeeper(lastKnownLocation);
                             if (shopHere != null) {
-                                CoffeeShop shop = shopHere.getShop();
+                                AetherShop shop = shopHere.getShop();
                                 if (shop != null) {
                                     for (Iterator<Environmental> i = shop.getStoreInventory(); i.hasNext(); ) {
                                         Environmental E = i.next();
@@ -3633,15 +3633,15 @@ public class DefaultScriptingEngine implements ScriptingEngine {
                         }
                         returnable = false;
                         if (where != null) {
-                            ShopKeeper shopHere = CMLib.coffeeShops().getShopKeeper(where);
+                            ShopKeeper shopHere = CMLib.aetherShops().getShopKeeper(where);
                             if ((shopHere == null) && (scripted instanceof Item))
-                                shopHere = CMLib.coffeeShops().getShopKeeper(((Item) where).owner());
+                                shopHere = CMLib.aetherShops().getShopKeeper(((Item) where).owner());
                             if ((shopHere == null) && (scripted instanceof MOB))
-                                shopHere = CMLib.coffeeShops().getShopKeeper(((MOB) where).location());
+                                shopHere = CMLib.aetherShops().getShopKeeper(((MOB) where).location());
                             if (shopHere == null)
-                                shopHere = CMLib.coffeeShops().getShopKeeper(lastKnownLocation);
+                                shopHere = CMLib.aetherShops().getShopKeeper(lastKnownLocation);
                             if (shopHere != null) {
-                                CoffeeShop shop = shopHere.getShop();
+                                AetherShop shop = shopHere.getShop();
                                 if (shop != null) {
                                     final Environmental E = shop.getStock(arg2.trim(), null);
                                     returnable = (E != null);
@@ -4478,7 +4478,7 @@ public class DefaultScriptingEngine implements ScriptingEngine {
                         else {
                             int val1 = 0;
                             if (E instanceof MOB)
-                                val1 = (int) Math.round(CMLib.beanCounter().getTotalAbsoluteValue((MOB) E, CMLib.beanCounter().getCurrency(scripted)));
+                                val1 = (int) Math.round(CMLib.moneyCounter().getTotalAbsoluteValue((MOB) E, CMLib.moneyCounter().getCurrency(scripted)));
                             else if (E instanceof Coins)
                                 val1 = (int) Math.round(((Coins) E).getTotalValue());
                             else if (E instanceof Item)
@@ -4525,7 +4525,7 @@ public class DefaultScriptingEngine implements ScriptingEngine {
                             logError(scripted, "VALUE", "Syntax", funcParms);
                             break;
                         }
-                        if (!CMLib.beanCounter().getAllCurrencies().contains(arg2.toUpperCase())) {
+                        if (!CMLib.moneyCounter().getAllCurrencies().contains(arg2.toUpperCase())) {
                             logError(scripted, "VALUE", "Syntax", arg2 + " is not a valid designated currency.");
                             break;
                         }
@@ -4534,7 +4534,7 @@ public class DefaultScriptingEngine implements ScriptingEngine {
                         else {
                             int val1 = 0;
                             if (E instanceof MOB)
-                                val1 = (int) Math.round(CMLib.beanCounter().getTotalAbsoluteValue((MOB) E, arg2.toUpperCase()));
+                                val1 = (int) Math.round(CMLib.moneyCounter().getTotalAbsoluteValue((MOB) E, arg2.toUpperCase()));
                             else if (E instanceof Coins) {
                                 if (((Coins) E).getCurrency().equalsIgnoreCase(arg2))
                                     val1 = (int) Math.round(((Coins) E).getTotalValue());
@@ -4789,13 +4789,13 @@ public class DefaultScriptingEngine implements ScriptingEngine {
 
     protected void setShopPrice(ShopKeeper shopHere, Environmental E, Object[] tmp) {
         if (shopHere instanceof MOB) {
-            ShopKeeper.ShopPrice price = CMLib.coffeeShops().sellingPrice((MOB) shopHere, null, E, shopHere, true);
+            ShopKeeper.ShopPrice price = CMLib.aetherShops().sellingPrice((MOB) shopHere, null, E, shopHere, true);
             if (price.experiencePrice > 0)
                 tmp[SPECIAL_9SHOPHASPRICE] = price.experiencePrice + "xp";
             else if (price.questPointPrice > 0)
                 tmp[SPECIAL_9SHOPHASPRICE] = price.questPointPrice + "qp";
             else
-                tmp[SPECIAL_9SHOPHASPRICE] = CMLib.beanCounter().abbreviatedPrice((MOB) shopHere, price.absoluteGoldPrice);
+                tmp[SPECIAL_9SHOPHASPRICE] = CMLib.moneyCounter().abbreviatedPrice((MOB) shopHere, price.absoluteGoldPrice);
         }
     }
 
@@ -5177,7 +5177,7 @@ public class DefaultScriptingEngine implements ScriptingEngine {
                     final String arg1 = CMParms.cleanBit(funcParms);
                     final Environmental E = getArgumentItem(arg1, source, monster, scripted, target, primaryItem, secondaryItem, msg, tmp);
                     if (E != null)
-                        results.append(CMLib.beanCounter().getCurrency(E));
+                        results.append(CMLib.moneyCounter().getCurrency(E));
                     break;
                 }
                 case 14: // affected
@@ -5686,15 +5686,15 @@ public class DefaultScriptingEngine implements ScriptingEngine {
                     Environmental which = null;
                     int ct = 1;
                     if (where != null) {
-                        ShopKeeper shopHere = CMLib.coffeeShops().getShopKeeper(where);
+                        ShopKeeper shopHere = CMLib.aetherShops().getShopKeeper(where);
                         if ((shopHere == null) && (scripted instanceof Item))
-                            shopHere = CMLib.coffeeShops().getShopKeeper(((Item) where).owner());
+                            shopHere = CMLib.aetherShops().getShopKeeper(((Item) where).owner());
                         if ((shopHere == null) && (scripted instanceof MOB))
-                            shopHere = CMLib.coffeeShops().getShopKeeper(((MOB) where).location());
+                            shopHere = CMLib.aetherShops().getShopKeeper(((MOB) where).location());
                         if (shopHere == null)
-                            shopHere = CMLib.coffeeShops().getShopKeeper(lastKnownLocation);
+                            shopHere = CMLib.aetherShops().getShopKeeper(lastKnownLocation);
                         if (shopHere != null) {
-                            CoffeeShop shop = shopHere.getShop();
+                            AetherShop shop = shopHere.getShop();
                             if (shop != null) {
                                 for (Iterator<Environmental> i = shop.getStoreInventory(); i.hasNext(); ct++) {
                                     Environmental E = i.next();
@@ -5728,15 +5728,15 @@ public class DefaultScriptingEngine implements ScriptingEngine {
                     }
                     int ct = 0;
                     if (which != null) {
-                        ShopKeeper shopHere = CMLib.coffeeShops().getShopKeeper(which);
+                        ShopKeeper shopHere = CMLib.aetherShops().getShopKeeper(which);
                         if ((shopHere == null) && (scripted instanceof Item))
-                            shopHere = CMLib.coffeeShops().getShopKeeper(((Item) which).owner());
+                            shopHere = CMLib.aetherShops().getShopKeeper(((Item) which).owner());
                         if ((shopHere == null) && (scripted instanceof MOB))
-                            shopHere = CMLib.coffeeShops().getShopKeeper(((MOB) which).location());
+                            shopHere = CMLib.aetherShops().getShopKeeper(((MOB) which).location());
                         if (shopHere == null)
-                            shopHere = CMLib.coffeeShops().getShopKeeper(lastKnownLocation);
+                            shopHere = CMLib.aetherShops().getShopKeeper(lastKnownLocation);
                         if (shopHere != null) {
-                            CoffeeShop shop = shopHere.getShop();
+                            AetherShop shop = shopHere.getShop();
                             if (shop != null) {
                                 for (Iterator<Environmental> i = shop.getStoreInventory(); i.hasNext(); i.next()) {
                                     ct++;
@@ -5763,15 +5763,15 @@ public class DefaultScriptingEngine implements ScriptingEngine {
                             where = this.getArgumentMOB(arg1raw, source, monster, target, primaryItem, secondaryItem, msg, tmp);
                     }
                     if (where != null) {
-                        ShopKeeper shopHere = CMLib.coffeeShops().getShopKeeper(where);
+                        ShopKeeper shopHere = CMLib.aetherShops().getShopKeeper(where);
                         if ((shopHere == null) && (scripted instanceof Item))
-                            shopHere = CMLib.coffeeShops().getShopKeeper(((Item) where).owner());
+                            shopHere = CMLib.aetherShops().getShopKeeper(((Item) where).owner());
                         if ((shopHere == null) && (scripted instanceof MOB))
-                            shopHere = CMLib.coffeeShops().getShopKeeper(((MOB) where).location());
+                            shopHere = CMLib.aetherShops().getShopKeeper(((MOB) where).location());
                         if (shopHere == null)
-                            shopHere = CMLib.coffeeShops().getShopKeeper(lastKnownLocation);
+                            shopHere = CMLib.aetherShops().getShopKeeper(lastKnownLocation);
                         if (shopHere != null) {
-                            CoffeeShop shop = shopHere.getShop();
+                            AetherShop shop = shopHere.getShop();
                             if (shop != null) {
                                 int ct = 0;
                                 for (Iterator<Environmental> i = shop.getStoreInventory(); i.hasNext(); i.next())
@@ -6168,7 +6168,7 @@ public class DefaultScriptingEngine implements ScriptingEngine {
                     else {
                         int val1 = 0;
                         if (E instanceof MOB)
-                            val1 = (int) Math.round(CMLib.beanCounter().getTotalAbsoluteValue((MOB) E, CMLib.beanCounter().getCurrency(scripted)));
+                            val1 = (int) Math.round(CMLib.moneyCounter().getTotalAbsoluteValue((MOB) E, CMLib.moneyCounter().getCurrency(scripted)));
                         else if (E instanceof Coins)
                             val1 = (int) Math.round(((Coins) E).getTotalValue());
                         else if (E instanceof Item)
@@ -6199,7 +6199,7 @@ public class DefaultScriptingEngine implements ScriptingEngine {
                 {
                     final String arg1 = CMParms.getCleanBit(funcParms, 0);
                     final String arg2 = CMParms.getPastBitClean(funcParms, 0);
-                    if (!CMLib.beanCounter().getAllCurrencies().contains(arg2.toUpperCase())) {
+                    if (!CMLib.moneyCounter().getAllCurrencies().contains(arg2.toUpperCase())) {
                         logError(scripted, "VALUE", "Syntax", arg2 + " is not a valid designated currency.");
                         return results.toString();
                     }
@@ -6209,7 +6209,7 @@ public class DefaultScriptingEngine implements ScriptingEngine {
                     else {
                         int val1 = 0;
                         if (E instanceof MOB)
-                            val1 = (int) Math.round(CMLib.beanCounter().getTotalAbsoluteValue((MOB) E, arg2));
+                            val1 = (int) Math.round(CMLib.moneyCounter().getTotalAbsoluteValue((MOB) E, arg2));
                         else if (E instanceof Coins) {
                             if (((Coins) E).getCurrency().equalsIgnoreCase(arg2))
                                 val1 = (int) Math.round(((Coins) E).getTotalValue());
@@ -7265,10 +7265,10 @@ public class DefaultScriptingEngine implements ScriptingEngine {
                                 final GenericBuilder.GenMOBCode element = (GenericBuilder.GenMOBCode) CMath.s_valueOf(GenericBuilder.GenMOBCode.class, arg2.toUpperCase().trim());
                                 if (element != null) {
                                     if (arg3.equals("++"))
-                                        arg3 = "" + (CMath.s_int(CMLib.coffeeMaker().getGenMobStat((MOB) newTarget, element.name())) + 1);
+                                        arg3 = "" + (CMath.s_int(CMLib.aetherMaker().getGenMobStat((MOB) newTarget, element.name())) + 1);
                                     if (arg3.equals("--"))
-                                        arg3 = "" + (CMath.s_int(CMLib.coffeeMaker().getGenMobStat((MOB) newTarget, element.name())) - 1);
-                                    CMLib.coffeeMaker().setGenMobStat((MOB) newTarget, element.name(), arg3);
+                                        arg3 = "" + (CMath.s_int(CMLib.aetherMaker().getGenMobStat((MOB) newTarget, element.name())) - 1);
+                                    CMLib.aetherMaker().setGenMobStat((MOB) newTarget, element.name(), arg3);
                                     found = true;
                                 }
                                 if (!found) {
@@ -7376,10 +7376,10 @@ public class DefaultScriptingEngine implements ScriptingEngine {
                             final GenericBuilder.GenItemCode element = (GenericBuilder.GenItemCode) CMath.s_valueOf(GenericBuilder.GenItemCode.class, arg2.toUpperCase().trim());
                             if (element != null) {
                                 if (arg3.equals("++"))
-                                    arg3 = "" + (CMath.s_int(CMLib.coffeeMaker().getGenItemStat((Item) newTarget, element.name())) + 1);
+                                    arg3 = "" + (CMath.s_int(CMLib.aetherMaker().getGenItemStat((Item) newTarget, element.name())) + 1);
                                 if (arg3.equals("--"))
-                                    arg3 = "" + (CMath.s_int(CMLib.coffeeMaker().getGenItemStat((Item) newTarget, element.name())) - 1);
-                                CMLib.coffeeMaker().setGenItemStat((Item) newTarget, element.name(), arg3);
+                                    arg3 = "" + (CMath.s_int(CMLib.aetherMaker().getGenItemStat((Item) newTarget, element.name())) - 1);
+                                CMLib.aetherMaker().setGenItemStat((Item) newTarget, element.name(), arg3);
                                 found = true;
                             }
                         }
@@ -7453,16 +7453,16 @@ public class DefaultScriptingEngine implements ScriptingEngine {
                     }
                     if (newTarget instanceof MOB) {
                         if (plus)
-                            CMLib.beanCounter().giveSomeoneMoney((MOB) newTarget, currency, amt * denomination);
+                            CMLib.moneyCounter().giveSomeoneMoney((MOB) newTarget, currency, amt * denomination);
                         else
-                            CMLib.beanCounter().subtractMoney((MOB) newTarget, currency, amt * denomination);
+                            CMLib.moneyCounter().subtractMoney((MOB) newTarget, currency, amt * denomination);
                     } else {
                         if (!(newTarget instanceof Room))
                             newTarget = lastKnownLocation;
                         if (plus)
-                            CMLib.beanCounter().dropMoney((Room) newTarget, container, currency, amt * denomination);
+                            CMLib.moneyCounter().dropMoney((Room) newTarget, container, currency, amt * denomination);
                         else
-                            CMLib.beanCounter().removeMoney((Room) newTarget, container, currency, amt * denomination);
+                            CMLib.moneyCounter().removeMoney((Room) newTarget, container, currency, amt * denomination);
                     }
                     break;
                 }
@@ -7515,11 +7515,11 @@ public class DefaultScriptingEngine implements ScriptingEngine {
                             Q.runtimeRegisterObject(obj);
                         }
                     } else if (var.equalsIgnoreCase("STATISTICS") && (val.equalsIgnoreCase("ACCEPTED")))
-                        CMLib.coffeeTables().bump(Q, CoffeeTableRow.STAT_QUESTACCEPTED);
+                        CMLib.aetherTables().bump(Q, AetherTableRow.STAT_QUESTACCEPTED);
                     else if (var.equalsIgnoreCase("STATISTICS") && (val.equalsIgnoreCase("SUCCESS") || val.equalsIgnoreCase("WON")))
-                        CMLib.coffeeTables().bump(Q, CoffeeTableRow.STAT_QUESTSUCCESS);
+                        CMLib.aetherTables().bump(Q, AetherTableRow.STAT_QUESTSUCCESS);
                     else if (var.equalsIgnoreCase("STATISTICS") && (val.equalsIgnoreCase("FAILED")))
-                        CMLib.coffeeTables().bump(Q, CoffeeTableRow.STAT_QUESTFAILED);
+                        CMLib.aetherTables().bump(Q, AetherTableRow.STAT_QUESTFAILED);
                     else {
                         if (val.equals("++"))
                             val = "" + (CMath.s_int(Q.getStat(var)) + 1);
@@ -7701,7 +7701,7 @@ public class DefaultScriptingEngine implements ScriptingEngine {
                         if (coins > 0) {
                             final String currency = CMLib.english().numPossibleGoldCurrency(scripted, name);
                             final double denom = CMLib.english().numPossibleGoldDenomination(scripted, currency, name);
-                            final Coins C = CMLib.beanCounter().makeCurrency(currency, denom, coins);
+                            final Coins C = CMLib.moneyCounter().makeCurrency(currency, denom, coins);
                             if (addHere instanceof MOB)
                                 ((MOB) addHere).addItem(C);
                             else if (addHere instanceof Room)
@@ -7772,7 +7772,7 @@ public class DefaultScriptingEngine implements ScriptingEngine {
                         if (coins > 0) {
                             final String currency = CMLib.english().numPossibleGoldCurrency(monster, name);
                             final double denom = CMLib.english().numPossibleGoldDenomination(monster, currency, name);
-                            final Coins C = CMLib.beanCounter().makeCurrency(currency, denom, coins);
+                            final Coins C = CMLib.moneyCounter().makeCurrency(currency, denom, coins);
                             Is.add(C);
                         } else {
                             final Item I = CMClass.getItem(name);
@@ -7805,13 +7805,13 @@ public class DefaultScriptingEngine implements ScriptingEngine {
                 case 84: // mpoloadshop
                 {
                     // if not mob
-                    ShopKeeper addHere = CMLib.coffeeShops().getShopKeeper(scripted);
+                    ShopKeeper addHere = CMLib.aetherShops().getShopKeeper(scripted);
                     if ((addHere == null) && (scripted instanceof Item))
-                        addHere = CMLib.coffeeShops().getShopKeeper(((Item) scripted).owner());
+                        addHere = CMLib.aetherShops().getShopKeeper(((Item) scripted).owner());
                     if ((addHere == null) && (scripted instanceof MOB))
-                        addHere = CMLib.coffeeShops().getShopKeeper(((MOB) scripted).location());
+                        addHere = CMLib.aetherShops().getShopKeeper(((MOB) scripted).location());
                     if (addHere == null)
-                        addHere = CMLib.coffeeShops().getShopKeeper(lastKnownLocation);
+                        addHere = CMLib.aetherShops().getShopKeeper(lastKnownLocation);
                     if (addHere != null) {
                         if (tt == null) {
                             tt = parseBits(script, si, "Cr");
@@ -7840,7 +7840,7 @@ public class DefaultScriptingEngine implements ScriptingEngine {
                                         && (!(I instanceof ArchonOnly))) {
                                         I = (Item) I.copyOf();
                                         I.recoverPhyStats();
-                                        CoffeeShop shop = addHere.getShop();
+                                        AetherShop shop = addHere.getShop();
                                         if (shop != null) {
                                             Environmental E = shop.addStoreInventory(I, 1, price);
                                             if (E != null)
@@ -7858,13 +7858,13 @@ public class DefaultScriptingEngine implements ScriptingEngine {
                 case 85: // mpmloadshop
                 {
                     // if not mob
-                    ShopKeeper addHere = CMLib.coffeeShops().getShopKeeper(scripted);
+                    ShopKeeper addHere = CMLib.aetherShops().getShopKeeper(scripted);
                     if ((addHere == null) && (scripted instanceof Item))
-                        addHere = CMLib.coffeeShops().getShopKeeper(((Item) scripted).owner());
+                        addHere = CMLib.aetherShops().getShopKeeper(((Item) scripted).owner());
                     if ((addHere == null) && (scripted instanceof MOB))
-                        addHere = CMLib.coffeeShops().getShopKeeper(((MOB) scripted).location());
+                        addHere = CMLib.aetherShops().getShopKeeper(((MOB) scripted).location());
                     if (addHere == null)
-                        addHere = CMLib.coffeeShops().getShopKeeper(lastKnownLocation);
+                        addHere = CMLib.aetherShops().getShopKeeper(lastKnownLocation);
                     if (addHere != null) {
                         if (tt == null) {
                             tt = parseBits(script, si, "Cr");
@@ -7893,7 +7893,7 @@ public class DefaultScriptingEngine implements ScriptingEngine {
                                     m.recoverPhyStats();
                                     m.recoverCharStats();
                                     m.resetToMaxState();
-                                    CoffeeShop shop = addHere.getShop();
+                                    AetherShop shop = addHere.getShop();
                                     if (shop != null) {
                                         Environmental E = shop.addStoreInventory(m, 1, price);
                                         if (E != null)
@@ -10255,7 +10255,7 @@ public class DefaultScriptingEngine implements ScriptingEngine {
                             if (t != null) {
                                 if (t[1].startsWith("ANY") || t[1].startsWith("ALL"))
                                     t[1] = t[1].trim();
-                                else if (!((Coins) msg.tool()).getCurrency().equals(CMLib.beanCounter().getCurrency(monster)))
+                                else if (!((Coins) msg.tool()).getCurrency().equals(CMLib.moneyCounter().getCurrency(monster)))
                                     break;
                                 double d = 0.0;
                                 if (CMath.isDouble(t[1]))
@@ -10453,7 +10453,7 @@ public class DefaultScriptingEngine implements ScriptingEngine {
                                 str = msg.sourceMessage();
                             if (str == null)
                                 break;
-                            str = CMLib.coffeeFilter().fullOutFilter(null, monster, msg.source(), msg.target(), msg.tool(), str, false);
+                            str = CMLib.aetherFilter().fullOutFilter(null, monster, msg.source(), msg.target(), msg.tool(), str, false);
                             str = CMLib.english().stripPunctuation(CMStrings.removeColors(str));
                             str = " " + CMStrings.replaceAll(str, "\n\r", " ").toUpperCase().trim() + " ";
                             if ((t[1].length() == 0) || (t[1].equals("ALL")))
@@ -10527,7 +10527,7 @@ public class DefaultScriptingEngine implements ScriptingEngine {
                                         str = msg.targetMessage();
                                     if (str == null)
                                         break;
-                                    str = CMLib.coffeeFilter().fullOutFilter(null, monster, msg.source(), msg.target(), msg.tool(), str, false).toUpperCase().trim();
+                                    str = CMLib.aetherFilter().fullOutFilter(null, monster, msg.source(), msg.target(), msg.tool(), str, false).toUpperCase().trim();
                                     int dex = str.indexOf("[" + channel + "]");
                                     if (dex > 0)
                                         str = str.substring(dex + 2 + channel.length()).trim();
@@ -10580,7 +10580,7 @@ public class DefaultScriptingEngine implements ScriptingEngine {
                                 str = msg.sourceMessage();
                             if (str == null)
                                 break;
-                            str = CMLib.coffeeFilter().fullOutFilter(null, monster, msg.source(), msg.target(), msg.tool(), str, false);
+                            str = CMLib.aetherFilter().fullOutFilter(null, monster, msg.source(), msg.target(), msg.tool(), str, false);
                             if (t == null)
                                 t = parseBits(script, 0, "Cp");
                             if (t != null) {

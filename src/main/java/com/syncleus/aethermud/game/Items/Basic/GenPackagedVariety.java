@@ -86,7 +86,7 @@ public class GenPackagedVariety extends GenItem implements PackagedItems {
         itemstr.append("<PAKITEM>");
         itemstr.append(CMLib.xml().convertXMLtoTag("PINUM", "" + number));
         itemstr.append(CMLib.xml().convertXMLtoTag("PICLASS", CMClass.classID(I)));
-        itemstr.append(CMLib.xml().convertXMLtoTag("PIDATA", CMLib.coffeeMaker().getPropertiesStr(I, true)));
+        itemstr.append(CMLib.xml().convertXMLtoTag("PIDATA", CMLib.aetherMaker().getPropertiesStr(I, true)));
         itemstr.append("</PAKITEM>");
         setNumberOfItemsInPackage(this.numberOfItemsInPackage() + number);
         setPackageText(packageText() + itemstr.toString());
@@ -142,7 +142,7 @@ public class GenPackagedVariety extends GenItem implements PackagedItems {
             Log.errOut("Packaged", "Error parsing 'PAKITEM' data.");
             return null;
         }
-        CMLib.coffeeMaker().setPropertiesStr(newOne, idat, true);
+        CMLib.aetherMaker().setPropertiesStr(newOne, idat, true);
         return (Item) newOne;
     }
 
@@ -175,7 +175,7 @@ public class GenPackagedVariety extends GenItem implements PackagedItems {
                         final List<XMLLibrary.XMLTag> idat = iblk.getContentsFromPieces("PIDATA");
                         if ((idat != null) && (newOne != null) && (newOne instanceof Item)) {
                             Item I = (Item) newOne;
-                            CMLib.coffeeMaker().setPropertiesStr(newOne, idat, true);
+                            CMLib.aetherMaker().setPropertiesStr(newOne, idat, true);
                             for (int i = 0; i < numOfThese; i++) {
                                 if (number <= 0) {
                                     newXml.append("<PAKITEM>");

@@ -107,15 +107,15 @@ public class SoundEcho extends StdAbility {
                     range = 10;
                 final Room sourceRoom = msg.source().location();
                 String str = msg.othersMessage();
-                str = CMLib.coffeeFilter().fullOutFilter(null, blindMOB(), msg.source(), msg.target(), msg.tool(), str, false);
+                str = CMLib.aetherFilter().fullOutFilter(null, blindMOB(), msg.source(), msg.target(), msg.tool(), str, false);
                 CMMsg echoMsg = (CMMsg) msg.copyOf();
                 final Vector<Room> doneRooms = new Vector<Room>();
                 if (echoMsg.sourceMessage() != null)
-                    echoMsg.setSourceMessage("You hear an echo: " + CMLib.coffeeFilter().fullOutFilter(null, blindMOB(), msg.source(), msg.target(), msg.tool(), msg.sourceMessage(), false));
+                    echoMsg.setSourceMessage("You hear an echo: " + CMLib.aetherFilter().fullOutFilter(null, blindMOB(), msg.source(), msg.target(), msg.tool(), msg.sourceMessage(), false));
                 if (echoMsg.targetMessage() != null)
-                    echoMsg.setTargetMessage("You hear an echo: " + CMLib.coffeeFilter().fullOutFilter(null, blindMOB(), msg.source(), msg.target(), msg.tool(), msg.targetMessage(), false));
+                    echoMsg.setTargetMessage("You hear an echo: " + CMLib.aetherFilter().fullOutFilter(null, blindMOB(), msg.source(), msg.target(), msg.tool(), msg.targetMessage(), false));
                 if (echoMsg.othersMessage() != null)
-                    echoMsg.setOthersMessage("You hear an echo: " + CMLib.coffeeFilter().fullOutFilter(null, blindMOB(), msg.source(), msg.target(), msg.tool(), msg.othersMessage(), false));
+                    echoMsg.setOthersMessage("You hear an echo: " + CMLib.aetherFilter().fullOutFilter(null, blindMOB(), msg.source(), msg.target(), msg.tool(), msg.othersMessage(), false));
                 msg.addTrailerMsg(echoMsg);
                 echoMsg = CMClass.getMsg(msg.source(), msg.target(), msg.tool(), CMMsg.NO_EFFECT, null, CMMsg.NO_EFFECT, null, msg.othersCode(), str);
                 final Vector<Room> rooms = new Vector<Room>();

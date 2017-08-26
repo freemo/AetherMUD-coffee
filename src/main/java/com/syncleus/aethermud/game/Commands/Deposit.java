@@ -51,7 +51,7 @@ public class Deposit extends StdCommand {
         throws java.io.IOException {
         Vector<String> origCmds = new XVector<String>(commands);
         final Environmental shopkeeper = CMLib.english().parseShopkeeper(mob, commands, "Deposit how much with whom?");
-        final ShopKeeper SHOP = CMLib.coffeeShops().getShopKeeper(shopkeeper);
+        final ShopKeeper SHOP = CMLib.aetherShops().getShopKeeper(shopkeeper);
         if (shopkeeper == null)
             return false;
         if ((!(SHOP instanceof Banker)) && (!(SHOP instanceof PostOffice))) {

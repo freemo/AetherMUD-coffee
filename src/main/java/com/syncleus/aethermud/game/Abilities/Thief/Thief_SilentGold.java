@@ -84,13 +84,13 @@ public class Thief_SilentGold extends ThiefSkill {
                 && (msg != lastMsg)
                 && (msg.source().location() == ((MOB) affected).location())) {
                 lastMsg = msg;
-                final double money = CMLib.beanCounter().getTotalAbsoluteNativeValue(msg.source());
+                final double money = CMLib.moneyCounter().getTotalAbsoluteNativeValue(msg.source());
                 final double exper = getXLEVELLevel((MOB) affected);
                 final double gold = money / 10.0 * ((2.0 + exper) / 2);
                 if (gold > 0.0) {
-                    final Coins C = CMLib.beanCounter().makeBestCurrency(msg.source(), gold);
+                    final Coins C = CMLib.moneyCounter().makeBestCurrency(msg.source(), gold);
                     if ((C != null) && (C.getNumberOfCoins() > 0)) {
-                        CMLib.beanCounter().subtractMoney(msg.source(), C.getTotalValue());
+                        CMLib.moneyCounter().subtractMoney(msg.source(), C.getTotalValue());
                         final MOB mob = (MOB) affected;
                         mob.location().addItem(C, ItemPossessor.Expire.Monster_EQ);
                         mob.location().recoverRoomStats();

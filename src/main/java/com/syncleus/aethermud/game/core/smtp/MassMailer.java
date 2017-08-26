@@ -189,7 +189,7 @@ public class MassMailer implements Runnable {
                     toEmail,
                     usePrivateRules ? toEmail : replyTo + "@" + domainName(),
                     subj,
-                    CMLib.coffeeFilter().simpleOutFilter(msg));
+                    CMLib.aetherFilter().simpleOutFilter(msg));
                 //this email is HISTORY!
                 CMLib.database().DBDeleteJournal(journalName, key);
             } catch (final java.io.IOException ioe) {

@@ -16,7 +16,7 @@
  */
 package com.syncleus.aethermud.game.Libraries;
 
-import com.syncleus.aethermud.game.Common.interfaces.CoffeeTableRow;
+import com.syncleus.aethermud.game.Common.interfaces.AetherTableRow;
 import com.syncleus.aethermud.game.Libraries.interfaces.StatisticsLibrary;
 import com.syncleus.aethermud.game.core.*;
 import com.syncleus.aethermud.game.core.CMSecurity.DbgFlag;
@@ -27,12 +27,12 @@ import com.syncleus.aethermud.game.core.interfaces.Tickable;
 import java.util.Calendar;
 
 
-public class CoffeeTables extends StdLibrary implements StatisticsLibrary {
-    public CoffeeTableRow todays = null;
+public class AetherTables extends StdLibrary implements StatisticsLibrary {
+    public AetherTableRow todays = null;
 
     @Override
     public String ID() {
-        return "CoffeeTables";
+        return "AetherTables";
     }
 
     @Override
@@ -64,7 +64,7 @@ public class CoffeeTables extends StdLibrary implements StatisticsLibrary {
                         C.set(Calendar.MINUTE, 59);
                         C.set(Calendar.SECOND, 59);
                         C.set(Calendar.MILLISECOND, 999);
-                        todays = (CoffeeTableRow) CMClass.getCommon("DefaultCoffeeTableRow");
+                        todays = (AetherTableRow) CMClass.getCommon("DefaultAetherTableRow");
                         todays.setStartTime(S.getTimeInMillis());
                         todays.setEndTime(C.getTimeInMillis());
                         CMLib.database().DBCreateStat(todays.startTime(), todays.endTime(), todays.data());
@@ -90,14 +90,14 @@ public class CoffeeTables extends StdLibrary implements StatisticsLibrary {
                     C.set(Calendar.MINUTE, 59);
                     C.set(Calendar.SECOND, 59);
                     C.set(Calendar.MILLISECOND, 999);
-                    todays = (CoffeeTableRow) CMClass.getCommon("DefaultCoffeeTableRow");
+                    todays = (AetherTableRow) CMClass.getCommon("DefaultAetherTableRow");
                     todays.setStartTime(S.getTimeInMillis());
                     todays.setEndTime(C.getTimeInMillis());
-                    final CoffeeTableRow testRow = CMLib.database().DBReadStat(todays.startTime());
+                    final AetherTableRow testRow = CMLib.database().DBReadStat(todays.startTime());
                     if (testRow != null)
                         todays = testRow;
                     else if (!CMLib.database().DBCreateStat(todays.startTime(), todays.endTime(), todays.data())) {
-                        Log.errOut("CoffeeTables", "Unable to manage daily-stat transition");
+                        Log.errOut("AetherTables", "Unable to manage daily-stat transition");
                     }
                 }
             }
@@ -127,8 +127,8 @@ public class CoffeeTables extends StdLibrary implements StatisticsLibrary {
                     Log.errOut(serviceClient.getName(), "DB: " + ok);
                     CMLib.s_sleep(100000);
                 } else {
-                    CMLib.coffeeTables().bump(null, CoffeeTableRow.STAT_SPECIAL_NUMONLINE);
-                    CMLib.coffeeTables().update();
+                    CMLib.aetherTables().bump(null, AetherTableRow.STAT_SPECIAL_NUMONLINE);
+                    CMLib.aetherTables().update();
                 }
             }
         } finally {

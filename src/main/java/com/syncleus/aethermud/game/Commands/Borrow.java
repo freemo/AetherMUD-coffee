@@ -50,7 +50,7 @@ public class Borrow extends StdCommand {
         final Environmental shopkeeper = CMLib.english().parseShopkeeper(mob, commands, "Borrow how much from whom?");
         if (shopkeeper == null)
             return false;
-        final ShopKeeper SHOP = CMLib.coffeeShops().getShopKeeper(shopkeeper);
+        final ShopKeeper SHOP = CMLib.aetherShops().getShopKeeper(shopkeeper);
         if (!(SHOP instanceof Banker)) {
             CMLib.commands().doCommandFail(mob, origCmds, L("You can not borrow from @x1.", shopkeeper.name()));
             return false;
@@ -70,7 +70,7 @@ public class Borrow extends StdCommand {
             CMLib.commands().doCommandFail(mob, origCmds, L("Borrow how much?"));
             return false;
         }
-        thisThang = CMLib.beanCounter().makeCurrency(currency, denomination, numCoins);
+        thisThang = CMLib.moneyCounter().makeCurrency(currency, denomination, numCoins);
 
         if ((thisThang == null) || (!CMLib.flags().canBeSeenBy(thisThang, mob))) {
             CMLib.commands().doCommandFail(mob, origCmds, L("That doesn't appear to be available.  Try LIST."));

@@ -130,7 +130,7 @@ public class Spell_DetectTraps extends Spell {
                 if (trapCheck(I).length() > 0)
                     return P.name() + " is carrying something trapped.";
             }
-            final ShopKeeper SK = CMLib.coffeeShops().getShopKeeper(P);
+            final ShopKeeper SK = CMLib.aetherShops().getShopKeeper(P);
             if (SK != null) {
                 for (final Iterator<Environmental> i = SK.getShop().getStoreInventory(); i.hasNext(); ) {
                     final Environmental E2 = i.next();

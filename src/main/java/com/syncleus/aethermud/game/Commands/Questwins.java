@@ -16,7 +16,7 @@
  */
 package com.syncleus.aethermud.game.Commands;
 
-import com.syncleus.aethermud.game.Common.interfaces.CoffeeTableRow;
+import com.syncleus.aethermud.game.Common.interfaces.AetherTableRow;
 import com.syncleus.aethermud.game.Common.interfaces.Quest;
 import com.syncleus.aethermud.game.Common.interfaces.ScriptingEngine;
 import com.syncleus.aethermud.game.MOBS.interfaces.MOB;
@@ -195,7 +195,7 @@ public class Questwins extends StdCommand {
                 return false;
             }
             if ((!mob.isMonster() && (mob.session().confirm(L("Drop the quest '@x1', are you sure (y/N)?", Q.name()), "N")))) {
-                CMLib.coffeeTables().bump(Q, CoffeeTableRow.STAT_QUESTDROPPED);
+                CMLib.aetherTables().bump(Q, AetherTableRow.STAT_QUESTDROPPED);
                 mob.delScript(foundS);
                 mob.tell(L("Quest dropped."));
                 return false;

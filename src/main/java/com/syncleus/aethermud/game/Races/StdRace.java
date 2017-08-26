@@ -1076,7 +1076,7 @@ public class StdRace implements Race {
         fakeMOB.setSession(fakeSession);
         affectPhyStats(fakeMOB, RS);
         RS.setRejuv(PhyStats.NO_REJUV);
-        GR.setStat("ESTATS", CMLib.coffeeMaker().getPhyStatsStr(RS));
+        GR.setStat("ESTATS", CMLib.aetherMaker().getPhyStatsStr(RS));
 
         final CharStats S1 = (CharStats) CMClass.getCommon("DefaultCharStats");
         S1.setAllValues(0);
@@ -1118,17 +1118,17 @@ public class StdRace implements Race {
                     ADJSTAT.setStat(i, S1.getStat(i));
             }
         }
-        GR.setStat("ASTATS", CMLib.coffeeMaker().getCharStatsStr(ADJSTAT));
-        GR.setStat("CSTATS", CMLib.coffeeMaker().getCharStatsStr(SETSTAT));
+        GR.setStat("ASTATS", CMLib.aetherMaker().getCharStatsStr(ADJSTAT));
+        GR.setStat("CSTATS", CMLib.aetherMaker().getCharStatsStr(SETSTAT));
 
         final CharState CS = (CharState) CMClass.getCommon("DefaultCharState");
         CS.setAllValues(0);
         affectCharState(fakeMOB, CS);
-        GR.setStat("ASTATE", CMLib.coffeeMaker().getCharStateStr(CS));
+        GR.setStat("ASTATE", CMLib.aetherMaker().getCharStateStr(CS));
 
         //CharState STARTCS=(CharState)CMClass.getCommon("DefaultCharState"); STARTCS.setAllValues(0);
         //startRacing(fakeMOB,falsed);
-        //GR.setStat("STARTASTATE",CMLib.coffeeMaker().getCharStateStr(STARTCS));
+        //GR.setStat("STARTASTATE",CMLib.aetherMaker().getCharStateStr(STARTCS));
 
         GR.setStat("DISFLAGS", "" + ((classless() ? Race.GENFLAG_NOCLASS : 0)
             | (leveless() ? Race.GENFLAG_NOLEVELS : 0)
@@ -1300,11 +1300,11 @@ public class StdRace implements Race {
 
         final PhyStats RS1 = (PhyStats) CMClass.getCommon("DefaultPhyStats");
         RS1.setAllValues(0);
-        CMLib.coffeeMaker().setPhyStats(RS1, race1.getStat("ESTATS"));
+        CMLib.aetherMaker().setPhyStats(RS1, race1.getStat("ESTATS"));
 
         final PhyStats RS2 = (PhyStats) CMClass.getCommon("DefaultPhyStats");
         RS2.setAllValues(0);
-        CMLib.coffeeMaker().setPhyStats(RS2, race2.getStat("ESTATS"));
+        CMLib.aetherMaker().setPhyStats(RS2, race2.getStat("ESTATS"));
 
         final PhyStats RS = (PhyStats) CMClass.getCommon("DefaultPhyStats");
         RS.setAbility((RS1.ability() + RS2.ability()) / 2);
@@ -1317,26 +1317,26 @@ public class StdRace implements Race {
         RS.setSpeed((RS1.speed() + RS2.speed()) / 2.0);
         RS.setWeight((RS1.weight() + RS2.weight()) / 2);
         RS.setRejuv(PhyStats.NO_REJUV);
-        GR.setStat("ESTATS", CMLib.coffeeMaker().getPhyStatsStr(RS));
+        GR.setStat("ESTATS", CMLib.aetherMaker().getPhyStatsStr(RS));
 
         final CharStats SETSTAT1 = (CharStats) CMClass.getCommon("DefaultCharStats");
         SETSTAT1.setAllValues(0);
-        CMLib.coffeeMaker().setCharStats(SETSTAT1, race1.getStat("CSTATS"));
+        CMLib.aetherMaker().setCharStats(SETSTAT1, race1.getStat("CSTATS"));
 
         final CharStats SETSTAT2 = (CharStats) CMClass.getCommon("DefaultCharStats");
         SETSTAT2.setAllValues(0);
-        CMLib.coffeeMaker().setCharStats(SETSTAT2, race2.getStat("CSTATS"));
+        CMLib.aetherMaker().setCharStats(SETSTAT2, race2.getStat("CSTATS"));
 
         final CharStats SETSTAT = (CharStats) CMClass.getCommon("DefaultCharStats");
         SETSTAT.setAllValues(0);
 
         final CharStats ADJSTAT1 = (CharStats) CMClass.getCommon("DefaultCharStats");
         ADJSTAT1.setAllValues(0);
-        CMLib.coffeeMaker().setCharStats(ADJSTAT1, race1.getStat("ASTATS"));
+        CMLib.aetherMaker().setCharStats(ADJSTAT1, race1.getStat("ASTATS"));
 
         final CharStats ADJSTAT2 = (CharStats) CMClass.getCommon("DefaultCharStats");
         ADJSTAT2.setAllValues(0);
-        CMLib.coffeeMaker().setCharStats(ADJSTAT2, race2.getStat("ASTATS"));
+        CMLib.aetherMaker().setCharStats(ADJSTAT2, race2.getStat("ASTATS"));
 
         final CharStats ADJSTAT = (CharStats) CMClass.getCommon("DefaultCharStats");
         ADJSTAT.setAllValues(0);
@@ -1365,15 +1365,15 @@ public class StdRace implements Race {
             } else if ((i != CharStats.STAT_GENDER) && (i != CharStats.STAT_AGE))
                 ADJSTAT.setStat(i, (ADJSTAT1.getStat(i) + ADJSTAT2.getStat(i)) / 2);
         }
-        GR.setStat("ASTATS", CMLib.coffeeMaker().getCharStatsStr(ADJSTAT));
-        GR.setStat("CSTATS", CMLib.coffeeMaker().getCharStatsStr(SETSTAT));
+        GR.setStat("ASTATS", CMLib.aetherMaker().getCharStatsStr(ADJSTAT));
+        GR.setStat("CSTATS", CMLib.aetherMaker().getCharStatsStr(SETSTAT));
 
         final CharState CS1 = (CharState) CMClass.getCommon("DefaultCharState");
         CS1.setAllValues(0);
-        CMLib.coffeeMaker().setCharState(CS1, race1.getStat("ASTATE"));
+        CMLib.aetherMaker().setCharState(CS1, race1.getStat("ASTATE"));
         final CharState CS2 = (CharState) CMClass.getCommon("DefaultCharState");
         CS2.setAllValues(0);
-        CMLib.coffeeMaker().setCharState(CS2, race2.getStat("ASTATE"));
+        CMLib.aetherMaker().setCharState(CS2, race2.getStat("ASTATE"));
         final CharState CS = (CharState) CMClass.getCommon("DefaultCharState");
         CS.setAllValues(0);
 
@@ -1383,15 +1383,15 @@ public class StdRace implements Race {
         CS.setMana((CS1.getMana() + CS2.getMana()) / 2);
         CS.setMovement((CS1.getMovement() + CS2.getMovement()) / 2);
         CS.setThirst((CS1.getThirst() + CS2.getThirst()) / 2);
-        GR.setStat("ASTATE", CMLib.coffeeMaker().getCharStateStr(CS));
+        GR.setStat("ASTATE", CMLib.aetherMaker().getCharStateStr(CS));
 
         final CharState STARTCS1 = (CharState) CMClass.getCommon("DefaultCharState");
         STARTCS1.setAllValues(0);
-        CMLib.coffeeMaker().setCharState(STARTCS1, race1.getStat("STARTASTATE"));
+        CMLib.aetherMaker().setCharState(STARTCS1, race1.getStat("STARTASTATE"));
 
         final CharState STARTCS2 = (CharState) CMClass.getCommon("DefaultCharState");
         STARTCS2.setAllValues(0);
-        CMLib.coffeeMaker().setCharState(STARTCS1, race2.getStat("STARTASTATE"));
+        CMLib.aetherMaker().setCharState(STARTCS1, race2.getStat("STARTASTATE"));
 
         final CharState STARTCS = (CharState) CMClass.getCommon("DefaultCharState");
         STARTCS.setAllValues(0);
@@ -1402,7 +1402,7 @@ public class StdRace implements Race {
         STARTCS.setMana((STARTCS1.getMana() + STARTCS2.getMana()) / 2);
         STARTCS.setMovement((STARTCS1.getMovement() + STARTCS2.getMovement()) / 2);
         STARTCS.setThirst((STARTCS1.getThirst() + STARTCS2.getThirst()) / 2);
-        GR.setStat("STARTASTATE", CMLib.coffeeMaker().getCharStateStr(STARTCS));
+        GR.setStat("STARTASTATE", CMLib.aetherMaker().getCharStateStr(STARTCS));
 
         GR.setStat("DISFLAGS", "" + (CMath.s_int(race1.getStat("DISFLAGS")) | CMath.s_int(race2.getStat("DISFLAGS"))));
 

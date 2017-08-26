@@ -18,7 +18,7 @@ package com.syncleus.aethermud.game.Abilities.Prayers;
 
 import com.syncleus.aethermud.game.Abilities.interfaces.Ability;
 import com.syncleus.aethermud.game.Common.interfaces.CMMsg;
-import com.syncleus.aethermud.game.Common.interfaces.CoffeeTableRow;
+import com.syncleus.aethermud.game.Common.interfaces.AetherTableRow;
 import com.syncleus.aethermud.game.Items.interfaces.Wearable;
 import com.syncleus.aethermud.game.Libraries.interfaces.ChannelsLibrary;
 import com.syncleus.aethermud.game.MOBS.interfaces.MOB;
@@ -79,7 +79,7 @@ public class Prayer_Annul extends Prayer {
             final CMMsg msg = CMClass.getMsg(mob, target, this, verbalCastCode(mob, target, auto), auto ? "" : L("^S<S-NAME> annul(s) the marriage between <T-NAMESELF> and @x1.^?", target.getLiegeID()));
             if (mob.location().okMessage(mob, msg)) {
                 if ((!target.isMonster()) && (target.soulMate() == null))
-                    CMLib.coffeeTables().bump(target, CoffeeTableRow.STAT_DIVORCES);
+                    CMLib.aetherTables().bump(target, AetherTableRow.STAT_DIVORCES);
                 mob.location().send(mob, msg);
                 final List<String> channels = CMLib.channels().getFlaggedChannelNames(ChannelsLibrary.ChannelFlag.DIVORCES);
                 for (int i = 0; i < channels.size(); i++)

@@ -308,9 +308,9 @@ public class SetStat extends GetStat {
                 for (final String code : codes) {
                     if (code.equalsIgnoreCase(stat)) {
                         if (P instanceof MOB)
-                            CMLib.coffeeMaker().setGenMobStat((MOB) P, stat, value);
+                            CMLib.aetherMaker().setGenMobStat((MOB) P, stat, value);
                         else if (P instanceof Item)
-                            CMLib.coffeeMaker().setGenItemStat((Item) P, stat, value);
+                            CMLib.aetherMaker().setGenItemStat((Item) P, stat, value);
                     }
                 }
             }

@@ -126,7 +126,7 @@ public class Thief_Robbery extends ThiefSkill {
                 return Ability.QUALITY_INDIFFERENT;
             if ((((MOB) target).amDead()) || (!CMLib.flags().canBeSeenBy(target, mob)))
                 return Ability.QUALITY_INDIFFERENT;
-            if ((!((MOB) target).mayIFight(mob)) || (CMLib.coffeeShops().getShopKeeper(target) == null))
+            if ((!((MOB) target).mayIFight(mob)) || (CMLib.aetherShops().getShopKeeper(target) == null))
                 return Ability.QUALITY_INDIFFERENT;
         }
         return super.castingQuality(mob, target);
@@ -156,7 +156,7 @@ public class Thief_Robbery extends ThiefSkill {
         }
         final int levelDiff = target.phyStats().level() - (mob.phyStats().level() + (getXLEVELLevel(mob) * 2));
 
-        if ((!target.mayIFight(mob)) || (CMLib.coffeeShops().getShopKeeper(target) == null)) {
+        if ((!target.mayIFight(mob)) || (CMLib.aetherShops().getShopKeeper(target) == null)) {
             mob.tell(L("You cannot rob from @x1.", target.charStats().himher()));
             return false;
         }
@@ -167,11 +167,11 @@ public class Thief_Robbery extends ThiefSkill {
         if (!super.invoke(mob, commands, givenTarget, auto, asLevel))
             return false;
 
-        final ShopKeeper shop = CMLib.coffeeShops().getShopKeeper(target);
+        final ShopKeeper shop = CMLib.aetherShops().getShopKeeper(target);
         final Environmental stock = shop.getShop().getStock(itemToSteal, mob);
         Physical stolen = (stock instanceof Physical) ? (Physical) stock : null;
         if (stolen != null) {
-            final ShopKeeper.ShopPrice price = CMLib.coffeeShops().sellingPrice(target, mob, stolen, shop, false);
+            final ShopKeeper.ShopPrice price = CMLib.aetherShops().sellingPrice(target, mob, stolen, shop, false);
             if ((stolen instanceof Ability)
                 || (stolen instanceof MOB)
                 || (stolen instanceof Room)

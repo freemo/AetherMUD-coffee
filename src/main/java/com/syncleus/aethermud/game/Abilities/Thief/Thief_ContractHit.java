@@ -250,9 +250,9 @@ public class Thief_ContractHit extends ThiefSkill {
         if (level > (mob.phyStats().level() + (2 * getXLEVELLevel(mob))))
             level = (mob.phyStats().level() + (2 * getXLEVELLevel(mob)));
         final double goldRequired = 100.0 * level;
-        final String localCurrency = CMLib.beanCounter().getCurrency(mob.location());
-        if (CMLib.beanCounter().getTotalAbsoluteValue(mob, localCurrency) < goldRequired) {
-            final String costWords = CMLib.beanCounter().nameCurrencyShort(localCurrency, goldRequired);
+        final String localCurrency = CMLib.moneyCounter().getCurrency(mob.location());
+        if (CMLib.moneyCounter().getTotalAbsoluteValue(mob, localCurrency) < goldRequired) {
+            final String costWords = CMLib.moneyCounter().nameCurrencyShort(localCurrency, goldRequired);
             mob.tell(L("You'll need at least @x1 to put a hit out on @x2.", costWords, target.name(mob)));
             return false;
         }
@@ -270,7 +270,7 @@ public class Thief_ContractHit extends ThiefSkill {
         if (mob.location().okMessage(mob, msg)) {
             mob.location().send(mob, msg);
 
-            CMLib.beanCounter().subtractMoney(mob, localCurrency, goldRequired);
+            CMLib.moneyCounter().subtractMoney(mob, localCurrency, goldRequired);
             if (success)
                 maliciousAffect(mob, target, asLevel, target.phyStats().level() + 10, 0);
         }

@@ -74,7 +74,7 @@ public class AreaScriptNext extends StdWebMacro {
                 if (files != null)
                     for (int f = 0; f < files.size(); f++)
                         addScript(list, prefix, SE.getScriptResourceKey(), B.ID(), files.get(f).toLowerCase(), files.get(f));
-                final String nonFiles = ((ScriptingEngine) B).getVar("*", "COFFEEMUD_SYSTEM_INTERNAL_NONFILENAME_SCRIPT");
+                final String nonFiles = ((ScriptingEngine) B).getVar("*", "AETHERMUD_SYSTEM_INTERNAL_NONFILENAME_SCRIPT");
                 if ((nonFiles != null) && (nonFiles.trim().length() > 0)) {
                     final AreaScriptInstance inst =
                         addScript(list, prefix, SE.getScriptResourceKey(), B.ID(), "Custom", nonFiles);
@@ -89,7 +89,7 @@ public class AreaScriptNext extends StdWebMacro {
             final List<String> files = SE.externalFiles();
             for (int f = 0; f < files.size(); f++)
                 addScript(list, prefix, SE.getScriptResourceKey(), null, files.get(f).toLowerCase(), files.get(f));
-            final String nonFiles = SE.getVar("*", "COFFEEMUD_SYSTEM_INTERNAL_NONFILENAME_SCRIPT");
+            final String nonFiles = SE.getVar("*", "AETHERMUD_SYSTEM_INTERNAL_NONFILENAME_SCRIPT");
             if (nonFiles.trim().length() > 0) {
                 final AreaScriptInstance inst =
                     addScript(list, prefix, SE.getScriptResourceKey(), null, "Custom", nonFiles);
@@ -101,7 +101,7 @@ public class AreaScriptNext extends StdWebMacro {
     public void addShopScripts(TreeMap<String, ArrayList<AreaScriptInstance>> list, ArrayList<String> prefix, PhysicalAgent E) {
         if (E == null)
             return;
-        final ShopKeeper SK = CMLib.coffeeShops().getShopKeeper(E);
+        final ShopKeeper SK = CMLib.aetherShops().getShopKeeper(E);
         if (SK != null) {
             for (final Iterator<Environmental> i = SK.getShop().getStoreInventory(); i.hasNext(); ) {
                 final Environmental E2 = i.next();

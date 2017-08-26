@@ -29,7 +29,7 @@ import java.util.Vector;
     Modified by Xalan of Sancara
 	www.Sancara.co.uk
 	Sancara.servegame.com Port 5555
-	Respect to all who work on Coffee, keep the tradition going!
+	Respect to all who work on Aether, keep the tradition going!
 */
 
 public class ThievesCant extends StdLanguage {

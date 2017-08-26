@@ -74,8 +74,8 @@ public class ItemIdentifier extends StdBehavior {
             && (!(msg.tool() instanceof Coins))
             && (msg.tool() instanceof Item)) {
             final double cost = cost((Item) msg.tool());
-            if (CMLib.beanCounter().getTotalAbsoluteShopKeepersValue(msg.source(), observer) < (cost)) {
-                final String costStr = CMLib.beanCounter().nameCurrencyShort(observer, cost);
+            if (CMLib.moneyCounter().getTotalAbsoluteShopKeepersValue(msg.source(), observer) < (cost)) {
+                final String costStr = CMLib.moneyCounter().nameCurrencyShort(observer, cost);
                 CMLib.commands().postSay(observer, source, L("You'll need @x1 for me to identify that.", costStr), true, false);
                 return false;
             }
@@ -100,8 +100,8 @@ public class ItemIdentifier extends StdBehavior {
             && (msg.tool() instanceof Item)) {
             final Item I = (Item) msg.tool();
             final double cost = cost(I);
-            CMLib.beanCounter().subtractMoney(source, CMLib.beanCounter().getCurrency(observer), cost);
-            final String costStr = CMLib.beanCounter().nameCurrencyLong(observer, cost);
+            CMLib.moneyCounter().subtractMoney(source, CMLib.moneyCounter().getCurrency(observer), cost);
+            final String costStr = CMLib.moneyCounter().nameCurrencyLong(observer, cost);
             source.recoverPhyStats();
             CMMsg newMsg = CMClass.getMsg(msg.source(), observer, null, CMMsg.MSG_OK_ACTION, L("<S-NAME> give(s) @x1 to <T-NAMESELF>.", costStr));
             msg.addTrailerMsg(newMsg);

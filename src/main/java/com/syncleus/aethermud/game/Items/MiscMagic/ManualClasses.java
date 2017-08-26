@@ -17,8 +17,8 @@
 package com.syncleus.aethermud.game.Items.MiscMagic;
 
 import com.syncleus.aethermud.game.CharClasses.interfaces.CharClass;
+import com.syncleus.aethermud.game.Common.interfaces.AetherTableRow;
 import com.syncleus.aethermud.game.Common.interfaces.CMMsg;
-import com.syncleus.aethermud.game.Common.interfaces.CoffeeTableRow;
 import com.syncleus.aethermud.game.Items.Basic.StdItem;
 import com.syncleus.aethermud.game.Items.interfaces.ArchonOnly;
 import com.syncleus.aethermud.game.Items.interfaces.MiscMagic;
@@ -80,7 +80,7 @@ public class ManualClasses extends StdItem implements MiscMagic, ArchonOnly {
                                 if ((thisC != null) && (!(thisC.ID().equals("Archon")))) {
                                     mob.charStats().setCurrentClass(thisC);
                                     if ((!mob.isMonster()) && (mob.soulMate() == null))
-                                        CMLib.coffeeTables().bump(mob, CoffeeTableRow.STAT_CLASSCHANGE);
+                                        CMLib.aetherTables().bump(mob, AetherTableRow.STAT_CLASSCHANGE);
                                     mob.location().showOthers(mob, null, CMMsg.MSG_OK_ACTION, L("@x1 undergoes a traumatic change.", mob.name()));
                                     mob.tell(L("You are now a @x1.", thisC.name(mob.charStats().getClassLevel(thisC))));
                                 }

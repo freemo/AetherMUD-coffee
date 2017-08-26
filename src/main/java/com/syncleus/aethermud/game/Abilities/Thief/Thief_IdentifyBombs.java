@@ -142,7 +142,7 @@ public class Thief_IdentifyBombs extends ThiefSkill {
                     return P.name() + " is carrying a bomb.";
                 }
             }
-            final ShopKeeper SK = CMLib.coffeeShops().getShopKeeper(P);
+            final ShopKeeper SK = CMLib.aetherShops().getShopKeeper(P);
             if (SK != null) {
                 for (final Iterator<Environmental> i = SK.getShop().getStoreInventory(); i.hasNext(); ) {
                     final Environmental E2 = i.next();

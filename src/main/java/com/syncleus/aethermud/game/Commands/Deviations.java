@@ -132,7 +132,7 @@ public class Deviations extends StdCommand {
                             && (!alreadyDone(I, check)))
                             check.add(I);
                     }
-                    final ShopKeeper SK = CMLib.coffeeShops().getShopKeeper(M);
+                    final ShopKeeper SK = CMLib.aetherShops().getShopKeeper(M);
                     if (SK != null) {
                         for (final Iterator<Environmental> i = SK.getShop().getStoreInventory(); i.hasNext(); ) {
                             final Environmental E2 = i.next();
@@ -277,7 +277,7 @@ public class Deviations extends StdCommand {
                 mobResults.append(CMStrings.padRight("" + ((M.phyStats().rejuv() == PhyStats.NO_REJUV) ? " MAX" : "" + M.phyStats().rejuv()), 5) + " ");
                 if (useFaction != null)
                     mobResults.append(CMStrings.padRight("" + (M.fetchFaction(useFaction.factionID()) == Integer.MAX_VALUE ? "N/A" : "" + M.fetchFaction(useFaction.factionID())), 7) + " ");
-                double value = CMLib.beanCounter().getTotalAbsoluteNativeValue(M);
+                double value = CMLib.moneyCounter().getTotalAbsoluteNativeValue(M);
                 double[] range = CMLib.leveler().getLevelMoneyRange(M);
                 if (value < range[0])
                     mobResults.append(CMStrings.padRight("" + getDeviation(value, range[0]), 5) + " ");

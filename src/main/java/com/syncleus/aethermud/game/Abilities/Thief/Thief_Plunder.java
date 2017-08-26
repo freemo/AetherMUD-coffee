@@ -104,7 +104,7 @@ public class Thief_Plunder extends ThiefSkill {
         }
 
         double money = target.phyStats().level() + super.getXLEVELLevel(mob);
-        double total = CMLib.beanCounter().getTotalAbsoluteNativeValue(target);
+        double total = CMLib.moneyCounter().getTotalAbsoluteNativeValue(target);
         if (total < money)
             money = total;
 
@@ -114,12 +114,12 @@ public class Thief_Plunder extends ThiefSkill {
         final Room R = mob.location();
         final boolean success = proficiencyCheck(mob, 0, auto);
         if ((success) && (R != null)) {
-            final String str = L("<S-NAME> plunder(s) @x1 from the <T-NAME>.", CMLib.beanCounter().nameCurrencyShort(target, money));
+            final String str = L("<S-NAME> plunder(s) @x1 from the <T-NAME>.", CMLib.moneyCounter().nameCurrencyShort(target, money));
             final CMMsg msg = CMClass.getMsg(mob, target, this, (auto ? CMMsg.MASK_ALWAYS : 0) | CMMsg.MASK_MALICIOUS | CMMsg.MSG_THIEF_ACT, str);
             if (R.okMessage(mob, msg)) {
                 R.send(mob, msg);
-                CMLib.beanCounter().subtractMoney(target, money);
-                CMLib.beanCounter().addMoney(mob, CMLib.beanCounter().getCurrency(target), money);
+                CMLib.moneyCounter().subtractMoney(target, money);
+                CMLib.moneyCounter().addMoney(mob, CMLib.moneyCounter().getCurrency(target), money);
                 if (target.getVictim() != mob)
                     target.setVictim(mob);
             }

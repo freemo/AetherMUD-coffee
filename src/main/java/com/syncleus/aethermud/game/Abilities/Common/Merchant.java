@@ -18,8 +18,8 @@ package com.syncleus.aethermud.game.Abilities.Common;
 
 import com.syncleus.aethermud.game.Abilities.interfaces.Ability;
 import com.syncleus.aethermud.game.Areas.interfaces.Area;
+import com.syncleus.aethermud.game.Common.interfaces.AetherShop;
 import com.syncleus.aethermud.game.Common.interfaces.CMMsg;
-import com.syncleus.aethermud.game.Common.interfaces.CoffeeShop;
 import com.syncleus.aethermud.game.Common.interfaces.PhyStats;
 import com.syncleus.aethermud.game.Common.interfaces.TimeClock.TimePeriod;
 import com.syncleus.aethermud.game.Exits.interfaces.Exit;
@@ -44,7 +44,7 @@ import java.util.Vector;
 public class Merchant extends CommonSkill implements ShopKeeper {
     private final static String localizedName = CMLib.lang().L("Marketeering");
     private static final String[] triggerStrings = I(new String[]{"MARKET"});
-    protected CoffeeShop shop = ((CoffeeShop) CMClass.getCommon("DefaultCoffeeShop")).build(this);
+    protected AetherShop shop = ((AetherShop) CMClass.getCommon("DefaultAetherShop")).build(this);
     private double[] devalueRate = null;
     private long whatIsSoldMask = ShopKeeper.DEAL_ANYTHING;
     private String prejudice = "";
@@ -111,7 +111,7 @@ public class Merchant extends CommonSkill implements ShopKeeper {
     }
 
     @Override
-    public CoffeeShop getShop() {
+    public AetherShop getShop() {
         return shop;
     }
 
@@ -127,7 +127,7 @@ public class Merchant extends CommonSkill implements ShopKeeper {
 
     @Override
     public void setBudget(String factors) {
-        budget = CMLib.coffeeShops().parseBudget(factors);
+        budget = CMLib.aetherShops().parseBudget(factors);
     }
 
     @Override
@@ -137,7 +137,7 @@ public class Merchant extends CommonSkill implements ShopKeeper {
 
     @Override
     public void setDevalueRate(String factors) {
-        devalueRate = CMLib.coffeeShops().parseDevalueRate(factors);
+        devalueRate = CMLib.aetherShops().parseDevalueRate(factors);
     }
 
     @Override
@@ -210,12 +210,12 @@ public class Merchant extends CommonSkill implements ShopKeeper {
 
     @Override
     public String storeKeeperString() {
-        return CMLib.coffeeShops().storeKeeperString(getShop());
+        return CMLib.aetherShops().storeKeeperString(getShop());
     }
 
     @Override
     public boolean doISellThis(Environmental thisThang) {
-        return CMLib.coffeeShops().doISellThis(thisThang, this);
+        return CMLib.aetherShops().doISellThis(thisThang, this);
     }
 
     @Override
@@ -338,7 +338,7 @@ public class Merchant extends CommonSkill implements ShopKeeper {
         staticMOB.setStartRoom(room);
         staticMOB.setLocation(room);
         if (finalBudget() != null) {
-            if (CMLib.beanCounter().getTotalAbsoluteNativeValue(staticMOB) < finalBudget().first.longValue())
+            if (CMLib.moneyCounter().getTotalAbsoluteNativeValue(staticMOB) < finalBudget().first.longValue())
                 staticMOB.setMoney(finalBudget().first.intValue());
         }
         return staticMOB;
@@ -370,26 +370,26 @@ public class Merchant extends CommonSkill implements ShopKeeper {
                         shopperM.tell(shopperM, null, null, L("You'll have to talk to <S-NAME> about that."));
                         return false;
                     }
-                    if (!CMLib.coffeeShops().ignoreIfNecessary(msg.source(), finalIgnoreMask(), merchantM))
+                    if (!CMLib.aetherShops().ignoreIfNecessary(msg.source(), finalIgnoreMask(), merchantM))
                         return false;
-                    final double budgetRemaining = CMLib.beanCounter().getTotalAbsoluteValue(merchantM, CMLib.beanCounter().getCurrency(merchantM));
+                    final double budgetRemaining = CMLib.moneyCounter().getTotalAbsoluteValue(merchantM, CMLib.moneyCounter().getCurrency(merchantM));
                     final double budgetMax = budgetRemaining * 100;
-                    if (CMLib.coffeeShops().standardSellEvaluation(merchantM, msg.source(), msg.tool(), this, budgetRemaining, budgetMax, msg.targetMinor() == CMMsg.TYP_SELL))
+                    if (CMLib.aetherShops().standardSellEvaluation(merchantM, msg.source(), msg.tool(), this, budgetRemaining, budgetMax, msg.targetMinor() == CMMsg.TYP_SELL))
                         return super.okMessage(myHost, msg);
                     return false;
                 }
                 case CMMsg.TYP_BUY:
                 case CMMsg.TYP_VIEW: {
-                    if (!CMLib.coffeeShops().ignoreIfNecessary(msg.source(), finalIgnoreMask(), merchantM))
+                    if (!CMLib.aetherShops().ignoreIfNecessary(msg.source(), finalIgnoreMask(), merchantM))
                         return false;
                     if ((msg.targetMinor() == CMMsg.TYP_BUY) && (msg.tool() != null) && (!msg.tool().okMessage(myHost, msg)))
                         return false;
-                    if (CMLib.coffeeShops().standardBuyEvaluation(merchantM, msg.source(), msg.tool(), this, msg.targetMinor() == CMMsg.TYP_BUY))
+                    if (CMLib.aetherShops().standardBuyEvaluation(merchantM, msg.source(), msg.tool(), this, msg.targetMinor() == CMMsg.TYP_BUY))
                         return super.okMessage(myHost, msg);
                     return false;
                 }
                 case CMMsg.TYP_LIST:
-                    CMLib.coffeeShops().ignoreIfNecessary(msg.source(), finalIgnoreMask(), merchantM);
+                    CMLib.aetherShops().ignoreIfNecessary(msg.source(), finalIgnoreMask(), merchantM);
                     break;
                 default:
                     break;
@@ -465,7 +465,7 @@ public class Merchant extends CommonSkill implements ShopKeeper {
                 case CMMsg.TYP_VALUE:
                     super.executeMsg(myHost, msg);
                     if (merchantM.isMonster())
-                        CMLib.commands().postSay(merchantM, mob, L("I'll give you @x1 for @x2.", CMLib.beanCounter().nameCurrencyShort(merchantM, CMLib.coffeeShops().pawningPrice(merchantM, mob, msg.tool(), this).absoluteGoldPrice), msg.tool().name()), true, false);
+                        CMLib.commands().postSay(merchantM, mob, L("I'll give you @x1 for @x2.", CMLib.moneyCounter().nameCurrencyShort(merchantM, CMLib.aetherShops().pawningPrice(merchantM, mob, msg.tool(), this).absoluteGoldPrice), msg.tool().name()), true, false);
                     break;
                 case CMMsg.TYP_VIEW:
                     super.executeMsg(myHost, msg);
@@ -478,41 +478,41 @@ public class Merchant extends CommonSkill implements ShopKeeper {
                 case CMMsg.TYP_SELL: // sell TO -- this is a shopkeeper purchasing from a player
                 {
                     super.executeMsg(myHost, msg);
-                    CMLib.coffeeShops().transactPawn(merchantM, msg.source(), this, msg.tool());
+                    CMLib.aetherShops().transactPawn(merchantM, msg.source(), this, msg.tool());
                     break;
                 }
                 case CMMsg.TYP_BUY: {
                     super.executeMsg(myHost, msg);
-                    final MOB mobFor = CMLib.coffeeShops().parseBuyingFor(msg.source(), msg.targetMessage());
+                    final MOB mobFor = CMLib.aetherShops().parseBuyingFor(msg.source(), msg.targetMessage());
                     if ((msg.tool() != null)
                         && (getShop().doIHaveThisInStock("$" + msg.tool().Name() + "$", mobFor))
                         && (merchantM.location() != null)) {
                         final Environmental item = getShop().getStock("$" + msg.tool().Name() + "$", mobFor);
                         if (item != null)
-                            CMLib.coffeeShops().transactMoneyOnly(merchantM, msg.source(), this, item, !merchantM.isMonster());
+                            CMLib.aetherShops().transactMoneyOnly(merchantM, msg.source(), this, item, !merchantM.isMonster());
 
                         final List<Environmental> products = getShop().removeSellableProduct("$" + msg.tool().Name() + "$", mobFor);
                         if (products.size() == 0)
                             break;
                         final Environmental product = products.get(0);
                         if (product instanceof Item) {
-                            if (!CMLib.coffeeShops().purchaseItems((Item) product, products, merchantM, mobFor))
+                            if (!CMLib.aetherShops().purchaseItems((Item) product, products, merchantM, mobFor))
                                 return;
                         } else if (product instanceof MOB) {
-                            if (CMLib.coffeeShops().purchaseMOB((MOB) product, merchantM, this, mobFor)) {
+                            if (CMLib.aetherShops().purchaseMOB((MOB) product, merchantM, this, mobFor)) {
                                 msg.modify(msg.source(), msg.target(), product, msg.sourceCode(), msg.sourceMessage(), msg.targetCode(), msg.targetMessage(), msg.othersCode(), msg.othersMessage());
                                 product.executeMsg(myHost, msg);
                             }
                         } else if (product instanceof Ability)
-                            CMLib.coffeeShops().purchaseAbility((Ability) product, merchantM, this, mobFor);
+                            CMLib.aetherShops().purchaseAbility((Ability) product, merchantM, this, mobFor);
                     }
                     break;
                 }
                 case CMMsg.TYP_LIST: {
                     super.executeMsg(myHost, msg);
                     final Vector<Environmental> inventory = new XVector<Environmental>(getShop().getStoreInventory());
-                    final String forMask = CMLib.coffeeShops().getListForMask(msg.targetMessage());
-                    final String s = CMLib.coffeeShops().getListInventory(merchantM, mob, inventory, 0, this, forMask);
+                    final String forMask = CMLib.aetherShops().getListForMask(msg.targetMessage());
+                    final String s = CMLib.aetherShops().getListInventory(merchantM, mob, inventory, 0, this, forMask);
                     if (s.length() > 0)
                         mob.tell(s);
                     break;

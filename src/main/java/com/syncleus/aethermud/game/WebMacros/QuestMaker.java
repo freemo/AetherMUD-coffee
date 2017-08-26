@@ -762,7 +762,7 @@ public class QuestMaker extends StdWebMacro {
                                     if (I == null)
                                         I = RoomData.getItemFromCatalog(V.get(v1));
                                     if (I != null)
-                                        val += CMLib.coffeeMaker().getItemXML(I).toString();
+                                        val += CMLib.aetherMaker().getItemXML(I).toString();
                                 }
                                 break;
                             }
@@ -775,7 +775,7 @@ public class QuestMaker extends StdWebMacro {
                                     if (M2 == null)
                                         M2 = RoomData.getMOBFromCatalog(V.get(v1));
                                     if (M2 != null)
-                                        val += CMLib.coffeeMaker().getMobXML(M2).toString();
+                                        val += CMLib.aetherMaker().getMobXML(M2).toString();
                                 }
                                 break;
                             }

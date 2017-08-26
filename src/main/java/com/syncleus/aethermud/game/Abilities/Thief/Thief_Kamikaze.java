@@ -155,9 +155,9 @@ public class Thief_Kamikaze extends ThiefSkill {
             return false;
 
         final double goldRequired = ((Math.round((100.0 - ((mob.charStats().getStat(CharStats.STAT_CHARISMA) + (2.0 * getXLEVELLevel(mob))) * 2.0))) * target.phyStats().level()));
-        final String localCurrency = CMLib.beanCounter().getCurrency(target);
-        final String costWords = CMLib.beanCounter().nameCurrencyShort(localCurrency, goldRequired);
-        if (CMLib.beanCounter().getTotalAbsoluteValue(mob, localCurrency) < goldRequired) {
+        final String localCurrency = CMLib.moneyCounter().getCurrency(target);
+        final String costWords = CMLib.moneyCounter().nameCurrencyShort(localCurrency, goldRequired);
+        if (CMLib.moneyCounter().getTotalAbsoluteValue(mob, localCurrency) < goldRequired) {
             mob.tell(L("@x1 requires @x2 to do this.", target.charStats().HeShe(), costWords));
             return false;
         }
@@ -187,11 +187,11 @@ public class Thief_Kamikaze extends ThiefSkill {
         } else {
             final CMMsg msg = CMClass.getMsg(mob, target, this, CMMsg.MSG_SPEAK, L("^T<S-NAME> pay(s) <T-NAMESELF> to Kamikaze @x1 for @x2.^?", s, costWords));
 
-            CMLib.beanCounter().subtractMoney(mob, localCurrency, goldRequired);
+            CMLib.moneyCounter().subtractMoney(mob, localCurrency, goldRequired);
             mob.recoverPhyStats();
             if (mob.location().okMessage(mob, msg)) {
                 mob.location().send(mob, msg);
-                CMLib.beanCounter().addMoney(target, localCurrency, goldRequired);
+                CMLib.moneyCounter().addMoney(target, localCurrency, goldRequired);
                 target.recoverPhyStats();
                 beneficialAffect(mob, target, asLevel, 2);
                 bombFound.activateBomb();

@@ -244,12 +244,12 @@ public class CMCatalog extends StdLibrary implements CatalogLibrary {
         Environmental shopItem = null;
         final Vector<RoomContent> content = new Vector<RoomContent>();
         if (R != null) {
-            shops = CMLib.coffeeShops().getAllShopkeepers(R, null);
+            shops = CMLib.aetherShops().getAllShopkeepers(R, null);
             for (int s = 0; s < shops.size(); s++) {
                 E = shops.get(s);
                 if (E == null)
                     continue;
-                SK = CMLib.coffeeShops().getShopKeeper(E);
+                SK = CMLib.aetherShops().getShopKeeper(E);
                 if (SK == null)
                     continue;
                 for (final Iterator<Environmental> i = SK.getShop().getStoreInventory(); i.hasNext(); ) {
@@ -436,7 +436,7 @@ public class CMCatalog extends StdLibrary implements CatalogLibrary {
                             changeCatalogFlag(content.P(), false);
                     }
                 }
-                R = CMLib.coffeeMaker().makeNewRoomContent(R, false);
+                R = CMLib.aetherMaker().makeNewRoomContent(R, false);
                 contents = roomContent(R);
                 boolean dirty = false;
                 for (final RoomContent content : contents) {
@@ -553,7 +553,7 @@ public class CMCatalog extends StdLibrary implements CatalogLibrary {
                     P.setMiscText(P.text());
                     changeCatalogFlag(P, true);
                 }
-                SK = CMLib.coffeeShops().getShopKeeper(P);
+                SK = CMLib.aetherShops().getShopKeeper(P);
                 if ((SK != null) && (!doneShops.contains(SK))) {
                     doneShops.add(SK);
                     propogateShopChange(SK, ignored, cataP);
@@ -882,9 +882,9 @@ public class CMCatalog extends StdLibrary implements CatalogLibrary {
                 @Override
                 public Object readData() {
                     if (obj instanceof MOB)
-                        return CMLib.coffeeMaker().getMobXML((MOB) obj);
+                        return CMLib.aetherMaker().getMobXML((MOB) obj);
                     else if (obj instanceof Item)
-                        return CMLib.coffeeMaker().getItemXML((Item) obj);
+                        return CMLib.aetherMaker().getItemXML((Item) obj);
                     else
                         return null;
                 }
@@ -903,9 +903,9 @@ public class CMCatalog extends StdLibrary implements CatalogLibrary {
                 for (int i = 0; i < catalog.size(); i++) {
                     final Physical obj = (Physical) catalog.elementAt(i, 1);
                     if (obj instanceof MOB)
-                        str.append(CMLib.coffeeMaker().getMobXML((MOB) obj));
+                        str.append(CMLib.aetherMaker().getMobXML((MOB) obj));
                     else if (obj instanceof Item)
-                        str.append(CMLib.coffeeMaker().getItemXML((Item) obj));
+                        str.append(CMLib.aetherMaker().getItemXML((Item) obj));
                 }
                 str.append("</" + tagName + ">");
                 return str.toString();
@@ -927,9 +927,9 @@ public class CMCatalog extends StdLibrary implements CatalogLibrary {
                         @Override
                         public Object readData() {
                             if (obj instanceof MOB)
-                                return CMLib.coffeeMaker().getMobXML((MOB) obj);
+                                return CMLib.aetherMaker().getMobXML((MOB) obj);
                             else if (obj instanceof Item)
-                                return CMLib.coffeeMaker().getItemXML((Item) obj);
+                                return CMLib.aetherMaker().getItemXML((Item) obj);
                             else
                                 return null;
                         }
@@ -943,9 +943,9 @@ public class CMCatalog extends StdLibrary implements CatalogLibrary {
                     final StringBuilder str = new StringBuilder("<" + tagName + ">");
                     for (final Physical obj : objs) {
                         if (obj instanceof MOB)
-                            str.append(CMLib.coffeeMaker().getMobXML((MOB) obj));
+                            str.append(CMLib.aetherMaker().getMobXML((MOB) obj));
                         else if (obj instanceof Item)
-                            str.append(CMLib.coffeeMaker().getItemXML((Item) obj));
+                            str.append(CMLib.aetherMaker().getItemXML((Item) obj));
                     }
                     str.append("</" + tagName + ">");
                     return str.toString();

@@ -34,12 +34,12 @@ import java.util.TimeZone;
 import java.util.concurrent.TimeUnit;
 
 
-public class CoffeeTime extends StdLibrary implements TimeManager {
+public class AetherTime extends StdLibrary implements TimeManager {
     protected TimeClock globalClock = null;
 
     @Override
     public String ID() {
-        return "CoffeeTime";
+        return "AetherTime";
     }
 
     @Override

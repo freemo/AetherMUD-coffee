@@ -63,7 +63,7 @@ public class Auction extends Channel implements Tickable {
 
     public String liveAuctionStatus() {
         if (getLiveData().getAuctionedItem() != null) {
-            String bidWords = CMLib.beanCounter().nameCurrencyShort(getLiveData().getCurrency(), getLiveData().getBid());
+            String bidWords = CMLib.moneyCounter().nameCurrencyShort(getLiveData().getCurrency(), getLiveData().getBid());
             if (bidWords.length() == 0)
                 bidWords = "0";
             return "Up for live auction: " + getLiveData().getAuctionedItem().name() + ".  The current bid is " + bidWords + ".";
@@ -111,21 +111,21 @@ public class Auction extends Channel implements Tickable {
                 switch (AD.getAuctionState()) {
                     case STATE_RUNOUT:
                         V.add(L("The live auction for @x1 is almost done. The current bid is @x2.",
-                            AD.getAuctionedItem().name(), CMLib.beanCounter().nameCurrencyShort(AD.getCurrency(), AD.getBid())));
+                            AD.getAuctionedItem().name(), CMLib.moneyCounter().nameCurrencyShort(AD.getCurrency(), AD.getBid())));
                         break;
                     case STATE_ONCE:
-                        V.add(L("@x1 for @x2 going ONCE!", CMLib.beanCounter().nameCurrencyShort(AD.getCurrency(), AD.getBid()), AD.getAuctionedItem().name()));
+                        V.add(L("@x1 for @x2 going ONCE!", CMLib.moneyCounter().nameCurrencyShort(AD.getCurrency(), AD.getBid()), AD.getAuctionedItem().name()));
                         break;
                     case STATE_TWICE:
-                        V.add(L("@x1 for @x2 going TWICE!", CMLib.beanCounter().nameCurrencyShort(AD.getCurrency(), AD.getBid()), AD.getAuctionedItem().name()));
+                        V.add(L("@x1 for @x2 going TWICE!", CMLib.moneyCounter().nameCurrencyShort(AD.getCurrency(), AD.getBid()), AD.getAuctionedItem().name()));
                         break;
                     case STATE_THREE:
-                        V.add(L("@x1 going for @x2! Last chance!", AD.getAuctionedItem().name(), CMLib.beanCounter().nameCurrencyShort(AD.getCurrency(), AD.getBid())));
+                        V.add(L("@x1 going for @x2! Last chance!", AD.getAuctionedItem().name(), CMLib.moneyCounter().nameCurrencyShort(AD.getCurrency(), AD.getBid())));
                         break;
                     case STATE_CLOSED: {
                         if ((winnerM != null) && (winnerM != AD.getAuctioningMob())) {
                             V.add(L("@x1 SOLD to @x2 for @x3.", AD.getAuctionedItem().name(), winnerM.name(),
-                                CMLib.beanCounter().nameCurrencyShort(AD.getCurrency(), AD.getBid())));
+                                CMLib.moneyCounter().nameCurrencyShort(AD.getCurrency(), AD.getBid())));
                             auctioneerM.doCommand(V, MUDCmdProcessor.METAFLAG_FORCED);
                             if (AD.getAuctionedItem() != null) {
                                 AD.getAuctionedItem().unWear();
@@ -133,16 +133,16 @@ public class Auction extends Channel implements Tickable {
                                 winnerM.location().moveItemTo(AD.getAuctionedItem(), ItemPossessor.Expire.Player_Drop);
                                 final double houseCut = Math.floor(AD.getBid() * aRates.liveFinalCutPct());
                                 final double finalAmount = AD.getBid() - houseCut;
-                                CMLib.coffeeShops().returnMoney(winnerM, AD.getCurrency(), AD.getHighBid() - AD.getBid());
-                                CMLib.coffeeShops().returnMoney(auctioneerM, AD.getCurrency(), finalAmount);
+                                CMLib.aetherShops().returnMoney(winnerM, AD.getCurrency(), AD.getHighBid() - AD.getBid());
+                                CMLib.aetherShops().returnMoney(auctioneerM, AD.getCurrency(), finalAmount);
                                 auctioneerM.tell(L("@x1 has been transferred to you as payment from @x2, after the house took a cut of @x3.  The goods have also been transferred in exchange.",
-                                    CMLib.beanCounter().nameCurrencyShort(AD.getCurrency(), finalAmount),
+                                    CMLib.moneyCounter().nameCurrencyShort(AD.getCurrency(), finalAmount),
                                     winnerM.name(auctioneerM),
-                                    CMLib.beanCounter().nameCurrencyShort(AD.getCurrency(), houseCut)));
+                                    CMLib.moneyCounter().nameCurrencyShort(AD.getCurrency(), houseCut)));
                                 if (CMLib.commands().postGet(winnerM, null, AD.getAuctionedItem(), false)
                                     || (winnerM.isMine(AD.getAuctionedItem()))) {
                                     winnerM.tell(L("@x1 has been transferred to @x2.  You should have received the auctioned goods.  This auction is complete.",
-                                        CMLib.beanCounter().nameCurrencyShort(AD.getCurrency(), AD.getBid()),
+                                        CMLib.moneyCounter().nameCurrencyShort(AD.getCurrency(), AD.getBid()),
                                         auctioneerM.name(winnerM)));
                                     if (AD.getAuctionedItem() instanceof LandTitle) {
                                         final CMMsg msg = CMClass.getMsg(auctioneerM, winnerM, AD.getAuctionedItem(), CMMsg.MASK_ALWAYS | CMMsg.TYP_GIVE, null);
@@ -152,10 +152,10 @@ public class Auction extends Channel implements Tickable {
                                     auctioneerM.moveItemTo(AD.getAuctionedItem());
                                     auctioneerM.tell(L("Your transaction could not be completed because @x1 was unable to collect the item.  Please contact @x2 about receipt of @x3 for @x4.",
                                         winnerM.name(auctioneerM), winnerM.name(auctioneerM), AD.getAuctionedItem().name(winnerM),
-                                        CMLib.beanCounter().nameCurrencyShort(AD.getCurrency(), AD.getBid())));
+                                        CMLib.moneyCounter().nameCurrencyShort(AD.getCurrency(), AD.getBid())));
                                     winnerM.tell(L("Your transaction could not be completed because you were unable to collect the item.  Please contact @x1 about receipt of @x2 for @x3.",
                                         auctioneerM.name(winnerM), AD.getAuctionedItem().name(winnerM),
-                                        CMLib.beanCounter().nameCurrencyShort(AD.getCurrency(), AD.getBid())));
+                                        CMLib.moneyCounter().nameCurrencyShort(AD.getCurrency(), AD.getBid())));
                                 }
                             }
                         } else {
@@ -195,7 +195,7 @@ public class Auction extends Channel implements Tickable {
             final String sb = CMParms.combine(commands, 0);
             getLiveData().setCurrency(CMLib.english().numPossibleGoldCurrency(mob, sb));
             if (getLiveData().getCurrency().length() == 0)
-                getLiveData().setCurrency(CMLib.beanCounter().getCurrency(mob));
+                getLiveData().setCurrency(CMLib.moneyCounter().getCurrency(mob));
             final double denomination = CMLib.english().numPossibleGoldDenomination(null, getLiveData().getCurrency(), sb);
             final long num = CMLib.english().numPossibleGold(null, sb);
             getLiveData().setBid(CMath.mul(denomination, num));
@@ -204,7 +204,7 @@ public class Auction extends Channel implements Tickable {
             getLiveData().setStartTime(System.currentTimeMillis());
             setLiveAuctionState(STATE_START);
             CMLib.threads().startTickDown(this, Tickable.TICKID_LIVEAUCTION, 1);
-            final String bidWords = CMLib.beanCounter().nameCurrencyShort(getLiveData().getCurrency(), getLiveData().getBid());
+            final String bidWords = CMLib.moneyCounter().nameCurrencyShort(getLiveData().getCurrency(), getLiveData().getBid());
             if (target instanceof Item)
                 mob.delItem((Item) target);
             V.add(L("New live auction: @x1.  The opening bid is @x2.", getLiveData().getAuctionedItem().name(), bidWords));
@@ -220,7 +220,7 @@ public class Auction extends Channel implements Tickable {
             final Triad<String, Double, Long> bidObjs = CMLib.english().parseMoneyStringSDL(mob, sb, getLiveData().getCurrency());
             final String currency = bidObjs.first;
             final double amt = CMath.mul(bidObjs.second.doubleValue(), bidObjs.third.doubleValue());
-            final String[] resp = CMLib.coffeeShops().bid(mob, amt, currency, getLiveData(), getLiveData().getAuctionedItem(), V);
+            final String[] resp = CMLib.aetherShops().bid(mob, amt, currency, getLiveData(), getLiveData().getAuctionedItem(), V);
             if (resp != null) {
                 if (resp[0] != null)
                     mob.tell(resp[0]);
@@ -310,7 +310,7 @@ public class Auction extends Channel implements Tickable {
             }
             final AuctionPolicy aRates = (AuctionPolicy) CMClass.getCommon("DefaultAuctionPolicy");
             final double deposit = aRates.liveListingPrice();
-            final String depositAmt = CMLib.beanCounter().nameCurrencyLong(mob, deposit);
+            final String depositAmt = CMLib.moneyCounter().nameCurrencyLong(mob, deposit);
 
             if (deposit > 0.0) {
                 if ((mob.isMonster())
@@ -319,11 +319,11 @@ public class Auction extends Channel implements Tickable {
             } else if ((mob.isMonster())
                 || (!mob.session().confirm(L("Auction @x1 live, with a starting bid of @x2 (Y/n)?", E.name(), (V.get(0))), "Y")))
                 return false;
-            if (CMLib.beanCounter().getTotalAbsoluteValue(mob, CMLib.beanCounter().getCurrency(mob)) < deposit) {
-                mob.tell(L("You don't have enough @x1 to cover the listing fee!", CMLib.beanCounter().getDenominationName(CMLib.beanCounter().getCurrency(mob))));
+            if (CMLib.moneyCounter().getTotalAbsoluteValue(mob, CMLib.moneyCounter().getCurrency(mob)) < deposit) {
+                mob.tell(L("You don't have enough @x1 to cover the listing fee!", CMLib.moneyCounter().getDenominationName(CMLib.moneyCounter().getCurrency(mob))));
                 return false;
             }
-            CMLib.beanCounter().subtractMoney(mob, CMLib.beanCounter().getCurrency(mob), deposit);
+            CMLib.moneyCounter().subtractMoney(mob, CMLib.moneyCounter().getCurrency(mob), deposit);
             doLiveAuction(mob, V, E);
             if (getLiveData().getAuctionedItem() != null)
                 getLiveData().setAuctioningMob(mob);
@@ -357,7 +357,7 @@ public class Auction extends Channel implements Tickable {
             CMLib.threads().deleteTick(this, Tickable.TICKID_LIVEAUCTION);
             getLiveData().getAuctioningMob().moveItemTo(getLiveData().getAuctionedItem());
             if ((getLiveData().getHighBid() > 0.0) && (getLiveData().getHighBidderMob() != null))
-                CMLib.coffeeShops().returnMoney(getLiveData().getHighBidderMob(), getLiveData().getCurrency(), getLiveData().getHighBid());
+                CMLib.aetherShops().returnMoney(getLiveData().getHighBidderMob(), getLiveData().getCurrency(), getLiveData().getHighBid());
             getLiveData().setAuctioningMob(null);
             getLiveData().setAuctionedItem(null);
             super.execute(mob, V, metaFlags);
@@ -372,7 +372,7 @@ public class Auction extends Channel implements Tickable {
             E = getLiveData().getAuctionedItem();
             mob.tell(L("Item: @x1", E.name()));
             CMLib.commands().handleBeingLookedAt(CMClass.getMsg(mob, CMMsg.MASK_ALWAYS | CMMsg.MSG_EXAMINE, null));
-            mob.tell(CMLib.coffeeShops().getViewDescription(mob, E));
+            mob.tell(CMLib.aetherShops().getViewDescription(mob, E));
             return true;
         } else if (cmd.equals("CHANNEL")) {
             commands.remove(0);

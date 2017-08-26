@@ -117,14 +117,14 @@ public class Modify extends StdCommand {
                 modItem = (Item) E;
         }
         if (modItem == null) {
-            ShopKeeper S = CMLib.coffeeShops().getShopKeeper(srchMob);
+            ShopKeeper S = CMLib.aetherShops().getShopKeeper(srchMob);
             if (S != null) {
                 Environmental E = S.getShop().getStock(itemID, mob);
                 if (E instanceof Item)
                     modItem = (Item) E;
             }
             if (modItem == null) {
-                S = CMLib.coffeeShops().getShopKeeper(srchRoom);
+                S = CMLib.aetherShops().getShopKeeper(srchRoom);
                 if (S != null) {
                     Environmental E = S.getShop().getStock(itemID, mob);
                     if (E instanceof Item)
@@ -181,8 +181,8 @@ public class Modify extends StdCommand {
             else
                 modItem.setMiscText(restStr);
             mob.location().show(mob, null, CMMsg.MSG_OK_ACTION, L("@x1 shake(s) under the transforming power.", modItem.name()));
-        } else if (CMLib.coffeeMaker().isAnyGenStat(modItem, command)) {
-            CMLib.coffeeMaker().setAnyGenStat(modItem, command, restStr);
+        } else if (CMLib.aetherMaker().isAnyGenStat(modItem, command)) {
+            CMLib.aetherMaker().setAnyGenStat(modItem, command, restStr);
             mob.location().show(mob, null, CMMsg.MSG_OK_ACTION, L("@x1 shake(s) under the transforming power.", modItem.name()));
         } else if ((command.length() == 0) && (modItem.isGeneric())) {
             CMLib.genEd().genMiscSet(mob, modItem, -1);
@@ -190,7 +190,7 @@ public class Modify extends StdCommand {
         } else {
             final STreeSet<String> set = new STreeSet<String>();
             set.addAll(CMParms.parseCommas("LEVEL,ABILITY,HEIGHT,REJUV,USES,MISC", true));
-            set.addAll(CMLib.coffeeMaker().getAllGenStats(modItem));
+            set.addAll(CMLib.aetherMaker().getAllGenStats(modItem));
             mob.tell(L("...but failed to specify an aspect.  Try one of: @x1", CMParms.toListString(set)));
             mob.location().showOthers(mob, null, CMMsg.MSG_OK_ACTION, L("<S-NAME> flub(s) a spell.."));
         }
@@ -282,7 +282,7 @@ public class Modify extends StdCommand {
                         CMLib.map().addArea(A);
                         CMLib.database().DBCreateArea(A);
                         mob.location().setArea(A);
-                        CMLib.coffeeMaker().addAutoPropsToAreaIfNecessary(A);
+                        CMLib.aetherMaker().addAutoPropsToAreaIfNecessary(A);
                         reid = true;
                         mob.location().showHappens(CMMsg.MSG_OK_ACTION, L("This entire area twitches.\n\r"));
                     }
@@ -372,15 +372,15 @@ public class Modify extends StdCommand {
             mob.location().recoverPhyStats();
             CMLib.database().DBUpdateRoom(mob.location());
             mob.location().showHappens(CMMsg.MSG_OK_ACTION, L("The very nature of reality changes.\n\r"));
-        } else if (CMLib.coffeeMaker().isAnyGenStat(mob.location(), command)) {
-            CMLib.coffeeMaker().setAnyGenStat(mob.location(), command, restStr);
+        } else if (CMLib.aetherMaker().isAnyGenStat(mob.location(), command)) {
+            CMLib.aetherMaker().setAnyGenStat(mob.location(), command, restStr);
             mob.location().recoverPhyStats();
             CMLib.database().DBUpdateRoom(mob.location());
             mob.location().showHappens(CMMsg.MSG_OK_ACTION, L("The very nature of reality changes.\n\r"));
         } else {
             final STreeSet<String> set = new STreeSet<String>();
             set.addAll(CMParms.parseCommas("NAME,AREA,DESCRIPTION,AFFECTS,BEHAVIORS,CLASS,XGRID,YGRID", true));
-            set.addAll(CMLib.coffeeMaker().getAllGenStats(mob.location()));
+            set.addAll(CMLib.aetherMaker().getAllGenStats(mob.location()));
             mob.tell(L("...but failed to specify an aspect.  Try one of: @x1", CMParms.toListString(set)));
             mob.location().showOthers(mob, null, CMMsg.MSG_OK_ACTION, L("<S-NAME> flub(s) a spell.."));
             return;
@@ -464,7 +464,7 @@ public class Modify extends StdCommand {
             String command = commands.get(2).toUpperCase();
             final STreeSet<String> helpSet = new STreeSet<String>();
             helpSet.addAll(CMParms.parseCommas("NAME,DESCRIPTION,CLIMATE,FILE,AFFECTS,BEHAVIORS,ADDSUB,DELSUB,XGRID,YGRID,PASSIVE,ACTIVE,FROZEN,STOPPED", true));
-            helpSet.addAll(CMLib.coffeeMaker().getAllGenStats(myArea));
+            helpSet.addAll(CMLib.aetherMaker().getAllGenStats(myArea));
             if ((commands.size() > 3) && (!helpSet.contains(command))) {
                 final Area possibleArea = CMLib.map().getArea(command);
                 if (possibleArea != null) {
@@ -567,8 +567,8 @@ public class Modify extends StdCommand {
             } else if (command.equalsIgnoreCase("BEHAVIORS")) {
                 CMLib.genEd().genBehaviors(mob, myArea, 1, 1);
                 myArea.recoverPhyStats();
-            } else if (CMLib.coffeeMaker().isAnyGenStat(myArea, command)) {
-                CMLib.coffeeMaker().setAnyGenStat(myArea, command, restStr);
+            } else if (CMLib.aetherMaker().isAnyGenStat(myArea, command)) {
+                CMLib.aetherMaker().setAnyGenStat(myArea, command, restStr);
                 myArea.recoverPhyStats();
             } else {
                 mob.tell(L("...but failed to specify an aspect.  Try one of: @x1", CMParms.toListString(helpSet)));
@@ -824,13 +824,13 @@ public class Modify extends StdCommand {
                 CMLib.genEd().modifyGenExit(mob, thisExit, -1);
             else
                 thisExit.setMiscText(restStr);
-        } else if (CMLib.coffeeMaker().isAnyGenStat(thisExit, command)) {
-            CMLib.coffeeMaker().setAnyGenStat(thisExit, command, restStr);
+        } else if (CMLib.aetherMaker().isAnyGenStat(thisExit, command)) {
+            CMLib.aetherMaker().setAnyGenStat(thisExit, command, restStr);
             thisExit.recoverPhyStats();
         } else {
             final STreeSet<String> set = new STreeSet<String>();
             set.addAll(CMParms.parseCommas("TEXT", true));
-            set.addAll(CMLib.coffeeMaker().getAllGenStats(thisExit));
+            set.addAll(CMLib.aetherMaker().getAllGenStats(thisExit));
             mob.tell(L("...but failed to specify an aspect.  Try one of: @x1", CMParms.toListString(set)));
             mob.location().showOthers(mob, null, CMMsg.MSG_OK_ACTION, L("<S-NAME> flub(s) a spell.."));
             return;
@@ -1192,8 +1192,8 @@ public class Modify extends StdCommand {
                     eA.setProficiency(prof);
                 mob.tell(L("@x1's skill proficiency in @x2 set to @x3", M.Name(), A.ID(), "" + prof));
                 Log.sysOut("Mobs", mob.Name() + " modified player " + M.Name() + " skill proficiency in " + A.ID() + ".");
-            } else if (CMLib.coffeeMaker().isAnyGenStat(M, command)) {
-                CMLib.coffeeMaker().setAnyGenStat(M, command, restStr);
+            } else if (CMLib.aetherMaker().isAnyGenStat(M, command)) {
+                CMLib.aetherMaker().setAnyGenStat(M, command, restStr);
                 M.recoverPhyStats();
                 M.recoverCharStats();
                 M.recoverMaxState();
@@ -1201,7 +1201,7 @@ public class Modify extends StdCommand {
                     Log.sysOut("Mobs", mob.Name() + " modified player " + M.Name() + ".");
             } else {
                 final STreeSet<String> set = new STreeSet<String>();
-                set.addAll(CMLib.coffeeMaker().getAllGenStats(M));
+                set.addAll(CMLib.aetherMaker().getAllGenStats(M));
                 set.add("PROFICIENCIES");
                 set.add("PROFICIENCY(ABILITY_ID)");
                 mob.tell(L("...but failed to specify an aspect.  Try one of: @x1", CMParms.toListString(set)));
@@ -1327,13 +1327,13 @@ public class Modify extends StdCommand {
             else
                 modMOB.setMiscText(restStr);
             mob.location().show(mob, null, CMMsg.MSG_OK_ACTION, L("@x1 shakes under the transforming power.", modMOB.name()));
-        } else if (CMLib.coffeeMaker().isAnyGenStat(modMOB, command)) {
-            CMLib.coffeeMaker().setAnyGenStat(modMOB, command, restStr);
+        } else if (CMLib.aetherMaker().isAnyGenStat(modMOB, command)) {
+            CMLib.aetherMaker().setAnyGenStat(modMOB, command, restStr);
             mob.location().show(mob, null, CMMsg.MSG_OK_ACTION, L("@x1 shake(s) under the transforming power.", modMOB.name()));
         } else {
             final STreeSet<String> set = new STreeSet<String>();
             set.addAll(CMParms.parseCommas("LEVEL,ABILITY,REJUV,MISC", true));
-            set.addAll(CMLib.coffeeMaker().getAllGenStats(modMOB));
+            set.addAll(CMLib.aetherMaker().getAllGenStats(modMOB));
             mob.tell(L("...but failed to specify an aspect.  Try one of: @x1", CMParms.toListString(set)));
             mob.location().showOthers(mob, null, CMMsg.MSG_OK_ACTION, L("<S-NAME> flub(s) a spell.."));
         }

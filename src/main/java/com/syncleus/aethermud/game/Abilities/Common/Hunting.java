@@ -135,7 +135,7 @@ public class Hunting extends CommonSkill {
                     A.setMiscText("=20%");
                     found.addNonUninvokableEffect(A);
                     found.bringToLife(nearByRoom(), true);
-                    CMLib.beanCounter().clearZeroMoney(found, null);
+                    CMLib.moneyCounter().clearZeroMoney(found, null);
                     found.setMoneyVariation(0);
                 } else {
                     final StringBuffer str = new StringBuffer(L("You can't seem to find any game around here.\n\r"));

@@ -1255,7 +1255,7 @@ public class Arrest extends StdBehavior implements LegalBehavior {
             if ((judge == null) && (officer != null))
                 judge = officer;
             if ((fines > 0.0) && (judge != null)) {
-                CMLib.commands().postSay(judge, criminal, L("You are hereby fined @x1, payable to the local tax assessor.", CMLib.beanCounter().nameCurrencyShort(judge, fines)), false, false);
+                CMLib.commands().postSay(judge, criminal, L("You are hereby fined @x1, payable to the local tax assessor.", CMLib.moneyCounter().nameCurrencyShort(judge, fines)), false, false);
                 Double D = finesAssessed.get(criminal);
                 if (D == null)
                     D = Double.valueOf(0.0);

@@ -91,7 +91,7 @@ public class Skill_QuickChange extends BardSkill {
             final int contStart = super.miscText.lastIndexOf(containerDelim);
             if ((locStart > 0) && (contStart > locStart)) {
                 final List<Item> itemList = new Vector<Item>();
-                CMLib.coffeeMaker().addItemsFromXML(super.miscText.substring(0, locStart), itemList, S);
+                CMLib.aetherMaker().addItemsFromXML(super.miscText.substring(0, locStart), itemList, S);
                 final List<String> itemLocList = CMParms.parseAny(super.miscText.substring(locStart + locationsDelim.length(), contStart), ';', true);
                 final List<String> itemConList = CMParms.parseAny(super.miscText.substring(contStart + containerDelim.length()), ';', true);
                 if ((itemLocList.size() == itemList.size()) && (itemLocList.size() == itemConList.size())) {
@@ -126,7 +126,7 @@ public class Skill_QuickChange extends BardSkill {
         for (final PackedItem I : items)
             itemList.add(I.I);
         final StringBuilder str = new StringBuilder("<ITEMS>");
-        str.append(CMLib.coffeeMaker().getItemsXML(itemList, new Hashtable<String, List<Item>>(), new HashSet<String>(), null));
+        str.append(CMLib.aetherMaker().getItemsXML(itemList, new Hashtable<String, List<Item>>(), new HashSet<String>(), null));
         str.append("</ITEMS>");
         str.append(locationsDelim);
         for (final PackedItem I : items)

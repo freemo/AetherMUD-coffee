@@ -431,8 +431,8 @@ public class ProcessSMTPrequest implements Runnable {
                                             if (bodyType == 'h')
                                                 cleanHtml(journal, finalFinalData);
                                             CMLib.database().DBWriteJournalChild(journal, "", from, "ALL", parentKey,
-                                                CMLib.coffeeFilter().simpleInFilter(new StringBuilder(subject)).toString(),
-                                                CMLib.coffeeFilter().simpleInFilter(finalData).toString());
+                                                CMLib.aetherFilter().simpleInFilter(new StringBuilder(subject)).toString(),
+                                                CMLib.aetherFilter().simpleInFilter(finalData).toString());
                                         } else if (finalData.toString().trim().length() > 0) {
                                             if (debug)
                                                 Log.debugOut(runnableName, "Written: " + server.mailboxName() + "/" + from + "/" + to.elementAt(i) + "/" + bodyType);
@@ -442,8 +442,8 @@ public class ProcessSMTPrequest implements Runnable {
                                             CMLib.database().DBWriteJournal(server.mailboxName(),
                                                 from,
                                                 to.elementAt(i),
-                                                CMLib.coffeeFilter().simpleInFilter(new StringBuilder(subject)).toString(),
-                                                CMLib.coffeeFilter().simpleInFilter(finalFinalData).toString());
+                                                CMLib.aetherFilter().simpleInFilter(new StringBuilder(subject)).toString(),
+                                                CMLib.aetherFilter().simpleInFilter(finalFinalData).toString());
                                         }
                                     }
                                 }

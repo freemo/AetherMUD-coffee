@@ -288,7 +288,7 @@ public class Age extends StdAbility {
                         }
                         babe.text();
                         babe.bringToLife(R, true);
-                        CMLib.beanCounter().clearZeroMoney(babe, null);
+                        CMLib.moneyCounter().clearZeroMoney(babe, null);
                         babe.setMoneyVariation(0);
                         babe.setFollowing(following);
                         R.show(babe, null, CMMsg.MSG_NOISYMOVEMENT, L("<S-NAME> JUST TOOK <S-HIS-HER> FIRST STEPS!!!"));
@@ -450,7 +450,7 @@ public class Age extends StdAbility {
                     newMan.setFollowing(null);
                     newMan.setLiegeID(babe.getLiegeID());
                     newMan.setLocation(babe.location());
-                    CMLib.beanCounter().setMoney(newMan, CMLib.beanCounter().getMoney(babe));
+                    CMLib.moneyCounter().setMoney(newMan, CMLib.moneyCounter().getMoney(babe));
                     newMan.setName(babe.Name());
                     newMan.setPractices(babe.getPractices());
                     newMan.setQuestPoint(babe.getQuestPoint());

@@ -169,7 +169,7 @@ public class Chant_SummonMount extends Chant {
                 mob.location().send(mob, msg);
                 final MOB target = determineMonster(mob, adjustedLevel(mob, asLevel));
                 target.bringToLife(newRoom, true);
-                CMLib.beanCounter().clearZeroMoney(target, null);
+                CMLib.moneyCounter().clearZeroMoney(target, null);
                 target.setMoneyVariation(0);
                 target.location().showOthers(target, null, CMMsg.MSG_OK_ACTION, L("<S-NAME> appears!"));
                 newRoom.recoverRoomStats();

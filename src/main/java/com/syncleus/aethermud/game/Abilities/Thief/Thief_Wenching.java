@@ -105,9 +105,9 @@ public class Thief_Wenching extends ThiefSkill {
             return false;
         if (CMLib.flags().isAlcoholic(M))
             return true;
-        final ShopKeeper SK = CMLib.coffeeShops().getShopKeeper(M);
+        final ShopKeeper SK = CMLib.aetherShops().getShopKeeper(M);
         if (SK != null) {
-            CoffeeShop shop = SK.getShop();
+            AetherShop shop = SK.getShop();
             if (shop != null) {
                 for (Iterator<Environmental> e = shop.getStoreInventory(); e.hasNext(); ) {
                     Environmental E = e.next();
@@ -202,12 +202,12 @@ public class Thief_Wenching extends ThiefSkill {
                 R.send(mob, msg);
                 int cost = 100 - super.getXLOWCOSTLevel(mob) + ((10 - super.getXLOWCOSTLevel(mob)) * levelDiff);
 
-                if (CMLib.beanCounter().getTotalAbsoluteShopKeepersValue(mob, target) < cost) {
-                    mob.tell(L("@x1 requires @x2, which you don't have.", target.name(), CMLib.beanCounter().abbreviatedPrice(target, cost)));
+                if (CMLib.moneyCounter().getTotalAbsoluteShopKeepersValue(mob, target) < cost) {
+                    mob.tell(L("@x1 requires @x2, which you don't have.", target.name(), CMLib.moneyCounter().abbreviatedPrice(target, cost)));
                     return false;
                 }
-                CMLib.beanCounter().subtractMoney(mob, CMLib.beanCounter().getCurrency(target), cost);
-                if (R.show(mob, target, this, CMMsg.MSG_OK_VISUAL, L("<S-NAME> gives <T-NAME> @x1, and then wander off together for a time...", CMLib.beanCounter().abbreviatedPrice(target, cost)))) {
+                CMLib.moneyCounter().subtractMoney(mob, CMLib.moneyCounter().getCurrency(target), cost);
+                if (R.show(mob, target, this, CMMsg.MSG_OK_VISUAL, L("<S-NAME> gives <T-NAME> @x1, and then wander off together for a time...", CMLib.moneyCounter().abbreviatedPrice(target, cost)))) {
                     final Session sess = mob.session();
                     if (sess == null) {
                         Ability A = mob.fetchEffect(ID());

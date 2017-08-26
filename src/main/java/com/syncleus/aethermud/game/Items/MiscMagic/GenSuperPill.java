@@ -18,9 +18,9 @@ package com.syncleus.aethermud.game.Items.MiscMagic;
 
 import com.syncleus.aethermud.game.CharClasses.interfaces.CharClass;
 import com.syncleus.aethermud.game.Common.interfaces.AccountStats.PrideStat;
+import com.syncleus.aethermud.game.Common.interfaces.AetherTableRow;
 import com.syncleus.aethermud.game.Common.interfaces.CMMsg;
 import com.syncleus.aethermud.game.Common.interfaces.CharStats;
-import com.syncleus.aethermud.game.Common.interfaces.CoffeeTableRow;
 import com.syncleus.aethermud.game.Common.interfaces.PhyStats;
 import com.syncleus.aethermud.game.Items.interfaces.ArchonOnly;
 import com.syncleus.aethermud.game.Items.interfaces.RawMaterial;
@@ -131,7 +131,7 @@ public class GenSuperPill extends GenPill implements ArchonOnly {
             if ((C != null) && (C.availabilityCode() != 0)) {
                 mob.baseCharStats().setCurrentClass(C);
                 if ((!mob.isMonster()) && (mob.soulMate() == null))
-                    CMLib.coffeeTables().bump(mob, CoffeeTableRow.STAT_CLASSCHANGE);
+                    CMLib.aetherTables().bump(mob, AetherTableRow.STAT_CLASSCHANGE);
             }
         }
         if (CMParms.getParmPlus(readableText, "lev") != 0) {
@@ -186,7 +186,7 @@ public class GenSuperPill extends GenPill implements ArchonOnly {
             CMLib.players().bumpPrideStat(mob, PrideStat.QUESTPOINTS_EARNED, qp);
         final int newMoney = CMParms.getParmPlus(readableText, "coin");
         if (newMoney != 0)
-            CMLib.beanCounter().setMoney(mob, CMLib.beanCounter().getMoney(mob) + newMoney);
+            CMLib.moneyCounter().setMoney(mob, CMLib.moneyCounter().getMoney(mob) + newMoney);
         final int exp = CMParms.getParmPlus(readableText, "expe");
         if (exp != 0)
             CMLib.leveler().postExperience(mob, null, null, exp, false);

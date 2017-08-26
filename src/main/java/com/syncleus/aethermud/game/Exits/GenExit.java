@@ -81,12 +81,12 @@ public class GenExit extends StdExit implements Modifiable {
 
     @Override
     public String text() {
-        return CMLib.coffeeMaker().getPropertiesStr(this, false);
+        return CMLib.aetherMaker().getPropertiesStr(this, false);
     }
 
     @Override
     public void setMiscText(String newText) {
-        CMLib.coffeeMaker().setPropertiesStr(this, newText, false);
+        CMLib.aetherMaker().setPropertiesStr(this, newText, false);
         recoverPhyStats();
         isOpen = !doorDefaultsClosed;
         isLocked = doorDefaultsLocked;
@@ -297,7 +297,7 @@ public class GenExit extends StdExit implements Modifiable {
             case 7:
                 return "" + isReadable(); // isreadable
             case 8:
-                return CMLib.coffeeMaker().getExtraEnvPropertiesStr(this); // affbehav
+                return CMLib.aetherMaker().getExtraEnvPropertiesStr(this); // affbehav
             case 9:
                 return "" + basePhyStats().disposition(); // disposition
             case 10:
@@ -353,7 +353,7 @@ public class GenExit extends StdExit implements Modifiable {
             case 8: { // affbehav
                 delAllEffects(true);
                 delAllBehaviors();
-                CMLib.coffeeMaker().setExtraEnvProperties(this, CMLib.xml().parseAllXML(val)); // affbehav
+                CMLib.aetherMaker().setExtraEnvProperties(this, CMLib.xml().parseAllXML(val)); // affbehav
                 break;
             } // affbehav
             case 9: { // disposition

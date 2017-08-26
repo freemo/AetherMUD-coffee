@@ -20,7 +20,7 @@ import com.syncleus.aethermud.game.Abilities.interfaces.Ability;
 import com.syncleus.aethermud.game.Areas.interfaces.Area;
 import com.syncleus.aethermud.game.Behaviors.interfaces.Behavior;
 import com.syncleus.aethermud.game.Common.interfaces.CharStats;
-import com.syncleus.aethermud.game.Common.interfaces.CoffeeShop;
+import com.syncleus.aethermud.game.Common.interfaces.AetherShop;
 import com.syncleus.aethermud.game.Common.interfaces.PhyStats;
 import com.syncleus.aethermud.game.Items.interfaces.Item;
 import com.syncleus.aethermud.game.Locales.interfaces.GridLocale;
@@ -635,7 +635,7 @@ public class GModify extends StdCommand {
                 final Area A = R.getArea();
                 final Area.State oldFlag = A.getAreaState();
                 if (changes.size() == 0) {
-                    R = CMLib.coffeeMaker().makeNewRoomContent(R, false);
+                    R = CMLib.aetherMaker().makeNewRoomContent(R, false);
                     if (R != null)
                         A.setAreaState(Area.State.FROZEN);
                 } else {
@@ -691,10 +691,10 @@ public class GModify extends StdCommand {
                                         M.addItem(newI);
                                 }
                             }
-                            final ShopKeeper SK = CMLib.coffeeShops().getShopKeeper(M);
+                            final ShopKeeper SK = CMLib.aetherShops().getShopKeeper(M);
                             if (SK != null) {
-                                for (final Iterator<CoffeeShop.ShelfProduct> i = SK.getShop().getStoreShelves(); i.hasNext(); ) {
-                                    final CoffeeShop.ShelfProduct P = i.next();
+                                for (final Iterator<AetherShop.ShelfProduct> i = SK.getShop().getStoreShelves(); i.hasNext(); ) {
+                                    final AetherShop.ShelfProduct P = i.next();
                                     final Environmental E2 = P.product;
                                     if ((E2 instanceof Item) || (E2 instanceof MOB)) {
                                         final Environmental E3 = tryModfy(mob, R, E2, changes, onfields, noisy);

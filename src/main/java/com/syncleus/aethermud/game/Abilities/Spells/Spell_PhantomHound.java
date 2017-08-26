@@ -209,7 +209,7 @@ public class Spell_PhantomHound extends Spell {
                 newMOB.resetToMaxState();
                 newMOB.text();
                 newMOB.bringToLife(mob.location(), true);
-                CMLib.beanCounter().clearZeroMoney(newMOB, null);
+                CMLib.moneyCounter().clearZeroMoney(newMOB, null);
                 newMOB.setMoneyVariation(0);
                 newMOB.location().showOthers(newMOB, null, CMMsg.MSG_OK_ACTION, L("<S-NAME> appears!"));
                 newMOB.setStartRoom(null);

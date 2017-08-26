@@ -481,14 +481,14 @@ public class StdBoardableShip implements Area, BoardableShip, PrivateProperty {
 
     @Override
     public String text() {
-        return CMLib.coffeeMaker().getPropertiesStr(this, true);
+        return CMLib.aetherMaker().getPropertiesStr(this, true);
     }
 
     @Override
     public void setMiscText(String newMiscText) {
         miscText = "";
         if (newMiscText.trim().length() > 0)
-            CMLib.coffeeMaker().setPropertiesStr(this, newMiscText, true);
+            CMLib.aetherMaker().setPropertiesStr(this, newMiscText, true);
     }
 
     @Override

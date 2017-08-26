@@ -207,7 +207,7 @@ public class Create extends StdCommand {
             final String currency = CMLib.english().numPossibleGoldCurrency(mob, itemID);
             final double denom = CMLib.english().numPossibleGoldDenomination(mob, currency, itemID);
             if ((numCoins > 0) && (denom > 0.0))
-                newItem = CMLib.beanCounter().makeCurrency(currency, denom, numCoins);
+                newItem = CMLib.moneyCounter().makeCurrency(currency, denom, numCoins);
         }
 
         boolean doGenerica = true;
@@ -643,7 +643,7 @@ public class Create extends StdCommand {
         mob.location().showHappens(CMMsg.MSG_OK_ACTION, L("The size of the world just increased!"));
         mob.tell(L("You are now at @x1.", R.roomID()));
         R.bringMobHere(mob, true);
-        CMLib.coffeeMaker().addAutoPropsToAreaIfNecessary(A);
+        CMLib.aetherMaker().addAutoPropsToAreaIfNecessary(A);
     }
 
     public void components(MOB mob, List<String> commands)

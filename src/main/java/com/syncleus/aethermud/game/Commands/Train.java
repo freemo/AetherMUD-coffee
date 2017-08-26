@@ -17,9 +17,9 @@
 package com.syncleus.aethermud.game.Commands;
 
 import com.syncleus.aethermud.game.CharClasses.interfaces.CharClass;
+import com.syncleus.aethermud.game.Common.interfaces.AetherTableRow;
 import com.syncleus.aethermud.game.Common.interfaces.CMMsg;
 import com.syncleus.aethermud.game.Common.interfaces.CharStats;
-import com.syncleus.aethermud.game.Common.interfaces.CoffeeTableRow;
 import com.syncleus.aethermud.game.MOBS.interfaces.MOB;
 import com.syncleus.aethermud.game.core.*;
 import com.syncleus.aethermud.game.core.collections.StringXVector;
@@ -327,7 +327,7 @@ public class Train extends StdCommand {
                     mob.baseCharStats().getCurrentClass().endCharacter(mob);
                     mob.baseCharStats().setCurrentClass(theClass);
                     if ((!mob.isMonster()) && (mob.soulMate() == null))
-                        CMLib.coffeeTables().bump(mob, CoffeeTableRow.STAT_CLASSCHANGE);
+                        CMLib.aetherTables().bump(mob, AetherTableRow.STAT_CLASSCHANGE);
                     mob.recoverCharStats();
                     mob.charStats().getCurrentClass().startCharacter(mob, false, true);
                 }

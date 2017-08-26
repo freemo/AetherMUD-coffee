@@ -138,10 +138,10 @@ public class Prop_Retainable extends Property {
                             mob.destroy();
                             return false;
                         }
-                        final boolean paid = CMLib.beanCounter().modifyLocalBankGold(mob.location().getArea(),
+                        final boolean paid = CMLib.moneyCounter().modifyLocalBankGold(mob.location().getArea(),
                             owner,
-                            CMLib.utensils().getFormattedDate(mob) + ": Withdrawal of " + CMLib.beanCounter().nameCurrencyShort(mob, payAmountPerPayPeriod) + ": Payroll: " + Name(),
-                            CMLib.beanCounter().getCurrency(mob),
+                            CMLib.utensils().getFormattedDate(mob) + ": Withdrawal of " + CMLib.moneyCounter().nameCurrencyShort(mob, payAmountPerPayPeriod) + ": Payroll: " + Name(),
+                            CMLib.moneyCounter().getCurrency(mob),
                             (-payAmountPerPayPeriod));
                         if (paid)
                             CMLib.commands().postSay(mob, null, L("Payday!"), false, false);
@@ -162,7 +162,7 @@ public class Prop_Retainable extends Property {
     public void tellSkills(MOB me, MOB toMe) {
         final StringBuffer skills = new StringBuffer("");
         if (me instanceof ShopKeeper)
-            skills.append(", selling " + CMLib.coffeeShops().storeKeeperString(((ShopKeeper) me).getShop()).toLowerCase());
+            skills.append(", selling " + CMLib.aetherShops().storeKeeperString(((ShopKeeper) me).getShop()).toLowerCase());
         for (final Enumeration<Ability> a = me.allAbilities(); a.hasMoreElements(); ) {
             final Ability A = a.nextElement();
             if (A != null) {
@@ -187,7 +187,7 @@ public class Prop_Retainable extends Property {
                     && (msg.targetMinor() == CMMsg.TYP_BUY)) {
                     tellSkills(mob, msg.source());
                     if (payPeriodLengthInMudDays > 0)
-                        CMLib.commands().postSay(mob, msg.source(), L("I accept your terms of employment, and I understand I will be paid @x1 every @x2 days.", CMLib.beanCounter().abbreviatedPrice(mob, payAmountPerPayPeriod), "" + payPeriodLengthInMudDays), false, false);
+                        CMLib.commands().postSay(mob, msg.source(), L("I accept your terms of employment, and I understand I will be paid @x1 every @x2 days.", CMLib.moneyCounter().abbreviatedPrice(mob, payAmountPerPayPeriod), "" + payPeriodLengthInMudDays), false, false);
                     else
                         CMLib.commands().postSay(mob, msg.source(), L("I accept your terms of employment."), false, false);
                     CMLib.commands().postSay(mob, msg.source(), L("Please show me the way to my permanent post."), false, false);

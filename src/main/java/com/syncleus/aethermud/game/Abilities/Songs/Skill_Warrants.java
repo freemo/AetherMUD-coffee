@@ -104,7 +104,7 @@ public class Skill_Warrants extends BardSkill {
                     buf.append(CMStrings.padRight(W.criminal().Name(), colWidth) + " ");
                     buf.append(CMStrings.padRight(W.victim() != null ? W.victim().Name() : L("N/A"), colWidth) + " ");
                     buf.append(CMStrings.padRight(W.witness() != null ? W.witness().Name() : L("N/A"), colWidth) + " ");
-                    buf.append(CMLib.coffeeFilter().fullOutFilter(mob.session(), mob, W.criminal(), W.victim(), null, W.crime(), false) + "\n\r");
+                    buf.append(CMLib.aetherFilter().fullOutFilter(mob.session(), mob, W.criminal(), W.victim(), null, W.crime(), false) + "\n\r");
                 }
                 if (!mob.isMonster())
                     mob.session().safeRawPrintln(buf.toString());

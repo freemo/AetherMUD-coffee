@@ -183,7 +183,7 @@ public class GrinderPlayers extends GrinderMobs {
                         M.setTrains(CMath.s_int(old));
                         break;
                     case 19:
-                        CMLib.beanCounter().setMoney(M, CMath.s_int(old));
+                        CMLib.moneyCounter().setMoney(M, CMath.s_int(old));
                         break;
                     case 20:
                         if (CMLib.map().getDeity(old) != null)

@@ -199,7 +199,7 @@ public class Spell_Clone extends Spell {
         newMOB.setSession(null);
         newMOB.delAllBehaviors();
         newMOB.bringToLife(caster.location(), true);
-        CMLib.beanCounter().clearZeroMoney(newMOB, null);
+        CMLib.moneyCounter().clearZeroMoney(newMOB, null);
         newMOB.setMoneyVariation(0);
         newMOB.location().showOthers(newMOB, null, CMMsg.MSG_OK_ACTION, L("<S-NAME> appears!"));
         caster.location().recoverRoomStats();

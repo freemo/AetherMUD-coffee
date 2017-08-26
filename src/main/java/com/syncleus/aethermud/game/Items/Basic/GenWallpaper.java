@@ -373,7 +373,7 @@ public class GenWallpaper implements Item {
         if (V != null) {
             setName(CMLib.xml().getValFromPieces(V, "NAME"));
             setDescription(CMLib.xml().getValFromPieces(V, "DESC"));
-            CMLib.coffeeMaker().setEnvFlags(this, CMath.s_int(CMLib.xml().getValFromPieces(V, "FLAG")));
+            CMLib.aetherMaker().setEnvFlags(this, CMath.s_int(CMLib.xml().getValFromPieces(V, "FLAG")));
             setReadableText(CMLib.xml().getValFromPieces(V, "READ"));
         }
     }
@@ -383,7 +383,7 @@ public class GenWallpaper implements Item {
         final StringBuffer text = new StringBuffer("");
         text.append(CMLib.xml().convertXMLtoTag("NAME", Name()));
         text.append(CMLib.xml().convertXMLtoTag("DESC", description()));
-        text.append(CMLib.xml().convertXMLtoTag("FLAG", CMLib.coffeeMaker().envFlags(this)));
+        text.append(CMLib.xml().convertXMLtoTag("FLAG", CMLib.aetherMaker().envFlags(this)));
         text.append(CMLib.xml().convertXMLtoTag("READ", readableText()));
         return text.toString();
     }

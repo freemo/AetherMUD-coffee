@@ -18,7 +18,7 @@ package com.syncleus.aethermud.game.WebMacros;
 
 import com.syncleus.aethermud.game.Abilities.interfaces.Ability;
 import com.syncleus.aethermud.game.Behaviors.interfaces.Behavior;
-import com.syncleus.aethermud.game.Common.interfaces.CoffeeShop;
+import com.syncleus.aethermud.game.Common.interfaces.AetherShop;
 import com.syncleus.aethermud.game.Items.interfaces.*;
 import com.syncleus.aethermud.game.Libraries.interfaces.TimeManager;
 import com.syncleus.aethermud.game.Locales.interfaces.GridLocale;
@@ -99,7 +99,7 @@ public class RoomData extends StdWebMacro {
         }
         if (M instanceof ShopKeeper) {
             final ShopKeeper shopK = (ShopKeeper) M;
-            final CoffeeShop shop = shopK.getShop();
+            final AetherShop shop = shopK.getShop();
             for (Iterator<Environmental> i = shop.getStoreInventory(); i.hasNext(); ) {
                 Environmental E = i.next();
                 if (E == I)
@@ -151,7 +151,7 @@ public class RoomData extends StdWebMacro {
                 return M.getItem(i);
         }
         if (M instanceof ShopKeeper) {
-            CoffeeShop shop = ((ShopKeeper) M).getShop();
+            AetherShop shop = ((ShopKeeper) M).getShop();
             code = origCode;
             for (Iterator<Environmental> i = shop.getStoreInventory(); i.hasNext(); ) {
                 Environmental E = i.next();

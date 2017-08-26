@@ -16,7 +16,7 @@
  */
 package com.syncleus.aethermud.game.core.database;
 
-import com.syncleus.aethermud.game.Common.interfaces.CoffeeTableRow;
+import com.syncleus.aethermud.game.Common.interfaces.AetherTableRow;
 import com.syncleus.aethermud.game.core.CMClass;
 import com.syncleus.aethermud.game.core.CMLib;
 import com.syncleus.aethermud.game.core.CMSecurity;
@@ -34,16 +34,16 @@ public class StatLoader {
         DB = newDB;
     }
 
-    public CoffeeTableRow DBRead(long startTime) {
+    public AetherTableRow DBRead(long startTime) {
         if (Log.debugChannelOn() && (CMSecurity.isDebugging(CMSecurity.DbgFlag.CMSTAT)))
             Log.debugOut("StatLoader", "Reading content of Stat  " + CMLib.time().date2String(startTime));
         DBConnection D = null;
-        CoffeeTableRow T = null;
+        AetherTableRow T = null;
         try {
             D = DB.DBFetch();
             final ResultSet R = D.query("SELECT * FROM CMSTAT WHERE CMSTRT=" + startTime);
             if (R.next()) {
-                T = (CoffeeTableRow) CMClass.getCommon("DefaultCoffeeTableRow");
+                T = (AetherTableRow) CMClass.getCommon("DefaultAetherTableRow");
                 final long endTime = DBConnections.getLongRes(R, "CMENDT");
                 final String data = DBConnections.getRes(R, "CMDATA");
                 T.populate(startTime, endTime, data);
@@ -57,18 +57,18 @@ public class StatLoader {
         return T;
     }
 
-    public List<CoffeeTableRow> DBReadAfter(long startTime, long endTime) {
+    public List<AetherTableRow> DBReadAfter(long startTime, long endTime) {
         if (Log.debugChannelOn() && (CMSecurity.isDebugging(CMSecurity.DbgFlag.CMSTAT)))
             Log.debugOut("StatLoader", "Reading content of Stats since " + CMLib.time().date2String(startTime));
         DBConnection D = null;
-        CoffeeTableRow T = null;
-        final List<CoffeeTableRow> rows = new Vector<CoffeeTableRow>();
+        AetherTableRow T = null;
+        final List<AetherTableRow> rows = new Vector<AetherTableRow>();
         try {
             D = DB.DBFetch();
             final ResultSet R = D.query("SELECT * FROM CMSTAT WHERE CMSTRT>" + startTime);
             try {
                 while (R.next()) {
-                    T = (CoffeeTableRow) CMClass.getCommon("DefaultCoffeeTableRow");
+                    T = (AetherTableRow) CMClass.getCommon("DefaultAetherTableRow");
                     final long strTime = DBConnections.getLongRes(R, "CMSTRT");
                     final long enTime = DBConnections.getLongRes(R, "CMENDT");
                     if ((endTime != 0)

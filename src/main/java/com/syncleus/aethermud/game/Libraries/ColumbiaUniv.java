@@ -329,7 +329,7 @@ public class ColumbiaUniv extends StdLibrary implements ExpertiseLibrary {
                         ofWhat = "experience points";
                         break;
                     case GOLD:
-                        ofWhat = CMLib.beanCounter().getDenominationName(mob, value.doubleValue());
+                        ofWhat = CMLib.moneyCounter().getDenominationName(mob, value.doubleValue());
                         break;
                     case PRACTICE:
                         ofWhat = "practice points";
@@ -353,9 +353,9 @@ public class ColumbiaUniv extends StdLibrary implements ExpertiseLibrary {
                         return value.intValue() + " quest pts";
                     case GOLD:
                         if (mob == null)
-                            return CMLib.beanCounter().abbreviatedPrice("", value.doubleValue());
+                            return CMLib.moneyCounter().abbreviatedPrice("", value.doubleValue());
                         else
-                            return CMLib.beanCounter().abbreviatedPrice(mob, value.doubleValue());
+                            return CMLib.moneyCounter().abbreviatedPrice(mob, value.doubleValue());
                     default:
                         return value.intValue() + " "
                             + ((value.intValue() == 1)
@@ -375,7 +375,7 @@ public class ColumbiaUniv extends StdLibrary implements ExpertiseLibrary {
                     case XP:
                         return student.getExperience() >= value.intValue();
                     case GOLD:
-                        return CMLib.beanCounter().getTotalAbsoluteNativeValue(student) >= value.doubleValue();
+                        return CMLib.moneyCounter().getTotalAbsoluteNativeValue(student) >= value.doubleValue();
                     case TRAIN:
                         return student.getTrains() >= value.intValue();
                     case PRACTICE:
@@ -397,7 +397,7 @@ public class ColumbiaUniv extends StdLibrary implements ExpertiseLibrary {
                         CMLib.leveler().postExperience(student, null, "", value.intValue(), true);
                         break;
                     case GOLD:
-                        CMLib.beanCounter().subtractMoney(student, value.doubleValue());
+                        CMLib.moneyCounter().subtractMoney(student, value.doubleValue());
                         break;
                     case TRAIN:
                         student.setTrains(student.getTrains() - value.intValue());

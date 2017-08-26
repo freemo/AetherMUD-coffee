@@ -153,14 +153,14 @@ public class Thief_Panhandling extends ThiefSkill {
                             break;
                     }
                     if (CMLib.dice().rollPercentage() > (mob2.charStats().getSave(CharStats.STAT_SAVE_JUSTICE) + (CMLib.flags().isGood(mob) ? 10 : 0))) {
-                        double total = CMLib.beanCounter().getTotalAbsoluteNativeValue(mob2);
+                        double total = CMLib.moneyCounter().getTotalAbsoluteNativeValue(mob2);
                         if (total > 1.0) {
                             total = total / (20.0 - getXLEVELLevel(mob));
                             if (total < 1.0)
                                 total = 1.0;
-                            final Coins C = CMLib.beanCounter().makeBestCurrency(mob2, total);
+                            final Coins C = CMLib.moneyCounter().makeBestCurrency(mob2, total);
                             if (C != null) {
-                                CMLib.beanCounter().subtractMoney(mob2, total);
+                                CMLib.moneyCounter().subtractMoney(mob2, total);
                                 mob2.addItem(C);
                                 mob2.doCommand(CMParms.parse("GIVE \"" + C.name() + "\" \"" + mob.Name() + "\""), MUDCmdProcessor.METAFLAG_FORCED);
                                 if (!C.amDestroyed())

@@ -105,19 +105,19 @@ public class Prayer_Tithe extends Prayer {
             if ((invoker() != msg.source()) && ((num / 10) > 0)) {
                 invoker().tell(msg.source(), null, null, L("<S-NAME> tithes."));
                 final String currency = ((Coins) msg.target()).getCurrency();
-                CMLib.beanCounter().addMoney(invoker(), currency, CMath.mul(((Coins) msg.target()).getDenomination(), (num / 10)));
+                CMLib.moneyCounter().addMoney(invoker(), currency, CMath.mul(((Coins) msg.target()).getDenomination(), (num / 10)));
             }
         }
         if ((msg.sourceMinor() == CMMsg.TYP_BUY)
             && (msg.amITarget(affected))
             && (msg.tool() != null)) {
-            final ShopKeeper SK = CMLib.coffeeShops().getShopKeeper(affected);
+            final ShopKeeper SK = CMLib.aetherShops().getShopKeeper(affected);
             if (SK.getShop().doIHaveThisInStock("$" + msg.tool().Name() + "$", msg.source())) {
-                final ShopKeeper.ShopPrice price = CMLib.coffeeShops().sellingPrice((MOB) affected, msg.source(), msg.tool(), SK, true);
-                if ((price.absoluteGoldPrice > 0.0) && (price.absoluteGoldPrice <= CMLib.beanCounter().getTotalAbsoluteShopKeepersValue(msg.source(), invoker()))) {
+                final ShopKeeper.ShopPrice price = CMLib.aetherShops().sellingPrice((MOB) affected, msg.source(), msg.tool(), SK, true);
+                if ((price.absoluteGoldPrice > 0.0) && (price.absoluteGoldPrice <= CMLib.moneyCounter().getTotalAbsoluteShopKeepersValue(msg.source(), invoker()))) {
                     if (invoker() != msg.target()) {
                         invoker().tell(msg.source(), null, null, L("<S-NAME> tithes."));
-                        CMLib.beanCounter().addMoney(invoker(), CMath.div(price.absoluteGoldPrice, 10.0));
+                        CMLib.moneyCounter().addMoney(invoker(), CMath.div(price.absoluteGoldPrice, 10.0));
                     }
                 }
             }

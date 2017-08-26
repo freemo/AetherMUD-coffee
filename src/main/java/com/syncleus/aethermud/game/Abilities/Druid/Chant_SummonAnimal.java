@@ -172,7 +172,7 @@ public class Chant_SummonAnimal extends Chant {
                 room.send(mob, msg);
                 final MOB target = determineMonster(mob, adjustedLevel(mob, asLevel));
                 target.bringToLife(newRoom, true);
-                CMLib.beanCounter().clearZeroMoney(target, null);
+                CMLib.moneyCounter().clearZeroMoney(target, null);
                 target.setMoneyVariation(0);
                 newRoom.showOthers(target, null, CMMsg.MSG_OK_ACTION, L("<S-NAME> appears!"));
                 newRoom.recoverRoomStats();
@@ -352,7 +352,7 @@ public class Chant_SummonAnimal extends Chant {
 
         MOB genM = CMClass.getMOB("GenMob");
         for (String stat : genM.getStatCodes())
-            genM.setStat(stat, CMLib.coffeeMaker().getGenMobStat(newMOB, stat));
+            genM.setStat(stat, CMLib.aetherMaker().getGenMobStat(newMOB, stat));
         genM.setBaseCharStats((CharStats) newMOB.baseCharStats().copyOf());
         genM.setBasePhyStats((PhyStats) newMOB.basePhyStats().copyOf());
         genM.setBaseState((CharState) newMOB.baseState().copyOf());

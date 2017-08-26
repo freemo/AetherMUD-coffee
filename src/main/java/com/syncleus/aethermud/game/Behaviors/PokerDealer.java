@@ -193,8 +193,8 @@ public class PokerDealer extends StdBehavior {
     // this method just returns the amount of
     // anti as a displayable string.
     private String antiAmount(Environmental host) {
-        final String currency = CMLib.beanCounter().getCurrency(host);
-        return CMLib.beanCounter().abbreviatedPrice(currency, anti);
+        final String currency = CMLib.moneyCounter().getCurrency(host);
+        return CMLib.moneyCounter().abbreviatedPrice(currency, anti);
     }
 
     // since we don't know whether the host of this
@@ -307,7 +307,7 @@ public class PokerDealer extends StdBehavior {
             && (msg.target() instanceof Coins)
             && (!msg.targetMajor(CMMsg.MASK_INTERMSG))) {
             final Double inPot = pot.contains(msg.source()) ? (Double) pot.elementAt(pot.indexOf(msg.source()), 2) : null;
-            final String currency = CMLib.beanCounter().getCurrency(host);
+            final String currency = CMLib.moneyCounter().getCurrency(host);
             final MOB playerDroppingMoney = msg.source();
             final Coins theMoneyDropped = (Coins) msg.target();
 
@@ -315,7 +315,7 @@ public class PokerDealer extends StdBehavior {
             // wrong, then abort their attempt to drop it into
             // the pot.
             if (!currency.equals(theMoneyDropped.getCurrency())) {
-                playerDroppingMoney.tell(L("That is not the proper currency.  This table is only dealing in @x1.", CMLib.beanCounter().getDenominationName(currency)));
+                playerDroppingMoney.tell(L("That is not the proper currency.  This table is only dealing in @x1.", CMLib.moneyCounter().getDenominationName(currency)));
                 return false;
             }
 
@@ -335,15 +335,15 @@ public class PokerDealer extends StdBehavior {
                     // if they give too much, queue up a change making message.
                     if (theMoneyDropped.getTotalValue() > anti) {
                         final double change = theMoneyDropped.getTotalValue() - anti;
-                        Coins C = CMLib.beanCounter().makeBestCurrency(currency, change);
+                        Coins C = CMLib.moneyCounter().makeBestCurrency(currency, change);
                         final CMMsg changeMsg = CMClass.getMsg(playerDroppingMoney, C, null,
-                            CMMsg.MASK_ALWAYS | CMMsg.MSG_GET, L("You anti up, picking up @x1 in change.", CMLib.beanCounter().abbreviatedPrice(currency, change)),
+                            CMMsg.MASK_ALWAYS | CMMsg.MSG_GET, L("You anti up, picking up @x1 in change.", CMLib.moneyCounter().abbreviatedPrice(currency, change)),
                             CMMsg.MASK_ALWAYS | CMMsg.MSG_GET, null,
                             CMMsg.MASK_ALWAYS | CMMsg.MSG_GET, L("<S-NAME> antis up."));
                         msg.addTrailerMsg(changeMsg);
                         // now we want to clear the drop message,
                         // and modify the amount actually being dropped.
-                        C = CMLib.beanCounter().makeBestCurrency(currency, anti);
+                        C = CMLib.moneyCounter().makeBestCurrency(currency, anti);
                         theMoneyDropped.setNumberOfCoins(C.getNumberOfCoins());
                         theMoneyDropped.setDenomination(C.getDenomination());
                         msg.modify(msg.source(), msg.target(), msg.tool(), msg.sourceCode(), null, msg.targetCode(), null, msg.othersCode(), null);
@@ -380,20 +380,20 @@ public class PokerDealer extends StdBehavior {
 
                     // if they havn't given enough to call, allow it, but let them know.
                     if (theMoneyDropped.getTotalValue() < amountNeededToCall)
-                        msg.source().tell(L("That won't be enough.  You'll still need to drop @x1 more to call.", CMLib.beanCounter().abbreviatedPrice(currency, amountNeededToCall - theMoneyDropped.getTotalValue())));
+                        msg.source().tell(L("That won't be enough.  You'll still need to drop @x1 more to call.", CMLib.moneyCounter().abbreviatedPrice(currency, amountNeededToCall - theMoneyDropped.getTotalValue())));
                     else
                         // if they give too much, make change
                         if (theMoneyDropped.getTotalValue() > amountNeededToCall) {
                             final double change = theMoneyDropped.getTotalValue() - amountNeededToCall;
-                            Coins C = CMLib.beanCounter().makeBestCurrency(currency, change);
+                            Coins C = CMLib.moneyCounter().makeBestCurrency(currency, change);
                             final CMMsg changeMsg = CMClass.getMsg(playerDroppingMoney, C, null,
-                                CMMsg.MASK_ALWAYS | CMMsg.MSG_GET, L("You see the bet, picking up @x1 in change.@x2", CMLib.beanCounter().abbreviatedPrice(currency, change), instructions),
+                                CMMsg.MASK_ALWAYS | CMMsg.MSG_GET, L("You see the bet, picking up @x1 in change.@x2", CMLib.moneyCounter().abbreviatedPrice(currency, change), instructions),
                                 CMMsg.MASK_ALWAYS | CMMsg.MSG_GET, null,
                                 CMMsg.MASK_ALWAYS | CMMsg.MSG_GET, L("<S-NAME> see(s) the bet."));
                             msg.addTrailerMsg(changeMsg);
                             // now we want to clear the drop message,
                             // and modify the amount actually being dropped.
-                            C = CMLib.beanCounter().makeBestCurrency(currency, anti);
+                            C = CMLib.moneyCounter().makeBestCurrency(currency, anti);
                             theMoneyDropped.setNumberOfCoins(C.getNumberOfCoins());
                             theMoneyDropped.setDenomination(C.getDenomination());
                             msg.modify(msg.source(), msg.target(), msg.tool(), msg.sourceCode(), null, msg.targetCode(), null, msg.othersCode(), null);
@@ -411,8 +411,8 @@ public class PokerDealer extends StdBehavior {
                     for (int p = 0; p < pot.size(); p++) {
                         if (pot.elementAt(p, 1) != playerDroppingMoney) {
                             final MOB mob = (MOB) pot.elementAt(p, 1);
-                            if (CMLib.beanCounter().getTotalAbsoluteValue(mob, currency) < totalDown) {
-                                msg.source().tell(L("You may only bet up to @x1 due to the table-stakes rule.", CMLib.beanCounter().abbreviatedPrice(currency, CMLib.beanCounter().getTotalAbsoluteValue(mob, currency))));
+                            if (CMLib.moneyCounter().getTotalAbsoluteValue(mob, currency) < totalDown) {
+                                msg.source().tell(L("You may only bet up to @x1 due to the table-stakes rule.", CMLib.moneyCounter().abbreviatedPrice(currency, CMLib.moneyCounter().getTotalAbsoluteValue(mob, currency))));
                                 return false;
                             }
                         }
@@ -600,7 +600,7 @@ public class PokerDealer extends StdBehavior {
                         final double amountToCall = amountToCall();
                         final double amountInPot = (inPot == null) ? 0.0 : inPot.doubleValue();
                         final double amountNeededToCall = amountToCall - amountInPot;
-                        final String currency = CMLib.beanCounter().getCurrency(host);
+                        final String currency = CMLib.moneyCounter().getCurrency(host);
 
                         // now we check their words against the pot
                         // and whatever they say, we move on
@@ -615,7 +615,7 @@ public class PokerDealer extends StdBehavior {
                             case PLAYER_BET_ACT_PASS: {
                                 final int whatHappened = getCalled0Raised1OrFolded(speaker);
                                 if (whatHappened < 0)
-                                    communicate(host, speaker, "You can not pass.  You can either drop " + CMLib.beanCounter().abbreviatedPrice(currency, amountNeededToCall) + ", or fold.", msg);
+                                    communicate(host, speaker, "You can not pass.  You can either drop " + CMLib.moneyCounter().abbreviatedPrice(currency, amountNeededToCall) + ", or fold.", msg);
                                 else {
                                     if (isThePotRight())
                                         communicate(host, speaker, "<T-NAME> pass(es).", msg);
@@ -630,7 +630,7 @@ public class PokerDealer extends StdBehavior {
                             case PLAYER_BET_ACT_CALL: {
                                 final int whatHappened = getCalled0Raised1OrFolded(speaker);
                                 if (whatHappened < 0)
-                                    communicate(host, speaker, "You can not call until you have dropped " + CMLib.beanCounter().abbreviatedPrice(currency, amountNeededToCall) + ".  You must drop or fold.", msg);
+                                    communicate(host, speaker, "You can not call until you have dropped " + CMLib.moneyCounter().abbreviatedPrice(currency, amountNeededToCall) + ".  You must drop or fold.", msg);
                                 else {
                                     if (whatHappened > 0)
                                         communicate(host, speaker, "<T-NAME> raise(s).", msg);
@@ -641,7 +641,7 @@ public class PokerDealer extends StdBehavior {
                             case PLAYER_BET_ACT_RAISE: {
                                 final int whatHappened = getCalled0Raised1OrFolded(speaker);
                                 if (whatHappened < 0)
-                                    communicate(host, speaker, "You can not raise until you have at least dropped " + CMLib.beanCounter().abbreviatedPrice(currency, amountNeededToCall) + " and then dropped more.  You must drop or fold.", msg);
+                                    communicate(host, speaker, "You can not raise until you have at least dropped " + CMLib.moneyCounter().abbreviatedPrice(currency, amountNeededToCall) + " and then dropped more.  You must drop or fold.", msg);
                                 else {
                                     if (whatHappened == 0)
                                         communicate(host, speaker, "<T-NAME> call(s).", msg);
@@ -1148,8 +1148,8 @@ public class PokerDealer extends StdBehavior {
                     I.destroy();
                 }
                 if (totalValue > 0.0) {
-                    CMLib.beanCounter().giveSomeoneMoney(winner, CMLib.beanCounter().getCurrency(host), totalValue);
-                    R.show(winner, null, null, CMMsg.MSG_OK_ACTION, L("<S-NAME> collect(s) @x1 in winnings.", CMLib.beanCounter().abbreviatedPrice(CMLib.beanCounter().getCurrency(host), totalValue)));
+                    CMLib.moneyCounter().giveSomeoneMoney(winner, CMLib.moneyCounter().getCurrency(host), totalValue);
+                    R.show(winner, null, null, CMMsg.MSG_OK_ACTION, L("<S-NAME> collect(s) @x1 in winnings.", CMLib.moneyCounter().abbreviatedPrice(CMLib.moneyCounter().getCurrency(host), totalValue)));
                 }
             }
         } else
@@ -1320,11 +1320,11 @@ public class PokerDealer extends StdBehavior {
                     final double amountToCall = amountToCall();
                     final double amountInPot = (inPot == null) ? 0.0 : inPot.doubleValue();
                     final double amountNeededToCall = amountToCall - amountInPot;
-                    final String currency = CMLib.beanCounter().getCurrency(host);
+                    final String currency = CMLib.moneyCounter().getCurrency(host);
                     if (amountNeededToCall == 0.0)
                         communicate(host, whoseTurn, "Ok, " + whoseTurn.name() + ", you may open betting by dropping money, or you may say 'pass'.", null);
                     else
-                        communicate(host, whoseTurn, "Ok, " + whoseTurn.name() + ", you may call the bet of " + CMLib.beanCounter().abbreviatedPrice(currency, amountNeededToCall) + " by dropping money, or you may say 'fold'.", null);
+                        communicate(host, whoseTurn, "Ok, " + whoseTurn.name() + ", you may call the bet of " + CMLib.moneyCounter().abbreviatedPrice(currency, amountNeededToCall) + " by dropping money, or you may say 'fold'.", null);
                     communicate(host, whoseTurn, "You have " + TIME_SECONDSTOBET + " seconds.", null);
                     timer = System.currentTimeMillis() + (TIME_SECONDSTOBET * 1000);
                     break;

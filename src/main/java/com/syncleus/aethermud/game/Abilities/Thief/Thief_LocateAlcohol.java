@@ -127,7 +127,7 @@ public class Thief_LocateAlcohol extends ThiefSkill {
                 if (msg2.length() > 0)
                     return E.name() + " is carrying some alcohol.";
             }
-            final ShopKeeper SK = CMLib.coffeeShops().getShopKeeper(E);
+            final ShopKeeper SK = CMLib.aetherShops().getShopKeeper(E);
             if (SK != null) {
                 final StringBuffer msg2 = new StringBuffer("");
                 for (final Iterator<Environmental> i = SK.getShop().getStoreInventory(); i.hasNext(); ) {

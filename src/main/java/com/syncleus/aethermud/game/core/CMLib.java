@@ -263,7 +263,7 @@ public class CMLib {
      * @see com.syncleus.aethermud.game.Libraries.interfaces.MoneyLibrary
      * @return a reference to this threads money handling library.
      */
-    public static final MoneyLibrary beanCounter() {
+    public static final MoneyLibrary moneyCounter() {
         return (MoneyLibrary) l().libraries[Library.MONEY.ordinal()];
     }
 
@@ -272,7 +272,7 @@ public class CMLib {
      * @see com.syncleus.aethermud.game.Libraries.interfaces.ShoppingLibrary
      * @return a reference to this threads store front/shopping library.
      */
-    public static final ShoppingLibrary coffeeShops() {
+    public static final ShoppingLibrary aetherShops() {
         return (ShoppingLibrary) l().libraries[Library.SHOPS.ordinal()];
     }
 
@@ -389,7 +389,7 @@ public class CMLib {
      * @see com.syncleus.aethermud.game.Libraries.interfaces.TelnetFilter
      * @return a reference to this threads telnet input/output filtering library.
      */
-    public static final TelnetFilter coffeeFilter() {
+    public static final TelnetFilter aetherFilter() {
         return (TelnetFilter) l().libraries[Library.TELNET.ordinal()];
     }
 
@@ -398,7 +398,7 @@ public class CMLib {
      * @see com.syncleus.aethermud.game.Libraries.interfaces.GenericBuilder
      * @return a reference to this threads GenObject low level construction library.
      */
-    public static final GenericBuilder coffeeMaker() {
+    public static final GenericBuilder aetherMaker() {
         return (GenericBuilder) l().libraries[Library.OBJBUILDERS.ordinal()];
     }
 
@@ -452,7 +452,7 @@ public class CMLib {
      * @see com.syncleus.aethermud.game.Libraries.interfaces.StatisticsLibrary
      * @return a reference to this threads statistics library.
      */
-    public static final StatisticsLibrary coffeeTables() {
+    public static final StatisticsLibrary aetherTables() {
         return (StatisticsLibrary) l().libraries[Library.STATS.ordinal()];
     }
 

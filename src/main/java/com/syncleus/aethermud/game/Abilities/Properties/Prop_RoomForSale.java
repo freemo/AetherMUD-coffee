@@ -230,10 +230,10 @@ public class Prop_RoomForSale extends Property implements LandTitle {
                             else if ((lastYear == year) && (lastMonth < month) && (day >= lastDay))
                                 needsToPay = true;
                             if (needsToPay) {
-                                if (CMLib.beanCounter().modifyLocalBankGold(A,
+                                if (CMLib.moneyCounter().modifyLocalBankGold(A,
                                     owner,
                                     CMLib.utensils().getFormattedDate(A) + ":Withdrawal of " + rent + ": Rent for " + ID,
-                                    CMLib.beanCounter().getCurrency(A),
+                                    CMLib.moneyCounter().getCurrency(A),
                                     (-rent))) {
                                     lastMonth++;
                                     if (lastMonth > A.getTimeObj().getMonthsInYear()) {

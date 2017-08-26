@@ -223,7 +223,7 @@ public class Chant_SummonElemental extends Chant {
         newMOB.recoverMaxState();
         newMOB.resetToMaxState();
         newMOB.bringToLife(caster.location(), true);
-        CMLib.beanCounter().clearZeroMoney(newMOB, null);
+        CMLib.moneyCounter().clearZeroMoney(newMOB, null);
         newMOB.setMoneyVariation(0);
         newMOB.location().showOthers(newMOB, null, CMMsg.MSG_OK_ACTION, L("<S-NAME> appears!"));
         newMOB.setStartRoom(null);

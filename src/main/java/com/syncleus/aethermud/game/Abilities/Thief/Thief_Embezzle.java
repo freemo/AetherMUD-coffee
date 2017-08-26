@@ -212,17 +212,17 @@ public class Thief_Embezzle extends ThiefSkill {
 
         final boolean success = proficiencyCheck(mob, (-(levelDiff + (timesPicked(mob) * 50))), auto);
         if ((success) && (hisAmount > 0) && (hisCoins != null)) {
-            final String str = L("<S-NAME> embezzle(s) @x1 from the @x2 account maintained by <T-NAME>.", CMLib.beanCounter().nameCurrencyShort(target, hisAmount), victim);
+            final String str = L("<S-NAME> embezzle(s) @x1 from the @x2 account maintained by <T-NAME>.", CMLib.moneyCounter().nameCurrencyShort(target, hisAmount), victim);
             final CMMsg msg = CMClass.getMsg(mob, target, this, (auto ? CMMsg.MASK_ALWAYS : 0) | CMMsg.MSG_THIEF_ACT, str, null, str);
             if (mob.location().okMessage(mob, msg)) {
                 mob.location().send(mob, msg);
                 beneficialAffect(mob, target, asLevel, (int) (((CMProps.getMillisPerMudHour() * mob.location().getArea().getTimeObj().getHoursInDay() * mob.location().getArea().getTimeObj().getDaysInMonth()) / CMProps.getTickMillis())));
                 bank.delDepositInventory(victim, hisCoins);
-                hisCoins = CMLib.beanCounter().makeBestCurrency(target, hisCoins.getTotalValue() - (hisAmount / 3.0));
+                hisCoins = CMLib.moneyCounter().makeBestCurrency(target, hisCoins.getTotalValue() - (hisAmount / 3.0));
                 if (hisCoins.getNumberOfCoins() > 0)
                     bank.addDepositInventory(victim, hisCoins, null);
                 bank.delDepositInventory(myAcct, myCoins);
-                myCoins = CMLib.beanCounter().makeBestCurrency(mob, ((Coins) myCoins).getTotalValue() + hisAmount);
+                myCoins = CMLib.moneyCounter().makeBestCurrency(mob, ((Coins) myCoins).getTotalValue() + hisAmount);
                 if (((Coins) myCoins).getNumberOfCoins() > 0)
                     bank.addDepositInventory(myAcct, myCoins, null);
             }

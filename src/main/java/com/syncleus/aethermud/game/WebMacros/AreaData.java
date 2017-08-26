@@ -212,7 +212,7 @@ public class AreaData extends StdWebMacro {
                     return "" + (A instanceof BoardableShip);
                 }
                 if (parms.containsKey("AREAXML")) {
-                    return this.clearWebMacros(CMLib.xml().parseOutAngleBracketsAndQuotes(CMLib.coffeeMaker().getAreaObjectXML(A, null, null, null, true).toString()));
+                    return this.clearWebMacros(CMLib.xml().parseOutAngleBracketsAndQuotes(CMLib.aetherMaker().getAreaObjectXML(A, null, null, null, true).toString()));
                 }
                 if (parms.containsKey("HELP")) {
                     StringBuilder s = CMLib.help().getHelpText("AREA_" + A.Name(), null, false);
@@ -319,8 +319,8 @@ public class AreaData extends StdWebMacro {
                     if (A.getCurrency().length() == 0)
                         str.append(" SELECTED");
                     str.append(L(">Default Currency"));
-                    for (int i = 1; i < CMLib.beanCounter().getAllCurrencies().size(); i++) {
-                        final String s = CMLib.beanCounter().getAllCurrencies().get(i);
+                    for (int i = 1; i < CMLib.moneyCounter().getAllCurrencies().size(); i++) {
+                        final String s = CMLib.moneyCounter().getAllCurrencies().get(i);
                         if (s.length() > 0) {
                             str.append("<OPTION VALUE=\"" + s + "\"");
                             if (s.equalsIgnoreCase(A.getCurrency()))

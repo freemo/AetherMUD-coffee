@@ -953,7 +953,7 @@ public class BuildingSkill extends CraftingSkill implements CraftorAbility {
         final String[][] data = getRecipeData(mob);
         LandTitle title = CMLib.law().getLandTitle(mob.location());
         double landValue = ((title == null) ? 0 : title.getPrice()) / 100.0;
-        String landCurrency = CMLib.beanCounter().getCurrency(mob.location());
+        String landCurrency = CMLib.moneyCounter().getCurrency(mob.location());
         if (("LIST").startsWith(str.toUpperCase())) {
             boolean hasValueTag = false;
             final String mask = CMParms.combine(commands, 1);
@@ -978,7 +978,7 @@ public class BuildingSkill extends CraftingSkill implements CraftorAbility {
                             if (title == null)
                                 buf.append(wood + "% ??\n\r");
                             else
-                                buf.append(CMLib.beanCounter().nameCurrencyLong(landCurrency, landValue * wood)).append("\n\r");
+                                buf.append(CMLib.moneyCounter().nameCurrencyLong(landCurrency, landValue * wood)).append("\n\r");
                         } else
                             buf.append("??\n\r");
                     } else if (material.equalsIgnoreCase("MONEY")) {
@@ -986,7 +986,7 @@ public class BuildingSkill extends CraftingSkill implements CraftorAbility {
                         if (CMath.isInteger(woodStr)) {
                             int wood = CMath.s_int(woodStr);
                             wood = adjustWoodRequired(wood, mob);
-                            buf.append(CMLib.beanCounter().nameCurrencyLong(landCurrency, wood)).append("\n\r");
+                            buf.append(CMLib.moneyCounter().nameCurrencyLong(landCurrency, wood)).append("\n\r");
                         } else
                             buf.append("??\n\r");
                     } else {
@@ -1362,8 +1362,8 @@ public class BuildingSkill extends CraftingSkill implements CraftorAbility {
             idata = null;
             int wood = CMath.s_int(recipe[DAT_WOOD]);
             wood = adjustWoodRequired(wood, mob);
-            if (CMLib.beanCounter().getTotalAbsoluteValue(mob, landCurrency) < wood) {
-                commonTell(mob, L("You'll need @x1 to do that.", CMLib.beanCounter().nameCurrencyLong(landCurrency, wood)));
+            if (CMLib.moneyCounter().getTotalAbsoluteValue(mob, landCurrency) < wood) {
+                commonTell(mob, L("You'll need @x1 to do that.", CMLib.moneyCounter().nameCurrencyLong(landCurrency, wood)));
                 return false;
             }
             woodRequired = 0;
@@ -1372,8 +1372,8 @@ public class BuildingSkill extends CraftingSkill implements CraftorAbility {
             int wood = CMath.s_int(recipe[DAT_WOOD]);
             wood = adjustWoodRequired(wood, mob);
             double roomValue = landValue * wood;
-            if (CMLib.beanCounter().getTotalAbsoluteValue(mob, landCurrency) < roomValue) {
-                commonTell(mob, L("You'll need @x1 to do that.", CMLib.beanCounter().nameCurrencyLong(landCurrency, roomValue)));
+            if (CMLib.moneyCounter().getTotalAbsoluteValue(mob, landCurrency) < roomValue) {
+                commonTell(mob, L("You'll need @x1 to do that.", CMLib.moneyCounter().nameCurrencyLong(landCurrency, roomValue)));
                 return false;
             }
             woodRequired = 0;
@@ -1410,11 +1410,11 @@ public class BuildingSkill extends CraftingSkill implements CraftorAbility {
             int wood = CMath.s_int(recipe[DAT_WOOD]);
             wood = adjustWoodRequired(wood, mob);
             double roomValue = landValue * wood;
-            CMLib.beanCounter().subtractMoney(mob, landCurrency, roomValue);
+            CMLib.moneyCounter().subtractMoney(mob, landCurrency, roomValue);
         } else if (recipe[DAT_WOODTYPE].equalsIgnoreCase("MONEY")) {
             int wood = CMath.s_int(recipe[DAT_WOOD]);
             wood = adjustWoodRequired(wood, mob);
-            CMLib.beanCounter().subtractMoney(mob, landCurrency, wood);
+            CMLib.moneyCounter().subtractMoney(mob, landCurrency, wood);
         }
 
         verb = establishVerb(mob, recipe);

@@ -133,7 +133,7 @@ public class Affect extends StdCommand {
                     disp += ", BY=" + ((A.invoker() == null) ? "N/A" : A.invoker().Name());
                 String[] disps = {disp};
                 if (CMStrings.lengthMinusColors(disp) > (COL_LEN * NUM_COLS)) {
-                    String s = CMLib.coffeeFilter().fullOutFilter(S, mob, null, null, null, disp, true);
+                    String s = CMLib.aetherFilter().fullOutFilter(S, mob, null, null, null, disp, true);
                     s = CMStrings.replaceAll(s, "\r", "");
                     final List<String> V = CMParms.parseAny(s, '\n', true);
                     disps = new String[V.size()];

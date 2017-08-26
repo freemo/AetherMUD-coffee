@@ -53,7 +53,7 @@ public class XMLManager extends StdLibrary implements XMLLibrary {
         }
 
         try {
-            illegalTags = CMLib.coffeeFilter().getTagTable().keySet();
+            illegalTags = CMLib.aetherFilter().getTagTable().keySet();
         } catch (final Exception e) {
             illegalTags = new HashSet<String>();
         }

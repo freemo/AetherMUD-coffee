@@ -27,7 +27,7 @@ Windows:
 mud.bat           : set JAVA_HOME, and execute this to run aethermud in windows
 make.bat          : set JAVA_HOME, and execute this to build aethermud in windows
 build.xml         : ANT build file for aethermud binaries
-coffee.ico        : Windows icon file for shortcuts
+aether.ico        : Windows icon file for shortcuts
 
 Linux:
 mudUNIX.sh        : Executing aethermud. (See installation guide)

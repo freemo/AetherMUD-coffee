@@ -158,30 +158,30 @@ public class Thief_PayOff extends ThiefSkill {
         if (!super.invoke(mob, commands, givenTarget, auto, asLevel))
             return false;
 
-        double amountRequired = CMLib.beanCounter().getTotalAbsoluteNativeValue(target)
+        double amountRequired = CMLib.moneyCounter().getTotalAbsoluteNativeValue(target)
             + ((double) ((100l - ((mob.charStats().getStat(CharStats.STAT_CHARISMA) + (2l * getXLEVELLevel(mob))) * 2))) * target.phyStats().level());
         if (isJudge)
             amountRequired *= 2;
 
-        final String currency = CMLib.beanCounter().getCurrency(target);
+        final String currency = CMLib.moneyCounter().getCurrency(target);
         boolean success = proficiencyCheck(mob, 0, auto);
 
-        if ((!success) || (CMLib.beanCounter().getTotalAbsoluteValue(mob, currency) < amountRequired)) {
+        if ((!success) || (CMLib.moneyCounter().getTotalAbsoluteValue(mob, currency) < amountRequired)) {
             final CMMsg msg = CMClass.getMsg(mob, target, this, CMMsg.MSG_SPEAK, L("^T<S-NAME> attempt(s) to pay off <T-NAMESELF> to '@x1', but no deal is reached.^?", CMParms.combine(commands, 0)));
             if (mob.location().okMessage(mob, msg))
                 mob.location().send(mob, msg);
-            if (CMLib.beanCounter().getTotalAbsoluteValue(mob, currency) < amountRequired) {
-                final String costWords = CMLib.beanCounter().nameCurrencyShort(currency, amountRequired);
+            if (CMLib.moneyCounter().getTotalAbsoluteValue(mob, currency) < amountRequired) {
+                final String costWords = CMLib.moneyCounter().nameCurrencyShort(currency, amountRequired);
                 mob.tell(L("@x1 requires @x2 to do this.", target.charStats().HeShe(), costWords));
             }
             success = false;
         } else {
-            final String costWords = CMLib.beanCounter().nameCurrencyShort(target, amountRequired);
+            final String costWords = CMLib.moneyCounter().nameCurrencyShort(target, amountRequired);
             final CMMsg msg = CMClass.getMsg(mob, target, this, CMMsg.MSG_THIEF_ACT, L("^T<S-NAME> pay(s) off <T-NAMESELF>.^?", CMParms.combine(commands, 0), costWords));
             if (mob.location().okMessage(mob, msg)) {
                 mob.location().send(mob, msg);
-                CMLib.beanCounter().subtractMoney(mob, currency, amountRequired);
-                CMLib.beanCounter().addMoney(mob, currency, amountRequired);
+                CMLib.moneyCounter().subtractMoney(mob, currency, amountRequired);
+                CMLib.moneyCounter().addMoney(mob, currency, amountRequired);
                 if (isJudge) {
                     for (LegalWarrant W : warrants) {
                         if (W.punishment() > 0)

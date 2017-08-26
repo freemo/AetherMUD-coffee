@@ -1239,8 +1239,8 @@ public class MUDFight extends StdLibrary implements CombatLibrary {
 
         dispenseExperience(beneficiaries, dividers, target);
 
-        final String currency = CMLib.beanCounter().getCurrency(target);
-        final double deadMoney = CMLib.beanCounter().getTotalAbsoluteValue(target, currency);
+        final String currency = CMLib.moneyCounter().getCurrency(target);
+        final double deadMoney = CMLib.moneyCounter().getTotalAbsoluteValue(target, currency);
         double myAmountOfDeadMoney = 0.0;
         final Vector<MOB> goldLooters = new Vector<MOB>();
         for (final MOB M : beneficiaries) {
@@ -1253,7 +1253,7 @@ public class MUDFight extends StdLibrary implements CombatLibrary {
         }
         if ((goldLooters.size() > 0) && (deadMoney > 0)) {
             myAmountOfDeadMoney = CMath.div(deadMoney, goldLooters.size());
-            CMLib.beanCounter().subtractMoney(target, deadMoney);
+            CMLib.moneyCounter().subtractMoney(target, deadMoney);
         }
 
         final int[] expLost = {100 * target.phyStats().level()};
@@ -1329,7 +1329,7 @@ public class MUDFight extends StdLibrary implements CombatLibrary {
             Coins C = null;
             if ((deadMoney > 0) && (myAmountOfDeadMoney > 0) && (body != null) && (bodyRoom != null))
                 for (int g = 0; g < goldLooters.size(); g++) {
-                    C = CMLib.beanCounter().makeBestCurrency(currency, myAmountOfDeadMoney, null, body);
+                    C = CMLib.moneyCounter().makeBestCurrency(currency, myAmountOfDeadMoney, null, body);
                     if (C != null) {
                         C.recoverPhyStats();
                         bodyRoom.addItem(C, ItemPossessor.Expire.Monster_EQ);
@@ -1943,7 +1943,7 @@ public class MUDFight extends StdLibrary implements CombatLibrary {
         final MOB deadmob = msg.source();
         if (!deadmob.amDead()) {
             if ((!deadmob.isMonster()) && (deadmob.soulMate() == null)) {
-                CMLib.coffeeTables().bump(deadmob, CoffeeTableRow.STAT_DEATHS);
+                CMLib.aetherTables().bump(deadmob, AetherTableRow.STAT_DEATHS);
                 final PlayerStats playerStats = deadmob.playerStats();
                 if (playerStats != null)
                     playerStats.setHygiene(0);
@@ -2015,7 +2015,7 @@ public class MUDFight extends StdLibrary implements CombatLibrary {
                 && (deadmob.soulMate() == null)
                 && (killer != deadmob) && (!killer.isMonster())) {
                 if (!deadmob.isMonster()) {
-                    CMLib.coffeeTables().bump(deadmob, CoffeeTableRow.STAT_PKDEATHS);
+                    CMLib.aetherTables().bump(deadmob, AetherTableRow.STAT_PKDEATHS);
                     if (killer.playerStats() != null)
                         CMLib.players().bumpPrideStat(killer, PrideStat.PVPKILLS, 1);
                 }

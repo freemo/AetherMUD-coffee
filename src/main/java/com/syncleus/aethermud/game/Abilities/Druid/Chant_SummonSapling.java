@@ -243,7 +243,7 @@ public class Chant_SummonSapling extends Chant {
         newMOB.recoverMaxState();
         newMOB.resetToMaxState();
         newMOB.bringToLife(caster.location(), true);
-        CMLib.beanCounter().clearZeroMoney(newMOB, null);
+        CMLib.moneyCounter().clearZeroMoney(newMOB, null);
         newMOB.setMoneyVariation(0);
         if (victim.getVictim() != newMOB)
             victim.setVictim(newMOB);

@@ -176,7 +176,7 @@ public class Spell_PryingEye extends Spell {
                 newMOB.recoverMaxState();
                 newMOB.resetToMaxState();
                 newMOB.bringToLife(R, true);
-                CMLib.beanCounter().clearZeroMoney(newMOB, null);
+                CMLib.moneyCounter().clearZeroMoney(newMOB, null);
                 newMOB.setMoneyVariation(0);
                 R.showOthers(newMOB, null, CMMsg.MSG_OK_ACTION, L("<S-NAME> appears!"));
                 newMOB.setStartRoom(null); // keep before postFollow for Conquest

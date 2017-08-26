@@ -164,7 +164,7 @@ public class Skill_Befriend extends BardSkill {
             return false;
         }
 
-        if (CMLib.coffeeShops().getShopKeeper(target) != null) {
+        if (CMLib.aetherShops().getShopKeeper(target) != null) {
             mob.tell(L("You cann't befriend a merchant."));
             return false;
         }

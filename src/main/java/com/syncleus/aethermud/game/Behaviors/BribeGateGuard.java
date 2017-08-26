@@ -161,7 +161,7 @@ public class BribeGateGuard extends StdBehavior {
         // make a note in the journal
         double newNum = given.getTotalValue();
         newNum += getBalance(mob);
-        final Coins item = CMLib.beanCounter().makeBestCurrency(CMLib.beanCounter().getCurrency(gateGuard), newNum);
+        final Coins item = CMLib.moneyCounter().makeBestCurrency(CMLib.moneyCounter().getCurrency(gateGuard), newNum);
         delBalance(mob);
         if (item != null)
             writeBalance(item, mob);
@@ -193,7 +193,7 @@ public class BribeGateGuard extends StdBehavior {
                 if (fullName.equals("COINS")) {
                     final Coins item = (Coins) CMClass.getItem("StdCoins");
                     if (item != null) {
-                        CMLib.coffeeMaker().setPropertiesStr(item, V2.msg(), true);
+                        CMLib.aetherMaker().setPropertiesStr(item, V2.msg(), true);
                         item.recoverPhyStats();
                         item.text();
                         balance += item.getTotalValue();
@@ -222,8 +222,8 @@ public class BribeGateGuard extends StdBehavior {
         double newNum = getBalance(mob);
         newNum -= charge;
         if (newNum > 0) {
-            item.setCurrency(CMLib.beanCounter().getCurrency(gateGuard));
-            item.setDenomination(CMLib.beanCounter().getLowestDenomination(CMLib.beanCounter().getCurrency(gateGuard)));
+            item.setCurrency(CMLib.moneyCounter().getCurrency(gateGuard));
+            item.setDenomination(CMLib.moneyCounter().getLowestDenomination(CMLib.moneyCounter().getCurrency(gateGuard)));
             item.setNumberOfCoins(Math.round(newNum / item.getDenomination()));
             delBalance(mob);
             writeBalance(item, mob);
@@ -260,7 +260,7 @@ public class BribeGateGuard extends StdBehavior {
         // write an entry for that mob
         if (surviveReboot) {
             CMLib.database().DBWriteJournal("BRIBEGATE_" + gates(), mob.Name(), CMClass.classID(balance),
-                "COINS", CMLib.coffeeMaker().getPropertiesStr(balance, true));
+                "COINS", CMLib.aetherMaker().getPropertiesStr(balance, true));
         } else {
             Hashtable H = (Hashtable) notTheJournal.get(gates());
             if (H == null) {
@@ -287,14 +287,14 @@ public class BribeGateGuard extends StdBehavior {
             return true;
         }
         final MOB monster = (MOB) oking;
-        final String currency = CMLib.beanCounter().getCurrency(monster);
+        final String currency = CMLib.moneyCounter().getCurrency(monster);
         if (msg.amITarget(monster)
             && (!msg.amISource(monster))
             && (msg.targetMinor() == CMMsg.TYP_GIVE)
             && (msg.tool() instanceof Coins)
             && (!((Coins) msg.tool()).getCurrency().equals(currency))) {
-            final double denomination = CMLib.beanCounter().getLowestDenomination(currency);
-            CMLib.commands().postSay(monster, mob, L("I only accept @x1.", CMLib.beanCounter().getDenominationName(currency, denomination)), false, false);
+            final double denomination = CMLib.moneyCounter().getLowestDenomination(currency);
+            CMLib.commands().postSay(monster, mob, L("I only accept @x1.", CMLib.moneyCounter().getDenominationName(currency, denomination)), false, false);
             return false;
         }
         if (msg.target() == null) {
@@ -329,8 +329,8 @@ public class BribeGateGuard extends StdBehavior {
                             L("<S-NAME> won't let <T-NAME> through there."));
                         if (monster.location().okMessage(monster, msgs)) {
                             monster.location().send(monster, msgs);
-                            final double denomination = CMLib.beanCounter().getLowestDenomination(currency);
-                            final String thePrice = CMLib.beanCounter().getDenominationName(currency, denomination, Math.round(price() / denomination));
+                            final double denomination = CMLib.moneyCounter().getLowestDenomination(currency);
+                            final String thePrice = CMLib.moneyCounter().getDenominationName(currency, denomination, Math.round(price() / denomination));
                             CMLib.commands().postSay(monster, mob, L("I'll let you through here if you pay the fee of @x1.", thePrice), true, false);
                             if (debug) // debugging
                                 CMLib.commands().postSay(monster, mob, L("I'm telling you this from okAffect"), true, false);
@@ -415,10 +415,10 @@ public class BribeGateGuard extends StdBehavior {
             payment((Coins) msg.tool(), observer, msg.source());
             CMLib.commands().postSay(observer, source, L("Thank you very much."), true, false);
             if (getBalance(source) > price()) {
-                final String currency = CMLib.beanCounter().getCurrency(observer);
-                final double denomination = CMLib.beanCounter().getLowestDenomination(currency);
+                final String currency = CMLib.moneyCounter().getCurrency(observer);
+                final double denomination = CMLib.moneyCounter().getLowestDenomination(currency);
                 final long diff = Math.round((getBalance(source) - price()) / denomination);
-                final String difference = CMLib.beanCounter().getDenominationName(currency, denomination, diff);
+                final String difference = CMLib.moneyCounter().getDenominationName(currency, denomination, diff);
                 CMLib.commands().postSay(observer, source, L("I'll hang on to the additional @x1 for you", difference), true, false);
                 paidPlayers.addElement(source);
                 toldAlready.put(source.Name(), Boolean.FALSE);
@@ -476,9 +476,9 @@ public class BribeGateGuard extends StdBehavior {
                     if ((paidPlayers.contains(M)) && (toldAlready.containsKey(M.Name()))) {
                         final Boolean B = toldAlready.get(M.Name());
                         if (!B.booleanValue()) {
-                            final String currency = CMLib.beanCounter().getCurrency(mob);
-                            final double denomination = CMLib.beanCounter().getLowestDenomination(currency);
-                            final String balanceStr = CMLib.beanCounter().getDenominationName(currency, denomination, Math.round(getBalance(M) / denomination));
+                            final String currency = CMLib.moneyCounter().getCurrency(mob);
+                            final double denomination = CMLib.moneyCounter().getLowestDenomination(currency);
+                            final String balanceStr = CMLib.moneyCounter().getDenominationName(currency, denomination, Math.round(getBalance(M) / denomination));
                             CMLib.commands().postSay(mob, M, L("We still have record that you gave us @x1 before if you're heading through", balanceStr), true, false);
                         }
                         toldAlready.put(M.Name(), Boolean.TRUE);
@@ -487,9 +487,9 @@ public class BribeGateGuard extends StdBehavior {
                     } else {
                         if (toldAlready.containsKey(M.Name()))
                             continue;
-                        final String currency = CMLib.beanCounter().getCurrency(mob);
-                        final double denomination = CMLib.beanCounter().getLowestDenomination(currency);
-                        final String priceStr = CMLib.beanCounter().getDenominationName(currency, denomination, Math.round(price() / denomination));
+                        final String currency = CMLib.moneyCounter().getCurrency(mob);
+                        final double denomination = CMLib.moneyCounter().getLowestDenomination(currency);
+                        final String priceStr = CMLib.moneyCounter().getDenominationName(currency, denomination, Math.round(price() / denomination));
                         CMLib.commands().postSay(mob, M, L("I'll let you through here if you pay the fee of @x1.", priceStr), true, false);
                         toldAlready.put(M.Name(), Boolean.TRUE);
                         if (debug)    // debugging

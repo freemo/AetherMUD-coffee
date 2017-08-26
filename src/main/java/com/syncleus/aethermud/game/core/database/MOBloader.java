@@ -178,7 +178,7 @@ public class MOBloader {
                 R.close();
                 if (pstats.getSavedPose().length() > 0)
                     mob.setDisplayText(pstats.getSavedPose());
-                CMLib.coffeeMaker().setFactionFromXML(mob, CleanXML);
+                CMLib.aetherMaker().setFactionFromXML(mob, CleanXML);
                 if ((CMProps.isUsingAccountSystem()) && (pstats.getAccount() == null)) {
                     // yes, this can happen when you wiggle in and out of the account system.
                     for (final Enumeration<PlayerAccount> a = CMLib.players().accounts(); a.hasMoreElements(); ) {
@@ -346,7 +346,7 @@ public class MOBloader {
 
                             final String xml = DBConnections.getRes(R, "CMABTX");
                             if (xml.length() > 0)
-                                CMLib.coffeeMaker().setGenScripts(mob, CMLib.xml().parseAllXML(xml), true);
+                                CMLib.aetherMaker().setGenScripts(mob, CMLib.xml().parseAllXML(xml), true);
                         }
                     } else {
                         final Behavior newBehavior = CMClass.getBehavior(abilityID);
@@ -843,7 +843,7 @@ public class MOBloader {
             strOtherRoomID = strStartRoomID;
 
         final String playerStatsXML = getPlayerStatsXML(mob);
-        final String factionDataXML = CMLib.coffeeMaker().getFactionXML(mob).toString();
+        final String factionDataXML = CMLib.aetherMaker().getFactionXML(mob).toString();
         DB.updateWithClobs(
             "UPDATE CMCHAR SET  CMPASS='" + pstats.getPasswordStr() + "'"
                 + ", CMCHID='" + mob.ID() + "'"
@@ -1228,7 +1228,7 @@ public class MOBloader {
                 statements.add(new DBPreparedBatchEntry(sql, B.getParms()));
             }
         }
-        final String scriptStuff = CMLib.coffeeMaker().getGenScripts(mob, true);
+        final String scriptStuff = CMLib.aetherMaker().getGenScripts(mob, true);
         if (scriptStuff.length() > 0) {
             final String sql = "INSERT INTO CMCHAB (CMUSERID, CMABID, CMABPF,CMABTX"
                 + ") values ('" + mob.Name() + "','ScriptingEngine'," + (Integer.MIN_VALUE + 1) + ",?"

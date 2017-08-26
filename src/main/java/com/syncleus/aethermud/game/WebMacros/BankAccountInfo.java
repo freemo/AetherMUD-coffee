@@ -116,7 +116,7 @@ public class BankAccountInfo extends StdWebMacro {
             if (balance <= 0.0)
                 return "";
             if (parms.containsKey("BALANCE"))
-                return CMLib.beanCounter().nameCurrencyLong(playerM, balance);
+                return CMLib.moneyCounter().nameCurrencyLong(playerM, balance);
             if ((parms.containsKey("DEBTAMT"))
                 || (parms.containsKey("DEBTRSN"))
                 || (parms.containsKey("DEBTDUE"))
@@ -143,7 +143,7 @@ public class BankAccountInfo extends StdWebMacro {
                     }
                 }
                 if (parms.containsKey("DEBTAMT"))
-                    return CMLib.beanCounter().nameCurrencyLong(playerM, amt);
+                    return CMLib.moneyCounter().nameCurrencyLong(playerM, amt);
                 if (parms.containsKey("DEBTRSN"))
                     return reason;
                 if (parms.containsKey("DEBTDUE"))
@@ -154,7 +154,7 @@ public class BankAccountInfo extends StdWebMacro {
             if (parms.containsKey("NUMITEMS"))
                 return "" + (B.numberDeposited(playerM.Name()) - 1);
             if (parms.containsKey("ITEMSWORTH"))
-                return CMLib.beanCounter().nameCurrencyLong(playerM, B.totalItemsWorth(playerM.Name()));
+                return CMLib.moneyCounter().nameCurrencyLong(playerM, B.totalItemsWorth(playerM.Name()));
             if (parms.containsKey("ITEMSLIST")) {
                 final List<Item> items = acct.items;
                 if (items != null) {

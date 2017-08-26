@@ -211,7 +211,7 @@ public class Nanny extends StdBehavior {
                 long t = System.currentTimeMillis() - D.dropOffTime;
                 t = Math.round(Math.floor(CMath.div(t, CMProps.getMillisPerMudHour())));
                 if (t > 0)
-                    return CMLib.beanCounter().abbreviatedPrice(currency, (t + hourlyRate)) + " for watching " + P.name();
+                    return CMLib.moneyCounter().abbreviatedPrice(currency, (t + hourlyRate)) + " for watching " + P.name();
             }
         }
         return "";
@@ -232,7 +232,7 @@ public class Nanny extends StdBehavior {
                 long t = System.currentTimeMillis() - D.dropOffTime;
                 t = Math.round(Math.ceil(CMath.div(t, CMProps.getMillisPerMudHour())));
                 if (t > 0)
-                    owed.append(CMLib.beanCounter().abbreviatedPrice(currency, (t * hourlyRate)) + " for " + D.baby.name() + ", ");
+                    owed.append(CMLib.moneyCounter().abbreviatedPrice(currency, (t * hourlyRate)) + " for " + D.baby.name() + ", ");
             }
         }
         String s = owed.toString();
@@ -276,12 +276,12 @@ public class Nanny extends StdBehavior {
             }
             if (msg.tool() instanceof Coins) {
                 final Coins C = (Coins) msg.tool();
-                final String myCurrency = CMLib.beanCounter().getCurrency(host);
+                final String myCurrency = CMLib.moneyCounter().getCurrency(host);
                 if (!C.getCurrency().equalsIgnoreCase(myCurrency)) {
                     if (host instanceof MOB)
-                        CMLib.commands().postSay((MOB) host, msg.source(), L("I'm don't accept @x1.  I can only accept @x2.", CMLib.beanCounter().getDenominationName(C.getCurrency(), C.getDenomination()), CMLib.beanCounter().getDenominationName(myCurrency)));
+                        CMLib.commands().postSay((MOB) host, msg.source(), L("I'm don't accept @x1.  I can only accept @x2.", CMLib.moneyCounter().getDenominationName(C.getCurrency(), C.getDenomination()), CMLib.moneyCounter().getDenominationName(myCurrency)));
                     else
-                        msg.source().tell(L("The @x1 doesn't accept @x2.  It only accepts @x3.", place, CMLib.beanCounter().getDenominationName(C.getCurrency(), C.getDenomination()), CMLib.beanCounter().getDenominationName(myCurrency)));
+                        msg.source().tell(L("The @x1 doesn't accept @x2.  It only accepts @x3.", place, CMLib.moneyCounter().getDenominationName(C.getCurrency(), C.getDenomination()), CMLib.moneyCounter().getDenominationName(myCurrency)));
                     return false;
                 }
             }
@@ -293,7 +293,7 @@ public class Nanny extends StdBehavior {
             && (!msg.targetMajor(CMMsg.MASK_INTERMSG))
             && (getDroppedOffObjIfAny((Item) msg.target())) != null) {
             final PhysicalAgent obj = getDroppedOffObjIfAny((Item) msg.target());
-            final String amt = getOwedFor(CMLib.beanCounter().getCurrency(host), obj);
+            final String amt = getOwedFor(CMLib.moneyCounter().getCurrency(host), obj);
             if ((msg.source().location() == CMLib.map().roomLocation(host))
                 && (host instanceof MOB)) {
                 if (amt.length() > 0)
@@ -339,7 +339,7 @@ public class Nanny extends StdBehavior {
                         return false;
                     }
                 } else {
-                    final String amt = getOwedFor(CMLib.beanCounter().getCurrency(host), obj);
+                    final String amt = getOwedFor(CMLib.moneyCounter().getCurrency(host), obj);
                     if ((msg.source().location() == CMLib.map().roomLocation(host))
                         && (host instanceof MOB)) {
                         if (amt.length() > 0)
@@ -487,7 +487,7 @@ public class Nanny extends StdBehavior {
 
         if ((msg.targetMinor() == CMMsg.TYP_ENTER)
             && (msg.target() == CMLib.map().roomLocation(host))) {
-            final String currency = CMLib.beanCounter().getCurrency(host);
+            final String currency = CMLib.moneyCounter().getCurrency(host);
             final Set H = msg.source().getGroupMembers(new HashSet<MOB>());
             msg.source().getRideBuddies(H);
             if (!H.contains(msg.source()))
@@ -522,7 +522,7 @@ public class Nanny extends StdBehavior {
             if (list.length() > 0)
                 sayLaters.addElement(msg.source(), "Welcome to my " + place + ", " + msg.source().name() + "! You are welcome to leave " +
                     list.toString() + " here under my care and protection.  Be aware that I charge "
-                    + CMLib.beanCounter().abbreviatedPrice(currency, hourlyRate) + " per hour, each.  " +
+                    + CMLib.moneyCounter().abbreviatedPrice(currency, hourlyRate) + " per hour, each.  " +
                     "No payment is due until you return to fetch your " + getPronoun(myAssocs) + ".");
 
             final double owed = getAllOwedBy(msg.source());
@@ -532,7 +532,7 @@ public class Nanny extends StdBehavior {
                 final String pronoun = getPronoun(myStuff);
                 sayLaters.addElement(msg.source(), "Welcome back, " + msg.source().name() + "! If are here for your " + pronoun
                     + ", the total bill is: " + getAllOwedBy(currency, msg.source())
-                    + " (" + CMLib.beanCounter().abbreviatedPrice(currency, owed - paid) + "). "
+                    + " (" + CMLib.moneyCounter().abbreviatedPrice(currency, owed - paid) + "). "
                     + "You can just give me the money to settle the bill.");
             }
         } else if ((msg.target() == host)
@@ -541,10 +541,10 @@ public class Nanny extends StdBehavior {
             addPayment(msg.source(), ((Coins) msg.tool()).getTotalValue());
             final double owed = getAllOwedBy(msg.source());
             final double paid = getPaidBy(msg.source());
-            final String currency = CMLib.beanCounter().getCurrency(host);
+            final String currency = CMLib.moneyCounter().getCurrency(host);
             if ((paid > owed) && (host instanceof MOB)) {
                 final double change = paid - owed;
-                final Coins C = CMLib.beanCounter().makeBestCurrency(currency, change);
+                final Coins C = CMLib.moneyCounter().makeBestCurrency(currency, change);
                 final MOB source = msg.source();
                 if ((change > 0.0) && (C != null)) {
                     // this message will actually end up triggering the hand-over.
@@ -582,7 +582,7 @@ public class Nanny extends StdBehavior {
                 clearTheSlate(msg.source());
                 sayLaters.addElement(msg.source(), "Thanks, come again!");
             } else
-                sayLaters.addElement(msg.source(), "Thanks, but you still owe " + CMLib.beanCounter().abbreviatedPrice(currency, owed - paid) + ".");
+                sayLaters.addElement(msg.source(), "Thanks, but you still owe " + CMLib.moneyCounter().abbreviatedPrice(currency, owed - paid) + ".");
         } else if ((msg.source() == host)
             && (msg.targetMinor() == CMMsg.TYP_SPEAK)
             && (msg.target() instanceof MOB)
@@ -590,7 +590,7 @@ public class Nanny extends StdBehavior {
             && (((Coins) msg.tool()).amDestroyed())
             && (!msg.source().isMine(msg.tool()))
             && (!((MOB) msg.target()).isMine(msg.tool())))
-            CMLib.beanCounter().giveSomeoneMoney(msg.source(), (MOB) msg.target(), ((Coins) msg.tool()).getTotalValue());
+            CMLib.moneyCounter().giveSomeoneMoney(msg.source(), (MOB) msg.target(), ((Coins) msg.tool()).getTotalValue());
     }
 
     public int getNameCount(Vector<String> V, String name) {

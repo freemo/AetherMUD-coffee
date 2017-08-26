@@ -2229,9 +2229,9 @@ public class Test extends StdCommand {
             if ((what.equalsIgnoreCase("all"))
                 || (what.equalsIgnoreCase("escapefilterbug"))) {
                 String str = L("@x1@x2^<CHANNEL \"TEST\"^>You TEST 'message'^</CHANNEL^>^N^.", Color.GREY.getANSICode(), Color.BGGREEN.getANSICode());
-                str = CMLib.coffeeFilter().fullOutFilter(mob.session(), mob, mob, null, null, str, false);
-                str = CMLib.coffeeFilter().fullOutFilter(mob.session(), mob, mob, null, null, str, false);
-                str = CMLib.coffeeFilter().fullOutFilter(mob.session(), mob, mob, null, null, str, false);
+                str = CMLib.aetherFilter().fullOutFilter(mob.session(), mob, mob, null, null, str, false);
+                str = CMLib.aetherFilter().fullOutFilter(mob.session(), mob, mob, null, null, str, false);
+                str = CMLib.aetherFilter().fullOutFilter(mob.session(), mob, mob, null, null, str, false);
                 mob.tell(str);
             }
             if ((what.equalsIgnoreCase("all"))

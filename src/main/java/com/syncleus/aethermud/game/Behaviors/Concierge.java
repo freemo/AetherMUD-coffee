@@ -346,7 +346,7 @@ public class Concierge extends StdBehavior {
             if (destIndex < 0) {
                 CMLib.commands().postSay(conceirgeM, source, L("What's this for?  Please tell me where you'd like to go first."), true, false);
                 return false;
-            } else if (!((Coins) possibleCoins).getCurrency().equalsIgnoreCase(CMLib.beanCounter().getCurrency(conceirgeM))) {
+            } else if (!((Coins) possibleCoins).getCurrency().equalsIgnoreCase(CMLib.moneyCounter().getCurrency(conceirgeM))) {
                 CMLib.commands().postSay(conceirgeM, source, L("I'm sorry, I don't accept that kind of currency."), true, false);
                 return false;
             }
@@ -417,11 +417,11 @@ public class Concierge extends StdBehavior {
                 final Double owed = Double.valueOf(destT.third.doubleValue() - ((Coins) possibleCoins).getTotalValue());
                 if (owed.doubleValue() > 0.0) {
                     destT.third = owed;
-                    CMLib.commands().postSay(conciergeM, source, L("Ok, you still owe @x1.", CMLib.beanCounter().nameCurrencyLong(conciergeM, owed.doubleValue())), true, false);
+                    CMLib.commands().postSay(conciergeM, source, L("Ok, you still owe @x1.", CMLib.moneyCounter().nameCurrencyLong(conciergeM, owed.doubleValue())), true, false);
                     return;
                 } else if (owed.doubleValue() < 0.0) {
                     final double change = -owed.doubleValue();
-                    final Coins C = CMLib.beanCounter().makeBestCurrency(conciergeM, change);
+                    final Coins C = CMLib.moneyCounter().makeBestCurrency(conciergeM, change);
                     if ((change > 0.0) && (C != null)) {
                         // this message will actually end up triggering the hand-over.
                         final CMMsg newMsg = CMClass.getMsg(conciergeM, source, C, CMMsg.MSG_SPEAK, L("^T<S-NAME> say(s) 'Heres your change.' to <T-NAMESELF>.^?"));
@@ -516,7 +516,7 @@ public class Concierge extends StdBehavior {
                         && (((Coins) msg.tool()).amDestroyed())
                         && (!msg.source().isMine(msg.tool()))
                         && (!((MOB) msg.target()).isMine(msg.tool())))
-                        CMLib.beanCounter().giveSomeoneMoney(msg.source(), (MOB) msg.target(), ((Coins) msg.tool()).getTotalValue());
+                        CMLib.moneyCounter().giveSomeoneMoney(msg.source(), (MOB) msg.target(), ((Coins) msg.tool()).getTotalValue());
                     else if ((!msg.source().isMonster())
                         && ((msg.target() == observer) || (source.location().numPCInhabitants() == 1) || (!(observer instanceof MOB)))
                         && ((!(observer instanceof Rideable)) || (msg.source().riding() == observer))
@@ -564,7 +564,7 @@ public class Concierge extends StdBehavior {
                                 giveMerchandise(msg.source(), roomR, observer, room, trackingFlags);
                             else {
                                 destinations.addElement(msg.source(), roomR, owed, trackingFlags);
-                                final String moneyName = CMLib.beanCounter().nameCurrencyLong(getTalker(observer, room), rate);
+                                final String moneyName = CMLib.moneyCounter().nameCurrencyLong(getTalker(observer, room), rate);
                                 thingsToSay.addElement(msg.source(), this.getGiveMoneyMessage(observer, roomR, moneyName));
                             }
                         }

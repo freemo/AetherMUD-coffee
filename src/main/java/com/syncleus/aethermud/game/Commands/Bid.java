@@ -51,7 +51,7 @@ public class Bid extends StdCommand {
             CMLib.commands().doCommandFail(mob, origCmds, L("Bid how much on what?"));
             return false;
         }
-        if (!(CMLib.coffeeShops().getShopKeeper(shopkeeper) instanceof Auctioneer)) {
+        if (!(CMLib.aetherShops().getShopKeeper(shopkeeper) instanceof Auctioneer)) {
             CMLib.commands().doCommandFail(mob, origCmds, L("@x1 is not an auctioneer!", shopkeeper.name()));
             return false;
         }
@@ -62,7 +62,7 @@ public class Bid extends StdCommand {
             return false;
         }
         final Triad<String, Double, Long> bidThang = CMLib.english().parseMoneyStringSDL(mob, bidStr, null);
-        bidStr = CMLib.beanCounter().nameCurrencyShort(bidThang.first, CMath.mul(bidThang.second.doubleValue(), bidThang.third.longValue()));
+        bidStr = CMLib.moneyCounter().nameCurrencyShort(bidThang.first, CMath.mul(bidThang.second.doubleValue(), bidThang.third.longValue()));
         commands.remove(0);
 
         int maxToDo = Integer.MAX_VALUE;
@@ -87,13 +87,13 @@ public class Bid extends StdCommand {
         boolean doBugFix = true;
         while (doBugFix || ((allFlag) && (addendum <= maxToDo))) {
             doBugFix = false;
-            final ShopKeeper SK = CMLib.coffeeShops().getShopKeeper(shopkeeper);
+            final ShopKeeper SK = CMLib.aetherShops().getShopKeeper(shopkeeper);
             final Environmental itemToDo = SK.getShop().getStock(whatName, mob);
             if (itemToDo == null)
                 break;
             if (CMLib.flags().canBeSeenBy(itemToDo, mob))
                 V.add(itemToDo);
-            if (addendum >= CMLib.coffeeShops().getShopKeeper(shopkeeper).getShop().numberInStock(itemToDo))
+            if (addendum >= CMLib.aetherShops().getShopKeeper(shopkeeper).getShop().numberInStock(itemToDo))
                 break;
             ++addendum;
         }

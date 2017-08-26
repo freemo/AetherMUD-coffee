@@ -105,7 +105,7 @@ public class Prayer_DailyBread extends Prayer {
         if ((Bread != null) && (BreadContainer != null))
             CMLib.commands().postGet(target, BreadContainer, Bread, false);
         if (Bread == null) {
-            final ShopKeeper SK = CMLib.coffeeShops().getShopKeeper(target);
+            final ShopKeeper SK = CMLib.aetherShops().getShopKeeper(target);
             if (SK != null) {
                 for (final Iterator<Environmental> i = SK.getShop().getStoreInventory(); i.hasNext(); ) {
                     final Environmental E2 = i.next();

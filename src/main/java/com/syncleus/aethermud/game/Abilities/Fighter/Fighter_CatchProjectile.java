@@ -113,7 +113,7 @@ public class Fighter_CatchProjectile extends FighterSkill {
                     return true;
                 if (ammo.endsWith("s"))
                     ammo = ammo.substring(0, ammo.length() - 1);
-                final Item neww = CMLib.coffeeMaker().makeAmmunition(ammo, 1);
+                final Item neww = CMLib.aetherMaker().makeAmmunition(ammo, 1);
                 neww.setMaterial(w.material());
                 w = neww;
                 mob.location().addItem(neww, ItemPossessor.Expire.Player_Drop);

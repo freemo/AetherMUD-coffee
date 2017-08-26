@@ -66,12 +66,12 @@ public class GoodyBag extends BagOfEndlessness implements ArchonOnly {
         if ((!alreadyFilled) && (owner() != null)) {
             alreadyFilled = true;
             if (!hasContent()) {
-                final List<String> V = CMLib.beanCounter().getAllCurrencies();
+                final List<String> V = CMLib.moneyCounter().getAllCurrencies();
                 for (int v = 0; v < V.size(); v++) {
                     final String currency = V.get(v);
-                    final MoneyLibrary.MoneyDenomination[] DV = CMLib.beanCounter().getCurrencySet(currency);
+                    final MoneyLibrary.MoneyDenomination[] DV = CMLib.moneyCounter().getCurrencySet(currency);
                     for (final MoneyDenomination element : DV) {
-                        final Coins C = CMLib.beanCounter().makeBestCurrency(currency, element.value(), owner(), this);
+                        final Coins C = CMLib.moneyCounter().makeBestCurrency(currency, element.value(), owner(), this);
                         if (C != null)
                             C.setNumberOfCoins(100);
                     }

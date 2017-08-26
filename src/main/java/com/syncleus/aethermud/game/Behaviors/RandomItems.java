@@ -212,7 +212,7 @@ public class RandomItems extends ActiveTicker {
             if (items != null)
                 return items;
             items = new Vector<Item>();
-            final String error = CMLib.coffeeMaker().addItemsFromXML(filename, items, null);
+            final String error = CMLib.aetherMaker().addItemsFromXML(filename, items, null);
             if (error.length() > 0) {
                 if (alreadyTriedLoad)
                     return null;
@@ -247,7 +247,7 @@ public class RandomItems extends ActiveTicker {
                     return null;
                 }
                 items = new Vector<Item>();
-                final String error = CMLib.coffeeMaker().addItemsFromXML(buf.toString(), items, null);
+                final String error = CMLib.aetherMaker().addItemsFromXML(buf.toString(), items, null);
                 if (error.length() > 0) {
                     Log.errOut("RandomItems: Error on import of: '" + filename + "' for '" + thangName + "' (" + thangID + "): " + error + ".");
                     return null;
@@ -272,7 +272,7 @@ public class RandomItems extends ActiveTicker {
             return true;
         Item I = null;
         final Environmental E = (Environmental) ticking;
-        final ShopKeeper SK = CMLib.coffeeShops().getShopKeeper(E);
+        final ShopKeeper SK = CMLib.aetherShops().getShopKeeper(E);
         for (int i = maintained.size() - 1; i >= 0; i--) {
             try {
                 I = maintained.elementAt(i);

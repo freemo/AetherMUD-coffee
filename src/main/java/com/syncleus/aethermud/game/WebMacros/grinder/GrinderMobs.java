@@ -417,7 +417,7 @@ public class GrinderMobs {
                             }
                             break;
                         case MONEY: // money
-                            CMLib.beanCounter().setMoney(M, CMath.s_int(old));
+                            CMLib.moneyCounter().setMoney(M, CMath.s_int(old));
                             break;
                         case ISRIDEABLE: // is rideable
                             break;

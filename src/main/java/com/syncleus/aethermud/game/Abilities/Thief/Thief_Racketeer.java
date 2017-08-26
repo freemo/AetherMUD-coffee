@@ -121,7 +121,7 @@ public class Thief_Racketeer extends ThiefSkill {
                 return Ability.QUALITY_INDIFFERENT;
             if (target instanceof PhysicalAgent) {
                 final PhysicalAgent AE = (PhysicalAgent) target;
-                if ((CMLib.coffeeShops().getShopKeeper(target) == null) && (AE.fetchBehavior("MoneyChanger") == null)
+                if ((CMLib.aetherShops().getShopKeeper(target) == null) && (AE.fetchBehavior("MoneyChanger") == null)
                     && (AE.fetchBehavior("ItemMender") == null) && (AE.fetchBehavior("ItemIdentifier") == null)
                     && (AE.fetchBehavior("ItemRefitter") == null))
                     return Ability.QUALITY_INDIFFERENT;
@@ -153,7 +153,7 @@ public class Thief_Racketeer extends ThiefSkill {
             mob.tell(L("You are too busy to racketeer right now."));
             return false;
         }
-        if ((CMLib.coffeeShops().getShopKeeper(target) == null)
+        if ((CMLib.aetherShops().getShopKeeper(target) == null)
             && (target.fetchBehavior("MoneyChanger") == null)
             && (target.fetchBehavior("ItemMender") == null)
             && (target.fetchBehavior("ItemIdentifier") == null)
@@ -182,14 +182,14 @@ public class Thief_Racketeer extends ThiefSkill {
         final boolean success = proficiencyCheck(mob, -(levelDiff), auto);
         final Room R = mob.location();
         if ((success) && (R != null)) {
-            final CMMsg msg = CMClass.getMsg(mob, target, this, (auto ? CMMsg.MASK_ALWAYS : 0) | CMMsg.MSG_THIEF_ACT, L("<S-NAME> extract(s) @x1 of protection money from <T-NAME>.", CMLib.beanCounter().nameCurrencyShort(target, amount)));
+            final CMMsg msg = CMClass.getMsg(mob, target, this, (auto ? CMMsg.MASK_ALWAYS : 0) | CMMsg.MSG_THIEF_ACT, L("<S-NAME> extract(s) @x1 of protection money from <T-NAME>.", CMLib.moneyCounter().nameCurrencyShort(target, amount)));
             if (R.okMessage(mob, msg)) {
                 R.send(mob, msg);
                 final TimeClock timeObj = R.getArea().getTimeObj();
                 final int hoursInMonth = timeObj.getHoursInDay() * timeObj.getDaysInMonth();
                 final int tickDown = (int) (((CMProps.getMillisPerMudHour()) * hoursInMonth) / (CMProps.getTickMillis()));
                 beneficialAffect(mob, target, asLevel, tickDown);
-                final Coins C = CMLib.beanCounter().makeBestCurrency(target, amount);
+                final Coins C = CMLib.moneyCounter().makeBestCurrency(target, amount);
                 if (C != null) {
                     R.addItem(C, ItemPossessor.Expire.Player_Drop);
                     CMLib.commands().postGet(mob, null, C, true);

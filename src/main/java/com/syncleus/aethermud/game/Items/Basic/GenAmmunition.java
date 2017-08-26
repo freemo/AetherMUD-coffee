@@ -54,7 +54,7 @@ public class GenAmmunition extends StdItem implements Ammunition {
 
     @Override
     public String text() {
-        return CMLib.coffeeMaker().getPropertiesStr(this, false);
+        return CMLib.aetherMaker().getPropertiesStr(this, false);
     }
 
     @Override
@@ -92,7 +92,7 @@ public class GenAmmunition extends StdItem implements Ammunition {
     @Override
     public void setMiscText(String newText) {
         miscText = "";
-        CMLib.coffeeMaker().setPropertiesStr(this, newText, false);
+        CMLib.aetherMaker().setPropertiesStr(this, newText, false);
         recoverPhyStats();
     }
 

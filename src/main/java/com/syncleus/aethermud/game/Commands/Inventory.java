@@ -41,7 +41,7 @@ public class Inventory extends StdCommand {
         final InventoryList lst = new InventoryList();
         Vector<Coins> coinsV = null;
         int insertAt = -1;
-        CMLib.beanCounter().getTotalAbsoluteNativeValue(mob);
+        CMLib.moneyCounter().getTotalAbsoluteNativeValue(mob);
         for (final Enumeration<Item> i = mob.items(); i.hasMoreElements(); ) {
             final Item thisItem = i.nextElement();
             if (thisItem == null)
@@ -98,7 +98,7 @@ public class Inventory extends StdCommand {
                         msg.append(I.name());
                     }
                 }
-                msg.append(" ^N(" + CMLib.beanCounter().abbreviatedPrice(key, totalValue) + ")");
+                msg.append(" ^N(" + CMLib.moneyCounter().abbreviatedPrice(key, totalValue) + ")");
                 if (e.hasMoreElements())
                     msg.append("\n\r");
             }

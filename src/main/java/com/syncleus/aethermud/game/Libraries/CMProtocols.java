@@ -904,7 +904,7 @@ public class CMProtocols extends StdLibrary implements ProtocolLibrary {
                 break;
             case MONEY:
                 if (M != null)
-                    return Double.valueOf(CMLib.beanCounter().getTotalAbsoluteNativeValue(M));
+                    return Double.valueOf(CMLib.moneyCounter().getTotalAbsoluteNativeValue(M));
                 break;
             case MOVEMENT:
                 if (M != null)
@@ -1041,7 +1041,7 @@ public class CMProtocols extends StdLibrary implements ProtocolLibrary {
                 break;
             case MONEY:
                 if (M != null)
-                    buf.write(Double.toString(CMLib.beanCounter().getTotalAbsoluteNativeValue(M)).getBytes(Session.MSDP_CHARSET));
+                    buf.write(Double.toString(CMLib.moneyCounter().getTotalAbsoluteNativeValue(M)).getBytes(Session.MSDP_CHARSET));
                 break;
             case MOVEMENT:
                 if (M != null)
@@ -1805,7 +1805,7 @@ public class CMProtocols extends StdLibrary implements ProtocolLibrary {
                     case char_worth:
                         if (mob != null) {
                             final StringBuilder doc = new StringBuilder("char.worth {");
-                            doc.append("\"gold\":").append(CMLib.beanCounter().getTotalAbsoluteNativeValue(mob)).append(",");
+                            doc.append("\"gold\":").append(CMLib.moneyCounter().getTotalAbsoluteNativeValue(mob)).append(",");
                             doc.append("\"qp\":").append(mob.getQuestPoint()).append(",");
                             //doc.append("\"tp\":").append(mob.getTrains()).append(",");
                             doc.append("\"trains\":").append(mob.getTrains()).append(",");

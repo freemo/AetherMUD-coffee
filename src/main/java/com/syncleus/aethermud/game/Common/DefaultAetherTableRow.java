@@ -34,7 +34,7 @@ import com.syncleus.aethermud.game.core.interfaces.CMObject;
 import java.util.*;
 
 
-public class DefaultCoffeeTableRow implements CoffeeTableRow {
+public class DefaultAetherTableRow implements AetherTableRow {
     public Map<String, long[]> stats = new SHashtable<String, long[]>();
     public long highestOnline = 0;
     public long numberOnlineTotal = 0;
@@ -44,7 +44,7 @@ public class DefaultCoffeeTableRow implements CoffeeTableRow {
 
     @Override
     public String ID() {
-        return "DefaultCoffeeTableRow";
+        return "DefaultAetherTableRow";
     }
 
     @Override
@@ -231,7 +231,7 @@ public class DefaultCoffeeTableRow implements CoffeeTableRow {
         try {
             return getClass().newInstance();
         } catch (final Exception e) {
-            return new DefaultCoffeeTableRow();
+            return new DefaultAetherTableRow();
         }
     }
 
@@ -242,7 +242,7 @@ public class DefaultCoffeeTableRow implements CoffeeTableRow {
     @Override
     public CMObject copyOf() {
         try {
-            final DefaultCoffeeTableRow CR = (DefaultCoffeeTableRow) this.clone();
+            final DefaultAetherTableRow CR = (DefaultAetherTableRow) this.clone();
             CR.stats = new SHashtable<String, long[]>();
             CR.stats.putAll(stats);
             return CR;

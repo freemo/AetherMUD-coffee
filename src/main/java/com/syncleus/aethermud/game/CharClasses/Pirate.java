@@ -346,7 +346,7 @@ public class Pirate extends Thief {
                     }
                 });
             } else {
-                final String minAmt = CMLib.beanCounter().abbreviatedPrice(((Coins) msg.tool()).getCurrency(), min);
+                final String minAmt = CMLib.moneyCounter().abbreviatedPrice(((Coins) msg.tool()).getCurrency(), min);
                 final String himHer = ((MOB) myHost).charStats().himher();
                 msg.source().tell(L("You'll need to fork over at lease @x1 to make @x2 go away.", minAmt, himHer));
                 return false;

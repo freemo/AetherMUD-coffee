@@ -429,9 +429,9 @@ public class Achievements extends StdLibrary implements AchievementLibrary {
                                     return false;
                                 }
                             });
-                        } else if (CMLib.coffeeMaker().isAnyGenStat(CMClass.samplePlayer(), thing)) {
+                        } else if (CMLib.aetherMaker().isAnyGenStat(CMClass.samplePlayer(), thing)) {
                             final String stat1 = thing.toUpperCase().trim();
-                            String astat = CMLib.coffeeMaker().getFinalStatName(stat1);
+                            String astat = CMLib.aetherMaker().getFinalStatName(stat1);
                             boolean isSave = false;
                             for (int t : CharStats.CODES.SAVING_THROWS())
                                 isSave = isSave || CharStats.CODES.NAME(t).equals(astat.toUpperCase());
@@ -484,9 +484,9 @@ public class Achievements extends StdLibrary implements AchievementLibrary {
                         } else if (thing.toUpperCase().startsWith("ACCOUNT ")
                             && (CMClass.samplePlayer().playerStats() != null)
                             && (CMClass.samplePlayer().playerStats().getAccount() != null)
-                            && CMLib.coffeeMaker().isAnyGenStat(CMClass.samplePlayer(), thing.substring(8))) {
+                            && CMLib.aetherMaker().isAnyGenStat(CMClass.samplePlayer(), thing.substring(8))) {
                             final String stat1 = thing.toUpperCase().trim();
-                            String astat = CMLib.coffeeMaker().getFinalStatName(stat1);
+                            String astat = CMLib.aetherMaker().getFinalStatName(stat1);
                             boolean isSave = false;
                             for (int t : CharStats.CODES.SAVING_THROWS())
                                 isSave = isSave || CharStats.CODES.NAME(t).equals(astat.toUpperCase());
@@ -861,7 +861,7 @@ public class Achievements extends StdLibrary implements AchievementLibrary {
 
                             @Override
                             public int getCount(MOB mob) {
-                                return CMath.s_int(CMLib.coffeeMaker().getAnyGenStat(mob, statName));
+                                return CMath.s_int(CMLib.aetherMaker().getAnyGenStat(mob, statName));
                             }
 
                             @Override
@@ -897,7 +897,7 @@ public class Achievements extends StdLibrary implements AchievementLibrary {
                             return "Error: Missing or invalid ABOVEBELOW parameter: " + aboveBelow + "!";
                         this.abelo = aboveBelow.equals("ABOVE") ? 1 : -1;
                         final String statName = CMParms.getParmStr(parms, "STAT", "").toUpperCase().trim();
-                        if ((statName.length() == 0) || (!CMLib.coffeeMaker().isAnyGenStat(mob, statName)))
+                        if ((statName.length() == 0) || (!CMLib.aetherMaker().isAnyGenStat(mob, statName)))
                             return "Error: Missing or invalid STAT parameter: " + statName + "!";
                         this.statName = statName;
                         return "";
@@ -3121,8 +3121,8 @@ public class Achievements extends StdLibrary implements AchievementLibrary {
                         double denomination = CMLib.english().matchAnyDenomination(currency, aaward.getCurrency());
                         if (denomination != 0.0) {
                             double money = CMath.mul(aaward.getAmount(), denomination);
-                            CMLib.beanCounter().giveSomeoneMoney(mob, money);
-                            awardMessage.append(L("^HYou are awarded @x1!\n\r^?", CMLib.beanCounter().getDenominationName(currency, denomination, aaward.getAmount())));
+                            CMLib.moneyCounter().giveSomeoneMoney(mob, money);
+                            awardMessage.append(L("^HYou are awarded @x1!\n\r^?", CMLib.moneyCounter().getDenominationName(currency, denomination, aaward.getAmount())));
                         }
                     }
                     break;
@@ -3139,10 +3139,10 @@ public class Achievements extends StdLibrary implements AchievementLibrary {
                             mob.playerStats().getAccount().setStat(stat, "" + (CMath.s_int(value) + aaward.getAmount()));
                         }
                     } else {
-                        String value = CMLib.coffeeMaker().getAnyGenStat(mob, aaward.getStat());
+                        String value = CMLib.aetherMaker().getAnyGenStat(mob, aaward.getStat());
                         if (CMath.isNumber(value)) {
                             awardMessage.append(L("^HYou are awarded @x1!\n\r^?", aaward.getAmount() + " " + aaward.getStat()));
-                            CMLib.coffeeMaker().setAnyGenStat(mob, aaward.getStat(), "" + (CMath.s_int(value) + aaward.getAmount()));
+                            CMLib.aetherMaker().setAnyGenStat(mob, aaward.getStat(), "" + (CMath.s_int(value) + aaward.getAmount()));
                         }
                     }
                     break;
@@ -3248,12 +3248,12 @@ public class Achievements extends StdLibrary implements AchievementLibrary {
                             }
                         }
                     } else {
-                        String value = CMLib.coffeeMaker().getAnyGenStat(mob, aaward.getStat());
+                        String value = CMLib.aetherMaker().getAnyGenStat(mob, aaward.getStat());
                         if (CMath.isNumber(value)) {
                             int oldVal = CMath.s_int(value);
                             if (oldVal >= aaward.getAmount()) {
                                 awardMessage.append(L("^HYou have lost @x1!\n\r^?", aaward.getAmount() + " " + aaward.getStat()));
-                                CMLib.coffeeMaker().setAnyGenStat(mob, aaward.getStat(), "" + (CMath.s_int(value) - aaward.getAmount()));
+                                CMLib.aetherMaker().setAnyGenStat(mob, aaward.getStat(), "" + (CMath.s_int(value) - aaward.getAmount()));
                             }
                         }
                     }

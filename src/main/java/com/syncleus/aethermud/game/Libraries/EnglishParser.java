@@ -1113,7 +1113,7 @@ public class EnglishParser extends StdLibrary implements EnglishParsing {
         }
         commands.remove(0);
 
-        final List<Environmental> V = CMLib.coffeeShops().getAllShopkeepers(mob.location(), mob);
+        final List<Environmental> V = CMLib.aetherShops().getAllShopkeepers(mob.location(), mob);
         if (V.isEmpty()) {
             if (error.length() > 0)
                 mob.tell(error);
@@ -1136,7 +1136,7 @@ public class EnglishParser extends StdLibrary implements EnglishParsing {
                     }
                 }
             }
-            if ((shopkeeper != null) && (CMLib.coffeeShops().getShopKeeper(shopkeeper) != null) && (CMLib.flags().canBeSeenBy(shopkeeper, mob)))
+            if ((shopkeeper != null) && (CMLib.aetherShops().getShopKeeper(shopkeeper) != null) && (CMLib.flags().canBeSeenBy(shopkeeper, mob)))
                 commands.remove(commands.size() - 1);
             else {
                 CMLib.commands().doCommandFail(mob, new XVector(commands), L("You don't see anyone called '@x1' here buying or selling.", commands.get(commands.size() - 1)));
@@ -1147,7 +1147,7 @@ public class EnglishParser extends StdLibrary implements EnglishParsing {
         Environmental shopkeeper = V.get(0);
         if (commands.size() > 1) {
             final MOB M = mob.location().fetchInhabitant(commands.get(commands.size() - 1));
-            if ((M != null) && (CMLib.coffeeShops().getShopKeeper(M) != null) && (CMLib.flags().canBeSeenBy(M, mob))) {
+            if ((M != null) && (CMLib.aetherShops().getShopKeeper(M) != null) && (CMLib.flags().canBeSeenBy(M, mob))) {
                 shopkeeper = M;
                 commands.remove(commands.size() - 1);
             }
@@ -1275,12 +1275,12 @@ public class EnglishParser extends StdLibrary implements EnglishParsing {
         if (CMath.isInteger(itemID)) {
             final long num = CMath.s_long(itemID);
             if (mine instanceof MOB) {
-                List<Coins> V = CMLib.beanCounter().getStandardCurrency((MOB) mine, CMLib.beanCounter().getCurrency(mine));
+                List<Coins> V = CMLib.moneyCounter().getStandardCurrency((MOB) mine, CMLib.moneyCounter().getCurrency(mine));
                 for (int v = 0; v < V.size(); v++) {
                     if (V.get(v).getNumberOfCoins() >= num)
                         return num;
                 }
-                V = CMLib.beanCounter().getStandardCurrency((MOB) mine, null);
+                V = CMLib.moneyCounter().getStandardCurrency((MOB) mine, null);
                 for (int v = 0; v < V.size(); v++) {
                     if (V.get(v).getNumberOfCoins() >= num)
                         return num;
@@ -1297,7 +1297,7 @@ public class EnglishParser extends StdLibrary implements EnglishParsing {
             final String currency = matchAnyCurrencySet(CMParms.combine(V, 1));
             if (currency != null) {
                 if (mine instanceof MOB) {
-                    final List<Coins> V2 = CMLib.beanCounter().getStandardCurrency((MOB) mine, currency);
+                    final List<Coins> V2 = CMLib.moneyCounter().getStandardCurrency((MOB) mine, currency);
                     final double denomination = matchAnyDenomination(currency, CMParms.combine(V, 1));
                     Coins C = null;
                     for (int v2 = 0; v2 < V2.size(); v2++) {
@@ -1320,18 +1320,18 @@ public class EnglishParser extends StdLibrary implements EnglishParsing {
         if (CMath.isInteger(itemID)) {
             final long num = CMath.s_long(itemID);
             if (mine instanceof MOB) {
-                List<Coins> V = CMLib.beanCounter().getStandardCurrency((MOB) mine, CMLib.beanCounter().getCurrency(mine));
+                List<Coins> V = CMLib.moneyCounter().getStandardCurrency((MOB) mine, CMLib.moneyCounter().getCurrency(mine));
                 for (int v = 0; v < V.size(); v++) {
                     if (V.get(v).getNumberOfCoins() >= num)
                         return V.get(v).getCurrency();
                 }
-                V = CMLib.beanCounter().getStandardCurrency((MOB) mine, null);
+                V = CMLib.moneyCounter().getStandardCurrency((MOB) mine, null);
                 for (int v = 0; v < V.size(); v++) {
                     if (V.get(v).getNumberOfCoins() >= num)
                         return V.get(v).getCurrency();
                 }
             }
-            return CMLib.beanCounter().getCurrency(mine);
+            return CMLib.moneyCounter().getCurrency(mine);
         }
         final Vector<String> V = CMParms.parse(itemID);
         if ((V.size() > 1) && (CMath.isInteger(V.firstElement())))
@@ -1340,7 +1340,7 @@ public class EnglishParser extends StdLibrary implements EnglishParsing {
             return matchAnyCurrencySet(CMParms.combine(V, 1));
         else if (!V.isEmpty())
             return matchAnyCurrencySet(CMParms.combine(V, 0));
-        return CMLib.beanCounter().getCurrency(mine);
+        return CMLib.moneyCounter().getCurrency(mine);
     }
 
     @Override
@@ -1369,13 +1369,13 @@ public class EnglishParser extends StdLibrary implements EnglishParsing {
         if (CMath.isInteger(itemID)) {
             final long num = CMath.s_long(itemID);
             if (mine instanceof MOB) {
-                final List<Coins> V = CMLib.beanCounter().getStandardCurrency((MOB) mine, currency);
+                final List<Coins> V = CMLib.moneyCounter().getStandardCurrency((MOB) mine, currency);
                 for (int v = 0; v < V.size(); v++) {
                     if (V.get(v).getNumberOfCoins() >= num)
                         return V.get(v).getDenomination();
                 }
             }
-            return CMLib.beanCounter().getLowestDenomination(currency);
+            return CMLib.moneyCounter().getLowestDenomination(currency);
         }
         final Vector<String> V = CMParms.parse(itemID);
         if ((V.size() > 1) && (CMath.isInteger(V.firstElement())))
@@ -1389,10 +1389,10 @@ public class EnglishParser extends StdLibrary implements EnglishParsing {
 
     @Override
     public String matchAnyCurrencySet(String itemID) {
-        final List<String> V = CMLib.beanCounter().getAllCurrencies();
+        final List<String> V = CMLib.moneyCounter().getAllCurrencies();
         List<String> V2 = null;
         for (int v = 0; v < V.size(); v++) {
-            V2 = CMLib.beanCounter().getDenominationNameSet(V.get(v));
+            V2 = CMLib.moneyCounter().getDenominationNameSet(V.get(v));
             for (int v2 = 0; v2 < V2.size(); v2++) {
                 String s = V2.get(v2);
                 if (s.toLowerCase().endsWith("(s)"))
@@ -1406,7 +1406,7 @@ public class EnglishParser extends StdLibrary implements EnglishParsing {
 
     @Override
     public double matchAnyDenomination(String currency, String itemID) {
-        final MoneyLibrary.MoneyDenomination[] DV = CMLib.beanCounter().getCurrencySet(currency);
+        final MoneyLibrary.MoneyDenomination[] DV = CMLib.moneyCounter().getCurrencySet(currency);
         itemID = itemID.toUpperCase();
         String s = null;
         if (DV != null) {
@@ -1471,13 +1471,13 @@ public class EnglishParser extends StdLibrary implements EnglishParsing {
             itemID = itemID.substring(10);
         long gold = 0;
         double denomination = 0.0;
-        String currency = CMLib.beanCounter().getCurrency(mob);
+        String currency = CMLib.moneyCounter().getCurrency(mob);
         if (CMath.isInteger(itemID)) {
             gold = CMath.s_long(itemID);
-            //final double totalAmount=CMLib.beanCounter().getTotalAbsoluteValue(mob,currency);
-            double bestDenomination = CMLib.beanCounter().getBestDenomination(currency, (int) gold, gold);
+            //final double totalAmount=CMLib.moneyCounter().getTotalAbsoluteValue(mob,currency);
+            double bestDenomination = CMLib.moneyCounter().getBestDenomination(currency, (int) gold, gold);
             if (bestDenomination == 0.0) {
-                bestDenomination = CMLib.beanCounter().getBestDenomination(null, (int) gold, gold);
+                bestDenomination = CMLib.moneyCounter().getBestDenomination(null, (int) gold, gold);
                 if (bestDenomination > 0.0)
                     currency = null;
             }
@@ -1503,13 +1503,13 @@ public class EnglishParser extends StdLibrary implements EnglishParsing {
                 return null;
         }
         if (gold > 0) {
-            final double amt = CMLib.beanCounter().getTotalAbsoluteValue(mob, currency);
+            final double amt = CMLib.moneyCounter().getTotalAbsoluteValue(mob, currency);
             if (amt >= CMath.mul(denomination, gold)) {
                 final double expectedAmt = amt - CMath.mul(denomination, gold);
-                CMLib.beanCounter().subtractMoney(mob, currency, denomination, CMath.mul(denomination, gold));
-                final double newAmt = CMLib.beanCounter().getTotalAbsoluteValue(mob, currency);
+                CMLib.moneyCounter().subtractMoney(mob, currency, denomination, CMath.mul(denomination, gold));
+                final double newAmt = CMLib.moneyCounter().getTotalAbsoluteValue(mob, currency);
                 if (newAmt > expectedAmt)
-                    CMLib.beanCounter().subtractMoney(mob, currency, (newAmt - expectedAmt));
+                    CMLib.moneyCounter().subtractMoney(mob, currency, (newAmt - expectedAmt));
                 final Coins C = (Coins) CMClass.getItem("StdCoins");
                 C.setCurrency(currency);
                 C.setDenomination(denomination);
@@ -1518,8 +1518,8 @@ public class EnglishParser extends StdLibrary implements EnglishParsing {
                 mob.addItem(C);
                 return C;
             }
-            mob.tell(L("You don't have that much @x1.", CMLib.beanCounter().getDenominationName(currency, denomination)));
-            final List<Coins> V = CMLib.beanCounter().getStandardCurrency(mob, currency);
+            mob.tell(L("You don't have that much @x1.", CMLib.moneyCounter().getDenominationName(currency, denomination)));
+            final List<Coins> V = CMLib.moneyCounter().getStandardCurrency(mob, currency);
             for (int v = 0; v < V.size(); v++) {
                 if (V.get(v).getDenomination() == denomination)
                     return V.get(v);
@@ -1676,7 +1676,7 @@ public class EnglishParser extends StdLibrary implements EnglishParsing {
     @Override
     public Triad<String, Double, Long> parseMoneyStringSDL(MOB mob, String amount, String correctCurrency) {
         double b = 0;
-        String myCurrency = CMLib.beanCounter().getCurrency(mob);
+        String myCurrency = CMLib.moneyCounter().getCurrency(mob);
         double denomination = 1.0;
         if (correctCurrency == null)
             correctCurrency = myCurrency;
@@ -1687,7 +1687,7 @@ public class EnglishParser extends StdLibrary implements EnglishParsing {
                 final long num = CMLib.english().numPossibleGold(null, amount);
                 b = CMath.mul(denomination, num);
             } else
-                myCurrency = CMLib.beanCounter().getCurrency(mob);
+                myCurrency = CMLib.moneyCounter().getCurrency(mob);
         }
         return new Triad<String, Double, Long>(myCurrency, Double.valueOf(denomination), Long.valueOf(Math.round(b / denomination)));
     }

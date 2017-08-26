@@ -143,7 +143,7 @@ public class Thief_Swipe extends ThiefSkill {
         if (!super.invoke(mob, commands, givenTarget, auto, asLevel))
             return false;
 
-        final String currency = CMLib.beanCounter().getCurrency(target);
+        final String currency = CMLib.moneyCounter().getCurrency(target);
         int discoverChance = (target.charStats().getStat(CharStats.STAT_WISDOM) * 5)
             - (levelDiff * 3)
             + (getX1Level(mob) * 5);
@@ -184,12 +184,12 @@ public class Thief_Swipe extends ThiefSkill {
                 pct = 0.10;
             if (levelDiff > 10)
                 pct = 0.05;
-            double goldTaken = CMLib.beanCounter().getTotalAbsoluteNativeValue(target) * pct * Math.random();
+            double goldTaken = CMLib.moneyCounter().getTotalAbsoluteNativeValue(target) * pct * Math.random();
             if (goldTaken < (CMLib.ableMapper().qualifyingClassLevel(mob, this)))
                 goldTaken = CMLib.ableMapper().qualifyingClassLevel(mob, this);
-            if (goldTaken > CMLib.beanCounter().getTotalAbsoluteNativeValue(target))
-                goldTaken = CMLib.beanCounter().getTotalAbsoluteNativeValue(target);
-            final String goldTakenStr = CMLib.beanCounter().nameCurrencyShort(target, goldTaken);
+            if (goldTaken > CMLib.moneyCounter().getTotalAbsoluteNativeValue(target))
+                goldTaken = CMLib.moneyCounter().getTotalAbsoluteNativeValue(target);
+            final String goldTakenStr = CMLib.moneyCounter().nameCurrencyShort(target, goldTaken);
 
             String str = null;
             int code = CMMsg.MSG_THIEF_ACT;
@@ -228,9 +228,9 @@ public class Thief_Swipe extends ThiefSkill {
                     if (mob.getVictim() == target)
                         mob.makePeace(true);
                 }
-                CMLib.beanCounter().addMoney(mob, currency, goldTaken);
+                CMLib.moneyCounter().addMoney(mob, currency, goldTaken);
                 mob.recoverPhyStats();
-                CMLib.beanCounter().subtractMoney(target, currency, goldTaken);
+                CMLib.moneyCounter().subtractMoney(target, currency, goldTaken);
                 target.recoverPhyStats();
             }
         }

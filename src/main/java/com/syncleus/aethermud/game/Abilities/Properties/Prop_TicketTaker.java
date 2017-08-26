@@ -93,13 +93,13 @@ public class Prop_TicketTaker extends Property {
                     case CMMsg.TYP_SIT:
                     case CMMsg.TYP_ENTER:
                     case CMMsg.TYP_SLEEP: {
-                        String currency = CMLib.beanCounter().getCurrency(affected);
+                        String currency = CMLib.moneyCounter().getCurrency(affected);
                         if (currency.length() == 0)
-                            currency = CMLib.beanCounter().getCurrency(mob);
-                        if (CMLib.beanCounter().getTotalAbsoluteValue(mob, currency) >= cost()) {
-                            final String costStr = CMLib.beanCounter().nameCurrencyShort(currency, cost());
+                            currency = CMLib.moneyCounter().getCurrency(mob);
+                        if (CMLib.moneyCounter().getTotalAbsoluteValue(mob, currency) >= cost()) {
+                            final String costStr = CMLib.moneyCounter().nameCurrencyShort(currency, cost());
                             mob.location().show(mob, myHost, CMMsg.MSG_NOISYMOVEMENT, L("<S-NAME> give(s) @x1 to <T-NAME>.", costStr));
-                            CMLib.beanCounter().subtractMoney(mob, currency, cost());
+                            CMLib.moneyCounter().subtractMoney(mob, currency, cost());
                         }
                     }
                     break;
@@ -125,11 +125,11 @@ public class Prop_TicketTaker extends Property {
                     case CMMsg.TYP_SIT:
                     case CMMsg.TYP_ENTER:
                     case CMMsg.TYP_SLEEP: {
-                        String currency = CMLib.beanCounter().getCurrency(affected);
+                        String currency = CMLib.moneyCounter().getCurrency(affected);
                         if (currency.length() == 0)
-                            currency = CMLib.beanCounter().getCurrency(mob);
-                        if (CMLib.beanCounter().getTotalAbsoluteValue(mob, currency) < cost()) {
-                            final String costStr = CMLib.beanCounter().nameCurrencyLong(currency, cost());
+                            currency = CMLib.moneyCounter().getCurrency(mob);
+                        if (CMLib.moneyCounter().getTotalAbsoluteValue(mob, currency) < cost()) {
+                            final String costStr = CMLib.moneyCounter().nameCurrencyLong(currency, cost());
                             if (myHost instanceof MOB)
                                 CMLib.commands().postSay((MOB) myHost, mob, L("You'll need @x1 to board.", costStr), false, false);
                             else

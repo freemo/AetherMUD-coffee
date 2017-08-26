@@ -302,7 +302,7 @@ public class DefaultLawSet implements Law {
     protected boolean notifyPlayer(final String ownerName, String owerName, final double owed, final String fourWord, final String subject, String message) {
         MOB M = CMLib.players().getPlayer(ownerName);
         if ((M != null) && (CMLib.flags().isInTheGame(M, true))) {
-            final String amountOwed = CMLib.beanCounter().nameCurrencyLong(M, owed);
+            final String amountOwed = CMLib.moneyCounter().nameCurrencyLong(M, owed);
             if (owerName.length() == 0)
                 owerName = M.Name();
             M.tell(CMLib.lang().L(message, owerName, amountOwed, CMProps.getVar(CMProps.Str.MUDNAME), fourWord));
@@ -311,7 +311,7 @@ public class DefaultLawSet implements Law {
             if (M != null) {
                 if (owerName.length() == 0)
                     owerName = M.Name();
-                final String amountOwed = CMLib.beanCounter().nameCurrencyLong(M, owed);
+                final String amountOwed = CMLib.moneyCounter().nameCurrencyLong(M, owed);
                 final String subj = CMLib.lang().L(subject, owerName, amountOwed, CMProps.getVar(CMProps.Str.MUDNAME), fourWord);
                 final String msg = CMLib.lang().L(message, owerName, amountOwed, CMProps.getVar(CMProps.Str.MUDNAME), fourWord);
                 return sendGameMail(M.Name(), subj, msg);
@@ -398,10 +398,10 @@ public class DefaultLawSet implements Law {
                 if (owed > 0) {
                     owed -= paid;
                     if ((owed > 0)
-                        && (!CMLib.beanCounter().modifyLocalBankGold(A,
+                        && (!CMLib.moneyCounter().modifyLocalBankGold(A,
                         owner,
                         CMLib.utensils().getFormattedDate(A) + ": Withdrawal of " + owed + ": Taxes on property: " + properties.toString(),
-                        CMLib.beanCounter().getCurrency(A),
+                        CMLib.moneyCounter().getCurrency(A),
                         -owed))) {
                         boolean owesButNotConfiscated = false;
                         for (int p = 0; p < particulars.size(); p++) {
@@ -441,7 +441,7 @@ public class DefaultLawSet implements Law {
                             final Clan clanC = CMLib.clans().getClan(owner);
                             if (clanC != null) {
                                 final MOB M = clanC.getResponsibleMember();
-                                final String amountOwed = CMLib.beanCounter().nameCurrencyLong(M, owed);
+                                final String amountOwed = CMLib.moneyCounter().nameCurrencyLong(M, owed);
                                 final List<Pair<Clan, Integer>> clanSet = new Vector<Pair<Clan, Integer>>();
                                 clanSet.add(new Pair<Clan, Integer>(C, Integer.valueOf(0)));
                                 final List<String> channels = CMLib.channels().getFlaggedChannelNames(ChannelsLibrary.ChannelFlag.CLANINFO);
@@ -482,7 +482,7 @@ public class DefaultLawSet implements Law {
                         if (owed < 0)
                             owed = 0;
                         if ((treasuryR != null) && ((owed + paid) > 0)) {
-                            final List<Coins> V = CMLib.beanCounter().makeAllCurrency(CMLib.beanCounter().getCurrency(A), owed + paid);
+                            final List<Coins> V = CMLib.moneyCounter().makeAllCurrency(CMLib.moneyCounter().getCurrency(A), owed + paid);
                             for (int v = 0; v < V.size(); v++) {
                                 final Coins COIN = V.get(v);
                                 COIN.setContainer(container);

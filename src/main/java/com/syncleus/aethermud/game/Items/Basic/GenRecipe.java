@@ -152,8 +152,8 @@ public class GenRecipe extends GenReadable implements Recipe {
 
     @Override
     public String getStat(String code) {
-        if (CMLib.coffeeMaker().getGenItemCodeNum(code) >= 0)
-            return CMLib.coffeeMaker().getGenItemStat(this, code);
+        if (CMLib.aetherMaker().getGenItemCodeNum(code) >= 0)
+            return CMLib.aetherMaker().getGenItemStat(this, code);
         switch (getCodeNum(code)) {
             case 0:
                 return "" + getCommonSkillID();
@@ -175,8 +175,8 @@ public class GenRecipe extends GenReadable implements Recipe {
 
     @Override
     public void setStat(String code, String val) {
-        if (CMLib.coffeeMaker().getGenItemCodeNum(code) >= 0)
-            CMLib.coffeeMaker().setGenItemStat(this, code, val);
+        if (CMLib.aetherMaker().getGenItemCodeNum(code) >= 0)
+            CMLib.aetherMaker().setGenItemStat(this, code, val);
         else
             switch (getCodeNum(code)) {
                 case 0:

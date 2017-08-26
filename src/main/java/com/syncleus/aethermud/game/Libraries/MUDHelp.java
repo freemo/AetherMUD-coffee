@@ -312,7 +312,7 @@ public class MUDHelp extends StdLibrary implements HelpLibrary {
 
     protected String columnHelper(String word, String msg, int wrap) {
         final StringBuilder prepend = new StringBuilder("");
-        final String[] maxStats = CMLib.coffeeFilter().wrapOnlyFilter(msg, wrap - 12);
+        final String[] maxStats = CMLib.aetherFilter().wrapOnlyFilter(msg, wrap - 12);
         for (final String s : maxStats) {
             prepend.append(CMStrings.padRight(word, 12)).append(s).append("\n\r");
             word = " ";
@@ -329,12 +329,12 @@ public class MUDHelp extends StdLibrary implements HelpLibrary {
             if ((forMOB == null) || (forMOB.location() == null) || (worldCurrency)) {
                 worldCurrency = true;
                 for (final Enumeration<Area> e = CMLib.map().areas(); e.hasMoreElements(); ) {
-                    final String currency = CMLib.beanCounter().getCurrency(e.nextElement());
+                    final String currency = CMLib.moneyCounter().getCurrency(e.nextElement());
                     if (!currencies.contains(currency))
                         currencies.addElement(currency);
                 }
             } else
-                currencies.addElement(CMLib.beanCounter().getCurrency(forMOB.location()));
+                currencies.addElement(CMLib.moneyCounter().getCurrency(forMOB.location()));
             final StringBuilder help = new StringBuilder("");
             if (worldCurrency)
                 help.append("\n\r" + CMStrings.padRight(L("World Currencies"), 20) + ":");
@@ -347,7 +347,7 @@ public class MUDHelp extends StdLibrary implements HelpLibrary {
                     help.append("default");
                 else
                     help.append(CMStrings.capitalizeAndLower(currency));
-                final MoneyLibrary.MoneyDenomination denoms[] = CMLib.beanCounter().getCurrencySet(currency);
+                final MoneyLibrary.MoneyDenomination denoms[] = CMLib.moneyCounter().getCurrencySet(currency);
                 if (denoms == null)
                     Log.errOut("Help", "Unknown currency: " + currency);
                 else {
@@ -356,10 +356,10 @@ public class MUDHelp extends StdLibrary implements HelpLibrary {
                             help.append("\n\r" + CMStrings.padRight(denom.name() + " (" + denom.abbr() + ")", 20) + ":");
                         else
                             help.append("\n\r" + CMStrings.padRight(denom.name(), 20) + ":");
-                        if (denom.value() == CMLib.beanCounter().getLowestDenomination(currency))
+                        if (denom.value() == CMLib.moneyCounter().getLowestDenomination(currency))
                             help.append(L(" (exchange rate is @x1 of base)", "" + denom.value()));
                         else
-                            help.append(" " + CMLib.beanCounter().getConvertableDescription(currency, denom.value()));
+                            help.append(" " + CMLib.moneyCounter().getConvertableDescription(currency, denom.value()));
                     }
                 }
                 help.append("\n\r");
@@ -773,7 +773,7 @@ public class MUDHelp extends StdLibrary implements HelpLibrary {
                 if (currency != null) {
                     final double denom = CMLib.english().matchAnyDenomination(currency, ahelpStr);
                     if (denom > 0.0) {
-                        final Coins C2 = CMLib.beanCounter().makeCurrency(currency, denom, 1);
+                        final Coins C2 = CMLib.moneyCounter().makeCurrency(currency, denom, 1);
                         if ((C2 != null) && (C2.description().length() > 0))
                             return new StringBuilder(C2.name() + " is " + C2.description().toLowerCase());
                     }

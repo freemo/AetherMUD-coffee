@@ -17,8 +17,8 @@
 package com.syncleus.aethermud.game.Libraries.interfaces;
 
 import com.syncleus.aethermud.game.Abilities.interfaces.Ability;
+import com.syncleus.aethermud.game.Common.interfaces.AetherShop;
 import com.syncleus.aethermud.game.Common.interfaces.AuctionData;
-import com.syncleus.aethermud.game.Common.interfaces.CoffeeShop;
 import com.syncleus.aethermud.game.Common.interfaces.TimeClock;
 import com.syncleus.aethermud.game.Items.interfaces.InnKey;
 import com.syncleus.aethermud.game.Items.interfaces.Item;
@@ -76,11 +76,11 @@ public interface ShoppingLibrary extends CMLibrary {
 
     public void purchaseAbility(Ability A, MOB seller, ShopKeeper shop, MOB mobFor);
 
-    public List<Environmental> addRealEstateTitles(List<Environmental> V, MOB buyer, CoffeeShop shop, Room myRoom);
+    public List<Environmental> addRealEstateTitles(List<Environmental> V, MOB buyer, AetherShop shop, Room myRoom);
 
     public boolean ignoreIfNecessary(MOB mob, String ignoreMask, MOB whoIgnores);
 
-    public String storeKeeperString(CoffeeShop shop);
+    public String storeKeeperString(AetherShop shop);
 
     public boolean doISellThis(Environmental thisThang, ShopKeeper shop);
 

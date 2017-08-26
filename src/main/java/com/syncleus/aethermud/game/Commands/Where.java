@@ -291,7 +291,7 @@ public class Where extends StdCommand {
                                                 lines.append("\n\r");
                                             }
                                         }
-                                        final ShopKeeper SK = CMLib.coffeeShops().getShopKeeper(M);
+                                        final ShopKeeper SK = CMLib.aetherShops().getShopKeeper(M);
                                         if (SK != null)
                                             for (final Iterator<Environmental> i = SK.getShop().getStoreInventory(); i.hasNext(); ) {
                                                 final Environmental E = i.next();

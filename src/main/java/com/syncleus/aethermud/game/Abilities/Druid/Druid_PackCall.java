@@ -242,7 +242,7 @@ public class Druid_PackCall extends StdAbility {
                     newMOB.recoverMaxState();
                     newMOB.resetToMaxState();
                     newMOB.bringToLife(mob.location(), true);
-                    CMLib.beanCounter().clearZeroMoney(newMOB, null);
+                    CMLib.moneyCounter().clearZeroMoney(newMOB, null);
                     newMOB.setMoneyVariation(0);
                     if (victim.getVictim() != newMOB)
                         victim.setVictim(newMOB);

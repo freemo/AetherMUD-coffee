@@ -113,7 +113,7 @@ public class GenWeapon extends StdWeapon {
 
     @Override
     public String text() {
-        return CMLib.coffeeMaker().getPropertiesStr(this, false);
+        return CMLib.aetherMaker().getPropertiesStr(this, false);
     }
 
     @Override
@@ -129,14 +129,14 @@ public class GenWeapon extends StdWeapon {
     @Override
     public void setMiscText(String newText) {
         miscText = "";
-        CMLib.coffeeMaker().setPropertiesStr(this, newText, false);
+        CMLib.aetherMaker().setPropertiesStr(this, newText, false);
         recoverPhyStats();
     }
 
     @Override
     public String getStat(String code) {
-        if (CMLib.coffeeMaker().getGenItemCodeNum(code) >= 0)
-            return CMLib.coffeeMaker().getGenItemStat(this, code);
+        if (CMLib.aetherMaker().getGenItemCodeNum(code) >= 0)
+            return CMLib.aetherMaker().getGenItemStat(this, code);
         if (GenWeapon.getGenWeaponCodeNum(code) >= 0)
             return GenWeapon.getGenWeaponStat(this, code);
         return CMProps.getStatCodeExtensionValue(getStatCodes(), xtraValues, code);
@@ -144,8 +144,8 @@ public class GenWeapon extends StdWeapon {
 
     @Override
     public void setStat(String code, String val) {
-        if (CMLib.coffeeMaker().getGenItemCodeNum(code) >= 0)
-            CMLib.coffeeMaker().setGenItemStat(this, code, val);
+        if (CMLib.aetherMaker().getGenItemCodeNum(code) >= 0)
+            CMLib.aetherMaker().setGenItemStat(this, code, val);
         else if (GenWeapon.getGenWeaponCodeNum(code) >= 0)
             GenWeapon.setGenWeaponStat(this, code, val);
         else

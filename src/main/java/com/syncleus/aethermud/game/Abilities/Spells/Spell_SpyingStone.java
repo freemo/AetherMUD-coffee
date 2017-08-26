@@ -94,7 +94,7 @@ public class Spell_SpyingStone extends Spell {
         } else if ((msg.othersCode() != CMMsg.NO_EFFECT)
             && (msg.othersMessage() != null)
             && (msg.othersMessage().length() > 0))
-            msgs.add(CMLib.coffeeFilter().fullOutFilter(null, null, msg.source(), msg.target(), msg.tool(), CMStrings.removeColors(msg.othersMessage()), false));
+            msgs.add(CMLib.aetherFilter().fullOutFilter(null, null, msg.source(), msg.target(), msg.tool(), CMStrings.removeColors(msg.othersMessage()), false));
     }
 
     @Override

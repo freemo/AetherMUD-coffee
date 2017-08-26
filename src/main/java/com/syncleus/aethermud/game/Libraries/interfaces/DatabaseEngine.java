@@ -1711,11 +1711,11 @@ public interface DatabaseEngine extends CMLibrary {
      * @see DatabaseEngine#DBDeleteStat(long)
      * @see DatabaseEngine#DBCreateStat(long, long, String)
      * @see DatabaseEngine#DBReadStats(long, long)
-     * @see CoffeeTableRow
+     * @see AetherTableRow
      * @param startTime the timestamp of the day start
      * @return the row of data for that day.
      */
-    public CoffeeTableRow DBReadStat(long startTime);
+    public AetherTableRow DBReadStat(long startTime);
 
     /**
      * Table category: DBSTATS
@@ -1774,13 +1774,13 @@ public interface DatabaseEngine extends CMLibrary {
      * @see DatabaseEngine#DBDeleteStat(long)
      * @see DatabaseEngine#DBCreateStat(long, long, String)
      * @see DatabaseEngine#DBReadStat(long)
-     * @see CoffeeTableRow
+     * @see AetherTableRow
      *
      * @param startTime the timestamp of the first row
      * @param longTime 0, or the end time of the last row.
      * @return the group of statistics requested.
      */
-    public List<CoffeeTableRow> DBReadStats(long startTime, long endTime);
+    public List<AetherTableRow> DBReadStats(long startTime, long endTime);
 
     /**
      * Table category: DBPOLLS

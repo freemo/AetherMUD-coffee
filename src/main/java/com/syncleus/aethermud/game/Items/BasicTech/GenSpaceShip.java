@@ -649,8 +649,8 @@ public class GenSpaceShip extends StdBoardable implements Electronics, SpaceShip
 
     @Override
     public String getStat(String code) {
-        if (CMLib.coffeeMaker().getGenItemCodeNum(code) >= 0)
-            return CMLib.coffeeMaker().getGenItemStat(this, code);
+        if (CMLib.aetherMaker().getGenItemCodeNum(code) >= 0)
+            return CMLib.aetherMaker().getGenItemStat(this, code);
         switch (getCodeNum(code)) {
             case 0:
                 return "" + hasALock();
@@ -675,7 +675,7 @@ public class GenSpaceShip extends StdBoardable implements Electronics, SpaceShip
             case 10:
                 return getManufacturerName();
             case 11:
-                return CMLib.coffeeMaker().getAreaObjectXML(getShipArea(), null, null, null, true).toString();
+                return CMLib.aetherMaker().getAreaObjectXML(getShipArea(), null, null, null, true).toString();
             case 12:
                 return CMParms.toListString(coordinates());
             case 13:
@@ -713,8 +713,8 @@ public class GenSpaceShip extends StdBoardable implements Electronics, SpaceShip
 
     @Override
     public void setStat(String code, String val) {
-        if (CMLib.coffeeMaker().getGenItemCodeNum(code) >= 0)
-            CMLib.coffeeMaker().setGenItemStat(this, code, val);
+        if (CMLib.aetherMaker().getGenItemCodeNum(code) >= 0)
+            CMLib.aetherMaker().setGenItemStat(this, code, val);
         else
             switch (getCodeNum(code)) {
                 case 0:

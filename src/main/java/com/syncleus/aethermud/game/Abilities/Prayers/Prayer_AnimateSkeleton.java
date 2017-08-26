@@ -170,7 +170,7 @@ public class Prayer_AnimateSkeleton extends Prayer {
         newMOB.resetToMaxState();
         newMOB.text();
         newMOB.bringToLife(R, true);
-        CMLib.beanCounter().clearZeroMoney(newMOB, null);
+        CMLib.moneyCounter().clearZeroMoney(newMOB, null);
         newMOB.setMoneyVariation(0);
         //R.showOthers(newMOB,null,CMMsg.MSG_OK_ACTION,L("<S-NAME> appears!"));
         int it = 0;

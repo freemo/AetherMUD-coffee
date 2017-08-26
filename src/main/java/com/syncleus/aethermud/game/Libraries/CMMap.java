@@ -1100,7 +1100,7 @@ public class CMMap extends StdLibrary implements WorldMap {
             for (final Enumeration<MOB> e = CMLib.players().players(); e.hasMoreElements(); ) {
                 M = e.nextElement();
                 if (M != null) {
-                    SK = CMLib.coffeeShops().getShopKeeper(M);
+                    SK = CMLib.aetherShops().getShopKeeper(M);
                     if ((SK != null) && (!stocks.contains(SK))) {
                         stocks.add(SK);
                         final Iterator<Environmental> ei = SK.getShop().getStoreInventory(srchStr);
@@ -1116,7 +1116,7 @@ public class CMMap extends StdLibrary implements WorldMap {
                     for (int i = 0; i < M.numItems(); i++) {
                         I = M.getItem(i);
                         if (I != null) {
-                            SK = CMLib.coffeeShops().getShopKeeper(I);
+                            SK = CMLib.aetherShops().getShopKeeper(I);
                             if ((SK != null) && (!stocks.contains(SK))) {
                                 stocks.add(SK);
                                 final Iterator<Environmental> ei = SK.getShop().getStoreInventory(srchStr);
@@ -1146,7 +1146,7 @@ public class CMMap extends StdLibrary implements WorldMap {
                 if ((room != null) && (allRoomsAllowed || CMLib.flags().canAccess(mob, room))) {
                     if (!areas.contains(room.getArea()))
                         areas.add(room.getArea());
-                    SK = CMLib.coffeeShops().getShopKeeper(room);
+                    SK = CMLib.aetherShops().getShopKeeper(room);
                     if ((SK != null) && (!stocks.contains(SK))) {
                         stocks.add(SK);
                         final Iterator<Environmental> ei = SK.getShop().getStoreInventory(srchStr);
@@ -1162,7 +1162,7 @@ public class CMMap extends StdLibrary implements WorldMap {
                     for (int m = 0; m < room.numInhabitants(); m++) {
                         M = room.fetchInhabitant(m);
                         if (M != null) {
-                            SK = CMLib.coffeeShops().getShopKeeper(M);
+                            SK = CMLib.aetherShops().getShopKeeper(M);
                             if ((SK != null) && (!stocks.contains(SK))) {
                                 stocks.add(SK);
                                 final Iterator<Environmental> ei = SK.getShop().getStoreInventory(srchStr);
@@ -1180,7 +1180,7 @@ public class CMMap extends StdLibrary implements WorldMap {
                     for (int i = 0; i < room.numItems(); i++) {
                         I = room.getItem(i);
                         if (I != null) {
-                            SK = CMLib.coffeeShops().getShopKeeper(I);
+                            SK = CMLib.aetherShops().getShopKeeper(I);
                             if ((SK != null) && (!stocks.contains(SK))) {
                                 stocks.add(SK);
                                 final Iterator<Environmental> ei = SK.getShop().getStoreInventory(srchStr);
@@ -1201,7 +1201,7 @@ public class CMMap extends StdLibrary implements WorldMap {
                 startTime = System.currentTimeMillis();
             }
         for (final Area A : areas) {
-            SK = CMLib.coffeeShops().getShopKeeper(A);
+            SK = CMLib.aetherShops().getShopKeeper(A);
             if ((SK != null) && (!stocks.contains(SK))) {
                 stocks.add(SK);
                 final Iterator<Environmental> ei = SK.getShop().getStoreInventory(srchStr);
@@ -3027,7 +3027,7 @@ public class CMMap extends StdLibrary implements WorldMap {
                     myFiles.add(new CMFile.CMVFSFile(this.getPath() + cmfsFilenameify(A.Name()) + ".cmare", 48, System.currentTimeMillis(), "SYS") {
                         @Override
                         public Object readData() {
-                            return CMLib.coffeeMaker().getAreaXML(A, null, null, null, true);
+                            return CMLib.aetherMaker().getAreaXML(A, null, null, null, true);
                         }
                     });
                     myFiles.add(new CMFile.CMVFSDir(this, this.getPath() + cmfsFilenameify(A.Name()) + "/") {
@@ -3043,7 +3043,7 @@ public class CMMap extends StdLibrary implements WorldMap {
                                     myFiles.add(new CMFile.CMVFSFile(this.getPath() + cmfsFilenameify(R.roomID()) + ".cmare", 48, System.currentTimeMillis(), "SYS") {
                                         @Override
                                         public Object readData() {
-                                            return CMLib.coffeeMaker().getRoomXML(R, null, null, true);
+                                            return CMLib.aetherMaker().getRoomXML(R, null, null, true);
                                         }
                                     });
                                     myFiles.add(new CMFile.CMVFSDir(this, this.getPath() + cmfsFilenameify(roomID).toLowerCase() + "/") {
@@ -3053,27 +3053,27 @@ public class CMMap extends StdLibrary implements WorldMap {
                                             myFiles.add(new CMFile.CMVFSFile(this.getPath() + "items.cmare", 48, System.currentTimeMillis(), "SYS") {
                                                 @Override
                                                 public Object readData() {
-                                                    return CMLib.coffeeMaker().getRoomItems(R, new TreeMap<String, List<Item>>(), null, null);
+                                                    return CMLib.aetherMaker().getRoomItems(R, new TreeMap<String, List<Item>>(), null, null);
                                                 }
                                             });
                                             myFiles.add(new CMFile.CMVFSFile(this.path + "mobs.cmare", 48, System.currentTimeMillis(), "SYS") {
                                                 @Override
                                                 public Object readData() {
-                                                    return CMLib.coffeeMaker().getRoomMobs(R, null, null, new TreeMap<String, List<MOB>>());
+                                                    return CMLib.aetherMaker().getRoomMobs(R, null, null, new TreeMap<String, List<MOB>>());
                                                 }
                                             });
                                             myFiles.add(new CMFile.CMVFSDir(this, this.path + "mobs/") {
                                                 @Override
                                                 protected CMFile.CMVFSFile[] getFiles() {
                                                     final List<CMFile.CMVFSFile> myFiles = new Vector<CMFile.CMVFSFile>();
-                                                    final Room R2 = CMLib.coffeeMaker().makeNewRoomContent(R, false);
+                                                    final Room R2 = CMLib.aetherMaker().makeNewRoomContent(R, false);
                                                     if (R2 != null) {
                                                         for (int i = 0; i < R2.numInhabitants(); i++) {
                                                             final MOB M = R2.fetchInhabitant(i);
                                                             myFiles.add(new CMFile.CMVFSFile(this.path + cmfsFilenameify(R2.getContextName(M)) + ".cmare", 48, System.currentTimeMillis(), "SYS") {
                                                                 @Override
                                                                 public Object readData() {
-                                                                    return CMLib.coffeeMaker().getMobXML(M);
+                                                                    return CMLib.aetherMaker().getMobXML(M);
                                                                 }
                                                             });
                                                             myFiles.add(new CMFile.CMVFSDir(this, this.path + cmfsFilenameify(R2.getContextName(M)) + "/") {
@@ -3095,14 +3095,14 @@ public class CMMap extends StdLibrary implements WorldMap {
                                                 @Override
                                                 protected CMFile.CMVFSFile[] getFiles() {
                                                     final List<CMFile.CMVFSFile> myFiles = new Vector<CMFile.CMVFSFile>();
-                                                    final Room R2 = CMLib.coffeeMaker().makeNewRoomContent(R, false);
+                                                    final Room R2 = CMLib.aetherMaker().makeNewRoomContent(R, false);
                                                     if (R2 != null) {
                                                         for (int i = 0; i < R2.numItems(); i++) {
                                                             final Item I = R2.getItem(i);
                                                             myFiles.add(new CMFile.CMVFSFile(this.path + cmfsFilenameify(R2.getContextName(I)) + ".cmare", 48, System.currentTimeMillis(), "SYS") {
                                                                 @Override
                                                                 public Object readData() {
-                                                                    return CMLib.coffeeMaker().getItemXML(I);
+                                                                    return CMLib.aetherMaker().getItemXML(I);
                                                                 }
                                                             });
                                                             myFiles.add(new CMFile.CMVFSDir(this, this.path + cmfsFilenameify(R2.getContextName(I)) + "/") {

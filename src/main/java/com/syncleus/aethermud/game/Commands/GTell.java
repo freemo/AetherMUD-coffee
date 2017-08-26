@@ -108,7 +108,7 @@ public class GTell extends StdCommand {
                     final String tellStr = (target == mob) ? msg.sourceMessage() : (
                         (target == msg.target()) ? msg.targetMessage() : msg.othersMessage()
                     );
-                    target.playerStats().addGTellStack(CMLib.coffeeFilter().fullOutFilter(target.session(), target, mob, msg.target(), null, CMStrings.removeColors(tellStr), false));
+                    target.playerStats().addGTellStack(CMLib.aetherFilter().fullOutFilter(target.session(), target, mob, msg.target(), null, CMStrings.removeColors(tellStr), false));
                 }
                 target.executeMsg(target, msg);
                 if (msg.trailerMsgs() != null) {

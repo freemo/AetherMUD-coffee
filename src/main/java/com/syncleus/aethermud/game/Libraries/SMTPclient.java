@@ -187,7 +187,7 @@ public class SMTPclient extends StdLibrary implements SMTPLibrary, SMTPLibrary.S
                 toEmail,
                 toEmail,
                 subj,
-                CMLib.coffeeFilter().simpleOutFilter(msg));
+                CMLib.aetherFilter().simpleOutFilter(msg));
             return true;
         } catch (final Exception e) {
             Log.errOut("SMTPClient", e.getMessage());

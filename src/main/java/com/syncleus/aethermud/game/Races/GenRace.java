@@ -422,23 +422,23 @@ public class GenRace extends StdRace {
         if (adjPStats == null)
             str.append("<ESTATS/>");
         else
-            str.append(CMLib.xml().convertXMLtoTag("ESTATS", CMLib.coffeeMaker().getPhyStatsStr(adjPStats)));
+            str.append(CMLib.xml().convertXMLtoTag("ESTATS", CMLib.aetherMaker().getPhyStatsStr(adjPStats)));
         if (adjStats == null)
             str.append("<ASTATS/>");
         else
-            str.append(CMLib.xml().convertXMLtoTag("ASTATS", CMLib.coffeeMaker().getCharStatsStr(adjStats)));
+            str.append(CMLib.xml().convertXMLtoTag("ASTATS", CMLib.aetherMaker().getCharStatsStr(adjStats)));
         if (setStats == null)
             str.append("<CSTATS/>");
         else
-            str.append(CMLib.xml().convertXMLtoTag("CSTATS", CMLib.coffeeMaker().getCharStatsStr(setStats)));
+            str.append(CMLib.xml().convertXMLtoTag("CSTATS", CMLib.aetherMaker().getCharStatsStr(setStats)));
         if (adjState == null)
             str.append("<ASTATE/>");
         else
-            str.append(CMLib.xml().convertXMLtoTag("ASTATE", CMLib.coffeeMaker().getCharStateStr(adjState)));
+            str.append(CMLib.xml().convertXMLtoTag("ASTATE", CMLib.aetherMaker().getCharStateStr(adjState)));
         if (startAdjState == null)
             str.append("<STARTASTATE/>");
         else
-            str.append(CMLib.xml().convertXMLtoTag("STARTASTATE", CMLib.coffeeMaker().getCharStateStr(startAdjState)));
+            str.append(CMLib.xml().convertXMLtoTag("STARTASTATE", CMLib.aetherMaker().getCharStateStr(startAdjState)));
         str.append(CMLib.xml().convertXMLtoTag("DISFLAGS", "" + disableFlags));
 
         if (myResources().size() == 0)
@@ -622,28 +622,28 @@ public class GenRace extends StdRace {
         if (eStats.length() > 0) {
             adjPStats = (PhyStats) CMClass.getCommon("DefaultPhyStats");
             adjPStats.setAllValues(0);
-            CMLib.coffeeMaker().setPhyStats(adjPStats, eStats);
+            CMLib.aetherMaker().setPhyStats(adjPStats, eStats);
         }
         adjStats = null;
         final String aStats = CMLib.xml().getValFromPieces(raceData, "ASTATS");
         if (aStats.length() > 0) {
             adjStats = (CharStats) CMClass.getCommon("DefaultCharStats");
             adjStats.setAllValues(0);
-            CMLib.coffeeMaker().setCharStats(adjStats, aStats);
+            CMLib.aetherMaker().setCharStats(adjStats, aStats);
         }
         setStats = null;
         final String cStats = CMLib.xml().getValFromPieces(raceData, "CSTATS");
         if (cStats.length() > 0) {
             setStats = (CharStats) CMClass.getCommon("DefaultCharStats");
             setStats.setAllValues(0);
-            CMLib.coffeeMaker().setCharStats(setStats, cStats);
+            CMLib.aetherMaker().setCharStats(setStats, cStats);
         }
         adjState = null;
         final String aState = CMLib.xml().getValFromPieces(raceData, "ASTATE");
         if (aState.length() > 0) {
             adjState = (CharState) CMClass.getCommon("DefaultCharState");
             adjState.setAllValues(0);
-            CMLib.coffeeMaker().setCharState(adjState, aState);
+            CMLib.aetherMaker().setCharState(adjState, aState);
         }
         startAdjState = null;
         disableFlags = CMLib.xml().getIntFromPieces(raceData, "DISFLAGS");
@@ -651,7 +651,7 @@ public class GenRace extends StdRace {
         if (saState.length() > 0) {
             startAdjState = (CharState) CMClass.getCommon("DefaultCharState");
             startAdjState.setAllValues(0);
-            CMLib.coffeeMaker().setCharState(startAdjState, saState);
+            CMLib.aetherMaker().setCharState(startAdjState, saState);
         }
         final String aging = CMLib.xml().getValFromPieces(raceData, "AGING");
         final List<String> aV = CMParms.parseCommas(aging, true);
@@ -837,13 +837,13 @@ public class GenRace extends StdRace {
                 return bbody.toString();
             }
             case 14:
-                return (adjPStats == null) ? "" : CMLib.coffeeMaker().getPhyStatsStr(adjPStats);
+                return (adjPStats == null) ? "" : CMLib.aetherMaker().getPhyStatsStr(adjPStats);
             case 15:
-                return (adjStats == null) ? "" : CMLib.coffeeMaker().getCharStatsStr(adjStats);
+                return (adjStats == null) ? "" : CMLib.aetherMaker().getCharStatsStr(adjStats);
             case 16:
-                return (setStats == null) ? "" : CMLib.coffeeMaker().getCharStatsStr(setStats);
+                return (setStats == null) ? "" : CMLib.aetherMaker().getCharStatsStr(setStats);
             case 17:
-                return (adjState == null) ? "" : CMLib.coffeeMaker().getCharStateStr(adjState);
+                return (adjState == null) ? "" : CMLib.aetherMaker().getCharStateStr(adjState);
             case 18:
                 return "" + myResources().size();
             case 19:
@@ -897,7 +897,7 @@ public class GenRace extends StdRace {
             case 43:
                 return "" + disableFlags;
             case 44:
-                return (startAdjState == null) ? "" : CMLib.coffeeMaker().getCharStateStr(startAdjState);
+                return (startAdjState == null) ? "" : CMLib.aetherMaker().getCharStateStr(startAdjState);
             case 45:
                 return getRaceLocatorID(eventBuddy);
             case 46:
@@ -1056,7 +1056,7 @@ public class GenRace extends StdRace {
                     if ((val.indexOf('=') > 0) && (val.indexOf('|') < 0))
                         setBaseStat(val, adjPStats);
                     else
-                        CMLib.coffeeMaker().setPhyStats(adjPStats, val);
+                        CMLib.aetherMaker().setPhyStats(adjPStats, val);
                 }
                 break;
             }
@@ -1069,7 +1069,7 @@ public class GenRace extends StdRace {
                     if ((val.indexOf('=') > 0) && (val.indexOf('|') < 0))
                         setBaseStat(val, adjStats);
                     else
-                        CMLib.coffeeMaker().setCharStats(adjStats, val);
+                        CMLib.aetherMaker().setCharStats(adjStats, val);
                 }
                 break;
             }
@@ -1082,7 +1082,7 @@ public class GenRace extends StdRace {
                     if ((val.indexOf('=') > 0) && (val.indexOf('|') < 0))
                         setBaseStat(val, setStats);
                     else
-                        CMLib.coffeeMaker().setCharStats(setStats, val);
+                        CMLib.aetherMaker().setCharStats(setStats, val);
                 }
                 break;
             }
@@ -1095,7 +1095,7 @@ public class GenRace extends StdRace {
                     if ((val.indexOf('=') > 0) && (val.indexOf('|') < 0))
                         setBaseStat(val, adjState);
                     else
-                        CMLib.coffeeMaker().setCharState(adjState, val);
+                        CMLib.aetherMaker().setCharState(adjState, val);
                 }
                 break;
             }
@@ -1310,7 +1310,7 @@ public class GenRace extends StdRace {
                     if ((val.indexOf('=') > 0) && (val.indexOf('|') < 0))
                         setBaseStat(val, startAdjState);
                     else
-                        CMLib.coffeeMaker().setCharState(startAdjState, val);
+                        CMLib.aetherMaker().setCharState(startAdjState, val);
                 }
                 break;
             }

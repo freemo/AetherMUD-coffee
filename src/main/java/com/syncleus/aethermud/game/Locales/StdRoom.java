@@ -390,7 +390,7 @@ public class StdRoom implements Room {
 
     @Override
     public String text() {
-        return CMLib.coffeeMaker().getPropertiesStr(this, true);
+        return CMLib.aetherMaker().getPropertiesStr(this, true);
     }
 
     @Override
@@ -401,7 +401,7 @@ public class StdRoom implements Room {
     @Override
     public void setMiscText(String newMiscText) {
         if (newMiscText.trim().length() > 0)
-            CMLib.coffeeMaker().setPropertiesStr(this, newMiscText, true);
+            CMLib.aetherMaker().setPropertiesStr(this, newMiscText, true);
     }
 
     @Override
@@ -663,7 +663,7 @@ public class StdRoom implements Room {
                 case CMMsg.TYP_SELL:
                 case CMMsg.TYP_VIEW:
                 case CMMsg.TYP_VALUE:
-                    if (CMLib.coffeeShops().getShopKeeper(this) == null) {
+                    if (CMLib.aetherShops().getShopKeeper(this) == null) {
                         mob.tell(L("You can't shop here."));
                         return false;
                     }
@@ -2580,7 +2580,7 @@ public class StdRoom implements Room {
             case 3:
                 return text();
             case 4:
-                return CMLib.coffeeMaker().getExtraEnvPropertiesStr(this);
+                return CMLib.aetherMaker().getExtraEnvPropertiesStr(this);
             case 5:
                 return rawImage();
             case 6:
@@ -2609,7 +2609,7 @@ public class StdRoom implements Room {
             case 4: {
                 delAllEffects(true);
                 delAllBehaviors();
-                CMLib.coffeeMaker().setExtraEnvProperties(this, CMLib.xml().parseAllXML(val));
+                CMLib.aetherMaker().setExtraEnvProperties(this, CMLib.xml().parseAllXML(val));
                 break;
             }
             case 5:

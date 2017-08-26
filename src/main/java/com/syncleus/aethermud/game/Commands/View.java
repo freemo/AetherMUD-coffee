@@ -50,7 +50,7 @@ public class View extends StdCommand {
             return false;
         }
 
-        if (CMLib.coffeeShops().getShopKeeper(shopkeeper) == null) {
+        if (CMLib.aetherShops().getShopKeeper(shopkeeper) == null) {
             CMLib.commands().doCommandFail(mob, origCmds, L("@x1 is not a shopkeeper!", shopkeeper.name()));
             return false;
         }
@@ -77,13 +77,13 @@ public class View extends StdCommand {
         boolean doBugFix = true;
         while (doBugFix || ((allFlag) && (addendum <= maxToDo))) {
             doBugFix = false;
-            final ShopKeeper SK = CMLib.coffeeShops().getShopKeeper(shopkeeper);
+            final ShopKeeper SK = CMLib.aetherShops().getShopKeeper(shopkeeper);
             final Environmental itemToDo = SK.getShop().getStock(whatName, mob);
             if (itemToDo == null)
                 break;
             if (CMLib.flags().canBeSeenBy(itemToDo, mob))
                 V.add(itemToDo);
-            if (addendum >= CMLib.coffeeShops().getShopKeeper(shopkeeper).getShop().numberInStock(itemToDo))
+            if (addendum >= CMLib.aetherShops().getShopKeeper(shopkeeper).getShop().numberInStock(itemToDo))
                 break;
             addendum++;
         }

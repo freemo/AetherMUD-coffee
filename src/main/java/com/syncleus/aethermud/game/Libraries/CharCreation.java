@@ -2667,11 +2667,11 @@ public class CharCreation extends StdLibrary implements CharCreationLibrary {
         if ((startingMoney != null) && (startingMoney.trim().length() > 0)) {
             String currency = CMLib.english().numPossibleGoldCurrency(mob, startingMoney);
             if (currency.length() == 0)
-                currency = CMLib.beanCounter().getCurrency(mob);
+                currency = CMLib.moneyCounter().getCurrency(mob);
             final double denomination = CMLib.english().numPossibleGoldDenomination(null, currency, startingMoney);
             final long num = CMLib.english().numPossibleGold(null, startingMoney);
             if ((num > 0) && (denomination > 0.0) && (currency != null))
-                CMLib.beanCounter().giveSomeoneMoney(mob, currency, denomination * num);
+                CMLib.moneyCounter().giveSomeoneMoney(mob, currency, denomination * num);
         }
 
         StringBuffer introText = new CMFile(Resources.buildResourcePath("text") + "newchardone.txt", null, CMFile.FLAG_LOGERRORS).text();
@@ -2729,7 +2729,7 @@ public class CharCreation extends StdLibrary implements CharCreationLibrary {
         final List<String> channels = CMLib.channels().getFlaggedChannelNames(ChannelsLibrary.ChannelFlag.NEWPLAYERS);
         for (int i = 0; i < channels.size(); i++)
             CMLib.commands().postChannel(channels.get(i), mob.clans(), L("@x1 has just been created.", mob.Name()), true);
-        CMLib.coffeeTables().bump(mob, CoffeeTableRow.STAT_NEWPLAYERS);
+        CMLib.aetherTables().bump(mob, AetherTableRow.STAT_NEWPLAYERS);
         if (isExpired(mob.playerStats().getAccount(), session, mob)) {
             if (loginObj.acct != null)
                 loginObj.state = LoginState.ACCTMENU_START;
@@ -2737,7 +2737,7 @@ public class CharCreation extends StdLibrary implements CharCreationLibrary {
             session.setMob(null);
             return LoginResult.NO_LOGIN;
         }
-        CMLib.coffeeTables().bump(mob, CoffeeTableRow.STAT_LOGINS);
+        CMLib.aetherTables().bump(mob, AetherTableRow.STAT_LOGINS);
         mob.setSession(session);
         session.setMob(mob);
         return LoginResult.NORMAL_LOGIN;
@@ -2884,7 +2884,7 @@ public class CharCreation extends StdLibrary implements CharCreationLibrary {
         if (loginsDisabled(mob))
             return LoginResult.NO_LOGIN;
         mob.bringToLife(startRoom, resetStats);
-        CMLib.coffeeTables().bump(mob, CoffeeTableRow.STAT_LOGINS);
+        CMLib.aetherTables().bump(mob, AetherTableRow.STAT_LOGINS);
         mob.location().showOthers(mob, startRoom, CMMsg.MASK_ALWAYS | CMMsg.MSG_ENTER, L("<S-NAME> appears!"));
         for (int f = 0; f < mob.numFollowers(); f++) {
             final MOB follower = mob.fetchFollower(f);

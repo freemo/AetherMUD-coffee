@@ -1988,7 +1988,7 @@ public class DefaultQuest implements Quest, Tickable, CMObject {
                             break;
                         }
                         q.loadedMobs = new Vector<MOB>();
-                        final String errorStr = CMLib.coffeeMaker().addMOBsFromXML(buf.toString(), q.loadedMobs, null);
+                        final String errorStr = CMLib.aetherMaker().addMOBsFromXML(buf.toString(), q.loadedMobs, null);
                         if (errorStr.length() > 0) {
                             errorOccurred(q, isQuiet, "Quest '" + name() + "',Error on import of: '" + CMParms.combine(p, 2) + "' for '" + name() + "': " + errorStr + ".");
                             break;
@@ -2018,7 +2018,7 @@ public class DefaultQuest implements Quest, Tickable, CMObject {
                             break;
                         }
                         q.loadedItems = new Vector<Item>();
-                        final String errorStr = CMLib.coffeeMaker().addItemsFromXML(buf.toString(), q.loadedItems, null);
+                        final String errorStr = CMLib.aetherMaker().addItemsFromXML(buf.toString(), q.loadedItems, null);
                         if (errorStr.length() > 0) {
                             errorOccurred(q, isQuiet, "Quest '" + name() + "',Error on import of: '" + CMParms.combine(p, 2) + "' for '" + name() + "': " + errorStr + ".");
                             break;
@@ -2562,7 +2562,7 @@ public class DefaultQuest implements Quest, Tickable, CMObject {
     @Override
     public boolean startQuest() {
         if ((!running()) && (!isCopy()))
-            CMLib.coffeeTables().bump(this, CoffeeTableRow.STAT_QUESTSTARTATTEMPT);
+            CMLib.aetherTables().bump(this, AetherTableRow.STAT_QUESTSTARTATTEMPT);
         return startQuestInternal();
     }
 
@@ -2616,7 +2616,7 @@ public class DefaultQuest implements Quest, Tickable, CMObject {
                 resetQuest(10);
                 return false;
             }
-            CMLib.coffeeTables().bump(this, CoffeeTableRow.STAT_QUESTFAILEDSTART);
+            CMLib.aetherTables().bump(this, AetherTableRow.STAT_QUESTFAILEDSTART);
         } else if (!questState.done)
             Log.errOut("Quest", "Nothing parsed in '" + name() + "', quest not started.");
         else if (duration() < 0) {
@@ -2828,7 +2828,7 @@ public class DefaultQuest implements Quest, Tickable, CMObject {
     @Override
     public void stopQuest() {
         if ((!stoppingQuest) && (running()))
-            CMLib.coffeeTables().bump(this, CoffeeTableRow.STAT_QUESTSUCCESS);
+            CMLib.aetherTables().bump(this, AetherTableRow.STAT_QUESTSUCCESS);
         stopQuestInternal();
     }
 
@@ -3097,14 +3097,14 @@ public class DefaultQuest implements Quest, Tickable, CMObject {
                 if ((questState != null) && (questState.autoStepAfterDuration)) {
                     stepQuest();
                 } else {
-                    CMLib.coffeeTables().bump(this, CoffeeTableRow.STAT_QUESTTIMESTOP);
+                    CMLib.aetherTables().bump(this, AetherTableRow.STAT_QUESTTIMESTOP);
                     stopQuest();
                 }
             }
             tickStatus = Tickable.STATUS_END;
         } else {
             if (startQuestOnTime()) {
-                CMLib.coffeeTables().bump(this, CoffeeTableRow.STAT_QUESTTIMESTART);
+                CMLib.aetherTables().bump(this, AetherTableRow.STAT_QUESTTIMESTART);
             }
         }
         tickStatus = Tickable.STATUS_NOT;

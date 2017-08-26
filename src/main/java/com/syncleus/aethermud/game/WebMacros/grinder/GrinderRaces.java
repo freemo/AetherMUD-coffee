@@ -62,7 +62,7 @@ public class GrinderRaces {
         }
         if (!changes)
             return "";
-        return CMLib.coffeeMaker().getPhyStatsStr(adjPStats);
+        return CMLib.aetherMaker().getPhyStatsStr(adjPStats);
     }
 
     public static String getCStats(char c, HTTPRequest httpReq) {
@@ -86,7 +86,7 @@ public class GrinderRaces {
         }
         if (!changes)
             return "";
-        return CMLib.coffeeMaker().getCharStatsStr(adjCStats);
+        return CMLib.aetherMaker().getCharStatsStr(adjCStats);
     }
 
     public static String getCState(char c, HTTPRequest httpReq) {
@@ -112,7 +112,7 @@ public class GrinderRaces {
         }
         if (!changes)
             return "";
-        return CMLib.coffeeMaker().getCharStateStr(adjCState);
+        return CMLib.aetherMaker().getCharStateStr(adjCState);
     }
 
     public static List<Item> itemList(List<? extends Item> items, char c, HTTPRequest httpReq, boolean one) {

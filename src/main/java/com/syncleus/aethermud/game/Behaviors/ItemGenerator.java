@@ -213,7 +213,7 @@ public class ItemGenerator extends ActiveTicker {
             return true;
         Item I = null;
         final Environmental E = (Environmental) ticking;
-        final ShopKeeper SK = CMLib.coffeeShops().getShopKeeper(E);
+        final ShopKeeper SK = CMLib.aetherShops().getShopKeeper(E);
         for (int i = maintained.size() - 1; i >= 0; i--) {
             try {
                 I = maintained.elementAt(i);

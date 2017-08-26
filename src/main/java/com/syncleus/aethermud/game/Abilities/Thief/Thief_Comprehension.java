@@ -127,7 +127,7 @@ public class Thief_Comprehension extends ThiefSkill {
                 else if ((msg.othersMessage() != null) && (msg.othersMessage().indexOf('\'') > 0)) {
                     String otherMes = msg.othersMessage();
                     if (msg.target() != null)
-                        otherMes = CMLib.coffeeFilter().fullOutFilter(((MOB) affected).session(), (MOB) affected, msg.source(), msg.target(), msg.tool(), otherMes, false);
+                        otherMes = CMLib.aetherFilter().fullOutFilter(((MOB) affected).session(), (MOB) affected, msg.source(), msg.target(), msg.tool(), otherMes, false);
                     queue.addElement(CMClass.getMsg(msg.source(), affected, null, CMMsg.NO_EFFECT, msg.othersCode(), CMMsg.NO_EFFECT, L("@x1 (translated from @x2)", CMStrings.substituteSayInMessage(otherMes, str), ((Ability) msg.tool()).name())));
                 }
             }

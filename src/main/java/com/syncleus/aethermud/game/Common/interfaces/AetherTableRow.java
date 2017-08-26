@@ -20,13 +20,13 @@ import com.syncleus.aethermud.game.core.interfaces.CMObject;
 
 
 /**
- * A CoffeeTableRow object represents a period of sustained statistics gathering.
+ * A AetherTableRow object represents a period of sustained statistics gathering.
  * The AetherMud engine keeps counters on all manner of different game events,
- * such as logins, new players, levels, deaths, and others.  CoffeeTableRows
- * are managed by the CoffeeTables library.
+ * such as logins, new players, levels, deaths, and others.  AetherTableRows
+ * are managed by the AetherTables library.
  * @see com.syncleus.aethermud.game.Libraries.interfaces.StatisticsLibrary
  */
-public interface CoffeeTableRow extends CMCommon {
+public interface AetherTableRow extends CMCommon {
     /** a constant index into statistics for login events */
     public final int STAT_LOGINS = 0;
     /** a constant index into statistics for a tick event*/
@@ -76,28 +76,28 @@ public interface CoffeeTableRow extends CMCommon {
 
     /**
      * The start time, in millis since 1970, for this row of data
-     * @see com.syncleus.aethermud.game.Common.interfaces.CoffeeTableRow#setStartTime(long)
+     * @see AetherTableRow#setStartTime(long)
      * @return the start time in millis
      */
     public long startTime();
 
     /**
      * The end time, in millis since 1970, for this row of data
-     * @see com.syncleus.aethermud.game.Common.interfaces.CoffeeTableRow#setEndTime(long)
+     * @see AetherTableRow#setEndTime(long)
      * @return the end time in millis
      */
     public long endTime();
 
     /**
      * Sets the start time, in millis since 1970, for this row of data
-     * @see com.syncleus.aethermud.game.Common.interfaces.CoffeeTableRow#startTime()
+     * @see AetherTableRow#startTime()
      * @param time the start time in millis
      */
     public void setStartTime(long time);
 
     /**
      * Sets the end time, in millis since 1970, for this row of data
-     * @see com.syncleus.aethermud.game.Common.interfaces.CoffeeTableRow#endTime()
+     * @see AetherTableRow#endTime()
      * @param time the end time in millis
      */
     public void setEndTime(long time);
@@ -111,7 +111,7 @@ public interface CoffeeTableRow extends CMCommon {
     /**
      * Returns the cumulative number online during this period per poll.
      * Used to calulate the avg online for the period.
-     * @see com.syncleus.aethermud.game.Common.interfaces.CoffeeTableRow#numberOnlineCounter()
+     * @see AetherTableRow#numberOnlineCounter()
      * @return the cumulative number online during this period per poll
      */
     public long numberOnlineTotal();
@@ -119,21 +119,21 @@ public interface CoffeeTableRow extends CMCommon {
     /**
      * Returns the number of times the number of players online has been
      * polled during this period.
-     * @see com.syncleus.aethermud.game.Common.interfaces.CoffeeTableRow#numberOnlineTotal()
+     * @see AetherTableRow#numberOnlineTotal()
      * @return number of times the number of players online has been polled
      */
     public long numberOnlineCounter();
 
     /**
      * Returns an XML document representing all the information in this object.
-     * @see com.syncleus.aethermud.game.Common.interfaces.CoffeeTableRow#populate(long, long, String)
+     * @see AetherTableRow#populate(long, long, String)
      * @return an xml document
      */
     public String data();
 
     /**
      * Populates this object from an xml document containing relevant statistics.
-     * @see com.syncleus.aethermud.game.Common.interfaces.CoffeeTableRow#data()
+     * @see AetherTableRow#data()
      * @param start the start time, in millis, for this row of data
      * @param end the end time, in millis, for this row of data
      * @param data the statistics and data for this row, as xml
@@ -143,7 +143,7 @@ public interface CoffeeTableRow extends CMCommon {
     /**
      * Finds a named statistic of the given name, and increments the value
      * of that long statistic by 1.  Requires the event being recorded.
-     * @see com.syncleus.aethermud.game.Common.interfaces.CoffeeTableRow#STAT_LOGINS
+     * @see AetherTableRow#STAT_LOGINS
      * @param s the named statistic to record for the given event
      * @param type the type of event to tabulate
      */
@@ -154,7 +154,7 @@ public interface CoffeeTableRow extends CMCommon {
      * (usually MOB or Ability) and adds to the relevant statistics.
      * Requires the Environmental object to query, and the event being
      * recorded.
-     * @see com.syncleus.aethermud.game.Common.interfaces.CoffeeTableRow#STAT_LOGINS
+     * @see AetherTableRow#STAT_LOGINS
      * @param E the mob or ability
      * @param type the type of event to tabulate
      */
@@ -171,7 +171,7 @@ public interface CoffeeTableRow extends CMCommon {
     /**
      * Loops through adding all the event stats for the given code string
      * together
-     * @see com.syncleus.aethermud.game.Common.interfaces.CoffeeTableRow#STAT_TOTAL
+     * @see AetherTableRow#STAT_TOTAL
      * @param code the code string to use, or *
      * @param tot the running total of all events stats
      */

@@ -19,7 +19,7 @@ package com.syncleus.aethermud.game.Abilities.Prayers;
 import com.syncleus.aethermud.game.Abilities.interfaces.Ability;
 import com.syncleus.aethermud.game.Common.interfaces.CMMsg;
 import com.syncleus.aethermud.game.Common.interfaces.CharStats;
-import com.syncleus.aethermud.game.Common.interfaces.CoffeeTableRow;
+import com.syncleus.aethermud.game.Common.interfaces.AetherTableRow;
 import com.syncleus.aethermud.game.Items.interfaces.Item;
 import com.syncleus.aethermud.game.Items.interfaces.Wearable;
 import com.syncleus.aethermud.game.Libraries.interfaces.ChannelsLibrary;
@@ -107,7 +107,7 @@ public class Prayer_Marry extends Prayer {
             mob.tell(L("@x1 must be a player to marry.", husband.name()));
             return false;
         }
-        CMLib.coffeeTables().bump(husband, CoffeeTableRow.STAT_BIRTHS);
+        CMLib.aetherTables().bump(husband, AetherTableRow.STAT_BIRTHS);
         Item I = husband.fetchItem(null, Wearable.FILTER_WORNONLY, "wedding band");
         if (I == null) {
             mob.tell(L("@x1 isn't wearing a wedding band!", husband.name()));
@@ -142,7 +142,7 @@ public class Prayer_Marry extends Prayer {
                 mob.location().send(mob, msg);
                 husband.setLiegeID(wife.Name());
                 wife.setLiegeID(husband.Name());
-                CMLib.coffeeTables().bump(husband, CoffeeTableRow.STAT_MARRIAGES);
+                CMLib.aetherTables().bump(husband, AetherTableRow.STAT_MARRIAGES);
                 CMLib.commands().postSay(mob, husband, L("You may kiss your bride!"), false, false);
                 final List<String> channels = CMLib.channels().getFlaggedChannelNames(ChannelsLibrary.ChannelFlag.MARRIAGES);
                 for (int i = 0; i < channels.size(); i++)

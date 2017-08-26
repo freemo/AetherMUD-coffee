@@ -864,7 +864,7 @@ CHARCLASSES, RACES, COMMANDS, LOCALES, AREAS, EXITS, etc&nbsp;</span>
                         </td>
                     </tr>
                     <tr>
-                        <td valign="top">coffeeanthem.script<br/>
+                        <td valign="top">aetheranthem.script<br/>
                         </td>
                         <td valign="top">Sample MOBPROG script to make a mob sing
                             the AetherMud anthem every day. Added to mobs the same way
@@ -1567,8 +1567,8 @@ DBCONNECTIONS=1<br/>
                     </li>
                     <li>
                         <p>Create a user for the new database (user in this example
-                            is called coffee). As root, type "mysql" into the shell. Now enter:
-                            GRANT ALL ON aethermud.* TO coffee@localhost IDENTIFIED BY "password";
+                            is called aether). As root, type "mysql" into the shell. Now enter:
+                            GRANT ALL ON aethermud.* TO aether@localhost IDENTIFIED BY "password";
                             Enter a password for the user inside the quotes. Now type, "quit".</p>
                     </li>
                     <li>
@@ -1582,7 +1582,7 @@ DBCONNECTIONS=1<br/>
                     </li>
                     <li>
                         <p>Edit the following settings in AetherMud/aethermud.ini:</p>
-                        <pre>DBCLASS=com.mysql.jdbc.Driver<br/>DBSERVICE=jdbc:mysql://localhost/aethermud<br/>DBUSER=coffee<br/>DBPASS=password<br/>DBREUSE=TRUE<br/>DBPINGINTERVALMINS=60<br/>DBCONNECTIONS=4<br/></pre>
+                        <pre>DBCLASS=com.mysql.jdbc.Driver<br/>DBSERVICE=jdbc:mysql://localhost/aethermud<br/>DBUSER=aether<br/>DBPASS=password<br/>DBREUSE=TRUE<br/>DBPINGINTERVALMINS=60<br/>DBCONNECTIONS=4<br/></pre>
                         <p>(no quotes on the password here)<br/>
                             Save your changes and fire up AetherMud!</p>
                     </li>

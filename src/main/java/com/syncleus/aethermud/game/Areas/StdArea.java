@@ -135,13 +135,13 @@ public class StdArea implements Area {
     @Override
     public void setCurrency(String newCurrency) {
         if (currency.length() > 0) {
-            CMLib.beanCounter().unloadCurrencySet(currency);
+            CMLib.moneyCounter().unloadCurrencySet(currency);
             currency = newCurrency;
             for (final Enumeration<Area> e = CMLib.map().areas(); e.hasMoreElements(); )
-                CMLib.beanCounter().getCurrencySet(e.nextElement().getCurrency());
+                CMLib.moneyCounter().getCurrencySet(e.nextElement().getCurrency());
         } else {
             currency = newCurrency;
-            CMLib.beanCounter().getCurrencySet(currency);
+            CMLib.moneyCounter().getCurrencySet(currency);
         }
     }
 
@@ -686,7 +686,7 @@ public class StdArea implements Area {
         final String[] s = finalItemPricingAdjustments(this);
         if (s.length > 0)
             return s;
-        return CMLib.coffeeShops().parseItemPricingAdjustments(CMProps.getVar(CMProps.Str.PRICEFACTORS).trim());
+        return CMLib.aetherShops().parseItemPricingAdjustments(CMProps.getVar(CMProps.Str.PRICEFACTORS).trim());
     }
 
     protected String[] finalItemPricingAdjustments(Area A) {
@@ -744,12 +744,12 @@ public class StdArea implements Area {
         final Pair<Long, TimePeriod> budget = finalAreaBudget(this);
         if (budget != null)
             return budget;
-        return CMLib.coffeeShops().parseBudget(CMProps.getVar(CMProps.Str.BUDGET));
+        return CMLib.aetherShops().parseBudget(CMProps.getVar(CMProps.Str.BUDGET));
     }
 
     protected Pair<Long, TimePeriod> finalAreaBudget(Area A) {
         if (A.budget().length() > 0)
-            return CMLib.coffeeShops().parseBudget(A.budget());
+            return CMLib.aetherShops().parseBudget(A.budget());
         for (final Enumeration<Area> i = A.getParents(); i.hasMoreElements(); ) {
             final Pair<Long, TimePeriod> budget = finalAreaBudget(i.nextElement());
             if (budget != null)
@@ -774,12 +774,12 @@ public class StdArea implements Area {
         if (rate != null)
             return rate;
 
-        return CMLib.coffeeShops().parseDevalueRate(CMProps.getVar(CMProps.Str.DEVALUERATE));
+        return CMLib.aetherShops().parseDevalueRate(CMProps.getVar(CMProps.Str.DEVALUERATE));
     }
 
     protected double[] finalAreaDevalueRate(Area A) {
         if (A.devalueRate().length() > 0)
-            return CMLib.coffeeShops().parseDevalueRate(A.devalueRate());
+            return CMLib.aetherShops().parseDevalueRate(A.devalueRate());
         for (final Enumeration<Area> i = A.getParents(); i.hasMoreElements(); ) {
             final double[] rate = finalAreaDevalueRate(i.nextElement());
             if (rate != null)
@@ -795,7 +795,7 @@ public class StdArea implements Area {
 
     @Override
     public void setDevalueRate(String factors) {
-        devalueRate = CMLib.coffeeShops().parseDevalueRate(factors);
+        devalueRate = CMLib.aetherShops().parseDevalueRate(factors);
     }
 
     @Override
@@ -839,14 +839,14 @@ public class StdArea implements Area {
 
     @Override
     public String text() {
-        return CMLib.coffeeMaker().getPropertiesStr(this, true);
+        return CMLib.aetherMaker().getPropertiesStr(this, true);
     }
 
     @Override
     public void setMiscText(String newMiscText) {
         miscText = "";
         if (newMiscText.trim().length() > 0)
-            CMLib.coffeeMaker().setPropertiesStr(this, newMiscText, true);
+            CMLib.aetherMaker().setPropertiesStr(this, newMiscText, true);
         derivedClimate = CLIMASK_INHERIT;
         derivedAtmo = ATMOSPHERE_INHERIT;
         derivedTheme = THEME_INHERIT;
@@ -1480,7 +1480,7 @@ public class StdArea implements Area {
                 s.append("Population     : ^H0^N\n\r");
         } else {
             s.append("Population     : ^H" + statData[Area.Stats.POPULATION.ordinal()] + "^N\n\r");
-            final String currName = CMLib.beanCounter().getCurrency(this);
+            final String currName = CMLib.moneyCounter().getCurrency(this);
             if (currName.length() > 0)
                 s.append("Currency       : ^H" + CMStrings.capitalizeAndLower(currName) + "^N\n\r");
             else

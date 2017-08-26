@@ -120,7 +120,7 @@ public class GenPackagedItems extends GenItem implements PackagedItems {
         final StringBuffer itemstr = new StringBuffer("");
         itemstr.append("<PAKITEM>");
         itemstr.append(CMLib.xml().convertXMLtoTag("PICLASS", CMClass.classID(I)));
-        itemstr.append(CMLib.xml().convertXMLtoTag("PIDATA", CMLib.coffeeMaker().getPropertiesStr(I, true)));
+        itemstr.append(CMLib.xml().convertXMLtoTag("PIDATA", CMLib.aetherMaker().getPropertiesStr(I, true)));
         itemstr.append("</PAKITEM>");
         setPackageText(itemstr.toString());
         setNumberOfItemsInPackage(number);
@@ -170,7 +170,7 @@ public class GenPackagedItems extends GenItem implements PackagedItems {
             Log.errOut("Packaged", "Error parsing 'PAKITEM' data.");
             return null;
         }
-        CMLib.coffeeMaker().setPropertiesStr(newOne, idat, true);
+        CMLib.aetherMaker().setPropertiesStr(newOne, idat, true);
         return (Item) newOne;
     }
 

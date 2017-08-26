@@ -235,7 +235,7 @@ public class Chant_SpeakWithAnimals extends Chant implements Language {
                         else if ((msg.othersMessage() != null) && (msg.othersMessage().indexOf('\'') > 0)) {
                             String otherMes = msg.othersMessage();
                             if (msg.target() != null)
-                                otherMes = CMLib.coffeeFilter().fullOutFilter((mob).session(), mob, msg.source(), msg.target(), msg.tool(), otherMes, false);
+                                otherMes = CMLib.aetherFilter().fullOutFilter((mob).session(), mob, msg.source(), msg.target(), msg.tool(), otherMes, false);
                             msg.addTrailerMsg(CMClass.getMsg(msg.source(), affected, null, CMMsg.NO_EFFECT, msg.othersCode(), CMMsg.NO_EFFECT, L("@x1 (translated from @x2)", CMStrings.substituteSayInMessage(otherMes, str), msg.tool().name())));
                         }
                     }

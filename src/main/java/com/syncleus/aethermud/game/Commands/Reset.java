@@ -380,7 +380,7 @@ public class Reset extends StdCommand {
                         sess.print(".");
                     final Room R = CMLib.map().getRoom(r.nextElement());
                     if ((R != null) && (R.roomID() != null) && (R.roomID().length() > 0)) {
-                        final Room room = CMLib.coffeeMaker().makeNewRoomContent(R, false);
+                        final Room room = CMLib.aetherMaker().makeNewRoomContent(R, false);
                         if (room == null) {
                             if (sess != null)
                                 sess.println(L("Unable to load room @x1, skipping.", CMLib.map().getExtendedRoomID(R)));
@@ -763,7 +763,7 @@ public class Reset extends StdCommand {
                     if (R.isGeneric()) {
                         final CharStats ADJSTAT1 = (CharStats) CMClass.getCommon("DefaultCharStats");
                         ADJSTAT1.setAllValues(0);
-                        CMLib.coffeeMaker().setCharStats(ADJSTAT1, R.getStat("ASTATS"));
+                        CMLib.aetherMaker().setCharStats(ADJSTAT1, R.getStat("ASTATS"));
                         boolean save = false;
                         for (final int i : CharStats.CODES.BASECODES()) {
                             if (ADJSTAT1.getStat(i) > 5) {
@@ -772,7 +772,7 @@ public class Reset extends StdCommand {
                             }
                         }
                         if (save) {
-                            R.setStat("ASTATS", CMLib.coffeeMaker().getCharStatsStr(ADJSTAT1));
+                            R.setStat("ASTATS", CMLib.aetherMaker().getCharStatsStr(ADJSTAT1));
                             mob.tell(L("Modified @x1", R.ID()));
                             CMLib.database().DBDeleteRace(R.ID());
                             CMLib.database().DBCreateRace(R.ID(), R.racialParms());
@@ -1093,8 +1093,8 @@ public class Reset extends StdCommand {
                                 final MOB M = R.fetchInhabitant(i);
                                 if ((M.isMonster())
                                     && (M.getStartRoom() == R)
-                                    && (CMLib.beanCounter().getMoney(M) > (M.basePhyStats().level() + 1))) {
-                                    CMLib.beanCounter().setMoney(M, CMLib.dice().roll(1, M.basePhyStats().level(), 0) + CMLib.dice().roll(1, 10, 0));
+                                    && (CMLib.moneyCounter().getMoney(M) > (M.basePhyStats().level() + 1))) {
+                                    CMLib.moneyCounter().setMoney(M, CMLib.dice().roll(1, M.basePhyStats().level(), 0) + CMLib.dice().roll(1, 10, 0));
                                     Log.sysOut("Reset", "Updated " + M.name() + " in room " + R.roomID() + ".");
                                     didSomething = true;
                                 }
@@ -1186,7 +1186,7 @@ public class Reset extends StdCommand {
                                         continue;
                                     for (int i = 0; i < M.numItems(); i++)
                                         changedMOBS = changedMOBS || (rightImportMat(null, M.getItem(i), false) >= 0);
-                                    final ShopKeeper SK = CMLib.coffeeShops().getShopKeeper(M);
+                                    final ShopKeeper SK = CMLib.aetherShops().getShopKeeper(M);
                                     if (SK != null) {
                                         for (final Iterator<Environmental> i = SK.getShop().getStoreInventory(); i.hasNext(); ) {
                                             final Environmental E = i.next();
@@ -1406,7 +1406,7 @@ public class Reset extends StdCommand {
                                 if (CMLib.itemBuilder().itemFix(I, lvl, recordedChanges))
                                     changedMOBS = true;
                             }
-                            final ShopKeeper SK = CMLib.coffeeShops().getShopKeeper(M);
+                            final ShopKeeper SK = CMLib.aetherShops().getShopKeeper(M);
                             if (SK != null) {
                                 for (final Iterator<Environmental> i = SK.getShop().getStoreInventory(); i.hasNext(); ) {
                                     final Environmental E = i.next();
@@ -1578,7 +1578,7 @@ public class Reset extends StdCommand {
                                         } else if (returned > 0)
                                             somethingDone = true;
                                     }
-                                    final ShopKeeper SK = CMLib.coffeeShops().getShopKeeper(M);
+                                    final ShopKeeper SK = CMLib.aetherShops().getShopKeeper(M);
                                     if (SK != null) {
                                         for (final Iterator<Environmental> i = SK.getShop().getStoreInventory(); i.hasNext(); ) {
                                             final Environmental E = i.next();

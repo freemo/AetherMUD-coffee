@@ -107,7 +107,7 @@ public class Spell_PolymorphObject extends Spell {
         super.unInvoke();
         if ((previousItems == null) && (text().length() > 0)) {
             previousItems = new XVector<Item>();
-            CMLib.coffeeMaker().addItemsFromXML(text(), previousItems, null);
+            CMLib.aetherMaker().addItemsFromXML(text(), previousItems, null);
         }
         if (canBeUninvoked() && (affected instanceof Item) && (previousItems != null) && (previousItems.size() > 0)) {
             final Item item = (Item) affected;
@@ -256,7 +256,7 @@ public class Spell_PolymorphObject extends Spell {
                     items.add(targetI);
                     if (targetI instanceof Container)
                         items.addAll(((Container) targetI).getDeepContents());
-                    A.setMiscText(CMLib.coffeeMaker().getItemsXML(items, new Hashtable<String, List<Item>>(), new HashSet<String>(), null).toString());
+                    A.setMiscText(CMLib.aetherMaker().getItemsXML(items, new Hashtable<String, List<Item>>(), new HashSet<String>(), null).toString());
                     A.previousItems = items;
                     ItemPossessor possessor = targetI.owner();
                     if (possessor != null) {

@@ -31,7 +31,7 @@ import java.util.logging.Logger;
 
 
 /**
- * Configuration for coffeewebserver
+ * Configuration for aetherwebserver
  * @author Bo Zimmerman
  *
  */
@@ -83,7 +83,7 @@ public class CWConfig implements Cloneable {
     private FileCacheManager fileCache = null;
     private Logger logger = null;
     private HTTPFileGetter fileGetter = null;
-    private WebServer coffeeWebServer = null;
+    private WebServer aetherWebServer = null;
     private FileManager fileManager = new CWFileManager();
 
     private String sslKeystorePath = null;
@@ -292,17 +292,17 @@ public class CWConfig implements Cloneable {
     }
 
     /**
-     * @return the coffeeWebServer
+     * @return the aetherWebServer
      */
-    public WebServer getCoffeeWebServer() {
-        return coffeeWebServer;
+    public WebServer getAetherWebServer() {
+        return aetherWebServer;
     }
 
     /**
-     * @param coffeeWebServer the coffeeWebServer to set
+     * @param aetherWebServer the aetherWebServer to set
      */
-    public void setCoffeeWebServer(WebServer coffeeWebServer) {
-        this.coffeeWebServer = coffeeWebServer;
+    public void setAetherWebServer(WebServer aetherWebServer) {
+        this.aetherWebServer = aetherWebServer;
     }
 
     /**
@@ -1057,7 +1057,7 @@ public class CWConfig implements Cloneable {
 
     /**
      * Returns one of the named properties, even ones that don't
-     * mean anything to coffeewebserver per se.
+     * mean anything to aetherwebserver per se.
      * @param propName the name of the property
      * @return the value of the property, or null if not found
      */
@@ -1250,7 +1250,7 @@ public class CWConfig implements Cloneable {
                 try {
                     disableFlags.add(DisableFlag.valueOf(disable));
                 } catch (final Exception e) {
-                    getLogger().severe("Unknown DISABLE flag in coffeeweb.ini: " + disable);
+                    getLogger().severe("Unknown DISABLE flag in aetherweb.ini: " + disable);
                 }
             }
 

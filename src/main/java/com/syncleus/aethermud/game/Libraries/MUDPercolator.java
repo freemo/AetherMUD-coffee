@@ -22,7 +22,7 @@ import com.syncleus.aethermud.game.Areas.interfaces.Area;
 import com.syncleus.aethermud.game.Behaviors.interfaces.Behavior;
 import com.syncleus.aethermud.game.Common.interfaces.CharState;
 import com.syncleus.aethermud.game.Common.interfaces.CharStats;
-import com.syncleus.aethermud.game.Common.interfaces.CoffeeShop;
+import com.syncleus.aethermud.game.Common.interfaces.AetherShop;
 import com.syncleus.aethermud.game.Common.interfaces.PhyStats;
 import com.syncleus.aethermud.game.Exits.interfaces.Exit;
 import com.syncleus.aethermud.game.Items.interfaces.*;
@@ -920,12 +920,12 @@ public class MUDPercolator extends StdLibrary implements AreaGenerationLibrary {
             for (final GenericBuilder.GenMOBCode stat : GenericBuilder.GenMOBCode.values()) {
                 if (stat != GenericBuilder.GenMOBCode.ABILITY) // because this screws up gen hit points
                 {
-                    E.setStat(stat.name(), CMLib.coffeeMaker().getGenMobStat((MOB) E2, stat.name()));
+                    E.setStat(stat.name(), CMLib.aetherMaker().getGenMobStat((MOB) E2, stat.name()));
                 }
             }
         } else if ((E2 instanceof Item) && (!((Item) E2).isGeneric())) {
             for (final GenericBuilder.GenItemCode stat : GenericBuilder.GenItemCode.values()) {
-                E.setStat(stat.name(), CMLib.coffeeMaker().getGenItemStat((Item) E2, stat.name()));
+                E.setStat(stat.name(), CMLib.aetherMaker().getGenItemStat((Item) E2, stat.name()));
             }
         } else
             for (final String stat : E2.getStatCodes()) {
@@ -1113,7 +1113,7 @@ public class MUDPercolator extends StdLibrary implements AreaGenerationLibrary {
             A.setSavable(true);
             M.addAbility(A);
         }
-        final ShopKeeper SK = CMLib.coffeeShops().getShopKeeper(M);
+        final ShopKeeper SK = CMLib.aetherShops().getShopKeeper(M);
         if (SK != null) {
             final List<Triad<Environmental, Integer, Long>> iV = findShopInventory(M, piece, defined);
             if (iV.size() > 0)
@@ -1367,7 +1367,7 @@ public class MUDPercolator extends StdLibrary implements AreaGenerationLibrary {
 
     @SuppressWarnings("unchecked")
     protected List<ItemCraftor.ItemKeyPair> craftAllOfThisRecipe(ItemCraftor skill, int material, Map<String, Object> defined) {
-        List<ItemCraftor.ItemKeyPair> skillContents = (List<ItemCraftor.ItemKeyPair>) defined.get("____COFFEEMUD_" + skill.ID() + "_" + material + "_true");
+        List<ItemCraftor.ItemKeyPair> skillContents = (List<ItemCraftor.ItemKeyPair>) defined.get("____AETHERMUD_" + skill.ID() + "_" + material + "_true");
         if (skillContents == null) {
             if (material >= 0)
                 skillContents = skill.craftAllItemSets(material, true);
@@ -1375,7 +1375,7 @@ public class MUDPercolator extends StdLibrary implements AreaGenerationLibrary {
                 skillContents = skill.craftAllItemSets(true);
             if (skillContents == null)
                 return null;
-            defined.put("____COFFEEMUD_" + skill.ID() + "_" + material + "_true", skillContents);
+            defined.put("____AETHERMUD_" + skill.ID() + "_" + material + "_true", skillContents);
         }
         final List<ItemCraftor.ItemKeyPair> skillContentsCopy = new Vector<ItemCraftor.ItemKeyPair>(skillContents.size());
         skillContentsCopy.addAll(skillContents);
@@ -2650,10 +2650,10 @@ public class MUDPercolator extends StdLibrary implements AreaGenerationLibrary {
                             }
                         }
                     }
-                    final ShopKeeper SK = CMLib.coffeeShops().getShopKeeper(M);
+                    final ShopKeeper SK = CMLib.aetherShops().getShopKeeper(M);
                     if (SK != null) {
-                        for (final Iterator<CoffeeShop.ShelfProduct> i = SK.getShop().getStoreShelves(); i.hasNext(); ) {
-                            final CoffeeShop.ShelfProduct P = i.next();
+                        for (final Iterator<AetherShop.ShelfProduct> i = SK.getShop().getStoreShelves(); i.hasNext(); ) {
+                            final AetherShop.ShelfProduct P = i.next();
                             final Environmental E2 = P.product;
                             if ((E2 instanceof Item) || (E2 instanceof MOB)) {
                                 final Physical P2 = (Physical) E2;

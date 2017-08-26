@@ -39,7 +39,7 @@ import com.syncleus.aethermud.game.core.interfaces.*;
 import java.util.*;
 
 
-public class CoffeeUtensils extends StdLibrary implements CMMiscUtils {
+public class AetherUtensils extends StdLibrary implements CMMiscUtils {
     public static final int LOOTFLAG_RUIN = 1;
     public static final int LOOTFLAG_LOSS = 2;
     public static final int LOOTFLAG_WORN = 4;
@@ -50,7 +50,7 @@ public class CoffeeUtensils extends StdLibrary implements CMMiscUtils {
 
     @Override
     public String ID() {
-        return "CoffeeUtensils";
+        return "AetherUtensils";
     }
 
     @Override
@@ -473,7 +473,7 @@ public class CoffeeUtensils extends StdLibrary implements CMMiscUtils {
                     }
                     if (mob instanceof ShopKeeper) {
                         final List<Item> rivalItems = new Vector<Item>();
-                        final CoffeeShop shop = ((ShopKeeper) mob).getShop();
+                        final AetherShop shop = ((ShopKeeper) mob).getShop();
                         for (final Iterator<Environmental> i = shop.getStoreInventory(); i.hasNext(); ) {
                             final Environmental E = i.next();
                             if (E instanceof Item) {
@@ -492,11 +492,11 @@ public class CoffeeUtensils extends StdLibrary implements CMMiscUtils {
                             }
                         }
                     }
-                    CMLib.beanCounter().getTotalAbsoluteNativeValue(mob); // converts mob.get-Money();
+                    CMLib.moneyCounter().getTotalAbsoluteNativeValue(mob); // converts mob.get-Money();
                     if (mob.getMoneyVariation() > 0.0)
-                        CMLib.beanCounter().addMoney(mob, Math.random() * mob.getMoneyVariation());
+                        CMLib.moneyCounter().addMoney(mob, Math.random() * mob.getMoneyVariation());
                     else if (mob.getMoneyVariation() < 0.0)
-                        CMLib.beanCounter().subtractMoney(mob, -(Math.random() * mob.getMoneyVariation()));
+                        CMLib.moneyCounter().subtractMoney(mob, -(Math.random() * mob.getMoneyVariation()));
                     mob.recoverPhyStats();
                     mob.recoverCharStats();
                     mob.recoverMaxState();
@@ -1236,13 +1236,13 @@ public class CoffeeUtensils extends StdLibrary implements CMMiscUtils {
                         break;
                     }
                     case 'g': {
-                        buf.append((int) Math.round(Math.floor(CMLib.beanCounter().getTotalAbsoluteNativeValue(mob)
-                            / CMLib.beanCounter().getLowestDenomination(CMLib.beanCounter().getCurrency(mob)))));
+                        buf.append((int) Math.round(Math.floor(CMLib.moneyCounter().getTotalAbsoluteNativeValue(mob)
+                            / CMLib.moneyCounter().getLowestDenomination(CMLib.moneyCounter().getCurrency(mob)))));
                         c++;
                         break;
                     }
                     case 'G': {
-                        buf.append(CMLib.beanCounter().nameCurrencyShort(mob, CMLib.beanCounter().getTotalAbsoluteNativeValue(mob)));
+                        buf.append(CMLib.moneyCounter().nameCurrencyShort(mob, CMLib.moneyCounter().getTotalAbsoluteNativeValue(mob)));
                         c++;
                         break;
                     }

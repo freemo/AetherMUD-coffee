@@ -92,7 +92,7 @@ public class Prop_ItemSlot extends Property {
             if (itemXml.startsWith("<ITEM>"))
                 itemXml = "<ITEMS>" + itemXml + "</ITEMS>";
             final List<Item> items = new LinkedList<Item>();
-            CMLib.coffeeMaker().addItemsFromXML(itemXml, items, null);
+            CMLib.aetherMaker().addItemsFromXML(itemXml, items, null);
             int islot = 0;
             int aslot = 0;
             for (Item I : items) {
@@ -122,7 +122,7 @@ public class Prop_ItemSlot extends Property {
             if ((I != null) && (!items.contains(I)))
                 items.add(I);
         }
-        str.append("<ITEMS>" + CMLib.coffeeMaker().getItemsXML(items, new Hashtable<String, List<Item>>(), new HashSet<String>(), null) + "</ITEMS>");
+        str.append("<ITEMS>" + CMLib.aetherMaker().getItemsXML(items, new Hashtable<String, List<Item>>(), new HashSet<String>(), null) + "</ITEMS>");
         return str.toString();
     }
 

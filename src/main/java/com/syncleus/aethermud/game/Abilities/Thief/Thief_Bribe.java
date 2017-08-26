@@ -132,25 +132,25 @@ public class Thief_Bribe extends ThiefSkill {
         if (!super.invoke(mob, commands, givenTarget, auto, asLevel))
             return false;
 
-        final double amountRequired = CMLib.beanCounter().getTotalAbsoluteNativeValue(target)
+        final double amountRequired = CMLib.moneyCounter().getTotalAbsoluteNativeValue(target)
             + ((double) ((100l - ((mob.charStats().getStat(CharStats.STAT_CHARISMA) + (2l * getXLEVELLevel(mob))) * 2))) * target.phyStats().level());
 
-        final String currency = CMLib.beanCounter().getCurrency(target);
+        final String currency = CMLib.moneyCounter().getCurrency(target);
         boolean success = proficiencyCheck(mob, 0, auto);
 
-        if ((!success) || (CMLib.beanCounter().getTotalAbsoluteValue(mob, currency) < amountRequired)) {
+        if ((!success) || (CMLib.moneyCounter().getTotalAbsoluteValue(mob, currency) < amountRequired)) {
             final CMMsg msg = CMClass.getMsg(mob, target, this, CMMsg.MSG_SPEAK, L("^T<S-NAME> attempt(s) to bribe <T-NAMESELF> to '@x1', but no deal is reached.^?", CMParms.combine(commands, 0)));
             if (mob.location().okMessage(mob, msg))
                 mob.location().send(mob, msg);
-            if (CMLib.beanCounter().getTotalAbsoluteValue(mob, currency) < amountRequired) {
-                final String costWords = CMLib.beanCounter().nameCurrencyShort(currency, amountRequired);
+            if (CMLib.moneyCounter().getTotalAbsoluteValue(mob, currency) < amountRequired) {
+                final String costWords = CMLib.moneyCounter().nameCurrencyShort(currency, amountRequired);
                 mob.tell(L("@x1 requires @x2 to do this.", target.charStats().HeShe(), costWords));
             }
             success = false;
         } else {
-            final String costWords = CMLib.beanCounter().nameCurrencyShort(target, amountRequired);
+            final String costWords = CMLib.moneyCounter().nameCurrencyShort(target, amountRequired);
             final CMMsg msg = CMClass.getMsg(mob, target, this, CMMsg.MSG_SPEAK, L("^T<S-NAME> bribe(s) <T-NAMESELF> to '@x1' for @x2.^?", CMParms.combine(commands, 0), costWords));
-            CMLib.beanCounter().subtractMoney(mob, currency, amountRequired);
+            CMLib.moneyCounter().subtractMoney(mob, currency, amountRequired);
             mob.recoverPhyStats();
             final CMMsg omsg = CMClass.getMsg(mob, target, null, CMMsg.MSG_ORDER, null);
             if ((mob.location().okMessage(mob, msg))
@@ -160,7 +160,7 @@ public class Thief_Bribe extends ThiefSkill {
                 if (omsg.sourceMinor() == CMMsg.TYP_ORDER)
                     target.doCommand(commands, MUDCmdProcessor.METAFLAG_FORCED | MUDCmdProcessor.METAFLAG_ORDER);
             }
-            CMLib.beanCounter().addMoney(mob, currency, amountRequired);
+            CMLib.moneyCounter().addMoney(mob, currency, amountRequired);
             target.recoverPhyStats();
         }
         if (target == lastChecked)

@@ -134,7 +134,7 @@ public class StdBoardable extends StdPortal implements PrivateProperty, Boardabl
     public void setShipArea(String xml) {
         try {
             internalPrice = 0;
-            area = CMLib.coffeeMaker().unpackAreaObjectFromXML(xml);
+            area = CMLib.aetherMaker().unpackAreaObjectFromXML(xml);
             if (area instanceof BoardableShip) {
                 area.setSavable(false);
                 ((BoardableShip) area).setDockableItem(this);
@@ -226,13 +226,13 @@ public class StdBoardable extends StdPortal implements PrivateProperty, Boardabl
 
     @Override
     public String text() {
-        return CMLib.coffeeMaker().getPropertiesStr(this, false);
+        return CMLib.aetherMaker().getPropertiesStr(this, false);
     }
 
     @Override
     public void setMiscText(String newText) {
         miscText = "";
-        CMLib.coffeeMaker().setPropertiesStr(this, newText, false);
+        CMLib.aetherMaker().setPropertiesStr(this, newText, false);
         recoverPhyStats();
     }
 
@@ -241,7 +241,7 @@ public class StdBoardable extends StdPortal implements PrivateProperty, Boardabl
         final StdBoardable s = (StdBoardable) super.copyOf();
         s.destroyed = false;
         s.setOwnerName("");
-        final String xml = CMLib.coffeeMaker().getAreaObjectXML(getShipArea(), null, null, null, true).toString();
+        final String xml = CMLib.aetherMaker().getAreaObjectXML(getShipArea(), null, null, null, true).toString();
         s.setShipArea(xml);
         s.setReadableText(readableText()); // in case this was first call to getShipArea()
         /* Should we rename?
@@ -373,7 +373,7 @@ public class StdBoardable extends StdPortal implements PrivateProperty, Boardabl
             String oldName = area.Name();
             ((BoardableShip) area).renameShip(newName);
             renameDestinationRooms(oldName, area.Name());
-            setShipArea(CMLib.coffeeMaker().getAreaObjectXML(area, null, null, null, true).toString());
+            setShipArea(CMLib.aetherMaker().getAreaObjectXML(area, null, null, null, true).toString());
         }
         for (final String word : new String[]{"NAME", "NEWNAME", "SHIPNAME", "SHIP"}) {
             for (final String rubs : new String[]{"<>", "[]", "{}", "()"}) {

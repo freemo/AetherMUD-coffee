@@ -39,10 +39,10 @@ import com.syncleus.aethermud.game.core.interfaces.Physical;
 import java.util.*;
 
 
-public class CoffeeLevels extends StdLibrary implements ExpLevelLibrary {
+public class AetherLevels extends StdLibrary implements ExpLevelLibrary {
     @Override
     public String ID() {
-        return "CoffeeLevels";
+        return "AetherLevels";
     }
 
     public int getManaBonusNextLevel(MOB mob) {
@@ -477,7 +477,7 @@ public class CoffeeLevels extends StdLibrary implements ExpLevelLibrary {
                 for (int i = 0; i < channels2.size(); i++)
                     CMLib.commands().postChannel(channels2.get(i), mob.clans(), L("@x1 has just gained a level.", mob.Name()), true);
             if (mob.soulMate() == null)
-                CMLib.coffeeTables().bump(mob, CoffeeTableRow.STAT_LEVELSGAINED);
+                CMLib.aetherTables().bump(mob, AetherTableRow.STAT_LEVELSGAINED);
         }
 
         int prac2Stat = mob.charStats().getStat(CharStats.STAT_WISDOM);

@@ -305,7 +305,7 @@ public class Pregnancy extends StdAbility implements HealthCondition {
                             babe.setLiegeID(mob.getLiegeID());
                             babe.setDescription(desc);
                             babe.setDisplayText(L("@x1 is here.", name));
-                            CMLib.beanCounter().clearZeroMoney(babe, null);
+                            CMLib.moneyCounter().clearZeroMoney(babe, null);
                             babe.setMoneyVariation(0);
                             babe.baseCharStats().setMyRace(R);
                             babe.baseCharStats().setMyClasses("Apprentice");
@@ -389,7 +389,7 @@ public class Pregnancy extends StdAbility implements HealthCondition {
                                 }
                             }
                             if ((mob.playerStats() != null) || ((otherParentM != null) && (otherParentM.playerStats() != null))) {
-                                CMLib.coffeeTables().bump(mob, CoffeeTableRow.STAT_BIRTHS);
+                                CMLib.aetherTables().bump(mob, AetherTableRow.STAT_BIRTHS);
                                 final List<String> channels = CMLib.channels().getFlaggedChannelNames(ChannelsLibrary.ChannelFlag.BIRTHS);
                                 for (int i = 0; i < channels.size(); i++)
                                     CMLib.commands().postChannel(mob, channels.get(i), L("@x1 has just given birth to @x2!", mob.name(), I.name()), true);

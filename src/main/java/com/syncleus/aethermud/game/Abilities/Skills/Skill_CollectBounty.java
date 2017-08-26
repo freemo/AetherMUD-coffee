@@ -205,9 +205,9 @@ public class Skill_CollectBounty extends StdSkill {
                     W = warrants.get(i);
                     gold += (W.punishment() * (5 + getXLEVELLevel(mob)));
                 }
-                mob.location().show(judge, mob, null, CMMsg.MSG_OK_ACTION, L("<S-NAME> pay(s) <T-NAMESELF> the bounty of @x1 on @x2.", CMLib.beanCounter().nameCurrencyShort(judge, gold), target.Name()));
-                final String currency = CMLib.beanCounter().getCurrency(judge);
-                CMLib.beanCounter().giveSomeoneMoney(judge, mob, currency, gold);
+                mob.location().show(judge, mob, null, CMMsg.MSG_OK_ACTION, L("<S-NAME> pay(s) <T-NAMESELF> the bounty of @x1 on @x2.", CMLib.moneyCounter().nameCurrencyShort(judge, gold), target.Name()));
+                final String currency = CMLib.moneyCounter().getCurrency(judge);
+                CMLib.moneyCounter().giveSomeoneMoney(judge, mob, currency, gold);
             }
         } else
             return maliciousFizzle(mob, target, L("<S-NAME> attempt(s) to turn in <T-NAMESELF> to @x1 for the bounty, but can't get @x2 attention.", judge.name(), judge.charStats().hisher()));

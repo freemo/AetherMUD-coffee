@@ -17,7 +17,7 @@
 package com.syncleus.aethermud.game.Common;
 
 import com.syncleus.aethermud.game.Abilities.interfaces.Ability;
-import com.syncleus.aethermud.game.Common.interfaces.CoffeeShop;
+import com.syncleus.aethermud.game.Common.interfaces.AetherShop;
 import com.syncleus.aethermud.game.Common.interfaces.PhyStats;
 import com.syncleus.aethermud.game.Items.interfaces.*;
 import com.syncleus.aethermud.game.Libraries.interfaces.XMLLibrary;
@@ -35,7 +35,7 @@ import java.util.List;
 import java.util.Vector;
 
 
-public class DefaultCoffeeShop implements CoffeeShop {
+public class DefaultAetherShop implements AetherShop {
     private static Converter<ShelfProduct, Environmental> converter = new Converter<ShelfProduct, Environmental>() {
         @Override
         public Environmental convert(ShelfProduct obj) {
@@ -48,7 +48,7 @@ public class DefaultCoffeeShop implements CoffeeShop {
 
     @Override
     public String ID() {
-        return "DefaultCoffeeShop";
+        return "DefaultAetherShop";
     }
 
     @Override
@@ -65,15 +65,15 @@ public class DefaultCoffeeShop implements CoffeeShop {
     public CMObject copyOf() {
         try {
             final Object O = this.clone();
-            ((DefaultCoffeeShop) O).cloneFix(this);
+            ((DefaultAetherShop) O).cloneFix(this);
             return (CMObject) O;
         } catch (final CloneNotSupportedException e) {
-            return new DefaultCoffeeShop();
+            return new DefaultAetherShop();
         }
     }
 
     @Override
-    public CoffeeShop build(ShopKeeper SK) {
+    public AetherShop build(ShopKeeper SK) {
         shopKeeper = new WeakReference<ShopKeeper>(SK);
         return this;
     }
@@ -98,7 +98,7 @@ public class DefaultCoffeeShop implements CoffeeShop {
         try {
             return getClass().newInstance();
         } catch (final Exception e) {
-            return new DefaultCoffeeShop();
+            return new DefaultAetherShop();
         }
     }
 
@@ -106,7 +106,7 @@ public class DefaultCoffeeShop implements CoffeeShop {
     public void initializeClass() {
     }
 
-    public void cloneFix(DefaultCoffeeShop E) {
+    public void cloneFix(DefaultAetherShop E) {
         storeInventory = new SVector<ShelfProduct>();
         enumerableInventory = new SVector<Environmental>();
         final Hashtable<Environmental, Environmental> copyFix = new Hashtable<Environmental, Environmental>();
@@ -332,7 +332,7 @@ public class DefaultCoffeeShop implements CoffeeShop {
             && (mob != null)
             && ((isSold(ShopKeeper.DEAL_LANDSELLER)) || (isSold(ShopKeeper.DEAL_CLANDSELLER))
             || (isSold(ShopKeeper.DEAL_SHIPSELLER)) || (isSold(ShopKeeper.DEAL_CSHIPSELLER)))) {
-            final List<Environmental> titles = CMLib.coffeeShops().addRealEstateTitles(new Vector<Environmental>(), mob, this, startRoom());
+            final List<Environmental> titles = CMLib.aetherShops().addRealEstateTitles(new Vector<Environmental>(), mob, this, startRoom());
             item = CMLib.english().fetchEnvironmental(titles, name, true);
             if (item == null)
                 item = CMLib.english().fetchEnvironmental(titles, name, false);
@@ -371,7 +371,7 @@ public class DefaultCoffeeShop implements CoffeeShop {
             && ((isSold(ShopKeeper.DEAL_LANDSELLER)) || (isSold(ShopKeeper.DEAL_CLANDSELLER))
             || (isSold(ShopKeeper.DEAL_SHIPSELLER)) || (isSold(ShopKeeper.DEAL_CSHIPSELLER)))
             && (mob != null)) {
-            final List<Environmental> titles = CMLib.coffeeShops().addRealEstateTitles(new Vector<Environmental>(), mob, this, startRoom());
+            final List<Environmental> titles = CMLib.aetherShops().addRealEstateTitles(new Vector<Environmental>(), mob, this, startRoom());
             item = CMLib.english().fetchEnvironmental(titles, name, true);
             if (item == null)
                 item = CMLib.english().fetchEnvironmental(titles, name, false);
@@ -480,7 +480,7 @@ public class DefaultCoffeeShop implements CoffeeShop {
             itemstr.append(CMLib.xml().convertXMLtoTag("ICLASS", CMClass.classID(E)));
             itemstr.append(CMLib.xml().convertXMLtoTag("INUM", "" + numberInStock(E)));
             itemstr.append(CMLib.xml().convertXMLtoTag("IVAL", "" + stockPrice(E)));
-            itemstr.append(CMLib.xml().convertXMLtoTag("IDATA", CMLib.coffeeMaker().getPropertiesStr(E, true)));
+            itemstr.append(CMLib.xml().convertXMLtoTag("IDATA", CMLib.aetherMaker().getPropertiesStr(E, true)));
             itemstr.append("</INV>");
         }
         return itemstr.toString() + "</INVS>";
@@ -497,7 +497,7 @@ public class DefaultCoffeeShop implements CoffeeShop {
             return;
         final ShopKeeper shop = shopKeeper();
         if (shop == null) {
-            Log.errOut("DefaultCoffeeShop", "Error getting base shopKeeper obj host from " + text);
+            Log.errOut("DefaultAetherShop", "Error getting base shopKeeper obj host from " + text);
             return;
         }
         if (!text.trim().startsWith("<")) {
@@ -529,7 +529,7 @@ public class DefaultCoffeeShop implements CoffeeShop {
 
         final List<XMLLibrary.XMLTag> xmlV = CMLib.xml().parseAllXML(text);
         if (xmlV == null) {
-            Log.errOut("DefaultCoffeeShop", "Error parsing data.");
+            Log.errOut("DefaultAetherShop", "Error parsing data.");
             return;
         }
         String parm = CMLib.xml().getValFromPieces(xmlV, "ISELL");
@@ -550,13 +550,13 @@ public class DefaultCoffeeShop implements CoffeeShop {
 
         final List<XMLLibrary.XMLTag> iV = CMLib.xml().getContentsFromPieces(xmlV, "INVS");
         if (iV == null) {
-            Log.errOut("DefaultCoffeeShop", "Error parsing 'INVS'.");
+            Log.errOut("DefaultAetherShop", "Error parsing 'INVS'.");
             return;
         }
         for (int i = 0; i < iV.size(); i++) {
             final XMLTag iblk = iV.get(i);
             if ((!iblk.tag().equalsIgnoreCase("INV")) || (iblk.contents() == null)) {
-                Log.errOut("DefaultCoffeeShop", "Error parsing 'INVS' data.");
+                Log.errOut("DefaultAetherShop", "Error parsing 'INVS' data.");
                 return;
             }
             final String itemi = iblk.getValFromPieces("ICLASS");
@@ -567,10 +567,10 @@ public class DefaultCoffeeShop implements CoffeeShop {
                 newOne = CMClass.getMOB(itemi);
             final List<XMLLibrary.XMLTag> idat = iblk.getContentsFromPieces("IDATA");
             if ((idat == null) || (newOne == null) || (!(newOne instanceof Item))) {
-                Log.errOut("DefaultCoffeeShop", "Error parsing 'INV' data.");
+                Log.errOut("DefaultAetherShop", "Error parsing 'INV' data.");
                 return;
             }
-            CMLib.coffeeMaker().setPropertiesStr(newOne, idat, true);
+            CMLib.aetherMaker().setPropertiesStr(newOne, idat, true);
             final PhysicalAgent P = newOne;
             P.recoverPhyStats();
             V.addElement(P);

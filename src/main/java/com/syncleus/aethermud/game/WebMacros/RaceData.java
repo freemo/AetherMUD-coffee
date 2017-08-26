@@ -965,7 +965,7 @@ public class RaceData extends StdWebMacro {
                         final PhyStats adjPStats = (PhyStats) CMClass.getCommon("DefaultPhyStats");
                         adjPStats.setAllValues(0);
                         if (eStats.length() > 0) {
-                            CMLib.coffeeMaker().setPhyStats(adjPStats, eStats);
+                            CMLib.aetherMaker().setPhyStats(adjPStats, eStats);
                         }
                         str.append(estats(adjPStats, 'E', httpReq, parms, 0) + ", ");
                     }
@@ -974,7 +974,7 @@ public class RaceData extends StdWebMacro {
                         setStats.setAllValues(0);
                         final String cStats = R.getStat("CSTATS");
                         if (cStats.length() > 0) {
-                            CMLib.coffeeMaker().setCharStats(setStats, cStats);
+                            CMLib.aetherMaker().setCharStats(setStats, cStats);
                         }
                         str.append(cstats(setStats, 'S', httpReq, parms, 0) + ", ");
                     }
@@ -983,7 +983,7 @@ public class RaceData extends StdWebMacro {
                         adjStats.setAllValues(0);
                         final String cStats = R.getStat("ASTATS");
                         if (cStats.length() > 0) {
-                            CMLib.coffeeMaker().setCharStats(adjStats, cStats);
+                            CMLib.aetherMaker().setCharStats(adjStats, cStats);
                         }
                         str.append(cstats(adjStats, 'A', httpReq, parms, 0) + ", ");
                     }
@@ -992,7 +992,7 @@ public class RaceData extends StdWebMacro {
                         adjState.setAllValues(0);
                         final String aState = R.getStat("ASTATE");
                         if (aState.length() > 0) {
-                            CMLib.coffeeMaker().setCharState(adjState, aState);
+                            CMLib.aetherMaker().setCharState(adjState, aState);
                         }
                         str.append(cstate(adjState, 'A', httpReq, parms, 0) + ", ");
                     }
@@ -1001,7 +1001,7 @@ public class RaceData extends StdWebMacro {
                         startAdjState.setAllValues(0);
                         final String saState = R.getStat("STARTASTATE");
                         if (saState.length() > 0) {
-                            CMLib.coffeeMaker().setCharState(startAdjState, saState);
+                            CMLib.aetherMaker().setCharState(startAdjState, saState);
                         }
                         str.append(cstate(startAdjState, 'S', httpReq, parms, 0) + ", ");
                     }

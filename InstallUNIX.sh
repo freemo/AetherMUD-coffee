@@ -10,7 +10,7 @@ echo "I am going to ask you a few questions, and as you answer them I will creat
 sleep 1
 echo "* MAKE SURE YOU HAVE WRITE PERMISSION TO mudUNIX.sh *"
 sleep 1
-echo "***** MAKE SURE YOU ARE EXECUTING THIS SCRIPT FROM THE MAIN COFFEEMUD DIR (not source dir)*****"
+echo "***** MAKE SURE YOU ARE EXECUTING THIS SCRIPT FROM THE MAIN AETHERMUD DIR (not source dir)*****"
 
 sleep 2
 

@@ -53,7 +53,7 @@ public class Withdraw extends StdCommand {
         final Environmental shopkeeper = CMLib.english().parseShopkeeper(mob, commands, "Withdraw what or how much from whom?");
         if (shopkeeper == null)
             return false;
-        final ShopKeeper SHOP = CMLib.coffeeShops().getShopKeeper(shopkeeper);
+        final ShopKeeper SHOP = CMLib.aetherShops().getShopKeeper(shopkeeper);
         if ((!(SHOP instanceof Banker)) && (!(SHOP instanceof PostOffice))) {
             CMLib.commands().doCommandFail(mob, origCmds, L("You can not withdraw anything from @x1.", shopkeeper.name()));
             return false;
@@ -78,7 +78,7 @@ public class Withdraw extends StdCommand {
                 }
                 thisThang = ((Banker) SHOP).findDepositInventory(accountName, "" + Integer.MAX_VALUE);
                 if (thisThang instanceof Coins)
-                    thisThang = CMLib.beanCounter().makeCurrency(currency, denomination, numCoins);
+                    thisThang = CMLib.moneyCounter().makeCurrency(currency, denomination, numCoins);
             } else
                 thisThang = ((Banker) SHOP).findDepositInventory(accountName, str);
 
@@ -91,7 +91,7 @@ public class Withdraw extends StdCommand {
                     if (numCoins > 0) {
                         thisThang = ((Banker) SHOP).findDepositInventory(accountName2, "" + Integer.MAX_VALUE);
                         if (thisThang instanceof Coins)
-                            thisThang = CMLib.beanCounter().makeCurrency(currency, denomination, numCoins);
+                            thisThang = CMLib.moneyCounter().makeCurrency(currency, denomination, numCoins);
                         else {
                             CMLib.commands().doCommandFail(mob, origCmds, L("Withdraw how much?"));
                             return false;

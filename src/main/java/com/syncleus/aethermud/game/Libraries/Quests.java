@@ -1365,7 +1365,7 @@ public class Quests extends StdLibrary implements QuestManager {
         throws IOException {
         MOB M = null;
         final Vector<MOB> choices = new Vector<MOB>();
-        MOB baseM = ((showValue != null) ? baseM = CMLib.coffeeMaker().getMobFromXML(showValue) : null);
+        MOB baseM = ((showValue != null) ? baseM = CMLib.aetherMaker().getMobFromXML(showValue) : null);
         final StringBuffer choiceDescs = new StringBuffer("");
         if (baseM != null) {
             choices.addElement(baseM);
@@ -1412,7 +1412,7 @@ public class Quests extends StdLibrary implements QuestManager {
                 C.executeInternal(mob, 0, M);
             // modify it!
         }
-        final String newValue = (M != null) ? CMLib.coffeeMaker().getMobXML(M).toString() : showValue;
+        final String newValue = (M != null) ? CMLib.aetherMaker().getMobXML(M).toString() : showValue;
         for (int n = 0; n < newMobs.size(); n++) newMobs.elementAt(n).destroy();
         return newValue == null ? "" : newValue.trim();
     }
@@ -1429,7 +1429,7 @@ public class Quests extends StdLibrary implements QuestManager {
         throws IOException {
         Item I = null;
         final List<Item> choices = new Vector<Item>();
-        Item baseI = ((showValue != null) ? baseI = CMLib.coffeeMaker().getItemFromXML(showValue) : null);
+        Item baseI = ((showValue != null) ? baseI = CMLib.aetherMaker().getItemFromXML(showValue) : null);
         final StringBuffer choiceDescs = new StringBuffer("");
         if (baseI != null) {
             choices.add(baseI);
@@ -1477,7 +1477,7 @@ public class Quests extends StdLibrary implements QuestManager {
                 C.executeInternal(mob, 0, I);
             // modify it!
         }
-        final String newValue = (I != null) ? CMLib.coffeeMaker().getItemXML(I).toString() : showValue;
+        final String newValue = (I != null) ? CMLib.aetherMaker().getItemXML(I).toString() : showValue;
         for (int n = 0; n < newItems.size(); n++) newItems.get(n).destroy();
         return (newValue == null) ? "" : newValue.trim();
     }

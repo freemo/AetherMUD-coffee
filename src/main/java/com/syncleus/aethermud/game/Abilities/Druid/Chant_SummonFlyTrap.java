@@ -214,7 +214,7 @@ public class Chant_SummonFlyTrap extends Chant {
         newMOB.recoverMaxState();
         newMOB.resetToMaxState();
         newMOB.bringToLife(caster.location(), true);
-        CMLib.beanCounter().clearZeroMoney(newMOB, null);
+        CMLib.moneyCounter().clearZeroMoney(newMOB, null);
         newMOB.setMoneyVariation(0);
         newMOB.location().show(newMOB, null, CMMsg.MSG_OK_ACTION, L("<S-NAME> grow(s) from the ground."));
         newMOB.setStartRoom(null);

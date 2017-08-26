@@ -16,7 +16,7 @@
  */
 package com.syncleus.aethermud.game.core.interfaces;
 
-import com.syncleus.aethermud.game.Common.interfaces.CoffeeShop;
+import com.syncleus.aethermud.game.Common.interfaces.AetherShop;
 
 
 /**
@@ -110,11 +110,11 @@ public interface ShopKeeper extends Environmental, Economics {
         };
 
     /**
-     * the CoffeeShop method to access the shopkeepers store of goods
-     * @see com.syncleus.aethermud.game.Common.interfaces.CoffeeShop
-     * @return the CoffeeShop object
+     * the AetherShop method to access the shopkeepers store of goods
+     * @see AetherShop
+     * @return the AetherShop object
      */
-    public CoffeeShop getShop();
+    public AetherShop getShop();
 
     /**
      * Returns the ShopKeeper DEAL_* mask describing what is sold or bought by this ShopKeeper

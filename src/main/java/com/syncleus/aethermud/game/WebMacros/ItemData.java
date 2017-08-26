@@ -897,7 +897,7 @@ public class ItemData extends StdWebMacro {
                         {
                             if ((firstTime) && (I instanceof Coins))
                                 old = "" + ((Coins) I).getCurrency();
-                            final List<String> cs = CMLib.beanCounter().getAllCurrencies();
+                            final List<String> cs = CMLib.moneyCounter().getAllCurrencies();
                             str.append("<OPTION VALUE=\"\"");
                             if (old.length() == 0)
                                 str.append(" SELECTED");
@@ -917,7 +917,7 @@ public class ItemData extends StdWebMacro {
                             String currency = (I instanceof Coins) ? currency = ((Coins) I).getCurrency() : "";
                             if ((firstTime) && (I instanceof Coins))
                                 old = "" + ((Coins) I).getDenomination();
-                            final MoneyLibrary.MoneyDenomination[] DV = CMLib.beanCounter().getCurrencySet(currency);
+                            final MoneyLibrary.MoneyDenomination[] DV = CMLib.moneyCounter().getCurrencySet(currency);
                             for (final MoneyDenomination element : DV) {
                                 str.append("<OPTION VALUE=\"" + element.value() + "\"");
                                 if (element.value() == CMath.s_double(old))
@@ -1288,7 +1288,7 @@ public class ItemData extends StdWebMacro {
                         case AREAXML:
                             if (I instanceof BoardableShip) {
                                 str.append((firstTime) ?
-                                    CMLib.xml().parseOutAngleBracketsAndQuotes(CMLib.coffeeMaker().getAreaObjectXML(((BoardableShip) I).getShipArea(), null, null, null, true).toString()) :
+                                    CMLib.xml().parseOutAngleBracketsAndQuotes(CMLib.aetherMaker().getAreaObjectXML(((BoardableShip) I).getShipArea(), null, null, null, true).toString()) :
                                     old).append(", ");
                             }
                             break;

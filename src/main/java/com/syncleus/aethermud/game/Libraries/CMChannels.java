@@ -558,7 +558,7 @@ public class CMChannels extends StdLibrary implements ChannelsLibrary {
             && ((sender.location() == R) || (R.okMessage(ses.mob(), msg)))) {
             if (ses.getClientTelnetMode(Session.TELNET_GMCP)) {
                 ses.sendGMCPEvent("comm.channel", "{\"chan\":\"" + getChannel(channelInt).name() + "\",\"msg\":\"" +
-                    MiniJSON.toJSONString(CMLib.coffeeFilter().fullOutFilter(null, M, msg.source(), msg.target(), msg.tool(), CMStrings.removeColors((M == msg.source()) ? msg.sourceMessage() : msg.othersMessage()), false))
+                    MiniJSON.toJSONString(CMLib.aetherFilter().fullOutFilter(null, M, msg.source(), msg.target(), msg.tool(), CMStrings.removeColors((M == msg.source()) ? msg.sourceMessage() : msg.othersMessage()), false))
                     + "\",\"player\":\"" + msg.source().name() + "\"}");
             }
             M.executeMsg(M, msg);

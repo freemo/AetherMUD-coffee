@@ -251,14 +251,14 @@ public class ListCmd extends StdCommand {
                 seller = CMClass.getFactoryMOB("the shop", 1, R);
                 destroySeller = true;
             }
-            ShopPrice p = CMLib.coffeeShops().sellingPrice(seller, buyer, E, SK, false);
+            ShopPrice p = CMLib.aetherShops().sellingPrice(seller, buyer, E, SK, false);
             if (p != null) {
                 if (p.experiencePrice > 0)
                     return p.experiencePrice + "xp";
                 else if (p.questPointPrice > 0)
                     return p.questPointPrice + "qp";
                 else if (p.absoluteGoldPrice > 0)
-                    return CMLib.beanCounter().abbreviatedPrice(seller, p.absoluteGoldPrice);
+                    return CMLib.moneyCounter().abbreviatedPrice(seller, p.absoluteGoldPrice);
             }
         } finally {
             if (destroySeller && (seller != null))
@@ -377,7 +377,7 @@ public class ListCmd extends StdCommand {
                         }
                     }
                     if (shopOnly) {
-                        final ShopKeeper SK = CMLib.coffeeShops().getShopKeeper(R);
+                        final ShopKeeper SK = CMLib.aetherShops().getShopKeeper(R);
                         if (SK != null) {
                             for (final Iterator<Environmental> i = SK.getShop().getStoreInventory(); i.hasNext(); ) {
                                 final Environmental E = i.next();
@@ -480,7 +480,7 @@ public class ListCmd extends StdCommand {
                                         }
                                     }
                                 }
-                                final ShopKeeper SK = CMLib.coffeeShops().getShopKeeper(M);
+                                final ShopKeeper SK = CMLib.aetherShops().getShopKeeper(M);
                                 if (SK != null) {
                                     for (final Iterator<Environmental> i = SK.getShop().getStoreInventory(); i.hasNext(); ) {
                                         final Environmental E = i.next();
@@ -758,7 +758,7 @@ public class ListCmd extends StdCommand {
                     for (int f = 0; f < files.size(); f++)
                         DV.add(files.get(f), E, R, M, I, B);
                 }
-                final String nonFiles = ((ScriptingEngine) B).getVar("*", "COFFEEMUD_SYSTEM_INTERNAL_NONFILENAME_SCRIPT");
+                final String nonFiles = ((ScriptingEngine) B).getVar("*", "AETHERMUD_SYSTEM_INTERNAL_NONFILENAME_SCRIPT");
                 if (nonFiles.trim().length() > 0)
                     DV.add("*Custom*" + nonFiles.trim(), E, R, M, I, B);
             }
@@ -770,7 +770,7 @@ public class ListCmd extends StdCommand {
                 for (int f = 0; f < files.size(); f++)
                     DV.add(files.get(f), E, R, M, I, SE);
             }
-            final String nonFiles = SE.getVar("*", "COFFEEMUD_SYSTEM_INTERNAL_NONFILENAME_SCRIPT");
+            final String nonFiles = SE.getVar("*", "AETHERMUD_SYSTEM_INTERNAL_NONFILENAME_SCRIPT");
             if (nonFiles.trim().length() > 0)
                 DV.add("*Custom*" + nonFiles.trim(), E, R, M, I, SE);
         }
@@ -779,7 +779,7 @@ public class ListCmd extends StdCommand {
     public void addShopScripts(DVector DV, Room R, MOB M, Item I, Environmental E) {
         if (E == null)
             return;
-        final ShopKeeper SK = CMLib.coffeeShops().getShopKeeper(E);
+        final ShopKeeper SK = CMLib.aetherShops().getShopKeeper(E);
         if (SK != null) {
             for (final Iterator<Environmental> i = SK.getShop().getStoreInventory(); i.hasNext(); ) {
                 final Environmental E2 = i.next();
@@ -2934,7 +2934,7 @@ public class ListCmd extends StdCommand {
         for (Enumeration<Room> a = CMLib.map().rooms(); a.hasMoreElements(); ) {
             final Room R = a.nextElement();
             if (R != null) {
-                CMLib.coffeeMaker().fillFileMap(R, found);
+                CMLib.aetherMaker().fillFileMap(R, found);
                 for (String foundPath : found.keySet()) {
                     final String lfoundPath = foundPath.toLowerCase();
                     if (lfoundPath.endsWith(fileName) || fileName.endsWith(lfoundPath)) {
@@ -3688,7 +3688,7 @@ public class ListCmd extends StdCommand {
             if (wiki == WikiFlag.WIKILIST) {
                 str.append("*[[" + A.name() + "|" + A.name() + "]]");
             } else if (wiki == WikiFlag.WIKIHELP) {
-                String currency = CMLib.beanCounter().getCurrency(A);
+                String currency = CMLib.moneyCounter().getCurrency(A);
                 if ((currency == null) || (currency.trim().length() == 0))
                     currency = "Gold coins (default)";
                 else
@@ -4174,7 +4174,7 @@ public class ListCmd extends StdCommand {
                 archonlist(mob, commands);
                 return false;
             }
-            V = CMLib.coffeeShops().getAllShopkeepers(mob.location(), mob);
+            V = CMLib.aetherShops().getAllShopkeepers(mob.location(), mob);
         } else {
             final Vector<String> origCommands = new XVector<String>(commands);
             for (int c = commands.size() - 2; c >= 0; c--) {
@@ -4186,7 +4186,7 @@ public class ListCmd extends StdCommand {
                 }
             }
             final String what = CMParms.combine(commands, 0);
-            final List<Environmental> V2 = CMLib.coffeeShops().getAllShopkeepers(mob.location(), mob);
+            final List<Environmental> V2 = CMLib.aetherShops().getAllShopkeepers(mob.location(), mob);
             Environmental shopkeeper = CMLib.english().fetchEnvironmental(V2, what, false);
             if ((shopkeeper == null) && (what.equals("shop") || what.equals("the shop"))) {
                 for (int v = 0; v < V2.size(); v++) {
@@ -4197,7 +4197,7 @@ public class ListCmd extends StdCommand {
                 }
             }
             if ((shopkeeper != null)
-                && (CMLib.coffeeShops().getShopKeeper(shopkeeper) != null)
+                && (CMLib.aetherShops().getShopKeeper(shopkeeper) != null)
                 && (CMLib.flags().canBeSeenBy(shopkeeper, mob)))
                 V.add(shopkeeper);
             else if (getAnyCmd(mob) != null) {
@@ -4211,7 +4211,7 @@ public class ListCmd extends StdCommand {
         }
         for (int i = 0; i < V.size(); i++) {
             final Environmental shopkeeper = V.get(i);
-            final ShopKeeper SHOP = CMLib.coffeeShops().getShopKeeper(shopkeeper);
+            final ShopKeeper SHOP = CMLib.aetherShops().getShopKeeper(shopkeeper);
             String str = L("<S-NAME> review(s) <T-YOUPOSS> inventory");
             if (SHOP instanceof Banker)
                 str = L("<S-NAME> review(s) <S-HIS-HER> account with <T-NAMESELF>");

@@ -827,7 +827,7 @@ public class DBInterface implements DatabaseEngine {
     }
 
     @Override
-    public CoffeeTableRow DBReadStat(long startTime) {
+    public AetherTableRow DBReadStat(long startTime) {
         return StatLoader.DBRead(startTime);
     }
 
@@ -847,7 +847,7 @@ public class DBInterface implements DatabaseEngine {
     }
 
     @Override
-    public List<CoffeeTableRow> DBReadStats(long startTime, long endTime) {
+    public List<AetherTableRow> DBReadStats(long startTime, long endTime) {
         return StatLoader.DBReadAfter(startTime, endTime);
     }
 

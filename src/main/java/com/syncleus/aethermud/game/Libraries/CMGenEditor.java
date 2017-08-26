@@ -733,8 +733,8 @@ public class CMGenEditor extends StdLibrary implements GenericEditor {
         if (newName.length() > 0) {
             if (newName.equalsIgnoreCase("default"))
                 A.setCurrency("");
-            else if ((newName.indexOf('=') < 0) && (!CMLib.beanCounter().getAllCurrencies().contains(newName.trim().toUpperCase()))) {
-                final List<String> V = CMLib.beanCounter().getAllCurrencies();
+            else if ((newName.indexOf('=') < 0) && (!CMLib.moneyCounter().getAllCurrencies().contains(newName.trim().toUpperCase()))) {
+                final List<String> V = CMLib.moneyCounter().getAllCurrencies();
                 mob.tell(L("'@x1' is not a known currency. Existing currencies include: DEFAULT@x2", newName.trim().toUpperCase(), CMParms.toListString(V)));
             } else if (newName.indexOf('=') >= 0)
                 A.setCurrency(newName.trim());
@@ -2317,7 +2317,7 @@ public class CMGenEditor extends StdLibrary implements GenericEditor {
         throws IOException {
         if ((showFlag > 0) && (showFlag != showNumber))
             return;
-        mob.tell(L("@x1. Money data: '@x2 x @x3'.", "" + showNumber, "" + I.getNumberOfCoins(), CMLib.beanCounter().getDenominationName(I.getCurrency(), I.getDenomination())));
+        mob.tell(L("@x1. Money data: '@x2 x @x3'.", "" + showNumber, "" + I.getNumberOfCoins(), CMLib.moneyCounter().getDenominationName(I.getCurrency(), I.getDenomination())));
         if ((showFlag != showNumber) && (showFlag > -999))
             return;
         boolean gocontinue = true;
@@ -2334,8 +2334,8 @@ public class CMGenEditor extends StdLibrary implements GenericEditor {
                     mob.tell(L("(no change)"));
             } else if ((oldCurrency.length() == 0) || (oldCurrency.equalsIgnoreCase(I.getCurrency())))
                 mob.tell(L("(no change)"));
-            else if (!CMLib.beanCounter().getAllCurrencies().contains(oldCurrency)) {
-                final List<String> V = CMLib.beanCounter().getAllCurrencies();
+            else if (!CMLib.moneyCounter().getAllCurrencies().contains(oldCurrency)) {
+                final List<String> V = CMLib.moneyCounter().getAllCurrencies();
                 for (int v = 0; v < V.size(); v++) {
                     if (V.get(v).length() == 0)
                         V.set(v, "Default");
@@ -2349,7 +2349,7 @@ public class CMGenEditor extends StdLibrary implements GenericEditor {
         while ((mob.session() != null) && (!mob.session().isStopped()) && (gocontinue)) {
             gocontinue = false;
             String newDenom = mob.session().prompt(L("Enter denomination (?):"), "" + I.getDenomination()).trim().toUpperCase();
-            final MoneyLibrary.MoneyDenomination[] DV = CMLib.beanCounter().getCurrencySet(I.getCurrency());
+            final MoneyLibrary.MoneyDenomination[] DV = CMLib.moneyCounter().getCurrencySet(I.getCurrency());
             if ((newDenom.length() > 0)
                 && (!CMath.isDouble(newDenom))
                 && (!newDenom.equalsIgnoreCase("?"))) {
@@ -2364,7 +2364,7 @@ public class CMGenEditor extends StdLibrary implements GenericEditor {
                 mob.tell(L("(no change)"));
             else if ((newDenom.equalsIgnoreCase("?"))
                 || (!CMath.isDouble(newDenom))
-                || ((DV != null) && (CMLib.beanCounter().getDenominationIndex(I.getCurrency(), CMath.s_double(newDenom)) < 0))) {
+                || ((DV != null) && (CMLib.moneyCounter().getDenominationIndex(I.getCurrency(), CMath.s_double(newDenom)) < 0))) {
                 StringBuffer allDenoms = new StringBuffer("");
                 if (DV != null) {
                     for (final MoneyDenomination element : DV)
@@ -2523,11 +2523,11 @@ public class CMGenEditor extends StdLibrary implements GenericEditor {
 
     protected void genMoney(MOB mob, MOB M, int showNumber, int showFlag) throws IOException {
         if (M.getMoney() == 0) {
-            final double d = CMLib.beanCounter().getTotalAbsoluteNativeValue(M);
-            CMLib.beanCounter().subtractMoney(M, d);
+            final double d = CMLib.moneyCounter().getTotalAbsoluteNativeValue(M);
+            CMLib.moneyCounter().subtractMoney(M, d);
             M.setMoney((int) Math.round(d));
         }
-        CMLib.beanCounter().setMoney(M, prompt(mob, M.getMoney(), showNumber, showFlag, "Money"));
+        CMLib.moneyCounter().setMoney(M, prompt(mob, M.getMoney(), showNumber, showFlag, "Money"));
     }
 
     protected void genWeaponAmmo(MOB mob, Weapon W, int showNumber, int showFlag)
@@ -5024,7 +5024,7 @@ public class CMGenEditor extends StdLibrary implements GenericEditor {
             return;
         final PhyStats S = (PhyStats) CMClass.getCommon("DefaultPhyStats");
         S.setAllValues(0);
-        CMLib.coffeeMaker().setPhyStats(S, R.getStat("ESTATS"));
+        CMLib.aetherMaker().setPhyStats(S, R.getStat("ESTATS"));
         final StringBuffer parts = new StringBuffer("");
         for (int i = 0; i < S.getStatCodes().length; i++) {
             if (CMath.s_int(S.getStat(S.getStatCodes()[i])) != 0)
@@ -5076,7 +5076,7 @@ public class CMGenEditor extends StdLibrary implements GenericEditor {
                         if (zereoed)
                             R.setStat("ESTATS", "");
                         else
-                            R.setStat("ESTATS", CMLib.coffeeMaker().getPhyStatsStr(S));
+                            R.setStat("ESTATS", CMLib.aetherMaker().getPhyStatsStr(S));
                     }
                 }
             } else {
@@ -5097,7 +5097,7 @@ public class CMGenEditor extends StdLibrary implements GenericEditor {
             return;
         final CharState S = (CharState) CMClass.getCommon("DefaultCharState");
         S.setAllValues(0);
-        CMLib.coffeeMaker().setCharState(S, R.getStat(field));
+        CMLib.aetherMaker().setCharState(S, R.getStat(field));
         final StringBuffer parts = new StringBuffer("");
         for (int i = 0; i < S.getStatCodes().length; i++) {
             if (CMath.s_int(S.getStat(S.getStatCodes()[i])) != 0)
@@ -5136,7 +5136,7 @@ public class CMGenEditor extends StdLibrary implements GenericEditor {
                         if (zereoed)
                             R.setStat(field, "");
                         else
-                            R.setStat(field, CMLib.coffeeMaker().getCharStateStr(S));
+                            R.setStat(field, CMLib.aetherMaker().getCharStateStr(S));
                     } else
                         mob.tell(L("(no change)"));
                 }
@@ -5153,7 +5153,7 @@ public class CMGenEditor extends StdLibrary implements GenericEditor {
             return;
         final CharStats S = (CharStats) CMClass.getCommon("DefaultCharStats");
         S.setAllValues(0);
-        CMLib.coffeeMaker().setCharStats(S, R.getStat(Field));
+        CMLib.aetherMaker().setCharStats(S, R.getStat(Field));
         final StringBuffer parts = new StringBuffer("");
         for (final int i : CharStats.CODES.ALLCODES()) {
             if (S.getStat(i) != 0)
@@ -5197,7 +5197,7 @@ public class CMGenEditor extends StdLibrary implements GenericEditor {
                         if (zereoed)
                             R.setStat(Field, "");
                         else
-                            R.setStat(Field, CMLib.coffeeMaker().getCharStatsStr(S));
+                            R.setStat(Field, CMLib.aetherMaker().getCharStatsStr(S));
                     } else
                         mob.tell(L("(no change)"));
                 }
@@ -5219,7 +5219,7 @@ public class CMGenEditor extends StdLibrary implements GenericEditor {
             return;
         final PhyStats S = (PhyStats) CMClass.getCommon("DefaultPhyStats");
         S.setAllValues(0);
-        CMLib.coffeeMaker().setPhyStats(S, R.getStat("ESTATS"));
+        CMLib.aetherMaker().setPhyStats(S, R.getStat("ESTATS"));
         final StringBuffer parts = new StringBuffer("");
         for (int i = 0; i < S.getStatCodes().length; i++)
             if ((i != PhyStats.STAT_REJUV) || (!skipRejuv))
@@ -5273,7 +5273,7 @@ public class CMGenEditor extends StdLibrary implements GenericEditor {
                         if (zereoed)
                             R.setStat("ESTATS", "");
                         else
-                            R.setStat("ESTATS", CMLib.coffeeMaker().getPhyStatsStr(S));
+                            R.setStat("ESTATS", CMLib.aetherMaker().getPhyStatsStr(S));
                     }
                 }
             } else {
@@ -5294,7 +5294,7 @@ public class CMGenEditor extends StdLibrary implements GenericEditor {
             return;
         final CharState S = (CharState) CMClass.getCommon("DefaultCharState");
         S.setAllValues(0);
-        CMLib.coffeeMaker().setCharState(S, R.getStat(field));
+        CMLib.aetherMaker().setCharState(S, R.getStat(field));
         final StringBuffer parts = new StringBuffer("");
         for (int i = 0; i < S.getStatCodes().length; i++) {
             if (CMath.s_int(S.getStat(S.getStatCodes()[i])) != 0)
@@ -5333,7 +5333,7 @@ public class CMGenEditor extends StdLibrary implements GenericEditor {
                         if (zereoed)
                             R.setStat(field, "");
                         else
-                            R.setStat(field, CMLib.coffeeMaker().getCharStateStr(S));
+                            R.setStat(field, CMLib.aetherMaker().getCharStateStr(S));
                     } else
                         mob.tell(L("(no change)"));
                 }
@@ -5350,7 +5350,7 @@ public class CMGenEditor extends StdLibrary implements GenericEditor {
             return;
         final CharStats S = (CharStats) CMClass.getCommon("DefaultCharStats");
         S.setAllValues(0);
-        CMLib.coffeeMaker().setCharStats(S, R.getStat(Field));
+        CMLib.aetherMaker().setCharStats(S, R.getStat(Field));
         final StringBuffer parts = new StringBuffer("");
         for (final int i : CharStats.CODES.ALLCODES()) {
             if (S.getStat(i) != 0)
@@ -5389,7 +5389,7 @@ public class CMGenEditor extends StdLibrary implements GenericEditor {
                         if (zereoed)
                             R.setStat(Field, "");
                         else
-                            R.setStat(Field, CMLib.coffeeMaker().getCharStatsStr(S));
+                            R.setStat(Field, CMLib.aetherMaker().getCharStatsStr(S));
                     } else
                         mob.tell(L("(no change)"));
                 }
@@ -7890,7 +7890,7 @@ public class CMGenEditor extends StdLibrary implements GenericEditor {
                 final Item I = i.nextElement();
                 if ((I != null) && (I.basePhyStats().rejuv() > 0) && (I.basePhyStats().rejuv() != PhyStats.NO_REJUV) && (session != null)) {
                     if (session.confirm(L("\n\r**This mob has variable equipment in the catalog, would you like to reset it first (Y/n)? "), "Y")) {
-                        CMLib.coffeeMaker().setPropertiesStr(me, cataM.text(), false);
+                        CMLib.aetherMaker().setPropertiesStr(me, cataM.text(), false);
                         CMLib.catalog().changeCatalogUsage(me, true);
                         break;
                     }

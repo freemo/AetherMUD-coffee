@@ -89,9 +89,9 @@ public class Thief_Surrender extends ThiefSkill {
 
         boolean success = proficiencyCheck(mob, 0, auto);
 
-        final String localCurrency = CMLib.beanCounter().getCurrency(mob.getVictim());
-        final String costWords = CMLib.beanCounter().nameCurrencyShort(localCurrency, goldRequired);
-        if (success && CMLib.beanCounter().getTotalAbsoluteValue(mob, localCurrency) >= goldRequired) {
+        final String localCurrency = CMLib.moneyCounter().getCurrency(mob.getVictim());
+        final String costWords = CMLib.moneyCounter().nameCurrencyShort(localCurrency, goldRequired);
+        if (success && CMLib.moneyCounter().getTotalAbsoluteValue(mob, localCurrency) >= goldRequired) {
             final StringBuffer enemiesList = new StringBuffer("");
             for (int v = 0; v < theList.size(); v++) {
                 final MOB vic = theList.elementAt(v);
@@ -105,12 +105,12 @@ public class Thief_Surrender extends ThiefSkill {
             final CMMsg msg = CMClass.getMsg(mob, null, this, CMMsg.MSG_NOISYMOVEMENT, L("<S-NAME> surrender(s) to @x1, paying @x2.", enemiesList.toString(), costWords));
             if (mob.location().okMessage(mob, msg)) {
                 mob.location().send(mob, msg);
-                CMLib.beanCounter().subtractMoney(mob, localCurrency, goldRequired);
+                CMLib.moneyCounter().subtractMoney(mob, localCurrency, goldRequired);
                 mob.recoverPhyStats();
                 mob.makePeace(true);
                 for (int v = 0; v < theList.size(); v++) {
                     final MOB vic = theList.elementAt(v);
-                    CMLib.beanCounter().addMoney(vic, localCurrency, CMath.div(goldRequired, theList.size()));
+                    CMLib.moneyCounter().addMoney(vic, localCurrency, CMath.div(goldRequired, theList.size()));
                     vic.recoverPhyStats();
                     vic.makePeace(true);
                 }

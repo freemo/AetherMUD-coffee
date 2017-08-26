@@ -1002,12 +1002,12 @@ public class StdMOB implements MOB {
         amDead = false;
         if ((miscText != null) && (resetStats) && (isGeneric())) {
             if (CMProps.getBoolVar(CMProps.Bool.MOBCOMPRESS) && (miscText instanceof byte[])) {
-                CMLib.coffeeMaker().resetGenMOB(this,
-                    CMLib.coffeeMaker().getGenMOBTextUnpacked(this,
+                CMLib.aetherMaker().resetGenMOB(this,
+                    CMLib.aetherMaker().getGenMOBTextUnpacked(this,
                         CMLib.encoder().decompressString((byte[]) miscText)));
             } else {
-                CMLib.coffeeMaker().resetGenMOB(this,
-                    CMLib.coffeeMaker().getGenMOBTextUnpacked(this, CMStrings.bytesToStr(miscText)));
+                CMLib.aetherMaker().resetGenMOB(this,
+                    CMLib.aetherMaker().getGenMOBTextUnpacked(this, CMStrings.bytesToStr(miscText)));
             }
         }
         if (CMLib.map().getStartRoom(this) == null)
@@ -3131,7 +3131,7 @@ public class StdMOB implements MOB {
                         setRiding(null);
 
                     if ((!isMonster) && (soulMate() == null)) {
-                        CMLib.coffeeTables().bump(this, CoffeeTableRow.STAT_TICKSONLINE);
+                        CMLib.aetherTables().bump(this, AetherTableRow.STAT_TICKSONLINE);
                         if (((++tickAgeCounter) * CMProps.getTickMillis()) >= AGE_MILLIS_THRESHOLD) {
                             final long secondsPassed = (tickAgeCounter * CMProps.getTickMillis()) / 1000;
                             CMLib.achievements().possiblyBumpAchievement(this, AchievementLibrary.Event.TIMEPLAYED, (int) secondsPassed, this);

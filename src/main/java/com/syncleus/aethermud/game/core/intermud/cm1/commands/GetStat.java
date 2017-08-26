@@ -373,9 +373,9 @@ public class GetStat extends CM1Command {
                 for (final String code : codes) {
                     if (code.equalsIgnoreCase(stat)) {
                         if (P instanceof MOB)
-                            req.sendMsg("[OK " + CMLib.coffeeMaker().getGenMobStat((MOB) P, stat) + "]");
+                            req.sendMsg("[OK " + CMLib.aetherMaker().getGenMobStat((MOB) P, stat) + "]");
                         else if (P instanceof Item)
-                            req.sendMsg("[OK " + CMLib.coffeeMaker().getGenItemStat((Item) P, stat) + "]");
+                            req.sendMsg("[OK " + CMLib.aetherMaker().getGenItemStat((Item) P, stat) + "]");
                     }
                 }
             }

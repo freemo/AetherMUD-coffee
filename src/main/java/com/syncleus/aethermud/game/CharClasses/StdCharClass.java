@@ -896,7 +896,7 @@ public class StdCharClass implements CharClass {
         RS.setAllValues(0);
         affectPhyStats(fakeMOB, RS);
         RS.setRejuv(PhyStats.NO_REJUV);
-        CR.setStat("ESTATS", CMLib.coffeeMaker().getPhyStatsStr(RS));
+        CR.setStat("ESTATS", CMLib.aetherMaker().getPhyStatsStr(RS));
 
         final CharStats S1 = (CharStats) CMClass.getCommon("DefaultCharStats");
         S1.setMyClasses(ID());
@@ -932,13 +932,13 @@ public class StdCharClass implements CharClass {
                     ADJSTAT.setStat(i, S1.getStat(i));
             }
         }
-        CR.setStat("ASTATS", CMLib.coffeeMaker().getCharStatsStr(ADJSTAT));
-        CR.setStat("CSTATS", CMLib.coffeeMaker().getCharStatsStr(SETSTAT));
+        CR.setStat("ASTATS", CMLib.aetherMaker().getCharStatsStr(ADJSTAT));
+        CR.setStat("CSTATS", CMLib.aetherMaker().getCharStatsStr(SETSTAT));
 
         final CharState CS = (CharState) CMClass.getCommon("DefaultCharState");
         CS.setAllValues(0);
         affectCharState(fakeMOB, CS);
-        CR.setStat("ASTATE", CMLib.coffeeMaker().getCharStateStr(CS));
+        CR.setStat("ASTATE", CMLib.aetherMaker().getCharStateStr(CS));
 
         final List<AbilityMapper.AbilityMapping> data1 = CMLib.ableMapper().getUpToLevelListings(ID(), Integer.MAX_VALUE, true, false);
         if (data1.size() > 0)
@@ -986,7 +986,7 @@ public class StdCharClass implements CharClass {
             | (showThinQualifyList() ? CharClass.GENFLAG_THINQUALLIST : 0)));
         //CharState STARTCS=(CharState)CMClass.getCommon("DefaultCharState"); STARTCS.setAllValues(0);
         //this.startCharacter(mob,isBorrowedClass,verifyOnly)
-        //CR.setStat("STARTASTATE",CMLib.coffeeMaker().getCharStateStr(STARTCS));
+        //CR.setStat("STARTASTATE",CMLib.aetherMaker().getCharStateStr(STARTCS));
         final String[] names = nameSet();
         final List<List<String>> securitySets = new Vector<List<String>>();
         final List<Integer> securityLvls = new Vector<Integer>();

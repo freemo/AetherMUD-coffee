@@ -114,7 +114,7 @@ public class Spell_DetectGold extends Spell {
             metalCheck(mob, (Item) E, container, msg);
             msg.append(metalHere(mob, ((Item) E).owner(), (Item) E));
         } else if ((E instanceof MOB) && (CMLib.flags().canBeSeenBy(E, mob))) {
-            CMLib.beanCounter().getTotalAbsoluteNativeValue((MOB) E);
+            CMLib.moneyCounter().getTotalAbsoluteNativeValue((MOB) E);
             for (int i = 0; i < ((MOB) E).numItems(); i++) {
                 final Item I = ((MOB) E).getItem(i);
                 if (!I.amWearingAt(Wearable.IN_INVENTORY))

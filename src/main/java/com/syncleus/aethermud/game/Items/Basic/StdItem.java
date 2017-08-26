@@ -933,7 +933,7 @@ public class StdItem implements Item {
                         return true;
                     break;
                 case CMMsg.TYP_LIST:
-                    if (CMLib.coffeeShops().getShopKeeper(this) != null)
+                    if (CMLib.aetherShops().getShopKeeper(this) != null)
                         return true;
                     break;
                 case CMMsg.TYP_RELOAD:

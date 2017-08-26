@@ -560,7 +560,7 @@ public class MUD extends Thread implements MudHost {
             if (CMSecurity.isDebugging(DbgFlag.HTTPACCESS))
                 config.setAccessLogFlag(page.getStr("ACCMSGS"));
             final WebServer webServer = new WebServer(serverName + Thread.currentThread().getThreadGroup().getName().charAt(0), config);
-            config.setCoffeeWebServer(webServer);
+            config.setAetherWebServer(webServer);
             webServer.start();
             webServers.add(webServer);
             return true;

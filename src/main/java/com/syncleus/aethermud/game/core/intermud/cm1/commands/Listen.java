@@ -364,7 +364,7 @@ public class Listen extends CM1Command {
         public String messageToString(final CMMsg msg) {
             switch (crits[0].statType) {
                 case CHANNEL:
-                    return CMLib.coffeeFilter().fullOutFilter(null, CMLib.map().deity(), msg.source(), msg.target(), msg.tool(), msg.othersMessage(), false);
+                    return CMLib.aetherFilter().fullOutFilter(null, CMLib.map().deity(), msg.source(), msg.target(), msg.tool(), msg.othersMessage(), false);
                 case LOGINS:
                     if (msg.othersMinor() == CMMsg.TYP_LOGIN)
                         return "LOGIN " + msg.source().Name();
@@ -385,7 +385,7 @@ public class Listen extends CM1Command {
                         cmd.append("NULL ");
                     cmd.append(minorDesc(msg.othersMinor())).append(' ');
                     cmd.append(Integer.toString(msg.value())).append(' ');
-                    cmd.append(CMStrings.removeColors(CMLib.coffeeFilter().fullOutFilter(null, CMLib.map().deity(), msg.source(), msg.target(), msg.tool(), msg.othersMessage(), false)));
+                    cmd.append(CMStrings.removeColors(CMLib.aetherFilter().fullOutFilter(null, CMLib.map().deity(), msg.source(), msg.target(), msg.tool(), msg.othersMessage(), false)));
                     return cmd.toString();
                 }
             }

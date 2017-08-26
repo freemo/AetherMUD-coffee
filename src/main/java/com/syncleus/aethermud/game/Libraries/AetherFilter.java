@@ -30,13 +30,13 @@ import java.util.Hashtable;
 import java.util.Map;
 
 
-public class CoffeeFilter extends StdLibrary implements TelnetFilter {
+public class AetherFilter extends StdLibrary implements TelnetFilter {
     private Hashtable<String, Pronoun> tagTable = null;
     private ColorState normalColor = null;
 
     @Override
     public String ID() {
-        return "CoffeeFilter";
+        return "AetherFilter";
     }
 
     @Override
@@ -89,7 +89,7 @@ public class CoffeeFilter extends StdLibrary implements TelnetFilter {
             }
         }
         if (CMSecurity.isDebugging(CMSecurity.DbgFlag.OUTPUT))
-            Log.debugOut("CoffeeFilter", "OUTPUT: ?: " + buf.toString());
+            Log.debugOut("AetherFilter", "OUTPUT: ?: " + buf.toString());
         return buf.toString();
     }
 
@@ -596,7 +596,7 @@ public class CoffeeFilter extends StdLibrary implements TelnetFilter {
             S.setCurrentColor(normalColor);
         }
         if (CMSecurity.isDebugging(CMSecurity.DbgFlag.OUTPUT))
-            Log.debugOut("CoffeeFilter", "OUTPUT: " + (((S != null) && (S.mob() != null)) ? S.mob().Name() : "") + ": " + buf.toString());
+            Log.debugOut("AetherFilter", "OUTPUT: " + (((S != null) && (S.mob() != null)) ? S.mob().Name() : "") + ": " + buf.toString());
         return buf.toString();
     }
 
@@ -660,7 +660,7 @@ public class CoffeeFilter extends StdLibrary implements TelnetFilter {
         }
 
         if (CMSecurity.isDebugging(CMSecurity.DbgFlag.OUTPUT))
-            Log.debugOut("CoffeeFilter", "OUTPUT: " + (((S != null) && (S.mob() != null)) ? S.mob().Name() : "") + ": " + buf.toString());
+            Log.debugOut("AetherFilter", "OUTPUT: " + (((S != null) && (S.mob() != null)) ? S.mob().Name() : "") + ": " + buf.toString());
         return buf.toString();
     }
 
@@ -720,8 +720,8 @@ public class CoffeeFilter extends StdLibrary implements TelnetFilter {
                 //BZ: delete when this is fixed.
                 //BZ: 11/2015 - this might be fixed now!
                 if (++loopDebugCtr > 5) {
-                    Log.debugOut("CoffeeFilter", "LOOP: " + loop + "/" + wrap + "/!" + (buf.charAt(loop) == '\033') + "!/" + lastSpace + "/" + firstAlpha + "/" + amperStop + "/" + doSagain + "/" + firstSdone + "/" + buf.length() + "/" + loopDebugCtr);
-                    Log.debugOut("CoffeeFilter", buf.toString());
+                    Log.debugOut("AetherFilter", "LOOP: " + loop + "/" + wrap + "/!" + (buf.charAt(loop) == '\033') + "!/" + lastSpace + "/" + firstAlpha + "/" + amperStop + "/" + doSagain + "/" + firstSdone + "/" + buf.length() + "/" + loopDebugCtr);
+                    Log.debugOut("AetherFilter", buf.toString());
                     break;
                 }
             } else {
@@ -1258,7 +1258,7 @@ public class CoffeeFilter extends StdLibrary implements TelnetFilter {
 		}
 		//*/
         if (CMSecurity.isDebugging(CMSecurity.DbgFlag.OUTPUT))
-            Log.debugOut("CoffeeFilter", "OUTPUT: " + (((S != null) && (S.mob() != null)) ? S.mob().Name() : "") + ": " + buf.toString());
+            Log.debugOut("AetherFilter", "OUTPUT: " + (((S != null) && (S.mob() != null)) ? S.mob().Name() : "") + ": " + buf.toString());
         return buf.toString();
     }
 

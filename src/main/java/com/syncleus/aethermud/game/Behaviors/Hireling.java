@@ -194,8 +194,8 @@ public class Hireling extends StdBehavior {
                     CMLib.commands().postSay(observer, null, L("I wouldn't work for the likes of you."), false, false);
                     return false;
                 }
-                if (!((Coins) msg.tool()).getCurrency().equals(CMLib.beanCounter().getCurrency(observer))) {
-                    CMLib.commands().postSay(observer, null, L("I'm sorry, I only deal in @x1.", CMLib.beanCounter().getDenominationName(CMLib.beanCounter().getCurrency(observer))), false, false);
+                if (!((Coins) msg.tool()).getCurrency().equals(CMLib.moneyCounter().getCurrency(observer))) {
+                    CMLib.commands().postSay(observer, null, L("I'm sorry, I only deal in @x1.", CMLib.moneyCounter().getDenominationName(CMLib.moneyCounter().getCurrency(observer))), false, false);
                     return false;
                 }
             }
@@ -235,7 +235,7 @@ public class Hireling extends StdBehavior {
                 || (upperSrcMsg.indexOf("WORK") > 0)
                 || (upperSrcMsg.indexOf("AVAILABLE") > 0))
                 && (onTheJobUntil == 0))
-                CMLib.commands().postSay(observer, null, L("I'm for hire.  Just give me @x1 and I'll work for you for @x2 \"hours\".", CMLib.beanCounter().nameCurrencyShort(observer, price()), "" + gamehours()), false, false);
+                CMLib.commands().postSay(observer, null, L("I'm for hire.  Just give me @x1 and I'll work for you for @x2 \"hours\".", CMLib.moneyCounter().nameCurrencyShort(observer, price()), "" + gamehours()), false, false);
             else if (((upperSrcMsg.indexOf(" FIRED") > 0))
                 && ((workingFor != null) && (msg.source().Name().equals(workingFor)))
                 && (msg.amITarget(observer))
@@ -269,9 +269,9 @@ public class Hireling extends StdBehavior {
                     if (workingFor.equals(source.Name()))
                         CMLib.commands().postSay(observer, source, L("I'm still working for you.  I'll put that towards an extension though."), true, false);
                     else
-                        CMLib.commands().postSay(observer, source, L("Sorry, I'm on the job right now.  Give me @x1 more later on and I'll work for @x2 \"hours\".", CMLib.beanCounter().nameCurrencyShort(observer, (price() - given)), "" + gamehours()), true, false);
+                        CMLib.commands().postSay(observer, source, L("Sorry, I'm on the job right now.  Give me @x1 more later on and I'll work for @x2 \"hours\".", CMLib.moneyCounter().nameCurrencyShort(observer, (price() - given)), "" + gamehours()), true, false);
                 } else
-                    CMLib.commands().postSay(observer, source, L("My price is @x1.  Give me @x2 more and I'll work for you for @x3 \"hours\".", CMLib.beanCounter().nameCurrencyShort(observer, price()), CMLib.beanCounter().nameCurrencyShort(observer, (price() - given)), "" + gamehours()), true, false);
+                    CMLib.commands().postSay(observer, source, L("My price is @x1.  Give me @x2 more and I'll work for you for @x3 \"hours\".", CMLib.moneyCounter().nameCurrencyShort(observer, price()), CMLib.moneyCounter().nameCurrencyShort(observer, (price() - given)), "" + gamehours()), true, false);
                 partials.put(msg.source().Name(), Double.valueOf(given));
             } else {
                 if (onTheJobUntil != 0) {

@@ -983,7 +983,7 @@ public class DefaultFaction implements Faction, MsgListener {
                     if (eventC.applies(msg.source(), (MOB) msg.target())) {
                         double amount = CMath.s_double(eventC.getTriggerParm("AMOUNT"));
                         final double pctAmount = CMath.s_pct(eventC.getTriggerParm("PCT"))
-                            * CMLib.beanCounter().getTotalAbsoluteNativeValue((MOB) msg.target());
+                            * CMLib.moneyCounter().getTotalAbsoluteNativeValue((MOB) msg.target());
                         if (pctAmount > amount)
                             amount = pctAmount;
                         if (amount == 0)

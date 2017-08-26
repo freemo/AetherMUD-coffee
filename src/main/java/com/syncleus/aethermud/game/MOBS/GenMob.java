@@ -53,29 +53,29 @@ public class GenMob extends StdMOB {
     @Override
     public String text() {
         if (CMProps.getBoolVar(CMProps.Bool.MOBCOMPRESS))
-            miscText = CMLib.encoder().compressString(CMLib.coffeeMaker().getPropertiesStr(this, false));
+            miscText = CMLib.encoder().compressString(CMLib.aetherMaker().getPropertiesStr(this, false));
         else
-            miscText = CMLib.coffeeMaker().getPropertiesStr(this, false);
+            miscText = CMLib.aetherMaker().getPropertiesStr(this, false);
         return super.text();
     }
 
     @Override
     public void setMiscText(String newText) {
         super.setMiscText(newText);
-        CMLib.coffeeMaker().resetGenMOB(this, newText);
+        CMLib.aetherMaker().resetGenMOB(this, newText);
     }
 
     @Override
     public String getStat(String code) {
-        if (CMLib.coffeeMaker().getGenMobCodeNum(code) >= 0)
-            return CMLib.coffeeMaker().getGenMobStat(this, code);
+        if (CMLib.aetherMaker().getGenMobCodeNum(code) >= 0)
+            return CMLib.aetherMaker().getGenMobStat(this, code);
         return CMProps.getStatCodeExtensionValue(getStatCodes(), xtraValues, code);
     }
 
     @Override
     public void setStat(String code, String val) {
-        if (CMLib.coffeeMaker().getGenMobCodeNum(code) >= 0)
-            CMLib.coffeeMaker().setGenMobStat(this, code, val);
+        if (CMLib.aetherMaker().getGenMobCodeNum(code) >= 0)
+            CMLib.aetherMaker().setGenMobStat(this, code, val);
         CMProps.setStatCodeExtensionValue(getStatCodes(), xtraValues, code, val);
     }
 

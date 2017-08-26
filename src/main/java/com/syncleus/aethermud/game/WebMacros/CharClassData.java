@@ -570,7 +570,7 @@ public class CharClassData extends StdWebMacro {
                         final PhyStats adjPStats = (PhyStats) CMClass.getCommon("DefaultPhyStats");
                         adjPStats.setAllValues(0);
                         if (eStats.length() > 0) {
-                            CMLib.coffeeMaker().setPhyStats(adjPStats, eStats);
+                            CMLib.aetherMaker().setPhyStats(adjPStats, eStats);
                         }
                         str.append(RaceData.estats(adjPStats, 'E', httpReq, parms, 0) + ", ");
                     }
@@ -579,7 +579,7 @@ public class CharClassData extends StdWebMacro {
                         setStats.setAllValues(0);
                         final String cStats = C.getStat("CSTATS");
                         if (cStats.length() > 0) {
-                            CMLib.coffeeMaker().setCharStats(setStats, cStats);
+                            CMLib.aetherMaker().setCharStats(setStats, cStats);
                         }
                         str.append(RaceData.cstats(setStats, 'S', httpReq, parms, 0) + ", ");
                     }
@@ -588,7 +588,7 @@ public class CharClassData extends StdWebMacro {
                         adjStats.setAllValues(0);
                         final String cStats = C.getStat("ASTATS");
                         if (cStats.length() > 0) {
-                            CMLib.coffeeMaker().setCharStats(adjStats, cStats);
+                            CMLib.aetherMaker().setCharStats(adjStats, cStats);
                         }
                         str.append(RaceData.cstats(adjStats, 'A', httpReq, parms, 0) + ", ");
                     }
@@ -597,7 +597,7 @@ public class CharClassData extends StdWebMacro {
                         adjState.setAllValues(0);
                         final String aState = C.getStat("ASTATE");
                         if (aState.length() > 0) {
-                            CMLib.coffeeMaker().setCharState(adjState, aState);
+                            CMLib.aetherMaker().setCharState(adjState, aState);
                         }
                         str.append(RaceData.cstate(adjState, 'A', httpReq, parms, 0) + ", ");
                     }
@@ -606,7 +606,7 @@ public class CharClassData extends StdWebMacro {
                         startAdjState.setAllValues(0);
                         final String saState = C.getStat("STARTASTATE");
                         if (saState.length() > 0) {
-                            CMLib.coffeeMaker().setCharState(startAdjState, saState);
+                            CMLib.aetherMaker().setCharState(startAdjState, saState);
                         }
                         str.append(RaceData.cstate(startAdjState, 'S', httpReq, parms, 0) + ", ");
                     }

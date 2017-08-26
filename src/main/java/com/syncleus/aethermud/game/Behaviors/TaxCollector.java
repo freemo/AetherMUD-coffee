@@ -110,11 +110,11 @@ public class TaxCollector extends StdBehavior {
                 if (theLaw != null) {
                     final double cittax = CMath.s_double((String) theLaw.taxLaws().get("CITTAX"));
                     if (cittax > 0.0)
-                        owed[OWE_CITIZENTAX] = CMath.mul(CMLib.beanCounter().getTotalAbsoluteShopKeepersValue(M, collector), CMath.div(cittax, 100.0));
+                        owed[OWE_CITIZENTAX] = CMath.mul(CMLib.moneyCounter().getTotalAbsoluteShopKeepersValue(M, collector), CMath.div(cittax, 100.0));
                 }
             }
         } else
-            owed[OWE_CITIZENTAX] = CMath.div(CMLib.beanCounter().getTotalAbsoluteShopKeepersValue(M, collector), 10.0);
+            owed[OWE_CITIZENTAX] = CMath.div(CMLib.moneyCounter().getTotalAbsoluteShopKeepersValue(M, collector), 10.0);
         owed[OWE_TOTAL] = owed[OWE_CITIZENTAX] + owed[OWE_BACKTAXES] + owed[OWE_FINES];
         owed[OWE_TOTAL] = Math.round(owed[OWE_TOTAL]);
         return owed;
@@ -135,7 +135,7 @@ public class TaxCollector extends StdBehavior {
                 if (treasuryRoomID != null) {
                     final Room treasuryR = CMLib.map().getRoom(treasuryRoomID);
                     if (treasuryR != null) {
-                        final Coins COIN = CMLib.beanCounter().makeBestCurrency(CMLib.beanCounter().getCurrency(mob), paidAmount, treasuryR, treasuryContainer);
+                        final Coins COIN = CMLib.moneyCounter().makeBestCurrency(CMLib.moneyCounter().getCurrency(mob), paidAmount, treasuryR, treasuryContainer);
                         if (COIN != null)
                             COIN.putCoinsBack();
                     }
@@ -225,13 +225,13 @@ public class TaxCollector extends StdBehavior {
         if (msg.amITarget(mob)
             && (msg.targetMinor() == CMMsg.TYP_GIVE)
             && (msg.tool() instanceof Coins)) {
-            final String currency = CMLib.beanCounter().getCurrency(mob);
+            final String currency = CMLib.moneyCounter().getCurrency(mob);
             final double[] owe = totalMoneyOwed(mob, msg.source());
             final double coins = ((Coins) msg.tool()).getTotalValue();
             if ((paid != null) && (paid.contains(msg.source())))
                 owe[OWE_TOTAL] -= owe[OWE_CITIZENTAX];
-            final String owed = CMLib.beanCounter().nameCurrencyShort(currency, owe[OWE_TOTAL]);
-            if ((!((Coins) msg.tool()).getCurrency().equals(CMLib.beanCounter().getCurrency(mob)))) {
+            final String owed = CMLib.moneyCounter().nameCurrencyShort(currency, owe[OWE_TOTAL]);
+            if ((!((Coins) msg.tool()).getCurrency().equals(CMLib.moneyCounter().getCurrency(mob)))) {
                 msg.source().tell(L("@x1 refuses your money.", mob.name(msg.source())));
                 CMLib.commands().postSay(mob, msg.source(), L("I don't accept that kind of currency."), false, false);
                 return false;
@@ -324,14 +324,14 @@ public class TaxCollector extends StdBehavior {
                 if ((!paid.contains(M)) && (demandDex < 0)) {
                     final double[] owe = totalMoneyOwed(mob, M);
                     final StringBuffer say = new StringBuffer("");
-                    final String currency = CMLib.beanCounter().getCurrency(mob);
-                    final double denomination = CMLib.beanCounter().getLowestDenomination(currency);
+                    final String currency = CMLib.moneyCounter().getCurrency(mob);
+                    final double denomination = CMLib.moneyCounter().getLowestDenomination(currency);
                     if (owe[OWE_CITIZENTAX] > 1.0)
-                        say.append("You owe " + CMLib.beanCounter().getDenominationName(currency, denomination, Math.round(CMath.div(owe[OWE_CITIZENTAX], denomination))) + " in local taxes. ");
+                        say.append("You owe " + CMLib.moneyCounter().getDenominationName(currency, denomination, Math.round(CMath.div(owe[OWE_CITIZENTAX], denomination))) + " in local taxes. ");
                     if (owe[OWE_BACKTAXES] > 1.0)
-                        say.append("You owe " + CMLib.beanCounter().getDenominationName(currency, denomination, Math.round(CMath.div(owe[OWE_BACKTAXES], denomination))) + " in back property taxes");
+                        say.append("You owe " + CMLib.moneyCounter().getDenominationName(currency, denomination, Math.round(CMath.div(owe[OWE_BACKTAXES], denomination))) + " in back property taxes");
                     if (owe[OWE_FINES] > 1.0)
-                        say.append("You owe " + CMLib.beanCounter().getDenominationName(currency, denomination, Math.round(CMath.div(owe[OWE_FINES], denomination))) + " in fines");
+                        say.append("You owe " + CMLib.moneyCounter().getDenominationName(currency, denomination, Math.round(CMath.div(owe[OWE_FINES], denomination))) + " in fines");
                     if (say.length() > 0) {
                         CMLib.commands().postSay(mob, M, L("@x1.  You must pay me immediately or face the consequences.", say.toString()), false, false);
                         demanded.addElement(M, Long.valueOf(System.currentTimeMillis()));

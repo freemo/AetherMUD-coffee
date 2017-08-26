@@ -625,7 +625,7 @@ public class SlaveryParser extends StdLibrary implements SlaveryLibrary {
                 if (CMSecurity.isDebugging(CMSecurity.DbgFlag.GEAS))
                     Log.debugOut("GEAS", "ITEMFIND: " + item);
                 if ((CMath.isNumber(item) && (CMath.s_int(item) > 0))) {
-                    if (CMLib.beanCounter().getTotalAbsoluteNativeValue(me) >= (CMath.s_int(item))) {
+                    if (CMLib.moneyCounter().getTotalAbsoluteNativeValue(me) >= (CMath.s_int(item))) {
                         step = Step.EVAL;
                         que.remove(0);
                         CMLib.commands().postSay(me, null, CMLib.lang().L("I got the money!"), false, false);
@@ -702,21 +702,21 @@ public class SlaveryParser extends StdLibrary implements SlaveryLibrary {
                                     break;
                             }
                         }
-                        final ShopKeeper sk = CMLib.coffeeShops().getShopKeeper(M);
+                        final ShopKeeper sk = CMLib.aetherShops().getShopKeeper(M);
                         if ((!item.equals("coins"))
                             && (sk != null)
                             && (sk.getShop().getStock(item, me) != null)) {
                             final Environmental E = sk.getShop().getStock(item, me);
                             if ((E != null) && (E instanceof Item)) {
-                                double price = CMLib.coffeeShops().sellingPrice(M, me, E, sk, true).absoluteGoldPrice;
-                                if (price <= CMLib.beanCounter().getTotalAbsoluteShopKeepersValue(me, M)) {
+                                double price = CMLib.aetherShops().sellingPrice(M, me, E, sk, true).absoluteGoldPrice;
+                                if (price <= CMLib.moneyCounter().getTotalAbsoluteShopKeepersValue(me, M)) {
                                     me.enqueCommand(CMParms.parse("BUY \"" + E.name() + "\""), MUDCmdProcessor.METAFLAG_FORCED | MUDCmdProcessor.METAFLAG_ORDER, 0);
                                     step = Step.EVAL;
                                     return "HOLD";
                                 }
-                                price = price - CMLib.beanCounter().getTotalAbsoluteShopKeepersValue(me, M);
-                                que.add(0, CMParms.parse("itemfind " + CMLib.beanCounter().nameCurrencyShort(M, price)));
-                                CMLib.commands().postSay(me, null, CMLib.lang().L("Damn, I need @x1.", CMLib.beanCounter().nameCurrencyShort(M, price)), false, false);
+                                price = price - CMLib.moneyCounter().getTotalAbsoluteShopKeepersValue(me, M);
+                                que.add(0, CMParms.parse("itemfind " + CMLib.moneyCounter().nameCurrencyShort(M, price)));
+                                CMLib.commands().postSay(me, null, CMLib.lang().L("Damn, I need @x1.", CMLib.moneyCounter().nameCurrencyShort(M, price)), false, false);
                                 step = Step.EVAL;
                                 return "HOLD";
                             }

@@ -944,7 +944,7 @@ public class DefaultSession implements Session {
         try {
             if ((snoops.size() > 0) && (snoopSuspensionStack <= 0)) {
                 String msgColored;
-                final String preFix = CMLib.coffeeFilter().colorOnlyFilter("^Z" + ((mob == null) ? "?" : mob.Name()) + ":^N ", this);
+                final String preFix = CMLib.aetherFilter().colorOnlyFilter("^Z" + ((mob == null) ? "?" : mob.Name()) + ":^N ", this);
                 final int crCheck = msg.indexOf('\n');
                 if ((crCheck >= 0) && (crCheck < msg.length() - 2)) {
                     final StringBuffer buf = new StringBuffer(msg);
@@ -1067,13 +1067,13 @@ public class DefaultSession implements Session {
     public void safeRawPrint(String msg) {
         if (msg == null)
             return;
-        onlyPrint((needPrompt ? "" : "\n\r") + CMLib.coffeeFilter().mxpSafetyFilter(msg, this), false);
+        onlyPrint((needPrompt ? "" : "\n\r") + CMLib.aetherFilter().mxpSafetyFilter(msg, this), false);
         needPrompt = true;
     }
 
     @Override
     public void print(String msg) {
-        onlyPrint(CMLib.coffeeFilter().fullOutFilter(this, mob, mob, mob, null, msg, false), false);
+        onlyPrint(CMLib.aetherFilter().fullOutFilter(this, mob, mob, mob, null, msg, false), false);
     }
 
     @Override
@@ -1112,17 +1112,17 @@ public class DefaultSession implements Session {
 
     @Override
     public void stdPrint(String msg) {
-        rawPrint(CMLib.coffeeFilter().fullOutFilter(this, mob, mob, mob, null, msg, false));
+        rawPrint(CMLib.aetherFilter().fullOutFilter(this, mob, mob, mob, null, msg, false));
     }
 
     @Override
     public void print(Physical src, Environmental trg, Environmental tol, String msg) {
-        onlyPrint((CMLib.coffeeFilter().fullOutFilter(this, mob, src, trg, tol, msg, false)), false);
+        onlyPrint((CMLib.aetherFilter().fullOutFilter(this, mob, src, trg, tol, msg, false)), false);
     }
 
     @Override
     public void stdPrint(Physical src, Environmental trg, Environmental tol, String msg) {
-        rawPrint(CMLib.coffeeFilter().fullOutFilter(this, mob, src, trg, trg, msg, false));
+        rawPrint(CMLib.aetherFilter().fullOutFilter(this, mob, src, trg, trg, msg, false));
     }
 
     @Override
@@ -1134,14 +1134,14 @@ public class DefaultSession implements Session {
     @Override
     public void wraplessPrintln(String msg) {
         if (msg != null)
-            onlyPrint(CMLib.coffeeFilter().fullOutFilter(this, mob, mob, mob, null, msg, true) + "\n\r", false);
+            onlyPrint(CMLib.aetherFilter().fullOutFilter(this, mob, mob, mob, null, msg, true) + "\n\r", false);
         needPrompt = true;
     }
 
     @Override
     public void wraplessPrint(String msg) {
         if (msg != null)
-            onlyPrint(CMLib.coffeeFilter().fullOutFilter(this, mob, mob, mob, null, msg, true), false);
+            onlyPrint(CMLib.aetherFilter().fullOutFilter(this, mob, mob, mob, null, msg, true), false);
         needPrompt = true;
     }
 
@@ -1153,7 +1153,7 @@ public class DefaultSession implements Session {
     @Override
     public void colorOnlyPrintln(String msg, boolean noCache) {
         if (msg != null)
-            onlyPrint(CMLib.coffeeFilter().colorOnlyFilter(msg, this) + "\n\r", noCache);
+            onlyPrint(CMLib.aetherFilter().colorOnlyFilter(msg, this) + "\n\r", noCache);
         needPrompt = true;
     }
 
@@ -1165,26 +1165,26 @@ public class DefaultSession implements Session {
     @Override
     public void colorOnlyPrint(String msg, boolean noCache) {
         if (msg != null)
-            onlyPrint(CMLib.coffeeFilter().colorOnlyFilter(msg, this), noCache);
+            onlyPrint(CMLib.aetherFilter().colorOnlyFilter(msg, this), noCache);
         needPrompt = true;
     }
 
     @Override
     public void stdPrintln(String msg) {
         if (msg != null)
-            rawPrint(CMLib.coffeeFilter().fullOutFilter(this, mob, mob, mob, null, msg, false) + "\n\r");
+            rawPrint(CMLib.aetherFilter().fullOutFilter(this, mob, mob, mob, null, msg, false) + "\n\r");
     }
 
     @Override
     public void println(Physical src, Environmental trg, Environmental tol, String msg) {
         if (msg != null)
-            onlyPrint(CMLib.coffeeFilter().fullOutFilter(this, mob, src, trg, tol, msg, false) + "\n\r", false);
+            onlyPrint(CMLib.aetherFilter().fullOutFilter(this, mob, src, trg, tol, msg, false) + "\n\r", false);
     }
 
     @Override
     public void stdPrintln(Physical src, Environmental trg, Environmental tol, String msg) {
         if (msg != null)
-            rawPrint(CMLib.coffeeFilter().fullOutFilter(this, mob, src, trg, tol, msg, false) + "\n\r");
+            rawPrint(CMLib.aetherFilter().fullOutFilter(this, mob, src, trg, tol, msg, false) + "\n\r");
     }
 
     @Override
@@ -1818,7 +1818,7 @@ public class DefaultSession implements Session {
 
             final String str;
             if (filter)
-                str = CMLib.coffeeFilter().simpleInFilter(inStr, CMSecurity.isAllowed(mob, (mob != null) ? mob.location() : null, CMSecurity.SecFlag.MXPTAGS));
+                str = CMLib.aetherFilter().simpleInFilter(inStr, CMSecurity.isAllowed(mob, (mob != null) ? mob.location() : null, CMSecurity.SecFlag.MXPTAGS));
             else
                 str = inStr.toString();
             if (str == null)
@@ -1877,7 +1877,7 @@ public class DefaultSession implements Session {
         input.setLength(0);
         if (!sessionMCPCheck(inStr))
             return null;
-        final String str = CMLib.coffeeFilter().simpleInFilter(inStr, CMSecurity.isAllowed(mob, (mob != null) ? mob.location() : null, CMSecurity.SecFlag.MXPTAGS));
+        final String str = CMLib.aetherFilter().simpleInFilter(inStr, CMSecurity.isAllowed(mob, (mob != null) ? mob.location() : null, CMSecurity.SecFlag.MXPTAGS));
         if (str == null)
             return null;
         snoopSupportPrint(str + "\n\r", true);

@@ -188,7 +188,7 @@ public class RandomMonsters extends ActiveTicker {
             if (monsters != null)
                 return monsters;
             monsters = new Vector<MOB>();
-            final String error = CMLib.coffeeMaker().addMOBsFromXML(filename, monsters, null);
+            final String error = CMLib.aetherMaker().addMOBsFromXML(filename, monsters, null);
             if (error.length() > 0) {
                 if (alreadyTriedLoad)
                     return null;
@@ -223,7 +223,7 @@ public class RandomMonsters extends ActiveTicker {
                     return null;
                 }
                 monsters = new Vector<MOB>();
-                final String error = CMLib.coffeeMaker().addMOBsFromXML(buf.toString(), monsters, null);
+                final String error = CMLib.aetherMaker().addMOBsFromXML(buf.toString(), monsters, null);
                 if (error.length() > 0) {
                     Log.errOut("RandomMonsters: Error on import of: '" + filename + "' for '" + thangName + "' (" + thangID + "): " + error + ".");
                     return null;

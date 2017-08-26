@@ -291,7 +291,7 @@ public class Merge extends StdCommand {
             if (mob.session() != null)
                 mob.session().rawPrint(L("Unpacking mobs from file: '@x1'...", filename));
             List<MOB> mobs = new Vector<MOB>();
-            final String error = CMLib.coffeeMaker().addMOBsFromXML(buf.toString(), mobs, mob.session());
+            final String error = CMLib.aetherMaker().addMOBsFromXML(buf.toString(), mobs, mob.session());
             things.addAll(mobs);
             mobs.clear();
             mobs = null;
@@ -307,7 +307,7 @@ public class Merge extends StdCommand {
             if (mob.session() != null)
                 mob.session().rawPrint(L("Unpacking items from file: '@x1'...", filename));
             List<Item> items = new Vector<Item>();
-            final String error = CMLib.coffeeMaker().addItemsFromXML(buf.toString(), items, mob.session());
+            final String error = CMLib.aetherMaker().addItemsFromXML(buf.toString(), items, mob.session());
             things.addAll(items);
             items.clear();
             items = null;
@@ -464,7 +464,7 @@ public class Merge extends StdCommand {
                                 if ((I != null) && (tryMerge(mob, R, I, things, changes, onfields, ignore, noisy)))
                                     savemobs = true;
                             }
-                            final ShopKeeper SK = CMLib.coffeeShops().getShopKeeper(M);
+                            final ShopKeeper SK = CMLib.aetherShops().getShopKeeper(M);
                             if (SK != null) {
                                 for (final Iterator<Environmental> i = SK.getShop().getStoreInventory(); i.hasNext(); ) {
                                     final Environmental E = i.next();

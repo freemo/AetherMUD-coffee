@@ -58,7 +58,7 @@ public class GenPortal extends StdPortal {
 
     @Override
     public String text() {
-        return CMLib.coffeeMaker().getPropertiesStr(this, false);
+        return CMLib.aetherMaker().getPropertiesStr(this, false);
     }
 
     @Override
@@ -99,14 +99,14 @@ public class GenPortal extends StdPortal {
     @Override
     public void setMiscText(String newText) {
         miscText = "";
-        CMLib.coffeeMaker().setPropertiesStr(this, newText, false);
+        CMLib.aetherMaker().setPropertiesStr(this, newText, false);
         recoverPhyStats();
     }
 
     @Override
     public String getStat(String code) {
-        if (CMLib.coffeeMaker().getGenItemCodeNum(code) >= 0)
-            return CMLib.coffeeMaker().getGenItemStat(this, code);
+        if (CMLib.aetherMaker().getGenItemCodeNum(code) >= 0)
+            return CMLib.aetherMaker().getGenItemStat(this, code);
         switch (getCodeNum(code)) {
             case 0:
                 return "" + hasALock();
@@ -149,8 +149,8 @@ public class GenPortal extends StdPortal {
 
     @Override
     public void setStat(String code, String val) {
-        if (CMLib.coffeeMaker().getGenItemCodeNum(code) >= 0)
-            CMLib.coffeeMaker().setGenItemStat(this, code, val);
+        if (CMLib.aetherMaker().getGenItemCodeNum(code) >= 0)
+            CMLib.aetherMaker().setGenItemStat(this, code, val);
         else
             switch (getCodeNum(code)) {
                 case 0:

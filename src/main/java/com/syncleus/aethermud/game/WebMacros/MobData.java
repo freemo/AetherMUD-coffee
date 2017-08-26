@@ -1036,7 +1036,7 @@ public class MobData extends StdWebMacro {
             httpReq.addFakeUrlParameter("DAMAGE", "" + M.basePhyStats().damage());
             httpReq.addFakeUrlParameter("SPEED", "" + M.basePhyStats().speed());
             httpReq.addFakeUrlParameter("ATTACK", "" + M.basePhyStats().attackAdjustment());
-            httpReq.addFakeUrlParameter("MONEY", "" + CMLib.beanCounter().getMoney(M));
+            httpReq.addFakeUrlParameter("MONEY", "" + CMLib.moneyCounter().getMoney(M));
         }
 
         final StringBuffer str = new StringBuffer("");
@@ -1200,8 +1200,8 @@ public class MobData extends StdWebMacro {
                         break;
                     case MONEY: // money
                         if (firstTime) {
-                            old = "" + CMLib.beanCounter().getMoney(M);
-                            CMLib.beanCounter().clearInventoryMoney(M, null);
+                            old = "" + CMLib.moneyCounter().getMoney(M);
+                            CMLib.moneyCounter().clearInventoryMoney(M, null);
                         }
                         str.append(old);
                         break;

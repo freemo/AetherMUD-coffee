@@ -189,7 +189,7 @@ public class Spell_Simulacrum extends Spell {
 				&&(msg.othersMessage().length()>0)
 				&&(myHost == simulacruM)
 				&&(simulacruM.location() != casterM.location()))
-					casterM.tell(L("^hSimulacrum^N: ^W")+CMLib.coffeeFilter().fullOutFilter(null, null, msg.source(), msg.target(), msg.tool(), CMStrings.removeColors(msg.othersMessage()), false)+"^.^N");
+					casterM.tell(L("^hSimulacrum^N: ^W")+CMLib.aetherFilter().fullOutFilter(null, null, msg.source(), msg.target(), msg.tool(), CMStrings.removeColors(msg.othersMessage()), false)+"^.^N");
 				*/
             }
         }
@@ -265,7 +265,7 @@ public class Spell_Simulacrum extends Spell {
         newMOB.recoverCharStats();
         newMOB.recoverPhyStats();
         newMOB.recoverMaxState();
-        CMLib.beanCounter().clearZeroMoney(newMOB, null);
+        CMLib.moneyCounter().clearZeroMoney(newMOB, null);
         newMOB.setMoneyVariation(0);
         newMOB.location().showOthers(newMOB, null, CMMsg.MSG_OK_ACTION, L("<S-NAME> appears!"));
         caster.location().recoverRoomStats();

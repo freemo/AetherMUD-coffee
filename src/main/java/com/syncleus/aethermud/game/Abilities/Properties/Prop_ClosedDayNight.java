@@ -162,7 +162,7 @@ public class Prop_ClosedDayNight extends Property {
             || (msg.targetMinor() == CMMsg.TYP_WITHDRAW)
             || (msg.targetMinor() == CMMsg.TYP_BORROW)
             || (msg.targetMinor() == CMMsg.TYP_VIEW))) {
-            final ShopKeeper sk = CMLib.coffeeShops().getShopKeeper(affected);
+            final ShopKeeper sk = CMLib.aetherShops().getShopKeeper(affected);
             if (sk != null)
                 CMLib.commands().postSay((MOB) affected, msg.source(), (shopMsg != null) ? shopMsg : L("Sorry, I'm off right now.  Try me tomorrow."), false, false);
             return false;
@@ -258,7 +258,7 @@ public class Prop_ClosedDayNight extends Property {
                         // still tracking...
                         if (CMLib.flags().isTracking(mob))
                             return true;
-                        final ShopKeeper sk = CMLib.coffeeShops().getShopKeeper(affected);
+                        final ShopKeeper sk = CMLib.aetherShops().getShopKeeper(affected);
                         if (sk != null)
                             CMLib.commands().postSay((MOB) affected, null, (shopMsg != null) ? shopMsg : L("Sorry, I'm off right now.  Try me tomorrow."), false, false);
                         final Ability A = CMClass.getAbility("Skill_Track");

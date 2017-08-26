@@ -115,8 +115,8 @@ public class Stat extends Skills {
         ENDQ.set(Calendar.MINUTE, 59);
         ENDQ.set(Calendar.SECOND, 59);
         ENDQ.set(Calendar.MILLISECOND, 999);
-        CMLib.coffeeTables().update();
-        List<CoffeeTableRow> V = CMLib.database().DBReadStats(ENDQ.getTimeInMillis() - 1, 0);
+        CMLib.aetherTables().update();
+        List<AetherTableRow> V = CMLib.database().DBReadStats(ENDQ.getTimeInMillis() - 1, 0);
         if (V.size() == 0) {
             mob.tell(L("No Stats?!"));
             return false;
@@ -204,7 +204,7 @@ public class Stat extends Skills {
             final ArrayList<Ability> allSkills = new ArrayList<Ability>();
             for (final Enumeration<Ability> e = CMClass.abilities(); e.hasMoreElements(); )
                 allSkills.add(e.nextElement());
-            final long[][] totals = new long[allSkills.size()][CoffeeTableRow.STAT_TOTAL];
+            final long[][] totals = new long[allSkills.size()][AetherTableRow.STAT_TOTAL];
             while ((V.size() > 0) && (curTime > (ENDQ.getTimeInMillis()))) {
                 lastCur = curTime;
                 final Calendar C2 = Calendar.getInstance();
@@ -216,16 +216,16 @@ public class Stat extends Skills {
                 C2.set(Calendar.SECOND, 59);
                 C2.set(Calendar.MILLISECOND, 999);
                 curTime = C2.getTimeInMillis();
-                final ArrayList<CoffeeTableRow> set = new ArrayList<CoffeeTableRow>();
+                final ArrayList<AetherTableRow> set = new ArrayList<AetherTableRow>();
                 for (int v = V.size() - 1; v >= 0; v--) {
-                    final CoffeeTableRow T = V.get(v);
+                    final AetherTableRow T = V.get(v);
                     if ((T.startTime() > curTime) && (T.endTime() <= lastCur)) {
                         set.add(T);
                         V.remove(v);
                     }
                 }
                 for (int s = 0; s < set.size(); s++) {
-                    final CoffeeTableRow T = set.get(s);
+                    final AetherTableRow T = set.get(s);
                     for (int x = 0; x < allSkills.size(); x++)
                         T.totalUp("A" + allSkills.get(x).ID().toUpperCase(), totals[x]);
                 }
@@ -237,9 +237,9 @@ public class Stat extends Skills {
                 Ability A = allSkills.get(x);
                 if ((CharC == null) || (CMLib.ableMapper().getQualifyingLevel(CharC.ID(), true, A.ID()) < 0))
                     continue;
-                if (totals[x][CoffeeTableRow.STAT_SKILLUSE] > 0) {
+                if (totals[x][AetherTableRow.STAT_SKILLUSE] > 0) {
                     table.append(CMStrings.padRight("" + A.ID(), 25)
-                        + CMStrings.centerPreserve("" + totals[x][CoffeeTableRow.STAT_SKILLUSE], 10));
+                        + CMStrings.centerPreserve("" + totals[x][AetherTableRow.STAT_SKILLUSE], 10));
                     if (cr)
                         table.append("\n\r");
                     cr = !cr;
@@ -247,10 +247,10 @@ public class Stat extends Skills {
                 x++;
                 if (x < allSkills.size()) {
                     A = allSkills.get(x);
-                    if (totals[x][CoffeeTableRow.STAT_SKILLUSE] > 0) {
+                    if (totals[x][AetherTableRow.STAT_SKILLUSE] > 0) {
 
                         table.append(CMStrings.padRight("" + A.ID(), 25)
-                            + CMStrings.centerPreserve("" + totals[x][CoffeeTableRow.STAT_SKILLUSE], 10));
+                            + CMStrings.centerPreserve("" + totals[x][AetherTableRow.STAT_SKILLUSE], 10));
                         if (cr)
                             table.append("\n\r");
                         cr = !cr;
@@ -260,7 +260,7 @@ public class Stat extends Skills {
             if (cr)
                 table.append("\n\r");
         } else if (questStats) {
-            final long[][] totals = new long[CMLib.quests().numQuests()][CoffeeTableRow.STAT_TOTAL];
+            final long[][] totals = new long[CMLib.quests().numQuests()][AetherTableRow.STAT_TOTAL];
             while ((V.size() > 0) && (curTime > (ENDQ.getTimeInMillis()))) {
                 lastCur = curTime;
                 final Calendar C2 = Calendar.getInstance();
@@ -272,9 +272,9 @@ public class Stat extends Skills {
                 C2.set(Calendar.SECOND, 59);
                 C2.set(Calendar.MILLISECOND, 999);
                 curTime = C2.getTimeInMillis();
-                final ArrayList<CoffeeTableRow> set = new ArrayList<CoffeeTableRow>();
+                final ArrayList<AetherTableRow> set = new ArrayList<AetherTableRow>();
                 for (int v = V.size() - 1; v >= 0; v--) {
-                    final CoffeeTableRow T = V.get(v);
+                    final AetherTableRow T = V.get(v);
                     if ((T.startTime() > curTime) && (T.endTime() <= lastCur)) {
                         set.add(T);
                         V.remove(v);
@@ -285,7 +285,7 @@ public class Stat extends Skills {
                     V.clear();
                 }
                 for (int s = 0; s < set.size(); s++) {
-                    final CoffeeTableRow T = set.get(s);
+                    final AetherTableRow T = set.get(s);
                     for (int x = 0; x < CMLib.quests().numQuests(); x++)
                         T.totalUp("U" + T.tagFix(CMLib.quests().fetchQuest(x).name()), totals[x]);
                 }
@@ -296,15 +296,15 @@ public class Stat extends Skills {
                 final Quest Q = CMLib.quests().fetchQuest(x);
                 table.append(
                     CMStrings.padRight(Q.name(), 30)
-                        + CMStrings.centerPreserve("" + totals[x][CoffeeTableRow.STAT_QUESTSTARTATTEMPT], 5)
-                        + CMStrings.centerPreserve("" + totals[x][CoffeeTableRow.STAT_QUESTTIMESTART], 5)
-                        + CMStrings.centerPreserve("" + totals[x][CoffeeTableRow.STAT_QUESTFAILEDSTART], 5)
-                        + CMStrings.centerPreserve("" + totals[x][CoffeeTableRow.STAT_QUESTACCEPTED], 5)
-                        + CMStrings.centerPreserve("" + totals[x][CoffeeTableRow.STAT_QUESTSUCCESS], 5)
-                        + CMStrings.centerPreserve("" + totals[x][CoffeeTableRow.STAT_QUESTFAILED], 5)
-                        + CMStrings.centerPreserve("" + totals[x][CoffeeTableRow.STAT_QUESTDROPPED], 5)
-                        + CMStrings.centerPreserve("" + totals[x][CoffeeTableRow.STAT_QUESTTIMESTOP], 5)
-                        + CMStrings.centerPreserve("" + totals[x][CoffeeTableRow.STAT_QUESTSTOP], 5));
+                        + CMStrings.centerPreserve("" + totals[x][AetherTableRow.STAT_QUESTSTARTATTEMPT], 5)
+                        + CMStrings.centerPreserve("" + totals[x][AetherTableRow.STAT_QUESTTIMESTART], 5)
+                        + CMStrings.centerPreserve("" + totals[x][AetherTableRow.STAT_QUESTFAILEDSTART], 5)
+                        + CMStrings.centerPreserve("" + totals[x][AetherTableRow.STAT_QUESTACCEPTED], 5)
+                        + CMStrings.centerPreserve("" + totals[x][AetherTableRow.STAT_QUESTSUCCESS], 5)
+                        + CMStrings.centerPreserve("" + totals[x][AetherTableRow.STAT_QUESTFAILED], 5)
+                        + CMStrings.centerPreserve("" + totals[x][AetherTableRow.STAT_QUESTDROPPED], 5)
+                        + CMStrings.centerPreserve("" + totals[x][AetherTableRow.STAT_QUESTTIMESTOP], 5)
+                        + CMStrings.centerPreserve("" + totals[x][AetherTableRow.STAT_QUESTSTOP], 5));
                 table.append("\n\r");
             }
             table.append("\n\r");
@@ -319,9 +319,9 @@ public class Stat extends Skills {
             C2.set(Calendar.SECOND, 59);
             C2.set(Calendar.MILLISECOND, 999);
             curTime = C2.getTimeInMillis();
-            final ArrayList<CoffeeTableRow> set = new ArrayList<CoffeeTableRow>();
+            final ArrayList<AetherTableRow> set = new ArrayList<AetherTableRow>();
             for (int v = V.size() - 1; v >= 0; v--) {
-                final CoffeeTableRow T = V.get(v);
+                final AetherTableRow T = V.get(v);
                 if ((T.startTime() > curTime) && (T.endTime() <= lastCur)) {
                     set.add(T);
                     V.remove(v);
@@ -331,32 +331,32 @@ public class Stat extends Skills {
                 Area A = a.nextElement();
                 if (CMLib.flags().canAccess(mob, A) && (!CMath.bset(A.flags(), Area.FLAG_INSTANCE_CHILD)) && (!(A instanceof SpaceObject))) {
                     code = "X" + A.Name().toUpperCase().replace(' ', '_');
-                    final long[] totals = new long[CoffeeTableRow.STAT_TOTAL];
+                    final long[] totals = new long[AetherTableRow.STAT_TOTAL];
                     long highestOnline = 0;
                     long numberOnlineTotal = 0;
                     long numberOnlineCounter = 0;
                     for (int s = 0; s < set.size(); s++) {
-                        final CoffeeTableRow T = set.get(s);
+                        final AetherTableRow T = set.get(s);
                         T.totalUp(code, totals);
                         if (T.highestOnline() > highestOnline)
                             highestOnline = T.highestOnline();
                         numberOnlineTotal += T.numberOnlineTotal();
                         numberOnlineCounter += T.numberOnlineCounter();
                     }
-                    totals[CoffeeTableRow.STAT_TICKSONLINE] = (totals[CoffeeTableRow.STAT_TICKSONLINE] * CMProps.getTickMillis()) / scale / (1000 * 60);
+                    totals[AetherTableRow.STAT_TICKSONLINE] = (totals[AetherTableRow.STAT_TICKSONLINE] * CMProps.getTickMillis()) / scale / (1000 * 60);
                     double avgOnline = (numberOnlineCounter > 0) ? CMath.div(numberOnlineTotal, numberOnlineCounter) : 0.0;
                     avgOnline = CMath.div(Math.round(avgOnline * 10.0), 10.0);
                     table.append(CMStrings.padRight(A.Name(), 25)
-                        + CMStrings.centerPreserve("" + totals[CoffeeTableRow.STAT_LOGINS], 5)
+                        + CMStrings.centerPreserve("" + totals[AetherTableRow.STAT_LOGINS], 5)
                         + CMStrings.centerPreserve("" + highestOnline, 5)
                         + CMStrings.centerPreserve("" + avgOnline, 5)
-                        + CMStrings.centerPreserve("" + totals[CoffeeTableRow.STAT_TICKSONLINE], 5)
-                        + CMStrings.centerPreserve("" + totals[CoffeeTableRow.STAT_NEWPLAYERS], 5)
-                        + CMStrings.centerPreserve("" + totals[CoffeeTableRow.STAT_DEATHS], 5)
-                        + CMStrings.centerPreserve("" + totals[CoffeeTableRow.STAT_PKDEATHS], 5)
-                        + CMStrings.centerPreserve("" + totals[CoffeeTableRow.STAT_CLASSCHANGE], 5)
-                        + CMStrings.centerPreserve("" + totals[CoffeeTableRow.STAT_PURGES], 5)
-                        + CMStrings.centerPreserve("" + totals[CoffeeTableRow.STAT_MARRIAGES], 5) + "\n\r");
+                        + CMStrings.centerPreserve("" + totals[AetherTableRow.STAT_TICKSONLINE], 5)
+                        + CMStrings.centerPreserve("" + totals[AetherTableRow.STAT_NEWPLAYERS], 5)
+                        + CMStrings.centerPreserve("" + totals[AetherTableRow.STAT_DEATHS], 5)
+                        + CMStrings.centerPreserve("" + totals[AetherTableRow.STAT_PKDEATHS], 5)
+                        + CMStrings.centerPreserve("" + totals[AetherTableRow.STAT_CLASSCHANGE], 5)
+                        + CMStrings.centerPreserve("" + totals[AetherTableRow.STAT_PURGES], 5)
+                        + CMStrings.centerPreserve("" + totals[AetherTableRow.STAT_MARRIAGES], 5) + "\n\r");
                 }
             }
         } else {
@@ -371,40 +371,40 @@ public class Stat extends Skills {
                 C2.set(Calendar.SECOND, 59);
                 C2.set(Calendar.MILLISECOND, 999);
                 curTime = C2.getTimeInMillis();
-                final ArrayList<CoffeeTableRow> set = new ArrayList<CoffeeTableRow>();
+                final ArrayList<AetherTableRow> set = new ArrayList<AetherTableRow>();
                 for (int v = V.size() - 1; v >= 0; v--) {
-                    final CoffeeTableRow T = V.get(v);
+                    final AetherTableRow T = V.get(v);
                     if ((T.startTime() > curTime) && (T.endTime() <= lastCur)) {
                         set.add(T);
                         V.remove(v);
                     }
                 }
-                final long[] totals = new long[CoffeeTableRow.STAT_TOTAL];
+                final long[] totals = new long[AetherTableRow.STAT_TOTAL];
                 long highestOnline = 0;
                 long numberOnlineTotal = 0;
                 long numberOnlineCounter = 0;
                 for (int s = 0; s < set.size(); s++) {
-                    final CoffeeTableRow T = set.get(s);
+                    final AetherTableRow T = set.get(s);
                     T.totalUp(code, totals);
                     if (T.highestOnline() > highestOnline)
                         highestOnline = T.highestOnline();
                     numberOnlineTotal += T.numberOnlineTotal();
                     numberOnlineCounter += T.numberOnlineCounter();
                 }
-                totals[CoffeeTableRow.STAT_TICKSONLINE] = (totals[CoffeeTableRow.STAT_TICKSONLINE] * CMProps.getTickMillis()) / scale / (1000 * 60);
+                totals[AetherTableRow.STAT_TICKSONLINE] = (totals[AetherTableRow.STAT_TICKSONLINE] * CMProps.getTickMillis()) / scale / (1000 * 60);
                 double avgOnline = (numberOnlineCounter > 0) ? CMath.div(numberOnlineTotal, numberOnlineCounter) : 0.0;
                 avgOnline = CMath.div(Math.round(avgOnline * 10.0), 10.0);
                 table.append(CMStrings.padRight(CMLib.time().date2DateString(curTime + 1) + " - " + CMLib.time().date2DateString(lastCur - 1), 25)
-                    + CMStrings.centerPreserve("" + totals[CoffeeTableRow.STAT_LOGINS], 5)
+                    + CMStrings.centerPreserve("" + totals[AetherTableRow.STAT_LOGINS], 5)
                     + CMStrings.centerPreserve("" + highestOnline, 5)
                     + CMStrings.centerPreserve("" + avgOnline, 5)
-                    + CMStrings.centerPreserve("" + totals[CoffeeTableRow.STAT_TICKSONLINE], 5)
-                    + CMStrings.centerPreserve("" + totals[CoffeeTableRow.STAT_NEWPLAYERS], 5)
-                    + CMStrings.centerPreserve("" + totals[CoffeeTableRow.STAT_DEATHS], 5)
-                    + CMStrings.centerPreserve("" + totals[CoffeeTableRow.STAT_PKDEATHS], 5)
-                    + CMStrings.centerPreserve("" + totals[CoffeeTableRow.STAT_CLASSCHANGE], 5)
-                    + CMStrings.centerPreserve("" + totals[CoffeeTableRow.STAT_PURGES], 5)
-                    + CMStrings.centerPreserve("" + totals[CoffeeTableRow.STAT_MARRIAGES], 5) + "\n\r");
+                    + CMStrings.centerPreserve("" + totals[AetherTableRow.STAT_TICKSONLINE], 5)
+                    + CMStrings.centerPreserve("" + totals[AetherTableRow.STAT_NEWPLAYERS], 5)
+                    + CMStrings.centerPreserve("" + totals[AetherTableRow.STAT_DEATHS], 5)
+                    + CMStrings.centerPreserve("" + totals[AetherTableRow.STAT_PKDEATHS], 5)
+                    + CMStrings.centerPreserve("" + totals[AetherTableRow.STAT_CLASSCHANGE], 5)
+                    + CMStrings.centerPreserve("" + totals[AetherTableRow.STAT_PURGES], 5)
+                    + CMStrings.centerPreserve("" + totals[AetherTableRow.STAT_MARRIAGES], 5) + "\n\r");
                 if (scale == 0)
                     break;
             }

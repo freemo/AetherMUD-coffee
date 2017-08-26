@@ -155,7 +155,7 @@ public class Spell_LocateObject extends Spell {
                             || ((CMSecurity.isAllowedAnywhere(mob, CMSecurity.SecFlag.CLOAK) || CMSecurity.isAllowedAnywhere(mob, CMSecurity.SecFlag.WIZINV))
                             && (mob.phyStats().level() >= inhab.phyStats().level())))) {
                             item = inhab.findItem(what);
-                            SK = CMLib.coffeeShops().getShopKeeper(inhab);
+                            SK = CMLib.aetherShops().getShopKeeper(inhab);
                             if ((item == null) && (SK != null))
                                 item = SK.getShop().getStock(what, mob);
                             if ((item instanceof Item)

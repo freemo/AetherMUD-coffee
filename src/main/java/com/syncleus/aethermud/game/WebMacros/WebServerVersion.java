@@ -30,7 +30,7 @@ public class WebServerVersion extends StdWebMacro {
     @Override
     public String runMacro(HTTPRequest httpReq, String parm, HTTPResponse httpResp) {
         if (Thread.currentThread() instanceof CWThread)
-            return "WebServer " + ((CWThread) Thread.currentThread()).getConfig().getCoffeeWebServer().getVersion();
+            return "WebServer " + ((CWThread) Thread.currentThread()).getConfig().getAetherWebServer().getVersion();
         return Float.toString(httpReq.getHttpVer());
     }
 

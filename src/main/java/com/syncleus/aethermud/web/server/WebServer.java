@@ -38,7 +38,7 @@ import java.util.logging.Level;
 
 
 /**
- * Both the main() kickoff for the coffeewebserver AND the main thread class for the same.
+ * Both the main() kickoff for the aetherwebserver AND the main thread class for the same.
  * This class handles all the socket listening and request management/timeout.
  * When requests are received, they are passed off to an HTTPReader for processing,
  * though a separate thread may timeout those readers at its discretion and shut
@@ -47,7 +47,7 @@ import java.util.logging.Level;
  *
  */
 public class WebServer extends Thread {
-    public static final String NAME = "CoffeeWebServer";
+    public static final String NAME = "AetherWebServer";
     public static final String POMVERSION = "2.4";
     public static double VERSION;
 
@@ -150,7 +150,7 @@ public class WebServer extends Thread {
 
         Log.instance().configureLogFile("web", 2);
         String debug = "OFF";
-        String iniFilename = "coffeeweb.ini";
+        String iniFilename = "aetherweb.ini";
         for (final String arg : args) {
             if (arg.startsWith("BOOT="))
                 iniFilename = arg.substring(5);
@@ -181,7 +181,7 @@ public class WebServer extends Thread {
         config.getLogger().info("Starting " + NAME + " " + VERSION);
 
         final WebServer server = new WebServer("server", config);
-        config.setCoffeeWebServer(server);
+        config.setAetherWebServer(server);
         final Thread t = new CWThread(config, server, NAME);
         t.start();
         try {

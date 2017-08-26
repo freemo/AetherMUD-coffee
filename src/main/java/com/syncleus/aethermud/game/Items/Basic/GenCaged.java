@@ -76,7 +76,7 @@ public class GenCaged extends GenItem implements CagedAnimal {
         itemstr.append("<MOBITEM>");
         itemstr.append(CMLib.xml().convertXMLtoTag("MICLASS", CMClass.classID(M)));
         itemstr.append(CMLib.xml().convertXMLtoTag("MISTART", CMLib.map().getExtendedRoomID(M.getStartRoom())));
-        itemstr.append(CMLib.xml().convertXMLtoTag("MIDATA", CMLib.coffeeMaker().getPropertiesStr(M, true)));
+        itemstr.append(CMLib.xml().convertXMLtoTag("MIDATA", CMLib.aetherMaker().getPropertiesStr(M, true)));
         itemstr.append("</MOBITEM>");
         setCageText(itemstr.toString());
         recoverPhyStats();
@@ -131,12 +131,12 @@ public class GenCaged extends GenItem implements CagedAnimal {
             Log.errOut("Caged", "Error parsing 'MOBITEM' data.");
             return M;
         }
-        CMLib.coffeeMaker().setPropertiesStr(newOne, idat, true);
+        CMLib.aetherMaker().setPropertiesStr(newOne, idat, true);
         M = (MOB) newOne;
         M.basePhyStats().setRejuv(PhyStats.NO_REJUV);
         M.setStartRoom(null);
         if (M.isGeneric())
-            CMLib.coffeeMaker().resetGenMOB(M, M.text());
+            CMLib.aetherMaker().resetGenMOB(M, M.text());
         if ((startr.length() > 0) && (!startr.equalsIgnoreCase("null"))) {
             final Room R = CMLib.map().getRoom(startr);
             if (R != null)

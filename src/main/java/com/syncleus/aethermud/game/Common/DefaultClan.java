@@ -878,8 +878,8 @@ public class DefaultClan implements Clan {
                         value = M.getWorshipCharID();
                         if (value.length() == 0)
                             value = "ANY";
-                    } else if (CMLib.coffeeMaker().isAnyGenStat(M, tag))
-                        value = CMLib.coffeeMaker().getAnyGenStat(M, tag);
+                    } else if (CMLib.aetherMaker().isAnyGenStat(M, tag))
+                        value = CMLib.aetherMaker().getAnyGenStat(M, tag);
                 } else if (tag.equalsIgnoreCase("WORSHIPCHARID"))
                     value = "ANY";
                 mask.replace(x, y + 2, value);

@@ -515,23 +515,23 @@ public class GenCharClass extends StdCharClass {
         if (adjPStats == null)
             str.append("<ESTATS/>");
         else
-            str.append(CMLib.xml().convertXMLtoTag("ESTATS", CMLib.coffeeMaker().getPhyStatsStr(adjPStats)));
+            str.append(CMLib.xml().convertXMLtoTag("ESTATS", CMLib.aetherMaker().getPhyStatsStr(adjPStats)));
         if (adjStats == null)
             str.append("<ASTATS/>");
         else
-            str.append(CMLib.xml().convertXMLtoTag("ASTATS", CMLib.coffeeMaker().getCharStatsStr(adjStats)));
+            str.append(CMLib.xml().convertXMLtoTag("ASTATS", CMLib.aetherMaker().getCharStatsStr(adjStats)));
         if (setStats == null)
             str.append("<CSTATS/>");
         else
-            str.append(CMLib.xml().convertXMLtoTag("CSTATS", CMLib.coffeeMaker().getCharStatsStr(setStats)));
+            str.append(CMLib.xml().convertXMLtoTag("CSTATS", CMLib.aetherMaker().getCharStatsStr(setStats)));
         if (adjState == null)
             str.append("<ASTATE/>");
         else
-            str.append(CMLib.xml().convertXMLtoTag("ASTATE", CMLib.coffeeMaker().getCharStateStr(adjState)));
+            str.append(CMLib.xml().convertXMLtoTag("ASTATE", CMLib.aetherMaker().getCharStateStr(adjState)));
         if (startAdjState == null)
             str.append("<STARTASTATE/>");
         else
-            str.append(CMLib.xml().convertXMLtoTag("STARTASTATE", CMLib.coffeeMaker().getCharStateStr(startAdjState)));
+            str.append(CMLib.xml().convertXMLtoTag("STARTASTATE", CMLib.aetherMaker().getCharStateStr(startAdjState)));
         str.append(CMLib.xml().convertXMLtoTag("DISFLAGS", "" + disableFlags));
 
         final Vector<AbilityMapper.AbilityMapping> ables = getAbleSet();
@@ -716,25 +716,25 @@ public class GenCharClass extends StdCharClass {
         final String eStats = CMLib.xml().getValFromPieces(classData, "ESTATS");
         if (eStats.length() > 0) {
             adjPStats = (PhyStats) CMClass.getCommon("DefaultPhyStats");
-            CMLib.coffeeMaker().setPhyStats(adjPStats, eStats);
+            CMLib.aetherMaker().setPhyStats(adjPStats, eStats);
         }
         adjStats = null;
         final String aStats = CMLib.xml().getValFromPieces(classData, "ASTATS");
         if (aStats.length() > 0) {
             adjStats = (CharStats) CMClass.getCommon("DefaultCharStats");
-            CMLib.coffeeMaker().setCharStats(adjStats, aStats);
+            CMLib.aetherMaker().setCharStats(adjStats, aStats);
         }
         setStats = null;
         final String cStats = CMLib.xml().getValFromPieces(classData, "CSTATS");
         if (cStats.length() > 0) {
             setStats = (CharStats) CMClass.getCommon("DefaultCharStats");
-            CMLib.coffeeMaker().setCharStats(setStats, cStats);
+            CMLib.aetherMaker().setCharStats(setStats, cStats);
         }
         adjState = null;
         final String aState = CMLib.xml().getValFromPieces(classData, "ASTATE");
         if (aState.length() > 0) {
             adjState = (CharState) CMClass.getCommon("DefaultCharState");
-            CMLib.coffeeMaker().setCharState(adjState, aState);
+            CMLib.aetherMaker().setCharState(adjState, aState);
         }
         startAdjState = null;
         disableFlags = CMLib.xml().getIntFromPieces(classData, "DISFLAGS");
@@ -742,7 +742,7 @@ public class GenCharClass extends StdCharClass {
         if (saState.length() > 0) {
             startAdjState = (CharState) CMClass.getCommon("DefaultCharState");
             startAdjState.setAllValues(0);
-            CMLib.coffeeMaker().setCharState(startAdjState, saState);
+            CMLib.aetherMaker().setCharState(startAdjState, saState);
         }
 
         List<XMLLibrary.XMLTag> xV = CMLib.xml().getContentsFromPieces(classData, "CABILITIES");
@@ -921,13 +921,13 @@ public class GenCharClass extends StdCharClass {
             case 19:
                 return "" + selectability;
             case 20:
-                return (adjPStats == null) ? "" : CMLib.coffeeMaker().getPhyStatsStr(adjPStats);
+                return (adjPStats == null) ? "" : CMLib.aetherMaker().getPhyStatsStr(adjPStats);
             case 21:
-                return (adjStats == null) ? "" : CMLib.coffeeMaker().getCharStatsStr(adjStats);
+                return (adjStats == null) ? "" : CMLib.aetherMaker().getCharStatsStr(adjStats);
             case 22:
-                return (setStats == null) ? "" : CMLib.coffeeMaker().getCharStatsStr(setStats);
+                return (setStats == null) ? "" : CMLib.aetherMaker().getCharStatsStr(setStats);
             case 23:
-                return (adjState == null) ? "" : CMLib.coffeeMaker().getCharStateStr(adjState);
+                return (adjState == null) ? "" : CMLib.aetherMaker().getCharStateStr(adjState);
             case 24:
                 return Integer.toString(getAbleSet().size());
             case 25:
@@ -961,7 +961,7 @@ public class GenCharClass extends StdCharClass {
             case 39:
                 return "" + disableFlags;
             case 40:
-                return (startAdjState == null) ? "" : CMLib.coffeeMaker().getCharStateStr(startAdjState);
+                return (startAdjState == null) ? "" : CMLib.aetherMaker().getCharStateStr(startAdjState);
             case 41:
                 return "" + names.length;
             case 42:
@@ -1093,7 +1093,7 @@ public class GenCharClass extends StdCharClass {
                 if (val.length() > 0) {
                     adjPStats = (PhyStats) CMClass.getCommon("DefaultPhyStats");
                     adjPStats.setAllValues(0);
-                    CMLib.coffeeMaker().setPhyStats(adjPStats, val);
+                    CMLib.aetherMaker().setPhyStats(adjPStats, val);
                 }
                 break;
             case 21:
@@ -1101,7 +1101,7 @@ public class GenCharClass extends StdCharClass {
                 if (val.length() > 0) {
                     adjStats = (CharStats) CMClass.getCommon("DefaultCharStats");
                     adjStats.setAllValues(0);
-                    CMLib.coffeeMaker().setCharStats(adjStats, val);
+                    CMLib.aetherMaker().setCharStats(adjStats, val);
                 }
                 break;
             case 22:
@@ -1109,7 +1109,7 @@ public class GenCharClass extends StdCharClass {
                 if (val.length() > 0) {
                     setStats = (CharStats) CMClass.getCommon("DefaultCharStats");
                     setStats.setAllValues(0);
-                    CMLib.coffeeMaker().setCharStats(setStats, val);
+                    CMLib.aetherMaker().setCharStats(setStats, val);
                 }
                 break;
             case 23:
@@ -1117,7 +1117,7 @@ public class GenCharClass extends StdCharClass {
                 if (val.length() > 0) {
                     adjState = (CharState) CMClass.getCommon("DefaultCharState");
                     adjState.setAllValues(0);
-                    CMLib.coffeeMaker().setCharState(adjState, val);
+                    CMLib.aetherMaker().setCharState(adjState, val);
                 }
                 break;
             case 24:
@@ -1209,7 +1209,7 @@ public class GenCharClass extends StdCharClass {
                 if (val.length() > 0) {
                     startAdjState = (CharState) CMClass.getCommon("DefaultCharState");
                     startAdjState.setAllValues(0);
-                    CMLib.coffeeMaker().setCharState(startAdjState, val);
+                    CMLib.aetherMaker().setCharState(startAdjState, val);
                 }
                 break;
             case 41: {

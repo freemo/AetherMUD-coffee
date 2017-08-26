@@ -189,7 +189,7 @@ public class PlayerData extends StdWebMacro {
                 str.append(M.getTrains() + ", ");
                 break;
             case 19:
-                str.append(CMLib.beanCounter().getMoney(M) + ", ");
+                str.append(CMLib.moneyCounter().getMoney(M) + ", ");
                 break;
             case 20:
                 str.append(M.getWorshipCharID() + ", ");

@@ -66,7 +66,7 @@ public class Say extends StdCommand {
     protected void gmcpSaySend(String sayName, MOB mob, Environmental target, CMMsg msg) {
         if ((mob.session() != null) && (mob.session().getClientTelnetMode(Session.TELNET_GMCP))) {
             mob.session().sendGMCPEvent("comm.channel", "{\"chan\":\"" + sayName + "\",\"msg\":\"" +
-                MiniJSON.toJSONString(CMLib.coffeeFilter().fullOutFilter(null, mob, mob, target, null, CMStrings.removeColors(msg.sourceMessage()), false))
+                MiniJSON.toJSONString(CMLib.aetherFilter().fullOutFilter(null, mob, mob, target, null, CMStrings.removeColors(msg.sourceMessage()), false))
                 + "\",\"player\":\"" + mob.name() + "\"}");
         }
         final Room R = mob.location();
@@ -75,7 +75,7 @@ public class Say extends StdCommand {
                 final MOB M = R.fetchInhabitant(i);
                 if ((M != null) && (M != msg.source()) && (M.session() != null) && (M.session().getClientTelnetMode(Session.TELNET_GMCP))) {
                     M.session().sendGMCPEvent("comm.channel", "{\"chan\":\"" + sayName + "\",\"msg\":\"" +
-                        MiniJSON.toJSONString(CMLib.coffeeFilter().fullOutFilter(null, M, mob, target, null, CMStrings.removeColors(msg.othersMessage()), false))
+                        MiniJSON.toJSONString(CMLib.aetherFilter().fullOutFilter(null, M, mob, target, null, CMStrings.removeColors(msg.othersMessage()), false))
                         + "\",\"player\":\"" + mob.name() + "\"}");
                 }
             }

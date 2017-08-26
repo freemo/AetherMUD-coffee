@@ -456,9 +456,9 @@ public class IMudClient implements I3Interface {
                     }
 
                     if ((msg.othersMessage() != null) && (msg.othersMessage().length() > 0))
-                        message = CMLib.coffeeFilter().fullOutFilter(null, CMClass.sampleMOB(), mob2, msg.target(), null, CMStrings.removeColors(msg.othersMessage()), false);
+                        message = CMLib.aetherFilter().fullOutFilter(null, CMClass.sampleMOB(), mob2, msg.target(), null, CMStrings.removeColors(msg.othersMessage()), false);
                     else
-                        message = CMLib.coffeeFilter().fullOutFilter(null, CMClass.sampleMOB(), mob2, msg.target(), null, CMStrings.removeColors(msg.sourceMessage()), false);
+                        message = CMLib.aetherFilter().fullOutFilter(null, CMClass.sampleMOB(), mob2, msg.target(), null, CMStrings.removeColors(msg.sourceMessage()), false);
                     if (message.toUpperCase().startsWith((mob.Name() + "@" + imc2.imc_name).toUpperCase()))
                         message = message.substring((mob.Name() + "@" + imc2.imc_name).length()).trim();
                     emote = 2;

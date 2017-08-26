@@ -73,7 +73,7 @@ public class ManualArchon extends StdItem implements MiscMagic, ArchonOnly {
                             for (final int i : CharStats.CODES.BASECODES())
                                 mob.baseCharStats().setStat(i, 25);
                             if ((!mob.isMonster()) && (mob.soulMate() == null))
-                                CMLib.coffeeTables().bump(mob, CoffeeTableRow.STAT_CLASSCHANGE);
+                                CMLib.aetherTables().bump(mob, AetherTableRow.STAT_CLASSCHANGE);
                             mob.recoverCharStats();
                             if ((!mob.charStats().getCurrentClass().leveless())
                                 && (!mob.charStats().isLevelCapped(mob.charStats().getCurrentClass()))

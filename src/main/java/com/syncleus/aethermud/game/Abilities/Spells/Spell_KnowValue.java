@@ -78,7 +78,7 @@ public class Spell_KnowValue extends Spell {
                 else if (target.value() == 0)
                     str = L("@x1 is worth hardly anything at all", target.name(mob));
                 else
-                    str = L("@x1 is worth @x2 ", target.name(mob), CMLib.beanCounter().nameCurrencyShort(mob, (double) target.value()));
+                    str = L("@x1 is worth @x2 ", target.name(mob), CMLib.moneyCounter().nameCurrencyShort(mob, (double) target.value()));
                 if (mob.isMonster())
                     CMLib.commands().postSay(mob, null, str, false, false);
                 else

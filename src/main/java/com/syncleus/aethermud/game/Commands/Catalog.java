@@ -267,7 +267,7 @@ public class Catalog extends StdCommand {
                     String roomID = null;
                     for (; rooms.hasMoreElements(); ) {
                         roomID = rooms.nextElement();
-                        R = CMLib.coffeeMaker().makeNewRoomContent(CMLib.map().getRoom(roomID), false);
+                        R = CMLib.aetherMaker().makeNewRoomContent(CMLib.map().getRoom(roomID), false);
                         final List<CatalogLibrary.RoomContent> contents = CMLib.catalog().roomContent(R);
                         boolean dirty = false;
                         for (final CatalogLibrary.RoomContent content : contents) {
@@ -536,7 +536,7 @@ public class Catalog extends StdCommand {
                         roomID = rooms.nextElement();
                         R = CMLib.map().getRoom(roomID);
                         if (db)
-                            R = CMLib.coffeeMaker().makeNewRoomContent(R, false);
+                            R = CMLib.aetherMaker().makeNewRoomContent(R, false);
                         final List<CatalogLibrary.RoomContent> contents = CMLib.catalog().roomContent(R);
                         for (final CatalogLibrary.RoomContent content : contents) {
                             P = content.P();
@@ -583,7 +583,7 @@ public class Catalog extends StdCommand {
                         if (R == null)
                             continue;
                         if (db)
-                            R = CMLib.coffeeMaker().makeNewRoomContent(R, false);
+                            R = CMLib.aetherMaker().makeNewRoomContent(R, false);
                         final List<CatalogLibrary.RoomContent> contents = CMLib.catalog().roomContent(R);
                         for (final CatalogLibrary.RoomContent content : contents) {
                             E = content.P();
@@ -627,7 +627,7 @@ public class Catalog extends StdCommand {
                         String roomID = null;
                         for (; rooms.hasMoreElements(); ) {
                             roomID = rooms.nextElement();
-                            R = CMLib.coffeeMaker().makeNewRoomContent(CMLib.map().getRoom(roomID), false);
+                            R = CMLib.aetherMaker().makeNewRoomContent(CMLib.map().getRoom(roomID), false);
                             final List<CatalogLibrary.RoomContent> contents = CMLib.catalog().roomContent(R);
                             boolean dirty = false;
                             for (final CatalogLibrary.RoomContent content : contents) {
