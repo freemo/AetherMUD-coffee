@@ -843,7 +843,7 @@ public class MUD extends Thread implements MudHost {
             System.out.println();
             grpid = 0;
             Log.sysOut(Thread.currentThread().getName(), "AetherMud v" + HOST_VERSION_MAJOR + "." + HOST_VERSION_MINOR);
-            Log.sysOut(Thread.currentThread().getName(), "(C) 2000-2017 Bo Zimmerman");
+            Log.sysOut(Thread.currentThread().getName(), "(C) 2017 Syncleus");
             Log.sysOut(Thread.currentThread().getName(), "http://www.aethermud.org");
             CMLib.hosts().clear();
             final LinkedList<HostGroup> myGroups = new LinkedList<HostGroup>();

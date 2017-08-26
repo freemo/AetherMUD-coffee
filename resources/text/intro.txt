@@ -1,24 +1,43 @@
-                        (
-                          )     (
-                   ___...(-------)-....___
-               .-""       )    (          ""-.
-         .-'``'|-._             )         _.-|
-        /  .--.|   `""---...........---""`   |
-       /  /    |                             |
-       |  |    | @MudInfo?NAME@
-        \  \   |                             |
-         `\ `\ | Powered By AetherMud v5.9   |
-           `\ `| (C) 2000-2017 Bo Zimmerman  |
-           _/ /\ www.aethermud.org           /
-          (__/  \  This file is:            /
-       _..---""` \ resources/text/intro.txt/`""---.._
-    .-'           \                       /          '-.
-   :               `-.__             __.-'              :
-   :                  ) ""---...---"" (                 :
-    '._               `"--...___...--"`              _.'
-  jgs \""--..__                              __..--""/
-       '._     """----.....______.....----"""     _.'
-          `""--..,,_____            _____,,..--""`
-                        `"""----"""`
+                                                    .%,
+                                                   X:-x\',
+                                                  X:/%;::\:X
+                                                 X:l%  ; :'\:X
+                                                X:l%   :  : '\:X
+                                                X:l%   :   :  '\:X
+                             b,      b,        X:/l%   :    :   \:X
+                            JPQ,    JPQ,       X:l%    :     :   '\:X
+                          .dP'd|._,=dPQq\     X:l%'    :      :    '\:X
+                         xdP  #P"'_    _,:   .X:l%     :       :    '\:X
+                      .d/"p   '  'O \  'O:;  X:l%'     :       :      \:X
+                    ,pP' q.          \:  `#  X:ld       :       :      ':X
+                  ,d"   ,pq  .,-qx_,  "\  `Q:  l%       :       :       k:X
+                ./'     Jp       .      `  ` 3  %       :        ;      k:X
+               dP       p            p    `  `q         :        :      k:X
+              d/       ; J,/";xpx"\: '*q    ` `\,       :         :     l:X.
+             dP      ;'    dP      "\:_,`.q. /d b\      :         :      k:X
+           .d'      ;    dP            .\_j '- u-'      :         :      k:X
+X         ./'     ;'    /"            .'                :         ;      k:X
+\X       .d'     ;    ,"             :      X:l%        :        :       k:X
+:\X      d'     ;   ./'             :       X:/%        :        ;       k:X
+::lX    JP     ;    J              :      .X:/ %        :       :        k;X
+k:lX    #'    :    j'             :    .X:/ %           :       :       d:lX
+k:lX   |P    ;     |             :  .X:/ %              :       ;       k;lX
+k:lX   ||    ;    |'            : X:/ %                 ;       :      d:;X'
+k:lX   d|   ;     :l           :X:/ %'                 :        :      k:lX
+k:iX   #|   ;     ||          X:/ %                    ;        ;      k:lX
+ k:\X  ||  ;       ||       X:/ %                     :        :       k:lX
+  k:\pQJb  ;        \N.PQ XX/ %                      ;         ;       k:lX
+   kJP.Ql\;          XQ. J Q J                      :         ;        k:lX
+   6Q : Q%           \Q  Q   J              ;''''':.:;''::.  :         k:lX
+  6QQ  : Ql           lQ'   J              ;        ;     ': :;''':.   k::X.
+ 6QQQ )  Ql           i6    Q             ;                 .;     ':.  k:\X
+  6QQ   J l           \  6  Q            ;                            ':.k:X
+ 9QQ   J  i            l 6   6          ;                                 k;
 
-Welcome to @MudInfo?NAME@
+                    Powered By AetherMud v6.0
+                    (C) 2017 Syncleus
+                    www.aethermud.org
+                      This file is:
+                      resources/text/intro.txt
+
+                    Welcome to @MudInfo?NAME@
